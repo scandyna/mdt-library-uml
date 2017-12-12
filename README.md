@@ -1,1 +1,1 @@
-# mdt-library-uml
+UML for [multidiagtools](https://github.com/scandyna/multidiagtools) library.
