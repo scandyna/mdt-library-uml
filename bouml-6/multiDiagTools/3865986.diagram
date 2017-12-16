@@ -1,26 +1,72 @@
 format 215
 
-classcanvas 128898 class_ref 4467842 // Client
+classcanvas 128898 class_ref 4467842 // ClientData
   classdiagramsettings member_max_width 0 end
-  xyz 262.25 95 2000
+  xyz 690.15 139.15 2000
 end
 classcanvas 129026 class_ref 4494594 // ClientObject
   classdiagramsettings member_max_width 0 end
-  xyz 131.5 122 2000
+  xyz 359.8 287.05 2000
 end
 classcanvas 129154 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 144.5 40.75 2000
+  xyz 372.8 40.15 2000
 end
 note 129538 "Define properties with Q_PROPERTY"
-  xyzwh 37.5 229.25 2000 279 45
-relationcanvas 129282 relation_ref 4988674 // <generalisation>
-  from ref 129026 z 2001 to ref 129154
+  xyzwh 40.05 287.05 2000 279 45
+classcanvas 129794 class_ref 4514818 // ClientTable
+  classdiagramsettings member_max_width 0 end
+  xyz 40.1 420.9 2000
+end
+classcanvas 129922 class_ref 4514946 // ColumnTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 227.8 409.7 2000
+end
+classcanvas 130178 class_ref 4501634 // EntityBase
+  classdiagramsettings member_max_width 0 end
+  xyz 156.5 125.95 2005
+end
+classcanvas 130690 class_ref 4515074 // QUuid
+  classdiagramsettings member_max_width 0 end
+  xyz 456.9 413.5 2000
+end
+classcanvas 131074 class_ref 2775042 // Field
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 540.9 371 2000
+end
+classcanvas 131202 class_ref 2775810 // Table
+  classdiagramsettings member_max_width 0 end
+  xyz 166.4 594.3 2000
+end
+relationcanvas 130306 relation_ref 5008898 // <generalisation>
+  from ref 129026 z 2006 to ref 130178
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129410 relation_ref 4988802 // <generalisation>
-  from ref 129026 z 2001 to ref 128898
+relationcanvas 130434 relation_ref 5009026 // <generalisation>
+  from ref 130178 z 2006 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 5009154 // <generalisation>
+  decenter_begin 472
+  decenter_end 464
+  from ref 130178 z 2006 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131330 relation_ref 5009410 // <dependency>
+  from ref 131202 z 2006 to ref 130178
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131458 relation_ref 5016066 // <dependency>
+  from ref 131074 z 2006 to ref 130178
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131586 relation_ref 5022978 // <directional composition>
+  from ref 129794 z 2001 to ref 131074
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

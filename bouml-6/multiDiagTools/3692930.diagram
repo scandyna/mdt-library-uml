@@ -2,11 +2,11 @@ format 215
 
 classcanvas 128002 class_ref 322818 // QIODevice
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 289.1 369.75 2000
+  xyz 289.1 369.75 2005
 end
 classcanvas 128130 class_ref 222722 // QThread
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 449.2 249.15 2005
+  xyz 449.2 249.15 2025
 end
 classcanvas 128258 class_ref 329346 // QAbstractSocket
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
@@ -26,7 +26,7 @@ classcanvas 130050 class_ref 4285442 // SomePortImpl
 end
 classcanvas 130178 class_ref 4285570 // SomePortThread
   classdiagramsettings member_max_width 0 end
-  xyz 423.2 369.75 2000
+  xyz 423.2 369.75 2005
 end
 note 133378 "How does behave a const QByteArray memebr ?
 ex: vector<const QByteArray>"
@@ -50,7 +50,7 @@ Or: as it was,  thread per resource (which implies many threads):
 etc..
 (Accessing the same I/O is maybe sequetial)
 Or..."
-  xyzwh 13.25 13.3 2025 443 431
+  xyzwh 12.25 10.3 1996 443 431
 classcanvas 133762 class_ref 4292098 // Fifo
   classdiagramsettings member_max_width 0 end
   xyz 451.5 710.1 2000
@@ -137,10 +137,10 @@ relationcanvas 134914 relation_ref 4826370 // <unidirectional association>
   no_multiplicity_a no_multiplicity_b
 end
 line 133634 -_-_ geometry VHV unfixed decenter_begin 964 decenter_end 100
-  from ref 133506 z 2025 to point 453 335
-  line 135170 z 2025 to point 432 335
-  line 135298 z 2025 to ref 130178
+  from ref 133506 z 2032 to point 452 335
+  line 135170 z 2032 to point 432 335
+  line 135298 z 2032 to ref 130178
 line 134018 -_-_ geometry VH unfixed
-  from ref 133890 z 2025 to point 740 226
-  line 135042 z 2025 to ref 133506
+  from ref 133890 z 2032 to point 740 223
+  line 135042 z 2032 to ref 133506
 end

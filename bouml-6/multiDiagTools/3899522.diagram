@@ -1,0 +1,21 @@
+format 215
+
+classcanvas 128002 class_ref 4467842 // ClientData
+  classdiagramsettings member_max_width 0 end
+  xyz 335 39 2000
+end
+classcanvas 128130 class_ref 4521986 // ClientDataStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 362 178 2000
+end
+note 128258 "Needed for compile time introspection"
+  xyzwh 41 184 2000 279 49
+relationcanvas 128386 relation_ref 5023106 // <directional composition>
+  decenter_end 461
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 128514 -_-_
+  from ref 128258 z 2001 to ref 128130
+end

@@ -1,0 +1,56 @@
+format 215
+
+classcanvas 128258 class_ref 4508290 // SomePort
+  classdiagramsettings member_max_width 0 end
+  xyz 221.75 163.25 2000
+end
+classcanvas 128386 class_ref 329346 // QAbstractSocket
+  classdiagramsettings member_max_width 0 end
+  xyz 40 624 2000
+end
+classcanvas 128514 class_ref 4508162 // Wait
+  classdiagramsettings member_max_width 0 end
+  xyz 138.25 333.25 2000
+end
+note 128770 "QAbstractSocket has a good API, but:
+ - waitFor* methods are blocking (not wait)
+ - waitFor* methods not work well"
+  xyzwh 625 690 2000 287 83
+classcanvas 128898 class_ref 2092162 // QSerialPort
+  classdiagramsettings member_max_width 0 end
+  xyz 608 40.5 2000
+end
+classcanvas 129154 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 346 40.75 2000
+end
+classcanvas 129410 class_ref 4285442 // SomePortImpl
+  classdiagramsettings member_max_width 0 end
+  xyz 37.5 163.5 2006
+end
+note 129922 "Impl: see std::error_code"
+  xyzwh 578 195 2000 167 65
+relationcanvas 128642 relation_ref 5002114 // <unidirectional association>
+  decenter_begin 490
+  decenter_end 422
+  from ref 128258 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 5002242 // <generalisation>
+  decenter_begin 510
+  from ref 128258 z 2001 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129538 relation_ref 4818434 // <generalisation>
+  geometry VHV unfixed
+  from ref 129410 z 2007 to point 109 125
+  line 129666 z 2007 to point 376 125
+  line 129794 z 2007 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 129026 -_-_
+  from ref 128386 z 2001 to ref 128770
+end

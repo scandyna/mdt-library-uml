@@ -1,6 +1,6 @@
 format 215
 
-classcanvas 128002 class_ref 4488066 // PropertyAttributes
+classcanvas 128002 class_ref 4488066 // FieldAttributes
   classdiagramsettings member_max_width 0 end
   xyz 42 607 2000
 end
@@ -20,11 +20,11 @@ classcanvas 128642 class_ref 2852738 // PrimaryKeyContainer
   classdiagramsettings member_max_width 0 show_context_mode uml end
   xyz 40 42 2012
 end
-classcanvas 129794 class_ref 4501378 // PropertyFlag
+classcanvas 129794 class_ref 4501378 // FieldFlag
   classdiagramsettings member_max_width 0 end
   xyz 632 704 2000
 end
-classcanvas 129922 class_ref 4501506 // PropertyFlags
+classcanvas 129922 class_ref 4501506 // FieldFlags
   classdiagramsettings member_max_width 0 end
   xyz 265 746 2000
 end
@@ -65,6 +65,11 @@ relationcanvas 130306 relation_ref 4995458 // <directional composition>
 end
 relationcanvas 130434 relation_ref 4995586 // <realization>
   from ref 129922 z 2001 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130818 relation_ref 5016066 // <dependency>
+  from ref 128130 z 2001 to ref 130690
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

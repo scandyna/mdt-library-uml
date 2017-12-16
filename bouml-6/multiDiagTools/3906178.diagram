@@ -1,0 +1,11 @@
+format 215
+
+note 128002 "Macro:
+MDT_ENTITY_DATA_STRUCT(
+  Client,
+  MDT_ENTITY_COLUMN(qlonglong, id),
+  MDT_ENTITY_COLUMN(QString, firstName)
+)
+"
+  xyzwh 33.5 43.5 2000 629 125
+end
