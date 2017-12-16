@@ -17,17 +17,9 @@ class id
  private:
   qlonglong id; 
 };
-
-Note: MDT_ENTITY_DATA_STRUCT will embed id into the struct:
-struct Client
-{
-  class id
-  {
-     ...
-  };
-};"
-  xyzwh 18.5 29.5 2000 463 533
-classcanvas 128642 class_ref 4514946 // ColumnTemplate
+"
+  xyzwh 18.5 28.5 2000 335 353
+classcanvas 128642 class_ref 4514946 // FieldTemplate
   classdiagramsettings member_max_width 0 end
   xyz 553 177 2005
 end

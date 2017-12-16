@@ -2,74 +2,88 @@ format 215
 
 classcanvas 128898 class_ref 4467842 // ClientData
   classdiagramsettings member_max_width 0 end
-  xyz 690.15 139.15 2000
+  xyz 594 368 2000
 end
-classcanvas 129026 class_ref 4494594 // ClientObject
+classcanvas 129922 class_ref 4514946 // FieldTemplate
   classdiagramsettings member_max_width 0 end
-  xyz 359.8 287.05 2000
+  xyz 294 504 2000
 end
-classcanvas 129154 class_ref 138626 // QObject
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 372.8 40.15 2000
-end
-note 129538 "Define properties with Q_PROPERTY"
-  xyzwh 40.05 287.05 2000 279 45
-classcanvas 129794 class_ref 4514818 // ClientTable
+classcanvas 131714 class_ref 4521986 // ClientDataStruct
   classdiagramsettings member_max_width 0 end
-  xyz 40.1 420.9 2000
+  xyz 370 383 2006
 end
-classcanvas 129922 class_ref 4514946 // ColumnTemplate
+classcanvas 132098 class_ref 4528514 // idField
   classdiagramsettings member_max_width 0 end
-  xyz 227.8 409.7 2000
+  xyz 80 666 2012
 end
-classcanvas 130178 class_ref 4501634 // EntityBase
+classcanvas 132482 class_ref 4528642 // firstNameField
   classdiagramsettings member_max_width 0 end
-  xyz 156.5 125.95 2005
+  xyz 268 666 2012
 end
-classcanvas 130690 class_ref 4515074 // QUuid
+classcanvas 133122 class_ref 4529026 // Client
   classdiagramsettings member_max_width 0 end
-  xyz 456.9 413.5 2000
+  xyz 325 185 2000
 end
-classcanvas 131074 class_ref 2775042 // Field
-  classdiagramsettings member_max_width 0 show_context_mode uml end
-  xyz 540.9 371 2000
-end
-classcanvas 131202 class_ref 2775810 // Table
+classcanvas 133250 class_ref 4488066 // FieldAttributes
   classdiagramsettings member_max_width 0 end
-  xyz 166.4 594.3 2000
+  xyz 632 40 2000
 end
-relationcanvas 130306 relation_ref 5008898 // <generalisation>
-  from ref 129026 z 2006 to ref 130178
+classcanvas 134530 class_ref 4529154 // FieldAttributesMap
+  classdiagramsettings member_max_width 0 end
+  xyz 325 66 2022
+end
+relationcanvas 131842 relation_ref 5023106 // <directional composition>
+  decenter_begin 462
+  from ref 128898 z 2007 to ref 131714
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130434 relation_ref 5009026 // <generalisation>
-  from ref 130178 z 2006 to ref 129154
+line 132226 ---+
+  from ref 132098 z 2013 to point 40.6 696.1
+  line 134146 z 2013 to point 40.6 424.2
+  line 134274 z 2013 to ref 131714
+relationcanvas 132354 relation_ref 5029762 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 470
+  from ref 132098 z 2013 to point 149 624.9
+  line 132866 z 2013 to point 342 624.9
+  line 132994 z 2013 to ref 129922
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130562 relation_ref 5009154 // <generalisation>
-  decenter_begin 472
-  decenter_end 464
-  from ref 130178 z 2006 to ref 128898
+line 132610 ---+ decenter_end 475
+  from ref 132482 z 2013 to point 456.8 696.1
+  line 134402 z 2013 to ref 131714
+relationcanvas 132738 relation_ref 5029890 // <generalisation>
+  from ref 132482 z 2013 to ref 129922
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131330 relation_ref 5009410 // <dependency>
-  from ref 131202 z 2006 to ref 130178
+relationcanvas 134018 relation_ref 5030530 // <directional composition>
+  decenter_begin 483
+  decenter_end 475
+  from ref 133122 z 2007 to ref 131714
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131458 relation_ref 5016066 // <dependency>
-  from ref 131074 z 2006 to ref 130178
+relationcanvas 134658 relation_ref 5030402 // <directional composition>
+  decenter_end 528
+  from ref 134530 z 2023 to ref 133250
+  no_role_a no_role_b
+  multiplicity_a_pos 616 113 3000 no_multiplicity_b
+end
+relationcanvas 134914 relation_ref 5030658 // <directional composition>
+  decenter_begin 483
+  decenter_end 483
+  from ref 133122 z 2023 to ref 134530
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131586 relation_ref 5022978 // <directional composition>
-  from ref 129794 z 2001 to ref 131074
+relationcanvas 135042 relation_ref 5030786 // <dependency>
+  geometry HV unfixed
+  from ref 133122 z 2001 to point 694 254
+  line 135170 z 2001 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 129666 -_-_
-  from ref 129026 z 2001 to ref 129538
 end

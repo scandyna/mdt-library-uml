@@ -4,7 +4,7 @@ classcanvas 128002 class_ref 4514818 // ClientTable
   classdiagramsettings member_max_width 0 end
   xyz 321 225 2000
 end
-classcanvas 128130 class_ref 4514946 // ColumnTemplate
+classcanvas 128130 class_ref 4514946 // FieldTemplate
   classdiagramsettings member_max_width 0 end
   xyz 653.5 553.5 2006
 end

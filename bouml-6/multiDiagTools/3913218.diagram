@@ -1,0 +1,16 @@
+format 215
+
+classcanvas 128002 class_ref 4529154 // FieldAttributesMap
+  classdiagramsettings member_max_width 0 end
+  xyz 41 58 2000
+end
+classcanvas 128130 class_ref 4488066 // FieldAttributes
+  classdiagramsettings member_max_width 0 end
+  xyz 352 36 2000
+end
+relationcanvas 128258 relation_ref 5030402 // <directional composition>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  multiplicity_a_pos 336 106 3000 no_multiplicity_b
+end
+end
