@@ -1,6 +1,6 @@
-format 211
+format 215
 "Table" // Mdt::CableList::Schema::Table
-  revision 5
+  revision 6
   modified_by 2 "philippe"
   // class settings
   
@@ -44,7 +44,7 @@ format 211
      end
     classdiagram 2460930 "sandbox"
       classdiagramsettings member_max_width 0 end
-      size B
+      size A4-Landscape
     end
 
     class 2774786 "Article"

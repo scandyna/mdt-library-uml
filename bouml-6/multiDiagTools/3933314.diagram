@@ -1,0 +1,72 @@
+format 215
+
+classcanvas 128002 class_ref 4549506 // MetaData
+  classdiagramsettings member_max_width 0 end
+  xyz 179 243 2000
+end
+classcanvas 128130 class_ref 4521986 // ClientDataStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 14 35 2000
+end
+classcanvas 128258 class_ref 4549634 // SomeDataStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 325 38 2000
+end
+classcanvas 128386 class_ref 4549762 // ReflectMembers
+  classdiagramsettings member_max_width 0 end
+  xyz 251 378 2006
+end
+note 128642 "MDT_ENTITY_REFLECT_STRUCT()"
+  xyzwh 487 20 2000 269 51
+note 128770 "Goals:
+ - Get member name: \"id\"
+ - Get member type, comparable to QMetaType::Type
+ - Get value
+ - Should be \"outside\" of the struct
+
+The reflection of the struct must be usable to store/select data, without creating a QObject and define properties.
+A QObject subclass is a plus, and needs its implementation (check if value has changed an emit a signal, ...)
+
+ClientData client;
+SomeList clientList;
+SomeStorage storage;
+client = storage.select(client, client.fields().id == 25);
+clientList = storage.select(client, client.firstName LIKE \"abcd\");
+clientList = storage.selectAll(client);
+storage.store(client);
+storage.remove(client);
+"
+  xyzwh 43 465 2000 701 355
+classcanvas 128898 class_ref 4467842 // ClientData
+  classdiagramsettings member_max_width 0 end
+  xyz 474 225 2006
+end
+classcanvas 129154 class_ref 4514818 // ClientTable
+  classdiagramsettings member_max_width 0 end
+  xyz 16 350 2000
+end
+classcanvas 129538 class_ref 4556290 // EntityDataStaticBase
+  classdiagramsettings member_max_width 0 end
+  xyz 513 98 2000
+end
+note 129922 "Offer runtime (imagine a editor).
+Make creating from reflection available (don't repeat..)"
+  xyzwh 409 372 2000 393 75
+line 128514 ---+
+  from ref 128386 z 2007 to ref 128002
+relationcanvas 129026 relation_ref 5023106 // <directional composition>
+  from ref 128898 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 5051522 // <directional composition>
+  from ref 129538 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 5051650 // <generalisation>
+  from ref 128898 z 2007 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

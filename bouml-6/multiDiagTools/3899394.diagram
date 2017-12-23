@@ -10,7 +10,7 @@ classcanvas 128130 class_ref 4514946 // FieldTemplate
 end
 classcanvas 128386 class_ref 4467842 // ClientData
   classdiagramsettings member_max_width 0 end
-  xyz 270 559 2000
+  xyz 42 546 2000
 end
 classcanvas 128514 class_ref 2838530 // TableTemplate
   classdiagramsettings member_max_width 0 show_context_mode uml end
@@ -26,7 +26,7 @@ MDT_SQL_SCHEMA_TABLE(
   MDT_SQL_SCHEMA_AIPK(ClientDataStruct::id),
   MDT_SQL_SCHEMA_FIELD(ClientDataStruct::firstName, Flags(IsRequired), Lenght(250), DefaultValue(\"No name\"), Collation(xy))
 )"
-  xyzwh 13 393 2000 805 139
+  xyzwh 32 394 2000 805 139
 classcanvas 129282 class_ref 4521986 // ClientDataStruct
   classdiagramsettings member_max_width 0 end
   xyz 473 567 2006

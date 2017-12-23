@@ -1,6 +1,6 @@
-format 211
+format 215
 "CableList" // Mdt::CableList
-  revision 59
+  revision 61
   modified_by 2 "philippe"
   // class settings
   
@@ -3790,6 +3790,68 @@ ${inlines}
     end
 
     class 3089922 "ArticleConnectorTableWidget"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+  classview 2014210 "Connector"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 3919874 "CLConnectorSandbox"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 4535682 "Connector"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5063554 // <directional composition>
+	relation 5037314 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5063554 // <directional composition>
+	  b parent class_ref 4535810 // Contact
+      end
+    end
+
+    class 4535810 "Contact"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {

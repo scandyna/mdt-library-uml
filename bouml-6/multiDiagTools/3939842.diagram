@@ -1,0 +1,74 @@
+format 215
+
+classcanvas 128002 class_ref 4556418 // SomeEntityDataStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 80 366 2000
+end
+classcanvas 128130 class_ref 4556546 // SomeEntityStaticDefinition
+  classdiagramsettings member_max_width 0 end
+  xyz 305 472 2000
+end
+classcanvas 128386 class_ref 4467970 // Field
+  classdiagramsettings member_max_width 0 end
+  xyz 378 369 2000
+end
+note 128770 "We are in a compile time world here !
+We want (f.ex. with Client as Entity):
+
+ClientData client;
+SomeList dataList;
+SomeStorage storage;
+client = storage.select(client, client.def().id() == 25);
+clientList = storage.select(client, client.def().firstName() LIKE \"abcd\");
+clientList = storage.selectAll(client);
+storage.store(client);
+storage.remove(client);
+"
+  xyzwh 40.5 40.5 2000 431 247
+classcanvas 129026 class_ref 4529154 // FieldAttributesMap
+  classdiagramsettings member_max_width 0 end
+  xyz 41 697 2000
+end
+classcanvas 129154 class_ref 4556802 // SomeEntity
+  classdiagramsettings member_max_width 0 end
+  xyz 551.5 40.5 2000
+end
+classcanvas 129282 class_ref 4556930 // SomeEntityData
+  classdiagramsettings member_max_width 0 end
+  xyz 41 483 2000
+end
+classcanvas 130050 class_ref 4488066 // FieldAttributes
+  classdiagramsettings member_max_width 0 end
+  xyz 352 675 3005
+end
+note 130306 "OR, reuse that to generate (runtime) SQL table
+(A lot of work allready done !!)"
+  xyzwh 512 223 2000 327 65
+note 130562 "How to get the value of a field ?"
+  xyzwh 227 314 2000 225 37
+relationcanvas 128898 relation_ref 5052034 // <dependency>
+  from ref 128130 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 5052162 // <directional composition>
+  decenter_end 470
+  from ref 129282 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129922 relation_ref 5052546 // <directional composition>
+  from ref 129282 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 5030402 // <directional composition>
+  from ref 129026 z 3006 to ref 130050
+  no_role_a no_role_b
+  multiplicity_a_pos 336 745 3000 no_multiplicity_b
+end
+line 130434 -_-_
+  from ref 130306 z 2001 to ref 128130
+line 130690 -_-_
+  from ref 130562 z 2001 to ref 128130
+end

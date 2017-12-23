@@ -1,0 +1,24 @@
+format 215
+
+classcanvas 128130 class_ref 4535682 // Connector
+  classdiagramsettings member_max_width 0 end
+  xyz 41 360 2000
+end
+classcanvas 128258 class_ref 4529154 // FieldAttributesMap
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 40.5 201.5 2000
+end
+classcanvas 128386 class_ref 4514946 // FieldTemplate
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 40.5 40.5 2005
+end
+classcanvas 128514 class_ref 4535810 // Contact
+  classdiagramsettings member_max_width 0 end
+  xyz 161 360 2000
+end
+relationcanvas 128642 relation_ref 5037314 // <directional composition>
+  from ref 128130 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

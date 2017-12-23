@@ -1,0 +1,31 @@
+format 215
+
+note 128002 "How to:
+ - Insert a entity
+ - Update a entity
+ - Delete a entity
+ - Select a entity"
+  xyzwh 392.5 40.5 2000 199 157
+note 128130 "Define some EntityBase, which provides:
+ - Entity name (use QObject here ?)
+ - Entity SQL attributes (like SQL name prefix/suffix)
+ - Entity field names
+ - Entity fields attributes (unique, required, length, ...)
+ - Entity fields SQL attributes (field name prefix/suffix)"
+  xyzwh 40.5 392.5 2000 449 161
+note 128258 "Deal with relations between entities"
+  xyzwh 40.5 633.5 2000 257 59
+classcanvas 128386 class_ref 4536194 // AbstractStorage
+  classdiagramsettings member_max_width 0 end
+  xyz 39 39 2000
+end
+classcanvas 128514 class_ref 4536322 // AbstractSqlStorage
+  classdiagramsettings member_max_width 0 end
+  xyz 105 250 2000
+end
+relationcanvas 128642 relation_ref 5037570 // <generalisation>
+  from ref 128514 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end
