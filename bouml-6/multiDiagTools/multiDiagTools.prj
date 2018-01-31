@@ -1,6 +1,6 @@
-format 214
+format 216
 "multiDiagTools"
-  revision 35
+  revision 36
   modified_by 2 "philippe"
   cpp_root_dir "cpp_gen/"
 
@@ -38,11 +38,14 @@ format 214
 
   image_root_dir ""
 
+
   mark_for_import
   
   ncouples 1
   key "html dir" value "/tmp/"
   package_ref 409858 // principes
+
+  package_ref 766082 // apps
 
   package_ref 401794 // Mdt
 

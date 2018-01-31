@@ -1,0 +1,15 @@
+format 216
+
+classcanvas 128002 class_ref 4605954 // StlContainer
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 323.5 2000
+end
+classcanvas 128130 class_ref 4606082 // ContainerRef
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 532.5 2000
+end
+classcanvas 128258 class_ref 4646402 // StlContainerIteratorAdapter
+  classdiagramsettings member_max_width 0 end
+  xyzwh 40.5 40.5 2000 523 203
+end
+end

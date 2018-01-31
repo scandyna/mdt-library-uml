@@ -1,16 +1,20 @@
-format 215
+format 216
 
 classcanvas 128130 class_ref 4501378 // FieldFlag
   classdiagramsettings member_max_width 0 end
-  xyz 546.6 42.3 2000
+  xyz 41 42.3 2000
 end
 classcanvas 128258 class_ref 4501506 // FieldFlags
   classdiagramsettings member_max_width 0 end
-  xyz 585.6 215.5 2006
+  xyz 80 191.8 2006
 end
 classcanvas 128514 class_ref 4488066 // FieldAttributes
   classdiagramsettings member_max_width 0 end
-  xyz 40.8 188.5 2012
+  xyz 238.3 153.8 2012
+end
+classcanvas 128770 class_ref 4570370 // FieldMaxLength
+  classdiagramsettings member_max_width 0 end
+  xyz 434.3 310.2 2000
 end
 relationcanvas 128386 relation_ref 4995586 // <realization>
   from ref 128258 z 2007 to ref 128130
@@ -19,6 +23,11 @@ relationcanvas 128386 relation_ref 4995586 // <realization>
 end
 relationcanvas 128642 relation_ref 4995458 // <directional composition>
   from ref 128514 z 2013 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 5072514 // <directional composition>
+  from ref 128514 z 2013 to ref 128770
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

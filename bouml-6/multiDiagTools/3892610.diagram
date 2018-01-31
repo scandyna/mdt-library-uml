@@ -1,24 +1,24 @@
-format 215
+format 216
 
 classcanvas 128002 class_ref 4501634 // EntityBase
   classdiagramsettings member_max_width 0 end
-  xyz 384.8 389.5 2005
+  xyz 345 63 2005
 end
 classcanvas 128130 class_ref 2775810 // Table
   classdiagramsettings member_max_width 0 end
-  xyz 43 41.1 2000
+  xyz 39 292 2000
 end
 classcanvas 129154 class_ref 4515458 // SqlFieldAttributes
   classdiagramsettings member_max_width 0 end
-  xyz 253.5 530.6 2000
+  xyz 953 519 2000
 end
 classcanvas 129282 class_ref 2775042 // Field
   classdiagramsettings member_max_width 0 end
-  xyz 107.6 645.9 2010
+  xyz 138 41 2010
 end
 classcanvas 129538 class_ref 4515202 // EntityTableAttributes
   classdiagramsettings member_max_width 0 end
-  xyz 70 393 3005
+  xyz 952 399 3005
 end
 relationcanvas 129026 relation_ref 5009410 // <dependency>
   from ref 128130 z 2006 to ref 128002
@@ -26,14 +26,17 @@ relationcanvas 129026 relation_ref 5009410 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129410 relation_ref 5016066 // <dependency>
+  decenter_begin 479
   from ref 129282 z 2011 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129666 relation_ref 5009538 // <directional composition>
-  from ref 129538 z 3006 stereotype "<<map>>" xyz 224 502 3006 to ref 129154
+  decenter_begin 475
+  decenter_end 475
+  from ref 129538 z 3006 stereotype "<<map>>" xyz 1010 499 3006 to ref 129154
   no_role_a no_role_b
-  multiplicity_a_pos 275 549 3000 no_multiplicity_b
+  multiplicity_a_pos 1024 492 3000 no_multiplicity_b
 end
 relationcanvas 129794 relation_ref 5016194 // <dependency>
   from ref 128130 z 3006 to ref 129538

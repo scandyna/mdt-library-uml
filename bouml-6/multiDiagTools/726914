@@ -1,6 +1,6 @@
-format 215
+format 216
 "TestLib" // Mdt::TestLib
-  revision 2
+  revision 4
   modified_by 2 "philippe"
   // class settings
   
@@ -94,6 +94,95 @@ ${inlines}
 	
 	
       end
+    end
+
+    classdiagram 3992450 "ItemModelResizeTests"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 4666882 "ItemModelInsertRowTest"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5175554 // <generalisation>
+	relation 5148418 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5175554 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+    end
+
+    class 4667010 "ItemModelRemoveRowTest"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5175682 // <generalisation>
+	relation 5148546 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5175682 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+    end
+  end
+
+  classview 2040450 "TestLib_Widgets"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 3992578 "TestLibDisplayModel"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 4667138 "DisplayModel"
+      visibility package stereotype "PlainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 

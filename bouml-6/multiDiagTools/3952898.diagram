@@ -1,0 +1,105 @@
+format 216
+
+classcanvas 128002 class_ref 4570498 // Task
+  classdiagramsettings member_max_width 0 end
+  xyz 256.237 146.179 2000
+end
+classcanvas 128770 class_ref 4571138 // Team
+  classdiagramsettings member_max_width 0 end
+  xyz 435.337 381.847 2000
+end
+classcanvas 129026 class_ref 4571394 // TaskGroup
+  classdiagramsettings member_max_width 0 end
+  xyz 492.063 146.179 2000
+end
+classcanvas 129154 class_ref 4632578 // Place
+  classdiagramsettings member_max_width 0 end
+  xyz 92.7895 146.179 2000
+end
+classcanvas 129282 class_ref 4659714 // Document
+  classdiagramsettings member_max_width 0 end
+  xyz 298.932 381.784 2000
+end
+classcanvas 129410 class_ref 4659842 // Training
+  classdiagramsettings member_max_width 0 end
+  xyz 168.416 382.447 2000
+end
+classcanvas 129538 class_ref 4659970 // Project
+  classdiagramsettings member_max_width 0 end
+  xyz 248.853 41.5 2000
+end
+classcanvas 129666 class_ref 4660098 // Specification
+  classdiagramsettings member_max_width 0 end
+  xyz 40.9684 40.1 2000
+end
+classcanvas 131202 class_ref 4660226 // Tools
+  classdiagramsettings member_max_width 0 end
+  xyz 35.6947 377.447 2000
+end
+classcanvas 131714 class_ref 4660354 // Collaborater
+  classdiagramsettings member_max_width 0 end
+  xyz 548.084 381.047 2000
+end
+relationcanvas 129794 relation_ref 5140738 // <unidirectional association>
+  from ref 129538 z 2001 to ref 129666
+  no_role_a no_role_b
+  multiplicity_a_pos 143 73 3000 no_multiplicity_b
+end
+relationcanvas 129922 relation_ref 5140866 // <directional composition>
+  from ref 129026 z 2001 to ref 128002
+  no_role_a no_role_b
+  multiplicity_a_pos 308 178 3000 no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 5141122 // <association>
+  from ref 128002 z 2001 to ref 129154
+  no_role_a no_role_b
+  multiplicity_a_pos 146 178 3000 multiplicity_b_pos 239 178 3000
+end
+relationcanvas 130306 relation_ref 5141250 // <association>
+  from ref 128002 z 2001 to ref 129538
+  no_role_a no_role_b
+  multiplicity_a_pos 263 94 3000 multiplicity_b_pos 264 119 3000
+end
+relationcanvas 130434 relation_ref 5141378 // <association>
+  geometry VHV unfixed
+  decenter_begin 622
+  decenter_end 116
+  from ref 128002 z 2001 to point 281 248.7
+  line 130690 z 2001 to point 304 248.7
+  line 130818 z 2001 to ref 129282
+  no_role_a no_role_b
+  multiplicity_a_pos 294 354 3000 multiplicity_b_pos 270 199 3000
+end
+relationcanvas 130562 relation_ref 5141506 // <association>
+  geometry VHV unfixed
+  decenter_begin 355
+  decenter_end 153
+  from ref 128002 z 2001 to point 269 288.8
+  line 130946 z 2001 to point 175 288.8
+  line 131074 z 2001 to ref 129410
+  no_role_a no_role_b
+  multiplicity_a_pos 166 356 3000 multiplicity_b_pos 258 199 3000
+end
+relationcanvas 131330 relation_ref 5141634 // <association>
+  decenter_begin 200
+  decenter_end 808
+  from ref 128002 z 2001 to ref 131202
+  no_role_a no_role_b
+  multiplicity_a_pos 81 380 3000 multiplicity_b_pos 252 192 3000
+end
+relationcanvas 131842 relation_ref 5141762 // <association>
+  geometry VHV unfixed
+  decenter_begin 800
+  decenter_end 340
+  from ref 128002 z 2001 to point 290 208
+  line 132098 z 2001 to point 576 208
+  line 132226 z 2001 to ref 131714
+  no_role_a no_role_b
+  multiplicity_a_pos 566 355 3000 no_multiplicity_b
+end
+relationcanvas 131970 relation_ref 5141890 // <directional composition>
+  from ref 128770 z 2001 to ref 131714
+  no_role_a no_role_b
+  multiplicity_a_pos 536 413 3000 no_multiplicity_b
+end
+end

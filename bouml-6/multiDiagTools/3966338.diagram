@@ -1,0 +1,64 @@
+format 216
+
+classcanvas 128002 class_ref 147074 // QAbstractListModel
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 315 42 2000
+end
+classcanvas 128130 class_ref 4585474 // SomeConcreteStlList
+  classdiagramsettings member_max_width 0 end
+  xyz 297.5 824.5 2000
+end
+classcanvas 128258 class_ref 4585602 // ReadOnlyStlListModel
+  classdiagramsettings member_max_width 0 end
+  xyz 203 295 2000
+end
+classcanvas 128386 class_ref 4585730 // AbstractStlListModel
+  classdiagramsettings member_max_width 0 end
+  xyz 85 129 2000
+end
+note 128770 " - Read only
+ - Read/write
+ - Resizable"
+  xyzwh 784.5 267.5 2000 177 101
+note 128898 "No signal/slot in the template class."
+  xyzwh 722 170 2000 293 53
+classcanvas 129154 class_ref 4592514 // EditableStlListModel
+  classdiagramsettings member_max_width 0 end
+  xyz 121 497 2000
+end
+classcanvas 129666 class_ref 4592642 // ResizableStlListModel
+  classdiagramsettings member_max_width 0 end
+  xyz 113 641 2000
+end
+classcanvas 130434 class_ref 4592770 // SomeStlContainer
+  classdiagramsettings member_max_width 0 end
+  xyz 41 354 2000
+end
+relationcanvas 128514 relation_ref 5092866 // <generalisation>
+  from ref 128386 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 5092994 // <generalisation>
+  from ref 128258 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 5099906 // <generalisation>
+  from ref 129666 z 2001 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130306 relation_ref 5100034 // <generalisation>
+  from ref 129154 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 5100162 // <directional composition>
+  from ref 128258 z 2001 to ref 130434
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 129026 -_-_ decenter_begin 415
+  from ref 128898 z 2001 to ref 128386
+end

@@ -1,4 +1,4 @@
-format 215
+format 216
 
 classcanvas 128002 class_ref 2775810 // Table
   classdiagramsettings member_max_width 0 show_context_mode uml end
@@ -52,13 +52,13 @@ classcanvas 130178 class_ref 4467714 // ClientDefinition
   classdiagramsettings member_max_width 0 end
   xyz 183.25 585.25 2005
 end
-classcanvas 130818 class_ref 4467842 // ClientData
+classcanvas 130818 class_ref 4467842 // ArticleData
   classdiagramsettings member_max_width 0 end
   xyz 350 585 2000
 end
 classcanvas 130946 class_ref 4467970 // Field
   classdiagramsettings member_max_width 0 end
-  xyz 424 604 2015
+  xyz 80 379 2015
 end
 relationcanvas 128898 relation_ref 3608578 // <directional composition>
   decenter_begin 577

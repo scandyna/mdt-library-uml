@@ -1,4 +1,4 @@
-format 215
+format 216
 
 classcanvas 128002 class_ref 4528898 // SqlTable
   classdiagramsettings member_max_width 0 end
@@ -8,4 +8,24 @@ classcanvas 128130 class_ref 2775810 // Table
   classdiagramsettings member_max_width 0 end
   xyz 11 53 2005
 end
+note 128258 "Use boost:fusion::foreach() to fetch fields"
+  xyzwh 456 388 2000 279 45
+classcanvas 128514 class_ref 4515458 // SqlFieldAttributes
+  classdiagramsettings member_max_width 0 end
+  xyz 190 581 2000
+end
+classcanvas 128770 class_ref 4673922 // NamePrefix
+  classdiagramsettings member_max_width 0 end
+  xyz 524 629 2000
+end
+classcanvas 128898 class_ref 4674050 // NameSuffix
+  classdiagramsettings member_max_width 0 end
+  xyz 552 538 2000
+end
+classcanvas 129026 class_ref 4674178 // SqlTableAttributes
+  classdiagramsettings member_max_width 0 end
+  xyz 208 488 2000
+end
+line 128386 -_-_
+  from ref 128002 z 2001 to ref 128258
 end

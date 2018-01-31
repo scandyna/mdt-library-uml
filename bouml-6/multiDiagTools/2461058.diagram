@@ -1,4 +1,4 @@
-format 211
+format 216
 
 classcanvas 128002 class_ref 2774914 // FieldType
   classdiagramsettings member_max_width 0 end
@@ -11,6 +11,6 @@ end
 relationcanvas 129922 relation_ref 3232514 // <directional composition>
   from ref 129794 z 2001 to ref 128002
   no_role_a no_role_b
-  multiplicity_a_pos 330 80 3000 no_multiplicity_b
+  multiplicity_a_pos 330 83 3000 no_multiplicity_b
 end
 end

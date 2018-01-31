@@ -1,0 +1,27 @@
+format 216
+
+classcanvas 128002 class_ref 4592258 // DataRecord
+  classdiagramsettings member_max_width 0 end
+  xyz 181 129 2000
+end
+classcanvas 128130 class_ref 4563842 // DataTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 400.5 2005
+end
+classcanvas 128258 class_ref 4612610 // const_iterator
+  classdiagramsettings member_max_width 0 end
+  xyz 42 202 2006
+end
+classcanvas 128514 class_ref 4612738 // iterator
+  classdiagramsettings member_max_width 0 end
+  xyz 235 42 2006
+end
+classcanvas 128770 class_ref 4619266 // DataRecordIterator
+  classdiagramsettings member_max_width 0 end
+  xyz 404 183 2000
+end
+line 128386 ---+
+  from ref 128258 z 2007 to ref 128002
+line 128642 ---+
+  from ref 128514 z 2007 to ref 128002
+end

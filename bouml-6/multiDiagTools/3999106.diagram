@@ -1,0 +1,77 @@
+format 216
+
+classcanvas 128002 class_ref 2774914 // FieldType
+  classdiagramsettings member_max_width 0 end
+  xyz 531 39 2000
+end
+classcanvas 128130 class_ref 2457218 // QMetaType
+  classdiagramsettings member_max_width 0 end
+  xyz 696 146 2000
+end
+classcanvas 128258 class_ref 2522882 // Type
+  classdiagramsettings member_max_width 0 end
+  xyz 705 38 2006
+end
+classcanvas 128514 class_ref 4680706 // FieldTypeMap
+  classdiagramsettings member_max_width 0 end
+  xyz 480 318 2000
+end
+classcanvas 129538 class_ref 4681218 // SomeCustomFieldTypeMapImplementation
+  classdiagramsettings member_max_width 0 end
+  xyz 36 441 2000
+end
+note 131202 "Think also: modifiers (or how to name?):
+QMetaType::UInt is a int with unsigned modifier(?)
+
+We have:
+ - short, long, etc.. 
+ - signed / unsigned
+
+Create a matrix c++ / SQL
+"
+  xyzwh 40.5 40.5 2000 463 199
+classcanvas 131458 class_ref 4681474 // FieldTypeMapImplementation
+  classdiagramsettings member_max_width 0 end
+  xyz 36 318 2000
+end
+classcanvas 131970 class_ref 4688002 // FieldLength
+  classdiagramsettings member_max_width 0 end
+  xyz 794.5 583.5 2005
+end
+classcanvas 132098 class_ref 4688130 // FieldTypeFlag
+  classdiagramsettings member_max_width 0 end
+  xyz 525.5 583.5 2000
+end
+note 132226 "Hmmm..
+Maybe, a table based approach can be good if we want to store user defined map..
+Note: do not care about allocs, it's not a video buffer.
+
+Note 2: a setup is a list of Fields (i.e. the Schema)."
+  xyzwh 40.5 583.5 2000 405 159
+classcanvas 132482 class_ref 4694658 // FieldTypeFlags
+  classdiagramsettings member_max_width 0 end
+  xyz 582 477 2000
+end
+line 128386 ---+
+  from ref 128258 z 2007 to ref 128130
+relationcanvas 131714 relation_ref 5163522 // <generalisation>
+  from ref 129538 z 2001 to ref 131458
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131842 relation_ref 5163650 // <directional composition>
+  from ref 128514 z 2001 to ref 131458
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132354 relation_ref 5170178 // <association>
+  from ref 128002 z 2007 to ref 128258
+  no_role_a no_role_b
+  multiplicity_a_pos 689 82 3000 multiplicity_b_pos 617 82 3000
+end
+relationcanvas 132610 relation_ref 5170306 // <dependency>
+  from ref 132482 z 2001 to ref 132098
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

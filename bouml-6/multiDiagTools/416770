@@ -1,6 +1,6 @@
 format 215
 "CableList" // Mdt::CableList
-  revision 61
+  revision 62
   modified_by 2 "philippe"
   // class settings
   
@@ -2803,7 +2803,7 @@ ${inlines}
 
     classdiagram 2324866 "LinkKey"
       classdiagramsettings member_max_width 0 end
-      size B-Landscape
+      size Legal
     end
 
     class 2607618 "LinkKey"
