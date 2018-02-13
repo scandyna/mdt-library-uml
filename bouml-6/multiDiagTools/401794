@@ -1,6 +1,6 @@
 format 216
 "Mdt" // Mdt
-  revision 67
+  revision 68
   modified_by 2 "philippe"
   // class settings
   
@@ -1823,6 +1823,8 @@ ${members}};
   end
 
   package_ref 416770 // CableList
+
+  package_ref 772610 // Container
 
   package_ref 402946 // Device
 

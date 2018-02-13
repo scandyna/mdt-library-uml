@@ -1,0 +1,40 @@
+format 216
+
+classcanvas 128002 class_ref 4715778 // IsEntityDef
+  classdiagramsettings member_max_width 0 end
+  xyz 257 193 2000
+end
+classcanvas 128130 class_ref 4563458 // ArticleDef
+  classdiagramsettings member_max_width 0 end
+  xyz 512 40 2000
+end
+note 128258 "Or, inherit from something like EntityDefTag and use std::is_base_of<>()"
+  xyzwh 484 217 2000 281 71
+classcanvas 128770 class_ref 4521986 // ArticleDataStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 138 48 2006
+end
+note 129026 "Other problem: how to check that a EntityDataStruct is related to a EntityDef ?
+
+Note: EntityDataStruct must be free, no tag or inheritance imposed to the user !"
+  xyzwh 41 351 2000 351 123
+classcanvas 129282 class_ref 4728962 // IsEntityDataStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 433 386 2000
+end
+relationcanvas 128898 relation_ref 5065986 // <dependency>
+  decenter_begin 528
+  decenter_end 533
+  from ref 128130 z 2007 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 128642 -_-_
+  from ref 128130 z 2001 to ref 128258
+line 129154 -_-_ decenter_begin 523
+  from ref 128770 z 2007 to ref 129026
+line 129410 -_-_ decenter_begin 463
+  from ref 129026 z 2001 to ref 129282
+line 129538 -_-_ decenter_begin 462
+  from ref 128002 z 2001 to ref 128258
+end

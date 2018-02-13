@@ -14,22 +14,12 @@ classcanvas 128258 class_ref 2522882 // Type
 end
 classcanvas 128514 class_ref 4680706 // FieldTypeMap
   classdiagramsettings member_max_width 0 end
-  xyz 480 318 2000
+  xyz 481 301 2000
 end
 classcanvas 129538 class_ref 4681218 // SomeCustomFieldTypeMapImplementation
   classdiagramsettings member_max_width 0 end
   xyz 36 441 2000
 end
-note 131202 "Think also: modifiers (or how to name?):
-QMetaType::UInt is a int with unsigned modifier(?)
-
-We have:
- - short, long, etc.. 
- - signed / unsigned
-
-Create a matrix c++ / SQL
-"
-  xyzwh 40.5 40.5 2000 463 199
 classcanvas 131458 class_ref 4681474 // FieldTypeMapImplementation
   classdiagramsettings member_max_width 0 end
   xyz 36 318 2000
@@ -52,6 +42,14 @@ classcanvas 132482 class_ref 4694658 // FieldTypeFlags
   classdiagramsettings member_max_width 0 end
   xyz 582 477 2000
 end
+note 132738 "User defined types..
+
+define: primitive_value_type ?
+
+Or : underlaying_type ?
+
+Or, simply: value_type ? (can be confused wuth STL, f.ex. std::vectro)"
+  xyzwh 45 40 2000 459 173
 line 128386 ---+
   from ref 128258 z 2007 to ref 128130
 relationcanvas 131714 relation_ref 5163522 // <generalisation>

@@ -2,71 +2,61 @@ format 216
 
 classcanvas 128898 class_ref 4467842 // ArticleData
   classdiagramsettings member_max_width 0 end
-  xyz 258.2 265.2 2000
+  xyz 742.3 260 2000
 end
 classcanvas 131714 class_ref 4521986 // ArticleDataStruct
   classdiagramsettings member_max_width 0 end
-  xyz 770.6 287.2 2006
+  xyz 879.95 742.6 2006
 end
 classcanvas 135298 class_ref 4536066 // ArticleId
   classdiagramsettings member_max_width 0 end
-  xyz 56.4 279.2 2000
+  xyz 1067.6 320.05 2000
 end
 classcanvas 140418 class_ref 4563458 // ArticleDef
   classdiagramsettings member_max_width 0 end
-  xyz 530.2 279.2 2000
+  xyz 295.55 509.85 2000
 end
 classcanvas 140546 class_ref 4563586 // idField
   classdiagramsettings member_max_width 0 end
-  xyz 522.2 415.4 2006
+  xyz 405.15 671.55 2006
 end
 classcanvas 140802 class_ref 4563714 // descriptionField
   classdiagramsettings member_max_width 0 end
-  xyz 522.2 159 2006
+  xyz 41.55 528.85 2006
 end
-note 141442 "Make some Uinique Identifier (or PK) abstraction ?"
-  xyzwh 42 433.6 2000 197 63
 classcanvas 142210 class_ref 4563842 // DataTemplate
   classdiagramsettings member_max_width 0 end
-  xyz 266.2 40.8 2005
+  xyz 750.3 39.9 2005
 end
-note 142338 "What is better:
-
-class ClientData
-{
-  ...
-  MDT_ENTITY_...(
-    ClientDataStruct,
-    ClientDef
-  )
-  ...
-};
-
-OR
-
-class ClientData : public EntityDataTemplate<ClientDataStruct, ClientDef>
-{
-  void setId(int id)
-  {
-    data().id.setId(id);
-  }
-};
-"
-  xyzwh 40.2 616.3 2000 767 433
+classcanvas 143618 class_ref 2649602 // Double
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 549.5 320.05 2000
+end
+classcanvas 144130 class_ref 4701570 // UniqueIdTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 996.6 104.2 2005
+end
+note 144386 "Traits / checks :
+ - Add a TAG in generated EntityDef (here ArticleDef) ?"
+  xyzwh 560 534.85 2000 352 70
 relationcanvas 131842 relation_ref 5023106 // <directional composition>
-  decenter_end 469
-  from ref 128898 z 2007 to point 368 536.2
-  line 143362 z 2007 to point 840.8 536.2
-  line 143490 z 2007 to ref 131714
+  decenter_begin 941
+  decenter_end 476
+  from ref 128898 z 2007 to ref 131714
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 140674 ---+ decenter_begin 478 decenter_end 477
+line 140674 ---+ decenter_begin 483 decenter_end 946
   from ref 140546 z 2007 to ref 140418
-line 140930 ---+ decenter_begin 478 decenter_end 477
+line 140930 ---+
   from ref 140802 z 2007 to ref 140418
 relationcanvas 141058 relation_ref 5059074 // <unidirectional association>
-  from ref 128898 z 2001 to ref 140418
+  geometry VHV unfixed
+  decenter_begin 58
+  decenter_end 946
+  from ref 128898 z 2001 to point 752 469.7
+  line 144898 z 2001 to point 505 469.7
+  line 145026 z 2001 to ref 140418
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -76,15 +66,30 @@ relationcanvas 142466 relation_ref 5059458 // <generalisation>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 142594 relation_ref 5065986 // <dependency>
-  from ref 140418 z 2007 to ref 131714
+  geometry VH unfixed
+  decenter_begin 311
+  from ref 140418 z 2007 to point 362 792
+  line 144514 z 2007 to ref 131714
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 143234 relation_ref 5079170 // <dependency>
+  decenter_end 577
   from ref 128898 z 2001 to ref 135298
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 141570 -_-_ decenter_end 477
-  from ref 135298 z 2001 to ref 141442
+relationcanvas 143746 relation_ref 5176834 // <dependency>
+  decenter_end 577
+  from ref 128898 z 2001 to ref 143618
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 144258 relation_ref 5177218 // <generalisation>
+  from ref 135298 z 2006 to ref 144130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 144770 -_-_
+  from ref 140418 z 2001 to ref 144386
 end

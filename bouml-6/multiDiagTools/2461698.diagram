@@ -1,68 +1,65 @@
-format 215
+format 216
 
 classcanvas 128002 class_ref 2775810 // Table
   classdiagramsettings member_max_width 0 end
-  xyz 231 153 2000
+  xyz 223 216 2000
 end
 classcanvas 128514 class_ref 2775042 // Field
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 354 690 2005
+  xyz 50 42 2005
 end
 classcanvas 128770 class_ref 2775682 // ForeignKey
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 98 602 2000
+  xyz 314 42 2000
 end
 classcanvas 129410 class_ref 2852738 // PrimaryKeyContainer
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 594 42 2000
+  xyz 459.5 704.5 2000
 end
 classcanvas 129922 class_ref 2900610 // ForeignKeyList
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 82 426 2006
+  xyz 298 130 2006
 end
 classcanvas 130434 class_ref 2907138 // IndexList
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 265 514 2010
+  xyz 113 338 2010
 end
 classcanvas 130562 class_ref 2782466 // Index
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 177 514 3005
+  xyz 121 426 3005
 end
 classcanvas 131202 class_ref 2789378 // Collation
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 442 690 2011
+  xyz 38 554 2011
 end
 classcanvas 131458 class_ref 2933890 // Charset
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 441 778 2016
+  xyz 145 554 2016
 end
 classcanvas 132226 class_ref 3463810 // TablePrivate
   classdiagramsettings member_max_width 0 end
-  xyz 1143 290 2000
+  xyz 1135 338 2000
 end
 classcanvas 132482 class_ref 2125186 // QSharedData
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 1136 66 2005
+  xyz 1128 130 2005
 end
 classcanvas 132738 class_ref 2873090 // FieldList
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 343 602 2011
+  xyz 207 42 2011
 end
 note 134530 "fromEntity(): see what is SQL specific:
  - Table name prefix / suffix"
-  xyzwh 40.5 904.5 2000 339 73
-relationcanvas 129538 relation_ref 3246082 // <directional composition>
-  decenter_begin 494
-  decenter_end 469
-  from ref 128002 z 2001 to ref 129410
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
+  xyzwh 40.5 704.5 2000 339 73
+classcanvas 134786 class_ref 4722434 // PrimaryKeyType
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 602 554 2005
 end
 relationcanvas 129794 relation_ref 3273986 // <dependency>
-  decenter_end 724
-  from ref 128770 z 2001 to point 40 624
-  line 134402 z 2001 to point 40 384
-  line 134658 z 2001 to ref 128002
+  geometry HV unfixed
+  decenter_end 257
+  from ref 128770 z 2001 to point 445 62
+  line 134402 z 2001 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -70,16 +67,16 @@ relationcanvas 130050 relation_ref 3283074 // <directional composition>
   decenter_end 447
   from ref 129922 z 2007 to ref 128770
   no_role_a no_role_b
-  multiplicity_a_pos 120 575 3000 no_multiplicity_b
+  multiplicity_a_pos 336 96 3000 no_multiplicity_b
 end
 relationcanvas 130690 relation_ref 3296130 // <directional composition>
+  decenter_begin 436
   from ref 130434 z 3006 to ref 130562
   no_role_a no_role_b
-  multiplicity_a_pos 233 546 3000 no_multiplicity_b
+  multiplicity_a_pos 128 399 3000 no_multiplicity_b
 end
 relationcanvas 130946 relation_ref 3296258 // <directional composition>
-  decenter_begin 83
-  decenter_end 549
+  decenter_begin 484
   from ref 128002 z 2011 to ref 130434
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -90,7 +87,6 @@ relationcanvas 131330 relation_ref 3184130 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131586 relation_ref 3317250 // <directional composition>
-  decenter_begin 434
   from ref 131202 z 2017 to ref 131458
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -104,7 +100,7 @@ end
 relationcanvas 132866 relation_ref 3239554 // <directional composition>
   from ref 132738 z 2012 to ref 128514
   no_role_a no_role_b
-  multiplicity_a_pos 361 663 3000 no_multiplicity_b
+  multiplicity_a_pos 104 74 3000 no_multiplicity_b
 end
 relationcanvas 132994 relation_ref 3816706 // <dependency>
   from ref 128770 z 2012 to ref 132738
@@ -112,19 +108,27 @@ relationcanvas 132994 relation_ref 3816706 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 133122 relation_ref 3830530 // <directional composition>
-  decenter_begin 165
+  decenter_begin 19
   from ref 128002 z 2012 to ref 132738
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 133634 relation_ref 3289602 // <directional composition>
-  decenter_begin 924
+  decenter_begin 147
   from ref 128002 z 2007 to ref 129922
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 134018 relation_ref 3830786 // <directional composition>
+  decenter_begin 484
   from ref 128002 z 2001 to ref 132226
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134914 relation_ref 5185410 // <directional composition>
+  decenter_begin 494
+  decenter_end 461
+  from ref 128002 z 2006 to ref 134786
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

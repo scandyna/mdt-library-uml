@@ -1,6 +1,6 @@
-format 214
+format 216
 "Numeric" // Mdt::Numeric
-  revision 7
+  revision 8
   modified_by 2 "philippe"
   // class settings
   
@@ -784,6 +784,11 @@ ${inlines}
 	    classrelation_ref 4941058 // <dependency>
 	  b parent class_ref 2649986 // Length
       end
+    end
+
+    classdiagram 4032258 "NumericRange"
+      classdiagramsettings member_max_width 0 end
+      size A4
     end
   end
 

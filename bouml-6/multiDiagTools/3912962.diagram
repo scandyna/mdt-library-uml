@@ -1,4 +1,4 @@
-format 215
+format 216
 
 classcanvas 128130 class_ref 4514946 // FieldTemplate
   classdiagramsettings member_max_width 0 end
@@ -10,7 +10,7 @@ classcanvas 128258 class_ref 2775042 // Field
 end
 classcanvas 128386 class_ref 4528770 // SqlField
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 697.5 2000
+  xyz 39.5 635.5 2000
 end
 classcanvas 128514 class_ref 4488066 // FieldAttributes
   classdiagramsettings member_max_width 0 end

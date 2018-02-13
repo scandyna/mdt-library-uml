@@ -1,0 +1,77 @@
+format 216
+
+classcanvas 128002 class_ref 4701826 // ResizableMutableStlDataListTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 39.6 600.8 2000
+end
+classcanvas 128130 class_ref 4701954 // ConstStlDataListTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 271.6 40.4 2000
+end
+classcanvas 128258 class_ref 4702082 // const_iterator
+  classdiagramsettings member_max_width 0 end
+  xyz 130 154.4 2006
+end
+classcanvas 128514 class_ref 4702210 // iterator
+  classdiagramsettings member_max_width 0 end
+  xyz 303.8 450.8 2006
+end
+classcanvas 128898 class_ref 4701698 // StlContainer
+  classdiagramsettings member_max_width 0 end
+  xyz 617.4 134.4 2000
+end
+note 130050 "Const iterable or const ?"
+  xyzwh 40.9 928.1 2000 193 53
+classcanvas 130178 class_ref 4702466 // MutableStlDataListTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 74.2 392.4 2000
+end
+classcanvas 130946 class_ref 4702594 // ResizableStlConstDataListTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 305.6 744.4 2000
+end
+classcanvas 131458 class_ref 4702722 // ResizableStlDataListTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 64.6 703.4 2000
+end
+line 128386 ---+
+  from ref 128258 z 2007 to ref 128130
+relationcanvas 130306 relation_ref 5177986 // <generalisation>
+  decenter_begin 513
+  from ref 128002 z 2001 to ref 130178
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130434 relation_ref 5178114 // <generalisation>
+  geometry VHV unfixed
+  from ref 130178 z 2001 to point 166.2 352.4
+  line 131202 z 2001 to point 422.6 352.4
+  line 131330 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130690 relation_ref 5178242 // <dependency>
+  from ref 128130 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 130818 ---+ decenter_end 473
+  from ref 128514 z 2007 to ref 130178
+relationcanvas 131074 relation_ref 5178370 // <generalisation>
+  from ref 130946 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131586 relation_ref 5178498 // <generalisation>
+  from ref 130946 z 2001 to ref 131458
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131714 relation_ref 5178626 // <generalisation>
+  decenter_begin 513
+  decenter_end 517
+  from ref 128002 z 2001 to ref 131458
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

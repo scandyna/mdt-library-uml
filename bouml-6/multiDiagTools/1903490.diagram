@@ -1,7 +1,7 @@
-format 210
+format 216
 
 classcanvas 128002 class_ref 2277122 // FieldIndexList
   classdiagramsettings member_max_width 0 end
-  xyz 181 272 2000
+  xyz 110 64 2000
 end
 end
