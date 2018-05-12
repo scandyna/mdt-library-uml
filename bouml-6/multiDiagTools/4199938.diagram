@@ -1,0 +1,51 @@
+format 217
+
+classcanvas 128002 class_ref 5057922 // SQLiteDatabaseFileDialog
+  classdiagramsettings member_max_width 0 end
+  xyz 248 385 2000
+end
+classcanvas 128130 class_ref 5057794 // SQLiteDatabase
+  classdiagramsettings member_max_width 0 end
+  xyz 746 370 2000
+end
+classcanvas 128386 class_ref 370434 // QDialog
+  classdiagramsettings member_max_width 0 end
+  xyz 285 42 2000
+end
+classcanvas 129154 class_ref 2227202 // QFileDialog
+  classdiagramsettings member_max_width 0 end
+  xyz 433 258 2005
+end
+classcanvas 129538 class_ref 5058178 // DbOpenMode
+  classdiagramsettings member_max_width 0 end
+  xyz 40 391 2006
+end
+classcanvas 129794 class_ref 5064834 // AcceptMode
+  classdiagramsettings member_max_width 0 end
+  xyz 560 227 2011
+end
+relationcanvas 128258 relation_ref 5499778 // <directional composition>
+  decenter_end 523
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 5506434 // <generalisation>
+  decenter_begin 540
+  decenter_end 509
+  from ref 129154 z 2006 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 5506562 // <generalisation>
+  decenter_begin 507
+  decenter_end 540
+  from ref 128002 z 2006 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 129666 ---+ decenter_begin 532
+  from ref 129538 z 2007 to ref 128002
+line 129922 ---+
+  from ref 129794 z 2012 to ref 129154
+end

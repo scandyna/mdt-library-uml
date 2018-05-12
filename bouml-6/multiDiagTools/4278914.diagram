@@ -1,0 +1,29 @@
+format 218
+
+classcanvas 128002 class_ref 5165314 // RemoveRowsProxyModel
+  classdiagramsettings member_max_width 0 end
+  xyz 41 274 2000
+end
+note 128130 "- Remember which rows are to be removed
+- View:
+  A) Mark the \"removed\" rows are removed
+  B) Remove the removed rows from the view"
+  xyzwh 40.5 416.5 2000 595 109
+classcanvas 128386 class_ref 5165570 // RemoveRowsMap
+  classdiagramsettings member_max_width 0 end
+  xyz 635.5 290.5 2000
+end
+classcanvas 128514 class_ref 719618 // QAbstractProxyModel
+  classdiagramsettings member_max_width 0 end
+  xyz 111 40 2005
+end
+classcanvas 128770 class_ref 5165058 // RemoveRows
+  classdiagramsettings member_max_width 0 end
+  xyz 45 540 2000
+end
+relationcanvas 128642 relation_ref 5580034 // <generalisation>
+  from ref 128002 z 2006 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

@@ -1,0 +1,151 @@
+format 218
+"sandbox" // Mdt::Railway::sandbox
+  revision 2
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2119938 "VehicleTypeClass_sandbox"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4146818 "VehicleTypeClass_sandbox"
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+      size A4-Landscape
+    end
+
+    class 4957186 "VehicleTypeClassInXXX"
+      visibility package stereotype "boundary"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 4957314 "VehicleTypeClassOutXXX"
+      visibility package stereotype "boundary"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${local}interface ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5420418 // <unidirectional association>
+	relation 5388930 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 5420418 // <unidirectional association>
+	  b parent class_ref 4861314 // VehicleTypeClassData
+      end
+    end
+
+    class 4957442 "VehicleTypeClassPresenter"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5420674 // <generalisation>
+	relation 5389186 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5420674 // <generalisation>
+	  b parent class_ref 4957314 // VehicleTypeClassOutXXX
+      end
+
+      classrelation 5420802 // <unidirectional association>
+	relation 5389314 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 5420802 // <unidirectional association>
+	  b parent class_ref 4861314 // VehicleTypeClassData
+      end
+
+      classrelation 5420930 // <unidirectional association>
+	relation 5389442 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 5420930 // <unidirectional association>
+	  b parent class_ref 4909570 // VehicleTypeClassTableModel
+      end
+    end
+
+    class 4957570 "DisplayVehicleTypeClas"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+end

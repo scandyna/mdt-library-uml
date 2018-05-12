@@ -1,0 +1,72 @@
+format 216
+
+classcanvas 128002 class_ref 4701442 // PrimaryKeyField
+  classdiagramsettings member_max_width 0 end
+  xyz 234 601 2000
+end
+classcanvas 128130 class_ref 4701314 // PrimaryKey
+  classdiagramsettings member_max_width 0 end
+  xyz 192 391 2006
+end
+classcanvas 128386 class_ref 4803970 // Relation
+  classdiagramsettings member_max_width 0 end
+  xyz 234 184 2000
+end
+classcanvas 128514 class_ref 4804098 // RelationType
+  classdiagramsettings member_max_width 0 end
+  xyz 243 39 2000
+end
+classcanvas 129154 class_ref 4812034 // RelationList
+  classdiagramsettings member_max_width 0 end
+  xyz 49 224 2000
+end
+classcanvas 129666 class_ref 4825090 // ForeignKey
+  classdiagramsettings member_max_width 0 end
+  xyz 42 916 2005
+end
+classcanvas 129794 class_ref 4825218 // ForeignKeyField
+  classdiagramsettings member_max_width 0 end
+  xyz 352 951 2011
+end
+note 130306 "1 to 1 relation:
+ - Concept of inheritence ?
+ - Maybe composition ?"
+  xyzwh 466 48 2000 221 89
+note 130690 "Maybe not useful"
+  xyzwh 40 784 2005 169 57
+note 130946 "PrimaryKey is implicit, because of field attributes.
+This should only bcome a helper class (not used by the user)"
+  xyzwh 521 439 2000 399 67
+relationcanvas 129282 relation_ref 5249282 // <directional composition>
+  decenter_end 473
+  from ref 129154 z 2001 to ref 128386
+  no_role_a no_role_b
+  multiplicity_a_pos 218 273 3000 no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 5249410 // <directional composition>
+  from ref 128386 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129922 relation_ref 5262850 // <directional composition>
+  from ref 129666 z 2012 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 5263234 // <directional composition>
+  from ref 128386 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 5176962 // <directional composition>
+  from ref 128130 z 2007 to ref 128002
+  no_role_a no_role_b
+  multiplicity_a_pos 321 574 3000 no_multiplicity_b
+end
+line 130434 -_-_ decenter_begin 539
+  from ref 130306 z 2001 to ref 128514
+line 130818 -_-_ decenter_begin 473
+  from ref 130690 z 2006 to ref 129154
+line 131074 -_-_ decenter_begin 473
+  from ref 128130 z 2007 to ref 130946
+end

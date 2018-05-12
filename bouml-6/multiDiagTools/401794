@@ -1,6 +1,6 @@
-format 216
+format 218
 "Mdt" // Mdt
-  revision 68
+  revision 71
   modified_by 2 "philippe"
   // class settings
   
@@ -1838,6 +1838,8 @@ ${members}};
 
   package_ref 720386 // Icon
 
+  package_ref 831746 // IndexRange
+
   package_ref 516098 // ItemModel
 
   package_ref 667650 // ItemView
@@ -1863,6 +1865,8 @@ ${members}};
   package_ref 621826 // TextStorage
 
   package_ref 700546 // Comm_Bus_sandbox
+
+  package_ref 792322 // Railway
 
   package_ref 402306 // SerialPort
 

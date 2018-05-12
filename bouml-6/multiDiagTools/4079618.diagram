@@ -1,0 +1,35 @@
+format 216
+
+classcanvas 128002 class_ref 3715586 // RelationKey
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 97.6 286.8 2000
+end
+classcanvas 128130 class_ref 3715714 // RelationColumnPair
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 617 327.8 2006
+end
+classcanvas 128386 class_ref 4803970 // Relation
+  classdiagramsettings member_max_width 0 end
+  xyz 671.4 39.3 2000
+end
+classcanvas 129026 class_ref 4818562 // ItemModelRelation
+  classdiagramsettings member_max_width 0 end
+  xyz 43 128.8 2005
+end
+relationcanvas 128258 relation_ref 4109058 // <directional composition>
+  from ref 128002 z 2007 to ref 128130
+  no_role_a no_role_b
+  multiplicity_a_pos 601 378 3000 no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 5256066 // <dependency>
+  from ref 129026 z 2006 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129538 relation_ref 5256322 // <dependency>
+  decenter_end 513
+  from ref 129026 z 2006 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

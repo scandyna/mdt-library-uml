@@ -1,4 +1,4 @@
-format 211
+format 218
 
 classcanvas 128002 class_ref 2994690 // InsertQuery
   classdiagramsettings member_max_width 0 end
@@ -12,22 +12,12 @@ classcanvas 128642 class_ref 2824706 // AutoIncrementPrimaryKey
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
   xyz 262 642 2000
 end
-classcanvas 128770 class_ref 2852610 // SingleFieldPrimaryKey
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 618 346 2005
-end
 classcanvas 129282 class_ref 910594 // QSqlQuery
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
   xyz 311 42 2006
 end
 relationcanvas 129538 relation_ref 3365506 // <directional composition>
   from ref 128002 z 2007 to ref 129282
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 131074 relation_ref 3365634 // <dependency>
-  decenter_begin 507
-  from ref 128002 z 2006 to ref 128770
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

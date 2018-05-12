@@ -1,0 +1,6 @@
+format 218
+
+note 128002 "For combination of isolations checks:
+ - See Marshall Clow, for_all_pairs()"
+  xyzwh 126 178 2000 417 89
+end

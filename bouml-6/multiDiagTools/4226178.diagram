@@ -1,0 +1,8 @@
+format 218
+
+note 128002 "Notion of Query Generators"
+  xyzwh 40.5 203.5 2000 359 61
+note 128258 "Multi-type repos ?
+(QVariant?)"
+  xyzwh 40.5 40.5 2000 383 83
+end

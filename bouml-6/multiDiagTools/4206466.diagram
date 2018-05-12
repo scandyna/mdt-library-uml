@@ -1,0 +1,11 @@
+format 217
+
+classcanvas 128002 class_ref 5057794 // SQLiteDatabase
+  classdiagramsettings member_max_width 0 end
+  xyz 366 208 2000
+end
+classcanvas 128130 class_ref 5064706 // OpenSQLiteDatabase
+  classdiagramsettings member_max_width 0 end
+  xyz 161 393 2000
+end
+end

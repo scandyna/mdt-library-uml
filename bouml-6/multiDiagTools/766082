@@ -1,6 +1,6 @@
 format 216
 "apps" // apps
-  revision 2
+  revision 5
   modified_by 2 "philippe"
   // class settings
   
@@ -27,4 +27,10 @@ format 216
    end
   
   package_ref 759554 // TaskList
+
+  package_ref 779138 // PartList
+
+  package_ref 792194 // VehicleQm
+
+  package_ref 805506 // RioCalc
 end

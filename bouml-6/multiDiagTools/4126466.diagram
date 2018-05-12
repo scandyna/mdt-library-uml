@@ -1,0 +1,93 @@
+format 218
+
+classcanvas 128002 class_ref 4929538 // VehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 257.5 792.5 2000
+end
+classcanvas 128130 class_ref 4916226 // AbstractVehicleTypeClassRepository
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 186 42 2000
+end
+classcanvas 128386 class_ref 4861314 // VehicleTypeClassData
+  classdiagramsettings member_max_width 0 end
+  xyz 696 346 2000
+end
+classcanvas 128514 class_ref 4922882 // VehicleTypeClassId
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 792.5 2000
+end
+classcanvas 128642 class_ref 4909570 // VehicleTypeClassTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 41 144 2006
+end
+classcanvas 129154 class_ref 4769410 // VehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 888 327 2000
+end
+classcanvas 129410 class_ref 4909698 // VehicleTypeClassDataList
+  classdiagramsettings member_max_width 0 end
+  xyz 608.5 520.5 2012
+end
+classcanvas 129666 class_ref 4949890 // EditVehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 325 312 2000
+end
+classcanvas 130306 class_ref 4956418 // VehicleTypeClassRepositoryStlTableProxy
+  classdiagramsettings member_max_width 0 end
+  xyz 39 631 2012
+end
+classcanvas 130946 class_ref 4956802 // CreateVehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 362 638 2000
+end
+classcanvas 131074 class_ref 4956930 // RemoveVehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 97 522 2017
+end
+classcanvas 131458 class_ref 4949890 // EditVehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 609 144 2018
+end
+note 133762 "nameChanged() is emited when name hase changed, comparing input name and validated name (f.ex. trimmed)"
+  xyzwh 585 39 2000 383 67
+relationcanvas 131202 relation_ref 5387394 // <unidirectional association>
+  decenter_begin 512
+  from ref 130306 z 2018 to ref 131074
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131330 relation_ref 5387522 // <unidirectional association>
+  from ref 130306 z 2013 to ref 130946
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132738 relation_ref 5388162 // <unidirectional association>
+  from ref 129666 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132866 relation_ref 5388162 // <unidirectional association>
+  decenter_end 522
+  from ref 131458 z 2019 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133250 relation_ref 5388546 // <directional composition>
+  from ref 128386 z 2001 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134146 relation_ref 5479298 // <unidirectional association>
+  from ref 128642 z 2019 to ref 131458
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134274 relation_ref 5616514 // <dependency>
+  decenter_end 481
+  from ref 128642 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 133890 -_-_
+  from ref 131458 z 2019 to ref 133762
+end

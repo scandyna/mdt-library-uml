@@ -1,0 +1,38 @@
+format 216
+
+classcanvas 128002 class_ref 4889218 // Context
+  classdiagramsettings member_max_width 0 end
+  xyz 327.25 40.8 2000
+end
+classcanvas 128130 class_ref 4889346 // State
+  classdiagramsettings member_max_width 0 end
+  xyz 209.9 40.8 2000
+end
+classcanvas 128386 class_ref 4889474 // ConcreteStateA
+  classdiagramsettings member_max_width 0 end
+  xyz 188.05 179.4 2000
+end
+classcanvas 128514 class_ref 4889602 // ConcreteStateB
+  classdiagramsettings member_max_width 0 end
+  xyz 37.9 179.4 2000
+end
+relationcanvas 128258 relation_ref 5322498 // <unidirectional association>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 5322626 // <generalisation>
+  decenter_begin 530
+  from ref 128386 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 5322754 // <generalisation>
+  geometry VHV unfixed
+  from ref 128514 z 2001 to point 91 140
+  line 128898 z 2001 to point 245 140
+  line 129026 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

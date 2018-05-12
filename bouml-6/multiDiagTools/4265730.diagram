@@ -1,0 +1,11 @@
+format 218
+
+classcanvas 128002 class_ref 5145090 // ForEachAdjacentPair
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+classcanvas 128130 class_ref 5145218 // ForAllPairs
+  classdiagramsettings member_max_width 0 end
+  xyz 36 163 2000
+end
+end

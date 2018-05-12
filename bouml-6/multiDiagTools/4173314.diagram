@@ -1,0 +1,25 @@
+format 218
+
+classcanvas 128002 class_ref 5018242 // CachedRepositoryStlTableProxyImpl
+  classdiagramsettings member_max_width 0 end
+  xyz 422 40 2005
+end
+classcanvas 128130 class_ref 5018114 // CachedRepositoryStlTableProxy
+  classdiagramsettings member_max_width 0 end
+  xyz 41 40 2011
+end
+classcanvas 128770 class_ref 5031426 // RepositoryHandle
+  classdiagramsettings member_max_width 0 end
+  xyz 436 176 2005
+end
+relationcanvas 128258 relation_ref 5445762 // <directional composition>
+  from ref 128130 z 2012 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 5466242 // <directional composition>
+  from ref 128002 z 2006 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

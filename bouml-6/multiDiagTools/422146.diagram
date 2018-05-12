@@ -1,25 +1,33 @@
-format 207
+format 218
 
 classcanvas 128002 class_ref 418690 // QValidator
   classdiagramsettings member_max_width 0 end
-  xyz 219 174 2000
+  xyz 176 203 2000
 end
 classcanvas 128130 class_ref 1315586 // QDoubleValidator
   classdiagramsettings member_max_width 0 end
-  xyz 85 439 2000
+  xyz 39 408 2000
 end
 classcanvas 128386 class_ref 138626 // QObject
   classdiagramsettings member_max_width 0 end
-  xyz 274 36 2000
+  xyz 162 41 2000
+end
+classcanvas 128642 class_ref 4881282 // State
+  classdiagramsettings member_max_width 0 end
+  xyz 545 224 2006
 end
 relationcanvas 128258 relation_ref 1624962 // <generalisation>
+  decenter_begin 505
   from ref 128130 z 2001 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 1625090 // <generalisation>
+  decenter_end 509
   from ref 128002 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+line 128770 ---+
+  from ref 128642 z 2007 to ref 128002
 end

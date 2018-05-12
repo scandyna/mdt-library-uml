@@ -1,0 +1,11 @@
+format 218
+
+classcanvas 128002 class_ref 4770306 // UicNumber
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 165.5 2000
+end
+classcanvas 128130 class_ref 4770434 // UicNumberCountry
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+end

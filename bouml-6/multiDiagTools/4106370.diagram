@@ -1,0 +1,80 @@
+format 216
+
+note 128002 "- Common interface to get records on demand
+- Some commit() that saves changes
+- Cache ?
+
+- See iterator proxy (or proxy)
+
+-> Cache seems to be the thing:
+  - Fetch to cache
+  - Fix max cache size
+  - All modified records must be keeped in the cache"
+  xyzwh 40.5 816.5 2000 495 227
+classcanvas 128130 class_ref 4867842 // RecordSet
+  classdiagramsettings member_max_width 0 end
+  xyz 202 265 2000
+end
+classcanvas 128258 class_ref 4867970 // Record
+  classdiagramsettings member_max_width 0 end
+  xyz 177 658 2000
+end
+classcanvas 128386 class_ref 910594 // QSqlQuery
+  classdiagramsettings member_max_width 0 end
+  xyz 615.5 816.5 2000
+end
+classcanvas 128514 class_ref 4874498 // RecordSetCache
+  classdiagramsettings member_max_width 0 end
+  xyz 37 95 2000
+end
+classcanvas 128770 class_ref 4874626 // RepositoryImplementationInterface
+  classdiagramsettings member_max_width 0 end
+  xyz 194 39 2000
+end
+classcanvas 129794 class_ref 4874754 // RecordList
+  classdiagramsettings member_max_width 0 end
+  xyz 55 674 2000
+end
+classcanvas 130178 class_ref 4578562 // DataList
+  classdiagramsettings member_max_width 0 end
+  xyz 474 280 2005
+end
+classcanvas 130306 class_ref 4563842 // DataTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 168 409 2005
+end
+relationcanvas 129154 relation_ref 5306498 // <unidirectional association>
+  decenter_begin 480
+  from ref 128130 z 2001 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 5307010 // <directional composition>
+  decenter_begin 518
+  from ref 128770 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129922 relation_ref 5307138 // <directional composition>
+  from ref 128514 z 2001 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 5307266 // <directional composition>
+  from ref 129794 z 2001 to ref 128258
+  no_role_a no_role_b
+  multiplicity_a_pos 161 706 3000 no_multiplicity_b
+end
+relationcanvas 130434 relation_ref 5307394 // <dependency>
+  decenter_begin 533
+  from ref 128130 z 2006 to ref 130178
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 5307522 // <dependency>
+  decenter_begin 480
+  from ref 128130 z 2006 to ref 130306
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

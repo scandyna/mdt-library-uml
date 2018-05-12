@@ -1,0 +1,118 @@
+format 218
+
+classcanvas 128002 class_ref 4909570 // VehicleTypeClassTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 619.4 198.95 2000
+end
+classcanvas 128258 class_ref 4922882 // VehicleTypeClassId
+  classdiagramsettings member_max_width 0 end
+  xyz 40.7 727.1 2000
+end
+classcanvas 128386 class_ref 4861314 // VehicleTypeClassData
+  classdiagramsettings member_max_width 0 end
+  xyz 872.1 313.35 2000
+end
+classcanvas 128898 class_ref 4956802 // CreateVehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 295.8 578.8 2000
+end
+classcanvas 129026 class_ref 4956930 // RemoveVehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 40.8 578.8 2000
+end
+classcanvas 129154 class_ref 4949890 // EditVehicleTypeClass
+  classdiagramsettings hide_attributes no hide_operations no member_max_width 0 end
+  xyz 242.15 168.95 2000
+end
+classcanvas 129282 class_ref 4769410 // VehicleTypeClass
+  classdiagramsettings hide_attributes no hide_operations no member_max_width 0 end
+  xyz 888.1 399.9 2000
+end
+classcanvas 129410 class_ref 4916226 // AbstractVehicleTypeClassRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 540.3 578.2 2006
+end
+classcanvas 130434 class_ref 638338 // QTableView
+  classdiagramsettings member_max_width 0 end
+  xyz 674.4 112.15 2005
+end
+classcanvas 130818 class_ref 4957186 // VehicleTypeClassInXXX
+  classdiagramsettings member_max_width 0 end
+  xyz 40.4 199.2 2000
+end
+classcanvas 130946 class_ref 4957314 // VehicleTypeClassOutXXX
+  classdiagramsettings member_max_width 0 end
+  xyz 863.1 40.5 2000
+end
+classcanvas 131970 class_ref 4957442 // VehicleTypeClassPresenter
+  classdiagramsettings member_max_width 0 end
+  xyz 855.1 210.95 2000
+end
+classcanvas 133122 class_ref 4957570 // DisplayVehicleTypeClas
+  classdiagramsettings member_max_width 0 end
+  xyz 865.8 578 2000
+end
+relationcanvas 130178 relation_ref 5388162 // <unidirectional association>
+  decenter_begin 489
+  from ref 129154 z 2001 to point 406 339.5
+  line 133634 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 5388418 // <unidirectional association>
+  from ref 130434 z 2006 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130690 relation_ref 5388546 // <directional composition>
+  from ref 128386 z 2001 to ref 129282
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131074 relation_ref 5388674 // <generalisation>
+  decenter_begin 472
+  from ref 129154 z 2001 to ref 130818
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131202 relation_ref 5388802 // <unidirectional association>
+  geometry VH unfixed
+  decenter_begin 489
+  from ref 129154 z 2001 to point 403 68
+  line 133506 z 2001 to ref 130946
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131330 relation_ref 5388930 // <unidirectional association>
+  decenter_end 577
+  from ref 130946 z 2001 to point 1083.5 71.5
+  line 132354 z 2001 to point 1083.5 339.5
+  line 133378 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132098 relation_ref 5389186 // <generalisation>
+  from ref 131970 z 2001 to ref 130946
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132226 relation_ref 5389314 // <unidirectional association>
+  from ref 131970 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132610 relation_ref 5389442 // <unidirectional association>
+  decenter_begin 422
+  decenter_end 449
+  from ref 131970 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133250 relation_ref 5479298 // <unidirectional association>
+  decenter_begin 449
+  decenter_end 472
+  from ref 128002 z 2001 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

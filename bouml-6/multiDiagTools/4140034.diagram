@@ -1,0 +1,9 @@
+format 217
+
+classcanvas 128002 class_ref 4943362 // MetaObject
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+note 128130 "Algorithm is not the right place for this !"
+  xyzwh 42 174 2000 355 49
+end

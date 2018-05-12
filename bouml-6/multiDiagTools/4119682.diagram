@@ -1,0 +1,51 @@
+format 218
+
+classcanvas 128002 class_ref 4888450 // FieldDataValidator
+  classdiagramsettings member_max_width 0 end
+  xyz 585 36.3 2000
+end
+classcanvas 128130 class_ref 4888578 // FieldDataValidatorState
+  classdiagramsettings member_max_width 0 end
+  xyz 1014.8 56.1 2000
+end
+classcanvas 128386 class_ref 4488066 // FieldAttributes
+  classdiagramsettings member_max_width 0 end
+  xyz 681 216 2000
+end
+classcanvas 128770 class_ref 4888834 // SomeCustomFieldDataValidation
+  classdiagramsettings member_max_width 0 end
+  xyz 36.9 218.7 2000
+end
+classcanvas 128898 class_ref 4888962 // FieldDataValidatorCommonImplementation
+  classdiagramsettings member_max_width 0 end
+  xyz 73.9 58 2000
+end
+classcanvas 130178 class_ref 4896130 // FieldDataValidatorImplContainer
+  classdiagramsettings member_max_width 0 end
+  xyz 313.8 347.8 2005
+end
+relationcanvas 129794 relation_ref 5322114 // <generalisation>
+  from ref 128770 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129922 relation_ref 5322242 // <directional composition>
+  decenter_end 517
+  from ref 128002 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 5322370 // <directional composition>
+  decenter_begin 523
+  decenter_end 532
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 5329666 // <directional composition>
+  decenter_begin 523
+  from ref 128002 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

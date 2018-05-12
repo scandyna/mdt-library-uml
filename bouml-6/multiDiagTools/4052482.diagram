@@ -1,0 +1,105 @@
+format 218
+
+classcanvas 128002 class_ref 4769410 // VehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 80 175 2000
+end
+classcanvas 128130 class_ref 4769538 // Vehicle
+  classdiagramsettings member_max_width 0 end
+  xyz 279 338 2000
+end
+classcanvas 128258 class_ref 4769666 // InVehiclePlace
+  classdiagramsettings member_max_width 0 end
+  xyz 256 442 3005
+end
+classcanvas 128514 class_ref 4770306 // UicNumber
+  classdiagramsettings member_max_width 0 end
+  xyz 377 319 2000
+end
+classcanvas 128898 class_ref 4770434 // UicNumberCountry
+  classdiagramsettings member_max_width 0 end
+  xyz 448.5 568.5 2000
+end
+classcanvas 129026 class_ref 4797186 // TrainComposition
+  classdiagramsettings member_max_width 0 end
+  xyz 118 338 2000
+end
+classcanvas 129282 class_ref 4797314 // TrainType
+  classdiagramsettings member_max_width 0 end
+  xyz 144 426 2000
+end
+classcanvas 129538 class_ref 4846850 // VehicleTypeSerie
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 568.5 2000
+end
+classcanvas 129666 class_ref 4846978 // UicNumberSearch
+  classdiagramsettings member_max_width 0 end
+  xyz 241.5 568.5 2000
+end
+classcanvas 130306 class_ref 4853890 // InVehicleTypePlace
+  classdiagramsettings member_max_width 0 end
+  xyz 423 164 2000
+end
+classcanvas 131074 class_ref 4854018 // VehicleType
+  classdiagramsettings member_max_width 0 end
+  xyz 240 186 2000
+end
+classcanvas 131586 class_ref 4854146 // VehicleTypeOption
+  classdiagramsettings member_max_width 0 end
+  xyz 40 39 2005
+end
+classcanvas 131970 class_ref 4854274 // VehicleTypeOptionAssignment
+  classdiagramsettings member_max_width 0 end
+  xyz 210 58 2000
+end
+relationcanvas 128386 relation_ref 5206018 // <composition>
+  decenter_begin 559
+  decenter_end 533
+  from ref 128130 z 3006 to ref 128258
+  no_role_a no_role_b
+  multiplicity_a_pos 296 415 3000 no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 5206402 // <association>
+  from ref 128130 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 5234434 // <association>
+  from ref 129026 z 2001 to ref 128130
+  no_role_a no_role_b
+  multiplicity_a_pos 263 370 3000 no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 5234562 // <association>
+  decenter_begin 547
+  decenter_end 528
+  from ref 129282 z 2001 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131330 relation_ref 5291650 // <association>
+  from ref 128002 z 2001 to ref 131074
+  no_role_a no_role_b
+  multiplicity_a_pos 224 234 3000 no_multiplicity_b
+end
+relationcanvas 131458 relation_ref 5291778 // <association>
+  decenter_begin 559
+  from ref 128130 z 2001 to ref 131074
+  no_role_a no_role_b
+  no_multiplicity_a multiplicity_b_pos 296 311 3000
+end
+relationcanvas 131842 relation_ref 5292034 // <composition>
+  from ref 131074 z 2001 to ref 130306
+  no_role_a no_role_b
+  multiplicity_a_pos 407 234 3000 no_multiplicity_b
+end
+relationcanvas 132098 relation_ref 5292162 // <association>
+  from ref 131074 z 2001 to ref 131970
+  no_role_a no_role_b
+  multiplicity_a_pos 297 128 3000 no_multiplicity_b
+end
+relationcanvas 132226 relation_ref 5292290 // <association>
+  from ref 131586 z 2006 to ref 131970
+  no_role_a no_role_b
+  multiplicity_a_pos 194 98 3000 no_multiplicity_b
+end
+end

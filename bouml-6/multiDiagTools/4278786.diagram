@@ -1,0 +1,16 @@
+format 218
+
+classcanvas 128002 class_ref 5165058 // RemoveRows
+  classdiagramsettings member_max_width 0 end
+  xyz 24 50 2000
+end
+classcanvas 128130 class_ref 5165186 // RemoveRowsAlgorithm
+  classdiagramsettings member_max_width 0 end
+  xyz 623 78 2000
+end
+relationcanvas 128258 relation_ref 5579906 // <dependency>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

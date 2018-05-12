@@ -1,0 +1,80 @@
+format 217
+
+classcanvas 128002 class_ref 4956546 // StlTableProxy
+  classdiagramsettings hide_attributes no hide_operations no member_max_width 0 end
+  xyz 360.5 40.5 2000
+end
+classcanvas 128130 class_ref 4639618 // RowResizableTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 73 528 2005
+end
+classcanvas 128386 class_ref 4673666 // RowResizableStlTableModelTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 36 424 2016
+end
+classcanvas 128770 class_ref 4599298 // EditableStlTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 84 320 2022
+end
+classcanvas 129026 class_ref 2760450 // ReadOnlyStlTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 79 216 2028
+end
+classcanvas 129282 class_ref 4577922 // AbstractStlTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 83 130 2034
+end
+classcanvas 129538 class_ref 147202 // QAbstractTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 86 42 2040
+end
+classcanvas 129794 class_ref 4653186 // TableModelRecordAdapter
+  classdiagramsettings member_max_width 0 end
+  xyz 607.5 40.5 2027
+end
+classcanvas 129922 class_ref 4956674 // StlTableProxyIterator
+  classdiagramsettings hide_attributes no hide_operations no member_max_width 0 end
+  xyz 485.5 672.5 2000
+end
+classcanvas 130434 class_ref 4964226 // StlTableProxyImplementationInterface
+  classdiagramsettings hide_attributes no hide_operations no member_max_width 0 end
+  xyz 41 870 2000
+end
+note 131074 "Maybe not use polymorphisme,
+but specifications ?"
+  xyzwh 338 886 2000 229 71
+note 131458 "Iterator, operator*() :
+ - return a functor ?
+
+see: file:///usr/share/doc/libboost1.58-doc/HTML/libs/iterator/doc/function_output_iterator.html"
+  xyzwh 40.5 672.5 2000 365 121
+note 131970 "Review functor"
+  xyzwh 648.5 873.5 2000 153 41
+relationcanvas 128514 relation_ref 5155330 // <generalisation>
+  from ref 128130 z 2017 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 5155202 // <generalisation>
+  from ref 128386 z 2023 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 5106818 // <generalisation>
+  from ref 128770 z 2029 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 5085826 // <generalisation>
+  from ref 129026 z 2035 to ref 129282
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 5085698 // <generalisation>
+  from ref 129282 z 2041 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 131202 -_-_
+  from ref 130434 z 2001 to ref 131074
+end

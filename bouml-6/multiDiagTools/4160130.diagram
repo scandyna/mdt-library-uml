@@ -1,0 +1,72 @@
+format 217
+
+classcanvas 128002 class_ref 4653186 // TableModelRecordAdapter
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 40 216 2005
+end
+classcanvas 128130 class_ref 4639490 // EditableTableModel
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 745 400 2005
+end
+classcanvas 128258 class_ref 4949890 // EditVehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 1002.1 439.9 2000
+end
+classcanvas 128514 class_ref 4909570 // VehicleTypeClassTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 594 232 2005
+end
+classcanvas 128642 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 660.3 751.8 2010
+end
+classcanvas 129410 class_ref 5011586 // VehicleTypeClassTableModelRecordAdapter
+  classdiagramsettings member_max_width 0 end
+  xyz 96 463 2000
+end
+classcanvas 129794 class_ref 4916226 // AbstractVehicleTypeClassRepository
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 1046 610 2006
+end
+note 130178 "How to:
+ - Get a record
+ - Access the collection (unique check). Note: here ??
+
+Note: record adapter is just a impl detail !"
+  xyzwh 119.5 40.6 2000 352 137
+note 130434 "Note: maybe, the simplest is to re-implement setData() in the model subclass, DONE.
+For insertion:
+ - Similar to edit
+ - Id by repository"
+  xyzwh 40.5 751.6 2015 541 114
+relationcanvas 128898 relation_ref 5438082 // <generalisation>
+  decenter_end 516
+  from ref 128514 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129538 relation_ref 5438594 // <generalisation>
+  decenter_begin 508
+  from ref 129410 z 2006 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 5438722 // <directional composition>
+  from ref 129410 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129922 relation_ref 5389570 // <unidirectional association>
+  from ref 128258 z 2007 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 5438850 // <dependency>
+  decenter_end 473
+  from ref 128514 z 2006 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 130306 -_-_
+  from ref 130178 z 2006 to ref 128002
+end

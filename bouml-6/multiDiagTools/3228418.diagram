@@ -1,36 +1,36 @@
-format 211
+format 216
 
 classcanvas 128002 class_ref 3715074 // ColumnList
   classdiagramsettings member_max_width 0 end
-  xyz 401 528 2000
+  xyz 473 272 2000
 end
 classcanvas 129154 class_ref 3715330 // PrimaryKey
   classdiagramsettings member_max_width 0 end
-  xyz 42 495 2000
+  xyz 42 239 2000
 end
 classcanvas 129410 class_ref 3715458 // ForeignKey
   classdiagramsettings member_max_width 0 end
-  xyz 446 442 2000
+  xyz 402 40 2000
 end
 classcanvas 129922 class_ref 3715586 // RelationKey
   classdiagramsettings member_max_width 0 end
-  xyz 253 194 2000
+  xyz 149 642 2000
 end
 classcanvas 130050 class_ref 3715714 // RelationColumnPair
   classdiagramsettings member_max_width 0 end
-  xyz 41 239 2000
+  xyz 665 687 2000
 end
 classcanvas 130562 class_ref 3722242 // RelationRecordMap
   classdiagramsettings member_max_width 0 end
-  xyz 375 36 2000
+  xyz 271 484 2000
 end
 note 131458 "Seems obselete"
-  xyzwh 145 66 2000 191 61
+  xyzwh 41 514 2000 191 61
 relationcanvas 130178 relation_ref 4109058 // <directional composition>
   decenter_begin 521
   from ref 129922 z 2001 to ref 130050
   no_role_a no_role_b
-  multiplicity_a_pos 225 289 3000 no_multiplicity_b
+  multiplicity_a_pos 649 737 3000 no_multiplicity_b
 end
 relationcanvas 130690 relation_ref 4115842 // <directional composition>
   decenter_end 490

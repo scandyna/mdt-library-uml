@@ -1,0 +1,115 @@
+format 218
+
+classcanvas 128002 class_ref 4769410 // VehicleTypeClass
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 290.833 608.111 2000
+end
+classcanvas 128130 class_ref 4769538 // Vehicle
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 304.611 472.111 2000
+end
+classcanvas 128258 class_ref 4769666 // InVehiclePlace
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 705.222 472.111 2000
+end
+classcanvas 128386 class_ref 4769794 // Order
+  classdiagramsettings member_max_width 0 end
+  xyz 663.278 211.167 2000
+end
+classcanvas 128514 class_ref 4769922 // Anomaly
+  classdiagramsettings hide_attributes no member_max_width 0 end
+  xyz 793.222 257.389 2000
+end
+classcanvas 128642 class_ref 4770050 // DinCode
+  classdiagramsettings member_max_width 0 end
+  xyz 942.333 217.944 2000
+end
+classcanvas 129026 class_ref 4770178 // Picture
+  classdiagramsettings member_max_width 0 end
+  xyz 798.222 170.5 2000
+end
+classcanvas 130690 class_ref 4790530 // Collaborater
+  classdiagramsettings member_max_width 0 end
+  xyz 554.167 299.278 2000
+end
+classcanvas 130818 class_ref 4790658 // Team
+  classdiagramsettings member_max_width 0 end
+  xyz 576.167 211.167 2000
+end
+note 131458 "1 incident is doscovered by 1 collaborater
+1 incident is fixed by 1 or more collaboraters
+   -> Note: durantion -> hours count (duration * coll. count)
+1 incident is controlled by 1 collaborater"
+  xyzwh 312.444 41.3889 2000 405 127
+classcanvas 132354 class_ref 4797314 // TrainType
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 575.5 387.389 2000
+end
+classcanvas 132482 class_ref 4797186 // TrainComposition
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 271.611 387.389 2006
+end
+relationcanvas 128770 relation_ref 5206018 // <composition>
+  from ref 128130 z 2001 to ref 128258
+  no_role_a no_role_b
+  multiplicity_a_pos 689 504 3000 no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 5206274 // <association>
+  from ref 128514 z 2001 to ref 129026
+  no_role_a no_role_b
+  multiplicity_a_pos 811 224 3000 no_multiplicity_b
+end
+relationcanvas 130306 relation_ref 5227394 // <association>
+  decenter_begin 213
+  decenter_end 733
+  from ref 128514 z 2001 to point 901 270
+  line 132098 z 2001 to point 901 250
+  line 132226 z 2001 to ref 128642
+  no_role_a no_role_b
+  multiplicity_a_pos 924 259 3000 multiplicity_b_pos 871 279 3000
+end
+relationcanvas 130434 relation_ref 5227522 // <association>
+  decenter_begin 213
+  decenter_end 711
+  from ref 128514 z 2001 to point 752 270
+  line 132866 z 2001 to point 752 243
+  line 132994 z 2001 to ref 128386
+  no_role_a no_role_b
+  multiplicity_a_pos 721 252 3000 multiplicity_b_pos 775 279 3000
+end
+relationcanvas 130562 relation_ref 5227650 // <unidirectional association>
+  from ref 128514 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130946 relation_ref 5227778 // <directional composition>
+  decenter_begin 574
+  decenter_end 538
+  from ref 130818 z 2001 to ref 130690
+  no_role_a no_role_b
+  multiplicity_a_pos 587 272 3000 no_multiplicity_b
+end
+relationcanvas 131074 relation_ref 5227906 // <association>
+  decenter_begin 852
+  decenter_end 266
+  from ref 128514 z 2001 to ref 130690
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132610 relation_ref 5234434 // <association>
+  decenter_begin 513
+  decenter_end 517
+  from ref 132482 z 2007 to ref 128130
+  no_role_a no_role_b
+  multiplicity_a_pos 390 445 3000 no_multiplicity_b
+end
+relationcanvas 132738 relation_ref 5234562 // <association>
+  decenter_begin 422
+  decenter_end 422
+  from ref 132354 z 2007 to ref 132482
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 131586 -_-_
+  from ref 131074 z 2002 to ref 131458
+end

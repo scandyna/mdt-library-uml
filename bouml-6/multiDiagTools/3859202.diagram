@@ -1,9 +1,5 @@
 format 216
 
-classcanvas 128258 class_ref 4466690 // Entity
-  classdiagramsettings member_max_width 0 end
-  xyz 341.5 40.5 2000
-end
 classcanvas 128386 class_ref 3184642 // QMetaObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
   xyz 314.75 291.75 2000
@@ -20,60 +16,14 @@ classcanvas 128770 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
   xyz 209.5 291.75 2006
 end
-classcanvas 129026 class_ref 4466946 // EntityDefinition
-  classdiagramsettings member_max_width 0 end
-  xyz 37 415.25 2000
-end
-classcanvas 129154 class_ref 4467074 // EntityData
-  classdiagramsettings member_max_width 0 end
-  xyz 430.5 703.5 2000
-end
-classcanvas 129410 class_ref 4467202 // EntityNameMap
-  classdiagramsettings member_max_width 0 end
-  xyz 40.5 540.5 2005
-end
-classcanvas 129538 class_ref 4467330 // FieldTypeMap
-  classdiagramsettings member_max_width 0 end
-  xyz 578.5 40.5 2000
-end
-classcanvas 129666 class_ref 4467458 // EntityTypeMap
-  classdiagramsettings member_max_width 0 end
-  xyz 243.5 703.5 2010
-end
-classcanvas 129794 class_ref 4467586 // FieldPropertyList
-  classdiagramsettings member_max_width 0 end
-  xyz 40.5 703.5 2000
-end
-classcanvas 130178 class_ref 4467714 // ClientDefinition
-  classdiagramsettings member_max_width 0 end
-  xyz 183.25 415.25 2005
-end
 classcanvas 130818 class_ref 4467842 // ArticleData
   classdiagramsettings member_max_width 0 end
   xyz 40.5 40.5 2000
-end
-classcanvas 130946 class_ref 4467970 // Field
-  classdiagramsettings member_max_width 0 end
-  xyz 265.5 540.5 2015
 end
 relationcanvas 128898 relation_ref 3608578 // <directional composition>
   decenter_begin 577
   decenter_end 577
   from ref 128770 z 2007 to ref 128386
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 129282 relation_ref 4968450 // <generalisation>
-  geometry VHV unfixed
-  from ref 129026 z 2007 to point 90 376
-  line 130434 z 2007 to point 239 376
-  line 130562 z 2007 to ref 128770
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130306 relation_ref 4968578 // <generalisation>
-  decenter_begin 531
-  from ref 130178 z 2007 to ref 128770
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

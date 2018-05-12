@@ -2,6 +2,15 @@ format 216
 
 classcanvas 128002 class_ref 4563842 // DataTemplate
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 40.5 2005
+  xyz 40 41 2005
+end
+classcanvas 128130 class_ref 4825730 // EntityTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 370 104 2005
+end
+relationcanvas 128258 relation_ref 5263746 // <directional composition>
+  from ref 128002 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 end

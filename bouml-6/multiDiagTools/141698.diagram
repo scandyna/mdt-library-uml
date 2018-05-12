@@ -1,12 +1,12 @@
-format 211
+format 218
 
 classcanvas 128002 class_ref 147202 // QAbstractTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 40 559 2000
+  xyz 224 674 2000
 end
 classcanvas 128130 class_ref 146946 // QAbstractItemModel
   classdiagramsettings member_max_width 0 end
-  xyz 40 41 2000
+  xyz 37 42 2000
 end
 relationcanvas 128258 relation_ref 141186 // <generalisation>
   from ref 128002 z 2001 to ref 128130

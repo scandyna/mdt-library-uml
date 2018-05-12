@@ -1,6 +1,6 @@
-format 216
+format 218
 "Numeric" // Mdt::Numeric
-  revision 8
+  revision 10
   modified_by 2 "philippe"
   // class settings
   
@@ -789,6 +789,70 @@ ${inlines}
     classdiagram 4032258 "NumericRange"
       classdiagramsettings member_max_width 0 end
       size A4
+    end
+  end
+
+  classview 2192386 "Core_Range"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4285954 "Numeric_Range"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5172738 "IntegralRange"
+      visibility package 
+      nformals 1
+      formal name "T" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4111106 "First"
+	private explicit_type "T"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4111234 "Last"
+	private explicit_type "T"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
     end
   end
 

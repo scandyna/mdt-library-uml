@@ -1,0 +1,15 @@
+format 218
+
+classcanvas 128002 class_ref 4769410 // VehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 382 63 2000
+end
+classcanvas 128130 class_ref 4528898 // SqlTable
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 211 232 2000
+end
+classcanvas 128258 class_ref 5051266 // SqlSchema
+  classdiagramsettings member_max_width 0 end
+  xyz 187 390 2000
+end
+end

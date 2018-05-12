@@ -1,9 +1,5 @@
 format 216
 
-classcanvas 128002 class_ref 4501634 // EntityBase
-  classdiagramsettings member_max_width 0 end
-  xyz 345 63 2005
-end
 classcanvas 128130 class_ref 2775810 // Table
   classdiagramsettings member_max_width 0 end
   xyz 39 292 2000
@@ -19,17 +15,6 @@ end
 classcanvas 129538 class_ref 4515202 // EntityTableAttributes
   classdiagramsettings member_max_width 0 end
   xyz 952 399 3005
-end
-relationcanvas 129026 relation_ref 5009410 // <dependency>
-  from ref 128130 z 2006 to ref 128002
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 129410 relation_ref 5016066 // <dependency>
-  decenter_begin 479
-  from ref 129282 z 2011 to ref 128002
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129666 relation_ref 5009538 // <directional composition>
   decenter_begin 475

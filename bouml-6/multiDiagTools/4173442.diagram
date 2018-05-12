@@ -1,0 +1,25 @@
+format 218
+
+classcanvas 128002 class_ref 4916226 // AbstractVehicleTypeClassRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 69 632 2000
+end
+classcanvas 128130 class_ref 5005058 // AbstractCachedRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 41 42 2005
+end
+classcanvas 128642 class_ref 5004418 // AbstractCachedEntityRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 119 489 2011
+end
+relationcanvas 128770 relation_ref 5608834 // <generalisation>
+  from ref 128642 z 2012 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 5616258 // <generalisation>
+  from ref 128002 z 2012 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

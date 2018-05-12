@@ -1,6 +1,6 @@
-format 211
+format 216
 "CommandPattern" // principes::CommandPattern
-  revision 1
+  revision 2
   modified_by 2 "philippe"
   // class settings
   
@@ -42,7 +42,7 @@ format 211
     
     activitydiagramsettings
      end
-    classdiagram 2488578 "Overview"
+    classdiagram 2488578 "CommandPattern_Overview"
       classdiagramsettings member_max_width 0 end
       size A4
     end

@@ -1,6 +1,6 @@
-format 211
+format 216
 "principes" // principes
-  revision 5
+  revision 6
   modified_by 2 "philippe"
   // class settings
   
@@ -33,6 +33,8 @@ format 211
   package_ref 489986 // StaticPolymorphism
 
   package_ref 529666 // CommandPattern
+
+  package_ref 818562 // StatePattern
 
   package_ref 529794 // Decorator
 

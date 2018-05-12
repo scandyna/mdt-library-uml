@@ -1,0 +1,51 @@
+format 217
+
+classcanvas 128002 class_ref 4964226 // StlTableProxyImplementationInterface
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 672.5 2005
+end
+classcanvas 128130 class_ref 4956674 // StlTableProxyIterator
+  classdiagramsettings member_max_width 0 end
+  xyz 42 496 2011
+end
+classcanvas 128642 class_ref 4956546 // StlTableProxy
+  classdiagramsettings member_max_width 0 end
+  xyz 421 42 2017
+end
+classcanvas 129154 class_ref 4977410 // StlTableProxyIteratorBase
+  classdiagramsettings member_max_width 0 end
+  xyz 415 297 2000
+end
+classcanvas 129282 class_ref 4977538 // StlTableProxyConstIterator
+  classdiagramsettings member_max_width 0 end
+  xyz 413 496 2000
+end
+classcanvas 131970 class_ref 4997762 // StlTableProxyIteratorDereferenceProxy
+  classdiagramsettings member_max_width 0 end
+  xyz 631 271 2000
+end
+relationcanvas 130690 relation_ref 5410434 // <unidirectional association>
+  from ref 128642 z 2018 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131586 relation_ref 5403266 // <generalisation>
+  geometry VHV unfixed
+  from ref 128130 z 2012 to point 206 456
+  line 132354 z 2012 to point 502 456
+  line 132482 z 2012 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132098 relation_ref 5423490 // <directional composition>
+  decenter_begin 462
+  from ref 129154 z 2001 to ref 131970
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132226 relation_ref 5423618 // <generalisation>
+  from ref 129282 z 2001 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

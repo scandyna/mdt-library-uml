@@ -1,6 +1,6 @@
-format 216
+format 218
 "Qt" // Qt
-  revision 236
+  revision 251
   modified_by 2 "philippe"
   // class settings
   
@@ -1709,6 +1709,62 @@ ${inlines}
 	
 	
       end
+
+      class 4881282 "State"
+	visibility package stereotype "enum"
+	cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+	java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+	php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+	python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+	idl_decl "${comment}enum ${name} {
+${items}};
+"
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 3991042 "Invalid"
+	  public type class_ref 4881282 // State
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 3991170 "Intermediate"
+	  public type class_ref 4881282 // State
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 3991298 "Acceptable"
+	  public type class_ref 4881282 // State
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
     end
 
     class 1315586 "QDoubleValidator"
@@ -2610,6 +2666,18 @@ ${inlines}
 	
       end
 
+      operation 6973954 "revert"
+	stereotype "slot"
+	abstract cpp_virtual public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
       operation 194306 "beginInsertRows"
 	protected explicit_return_type "void"
 	nparams 3
@@ -2781,7 +2849,7 @@ ${inlines}
 
     classdiagram 141698 "QAbstractTableModel"
       classdiagramsettings member_max_width 0 end
-      size A4
+      size A-Landscape
     end
 
     class 147202 "QAbstractTableModel"
@@ -3622,6 +3690,124 @@ ${inlines}
 	  b parent class_ref 719618 // QAbstractProxyModel
       end
     end
+
+    classdiagram 1244802 "QItemSelection"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 1382914 "QItemSelectionModel"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 1716610 // <generalisation>
+	relation 1701122 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 1716610 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 2218370 "currentRowChanged"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "current" type class_ref 147330 // QModelIndex
+	  param in name "previous" type class_ref 147330 // QModelIndex
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 2726914 // <unidirectional association>
+	relation 2709762 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 2726914 // <unidirectional association>
+	  b parent class_ref 2427778 // ViewController
+      end
+
+      operation 4441730 "setCurrentIndex"
+	stereotype "slot"
+	abstract cpp_virtual public explicit_return_type "void"
+	nparams 2
+	  param in name "index" type class_ref 147330 // QModelIndex
+	  param in name "command" explicit_type "SelectionFlags"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      classrelation 5584770 // <unidirectional association>
+	relation 5553282 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 5584770 // <unidirectional association>
+	  b parent class_ref 5138434 // QItemSelection
+      end
+    end
+
+    class 5138434 "QItemSelection"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5584898 // <directional composition>
+	relation 5553410 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 5584898 // <directional composition>
+	  b parent class_ref 5138562 // QItemSelectionRange
+      end
+    end
+
+    class 5138562 "QItemSelectionRange"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
   end
 
   classview 886914 "MV-View"
@@ -3878,75 +4064,6 @@ ${inlines}
       end
     end
 
-    classdiagram 1244802 "QItemSelectionModel"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 1382914 "QItemSelectionModel"
-      abstract visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 1716610 // <generalisation>
-	relation 1701122 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 1716610 // <generalisation>
-	  b parent class_ref 138626 // QObject
-      end
-
-      operation 2218370 "currentRowChanged"
-	stereotype "signal"
-	public explicit_return_type "void"
-	nparams 2
-	  param in name "current" type class_ref 147330 // QModelIndex
-	  param in name "previous" type class_ref 147330 // QModelIndex
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 2726914 // <unidirectional association>
-	relation 2709762 --->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
-"
-	    classrelation_ref 2726914 // <unidirectional association>
-	  b parent class_ref 2427778 // ViewController
-      end
-
-      operation 4441730 "setCurrentIndex"
-	stereotype "slot"
-	abstract cpp_virtual public explicit_return_type "void"
-	nparams 2
-	  param in name "index" type class_ref 147330 // QModelIndex
-	  param in name "command" explicit_type "SelectionFlags"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-    end
-
     classdiagram 1795714 "QTableView"
       classdiagramsettings member_max_width 0 end
       size B-Landscape
@@ -4051,6 +4168,15 @@ ${inlines}
 "
 	    classrelation_ref 3485954 // <unidirectional association>
 	  b parent class_ref 605570 // QStyledItemDelegate
+      end
+
+      classrelation 5419906 // <unidirectional association>
+	relation 5388418 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 5419906 // <unidirectional association>
+	  b parent class_ref 4909570 // VehicleTypeClassTableModel
       end
     end
   end
@@ -5207,6 +5333,52 @@ ${inlines}
 	cpp_decl "    ${comment}${inline}${virtual}${name}${(}${)}${volatile}${throw};
 "
 	cpp_def "${comment}${inline}${class}::${name}${(}${)}${volatile}${throw} {
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6867458 "setDatabaseName"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "name" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6867586 "open"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6867714 "close"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
   ${body}}
 "
 	
@@ -6769,6 +6941,58 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 5537922 // <generalisation>
+	relation 5506434 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5537922 // <generalisation>
+	  b parent class_ref 370434 // QDialog
+      end
+
+      class 5064834 "AcceptMode"
+	visibility package stereotype "enum"
+	cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+	java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+	php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+	python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+	idl_decl "${comment}enum ${name} {
+${items}};
+"
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 4070402 "AcceptOpen"
+	  public type class_ref 5064834 // AcceptMode
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 4070530 "AcceptSave"
+	  public type class_ref 5064834 // AcceptMode
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
     end
 
     classdiagram 2124418 "QScrollArea"
@@ -7669,6 +7893,262 @@ ${inlines}
 	    cpp default "${type}"
 	    classrelation_ref 4967554 // <generalisation>
 	  b parent class_ref 679810 // QAbstractButton
+      end
+    end
+
+    classdiagram 4133250 "QItemEditorCreator"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 4936322 "QItemEditorCreatorBase"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 6732162 "createWidget"
+	abstract cpp_virtual public return_type class_ref 316162 // QWidget
+	nparams 1
+	  param in name "parent" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 6732290 "valuePropertyName"
+	abstract cpp_virtual public return_type class_ref 236162 // QByteArray
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 4942850 "QItemEditorCreator"
+      visibility package 
+      nformals 1
+      formal name "T" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5396866 // <generalisation>
+	relation 5365506 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5396866 // <generalisation>
+	  b parent class_ref 4936322 // QItemEditorCreatorBase
+      end
+
+      operation 6739202 "createWidget"
+	cpp_virtual public return_type class_ref 316162 // QWidget
+	nparams 1
+	  param in name "parent" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6739330 "valuePropertyName"
+	cpp_virtual public return_type class_ref 236162 // QByteArray
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 4942978 "QStandardItemEditorCreator"
+      visibility package 
+      nformals 1
+      formal name "T" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5396994 // <generalisation>
+	relation 5365634 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5396994 // <generalisation>
+	  b parent class_ref 4936322 // QItemEditorCreatorBase
+      end
+
+      operation 6739458 "createWidget"
+	cpp_virtual public return_type class_ref 316162 // QWidget
+	nparams 1
+	  param in name "parent" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6739586 "valuePropertyName"
+	cpp_virtual public return_type class_ref 236162 // QByteArray
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 4133122 "QItemEditorFactory"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 4936194 "QItemEditorFactory"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 6731906 "createEditor"
+	abstract cpp_virtual public return_type class_ref 316162 // QWidget
+	nparams 2
+	  param in name "userType" explicit_type "int"
+	  param in name "parent" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 6732034 "registerEditor"
+	abstract cpp_virtual public explicit_return_type ""
+	nparams 2
+	  param in name "userType" explicit_type "int"
+	  param in name "creator" type class_ref 4936322 // QItemEditorCreatorBase
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 6732418 "valuePropertyName"
+	abstract cpp_virtual public return_type class_ref 236162 // QByteArray
+	nparams 1
+	  param in name "usertType" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 6732546 "defaultFactory"
+	class_operation public return_type class_ref 4936194 // QItemEditorFactory
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6732674 "setDefaultFactory"
+	class_operation public explicit_return_type "void"
+	nparams 1
+	  param in name "factory" type class_ref 4936194 // QItemEditorFactory
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 5396738 // <directional composition>
+	relation 5365378 *-->
+	  stereotype "map"
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5396738 // <directional composition>
+	  b parent class_ref 4936322 // QItemEditorCreatorBase
       end
     end
   end

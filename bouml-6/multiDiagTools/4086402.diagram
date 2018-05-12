@@ -1,0 +1,19 @@
+format 218
+
+classcanvas 128002 class_ref 4825730 // EntityTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 146 40 2000
+end
+classcanvas 128130 class_ref 4825858 // def_type
+  classdiagramsettings member_max_width 0 end
+  xyz 39 58 2006
+end
+classcanvas 128386 class_ref 4825986 // data_struct_type
+  classdiagramsettings member_max_width 0 end
+  xyz 141 162 2006
+end
+line 128258 ---+
+  from ref 128130 z 2007 to ref 128002
+line 128514 ---+
+  from ref 128386 z 2007 to ref 128002
+end

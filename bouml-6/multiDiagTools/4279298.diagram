@@ -1,0 +1,30 @@
+format 218
+
+classcanvas 128002 class_ref 5004290 // TableCache
+  classdiagramsettings member_max_width 0 end
+  xyz 49 155 2005
+end
+note 128130 "Step 1: onlay care about records (NOT value at row/column)
+  (Not implement any modified x/y now)
+"
+  xyzwh 34 39 2000 423 77
+classcanvas 128386 class_ref 5091202 // TableCacheOperationMap
+  classdiagramsettings member_max_width 0 end
+  xyz 498 312 2011
+end
+classcanvas 128642 class_ref 5166082 // StlTableCache
+  classdiagramsettings member_max_width 0 end
+  xyz 520 191 2000
+end
+classcanvas 128770 class_ref 5166210 // VariantTableCache
+  classdiagramsettings member_max_width 0 end
+  xyz 618 125 2000
+end
+relationcanvas 128514 relation_ref 5526658 // <directional composition>
+  from ref 128002 z 2012 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 128258 -_-_ decenter_begin 508
+  from ref 128130 z 2006 to ref 128002
+end

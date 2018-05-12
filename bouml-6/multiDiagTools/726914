@@ -1,6 +1,6 @@
-format 216
+format 218
 "TestLib" // Mdt::TestLib
-  revision 5
+  revision 10
   modified_by 2 "philippe"
   // class settings
   
@@ -145,6 +145,178 @@ ${inlines}
 	    classrelation_ref 5175682 // <generalisation>
 	  b parent class_ref 138626 // QObject
       end
+    end
+
+    classdiagram 4239490 "CompareHelper"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5125122 "CompareHelper"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 6930050 "compareOk"
+	class_operation public explicit_return_type "bool"
+	nparams 6
+	  param in name "val1" explicit_type "char"
+	multiplicity "*"
+	  param in name "val2" explicit_type "char"
+	multiplicity "*"
+	  param in name "actual" explicit_type "char"
+	multiplicity "*"
+	  param in name "expected" explicit_type "char"
+	multiplicity "*"
+	  param in name "file" explicit_type "char"
+	multiplicity "*"
+	  param in name "line" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}, ${t3} ${p3}${v3}, ${t4} ${p4}${v4}, ${t5} ${p5}${v5}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5} ${p5}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6930306 "compareOk"
+	class_operation public explicit_return_type "bool"
+	nparams 4
+	  param in name "actual" explicit_type "char"
+	multiplicity "*"
+	  param in name "expected" explicit_type "char"
+	multiplicity "*"
+	  param in name "file" explicit_type "char"
+	multiplicity "*"
+	  param in name "line" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}, ${t3} ${p3}${v3}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6930178 "compareNok"
+	class_operation public explicit_return_type "bool"
+	nparams 7
+	  param in name "failureMsg" type class_ref 161026 // QString
+	  param in name "val1" explicit_type "char"
+	multiplicity "*"
+	  param in name "val2" explicit_type "char"
+	multiplicity "*"
+	  param in name "actual" explicit_type "char"
+	multiplicity "*"
+	  param in name "expected" explicit_type "char"
+	multiplicity "*"
+	  param in name "file" explicit_type "char"
+	multiplicity "*"
+	  param in name "line" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}, ${t3} ${p3}${v3}, ${t4} ${p4}${v4}, ${t5} ${p5}${v5}, ${t6} ${p6}${v6}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}, ${t5} ${p5}, ${t6} ${p6}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6930434 "compareNok"
+	class_operation public explicit_return_type "bool"
+	nparams 5
+	  param in name "failureMsg" type class_ref 161026 // QString
+	  param in name "actual" explicit_type "char"
+	multiplicity "*"
+	  param in name "expected" explicit_type "char"
+	multiplicity "*"
+	  param in name "file" explicit_type "char"
+	multiplicity "*"
+	  param in name "line" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}, ${t3} ${p3}${v3}, ${t4} ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}, ${t4} ${p4}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2152834 "TestLib_Container"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4239362 "TestLib_Container"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5124866 "CompareRowList"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 5124994 "CompareColumnList"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 

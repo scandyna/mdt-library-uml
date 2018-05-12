@@ -1,0 +1,48 @@
+format 218
+
+classcanvas 128002 class_ref 418690 // QValidator
+  classdiagramsettings member_max_width 0 end
+  xyz 500 124 2000
+end
+note 128130 "Add a concept validation:
+ - Id a field is required, no data enterred, <Ok> button disabled..
+ -> NOTE: this part could go in Core
+
+note2: could query a field, value, and check if some criterias are ok ??"
+  xyzwh 40.5 536.5 2000 517 199
+classcanvas 128258 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 632 40.75 2006
+end
+classcanvas 128514 class_ref 4881282 // State
+  classdiagramsettings member_max_width 0 end
+  xyz 866 145 2006
+end
+classcanvas 128770 class_ref 4488066 // FieldAttributes
+  classdiagramsettings member_max_width 0 end
+  xyz 41.5 334.25 2005
+end
+classcanvas 128898 class_ref 4881410 // FieldAttributesValidator
+  classdiagramsettings member_max_width 0 end
+  xyz 583 372.25 2005
+end
+relationcanvas 128386 relation_ref 1625090 // <generalisation>
+  from ref 128002 z 2007 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 128642 ---+
+  from ref 128514 z 2007 to ref 128002
+relationcanvas 129026 relation_ref 5314178 // <generalisation>
+  from ref 128898 z 2006 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 5314306 // <directional composition>
+  decenter_begin 422
+  decenter_end 471
+  from ref 128898 z 2006 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

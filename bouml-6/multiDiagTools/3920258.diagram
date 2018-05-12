@@ -1,7 +1,39 @@
-format 215
+format 216
 
 classcanvas 128002 class_ref 4536194 // AbstractStorage
   classdiagramsettings member_max_width 0 end
-  xyz 148 170 2000
+  xyz 551.5 475.5 2000
 end
+note 128130 "Goals:
+ - Get member name: \"id\"
+ - Get member type, comparable to QMetaType::Type
+ - Get value
+ - Should be \"outside\" of the struct
+
+The reflection of the struct must be usable to store/select data, without creating a QObject and define properties.
+A QObject subclass is a plus, and needs its implementation (check if value has changed an emit a signal, ...)
+
+ClientData client;
+SomeList clientList;
+SomeStorage storage;
+client = storage.select(client, client.fields().id == 25);
+clientList = storage.select(client, client.firstName LIKE \"abcd\");
+clientList = storage.selectAll(client);
+storage.store(client);
+storage.remove(client);
+"
+  xyzwh 40.5 40.5 2000 701 355
+note 128258 "We are in a compile time world here !
+We want (f.ex. with Client as Entity):
+
+ClientData client;
+SomeList dataList;
+SomeStorage storage;
+client = storage.select(client, client.def().id() == 25);
+clientList = storage.select(client, client.def().firstName() LIKE \"abcd\");
+clientList = storage.selectAll(client);
+storage.store(client);
+storage.remove(client);
+"
+  xyzwh 40.5 475.5 2000 431 247
 end

@@ -1,0 +1,66 @@
+format 218
+
+classcanvas 128130 class_ref 4742018 // Article
+  classdiagramsettings member_max_width 0 end
+  xyz 159 39 2000
+end
+classcanvas 128258 class_ref 4742146 // Unit
+  classdiagramsettings member_max_width 0 end
+  xyz 322 39 2000
+end
+classcanvas 128386 class_ref 4742274 // Schema
+  classdiagramsettings member_max_width 0 end
+  xyz 450.5 432.5 2000
+end
+classcanvas 128770 class_ref 4742530 // ArticleEditionModel
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 432.5 2000
+end
+classcanvas 129154 class_ref 4742786 // UnitInstance
+  classdiagramsettings member_max_width 0 end
+  xyz 352 266 2000
+end
+classcanvas 129794 class_ref 4769410 // VehicleTypeClass
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 63 162 2000
+end
+classcanvas 130050 class_ref 4846850 // VehicleTypeSerie
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 40.5 557.5 2000
+end
+classcanvas 130178 class_ref 4853506 // SchemaVersion
+  classdiagramsettings member_max_width 0 end
+  xyz 257.5 432.5 2000
+end
+classcanvas 130306 class_ref 4853634 // SchemaPage
+  classdiagramsettings member_max_width 0 end
+  xyz 561 58 2000
+end
+classcanvas 130946 class_ref 4853890 // InVehicleTypePlace
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 40 248 2006
+end
+relationcanvas 128898 relation_ref 5192194 // <association>
+  from ref 128130 z 2001 to ref 128258
+  no_role_a no_role_b
+  multiplicity_a_pos 306 90 3000 no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 5192578 // <association>
+  decenter_begin 477
+  decenter_end 467
+  from ref 128258 z 2001 to ref 129154
+  no_role_a no_role_b
+  multiplicity_a_pos 400 239 3000 no_multiplicity_b
+end
+relationcanvas 130434 relation_ref 5291010 // <association>
+  from ref 128258 z 2001 to ref 130306
+  no_role_a no_role_b
+  multiplicity_a_pos 545 90 3000 multiplicity_b_pos 528 90 3000
+end
+relationcanvas 131202 relation_ref 5291394 // <unidirectional association>
+  decenter_end 457
+  from ref 129154 z 2007 to ref 130946
+  no_role_a no_role_b
+  no_multiplicity_a multiplicity_b_pos 336 309 3000
+end
+end

@@ -1,4 +1,4 @@
-format 216
+format 217
 
 classcanvas 128002 class_ref 4653186 // TableModelRecordAdapter
   classdiagramsettings member_max_width 0 end
@@ -8,4 +8,14 @@ classcanvas 128130 class_ref 4646402 // StlContainerIteratorAdapter
   classdiagramsettings member_max_width 0 show_context_mode uml end
   xyz 40.5 40.5 2006
 end
+note 128258 "Notion of validators:
+ - Single field validator (f.ex. FieldMaxLength or IsRequired, IsUnique)
+ - Record (or row) validator: check all fields..
+
+Note: IsUnique can be heavy, maybe get it from underliying storage, like SQL ?
+
+In Entity_Gui, QValidator can be used
+
+In Entity_Widgets world, see item delegates"
+  xyzwh 38 427 2000 631 223
 end

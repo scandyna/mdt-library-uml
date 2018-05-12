@@ -2,43 +2,43 @@ format 216
 
 classcanvas 128002 class_ref 4528898 // SqlTable
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 427.5 2000
+  xyz 319 442 2000
 end
 classcanvas 128130 class_ref 2775810 // Table
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 40.5 568.5 2005
+  xyz 40.5 603.5 2005
 end
 classcanvas 128514 class_ref 4515458 // SqlFieldAttributes
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 264.5 2000
+  xyz 40.5 280.5 2000
 end
 classcanvas 128770 class_ref 4673922 // NamePrefix
   classdiagramsettings member_max_width 0 end
-  xyz 289.5 568.5 2000
+  xyz 512.5 280.5 2000
 end
 classcanvas 128898 class_ref 4674050 // NameSuffix
   classdiagramsettings member_max_width 0 end
-  xyz 303.5 264.5 2000
+  xyz 656.5 40.5 2000
 end
 classcanvas 129026 class_ref 4674178 // SqlTableAttributes
   classdiagramsettings member_max_width 0 end
-  xyz 454.5 568.5 2000
-end
-classcanvas 129154 class_ref 4467330 // FieldTypeMap
-  classdiagramsettings member_max_width 0 end
-  xyz 387.5 427.5 2000
+  xyz 303.5 280.5 2000
 end
 classcanvas 129282 class_ref 4701314 // PrimaryKey
   classdiagramsettings member_max_width 0 end
-  xyz 42 60 2000
+  xyz 40 35 2000
 end
 classcanvas 129410 class_ref 4701442 // PrimaryKeyField
   classdiagramsettings member_max_width 0 end
-  xyz 338 41 2000
+  xyz 370 49 2000
 end
-relationcanvas 129538 relation_ref 5176962 // <directional composition>
+note 129666 "Should be in a Schema namespace (like Sql::Schema) ?"
+  xyzwh 39 444 2000 243 79
+relationcanvas 129922 relation_ref 5176962 // <directional composition>
   from ref 129282 z 2001 to ref 129410
   no_role_a no_role_b
-  multiplicity_a_pos 322 122 3000 no_multiplicity_b
+  multiplicity_a_pos 354 130 3000 no_multiplicity_b
 end
+line 129794 -_-_
+  from ref 129666 z 2001 to ref 128002
 end

@@ -1,0 +1,26 @@
+format 218
+
+classcanvas 128002 class_ref 3755778 // RowRange
+  classdiagramsettings member_max_width 0 end
+  xyz 305 39 2000
+end
+classcanvas 128130 class_ref 3768834 // ColumnRange
+  classdiagramsettings member_max_width 0 end
+  xyz 39 266 2000
+end
+classcanvas 128258 class_ref 5172738 // IntegralRange
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 318 249 2005
+end
+relationcanvas 128386 relation_ref 5600642 // <directional composition>
+  from ref 128002 z 2006 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 5600770 // <directional composition>
+  decenter_end 456
+  from ref 128130 z 2006 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

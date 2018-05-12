@@ -1,87 +1,54 @@
-format 216
+format 217
 
-classcanvas 128898 class_ref 4467842 // ArticleData
-  classdiagramsettings member_max_width 0 end
-  xyz 742.3 260 2000
-end
 classcanvas 131714 class_ref 4521986 // ArticleDataStruct
   classdiagramsettings member_max_width 0 end
-  xyz 879.95 742.6 2006
+  xyz 42 232 2006
 end
 classcanvas 135298 class_ref 4536066 // ArticleId
   classdiagramsettings member_max_width 0 end
-  xyz 1067.6 320.05 2000
+  xyz 112 756.75 2000
 end
 classcanvas 140418 class_ref 4563458 // ArticleDef
   classdiagramsettings member_max_width 0 end
-  xyz 295.55 509.85 2000
+  xyz 408 360 2000
 end
 classcanvas 140546 class_ref 4563586 // idField
   classdiagramsettings member_max_width 0 end
-  xyz 405.15 671.55 2006
+  xyz 154 375 2006
 end
 classcanvas 140802 class_ref 4563714 // descriptionField
   classdiagramsettings member_max_width 0 end
-  xyz 41.55 528.85 2006
+  xyz 674 375 2006
 end
-classcanvas 142210 class_ref 4563842 // DataTemplate
+classcanvas 144130 class_ref 4701570 // IntegralUniqueIdTemplate
   classdiagramsettings member_max_width 0 end
-  xyz 750.3 39.9 2005
+  xyz 41 599.5 2005
 end
-classcanvas 143618 class_ref 2649602 // Double
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 549.5 320.05 2000
-end
-classcanvas 144130 class_ref 4701570 // UniqueIdTemplate
+classcanvas 145922 class_ref 4825602 // ArticleEntity
   classdiagramsettings member_max_width 0 end
-  xyz 996.6 104.2 2005
+  xyz 471 250 2000
 end
-note 144386 "Traits / checks :
- - Add a TAG in generated EntityDef (here ArticleDef) ?"
-  xyzwh 560 534.85 2000 352 70
-relationcanvas 131842 relation_ref 5023106 // <directional composition>
-  decenter_begin 941
-  decenter_end 476
-  from ref 128898 z 2007 to ref 131714
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
+classcanvas 146562 class_ref 4825730 // EntityTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 466 128 2005
 end
-line 140674 ---+ decenter_begin 483 decenter_end 946
+classcanvas 146946 class_ref 4825858 // def_type
+  classdiagramsettings member_max_width 0 end
+  xyz 487 42 2011
+end
+classcanvas 147202 class_ref 4825986 // data_struct_type
+  classdiagramsettings member_max_width 0 end
+  xyz 305 146 2011
+end
+line 140674 ---+ decenter_end 462
   from ref 140546 z 2007 to ref 140418
-line 140930 ---+
+line 140930 ---+ decenter_end 462
   from ref 140802 z 2007 to ref 140418
-relationcanvas 141058 relation_ref 5059074 // <unidirectional association>
-  geometry VHV unfixed
-  decenter_begin 58
-  decenter_end 946
-  from ref 128898 z 2001 to point 752 469.7
-  line 144898 z 2001 to point 505 469.7
-  line 145026 z 2001 to ref 140418
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 142466 relation_ref 5059458 // <generalisation>
-  from ref 128898 z 2006 to ref 142210
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
 relationcanvas 142594 relation_ref 5065986 // <dependency>
-  geometry VH unfixed
-  decenter_begin 311
-  from ref 140418 z 2007 to point 362 792
-  line 144514 z 2007 to ref 131714
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 143234 relation_ref 5079170 // <dependency>
-  decenter_end 577
-  from ref 128898 z 2001 to ref 135298
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 143746 relation_ref 5176834 // <dependency>
-  decenter_end 577
-  from ref 128898 z 2001 to ref 143618
+  decenter_end 469
+  from ref 140418 z 2007 to point 520 520
+  line 146306 z 2007 to point 112 520
+  line 146434 z 2007 to ref 131714
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -90,6 +57,27 @@ relationcanvas 144258 relation_ref 5177218 // <generalisation>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 144770 -_-_
-  from ref 140418 z 2001 to ref 144386
+relationcanvas 146050 relation_ref 5263490 // <dependency>
+  decenter_begin 538
+  from ref 145922 z 2001 to ref 140418
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 146178 relation_ref 5263618 // <dependency>
+  decenter_begin 434
+  decenter_end 457
+  from ref 145922 z 2007 to ref 131714
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 146818 relation_ref 5264002 // <dependency>
+  decenter_begin 538
+  from ref 145922 z 2006 to ref 146562
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 147074 ---+
+  from ref 146946 z 2012 to ref 146562
+line 147330 ---+
+  from ref 147202 z 2012 to ref 146562
 end

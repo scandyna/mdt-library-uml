@@ -1,0 +1,11 @@
+format 216
+
+classcanvas 128002 class_ref 4762370 // EntityDefTag
+  classdiagramsettings member_max_width 0 end
+  xyz 53 112 2000
+end
+classcanvas 128130 class_ref 4762498 // EntityFieldDefTag
+  classdiagramsettings member_max_width 0 end
+  xyz 208 109 2000
+end
+end

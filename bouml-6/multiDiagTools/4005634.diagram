@@ -2,38 +2,50 @@ format 216
 
 classcanvas 128002 class_ref 3715330 // PrimaryKey
   classdiagramsettings member_max_width 0 show_context_mode uml end
-  xyz 354 403 2000
+  xyz 354 531 2000
 end
 classcanvas 128130 class_ref 3823106 // PrimaryKeyProxyModel
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 42 466 2006
+  xyz 42 594 2006
 end
 classcanvas 128386 class_ref 4701186 // ItemModelPrimaryKey
   classdiagramsettings member_max_width 0 end
-  xyz 40 66 2000
+  xyz 344 42 2000
 end
 classcanvas 128514 class_ref 4701314 // PrimaryKey
   classdiagramsettings member_max_width 0 end
-  xyz 258 40 2000
+  xyz 288 145 2000
 end
 classcanvas 128642 class_ref 4701442 // PrimaryKeyField
   classdiagramsettings member_max_width 0 end
-  xyz 282 185 3005
+  xyz 42 169 3005
 end
+classcanvas 129154 class_ref 4803842 // PrimaryKeyRecord
+  classdiagramsettings member_max_width 0 end
+  xyz 325 375 2000
+end
+note 129538 "using MyEntityPrimaryKey = PrimaryKey<MyEntity>;"
+  xyzwh 616 218 2000 377 53
 relationcanvas 128258 relation_ref 4519682 // <directional composition>
   from ref 128130 z 2007 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 128770 relation_ref 5176962 // <directional composition>
-  from ref 128514 z 3006 to ref 128642
-  no_role_a no_role_b
-  multiplicity_a_pos 369 158 3000 no_multiplicity_b
-end
 relationcanvas 128898 relation_ref 5177090 // <dependency>
-  decenter_end 533
   from ref 128386 z 2001 to ref 128514
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 129410 relation_ref 5241090 // <directional composition>
+  from ref 129154 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 5176962 // <directional composition>
+  from ref 128514 z 3006 to ref 128642
+  no_role_a no_role_b
+  multiplicity_a_pos 256 246 3000 no_multiplicity_b
+end
+line 129666 -_-_ decenter_end 415
+  from ref 128514 z 2001 to ref 129538
 end
