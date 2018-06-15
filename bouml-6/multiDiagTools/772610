@@ -1,6 +1,6 @@
 format 218
 "Container" // Mdt::Container
-  revision 13
+  revision 18
   modified_by 2 "philippe"
   // class settings
   
@@ -1678,6 +1678,7 @@ ${inlines}
 	  b parent class_ref 3775618 // RowColumnListBase
       end
     end
+
   end
 
   classview 2185858 "TableCache"
@@ -1928,6 +1929,36 @@ ${inlines}
 	
 	
       end
+
+      operation 7086466 "getRowsToUpdateInStorage"
+	cpp_inline public return_type class_ref 3775490 // RowList
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7086338 "getRowsToDeleteInStorage"
+	cpp_inline public return_type class_ref 3775490 // RowList
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
 
     classdiagram 4279298 "TableCache"
@@ -2126,6 +2157,36 @@ ${inlines}
       end
 
       operation 6930562 "getRowsToInsertIntoStorage"
+	cpp_inline public return_type class_ref 3775490 // RowList
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7055874 "getRowsToUpdateInStorage"
+	cpp_inline public return_type class_ref 3775490 // RowList
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7086210 "getRowsToDeleteInStorage"
 	cpp_inline public return_type class_ref 3775490 // RowList
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};

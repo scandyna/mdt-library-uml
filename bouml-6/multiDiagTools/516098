@@ -1,6 +1,6 @@
 format 218
 "ItemModel" // Mdt::ItemModel
-  revision 130
+  revision 135
   modified_by 2 "philippe"
   // class settings
   
@@ -1530,6 +1530,19 @@ ${inlines}
 	
       end
 
+      operation 7032834 "editRoleData"
+	abstract cpp_virtual protected return_type class_ref 161154 // QVariant
+	nparams 2
+	  param in name "row" explicit_type "int"
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
       operation 7011074 "setEditRoleData"
 	abstract cpp_virtual protected explicit_return_type "bool"
 	nparams 3
@@ -1602,6 +1615,38 @@ ${inlines}
 	
       end
 
+      operation 7032706 "emitVerticalHeaderDataChanged"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "rowRange" type class_ref 3755778 // RowRange
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7032962 "emitVerticalHeaderDataChanged"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
       operation 6965762 "beginInsertRows"
 	protected explicit_return_type "void"
 	nparams 1
@@ -1618,7 +1663,6 @@ ${inlines}
 	
       end
     end
-
   end
 
   classview 1637122 "VariantTableModel"
@@ -2122,22 +2166,6 @@ ${items}};
 	end
       end
 
-      operation 6973314 "rowCount"
-	cpp_virtual public explicit_return_type "int"
-	nparams 1
-	  param in name "parent" type class_ref 147330 // QModelIndex
-	    defaultvalue "QModelIndex()"
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
       operation 6973442 "headerData"
 	public return_type class_ref 161154 // QVariant
 	nparams 3
@@ -2155,13 +2183,16 @@ ${items}};
 	
       end
 
-      operation 6973826 "flags"
-	public explicit_return_type "int"
-	nparams 1
+      operation 7040258 "setData"
+	public explicit_return_type "bool"
+	nparams 3
 	  param in name "index" type class_ref 147330 // QModelIndex
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
+	  param in name "value" type class_ref 161154 // QVariant
+	  param in name "role" explicit_type "int"
+	    defaultvalue "Qt::EditRole"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${staticnl}{
   ${body}}
 "
 	
@@ -2170,45 +2201,9 @@ ${items}};
 	
       end
 
-      operation 6973570 "insertRows"
-	public explicit_return_type "bool"
-	nparams 3
-	  param in name "row" explicit_type "int"
-	  param in name "count" explicit_type "int"
-	  param in name "parent" type class_ref 147330 // QModelIndex
-	    defaultvalue "QModelIndex()"
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6973698 "removeRows"
-	public explicit_return_type "bool"
-	nparams 3
-	  param in name "row" explicit_type "int"
-	  param in name "count" explicit_type "int"
-	  param in name "parent" type class_ref 147330 // QModelIndex
-	    defaultvalue "QModelIndex()"
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6974082 "submit"
+      operation 6974210 "revert"
 	stereotype "slot"
-	cpp_virtual public explicit_return_type "bool"
+	cpp_virtual public explicit_return_type "void"
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -2222,9 +2217,27 @@ ${items}};
 	
       end
 
-      operation 6974210 "revert"
+      operation 7107586 "beginRemoveRows"
 	stereotype "slot"
-	cpp_virtual public explicit_return_type "void"
+	cpp_inline public explicit_return_type "void"
+	nparams 2
+	  param in name "firstRow" explicit_type "int"
+	  param in name "lastRow" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7107714 "endRemoveRows"
+	stereotype "slot"
+	cpp_inline public explicit_return_type "void"
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -2262,6 +2275,23 @@ ${items}};
 	
       end
 
+      operation 7092994 "removeRowsFromCache"
+	protected explicit_return_type "bool"
+	nparams 2
+	  param in name "row" explicit_type "int"
+	  param in name "count" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
       operation 6975362 "operationAtRow"
 	abstract cpp_virtual protected return_type class_ref 5105026 // TableCacheOperation
 	nparams 1
@@ -2288,6 +2318,38 @@ ${items}};
 	    cpp default "${type}"
 	    classrelation_ref 5654658 // <generalisation>
 	  b parent class_ref 5206530 // AbstractTableModel
+      end
+
+      operation 7040386 "rowCountImpl"
+	cpp_virtual private explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7040514 "insertRowsImpl"
+	cpp_virtual private explicit_return_type "bool"
+	nparams 2
+	  param in name "row" explicit_type "int"
+	  param in name "count" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
       end
     end
 

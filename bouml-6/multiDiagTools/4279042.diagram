@@ -2,25 +2,25 @@ format 218
 
 classcanvas 128898 class_ref 147202 // QAbstractTableModel
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 614 42 2000
+  xyz 602 42 2000
 end
 classcanvas 129026 class_ref 5165698 // AbstractCachedTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 417 359 2000
+  xyz 417 706 2000
 end
 classcanvas 129794 class_ref 5165954 // RemovedRowsDisplayMode
   classdiagramsettings member_max_width 0 end
-  xyz 39 431 2006
+  xyz 39 771 2006
 end
 classcanvas 130306 class_ref 5105026 // TableCacheOperation
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 562 658 2000
+  xyz 986 790 2000
 end
 classcanvas 130562 class_ref 5206530 // AbstractTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 515 128 2006
+  xyz 409 127 2006
 end
-line 129922 ---+ decenter_begin 532
+line 129922 ---+
   from ref 129794 z 2007 to ref 129026
 relationcanvas 130434 relation_ref 5580546 // <dependency>
   from ref 129026 z 2001 to ref 130306
@@ -28,6 +28,7 @@ relationcanvas 130434 relation_ref 5580546 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130690 relation_ref 5623042 // <generalisation>
+  decenter_end 523
   from ref 130562 z 2007 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b

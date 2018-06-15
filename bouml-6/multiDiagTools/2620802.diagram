@@ -1,7 +1,29 @@
-format 211
+format 218
 
 classcanvas 128002 class_ref 2995074 // DeleteQuery
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 40.5 2000
+  xyz 437 223 2000
+end
+classcanvas 128130 class_ref 5227010 // AbstractQuery
+  classdiagramsettings member_max_width 0 end
+  xyz 476 41 2000
+end
+classcanvas 128386 class_ref 5246722 // DeleteStatement
+  classdiagramsettings member_max_width 0 end
+  xyz 42 226 2000
+end
+note 129154 "TODO: see QSqlDriver::sqlStatement()"
+  xyzwh 307.5 410.5 2000 279 57
+relationcanvas 128258 relation_ref 5631106 // <generalisation>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 5651074 // <directional composition>
+  decenter_begin 473
+  decenter_end 472
+  from ref 128002 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 end

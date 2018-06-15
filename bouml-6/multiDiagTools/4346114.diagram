@@ -1,0 +1,7 @@
+format 219
+
+classcanvas 128002 class_ref 4777090 // VehicleTypeTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 106 299 2000
+end
+end

@@ -1,36 +1,59 @@
-format 211
+format 218
 
 classcanvas 128002 class_ref 3343234 // SelectQuery
   classdiagramsettings member_max_width 0 end
-  xyz 39 130 2000
+  xyz 85.5 561.25 2000
 end
 classcanvas 128130 class_ref 3336066 // SelectStatement
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 522 138 2000
+  classdiagramsettings member_max_width 0 end
+  xyz 40.25 683.75 2000
 end
 classcanvas 128386 class_ref 910594 // QSqlQuery
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 223 234 2000
+  xyz 567.75 580.25 2000
 end
-classcanvas 128642 class_ref 405122 // QSqlDatabase
+classcanvas 129026 class_ref 2994946 // UpdateQuery
+  classdiagramsettings member_max_width 0 end
+  xyz 564 347 2005
+end
+classcanvas 129154 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 209 42 2000
+  xyz 710 40.75 2011
 end
+classcanvas 129794 class_ref 5227010 // AbstractQuery
+  classdiagramsettings member_max_width 0 end
+  xyz 618 125 2017
+end
+note 130818 "TODO: see QSqlDriver::sqlStatement()"
+  xyzwh 307.5 410.5 2000 279 57
 relationcanvas 128258 relation_ref 3741442 // <dependency>
+  decenter_end 505
   from ref 128002 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 3741570 // <dependency>
-  decenter_begin 507
+  decenter_begin 457
+  decenter_end 422
   from ref 128002 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 128770 relation_ref 3741698 // <dependency>
-  decenter_begin 507
-  decenter_end 533
-  from ref 128002 z 2001 to ref 128642
+relationcanvas 129922 relation_ref 5630722 // <generalisation>
+  from ref 129794 z 2018 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 5630850 // <generalisation>
+  from ref 129026 z 2018 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 5630978 // <generalisation>
+  geometry VHV unfixed
+  from ref 128002 z 2018 to point 304 307
+  line 130562 z 2018 to point 740 307
+  line 130690 z 2018 to ref 129794
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

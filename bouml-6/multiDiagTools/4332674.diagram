@@ -1,0 +1,16 @@
+format 218
+
+classcanvas 128002 class_ref 5253634 // QListView
+  classdiagramsettings member_max_width 0 end
+  xyz 179.1 225.9 2000
+end
+classcanvas 128130 class_ref 2160258 // QAbstractItemView
+  classdiagramsettings member_max_width 0 end
+  xyz 35.1 39.15 2000
+end
+relationcanvas 128258 relation_ref 5657858 // <generalisation>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

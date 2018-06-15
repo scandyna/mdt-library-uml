@@ -2,15 +2,15 @@ format 218
 
 classcanvas 128002 class_ref 5105026 // TableCacheOperation
   classdiagramsettings member_max_width 0 end
-  xyz 420 41 2000
+  xyz 416 229 2000
 end
 classcanvas 128130 class_ref 5004546 // TableCacheOperationIndex
   classdiagramsettings member_max_width 0 end
-  xyz 412 232 2006
+  xyz 96 244 2006
 end
 classcanvas 128386 class_ref 5091202 // TableCacheOperationMap
   classdiagramsettings member_max_width 0 end
-  xyz 42 240 3005
+  xyz 42 42 3005
 end
 relationcanvas 128258 relation_ref 5533186 // <directional composition>
   from ref 128130 z 2007 to ref 128002
@@ -18,9 +18,8 @@ relationcanvas 128258 relation_ref 5533186 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 5519874 // <directional composition>
-  decenter_begin 457
   from ref 128386 z 3006 to ref 128130
   no_role_a no_role_b
-  multiplicity_a_pos 396 297 3000 no_multiplicity_b
+  multiplicity_a_pos 194 217 3000 no_multiplicity_b
 end
 end

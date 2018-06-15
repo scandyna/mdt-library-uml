@@ -1,6 +1,6 @@
 format 218
 "Qt" // Qt
-  revision 251
+  revision 254
   modified_by 2 "philippe"
   // class settings
   
@@ -321,6 +321,20 @@ ${inlines}
       php_decl ""
       python_2_2 python_decl ""
       idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 5233666 "QVariantList"
+      visibility package stereotype "typedef" explicit_base_type ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
       explicit_switch_type ""
       mysql_decl ""
       
@@ -4177,6 +4191,34 @@ ${inlines}
 "
 	    classrelation_ref 5419906 // <unidirectional association>
 	  b parent class_ref 4909570 // VehicleTypeClassTableModel
+      end
+    end
+
+    classdiagram 4332674 "QListView"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5253634 "QListView"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5689346 // <generalisation>
+	relation 5657858 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5689346 // <generalisation>
+	  b parent class_ref 2160258 // QAbstractItemView
       end
     end
   end
@@ -8149,6 +8191,112 @@ ${inlines}
 "
 	    classrelation_ref 5396738 // <directional composition>
 	  b parent class_ref 4936322 // QItemEditorCreatorBase
+      end
+    end
+
+    classdiagram 4332546 "Undo_framework"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5253250 "QUndoCommand"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7140610 "redo"
+	abstract cpp_virtual public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7140738 "undo"
+	abstract cpp_virtual public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5253378 "QUndoStack"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5689090 // <generalisation>
+	relation 5657602 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5689090 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 5689218 // <directional composition>
+	relation 5657730 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 5689218 // <directional composition>
+	  b parent class_ref 5253250 // QUndoCommand
+      end
+    end
+
+    class 5253506 "QUndoView"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5689474 // <generalisation>
+	relation 5657986 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5689474 // <generalisation>
+	  b parent class_ref 5253634 // QListView
+      end
+
+      classrelation 5689602 // <unidirectional association>
+	relation 5658114 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 5689602 // <unidirectional association>
+	  b parent class_ref 5253378 // QUndoStack
       end
     end
   end

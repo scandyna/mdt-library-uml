@@ -1,10 +1,12 @@
-format 218
+format 219
 "Entity" // Mdt::Railway::Entity
-  revision 10
+  revision 12
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 218
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -30,9 +34,13 @@ format 218
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -112,7 +120,7 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      associated_diagram classdiagram_ref 4059010 // VehicleTypeEditor
+      associated_diagram classdiagram_ref 4059010 // RW_Widgets_VehicleTypeEditor
       classrelation 5322370 // <association>
 	relation_ref 5291650 // <association>
       end
@@ -223,6 +231,7 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      associated_diagram classdiagram_ref 4099714 // VehicleTypeRepository
       classrelation 5323394 // <association>
 	relation_ref 5292162 // <association>
       end

@@ -1,6 +1,6 @@
-format 216
+format 218
 "TypeTraits" // Mdt::Entity::TypeTraits
-  revision 7
+  revision 8
   modified_by 2 "philippe"
   // class settings
   

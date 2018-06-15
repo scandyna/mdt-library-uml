@@ -1,0 +1,7 @@
+format 218
+
+classcanvas 128002 class_ref 4929538 // VehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 112 240 2000
+end
+end

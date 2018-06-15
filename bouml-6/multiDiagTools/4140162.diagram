@@ -1,62 +1,27 @@
-format 217
+format 219
 
 classcanvas 128002 class_ref 4922882 // VehicleTypeClassId
   classdiagramsettings member_max_width 0 end
-  xyz 686.5 640.5 2000
+  xyz 40.5 325.5 2000
 end
 classcanvas 128130 class_ref 4861314 // VehicleTypeClassData
   classdiagramsettings member_max_width 0 end
-  xyz 453.5 640.5 2000
-end
-classcanvas 128258 class_ref 4909698 // VehicleTypeClassDataList
-  classdiagramsettings member_max_width 0 end
-  xyz 40.5 640.5 2000
+  xyz 40.5 184.5 2000
 end
 classcanvas 128386 class_ref 4909570 // VehicleTypeClassTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 41 331 2006
-end
-classcanvas 128642 class_ref 4639618 // RowResizableTableModel
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 217 232 2005
-end
-classcanvas 128898 class_ref 4956418 // VehicleTypeClassTableProxy
-  classdiagramsettings member_max_width 0 end
-  xyz 608 375 2012
-end
-classcanvas 129154 class_ref 4956546 // StlTableProxy
-  classdiagramsettings member_max_width 0 end
-  xyz 565 40 2017
+  xyz 42 38 2006
 end
 classcanvas 129410 class_ref 4916226 // AbstractVehicleTypeClassRepository
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 794 498 2022
+  xyz 282 42 2022
 end
 classcanvas 129666 class_ref 4929538 // VehicleTypeClass
   classdiagramsettings member_max_width 0 end
-  xyz 626 506 2028
+  xyz 273.5 184.5 2028
 end
-classcanvas 130050 class_ref 4956674 // StlTableProxyIterator
-  classdiagramsettings member_max_width 0 end
-  xyz 850 65 2023
-end
-relationcanvas 128770 relation_ref 5366274 // <generalisation>
-  from ref 128386 z 2007 to ref 128642
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 129026 relation_ref 5386498 // <unidirectional association>
-  from ref 128386 z 2013 to ref 128898
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 129282 relation_ref 5386882 // <generalisation>
-  from ref 128898 z 2018 to ref 129154
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130434 relation_ref 5387266 // <unidirectional association>
-  from ref 128898 z 2023 to ref 129410
+relationcanvas 130562 relation_ref 5616514 // <dependency>
+  from ref 128386 z 2023 to ref 129410
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

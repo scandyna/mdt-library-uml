@@ -1,81 +1,47 @@
-format 217
+format 219
 
 classcanvas 128002 class_ref 4769410 // VehicleTypeClass
   classdiagramsettings member_max_width 0 end
-  xyz 376 687 2000
+  xyz 52 167 2000
 end
 classcanvas 128130 class_ref 4854018 // VehicleType
   classdiagramsettings member_max_width 0 end
-  xyz 536 698 3005
+  xyz 40 306 3005
 end
 classcanvas 129154 class_ref 4861186 // VehicleTypeData
   classdiagramsettings member_max_width 0 end
-  xyz 227 185 2000
+  xyz 399 185 2000
 end
 classcanvas 129282 class_ref 4861314 // VehicleTypeClassData
   classdiagramsettings member_max_width 0 end
-  xyz 40 186 2000
+  xyz 208 186 2000
 end
 classcanvas 129410 class_ref 4563842 // DataTemplate
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 288 40 2005
-end
-classcanvas 129538 class_ref 4825730 // EntityTemplate
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 600.5 40.5 2011
-end
-classcanvas 129666 class_ref 4909570 // VehicleTypeClassTableModel
-  classdiagramsettings member_max_width 0 end
-  xyz 42 458 2000
-end
-classcanvas 129794 class_ref 4909698 // VehicleTypeClassDataList
-  classdiagramsettings member_max_width 0 end
-  xyz 418 495 2000
-end
-classcanvas 130562 class_ref 4578562 // DataList
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 514 392 2005
-end
-classcanvas 130818 class_ref 4922882 // VehicleTypeClassId
-  classdiagramsettings member_max_width 0 end
-  xyz 100 794 2000
-end
-classcanvas 130946 class_ref 4701570 // IntegralUniqueIdTemplate
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 42 688 2005
+  xyz 464 40 2005
 end
 relationcanvas 128258 relation_ref 5291650 // <association>
   from ref 128002 z 3006 to ref 128130
   no_role_a no_role_b
-  multiplicity_a_pos 520 746 3000 no_multiplicity_b
+  multiplicity_a_pos 97 279 3000 no_multiplicity_b
 end
 relationcanvas 129922 relation_ref 5343234 // <generalisation>
+  decenter_begin 510
   from ref 129154 z 2006 to ref 129410
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130050 relation_ref 5343362 // <generalisation>
   geometry VHV unfixed
-  decenter_begin 470
-  from ref 129282 z 2006 to point 109 144
-  line 131458 z 2006 to point 374 144
+  decenter_begin 522
+  from ref 129282 z 2006 to point 285 144
+  line 131458 z 2006 to point 550 144
   line 131586 z 2006 to ref 129410
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130434 relation_ref 5343746 // <directional composition>
-  decenter_begin 523
-  from ref 129666 z 2001 to ref 129794
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130690 relation_ref 5344898 // <generalisation>
-  from ref 129794 z 2006 to ref 130562
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 131074 relation_ref 5351426 // <generalisation>
-  from ref 130818 z 2006 to ref 130946
+relationcanvas 131714 relation_ref 5388546 // <directional composition>
+  from ref 129282 z 2001 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

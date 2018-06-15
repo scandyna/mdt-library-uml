@@ -1,0 +1,16 @@
+format 218
+
+note 128002 "GUI that let the user:
+ - Select Qt5 library
+ - Select Qwt library
+ - Select Boost library
+ - Select ....
+
+ - Propose to download
+ - Propose system wide instelled (if compatible..)
+
+ - Select build config (release, debug, developper, ...)
+
+ - Select compiler"
+  xyzwh 39 35 2000 657 319
+end

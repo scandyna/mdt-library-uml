@@ -1,0 +1,20 @@
+format 219
+
+classcanvas 128258 class_ref 4902658 // CreateVehicleType
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 216.5 2000
+end
+classcanvas 128386 class_ref 4854018 // VehicleType
+  classdiagramsettings member_max_width 0 end
+  xyz 200 50 2000
+end
+classcanvas 128514 class_ref 4769410 // VehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 40 39 2006
+end
+relationcanvas 128642 relation_ref 5291650 // <association>
+  from ref 128514 z 2007 to ref 128386
+  no_role_a no_role_b
+  multiplicity_a_pos 184 98 3000 no_multiplicity_b
+end
+end

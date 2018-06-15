@@ -2,19 +2,27 @@ format 218
 
 classcanvas 128002 class_ref 2994690 // InsertQuery
   classdiagramsettings member_max_width 0 end
-  xyz 129 128 2000
+  xyz 129 40 2000
 end
 classcanvas 128514 class_ref 2775042 // Field
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 42 346 2000
+  xyz 42 258 2000
 end
 classcanvas 128642 class_ref 2824706 // AutoIncrementPrimaryKey
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 262 642 2000
+  xyz 618 258 2000
 end
 classcanvas 129282 class_ref 910594 // QSqlQuery
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 311 42 2006
+  xyz 311 554 2006
+end
+classcanvas 131458 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 676.5 8.75 2012
+end
+classcanvas 131586 class_ref 5227010 // QueryBase
+  classdiagramsettings member_max_width 0 end
+  xyz 594.5 93 2018
 end
 relationcanvas 129538 relation_ref 3365506 // <directional composition>
   from ref 128002 z 2007 to ref 129282
@@ -28,7 +36,13 @@ relationcanvas 131202 relation_ref 3365762 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131330 relation_ref 3365890 // <dependency>
+  decenter_begin 507
   from ref 128002 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131714 relation_ref 5630722 // <generalisation>
+  from ref 131586 z 2019 to ref 131458
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

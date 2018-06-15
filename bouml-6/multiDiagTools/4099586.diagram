@@ -1,73 +1,69 @@
-format 218
+format 219
 
-classcanvas 128002 class_ref 4860930 // VehicleTypeEdition
+classcanvas 128002 class_ref 4860930 // EditVehicleType
   classdiagramsettings member_max_width 0 end
-  xyz 374.9 144 2000
+  xyz 284 144 2000
 end
 classcanvas 128130 class_ref 4769410 // VehicleTypeClass
   classdiagramsettings member_max_width 0 end
-  xyz 562.2 519.8 2000
+  xyz 56 583 2000
 end
 classcanvas 128258 class_ref 4854018 // VehicleType
   classdiagramsettings member_max_width 0 end
-  xyz 809.1 532.8 3005
+  xyz 216 594 3005
 end
 classcanvas 129026 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 228.9 518.95 2000
+  xyz 622.5 584.75 2000
 end
 classcanvas 129282 class_ref 4840066 // AbstractVehicleTypeRepository
   classdiagramsettings member_max_width 0 end
-  xyz 469.8 41 2000
+  xyz 40 210 2000
 end
 classcanvas 129410 class_ref 4861186 // VehicleTypeData
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 177 2000
+  xyz 331 377 2000
 end
 classcanvas 129538 class_ref 4861314 // VehicleTypeClassData
   classdiagramsettings member_max_width 0 end
-  xyz 805.1 230 2000
+  xyz 40 722 2000
 end
 classcanvas 129922 class_ref 4488066 // FieldAttributes
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 720.8 388 2000
+  xyz 624 50 2000
 end
 classcanvas 130178 class_ref 4888450 // FieldDataValidator
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 474 376.8 2006
+  xyz 377 40 2006
 end
 classcanvas 130562 class_ref 4902658 // CreateVehicleType
   classdiagramsettings member_max_width 0 end
-  xyz 43.7 769.5 2000
-end
-classcanvas 130690 class_ref 4902786 // EditVehicleType
-  classdiagramsettings member_max_width 0 end
-  xyz 42.7 645.15 2000
+  xyz 521.5 864.5 2000
 end
 classcanvas 130818 class_ref 4902914 // DeleteVehicleType
   classdiagramsettings member_max_width 0 end
-  xyz 197.6 645.15 2000
+  xyz 753 708.25 2000
 end
 classcanvas 130946 class_ref 4903042 // FindVehicleType
   classdiagramsettings member_max_width 0 end
-  xyz 364.5 645.15 2000
+  xyz 440.5 708.25 2000
 end
 classcanvas 133378 class_ref 4909570 // VehicleTypeClassTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 797.9 6.6 2006
+  xyz 711 194 2006
 end
 classcanvas 133634 class_ref 4922882 // VehicleTypeClassId
   classdiagramsettings member_max_width 0 end
-  xyz 179.1 379.2 2000
+  xyz 954.5 864.5 2000
 end
 classcanvas 133890 class_ref 4929538 // VehicleTypeClass
   classdiagramsettings member_max_width 0 end
-  xyz 68 88.9 2000
+  xyz 40.5 864.5 2000
 end
 relationcanvas 128386 relation_ref 5291650 // <association>
   from ref 128130 z 3006 to ref 128258
   no_role_a no_role_b
-  multiplicity_a_pos 792 579 3000 no_multiplicity_b
+  multiplicity_a_pos 200 642 3000 no_multiplicity_b
 end
 relationcanvas 129666 relation_ref 5299458 // <directional composition>
   from ref 128002 z 2001 to ref 129410
@@ -89,33 +85,25 @@ relationcanvas 130434 relation_ref 5322882 // <dependency>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131714 relation_ref 5336450 // <generalisation>
-  geometry VHV unfixed
-  from ref 130690 z 2001 to point 96 605.3
-  line 133122 z 2001 to point 258 605.3
-  line 133250 z 2001 to ref 129026
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
 relationcanvas 131842 relation_ref 5336578 // <generalisation>
   geometry VHV unfixed
-  from ref 130946 z 2001 to point 419 605.3
-  line 132610 z 2001 to point 258 605.3
+  from ref 130946 z 2001 to point 496 669
+  line 132610 z 2001 to point 652 669
   line 132738 z 2001 to ref 129026
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131970 relation_ref 5336706 // <generalisation>
-  from ref 130818 z 2001 to ref 129026
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 133506 relation_ref 5344770 // <directional composition>
-  from ref 128002 z 2007 to ref 133378
+  geometry VHV unfixed
+  from ref 130818 z 2001 to point 815 669
+  line 134658 z 2001 to point 652 669
+  line 134786 z 2001 to ref 129026
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 134530 relation_ref 5388546 // <directional composition>
+  decenter_begin 522
+  decenter_end 528
   from ref 129538 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b

@@ -1,9 +1,9 @@
 format 218
 
-classcanvas 128002 class_ref 5131778 // InsertStatement
+classcanvas 128002 class_ref 5240194 // StatementAlgorithm
   classdiagramsettings member_max_width 0 end
-  xyz 103 281 2000
+  xyz 169 145 2000
 end
 note 128130 "TODO: see QSqlDriver::sqlStatement()"
-  xyzwh 254 276 2000 279 57
+  xyzwh 307.5 410.5 2000 279 57
 end

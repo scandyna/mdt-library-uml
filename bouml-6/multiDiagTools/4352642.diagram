@@ -1,0 +1,24 @@
+format 219
+
+classcanvas 128002 class_ref 4860930 // EditVehicleType
+  classdiagramsettings member_max_width 0 end
+  xyz 40 40 2000
+end
+classcanvas 128130 class_ref 4861186 // VehicleTypeData
+  classdiagramsettings member_max_width 0 end
+  xyz 471 73 2006
+end
+classcanvas 128386 class_ref 4861314 // VehicleTypeClassData
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 312.5 2000
+end
+classcanvas 128514 class_ref 4922882 // VehicleTypeClassId
+  classdiagramsettings member_max_width 0 end
+  xyz 273.5 312.5 2000
+end
+relationcanvas 128258 relation_ref 5299458 // <directional composition>
+  from ref 128002 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end
