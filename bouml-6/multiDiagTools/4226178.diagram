@@ -1,8 +1,37 @@
-format 218
+format 219
 
-note 128002 "Notion of Query Generators"
-  xyzwh 40.5 203.5 2000 359 61
-note 128258 "Multi-type repos ?
-(QVariant?)"
-  xyzwh 40.5 40.5 2000 383 83
+classcanvas 128386 class_ref 5281794 // Terminal
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 175 184 2005
+end
+classcanvas 128514 class_ref 5281922 // EntityTag
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 473.5 2000
+end
+classcanvas 128642 class_ref 5282050 // EntityTerminal
+  classdiagramsettings member_max_width 0 end
+  xyz 36 186 2000
+end
+note 128898 "In SQL: need TableName and FieldName"
+  xyzwh 40.5 328.5 2000 353 65
+classcanvas 129154 class_ref 3225730 // extends
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 209 40 2011
+end
+relationcanvas 129282 relation_ref 5707394 // <generalisation>
+  decenter_begin 515
+  decenter_end 523
+  from ref 128386 z 2012 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 5707778 // <generalisation>
+  geometry VHV unfixed
+  decenter_end 523
+  from ref 128642 z 2012 to point 86 144
+  line 129538 z 2012 to point 285 144
+  line 129666 z 2012 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 end

@@ -1,0 +1,84 @@
+format 219
+
+classcanvas 128002 class_ref 3225730 // extends
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 122.45 41.5 2005
+end
+classcanvas 128130 class_ref 5281794 // Terminal
+  classdiagramsettings member_max_width 0 end
+  xyz 161.1 188.9 2000
+end
+classcanvas 128386 class_ref 3294594 // TableField
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 268.35 186.6 2000
+end
+classcanvas 128514 class_ref 3247490 // TableFieldTerminal
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 529.45 195.6 2011
+end
+classcanvas 129154 class_ref 5282178 // EntityAndFieldTerminal
+  classdiagramsettings member_max_width 0 end
+  xyz 40.4 296.1 2000
+end
+classcanvas 129922 class_ref 5282306 // EntityName
+  classdiagramsettings member_max_width 0 end
+  xyz 389.95 306.1 2000
+end
+classcanvas 130050 class_ref 5282434 // FieldName
+  classdiagramsettings member_max_width 0 end
+  xyz 255.6 389.85 2000
+end
+classcanvas 130178 class_ref 5282562 // EntityAndField
+  classdiagramsettings member_max_width 0 end
+  xyz 241.6 306.1 2005
+end
+classcanvas 130690 class_ref 5282690 // FieldList
+  classdiagramsettings member_max_width 0 end
+  xyz 298 603 2000
+end
+relationcanvas 128258 relation_ref 5707394 // <generalisation>
+  decenter_end 476
+  from ref 128130 z 2006 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 3704962 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 487
+  decenter_end 476
+  from ref 128514 z 2012 to point 660 147
+  line 129666 z 2012 to point 191 147
+  line 129794 z 2012 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 3705090 // <dependency>
+  from ref 128514 z 2012 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 5707906 // <generalisation>
+  geometry VHV unfixed
+  decenter_end 476
+  from ref 129154 z 2006 to point 118 147
+  line 129410 z 2006 to point 191 147
+  line 129538 z 2006 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130306 relation_ref 5708034 // <dependency>
+  from ref 130178 z 2006 to ref 129922
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130434 relation_ref 5708162 // <dependency>
+  from ref 130178 z 2006 to ref 130050
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 5708290 // <dependency>
+  from ref 129154 z 2006 to ref 130178
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

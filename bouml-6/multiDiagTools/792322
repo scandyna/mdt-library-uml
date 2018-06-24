@@ -1,6 +1,6 @@
 format 219
 "Railway" // Mdt::Railway
-  revision 72
+  revision 77
   modified_by 2 "philippe"
   // class settings
   
@@ -496,6 +496,15 @@ ${inlines}
 	    classrelation_ref 5724290 // <generalisation>
 	  b parent class_ref 138626 // QObject
       end
+
+      classrelation 5731714 // <unidirectional association>
+	relation 5700226 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 5731714 // <unidirectional association>
+	  b parent class_ref 4840066 // AbstractVehicleTypeRepository
+      end
     end
 
     classdiagram 4059138 "VehicleType"
@@ -795,15 +804,52 @@ ${inlines}
 	    classrelation_ref 5354242 // <dependency>
 	  b parent class_ref 4888450 // FieldDataValidator
       end
-
     end
 
     classdiagram 4353154 "ChooseVehicleTypeClass"
       classdiagramsettings member_max_width 0 end
-      size A4
+      size A-Landscape
     end
 
-    class 5274754 "ChooseVehicleTypeClass"
+    class 5274754 "ChooseVehicleTypeClassQuery"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5724930 // <generalisation>
+	relation 5693442 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5724930 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 5740162 // <directional composition>
+	relation 5708674 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5740162 // <directional composition>
+	  b parent class_ref 5283074 // SomeQueryExpressionBase
+      end
+    end
+
+    class 5283074 "SomeQueryExpressionBase"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -817,22 +863,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 5724674 // <directional composition>
-	relation 5693186 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 5724674 // <directional composition>
-	  b parent class_ref 5261058 // VehicleTypeClassRepositoryHandle
-      end
-
-      classrelation 5724930 // <generalisation>
-	relation 5693442 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 5724930 // <generalisation>
-	  b parent class_ref 138626 // QObject
-      end
     end
   end
 
@@ -1145,6 +1175,405 @@ ${members}};
 	  b parent class_ref 5253890 // AbstractCachedEntityRepository
       end
     end
+
+    classdiagram 4380290 "RW_Core_QueryRepository"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5283458 "CachedQueryRepository"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5747714 // <generalisation>
+	relation 5716226 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5747714 // <generalisation>
+	  b parent class_ref 5290370 // CachedQueryRepository
+      end
+
+      classrelation 5762050 // <dependency>
+	relation 5730562 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 5762050 // <dependency>
+	  b parent class_ref 5304322 // SelectQuery
+      end
+    end
+  end
+
+  classview 2238338 "Railway_Core_Query"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4359682 "RW_Core_Query"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5281282 "AbstractQuery"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4138370 "LastError"
+	private type class_ref 182402 // Error
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 7174146 "exec"
+	abstract cpp_virtual public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7174274 "lastError"
+	public return_type class_ref 182402 // Error
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7174402 "cacheAboutToBeReset"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 5738370 // <generalisation>
+	relation 5706882 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5738370 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 7174530 "cacheReset"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7174658 "setLastError"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "error" type class_ref 182402 // Error
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7174786 "beginResetCache"
+	protected explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7174914 "endResetCache"
+	protected explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5281410 "AbstractCachedQuery"
+      abstract visibility package 
+      nformals 1
+      formal name "Record" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5738498 // <directional composition>
+	relation 5707010 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5738498 // <directional composition>
+	  b parent class_ref 5004290 // TableCache
+      end
+
+      operation 7175682 "exec"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7175042 "rowCount"
+	cpp_inline public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7175170 "columnCount"
+	abstract cpp_virtual cpp_inline public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7175298 "data"
+	abstract cpp_virtual cpp_inline public return_type class_ref 161154 // QVariant
+	nparams 2
+	  param in name "row" explicit_type "int"
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7175810 "constRecord"
+	cpp_inline public explicit_return_type "Record"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7175426 "fetchRecords"
+	abstract cpp_virtual cpp_inline protected explicit_return_type "bool"
+	nparams 1
+	  param in name "count" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7175554 "appendRecordToCache"
+	cpp_inline protected explicit_return_type "void"
+	nparams 1
+	  param in name "record" explicit_type "Record"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7176066 "executeQuery"
+	abstract cpp_virtual cpp_inline protected explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5281538 "CachedQueryTableModel"
+      visibility package 
+      nformals 1
+      formal name "QueryInterface" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5738626 // <directional composition>
+	relation 5707138 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5738626 // <directional composition>
+	  b parent class_ref 5281666 // QueryHandle
+      end
+
+      operation 7175938 "setQuery"
+	cpp_inline public explicit_return_type "void"
+	nparams 1
+	  param in name "qh" type class_ref 5281666 // QueryHandle
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5281666 "QueryHandle"
+      visibility package 
+      nformals 1
+      formal name "Impl" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
   end
 
   classview 2225282 "Railway_Core_ItemModel"
@@ -1359,9 +1788,6 @@ ${inlines}
 
     class 5274626 "ChooseVehicleTypeClassTableModel"
       visibility package 
-      nactuals 1
-      actual class class_ref 5254274 // CachedEntityRepositoryTableModel
-        rank 0 explicit_value ""
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -1380,7 +1806,7 @@ ${inlines}
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
 "
 	    classrelation_ref 5724546 // <unidirectional association>
-	  b parent class_ref 5274754 // ChooseVehicleTypeClass
+	  b parent class_ref 5274754 // ChooseVehicleTypeClassQuery
       end
 
       operation 7167490 "vehicleTypeNameColumn"
@@ -1402,7 +1828,7 @@ ${inlines}
 	class_operation public return_type class_ref 146946 // QAbstractItemModel
 	nparams 2
 	  param in name "parent" type class_ref 138626 // QObject
-	  param in name "cvtc" type class_ref 5274754 // ChooseVehicleTypeClass
+	  param in name "cvtc" type class_ref 5274754 // ChooseVehicleTypeClassQuery
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
@@ -1414,16 +1840,7 @@ ${inlines}
 	
 	
       end
-
-      classrelation 5725186 // <generalisation>
-	relation 5693698 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 5725186 // <generalisation>
-	  b parent class_ref 5254274 // CachedEntityRepositoryTableModel
-      end
     end
-
   end
 
   classview 2073730 "Railway_Core"
@@ -1788,6 +2205,66 @@ ${inlines}
 	MysqlColumn
       end
     end
+
+    classdiagram 4366594 "RW_Sql_QueryRepository"
+      classdiagramsettings member_max_width 0 end
+      size B
+    end
+
+    class 5283714 "CachedSqlQueryRepository"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5740546 // <generalisation>
+	relation 5709058 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5740546 // <generalisation>
+	  b parent class_ref 5283458 // CachedQueryRepository
+      end
+
+      operation 7190402 "exec"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 1
+	  param in name "expression" type class_ref 5304322 // SelectQuery
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5283202 "SomeQueryExpressionSqlTransform"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
   end
 
   classview 2073858 "Railway_Widgets"
@@ -1920,7 +2397,7 @@ ${inlines}
 
     classdiagram 4059010 "RW_Widgets_VehicleTypeEdition"
       classdiagramsettings member_max_width 0 end
-      size B-Landscape
+      size C
     end
 
     class 4776962 "VehicleTypeEditionWidget"

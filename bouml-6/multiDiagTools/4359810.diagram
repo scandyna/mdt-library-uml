@@ -1,0 +1,13 @@
+format 219
+
+note 128002 "Take part in Sql::Expression that is not Sql specific.
+
+This will create a unified expression interface."
+  xyzwh 73 121 2000 539 109
+note 128130 "Terminals:
+ - For SQL
+ - For ItemModel
+ - For Entity
+-> Myabe templat nodes"
+  xyzwh 73.5 252.5 2000 503 161
+end

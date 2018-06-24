@@ -1,10 +1,12 @@
-format 218
+format 219
 "Entity" // Mdt::Entity
-  revision 154
+  revision 164
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 218
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -28,13 +32,19 @@ format 218
   
   package_ref 785666 // TypeTraits
 
+  package_ref 845058 // Expression
+
   classview 2146178 "Entity_Core_sandbox"
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -276,9 +286,13 @@ ${members}};
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -3592,9 +3606,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -3905,13 +3923,406 @@ ${inlines}
     end
   end
 
-  classview 2133122 "Entity_Core_Repository"
+  classview 2239362 "Entity_Core_Storage"
     
     classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
     
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4360066 "Sandbox"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+  end
+
+  classview 2139650 "Entity_Core_Query"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4413826 "Entity_QueryEntity"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5344386 "QueryEntity"
+      visibility package 
+      nformals 1
+      formal name "Entity" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5803650 // <generalisation>
+	relation 5772162 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5803650 // <generalisation>
+	  b parent class_ref 5324802 // SelectEntity
+      end
+
+      operation 7218690 "QueryEntity"
+	cpp_inline public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${inline}${name}${(}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7218818 "QueryEntity"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param in name "alias" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7219074 "def"
+	class_operation cpp_inline public explicit_return_type "EntityDef"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7218946 "makeSelectField"
+	class_operation cpp_inline public return_type class_ref 5317762 // SelectField
+	nparams 2
+	  param in name "field" explicit_type "Field"
+	  param in name "fieldAlias" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 4413954 "Entity_QueryField"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5344514 "QueryField"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5803778 // <generalisation>
+	relation 5772290 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5803778 // <generalisation>
+	  b parent class_ref 5317762 // SelectField
+      end
+    end
+
+    classdiagram 4414082 "Entity_QueryEntityAndField"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5344642 "QueryEntityAndField"
+      visibility package 
+      nformals 1
+      formal name "Entity" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 4393986 "Entity_SelectQuery"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5318274 "EntitySelectQuery"
+      visibility package 
+      nformals 1
+      formal name "Entity" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5775874 // <generalisation>
+	relation 5744386 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5775874 // <generalisation>
+	  b parent class_ref 5304322 // SelectQuery
+      end
+
+      operation 7220098 "EntitySelectQuery"
+	cpp_inline public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${inline}${name}${(}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7220226 "EntitySelectQuery"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param in name "alias" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7205122 "addField"
+	cpp_inline public explicit_return_type "void"
+	nparams 2
+	  param in name "fieldDef" explicit_type "T"
+	  param in name "fa" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7205250 "addField"
+	cpp_inline public explicit_return_type "void"
+	nparams 3
+	  param in name "entity" explicit_type "T"
+	  param in name "field" explicit_type "F"
+	  param in name "fa" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7219330 "addField"
+	cpp_inline public explicit_return_type "void"
+	nparams 1
+	  param in name "field" type class_ref 5317762 // SelectField
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7219458 "addField"
+	cpp_inline public explicit_return_type "void"
+	nparams 3
+	  param in name "queryEntity" type class_ref 5344386 // QueryEntity
+	  param in name "field" explicit_type "FieldDef"
+	  param in name "fa" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7219586 "joinEntity"
+	cpp_inline public explicit_return_type "void"
+	nparams 2
+	  param in name "queryEntity" type class_ref 5344386 // QueryEntity
+	  param in name "expr" explicit_type "Expr"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7219714 "setFilter"
+	cpp_inline public explicit_return_type "void"
+	nparams 1
+	  param in name "expr" explicit_type ""
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7219842 "def"
+	class_operation cpp_inline public explicit_return_type "EntityDef"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7219970 "makeSelectField"
+	class_operation cpp_inline public return_type class_ref 5317762 // SelectField
+	nparams 2
+	  param in name "field" explicit_type "FieldDef"
+	  param in name "fa" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2133122 "Entity_Core_Repository"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -3923,7 +4334,7 @@ ${inlines}
      end
     classdiagram 4166658 "Entity_Repository"
       classdiagramsettings member_max_width 0 end
-      size B
+      size C
     end
 
     class 5004674 "AbstractRepository"
@@ -4077,11 +4488,40 @@ ${inlines}
       end
     end
 
+    class 5310850 "AbstractCachedReadOnlyRepository"
+      visibility package 
+      nformals 1
+      formal name "Record" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5768578 // <generalisation>
+	relation 5737090 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5768578 // <generalisation>
+	  b parent class_ref 5004674 // AbstractRepository
+      end
+    end
+
     class 5005058 "AbstractCachedRepository"
       abstract visibility package 
       nformals 1
       formal name "Record" type "class" explicit_default_value ""
         explicit_extends ""
+      nactuals 1
+      actual class class_ref 5310850 // AbstractCachedReadOnlyRepository
+        rank 0 explicit_value ""
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -4104,14 +4544,6 @@ ${inlines}
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-      end
-
-      classrelation 5462786 // <generalisation>
-	relation 5431298 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 5462786 // <generalisation>
-	  b parent class_ref 5004674 // AbstractRepository
       end
 
       classrelation 5463042 // <directional composition>
@@ -4519,6 +4951,14 @@ ${inlines}
 	
 	
       end
+
+      classrelation 5768706 // <generalisation>
+	relation 5737218 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5768706 // <generalisation>
+	  b parent class_ref 5310850 // AbstractCachedReadOnlyRepository
+      end
     end
 
     class 5004418 "AbstractCachedEntityRepository"
@@ -4732,6 +5172,57 @@ ${inlines}
       end
     end
 
+    classdiagram 4386818 "Entity_QueryRepository"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5290370 "CachedQueryRepository"
+      abstract visibility package 
+      nactuals 1
+      actual class class_ref 5310850 // AbstractCachedReadOnlyRepository
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7182594 "exec"
+	abstract cpp_virtual public explicit_return_type "bool"
+	nparams 1
+	  param in name "query" type class_ref 5304322 // SelectQuery
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      classrelation 5768834 // <generalisation>
+	relation 5737346 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5768834 // <generalisation>
+	  b parent class_ref 5310850 // AbstractCachedReadOnlyRepository
+      end
+
+      classrelation 5768962 // <dependency>
+	relation 5737474 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 5768962 // <dependency>
+	  b parent class_ref 5304322 // SelectQuery
+      end
+    end
+
     classdiagram 4305666 "Entity_RepsotoryHandle"
       classdiagramsettings member_max_width 0 end
       size A4
@@ -4809,6 +5300,15 @@ ${inlines}
 	
 	
 	
+      end
+
+      classrelation 5741058 // <unidirectional association>
+	relation 5709570 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 5741058 // <unidirectional association>
+	  b parent class_ref 5283458 // CachedQueryRepository
       end
     end
 
@@ -5139,35 +5639,17 @@ ${inlines}
     end
   end
 
-  classview 2139650 "Entity_Core_Query"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    classdiagram 4226178 "Entity_RepositoryQuery"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-  end
-
   classview 2087298 "Entity_Storage"
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -5502,9 +5984,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -6205,13 +6691,109 @@ ${inlines}
     end
   end
 
-  classview 2013954 "Entity_Xml"
+  classview 2239106 "Entity_Sql_QueryExpression"
     
     classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
     
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+  end
+
+  classview 2252546 "Entity_Sql_Repository"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4380162 "Entity_SqlRepository"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 4387074 "Entity_SqlQueryRepository"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5310978 "CachedSqlQueryRepository"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5769090 // <generalisation>
+	relation 5737602 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5769090 // <generalisation>
+	  b parent class_ref 5290370 // CachedQueryRepository
+      end
+
+      operation 7196930 "exec"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 1
+	  param in name "query" type class_ref 5304322 // SelectQuery
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2013954 "Entity_Xml"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -6227,9 +6809,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -6245,9 +6831,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -6299,9 +6889,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     

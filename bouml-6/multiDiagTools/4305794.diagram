@@ -1,47 +1,43 @@
-format 218
+format 219
 
 classcanvas 128130 class_ref 4909570 // VehicleTypeClassTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 330 438 2000
+  xyz 327 442 2000
 end
 classcanvas 128258 class_ref 5200002 // CachedEntityRepositoryTableModel
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 270 232 2005
+  xyz 386 232 2005
 end
 classcanvas 128514 class_ref 5084674 // CachedRepositoryTableModel
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 289 128 2011
+  xyz 405 128 2011
 end
 classcanvas 128770 class_ref 5165698 // AbstractCachedTableModel
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 282 42 2017
+  xyz 398 42 2017
 end
 classcanvas 129026 class_ref 5031426 // RepositoryHandle
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 610 128 2017
+  xyz 722 128 2017
 end
 classcanvas 129538 class_ref 4916226 // AbstractVehicleTypeClassRepository
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 42 442 2017
+  xyz 42 450 2017
 end
 classcanvas 129922 class_ref 5254274 // CachedEntityRepositoryTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 309 336 2011
+  xyz 425 336 2011
 end
 classcanvas 130306 class_ref 4949890 // EditVehicleTypeClass
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 354 546 2006
+  xyz 470 570 2006
 end
 relationcanvas 128642 relation_ref 5616002 // <generalisation>
-  decenter_begin 485
-  decenter_end 483
   from ref 128258 z 2012 to ref 128514
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128898 relation_ref 5593986 // <generalisation>
-  decenter_begin 483
-  decenter_end 484
   from ref 128514 z 2018 to ref 128770
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -52,27 +48,22 @@ relationcanvas 129154 relation_ref 5594114 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129794 relation_ref 5616514 // <dependency>
+  decenter_begin 447
   from ref 128130 z 2018 to ref 129538
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130050 relation_ref 5658626 // <generalisation>
-  decenter_begin 481
-  decenter_end 485
   from ref 129922 z 2012 to ref 128258
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130178 relation_ref 5658882 // <generalisation>
-  decenter_begin 477
-  decenter_end 481
   from ref 128130 z 2012 to ref 129922
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130434 relation_ref 5479298 // <unidirectional association>
-  decenter_begin 477
-  decenter_end 469
   from ref 128130 z 2007 to ref 130306
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
