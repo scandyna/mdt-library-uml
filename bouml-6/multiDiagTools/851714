@@ -1,0 +1,151 @@
+format 219
+"BuildExpressionTree" // Mdt::QueryExpression::BuildExpressionTree
+  revision 1
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2278786 "QE_Core_BuildExpressionTree"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4420610 "QE_build_ExpressionTree"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 5364482 "AddEqualExpressionToTree"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5831170 // <generalisation>
+	relation 5799682 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5831170 // <generalisation>
+	  b parent class_ref 3280514 // callable
+      end
+
+      operation 7234946 "operator()"
+	public return_type class_ref 5371010 // ExpressionTreeVertex
+	nparams 3
+	  param in name "left" type class_ref 5331330 // SelectFieldVariant
+	  param in name "right" type class_ref 161154 // QVariant
+	  param in name "tree" type class_ref 5290498 // ExpressionTree
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5377666 "ComparisonTransform"
+      visibility package 
+      nactuals 1
+      actual class class_ref 3225602 // or_
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5837954 // <generalisation>
+	relation 5806466 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5837954 // <generalisation>
+	  b parent class_ref 3225602 // or_
+      end
+    end
+
+    class 5377794 "LogicalTransform"
+      visibility package 
+      nactuals 1
+      actual class class_ref 3225602 // or_
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5838082 // <generalisation>
+	relation 5806594 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5838082 // <generalisation>
+	  b parent class_ref 3225602 // or_
+      end
+    end
+  end
+end

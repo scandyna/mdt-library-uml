@@ -1,0 +1,11 @@
+format 219
+
+classcanvas 128002 class_ref 5377538 // Graph
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+classcanvas 128130 class_ref 5397762 // FilterExpression
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 205.5 2000
+end
+end

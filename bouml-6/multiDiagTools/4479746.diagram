@@ -1,0 +1,137 @@
+format 220
+
+classcanvas 128002 class_ref 4902658 // CreateVehicleType
+  classdiagramsettings member_max_width 0 end
+  xyz 252 383.684 2000
+end
+classcanvas 128130 class_ref 5451010 // CreateVehicleTypeRequest
+  classdiagramsettings member_max_width 0 end
+  color lightred
+  xyz 501 348.474 2006
+end
+classcanvas 128386 class_ref 5451138 // CreateVehicleTypeResponse
+  classdiagramsettings member_max_width 0 end
+  color lightred
+  xyz 719.342 432 2011
+end
+classcanvas 128642 class_ref 5451394 // VehicleTypeRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 356.842 163.263 2006
+end
+classcanvas 128898 class_ref 4860802 // VehicleTypeEditionWindow
+  classdiagramsettings member_max_width 0 end
+  color green
+  xyz 723.342 348.474 2017
+end
+classcanvas 129666 class_ref 5493506 // CreateVehicleTypePresenterXXYY
+  classdiagramsettings member_max_width 0 end
+  xyz 951.105 432 2000
+end
+classcanvas 129794 class_ref 138626 // QObject
+  classdiagramsettings member_max_width 0 end
+  xyz 1032.11 39.7895 2006
+end
+note 130562 "For QML / QtRemoteObjects: put properties here ?"
+  xyzwh 221.184 491.158 2000 187 101
+classcanvas 132482 class_ref 4854018 // VehicleType
+  classdiagramsettings member_max_width 0 end
+  xyz 773.342 247.868 2000
+end
+classcanvas 133122 class_ref 5451522 // SqlVehicleTypeRepository
+  classdiagramsettings member_max_width 0 end
+  color mediumyellow
+  xyz 726.342 163.263 2023
+end
+classcanvas 134786 class_ref 4916226 // VehicleTypeClassRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 41.0526 301.263 2000
+end
+relationcanvas 128258 relation_ref 5915138 // <unidirectional association>
+  decenter_begin 347
+  decenter_end 666
+  from ref 128002 z 2007 to point 461 407
+  line 135170 z 2007 to point 461 378
+  line 135298 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 5915010 // <unidirectional association>
+  decenter_begin 869
+  decenter_end 333
+  from ref 128002 z 2012 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 5908354 // <unidirectional association>
+  geometry VHV unfixed
+  decenter_begin 891
+  decenter_end 88
+  from ref 128002 z 2007 to point 364 345
+  line 135426 z 2007 to point 367 345
+  line 135554 z 2007 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 5915266 // <unidirectional association>
+  from ref 128898 z 2018 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 5915394 // <unidirectional association>
+  from ref 128898 z 2018 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129922 relation_ref 5907458 // <generalisation>
+  geometry VHV unfixed
+  from ref 128002 z 2007 to point 314 124
+  line 133890 z 2007 to point 1062 124
+  line 134018 z 2007 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 5953794 // <generalisation>
+  from ref 129666 z 2007 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131842 relation_ref 5966850 // <unidirectional association>
+  from ref 129666 z 2012 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132610 relation_ref 5966978 // <unidirectional association>
+  decenter_begin 130
+  decenter_end 770
+  from ref 128002 z 2001 to point 421 389
+  line 133506 z 2001 to point 421 294
+  line 133634 z 2001 to ref 132482
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133250 relation_ref 5908482 // <generalisation>
+  from ref 133122 z 2024 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133378 relation_ref 5967106 // <unidirectional association>
+  from ref 133122 z 2024 to ref 132482
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133762 relation_ref 5967234 // <unidirectional association>
+  from ref 128898 z 2018 to ref 132482
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134914 relation_ref 6000898 // <unidirectional association>
+  geometry VH unfixed
+  decenter_begin 186
+  from ref 128002 z 2001 to point 273 321
+  line 135042 z 2001 to ref 134786
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 130690 -_-_
+  from ref 130562 z 2001 to ref 128002
+end

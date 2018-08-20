@@ -1,20 +1,20 @@
-format 211
+format 219
 
 classcanvas 128002 class_ref 3308674 // LiteralValue
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 472 186 2000
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 800 186 2000
 end
 classcanvas 128130 class_ref 3225602 // or_
-  classdiagramsettings member_max_width 0 show_context_mode uml end
-  xyz 528 40 2005
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 784 40 2005
 end
 classcanvas 128386 class_ref 3308802 // CompareEquality
   classdiagramsettings member_max_width 0 end
-  xyz 183 184 2000
+  xyz 639 184 2000
 end
 classcanvas 128898 class_ref 3308930 // CompareGreater
   classdiagramsettings member_max_width 0 end
-  xyz 742 184 2011
+  xyz 1722 184 2011
 end
 classcanvas 129410 class_ref 3309058 // CompareLess
   classdiagramsettings member_max_width 0 end
@@ -22,18 +22,32 @@ classcanvas 129410 class_ref 3309058 // CompareLess
 end
 classcanvas 129922 class_ref 3309186 // Comparison
   classdiagramsettings member_max_width 0 end
-  xyz 343 184 2011
+  xyz 927 184 2011
 end
 classcanvas 130690 class_ref 3309314 // LeftTerminal
   classdiagramsettings member_max_width 0 end
-  xyz 895 184 2011
+  xyz 183 186 2011
 end
 classcanvas 130946 class_ref 3309442 // RightTerminal
   classdiagramsettings member_max_width 0 end
-  xyz 1026 184 2011
+  xyz 498 186 2011
+end
+classcanvas 132226 class_ref 5357698 // FilterExpressionGrammar
+  classdiagramsettings member_max_width 0 end
+  xyz 1056 186 2000
+end
+classcanvas 132354 class_ref 5357826 // JoinExpressionGrammar
+  classdiagramsettings member_max_width 0 end
+  xyz 1511 186 2000
+end
+note 133506 "Maybe they are the same"
+  xyzwh 1273 184 2000 199 49
+classcanvas 133890 class_ref 5357954 // ExpressionGrammar
+  classdiagramsettings member_max_width 0 end
+  xyz 313 186 2000
 end
 relationcanvas 128258 relation_ref 3705218 // <generalisation>
-  decenter_begin 480
+  decenter_begin 449
   decenter_end 462
   from ref 128002 z 2006 to ref 128130
   no_role_a no_role_b
@@ -43,27 +57,28 @@ relationcanvas 128514 relation_ref 3705346 // <generalisation>
   geometry VHV unfixed
   decenter_begin 463
   decenter_end 462
-  from ref 128386 z 2006 to point 237 144
-  line 129154 z 2006 to point 581 144
-  line 129282 z 2006 to ref 128130
+  from ref 128386 z 2006 to point 693 144
+  line 132738 z 2006 to point 837 144
+  line 132866 z 2006 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129026 relation_ref 3705474 // <generalisation>
   geometry VHV unfixed
+  decenter_begin 461
   decenter_end 462
-  from ref 128898 z 2012 to point 798 144
-  line 131202 z 2012 to point 581 144
+  from ref 128898 z 2012 to point 1773 144
+  line 131202 z 2012 to point 837 144
   line 131330 z 2012 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129538 relation_ref 3705602 // <generalisation>
   geometry VHV unfixed
-  decenter_begin 455
+  decenter_begin 534
   decenter_end 462
-  from ref 129410 z 2012 to point 85 144
-  line 130434 z 2012 to point 581 144
+  from ref 129410 z 2012 to point 93 144
+  line 130434 z 2012 to point 837 144
   line 130562 z 2012 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -72,8 +87,8 @@ relationcanvas 130050 relation_ref 3705730 // <generalisation>
   geometry VHV unfixed
   decenter_begin 450
   decenter_end 462
-  from ref 129922 z 2012 to point 381 144
-  line 130178 z 2012 to point 581 144
+  from ref 129922 z 2012 to point 965 144
+  line 130178 z 2012 to point 837 144
   line 130306 z 2012 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -82,20 +97,52 @@ relationcanvas 130818 relation_ref 3705858 // <generalisation>
   geometry VHV unfixed
   decenter_begin 538
   decenter_end 462
-  from ref 130690 z 2012 to point 941 144
-  line 131458 z 2012 to point 581 144
+  from ref 130690 z 2012 to point 229 144
+  line 131458 z 2012 to point 837 144
   line 131586 z 2012 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131074 relation_ref 3705986 // <generalisation>
   geometry VHV unfixed
-  decenter_begin 534
+  decenter_begin 455
   decenter_end 462
-  from ref 130946 z 2012 to point 1077 144
-  line 131714 z 2012 to point 581 144
+  from ref 130946 z 2012 to point 541 144
+  line 131714 z 2012 to point 837 144
   line 131842 z 2012 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 132482 relation_ref 5792898 // <generalisation>
+  geometry VHV unfixed
+  decenter_end 462
+  from ref 132226 z 2006 to point 1142 144
+  line 132994 z 2006 to point 837 144
+  line 133122 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132610 relation_ref 5793026 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 473
+  decenter_end 462
+  from ref 132354 z 2006 to point 1589 144
+  line 133250 z 2006 to point 837 144
+  line 133378 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134018 relation_ref 5793154 // <generalisation>
+  geometry VHV unfixed
+  decenter_end 462
+  from ref 133890 z 2006 to point 382 144
+  line 134146 z 2006 to point 837 144
+  line 134274 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 133634 -_-_
+  from ref 132226 z 2001 to ref 133506
+line 133762 -_-_
+  from ref 132354 z 2001 to ref 133506
 end

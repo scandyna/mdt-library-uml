@@ -1,0 +1,69 @@
+format 220
+"Reflection" // Mdt::Reflection
+  revision 1
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2337922 "Core"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4526338 "Reflection_Base"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 4526466 "Reflection_ValueObject"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 4526594 "Reflection_Entity"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+  end
+
+end

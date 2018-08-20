@@ -2,6 +2,25 @@ format 219
 
 classcanvas 128002 class_ref 5317506 // FilterExpression
   classdiagramsettings member_max_width 0 end
-  xyz 177 364 2000
+  xyz 112 40 2000
+end
+classcanvas 128130 class_ref 5290498 // ExpressionTree
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 425 74 2000
+end
+classcanvas 128386 class_ref 5377794 // LogicalTransform
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 41 186 2000
+end
+relationcanvas 128258 relation_ref 5819650 // <directional composition>
+  decenter_begin 533
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 5819778 // <dependency>
+  from ref 128002 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 end

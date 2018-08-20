@@ -1,0 +1,16 @@
+format 220
+
+classcanvas 128002 class_ref 5500418 // MemoryEntityRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 37 225 2000
+end
+classcanvas 128130 class_ref 5473666 // AbstractEntityRepository
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 36 39 2005
+end
+relationcanvas 128258 relation_ref 5967362 // <generalisation>
+  from ref 128002 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

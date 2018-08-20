@@ -2,43 +2,40 @@ format 219
 
 classcanvas 128130 class_ref 5317762 // SelectField
   classdiagramsettings member_max_width 0 end
-  xyz 424 312 2000
+  xyz 264 144 2000
 end
 classcanvas 128386 class_ref 5318018 // SelectAllField
   classdiagramsettings member_max_width 0 end
-  xyz 887 450 2000
+  xyz 225 306 2000
 end
 classcanvas 128898 class_ref 5324802 // SelectEntity
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 1072 138 2000
+  xyz 96 314 2000
 end
 classcanvas 129026 class_ref 3350146 // variant
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 1042 354 2000
+  xyz 418 410 2000
 end
 classcanvas 129154 class_ref 5331330 // SelectFieldVariant
   classdiagramsettings member_max_width 0 end
-  xyz 873 338 2000
+  xyz 409 302 2000
 end
 note 129666 "Default"
-  xyzwh 1025 451 2000 71 43
+  xyzwh 257 407 2000 71 43
 classcanvas 130818 class_ref 5318146 // EntityAndField
   classdiagramsettings member_max_width 0 end
-  xyz 835 41 2000
+  xyz 39 489 2000
 end
 classcanvas 131330 class_ref 3225730 // extends
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 553 208 2005
+  xyz 393 40 2005
 end
-note 131842 "Maybe rename Field
-
-See (SQL) SELECT, UPDATE, REMOVE to see if the concepts of conditions are the same.
-
-Note:
-Create some \"ConditionTag\" and Filed (only field name) + SelectField (EntityName/alias + FieldName/alias)"
-  xyzwh 40 226 2000 345 293
-relationcanvas 129282 relation_ref 5757442 // <directional composition>
-  decenter_begin 550
+classcanvas 132482 class_ref 5317890 // SelectFieldList
+  classdiagramsettings member_max_width 0 end
+  xyz 482 669 2006
+end
+relationcanvas 129282 relation_ref 5757442 // <dependency>
+  decenter_end 534
   from ref 129154 z 2001 to ref 129026
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -49,11 +46,16 @@ relationcanvas 129538 relation_ref 5757698 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130946 relation_ref 5757570 // <dependency>
-  from ref 129154 z 2001 to ref 130818
+  decenter_end 480
+  from ref 129154 z 2001 to point 576 336
+  line 132994 z 2001 to point 576 600
+  line 133122 z 2001 to ref 130818
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131074 relation_ref 5772674 // <directional composition>
+  decenter_begin 517
+  decenter_end 539
   from ref 130818 z 2001 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -66,14 +68,23 @@ relationcanvas 131714 relation_ref 5773058 // <generalisation>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132354 relation_ref 5779714 // <directional composition>
-  decenter_begin 528
-  decenter_end 550
+  decenter_begin 508
   from ref 128130 z 2001 to ref 129154
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 129794 -_-_
+relationcanvas 132866 relation_ref 5832962 // <directional composition>
+  from ref 128386 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133250 relation_ref 5833090 // <directional composition>
+  decenter_begin 457
+  decenter_end 931
+  from ref 132482 z 2007 to ref 128130
+  no_role_a no_role_b
+  multiplicity_a_pos 629 274 3000 no_multiplicity_b
+end
+line 129794 -_-_ decenter_end 549
   from ref 128386 z 2001 to ref 129666
-line 131970 -_-_ decenter_begin 528 decenter_end 510
-  from ref 128130 z 2001 to ref 131842
 end

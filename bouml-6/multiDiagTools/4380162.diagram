@@ -1,3 +1,63 @@
-format 219
+format 220
 
+classcanvas 128130 class_ref 5471746 // SomeBusinessRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 40.75 435.75 2000
+end
+classcanvas 128386 class_ref 5471874 // SomeBusinessSqlRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 40.75 533.25 2000
+end
+classcanvas 128642 class_ref 5472002 // SqlEntityRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 281 490.25 2000
+end
+classcanvas 133506 class_ref 5473666 // AbstractEntityRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 281 210.75 2000
+end
+classcanvas 135426 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 372 40.75 2000
+end
+note 136450 "Transactions ?
+(Will use multiple repositories..)"
+  xyzwh 19.5 154.5 2000 231 69
+classcanvas 136578 class_ref 5004674 // AbstractRepository
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 336 125.25 2010
+end
+relationcanvas 129282 relation_ref 5929858 // <generalisation>
+  decenter_begin 517
+  decenter_end 517
+  from ref 128386 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133762 relation_ref 5931650 // <generalisation>
+  from ref 128642 z 2001 to ref 133506
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134914 relation_ref 5932290 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 517
+  from ref 128130 z 2001 to point 141 398
+  line 135042 z 2001 to point 402 398
+  line 135170 z 2001 to ref 133506
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136066 relation_ref 5932802 // <generalisation>
+  decenter_begin 442
+  decenter_end 476
+  from ref 128386 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136706 relation_ref 5513090 // <generalisation>
+  from ref 136578 z 2011 to ref 135426
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 end

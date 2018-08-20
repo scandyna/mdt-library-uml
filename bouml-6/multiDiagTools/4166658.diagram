@@ -1,52 +1,83 @@
-format 219
+format 220
 
 classcanvas 128002 class_ref 5004290 // TableCache
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyzwh 794.25 808.75 2000 189 69
+  xyzwh 924.25 1003.75 2000 189 69
 end
 classcanvas 128386 class_ref 5004418 // AbstractCachedEntityRepository
   classdiagramsettings member_max_width 0 end
-  xyz 366 1229.25 2000
+  xyz 496 1333.25 2000
 end
 classcanvas 129026 class_ref 5004674 // AbstractRepository
   classdiagramsettings member_max_width 0 end
-  xyz 294 124.75 2000
+  xyz 547.75 126 2000
 end
 classcanvas 129922 class_ref 5004930 // AbstractVidewCachedRepository
   classdiagramsettings member_max_width 0 end
-  xyz 493.5 1433.5 2006
+  xyz 1161.5 1810.5 2006
 end
 classcanvas 130690 class_ref 5005058 // AbstractCachedRepository
   classdiagramsettings member_max_width 0 end
-  xyz 312 501 2014
+  xyz 442 774.5 2014
 end
 classcanvas 137218 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 502 40.75 2020
+  xyz 632 40.75 2020
 end
 note 137730 "TODO:
 The repository should be itself a shared object, avoid using RepositoryHandle.
 
 NOTE:
- Does it imply that every derived class has to implement a clone() method ?"
-  xyzwh 805 120.5 2000 317 183
-classcanvas 137858 class_ref 5290370 // CachedQueryRepository
-  classdiagramsettings member_max_width 0 end
-  xyz 41 500.75 2000
-end
+ Does it imply that every derived class has to implement a clone() method ?
+
+SOLUTION
+Use std::shared_ptr , easy, well known, works !"
+  xyzwh 1193 40.5 2000 501 187
 note 138370 "Should have some read only repository"
-  xyzwh 40.5 1433.5 2000 373 61
+  xyzwh 489.5 1810.5 2000 373 61
 classcanvas 138498 class_ref 5310850 // AbstractCachedReadOnlyRepository
   classdiagramsettings member_max_width 0 end
-  xyz 411 378.75 2005
+  xyz 541 671 2005
 end
+classcanvas 140290 class_ref 5473666 // AbstractEntityRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 157.5 1309.25 2019
+end
+classcanvas 140546 class_ref 5480194 // AbstractCachedRepositoryBase
+  classdiagramsettings member_max_width 0 end
+  xyz 424 399.5 2005
+end
+classcanvas 141314 class_ref 5480322 // AbstractEntityRepositoryBase
+  classdiagramsettings member_max_width 0 end
+  xyz 178.5 398.25 2000
+end
+classcanvas 141954 class_ref 5513858 // EntityRepositoryCacheBase
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 1498 2000
+end
+classcanvas 143362 class_ref 5514114 // SomeLocalSqlCache
+  classdiagramsettings member_max_width 0 end
+  xyz 1464.5 1810.5 2000
+end
+classcanvas 143618 class_ref 5514242 // SomeMemoryCache
+  classdiagramsettings member_max_width 0 end
+  xyz 942.5 1810.5 2000
+end
+note 143874 "NO!
+Simply provide a IMPL that is a cache, DONE !!
+Can be:
+ - a memory cache that calls definite cache
+ - A local cache (QSLIte..) that calls definite cache
+
+Heu.. rowCounst(), data(row), ..."
+  xyzwh 40.5 1810.5 2000 369 157
 relationcanvas 131202 relation_ref 5431554 // <directional composition>
-  decenter_end 550
   from ref 130690 z 2015 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 137346 relation_ref 5513090 // <generalisation>
+  decenter_begin 515
   from ref 129026 z 2021 to ref 137218
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -56,21 +87,38 @@ relationcanvas 137602 relation_ref 5608834 // <generalisation>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 138626 relation_ref 5737090 // <generalisation>
-  from ref 138498 z 2006 to ref 129026
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
 relationcanvas 139266 relation_ref 5737218 // <generalisation>
   from ref 130690 z 2015 to ref 138498
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 139394 relation_ref 5737346 // <generalisation>
+relationcanvas 140802 relation_ref 5939586 // <generalisation>
+  from ref 138498 z 2006 to ref 140546
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 140930 relation_ref 5939714 // <generalisation>
+  decenter_end 515
+  from ref 140546 z 2006 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 141442 relation_ref 5939842 // <generalisation>
+  from ref 140290 z 2020 to ref 141314
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 141570 relation_ref 5939970 // <generalisation>
   geometry VHV unfixed
-  from ref 137858 z 2006 to point 155 463
-  line 139522 z 2006 to point 532 463
-  line 139650 z 2006 to ref 138498
+  decenter_end 515
+  from ref 141314 z 2001 to point 278 359
+  line 143106 z 2001 to point 661 359
+  line 143234 z 2001 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 144386 relation_ref 5999746 // <generalisation>
+  from ref 141954 z 2020 to ref 140290
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -1,71 +1,116 @@
-format 219
+format 220
 
-classcanvas 128130 class_ref 4909570 // VehicleTypeClassTableModel
+classcanvas 128130 class_ref 4909570 // EditVehicleTypeClassTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 327 442 2000
+  xyz 839 551 2000
 end
-classcanvas 128258 class_ref 5200002 // CachedEntityRepositoryTableModel
+classcanvas 128770 class_ref 5165698 // AbstractEditableCachedTableModel
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 386 232 2005
+  xyz 668.5 1175.5 2017
 end
-classcanvas 128514 class_ref 5084674 // CachedRepositoryTableModel
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 405 128 2011
-end
-classcanvas 128770 class_ref 5165698 // AbstractCachedTableModel
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 398 42 2017
-end
-classcanvas 129026 class_ref 5031426 // RepositoryHandle
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 722 128 2017
-end
-classcanvas 129538 class_ref 4916226 // AbstractVehicleTypeClassRepository
+classcanvas 129538 class_ref 4916226 // VehicleTypeClassRepository
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 42 450 2017
+  xyz 393.5 1175.5 2017
 end
-classcanvas 129922 class_ref 5254274 // CachedEntityRepositoryTableModel
+classcanvas 130946 class_ref 5527682 // VehicleTypeClassRepositoryCache
   classdiagramsettings member_max_width 0 end
-  xyz 425 336 2011
+  xyz 40.5 1175.5 2000
 end
-classcanvas 130306 class_ref 4949890 // EditVehicleTypeClass
+classcanvas 131074 class_ref 4956802 // CreateVehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 586 342 2006
+end
+classcanvas 131330 class_ref 5506946 // CreateVehicleTypeClassRequest
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 470 570 2006
+  color lightred
+  xyz 328 354 2012
 end
-relationcanvas 128642 relation_ref 5616002 // <generalisation>
-  from ref 128258 z 2012 to ref 128514
+classcanvas 131714 class_ref 5507074 // CreateVehicleTypeClassResponse
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  color lightred
+  xyz 554 450 2000
+end
+note 132354 "submitAll():
+ - Create what is new using CreateVehicleTypeClass
+ - .....
+ - Once done, calls submitToRepository()"
+  xyzwh 599.5 816.5 2000 377 117
+classcanvas 133250 class_ref 5534466 // EditVehicleTypeClassCache
+  classdiagramsettings member_max_width 0 end
+  xyz 327 536 2012
+end
+classcanvas 134146 class_ref 4916226 // VehicleTypeClassRepository
+  classdiagramsettings member_max_width 0 end
+  xyz 791 354 2000
+end
+note 134402 "Implement completely, then only extract what could be generic!
+Cache: QVariant"
+  xyzwh 849 673 2000 406 63
+classcanvas 135042 class_ref 5318274 // EntitySelectStatement
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 40.5 816.5 2005
+end
+classcanvas 135170 class_ref 5424386 // SelectQuery
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 42 496 2000
+end
+classcanvas 135810 class_ref 5554818 // AbstractEditableCacheTableModel
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 793 231 2017
+end
+classcanvas 136322 class_ref 5554690 // AbstractReadOnlyCacheTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 839 42 2023
+end
+relationcanvas 131458 relation_ref 5973890 // <unidirectional association>
+  from ref 131074 z 2013 to ref 131330
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 128898 relation_ref 5593986 // <generalisation>
-  from ref 128514 z 2018 to ref 128770
+relationcanvas 131842 relation_ref 6001154 // <unidirectional association>
+  decenter_begin 521
+  decenter_end 515
+  from ref 131074 z 2007 to ref 131714
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129154 relation_ref 5594114 // <directional composition>
-  from ref 128514 z 2018 to ref 129026
+relationcanvas 133762 relation_ref 6008706 // <directional composition>
+  decenter_end 533
+  from ref 128130 z 2013 to ref 133250
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129794 relation_ref 5616514 // <dependency>
-  decenter_begin 447
-  from ref 128130 z 2018 to ref 129538
+relationcanvas 134018 relation_ref 6008834 // <unidirectional association>
+  decenter_end 516
+  from ref 133250 z 2013 to ref 131330
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130050 relation_ref 5658626 // <generalisation>
-  from ref 129922 z 2012 to ref 128258
+relationcanvas 134274 relation_ref 6008962 // <unidirectional association>
+  from ref 131074 z 2007 to ref 134146
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130178 relation_ref 5658882 // <generalisation>
-  from ref 128130 z 2012 to ref 129922
+relationcanvas 135682 relation_ref 6029314 // <dependency>
+  decenter_begin 533
+  from ref 133250 z 2013 to ref 135170
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130434 relation_ref 5479298 // <unidirectional association>
-  from ref 128130 z 2007 to ref 130306
+relationcanvas 135938 relation_ref 6036610 // <generalisation>
+  from ref 128130 z 2018 to ref 135810
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 136450 relation_ref 6030082 // <generalisation>
+  decenter_end 508
+  from ref 135810 z 2024 to ref 136322
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 134530 -_-_ decenter_begin 509
+  from ref 134402 z 2001 to ref 128130
+line 134658 -_-_ geometry HV unfixed
+  from ref 134402 z 2013 to point 438 702
+  line 136578 z 2013 to ref 133250
 end

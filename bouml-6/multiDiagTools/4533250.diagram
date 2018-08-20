@@ -1,0 +1,40 @@
+format 220
+
+classcanvas 128002 class_ref 5568002 // UpdateVehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 72 130 2000
+end
+classcanvas 128130 class_ref 5568130 // UpdateVehicleTypeClassRequest
+  classdiagramsettings member_max_width 0 end
+  xyz 282 130 2000
+end
+classcanvas 128258 class_ref 5568258 // UpdateVehicleTypeClassResponse
+  classdiagramsettings member_max_width 0 end
+  xyz 40 42 2005
+end
+classcanvas 128642 class_ref 4769410 // VehicleTypeClass
+  classdiagramsettings member_max_width 0 end
+  xyz 40 255 2000
+end
+classcanvas 128770 class_ref 4854018 // VehicleType
+  classdiagramsettings member_max_width 0 end
+  xyz 200 266 3005
+end
+relationcanvas 128386 relation_ref 6063362 // <unidirectional association>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 6063490 // <unidirectional association>
+  decenter_begin 520
+  decenter_end 515
+  from ref 128002 z 2006 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 5291650 // <association>
+  from ref 128642 z 3006 to ref 128770
+  no_role_a no_role_b
+  multiplicity_a_pos 184 314 3000 no_multiplicity_b
+end
+end

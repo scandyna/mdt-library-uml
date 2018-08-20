@@ -1,6 +1,6 @@
-format 219
+format 220
 "Entity" // Mdt::Railway::Entity
-  revision 12
+  revision 13
   modified_by 2 "philippe"
   // class settings
   
@@ -120,7 +120,7 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      associated_diagram classdiagram_ref 4059010 // RW_Widgets_VehicleTypeEditor
+      associated_diagram classdiagram_ref 4059010 // RW_Widgets_VehicleTypeEdition
       classrelation 5322370 // <association>
 	relation_ref 5291650 // <association>
       end

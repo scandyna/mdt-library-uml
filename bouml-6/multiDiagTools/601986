@@ -1,10 +1,12 @@
-format 211
+format 219
 "Expression" // Mdt::Sql::Expression
-  revision 15
+  revision 16
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 211
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -30,9 +34,13 @@ format 211
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -130,209 +138,17 @@ ${inlines}
     end
   end
 
-  classview 1564546 "Grammar"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    classdiagram 2921474 "Grammar"
-      classdiagramsettings member_max_width 0 end
-      size A4-Landscape
-    end
-
-    class 3309314 "LeftTerminal"
-      visibility package 
-      nformals 1
-      formal name "Tag" type "class" explicit_default_value ""
-        explicit_extends ""
-      nactuals 1
-      actual class class_ref 3225602 // or_
-        rank 0 explicit_value ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 3725058 // <generalisation>
-	relation 3705858 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 3725058 // <generalisation>
-	  b parent class_ref 3225602 // or_
-      end
-    end
-
-    class 3309442 "RightTerminal"
-      visibility package 
-      nformals 1
-      formal name "Tag" type "class" explicit_default_value ""
-        explicit_extends ""
-      nactuals 1
-      actual class class_ref 3225602 // or_
-        rank 0 explicit_value ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 3725186 // <generalisation>
-	relation 3705986 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 3725186 // <generalisation>
-	  b parent class_ref 3225602 // or_
-      end
-    end
-
-    class 3308802 "CompareEquality"
-      visibility package 
-      nformals 1
-      formal name "Tag" type "class" explicit_default_value ""
-        explicit_extends ""
-      nactuals 1
-      actual class class_ref 3225602 // or_
-        rank 0 explicit_value ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 3724546 // <generalisation>
-	relation 3705346 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 3724546 // <generalisation>
-	  b parent class_ref 3225602 // or_
-      end
-    end
-
-    class 3308930 "CompareGreater"
-      visibility package 
-      nformals 1
-      formal name "Tag" type "class" explicit_default_value ""
-        explicit_extends ""
-      nactuals 1
-      actual class class_ref 3225602 // or_
-        rank 0 explicit_value ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 3724674 // <generalisation>
-	relation 3705474 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 3724674 // <generalisation>
-	  b parent class_ref 3225602 // or_
-      end
-    end
-
-    class 3309058 "CompareLess"
-      visibility package 
-      nformals 1
-      formal name "Tag" type "class" explicit_default_value ""
-        explicit_extends ""
-      nactuals 1
-      actual class class_ref 3225602 // or_
-        rank 0 explicit_value ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 3724802 // <generalisation>
-	relation 3705602 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 3724802 // <generalisation>
-	  b parent class_ref 3225602 // or_
-      end
-    end
-
-    class 3309186 "Comparison"
-      visibility package 
-      nformals 1
-      formal name "Tag" type "class" explicit_default_value ""
-        explicit_extends ""
-      nactuals 1
-      actual class class_ref 3225602 // or_
-        rank 0 explicit_value ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 3724930 // <generalisation>
-	relation 3705730 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 3724930 // <generalisation>
-	  b parent class_ref 3225602 // or_
-      end
-    end
-  end
-
   classview 1564674 "SqlTransform"
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -734,9 +550,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -832,9 +652,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -986,9 +810,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -1124,9 +952,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     

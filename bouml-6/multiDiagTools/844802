@@ -1,6 +1,6 @@
-format 219
+format 220
 "QueryExpression" // Mdt::QueryExpression
-  revision 13
+  revision 48
   modified_by 2 "philippe"
   // class settings
   
@@ -30,6 +30,10 @@ format 219
   activitydiagramsettings
    end
   
+  package_ref 851586 // TypeTraits
+
+  package_ref 851714 // BuildExpressionTree
+
   classview 2238466 "QueryExpression"
     
     classdiagramsettings member_max_width 0 end
@@ -247,6 +251,26 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      attribute 4192386 "Entity"
+	private type class_ref 5324802 // SelectEntity
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 5864450 // <directional composition>
+	relation 5832962 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5864450 // <directional composition>
+	  b parent class_ref 5324802 // SelectEntity
+      end
     end
 
     class 5318146 "EntityAndField"
@@ -400,21 +424,31 @@ ${inlines}
     end
 
     class 5331330 "SelectFieldVariant"
-      visibility package stereotype "typedef" explicit_base_type ""
-      cpp_decl "${comment}typedef ${type} ${name};
+      visibility package stereotype "union"
+      cpp_decl "${comment}${template}union ${name}
+{
+${members}};
+${inlines}
 "
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl "${comment}typedef ${type} ${name};
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}union ${name} switch(${switch}) {
+${members}};
 "
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 5788930 // <directional composition>
-	relation 5757442 *-->
-	  a role_name "" public
-	    classrelation_ref 5788930 // <directional composition>
+      classrelation 5788930 // <dependency>
+	relation 5757442 -_->
+	  a public
+	    classrelation_ref 5788930 // <dependency>
 	  b parent class_ref 3350146 // variant
       end
 
@@ -552,6 +586,22 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      operation 7269762 "addField"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "field" type class_ref 5318018 // SelectAllField
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
       operation 7204738 "addField"
 	public explicit_return_type "void"
 	nparams 2
@@ -572,7 +622,7 @@ ${inlines}
       operation 7204866 "addField"
 	public explicit_return_type "void"
 	nparams 3
-	  param in name "en" type class_ref 5282306 // EntityName
+	  param in name "e" type class_ref 5324802 // SelectEntity
 	  param in name "fn" type class_ref 5282434 // FieldName
 	  param in name "fa" type class_ref 161026 // QString
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
@@ -587,16 +637,15 @@ ${inlines}
 	
       end
 
-      classrelation 5789826 // <directional composition>
-	relation 5758338 *-->
+      classrelation 5864578 // <directional composition>
+	relation 5833090 *-->
 	  a role_name "" multiplicity "*" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 5789826 // <directional composition>
+	    classrelation_ref 5864578 // <directional composition>
 	  b parent class_ref 5317762 // SelectField
       end
     end
-
   end
 
   classview 2245890 "QE_Core_StaticExpression"
@@ -619,7 +668,7 @@ ${inlines}
     
     activitydiagramsettings
      end
-    classdiagram 4373378 "QE_StaticLiteralValue"
+    classdiagram 4373378 "QE_LiteralValue"
       classdiagramsettings member_max_width 0 end
       size A4
     end
@@ -650,6 +699,322 @@ ${inlines}
       end
     end
 
+    classdiagram 3075842 "QE_LikeExpression"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 3513090 "LikeExpression"
+      visibility package 
+      nactuals 3
+      actual class class_ref 3225730 // extends
+        rank 0 explicit_value ""
+      actual class class_ref 3225730 // extends
+        rank 1 explicit_value ""
+      actual class class_ref 3225730 // extends
+        rank 2 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 4935042 "LikeExpression"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param in name "expr" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 3912450 // <generalisation>
+	relation 3886722 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 3912450 // <generalisation>
+	  b parent class_ref 3225730 // extends
+      end
+
+      operation 4941570 "expression"
+	cpp_inline public return_type class_ref 161026 // QString
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 2921474 "QE_Grammar"
+      classdiagramsettings member_max_width 0 end
+      size C-Landscape
+    end
+
+    class 3309314 "LeftTerminal"
+      visibility package 
+      nactuals 1
+      actual class class_ref 3225602 // or_
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 3725058 // <generalisation>
+	relation 3705858 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 3725058 // <generalisation>
+	  b parent class_ref 3225602 // or_
+      end
+    end
+
+    class 3309442 "RightTerminal"
+      visibility package 
+      nactuals 1
+      actual class class_ref 3225602 // or_
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 3725186 // <generalisation>
+	relation 3705986 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 3725186 // <generalisation>
+	  b parent class_ref 3225602 // or_
+      end
+    end
+
+    class 3308802 "CompareEquality"
+      visibility package 
+      nformals 1
+      formal name "Tag" type "class" explicit_default_value ""
+        explicit_extends ""
+      nactuals 1
+      actual class class_ref 3225602 // or_
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 3724546 // <generalisation>
+	relation 3705346 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 3724546 // <generalisation>
+	  b parent class_ref 3225602 // or_
+      end
+    end
+
+    class 3309058 "CompareLess"
+      visibility package 
+      nformals 1
+      formal name "Tag" type "class" explicit_default_value ""
+        explicit_extends ""
+      nactuals 1
+      actual class class_ref 3225602 // or_
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 3724802 // <generalisation>
+	relation 3705602 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 3724802 // <generalisation>
+	  b parent class_ref 3225602 // or_
+      end
+    end
+
+    class 3308930 "CompareGreater"
+      visibility package 
+      nformals 1
+      formal name "Tag" type "class" explicit_default_value ""
+        explicit_extends ""
+      nactuals 1
+      actual class class_ref 3225602 // or_
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 3724674 // <generalisation>
+	relation 3705474 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 3724674 // <generalisation>
+	  b parent class_ref 3225602 // or_
+      end
+    end
+
+    class 3309186 "Comparison"
+      visibility package 
+      nformals 1
+      formal name "Tag" type "class" explicit_default_value ""
+        explicit_extends ""
+      nactuals 1
+      actual class class_ref 3225602 // or_
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 3724930 // <generalisation>
+	relation 3705730 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 3724930 // <generalisation>
+	  b parent class_ref 3225602 // or_
+      end
+    end
+
+    class 5357698 "FilterExpressionGrammar"
+      visibility package 
+      nactuals 1
+      actual class class_ref 3225602 // or_
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5824386 // <generalisation>
+	relation 5792898 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5824386 // <generalisation>
+	  b parent class_ref 3225602 // or_
+      end
+    end
+
+    class 5357826 "JoinExpressionGrammar"
+      visibility package 
+      nactuals 1
+      actual class class_ref 3225602 // or_
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5824514 // <generalisation>
+	relation 5793026 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5824514 // <generalisation>
+	  b parent class_ref 3225602 // or_
+      end
+    end
+
+    class 5357954 "ExpressionGrammar"
+      visibility package 
+      nactuals 1
+      actual class class_ref 3225602 // or_
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5824642 // <generalisation>
+	relation 5793154 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5824642 // <generalisation>
+	  b parent class_ref 3225602 // or_
+      end
+    end
   end
 
   classview 2246018 "QE_Core_ExpressionTree"
@@ -672,9 +1037,37 @@ ${inlines}
     
     activitydiagramsettings
      end
-    classdiagram 4366850 "QE_Core_ExpressionTree_sandbox"
+    classdiagram 4366850 "QE_ExpressionTree"
       classdiagramsettings member_max_width 0 end
-      size A4
+      size A-Landscape
+    end
+
+    class 5371010 "ExpressionTreeVertex"
+      visibility package stereotype "typedef" explicit_base_type ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 5391106 "ExpressionTreeEdge"
+      visibility package stereotype "typedef" explicit_base_type ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
 
     class 5290498 "ExpressionTree"
@@ -697,13 +1090,61 @@ ${inlines}
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	    classrelation_ref 5747842 // <directional composition>
-	  b parent class_ref 5290626 // Graph
+	  b parent class_ref 5290626 // ExpressionTreeGraph
       end
 
-      operation 7182850 "push"
+      attribute 4179202 "RootVertex"
+	private type class_ref 5371010 // ExpressionTreeVertex
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 7234178 "addNode"
+	public return_type class_ref 5371010 // ExpressionTreeVertex
+	nparams 3
+	  param in name "left" type class_ref 5331330 // SelectFieldVariant
+	  param in name "op" type class_ref 5290882 // LogicalOperator
+	  param in name "right" type class_ref 161154 // QVariant
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7234306 "addNode"
+	public return_type class_ref 5371010 // ExpressionTreeVertex
+	nparams 3
+	  param in name "leftChild" type class_ref 5371010 // ExpressionTreeVertex
+	  param in name "op" type class_ref 5290882 // LogicalOperator
+	  param in name "rightChiled" type class_ref 5371010 // ExpressionTreeVertex
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7235330 "doDfs"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "l" explicit_type "T"
+	  param in name "vis" explicit_type "Visitor"
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
@@ -716,15 +1157,42 @@ ${inlines}
 	
       end
 
-      operation 7182978 "push"
+      operation 7234434 "clear"
 	public explicit_return_type "void"
-	nparams 3
-	  param in name "l" explicit_type "L"
-	  param in name "op" type class_ref 5290882 // Oprator
-	  param in name "r" explicit_type "R"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7234562 "internalGraph"
+	public return_type class_ref 5290626 // ExpressionTreeGraph
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7234690 "internalRootVertex"
+	public return_type class_ref 5371010 // ExpressionTreeVertex
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -735,8 +1203,8 @@ ${inlines}
       end
     end
 
-    class 5290626 "Graph"
-      visibility package stereotype "typedef" explicit_base_type ""
+    class 5290626 "ExpressionTreeGraph"
+      visibility package stereotype "typedef" base_type class_ref 2574338 // adjacency_list
       nactuals 6
       actual class class_ref 2574338 // adjacency_list
         rank 0 explicit_value ""
@@ -801,7 +1269,7 @@ ${inlines}
       end
     end
 
-    class 5290882 "Oprator"
+    class 5384578 "ComparisonOperator"
       visibility package stereotype "enum"
       cpp_decl "${comment}enum ${name} {
 ${items}
@@ -823,8 +1291,8 @@ ${items}};
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 4144898 "BinaryOr"
-	public type class_ref 5290882 // Oprator
+      attribute 4185730 "Equal"
+	public type class_ref 5384578 // ComparisonOperator
 	cpp_decl "  ${name}${value},${comment}"
 	java_decl ""
 	php_decl ""
@@ -834,8 +1302,53 @@ ${items}};
 	MysqlColumn
       end
 
-      attribute 4145026 "BinaryAnd"
-	public type class_ref 5290882 // Oprator
+      attribute 4185858 "LessEqual"
+	public type class_ref 5384578 // ComparisonOperator
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 5290882 "LogicalOperator"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4144898 "Or"
+	public type class_ref 5290882 // LogicalOperator
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4145026 "And"
+	public type class_ref 5290882 // LogicalOperator
 	cpp_decl "  ${name}${value},${comment}"
 	java_decl ""
 	php_decl ""
@@ -878,7 +1391,239 @@ ${items}};
 	  a public
 	    cpp default "#include in source"
 	    classrelation_ref 5755138 // <dependency>
-	  b parent class_ref 5290626 // Graph
+	  b parent class_ref 5290626 // ExpressionTreeGraph
+      end
+    end
+
+    class 5351170 "ExpressionTreeVertexData"
+      visibility package stereotype "union"
+      cpp_decl "${comment}${template}union ${name}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}union ${name} switch(${switch}) {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5817730 // <dependency>
+	relation 5786242 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 5817730 // <dependency>
+	  b parent class_ref 5290882 // LogicalOperator
+      end
+
+      classrelation 5837698 // <dependency>
+	relation 5806210 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 5837698 // <dependency>
+	  b parent class_ref 5331330 // SelectFieldVariant
+      end
+
+      classrelation 5837826 // <dependency>
+	relation 5806338 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 5837826 // <dependency>
+	  b parent class_ref 161154 // QVariant
+      end
+
+      classrelation 5844610 // <dependency>
+	relation 5813122 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 5844610 // <dependency>
+	  b parent class_ref 5384578 // ComparisonOperator
+      end
+    end
+
+    classdiagram 4427266 "QE_TraverseTreeGraph"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5378050 "TraverseTreeGraph"
+      visibility package stereotype "PlainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7235074 "travserseTreeGraph"
+	public explicit_return_type "void"
+	nparams 3
+	  param in name "g" explicit_type "TreeGraph"
+	  param in name "v" explicit_type "Vertex"
+	  param in name "visitor" explicit_type "AbstractTreeGraphVisitor"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7243010 "traverseExpressionTree"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5391234 "AbstractExpressionTreeVisitor"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7243138 "preorder"
+	cpp_virtual cpp_inline public explicit_return_type "void"
+	nparams 2
+	  param in name "v" type class_ref 5371010 // ExpressionTreeVertex
+	  param in name "g" type class_ref 5290626 // ExpressionTreeGraph
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7241858 "inorder"
+	cpp_virtual cpp_inline public explicit_return_type "void"
+	nparams 2
+	  param in name "v" type class_ref 5371010 // ExpressionTreeVertex
+	  param in name "g" type class_ref 5290626 // ExpressionTreeGraph
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7249922 "onEdge"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "e" type class_ref 5391106 // ExpressionTreeEdge
+	  param in name "g" type class_ref 5290626 // ExpressionTreeGraph
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7242370 "processPreorder"
+	abstract cpp_virtual protected explicit_return_type "void"
+	nparams 1
+	  param in name "op" type class_ref 5384578 // ComparisonOperator
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7242498 "processPreorder"
+	abstract cpp_virtual protected explicit_return_type "void"
+	nparams 1
+	  param in name "op" type class_ref 5290882 // LogicalOperator
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7242754 "processPreorder"
+	abstract cpp_virtual protected explicit_return_type "void"
+	nparams 1
+	  param in name "ef" type class_ref 5318146 // EntityAndField
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7242882 "processPreorder"
+	abstract cpp_virtual protected explicit_return_type "void"
+	nparams 1
+	  param in name "value" type class_ref 161154 // QVariant
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7243266 "processInorder"
+	abstract cpp_virtual protected explicit_return_type "void"
+	nparams 1
+	  param in name "op" type class_ref 5384578 // ComparisonOperator
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7243394 "processPostorder"
+	abstract cpp_virtual protected explicit_return_type "void"
+	nparams 1
+	  param in name "op" type class_ref 5384578 // ComparisonOperator
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
       end
     end
   end
@@ -922,6 +1667,53 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 5851138 // <directional composition>
+	relation 5819650 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5851138 // <directional composition>
+	  b parent class_ref 5290498 // ExpressionTree
+      end
+
+      operation 7256450 "setFilter"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "expr" explicit_type "Expr"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7256578 "internalTree"
+	public return_type class_ref 5290498 // ExpressionTree
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 5851266 // <dependency>
+	relation 5819778 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 5851266 // <dependency>
+	  b parent class_ref 5377794 // LogicalTransform
+      end
     end
 
     classdiagram 4393730 "QE_JoinExpression"
@@ -1072,12 +1864,12 @@ ${inlines}
       end
     end
 
-    classdiagram 4386946 "QE_SelectQuery"
+    classdiagram 4386946 "QE_SelectStatement"
       classdiagramsettings member_max_width 0 end
-      size A-Landscape
+      size Legal-Landscape
     end
 
-    class 5304322 "SelectQuery"
+    class 5304322 "SelectStatement"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -1091,8 +1883,8 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 4152066 "EntityName"
-	private type class_ref 161026 // QString
+      attribute 4152066 "Entity"
+	private type class_ref 5324802 // SelectEntity
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -1202,6 +1994,22 @@ ${inlines}
 	
       end
 
+      operation 7263106 "setFilter"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "expr" explicit_type "Expr"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
       operation 7203970 "setFilter"
 	public explicit_return_type "void"
 	nparams 1
@@ -1266,6 +2074,843 @@ ${inlines}
 	
 	
 	
+      end
+
+      classrelation 5857794 // <directional composition>
+	relation 5826306 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5857794 // <directional composition>
+	  b parent class_ref 5317506 // FilterExpression
+      end
+    end
+
+    classdiagram 4446850 "QE_SelectQuery"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 5417602 "AbstractSelectQuery"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5891458 // <generalisation>
+	relation 5859970 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5891458 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 7296642 "exec"
+	abstract cpp_virtual public explicit_return_type "bool"
+	nparams 1
+	  param in name "stm" type class_ref 5304322 // SelectStatement
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7296386 "next"
+	abstract cpp_virtual public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7317890 "fieldCount"
+	abstract cpp_virtual public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7318018 "fieldIndex"
+	abstract cpp_virtual public explicit_return_type "int"
+	nparams 1
+	  param in name "field" type class_ref 5318146 // EntityAndField
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7304194 "value"
+	abstract cpp_virtual public return_type class_ref 161154 // QVariant
+	nparams 1
+	  param in name "col" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7317634 "lastError"
+	public return_type class_ref 182402 // Error
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7317762 "setLastError"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "error" type class_ref 182402 // Error
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5431042 "CachedSelectQuery"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5925506 // <directional composition>
+	relation 5894018 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5925506 // <directional composition>
+	  b parent class_ref 5417602 // AbstractSelectQuery
+      end
+
+      operation 7346178 "exec"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "stm" type class_ref 5304322 // SelectStatement
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7346306 "rowCount"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7346434 "columnCount"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7346562 "value"
+	public return_type class_ref 161154 // QVariant
+	nparams 2
+	  param in name "row" explicit_type "int"
+	  param in name "col" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7346690 "lastError"
+	public return_type class_ref 182402 // Error
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7346818 "impl"
+	public explicit_return_type "QueryImpl"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7346946 "make"
+	class_operation public return_type class_ref 5431042 // CachedSelectQuery
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5582082 "AbstractAsyncSelectQuery"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7488130 "exec"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "stm" type class_ref 5304322 // SelectStatement
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7488258 "newRecordAvailable"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "record" type class_ref 5547778 // VariantRecord
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7488386 "errorOccured"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "error" type class_ref 182402 // Error
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 4552962 "QE_SelectQueryFactory"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5437698 "SelectQueryFactory"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7347458 "makeImpl"
+	cpp_inline public explicit_return_type "QueryImpl"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7347714 "isValid"
+	cpp_inline public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7347586 "createQuery"
+	cpp_inline public return_type class_ref 5417602 // AbstractSelectQuery
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5437570 "AbstractSelectQueryFactory"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7348098 "isValid"
+	abstract cpp_virtual public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7347074 "createSelectQuery"
+	abstract cpp_virtual public return_type class_ref 5417602 // AbstractSelectQuery
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7494914 "createAsyncSelectQuery"
+	public return_type class_ref 5582082 // AbstractAsyncSelectQuery
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2285314 "QE_Sql_Query"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4433794 "QE_SqlSelectQuery"
+      classdiagramsettings member_max_width 0 end
+      size B
+    end
+
+    class 5404418 "SqlSelectQuery"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5884802 // <dependency>
+	relation 5853314 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 5884802 // <dependency>
+	  b parent class_ref 5304322 // SelectStatement
+      end
+
+      classrelation 5898626 // <generalisation>
+	relation 5867138 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5898626 // <generalisation>
+	  b parent class_ref 5417602 // AbstractSelectQuery
+      end
+
+      classrelation 5898754 // <directional composition>
+	relation 5867266 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5898754 // <directional composition>
+	  b parent class_ref 910594 // QSqlQuery
+      end
+
+      operation 7324930 "exec"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 1
+	  param in name "stm" type class_ref 5304322 // SelectStatement
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7324802 "next"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7325058 "fieldCount"
+	cpp_virtual public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7325314 "fieldIndex"
+	cpp_virtual public explicit_return_type "int"
+	nparams 1
+	  param in name "field" type class_ref 5318146 // EntityAndField
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7325442 "value"
+	cpp_virtual public return_type class_ref 161154 // QVariant
+	nparams 1
+	  param in name "col" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5588610 "AsyncSqlSelectQuery"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6108546 // <generalisation>
+	relation 6077058 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6108546 // <generalisation>
+	  b parent class_ref 5582082 // AbstractAsyncSelectQuery
+      end
+    end
+
+    class 5437826 "SqlSelectQueryFactory"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5925890 // <generalisation>
+	relation 5894402 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5925890 // <generalisation>
+	  b parent class_ref 5437570 // AbstractSelectQueryFactory
+      end
+
+      operation 7347330 "setDatabase"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "db" type class_ref 405122 // QSqlDatabase
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7495042 "setConnectionParameters"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7495170 "isValid"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7495298 "createSelectQuery"
+	cpp_virtual public return_type class_ref 5417602 // AbstractSelectQuery
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7495426 "createAsyncSelectQuery"
+	public return_type class_ref 5582082 // AbstractAsyncSelectQuery
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 4440322 "QE_Sql_Transform"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5404290 "SqlTransform"
+      visibility package stereotype "PlainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7331970 "escapteFieldName"
+	public return_type class_ref 161026 // QString
+	nparams 2
+	  param in name "fn" type class_ref 161026 // QString
+	  param in name "db" type class_ref 405122 // QSqlDatabase
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7332098 "escapeTableName"
+	public return_type class_ref 161026 // QString
+	nparams 2
+	  param in name "fn" type class_ref 161026 // QString
+	  param in name "db" type class_ref 405122 // QSqlDatabase
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7332226 "formatValue"
+	public return_type class_ref 161026 // QString
+	nparams 2
+	  param in name "v" type class_ref 161154 // QVariant
+	  param in name "db" type class_ref 405122 // QSqlDatabase
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7289858 "selectFieldToSql"
+	public return_type class_ref 161026 // QString
+	nparams 2
+	  param in name "sf" type class_ref 5317762 // SelectField
+	  param in name "db" type class_ref 405122 // QSqlDatabase
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7332354 "fromEntityToSql"
+	public return_type class_ref 161026 // QString
+	nparams 2
+	  param in name "e" type class_ref 5324802 // SelectEntity
+	  param in name "db" type class_ref 405122 // QSqlDatabase
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5411074 "SelectFieldVariantToSqlVisitor"
+      visibility package 
+      nactuals 1
+      actual class class_ref 3350274 // static_visitor
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5884930 // <generalisation>
+	relation 5853442 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5884930 // <generalisation>
+	  b parent class_ref 3350274 // static_visitor
       end
     end
   end

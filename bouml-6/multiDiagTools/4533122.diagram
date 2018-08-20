@@ -1,0 +1,36 @@
+format 220
+
+classcanvas 128002 class_ref 5540994 // AbstractReadOnlyCache
+  classdiagramsettings member_max_width 0 end
+  xyz 129 42 2000
+end
+classcanvas 128130 class_ref 5567874 // AbstractAsyncReadOnlyCache
+  classdiagramsettings member_max_width 0 end
+  xyz 42 689 2000
+end
+classcanvas 128514 class_ref 5581442 // CacheTransactionMap
+  classdiagramsettings member_max_width 0 end
+  xyz 704 322 2000
+end
+classcanvas 128642 class_ref 5581570 // CacheTransactionIdXyZy
+  classdiagramsettings member_max_width 0 end
+  xyz 695 234 2000
+end
+relationcanvas 128258 relation_ref 6063234 // <generalisation>
+  from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 6070018 // <directional composition>
+  from ref 128002 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 6070146 // <directional composition>
+  decenter_begin 470
+  decenter_end 473
+  from ref 128514 z 2001 to ref 128642
+  no_role_a no_role_b
+  multiplicity_a_pos 760 288 3000 no_multiplicity_b
+end
+end

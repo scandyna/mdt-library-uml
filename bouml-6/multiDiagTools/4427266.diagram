@@ -1,0 +1,11 @@
+format 219
+
+classcanvas 128130 class_ref 5378050 // TraverseTreeGraph
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+classcanvas 128258 class_ref 5391234 // AbstractExpressionTreeVisitor
+  classdiagramsettings member_max_width 0 end
+  xyz 83 238 2000
+end
+end

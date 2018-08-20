@@ -1,4 +1,4 @@
-format 218
+format 219
 
 classcanvas 128002 class_ref 5226242 // UpdateStatement
   classdiagramsettings member_max_width 0 end
@@ -25,7 +25,7 @@ classcanvas 129154 class_ref 5240194 // StatementAlgorithm
   xyz 248 39 2011
 end
 note 129410 "TODO: see QSqlDriver::sqlStatement()"
-  xyzwh 307.5 410.5 2000 279 57
+  xyzwh 278.5 497.5 2000 279 57
 relationcanvas 128258 relation_ref 5629954 // <directional composition>
   decenter_begin 509
   from ref 128002 z 2007 to ref 128130

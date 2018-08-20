@@ -1,49 +1,47 @@
-format 218
+format 219
 
 classcanvas 128002 class_ref 4701826 // ResizableMutableStlDataListTemplate
   classdiagramsettings member_max_width 0 end
-  xyz 559 600 2000
+  xyz 35 912 2000
 end
-classcanvas 128130 class_ref 4701954 // ConstStlDataListTemplate
+classcanvas 128130 class_ref 4701954 // ReadOnlyDataListTemplate
   classdiagramsettings member_max_width 0 end
-  xyz 527 40 2000
+  xyz 39 352 2000
 end
 classcanvas 128258 class_ref 4702082 // const_iterator
   classdiagramsettings member_max_width 0 end
-  xyz 386 154 2006
+  xyz 146 266 2006
 end
 classcanvas 128514 class_ref 4702210 // iterator
   classdiagramsettings member_max_width 0 end
-  xyz 815 450 2006
+  xyz 287 770 2006
 end
 classcanvas 128898 class_ref 4701698 // StlContainer
   classdiagramsettings member_max_width 0 end
-  xyz 873 134 2000
+  xyz 393 446 2000
 end
 note 130050 "Const iterable or const ?"
-  xyzwh 40.5 784.5 2000 193 53
-classcanvas 130178 class_ref 4702466 // MutableStlDataListTemplate
+  xyzwh 784.5 40.5 2000 193 53
+classcanvas 130178 class_ref 4702466 // MutableDataListTemplate
   classdiagramsettings member_max_width 0 end
-  xyz 586 392 2000
+  xyz 69 704 2000
 end
 classcanvas 130946 class_ref 4702594 // ResizableStlConstDataListTemplate
   classdiagramsettings member_max_width 0 end
-  xyz 41 600 2000
+  xyz 705.5 704.5 2000
 end
 classcanvas 131458 class_ref 4702722 // ResizableStlDataListTemplate
   classdiagramsettings member_max_width 0 end
-  xyz 320 559 2000
+  xyz 424.5 704.5 2000
 end
-line 128386 ---+
+classcanvas 132098 class_ref 5444354 // ReadOnlyCowDataListTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 361 40 2006
+end
+line 128386 ---+ decenter_begin 534 decenter_end 510
   from ref 128258 z 2007 to ref 128130
 relationcanvas 130306 relation_ref 5177986 // <generalisation>
-  decenter_begin 482
   from ref 128002 z 2001 to ref 130178
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130434 relation_ref 5178114 // <generalisation>
-  from ref 130178 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -52,23 +50,12 @@ relationcanvas 130690 relation_ref 5178242 // <dependency>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 130818 ---+ decenter_end 473
+line 130818 ---+ decenter_end 520
   from ref 128514 z 2007 to ref 130178
-relationcanvas 131074 relation_ref 5178370 // <generalisation>
-  geometry VHV unfixed
-  from ref 130946 z 2001 to point 158 352
-  line 131842 z 2001 to point 678 352
-  line 131970 z 2001 to ref 128130
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 131586 relation_ref 5178498 // <generalisation>
-  from ref 130946 z 2001 to ref 131458
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 131714 relation_ref 5178626 // <generalisation>
-  from ref 128002 z 2001 to ref 131458
+relationcanvas 132226 relation_ref 5900930 // <dependency>
+  decenter_begin 486
+  decenter_end 483
+  from ref 132098 z 2007 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

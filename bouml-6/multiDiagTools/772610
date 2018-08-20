@@ -1,6 +1,6 @@
-format 219
+format 220
 "Container" // Mdt::Container
-  revision 19
+  revision 21
   modified_by 2 "philippe"
   // class settings
   
@@ -198,13 +198,15 @@ ${inlines}
 
     classdiagram 4006018 "DataList"
       classdiagramsettings member_max_width 0 end
-      size Legal-Landscape
+      size B
     end
 
-    class 4701954 "ConstStlDataListTemplate"
+    class 4701954 "ReadOnlyDataListTemplate"
       visibility package 
-      nformals 2
+      nformals 3
       formal name "T" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Derived" type "class" explicit_default_value ""
         explicit_extends ""
       formal name "Container" type "class" explicit_default_value "std::vector"
         explicit_extends ""
@@ -248,7 +250,7 @@ ${inlines}
 	
       end
 
-      operation 6515970 "ConstStlDataListTemplate"
+      operation 6515970 "ReadOnlyDataListTemplate"
 	cpp_inline public explicit_return_type ""
 	nparams 1
 	  param in name "list" explicit_type "initializer_list"
@@ -394,18 +396,15 @@ ${inlines}
       end
     end
 
-    class 4702466 "MutableStlDataListTemplate"
+    class 5444354 "ReadOnlyCowDataListTemplate"
       visibility package 
-      nformals 2
+      nformals 3
       formal name "T" type "class" explicit_default_value ""
         explicit_extends ""
-      formal name "Container" type "class" explicit_default_value ""
+      formal name "Derived" type "class" explicit_default_value ""
         explicit_extends ""
-      nactuals 2
-      actual class class_ref 4701954 // ConstStlDataListTemplate
-        rank 0 explicit_value ""
-      actual class class_ref 4701954 // ConstStlDataListTemplate
-        rank 1 explicit_value ""
+      formal name "Container" type "class" explicit_default_value "std::vector"
+        explicit_extends ""
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -418,14 +417,199 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 5205378 // <generalisation>
-	relation 5178114 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 5205378 // <generalisation>
-	  b parent class_ref 4701954 // ConstStlDataListTemplate
+      attribute 4198914 "Container"
+	private explicit_type "Container"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
       end
 
+      class 5444482 "const_iterator"
+	visibility package 
+	cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+      end
+
+      operation 7354626 "ReadOnlyCowDataListTemplate"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param in name "list" explicit_type "initializer_list"
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7354754 "count"
+	cpp_inline public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7354882 "isEmpty"
+	cpp_inline public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7355010 "at"
+	cpp_inline public explicit_return_type "T"
+	nparams 1
+	  param in name "index" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7355138 "cbegin"
+	cpp_inline public return_type class_ref 4702082 // const_iterator
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7355266 "cend"
+	cpp_inline public return_type class_ref 4702082 // const_iterator
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7355394 "begin"
+	cpp_inline public return_type class_ref 4702082 // const_iterator
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7355522 "end"
+	cpp_inline public return_type class_ref 4702082 // const_iterator
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 5932418 // <dependency>
+	relation 5900930 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 5932418 // <dependency>
+	  b parent class_ref 4701698 // StlContainer
+      end
+
+      operation 7355650 "container"
+	cpp_inline protected explicit_return_type "Container"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 4702466 "MutableDataListTemplate"
+      visibility package 
+      nformals 2
+      formal name "T" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Container" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
       class 4702210 "iterator"
 	visibility package 
 	cpp_decl "${comment}${template}class ${name}${inherit}
@@ -606,15 +790,6 @@ ${inlines}
         explicit_extends ""
       formal name "Container" type "class" explicit_default_value ""
         explicit_extends ""
-      nactuals 4
-      actual class class_ref 4701954 // ConstStlDataListTemplate
-        rank 0 explicit_value ""
-      actual class class_ref 4701954 // ConstStlDataListTemplate
-        rank 1 explicit_value ""
-      actual class class_ref 4702722 // ResizableStlDataListTemplate
-        rank 0 explicit_value ""
-      actual class class_ref 4702722 // ResizableStlDataListTemplate
-        rank 1 explicit_value ""
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -627,21 +802,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 5205634 // <generalisation>
-	relation 5178370 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 5205634 // <generalisation>
-	  b parent class_ref 4701954 // ConstStlDataListTemplate
-      end
-
-      classrelation 5205762 // <generalisation>
-	relation 5178498 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 5205762 // <generalisation>
-	  b parent class_ref 4702722 // ResizableStlDataListTemplate
-      end
     end
 
     class 4701826 "ResizableMutableStlDataListTemplate"
@@ -651,14 +811,10 @@ ${inlines}
         explicit_extends ""
       formal name "Container" type "class" explicit_default_value ""
         explicit_extends ""
-      nactuals 4
-      actual class class_ref 4702466 // MutableStlDataListTemplate
+      nactuals 2
+      actual class class_ref 4702466 // MutableDataListTemplate
         rank 0 explicit_value ""
-      actual class class_ref 4702466 // MutableStlDataListTemplate
-        rank 1 explicit_value ""
-      actual class class_ref 4702722 // ResizableStlDataListTemplate
-        rank 0 explicit_value ""
-      actual class class_ref 4702722 // ResizableStlDataListTemplate
+      actual class class_ref 4702466 // MutableDataListTemplate
         rank 1 explicit_value ""
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -677,15 +833,7 @@ ${inlines}
 	  a public
 	    cpp default "${type}"
 	    classrelation_ref 5205250 // <generalisation>
-	  b parent class_ref 4702466 // MutableStlDataListTemplate
-      end
-
-      classrelation 5205890 // <generalisation>
-	relation 5178626 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 5205890 // <generalisation>
-	  b parent class_ref 4702722 // ResizableStlDataListTemplate
+	  b parent class_ref 4702466 // MutableDataListTemplate
       end
     end
 
@@ -2347,5 +2495,27 @@ ${inlines}
       mysql_decl ""
       
     end
+  end
+
+  classview 2311554 "SmallVector"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
   end
 end
