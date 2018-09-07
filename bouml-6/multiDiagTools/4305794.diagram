@@ -2,65 +2,61 @@ format 220
 
 classcanvas 128130 class_ref 4909570 // EditVehicleTypeClassTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 839 551 2000
+  xyz 87 295 2000
 end
 classcanvas 128770 class_ref 5165698 // AbstractEditableCachedTableModel
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 668.5 1175.5 2017
+  xyz 1040.5 40.5 2017
 end
 classcanvas 129538 class_ref 4916226 // VehicleTypeClassRepository
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 393.5 1175.5 2017
+  xyz 850.5 1151.5 2017
 end
 classcanvas 130946 class_ref 5527682 // VehicleTypeClassRepositoryCache
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 1175.5 2000
+  xyz 497.5 1151.5 2000
 end
 classcanvas 131074 class_ref 4956802 // CreateVehicleTypeClass
   classdiagramsettings member_max_width 0 end
-  xyz 586 342 2006
+  xyz 450 558 2006
 end
 classcanvas 131330 class_ref 5506946 // CreateVehicleTypeClassRequest
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
   color lightred
-  xyz 328 354 2012
+  xyz 192 570 2012
 end
 classcanvas 131714 class_ref 5507074 // CreateVehicleTypeClassResponse
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
   color lightred
-  xyz 554 450 2000
+  xyz 658 570 2000
 end
 note 132354 "submitAll():
  - Create what is new using CreateVehicleTypeClass
  - .....
  - Once done, calls submitToRepository()"
-  xyzwh 599.5 816.5 2000 377 117
+  xyzwh 40.5 1151.5 2000 377 117
 classcanvas 133250 class_ref 5534466 // EditVehicleTypeClassCache
   classdiagramsettings member_max_width 0 end
-  xyz 327 536 2012
+  xyz 162 416 2012
 end
 classcanvas 134146 class_ref 4916226 // VehicleTypeClassRepository
   classdiagramsettings member_max_width 0 end
-  xyz 791 354 2000
+  xyz 435 666 2000
 end
 note 134402 "Implement completely, then only extract what could be generic!
 Cache: QVariant"
-  xyzwh 849 673 2000 406 63
+  xyzwh 557 305 2000 406 63
 classcanvas 135042 class_ref 5318274 // EntitySelectStatement
   classdiagramsettings member_max_width 0 show_context_mode uml end
-  xyz 40.5 816.5 2005
-end
-classcanvas 135170 class_ref 5424386 // SelectQuery
-  classdiagramsettings member_max_width 0 show_context_mode uml end
-  xyz 42 496 2000
+  xyz 40.5 792.5 2005
 end
 classcanvas 135810 class_ref 5554818 // AbstractEditableCacheTableModel
   classdiagramsettings member_max_width 0 show_context_mode uml end
-  xyz 793 231 2017
+  xyz 41 41 2017
 end
 classcanvas 136322 class_ref 5554690 // AbstractReadOnlyCacheTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 839 42 2023
+  xyz 599.5 792.5 2023
 end
 relationcanvas 131458 relation_ref 5973890 // <unidirectional association>
   from ref 131074 z 2013 to ref 131330
@@ -68,14 +64,11 @@ relationcanvas 131458 relation_ref 5973890 // <unidirectional association>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131842 relation_ref 6001154 // <unidirectional association>
-  decenter_begin 521
-  decenter_end 515
   from ref 131074 z 2007 to ref 131714
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 133762 relation_ref 6008706 // <directional composition>
-  decenter_end 533
   from ref 128130 z 2013 to ref 133250
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -87,13 +80,9 @@ relationcanvas 134018 relation_ref 6008834 // <unidirectional association>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 134274 relation_ref 6008962 // <unidirectional association>
+  decenter_begin 521
+  decenter_end 517
   from ref 131074 z 2007 to ref 134146
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 135682 relation_ref 6029314 // <dependency>
-  decenter_begin 533
-  from ref 133250 z 2013 to ref 135170
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -102,15 +91,9 @@ relationcanvas 135938 relation_ref 6036610 // <generalisation>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 136450 relation_ref 6030082 // <generalisation>
-  decenter_end 508
-  from ref 135810 z 2024 to ref 136322
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-line 134530 -_-_ decenter_begin 509
+line 134530 -_-_
   from ref 134402 z 2001 to ref 128130
-line 134658 -_-_ geometry HV unfixed
-  from ref 134402 z 2013 to point 438 702
+line 134658 -_-_ geometry VH unfixed decenter_end 457
+  from ref 134402 z 2013 to point 757 461
   line 136578 z 2013 to ref 133250
 end

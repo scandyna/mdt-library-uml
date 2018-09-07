@@ -2,75 +2,87 @@ format 220
 
 classcanvas 128258 class_ref 4902658 // CreateVehicleType
   classdiagramsettings member_max_width 0 end
-  xyz 639 129.5 2000
+  xyz 275 353.75 2000
 end
 classcanvas 128386 class_ref 4854018 // VehicleType
   classdiagramsettings member_max_width 0 end
-  xyz 234.5 171 2000
+  xyz 566 41 2000
 end
 classcanvas 128514 class_ref 4769410 // VehicleTypeClass
   classdiagramsettings member_max_width 0 end
-  xyz 243.25 39.75 2006
+  xyz 581.25 228.25 2006
 end
 classcanvas 128770 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 671 47.25 2000
+  xyz 424 118.75 2000
 end
 classcanvas 129026 class_ref 5451010 // CreateVehicleTypeRequest
   classdiagramsettings member_max_width 0 end
-  xyz 612 235.75 2000
+  xyz 443 365.75 2000
 end
 classcanvas 129154 class_ref 5451138 // CreateVehicleTypeResponse
   classdiagramsettings member_max_width 0 end
-  xyz 808.5 141.5 2000
+  xyz 41.5 365.75 2000
 end
 classcanvas 129538 class_ref 5451394 // VehicleTypeRepository
   classdiagramsettings member_max_width 0 end
-  xyz 403 92.75 2006
+  xyz 260 463.25 2006
 end
 classcanvas 131074 class_ref 4956802 // CreateVehicleTypeClass
   classdiagramsettings member_max_width 0 end
-  xyz 39.25 54.75 2000
+  xyz 377.25 243.25 2000
 end
 relationcanvas 128642 relation_ref 5291650 // <association>
-  decenter_begin 528
+  decenter_begin 471
   from ref 128514 z 2007 to ref 128386
   no_role_a no_role_b
-  multiplicity_a_pos 291 144 3000 no_multiplicity_b
+  multiplicity_a_pos 622 127 3000 no_multiplicity_b
 end
 relationcanvas 128898 relation_ref 5907458 // <generalisation>
-  from ref 128258 z 2001 to ref 128770
+  geometry VHV unfixed
+  from ref 128258 z 2001 to point 337 203
+  line 131458 z 2001 to point 454 203
+  line 131586 z 2001 to ref 128770
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129794 relation_ref 5908354 // <unidirectional association>
-  decenter_begin 217
-  decenter_end 733
-  from ref 128258 z 2007 to point 599 144
-  line 130690 z 2007 to point 599 125
-  line 130946 z 2007 to ref 129538
+  from ref 128258 z 2007 to ref 129538
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130178 relation_ref 5915010 // <unidirectional association>
+  decenter_begin 550
+  decenter_end 577
   from ref 128258 z 2001 to ref 129154
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130306 relation_ref 5915138 // <unidirectional association>
+  decenter_begin 550
+  decenter_end 577
   from ref 128258 z 2001 to ref 129026
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130818 relation_ref 5966978 // <unidirectional association>
-  decenter_begin 782
-  decenter_end 155
-  from ref 128258 z 2001 to ref 128386
+  geometry VH unfixed
+  decenter_begin 193
+  from ref 128258 z 2001 to point 297 77
+  line 131714 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131202 relation_ref 5975298 // <dependency>
+  decenter_begin 550
+  decenter_end 535
   from ref 131074 z 2007 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131330 relation_ref 6056706 // <generalisation>
+  decenter_begin 478
+  from ref 131074 z 2001 to ref 128770
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

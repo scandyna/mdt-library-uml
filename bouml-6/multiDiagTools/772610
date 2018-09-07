@@ -1,6 +1,6 @@
 format 220
 "Container" // Mdt::Container
-  revision 21
+  revision 22
   modified_by 2 "philippe"
   // class settings
   
@@ -2517,5 +2517,47 @@ ${inlines}
     
     activitydiagramsettings
      end
+  end
+
+  classview 2364034 "VariantRecord"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4579202 "Container_VariantRecord"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5547778 "VariantRecord"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
   end
 end

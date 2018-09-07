@@ -2,28 +2,26 @@ format 220
 
 classcanvas 128002 class_ref 5534466 // EditVehicleTypeClassCache
   classdiagramsettings member_max_width 0 end
-  xyz 386 1008 2000
+  xyz 410 968 2000
 end
 classcanvas 128130 class_ref 5540994 // AbstractReadOnlyCache
   classdiagramsettings member_max_width 0 show_context_mode uml end
-  xyz 263 42 2000
+  xyz 289 42 2000
 end
 classcanvas 128258 class_ref 5541122 // AbstractEditableCache
   classdiagramsettings member_max_width 0 show_context_mode uml end
-  xyz 306 688 2006
+  xyz 338 690 2006
 end
 classcanvas 128642 class_ref 5547778 // VariantRecord
   classdiagramsettings member_max_width 0 show_context_mode uml end
-  xyz 42 322 2006
+  xyz 41 322 2006
 end
 relationcanvas 128386 relation_ref 6015874 // <generalisation>
-  decenter_begin 508
   from ref 128258 z 2007 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 6022658 // <generalisation>
-  decenter_end 508
   from ref 128002 z 2007 to ref 128258
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -31,6 +29,6 @@ end
 relationcanvas 128770 relation_ref 6022786 // <directional composition>
   from ref 128130 z 2007 to ref 128642
   no_role_a no_role_b
-  multiplicity_a_pos 232 354 3000 no_multiplicity_b
+  multiplicity_a_pos 257 354 3000 no_multiplicity_b
 end
 end

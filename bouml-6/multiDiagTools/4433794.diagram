@@ -2,45 +2,41 @@ format 220
 
 classcanvas 128002 class_ref 5404418 // SqlSelectQuery
   classdiagramsettings member_max_width 0 end
-  xyz 42 270 2000
+  xyz 161 274 2000
 end
 classcanvas 129154 class_ref 910594 // QSqlQuery
   classdiagramsettings member_max_width 0 end
-  xyz 335 322 2017
+  xyz 39 322 2017
 end
 classcanvas 129410 class_ref 5404290 // SqlTransform
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 928.5 2000
+  xyz 40.5 880.5 2000
 end
 classcanvas 129538 class_ref 5417602 // AbstractSelectQuery
   classdiagramsettings member_max_width 0 end
-  xyz 42 40 2000
+  xyz 161 40 2000
 end
 classcanvas 130178 class_ref 5437570 // AbstractSelectQueryFactory
   classdiagramsettings member_max_width 0 end
-  xyz 560 496 2000
+  xyz 40 504 2000
 end
 classcanvas 130306 class_ref 5437826 // SqlSelectQueryFactory
   classdiagramsettings member_max_width 0 end
-  xyz 560 642 2000
+  xyz 40 650 2000
 end
 classcanvas 130562 class_ref 5582082 // AbstractAsyncSelectQuery
   classdiagramsettings member_max_width 0 end
-  xyz 498 40 2000
+  xyz 598 40 2000
 end
-classcanvas 130690 class_ref 5588610 // AsyncSqlSelectQuery
+classcanvas 130690 class_ref 5588610 // SqlAsyncSelectQuery
   classdiagramsettings member_max_width 0 end
-  xyz 629 186 2000
+  xyz 588 185 2000
 end
 note 130946 "Should no longer hold a QSQlDatabse, but a other connection container"
-  xyzwh 39 690 2000 483 53
-classcanvas 131202 class_ref 5574786 // SQLiteConnectionParameters
-  classdiagramsettings member_max_width 0 end
-  xyz 180 786 2000
-end
-classcanvas 131330 class_ref 5574914 // MySqlConnectionParameters
-  classdiagramsettings member_max_width 0 end
-  xyz 182 521 2000
+  xyzwh 431 698 2000 483 53
+classcanvas 131842 class_ref 5601666 // ConnectionParameters
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 562 610 2006
 end
 relationcanvas 129666 relation_ref 5867138 // <generalisation>
   from ref 128002 z 2001 to ref 129538
@@ -48,6 +44,7 @@ relationcanvas 129666 relation_ref 5867138 // <generalisation>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129794 relation_ref 5867266 // <directional composition>
+  decenter_begin 469
   from ref 128002 z 2018 to ref 129154
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -62,10 +59,8 @@ relationcanvas 130818 relation_ref 6077058 // <generalisation>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 131074 -_-_ decenter_begin 523 decenter_end 566
+line 131074 -_-_ decenter_begin 469 decenter_end 415
   from ref 130306 z 2001 to ref 130946
-line 131458 -_-_
-  from ref 131330 z 2001 to ref 130946
-line 131714 -_-_
-  from ref 131202 z 2001 to ref 130946
+line 132226 -_-_
+  from ref 130946 z 2007 to ref 131842
 end

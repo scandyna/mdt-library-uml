@@ -20,4 +20,9 @@ classcanvas 129666 class_ref 4929538 // VehicleTypeClass
   classdiagramsettings member_max_width 0 end
   xyz 40.5 40.5 2028
 end
+relationcanvas 129794 relation_ref 6146690 // <directional composition>
+  from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 end

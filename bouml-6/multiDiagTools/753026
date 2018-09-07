@@ -1,6 +1,6 @@
 format 220
 "Entity" // Mdt::Entity
-  revision 204
+  revision 209
   modified_by 2 "philippe"
   // class settings
   
@@ -4486,7 +4486,6 @@ ${inlines}
 	
 	
       end
-
     end
 
     class 5417858 "SomeSelectQueryImpl"
@@ -5268,22 +5267,6 @@ ${inlines}
 	
 	
       end
-    end
-
-    class 5547778 "VariantRecord"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
     end
 
     class 5554434 "CacheState"

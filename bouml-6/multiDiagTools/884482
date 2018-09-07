@@ -1,6 +1,6 @@
 format 220
-"UseCases" // Mdt::Railway::UseCases
-  revision 2
+"UiCache" // Mdt::UiCache
+  revision 1
   modified_by 2 "philippe"
   // class settings
   

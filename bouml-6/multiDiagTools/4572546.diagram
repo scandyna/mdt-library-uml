@@ -1,0 +1,75 @@
+format 220
+
+classcanvas 128002 class_ref 5608578 // AsyncQuery
+  classdiagramsettings member_max_width 0 end
+  xyz 737.2 165.3 2000
+end
+classcanvas 128130 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 1555.6 40.35 2005
+end
+classcanvas 128386 class_ref 910594 // QSqlQuery
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 41.85 235.35 2000
+end
+classcanvas 128642 class_ref 5608834 // AsyncQueryThreadWorker
+  classdiagramsettings member_max_width 0 end
+  xyz 165 165.8 2005
+end
+classcanvas 128898 class_ref 222722 // QThread
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 1957 242.45 2011
+end
+classcanvas 129922 class_ref 5608962 // AsyncQueryConnection
+  classdiagramsettings member_max_width 0 end
+  xyz 1253.9 172.3 2000
+end
+note 138370 "For instance ID: could the instance pointer be used ?"
+  xyzwh 39.8 451.7 2000 374 56
+relationcanvas 128258 relation_ref 6098434 // <generalisation>
+  geometry VHV unfixed
+  from ref 128002 z 2006 to point 974 126
+  line 138114 z 2006 to point 1585 126
+  line 138242 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 6098562 // <generalisation>
+  geometry VHV unfixed
+  from ref 128642 z 2006 to point 428 125.9
+  line 135170 z 2006 to point 1585.6 125.9
+  line 135298 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 1508354 // <generalisation>
+  geometry VHV unfixed
+  from ref 128898 z 2012 to point 1988 125.5
+  line 138498 z 2012 to point 1585.6 125.5
+  line 138626 z 2012 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132354 relation_ref 6100098 // <dependency>
+  decenter_end 577
+  from ref 128642 z 2006 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133890 relation_ref 6099074 // <dependency>
+  from ref 129922 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134658 relation_ref 6106626 // <directional composition>
+  decenter_end 577
+  from ref 129922 z 2012 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136706 relation_ref 6120322 // <generalisation>
+  from ref 129922 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

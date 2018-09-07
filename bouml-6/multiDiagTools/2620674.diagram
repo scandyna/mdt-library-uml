@@ -1,4 +1,4 @@
-format 219
+format 220
 
 classcanvas 128002 class_ref 2994946 // UpdateQuery
   classdiagramsettings member_max_width 0 end
@@ -16,6 +16,10 @@ classcanvas 130690 class_ref 5227010 // AbstractQuery
   classdiagramsettings member_max_width 0 end
   xyz 488 125 2017
 end
+classcanvas 131074 class_ref 5226882 // OnUpdateFailureOperation
+  classdiagramsettings member_max_width 0 end
+  xyz 121 127 2006
+end
 relationcanvas 130178 relation_ref 5630210 // <directional composition>
   from ref 128002 z 2001 to ref 128258
   no_role_a no_role_b
@@ -29,6 +33,11 @@ end
 relationcanvas 130946 relation_ref 5630850 // <generalisation>
   decenter_begin 490
   from ref 128002 z 2018 to ref 130690
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131202 relation_ref 5630338 // <directional composition>
+  from ref 128258 z 2007 to ref 131074
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

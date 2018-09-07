@@ -1,6 +1,6 @@
 format 220
 "QueryExpression" // Mdt::QueryExpression
-  revision 48
+  revision 61
   modified_by 2 "philippe"
   // class settings
   
@@ -2091,6 +2091,42 @@ ${inlines}
       size A-Landscape
     end
 
+    class 5629058 "QuerySelectStatement"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6165122 // <directional composition>
+	relation 6133634 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6165122 // <directional composition>
+	  b parent class_ref 5304322 // SelectStatement
+      end
+
+      attribute 4265730 "MaxRows"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
     class 5417602 "AbstractSelectQuery"
       abstract visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
@@ -2115,9 +2151,10 @@ ${inlines}
 
       operation 7296642 "exec"
 	abstract cpp_virtual public explicit_return_type "bool"
-	nparams 1
+	nparams 2
 	  param in name "stm" type class_ref 5304322 // SelectStatement
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	  param in name "maxRows" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
 	
 	
@@ -2336,7 +2373,7 @@ ${inlines}
     end
 
     class 5582082 "AbstractAsyncSelectQuery"
-      visibility package 
+      abstract visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -2349,15 +2386,12 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      operation 7488130 "exec"
-	public explicit_return_type "void"
-	nparams 1
+      operation 7488130 "submitStatement"
+	abstract cpp_virtual public explicit_return_type "void"
+	nparams 2
 	  param in name "stm" type class_ref 5304322 // SelectStatement
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
+	  param in name "maxRows" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
 	
 	
@@ -2398,71 +2432,19 @@ ${inlines}
 	
 	
       end
+
+      classrelation 6122498 // <generalisation>
+	relation 6091010 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6122498 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
     end
 
     classdiagram 4552962 "QE_SelectQueryFactory"
       classdiagramsettings member_max_width 0 end
       size A4
-    end
-
-    class 5437698 "SelectQueryFactory"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      operation 7347458 "makeImpl"
-	cpp_inline public explicit_return_type "QueryImpl"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7347714 "isValid"
-	cpp_inline public explicit_return_type "bool"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7347586 "createQuery"
-	cpp_inline public return_type class_ref 5417602 // AbstractSelectQuery
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
     end
 
     class 5437570 "AbstractSelectQueryFactory"
@@ -2516,6 +2498,167 @@ ${inlines}
 	
       end
     end
+
+    class 5601922 "AbstractAsyncSelectQueryFactory"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6144898 // <generalisation>
+	relation 6113410 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6144898 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 7552386 "createSelectQuery"
+	abstract cpp_virtual public return_type class_ref 5582082 // AbstractAsyncSelectQuery
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7594882 "createCachedSelectQuery"
+	abstract cpp_virtual public return_type class_ref 5648642 // AbstractAsyncCachedSelectQuery
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7595522 "createSharedCachedSelectQuery"
+	public return_type class_ref 5648642 // AbstractAsyncCachedSelectQuery
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 4598786 "QE_AsyncCachedSelectQuery"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 5648642 "AbstractAsyncCachedSelectQuery"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6184834 // <generalisation>
+	relation 6153346 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6184834 // <generalisation>
+	  b parent class_ref 5567874 // AbstractAsyncReadOnlyCache
+      end
+
+      operation 7594370 "columnCount"
+	cpp_virtual cpp_inline public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7594626 "submitStatement"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "stm" type class_ref 5304322 // SelectStatement
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7594754 "columnCountChanged"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "c" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7594498 "fetchRecords"
+	cpp_virtual cpp_inline protected explicit_return_type "bool"
+	nparams 1
+	  param in name "count" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6184962 // <directional composition>
+	relation 6153474 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6184962 // <directional composition>
+	  b parent class_ref 5582082 // AbstractAsyncSelectQuery
+      end
+    end
   end
 
   classview 2285314 "QE_Sql_Query"
@@ -2540,7 +2683,7 @@ ${inlines}
      end
     classdiagram 4433794 "QE_SqlSelectQuery"
       classdiagramsettings member_max_width 0 end
-      size B
+      size B-Landscape
     end
 
     class 5404418 "SqlSelectQuery"
@@ -2584,11 +2727,12 @@ ${inlines}
 
       operation 7324930 "exec"
 	cpp_virtual public explicit_return_type "bool"
-	nparams 1
+	nparams 2
 	  param in name "stm" type class_ref 5304322 // SelectStatement
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	  param in name "maxRows" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2658,29 +2802,6 @@ ${inlines}
 	
 	
 	
-      end
-    end
-
-    class 5588610 "AsyncSqlSelectQuery"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 6108546 // <generalisation>
-	relation 6077058 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 6108546 // <generalisation>
-	  b parent class_ref 5582082 // AbstractAsyncSelectQuery
       end
     end
 
@@ -2780,6 +2901,197 @@ ${inlines}
 	
 	
 	
+      end
+    end
+
+    classdiagram 4559490 "QE_SqlAsyncSelectQuery"
+      classdiagramsettings member_max_width 0 end
+      size B-Landscape
+    end
+
+    class 5588610 "SqlAsyncSelectQuery"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4259074 "InstanceId"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 6108546 // <generalisation>
+	relation 6077058 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6108546 // <generalisation>
+	  b parent class_ref 5582082 // AbstractAsyncSelectQuery
+      end
+
+      operation 7508994 "submitStatement"
+	cpp_virtual public explicit_return_type "void"
+	nparams 2
+	  param in name "stm" type class_ref 5304322 // SelectStatement
+	  param in name "maxRows" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6131202 // <directional composition>
+	relation 6099714 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6131202 // <directional composition>
+	  b parent class_ref 5608578 // AsyncQuery
+      end
+    end
+
+    class 5615490 "SqlAsyncSelectQueryThreadWorker"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6151426 // <generalisation>
+	relation 6119938 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6151426 // <generalisation>
+	  b parent class_ref 5608834 // AsyncQueryThreadWorker
+      end
+
+      operation 7567106 "processQuery"
+	stereotype "slot"
+	cpp_virtual public explicit_return_type "void"
+	nparams 2
+	  param in name "query" type class_ref 161154 // QVariant
+	  param in name "iid" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7559170 "processSelectStatement"
+	private explicit_return_type "void"
+	nparams 1
+	  param in name "stm" type class_ref 5304322 // SelectStatement
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 4572674 "QE_SqlAsyncSelectQueryFactory"
+      classdiagramsettings member_max_width 0 end
+      size C-Landscape
+    end
+
+    class 5601794 "SqlAsyncSelectQueryFactory"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7552514 "createSelectQuery"
+	cpp_virtual public return_type class_ref 5582082 // AbstractAsyncSelectQuery
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7508866 "setup"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "cp" type class_ref 5601666 // ConnectionParameters
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6122626 // <generalisation>
+	relation 6091138 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6122626 // <generalisation>
+	  b parent class_ref 5601922 // AbstractAsyncSelectQueryFactory
+      end
+
+      classrelation 6144770 // <directional composition>
+	relation 6113282 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6144770 // <directional composition>
+	  b parent class_ref 5608962 // AsyncQueryConnection
       end
     end
 
@@ -2886,6 +3198,60 @@ ${inlines}
 	
 	
       end
+
+      operation 7545602 "selectStatementToSql"
+	public return_type class_ref 161026 // QString
+	nparams 3
+	  param in name "stm" type class_ref 5304322 // SelectStatement
+	  param in name "maxRows" explicit_type "int"
+	  param in name "db" type class_ref 405122 // QSqlDatabase
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7545730 "selectStatementToSqlLimitSyntax"
+	public return_type class_ref 161026 // QString
+	nparams 3
+	  param in name "stm" type class_ref 5304322 // SelectStatement
+	  param in name "maxRows" explicit_type "int"
+	  param in name "db" type class_ref 405122 // QSqlDatabase
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7545858 "selectStatementToSqlTopSyntax"
+	public return_type class_ref 161026 // QString
+	nparams 3
+	  param in name "stm" type class_ref 5304322 // SelectStatement
+	  param in name "maxRows" explicit_type "int"
+	  param in name "db" type class_ref 405122 // QSqlDatabase
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
 
     class 5411074 "SelectFieldVariantToSqlVisitor"
@@ -2911,6 +3277,29 @@ ${inlines}
 	    cpp default "${type}"
 	    classrelation_ref 5884930 // <generalisation>
 	  b parent class_ref 3350274 // static_visitor
+      end
+    end
+
+    class 5622530 "AsyncQueryConnection"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6158594 // <generalisation>
+	relation 6127106 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6158594 // <generalisation>
+	  b parent class_ref 5608962 // AsyncQueryConnection
       end
     end
   end

@@ -2,28 +2,78 @@ format 220
 
 classcanvas 128002 class_ref 5274754 // ChooseVehicleTypeClassStatement
   classdiagramsettings member_max_width 0 end
-  xyz 42 146 2000
+  xyz 1306 474 2000
 end
 classcanvas 132482 class_ref 5318274 // EntitySelectStatement
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 45 40 2005
+  xyz 1309 368 2005
 end
-classcanvas 132994 class_ref 5206530 // AbstractTableModel
+classcanvas 133506 class_ref 5642114 // ChooseVehicleTypeClassCache
+  classdiagramsettings member_max_width 0 end
+  xyz 833 167 2000
+end
+classcanvas 133634 class_ref 5567874 // AbstractAsyncReadOnlyCache
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 70 274 2000
+  xyz 906 42 2006
 end
-classcanvas 133250 class_ref 5430914 // SelectQueryTableModel
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 35 362 2006
+note 133890 "The cached query is interesting.
+Should work on it to:
+ - Mor explicit (shared, unique ?)
+ - Async
+
+In the domain, should we be able to inherit to add idColumn(), etc ?
+
+Inherit the cache !
+Needs to implement approx 3 methods, but is much more flexible:
+ - No select query factory constraint
+ --> Can make the cache shared via a simple std::shared_ptr
+ - The statement is visible in the same class"
+  xyzwh 40.5 688.5 2000 521 257
+classcanvas 134018 class_ref 5648770 // ChooseVehicleTypeClassQuery
+  classdiagramsettings member_max_width 0 end
+  xyz 458 337 2000
 end
+classcanvas 134146 class_ref 5648642 // AbstractAsyncCachedSelectQuery
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 408 169 2012
+end
+classcanvas 134914 class_ref 5601922 // AbstractAsyncSelectQueryFactory
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 39 504 2000
+end
+note 135042 "And, how to create a ChooseVehicleTypeClassQuery ??"
+  xyzwh 112 363 2000 305 75
 relationcanvas 132610 relation_ref 5886850 // <generalisation>
   from ref 128002 z 2006 to ref 132482
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 133378 relation_ref 5887106 // <generalisation>
-  from ref 133250 z 2007 to ref 132994
+relationcanvas 133762 relation_ref 6146818 // <generalisation>
+  decenter_begin 489
+  from ref 133506 z 2007 to ref 133634
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 134274 relation_ref 6153346 // <generalisation>
+  geometry VHV unfixed
+  from ref 134146 z 2013 to point 598 128
+  line 134530 z 2013 to point 1046 128
+  line 134658 z 2013 to ref 133634
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134402 relation_ref 6153602 // <generalisation>
+  from ref 134018 z 2013 to ref 134146
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134786 relation_ref 6153730 // <directional composition>
+  from ref 134018 z 2006 to ref 132482
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 135170 -_-_
+  from ref 134018 z 2001 to ref 135042
+line 135298 -_-_
+  from ref 134914 z 2001 to ref 135042
 end
