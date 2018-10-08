@@ -1,5 +1,5 @@
 format 220
-"UiCache" // Mdt::UiCache
+"TaskList" // Mdt::Railway::Maintenance::TaskList
   revision 1
   modified_by 2 "philippe"
   // class settings

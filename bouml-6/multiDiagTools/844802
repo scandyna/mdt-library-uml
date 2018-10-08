@@ -1,6 +1,6 @@
 format 220
 "QueryExpression" // Mdt::QueryExpression
-  revision 61
+  revision 67
   modified_by 2 "philippe"
   // class settings
   
@@ -1721,7 +1721,7 @@ ${inlines}
       size A4
     end
 
-    class 5317634 "JoinExpression"
+    class 5317634 "JoinConstraintExpression"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -1735,6 +1735,51 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      operation 7616258 "setJoin"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "join" explicit_type "JoinExpr"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7616386 "isNull"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7616514 "internalTree"
+	public return_type class_ref 5290498 // ExpressionTree
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
   end
 
@@ -1864,6 +1909,203 @@ ${inlines}
       end
     end
 
+    classdiagram 4611842 "QE_JoinClause"
+      classdiagramsettings member_max_width 0 end
+      size B-Landscape
+    end
+
+    class 5661826 "JoinClause"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6198402 // <directional composition>
+	relation 6166914 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6198402 // <directional composition>
+	  b parent class_ref 5324802 // SelectEntity
+      end
+
+      classrelation 6198658 // <directional composition>
+	relation 6167170 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6198658 // <directional composition>
+	  b parent class_ref 5317634 // JoinConstraintExpression
+      end
+
+      classrelation 6198786 // <directional composition>
+	relation 6167298 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6198786 // <directional composition>
+	  b parent class_ref 5662082 // JoinOperator
+      end
+
+      operation 7616130 "JoinClause"
+	public explicit_return_type ""
+	nparams 3
+	  param in name "op" type class_ref 5662082 // JoinOperator
+	  param in name "entity" type class_ref 5324802 // SelectEntity
+	  param in name "join" type class_ref 5662210 // JoinConstraintExpression
+	cpp_decl "  ${comment}${inline}${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7616898 "joinOperator"
+	public return_type class_ref 5662082 // JoinOperator
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7616642 "entityNameOrAlias"
+	public return_type class_ref 161026 // QString
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7616770 "jointConstraintExpression"
+	public return_type class_ref 5317634 // JoinConstraintExpression
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5662082 "JoinOperator"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4272258 "Join"
+	public type class_ref 5662082 // JoinOperator
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4272386 "LeftJoin"
+	public type class_ref 5662082 // JoinOperator
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 5661954 "JoinClauseList"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6198530 // <directional composition>
+	relation 6167042 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 6198530 // <directional composition>
+	  b parent class_ref 5661826 // JoinClause
+      end
+
+      operation 7616002 "addClause"
+	public explicit_return_type "void"
+	nparams 3
+	  param in name "op" type class_ref 5662082 // JoinOperator
+	  param in name "entity" type class_ref 5324802 // SelectEntity
+	  param in name "join" type class_ref 5662210 // JoinConstraintExpression
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
     classdiagram 4386946 "QE_SelectStatement"
       classdiagramsettings member_max_width 0 end
       size Legal-Landscape
@@ -1981,7 +2223,7 @@ ${inlines}
 	public explicit_return_type "void"
 	nparams 2
 	  param in name "name" type class_ref 5282306 // EntityName
-	  param in name "expr" type class_ref 5317634 // JoinExpression
+	  param in name "expr" type class_ref 5317634 // JoinConstraintExpression
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
@@ -2083,6 +2325,15 @@ ${inlines}
 "
 	    classrelation_ref 5857794 // <directional composition>
 	  b parent class_ref 5317506 // FilterExpression
+      end
+
+      classrelation 6198914 // <directional composition>
+	relation 6167426 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6198914 // <directional composition>
+	  b parent class_ref 5661954 // JoinClauseList
       end
     end
 
@@ -2531,40 +2782,9 @@ ${inlines}
 	
 	
       end
-
-      operation 7594882 "createCachedSelectQuery"
-	abstract cpp_virtual public return_type class_ref 5648642 // AbstractAsyncCachedSelectQuery
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
-      operation 7595522 "createSharedCachedSelectQuery"
-	public return_type class_ref 5648642 // AbstractAsyncCachedSelectQuery
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
     end
 
-    classdiagram 4598786 "QE_AsyncCachedSelectQuery"
-      classdiagramsettings member_max_width 0 end
-      size A-Landscape
-    end
-
-    class 5648642 "AbstractAsyncCachedSelectQuery"
+    class 5668738 "RelationalSelectStatement"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -2578,20 +2798,57 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 6184834 // <generalisation>
-	relation 6153346 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 6184834 // <generalisation>
-	  b parent class_ref 5567874 // AbstractAsyncReadOnlyCache
-      end
+    end
+  end
 
-      operation 7594370 "columnCount"
-	cpp_virtual cpp_inline public explicit_return_type "int"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+  classview 2390914 "QE_Entity_Core"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4618370 "QE_Entity_Relation"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5675394 "EntitySelectStatementRelation"
+      visibility package stereotype "PlainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7630082 "buildJoinConstraintExpression"
+	public return_type class_ref 5662210 // JoinConstraintExpression
+	nparams 3
+	  param in name "pe" explicit_type "PrimaryEntity"
+	  param in name "fe" explicit_type "ForeignEntity"
+	  param in name "ff" explicit_type "ForeignField..."
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2601,13 +2858,14 @@ ${inlines}
 	
       end
 
-      operation 7594626 "submitStatement"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "stm" type class_ref 5304322 // SelectStatement
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+      operation 7630210 "buildExpressionTree"
+	public return_type class_ref 5290498 // ExpressionTree
+	nparams 2
+	  param in name "pk" type class_ref 4701314 // PrimaryKey
+	  param in name "fk" type class_ref 4825090 // ForeignKey
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2615,50 +2873,30 @@ ${inlines}
 	
 	
 	
-      end
-
-      operation 7594754 "columnCountChanged"
-	stereotype "signal"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "c" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7594498 "fetchRecords"
-	cpp_virtual cpp_inline protected explicit_return_type "bool"
-	nparams 1
-	  param in name "count" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 6184962 // <directional composition>
-	relation 6153474 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 6184962 // <directional composition>
-	  b parent class_ref 5582082 // AbstractAsyncSelectQuery
       end
     end
+  end
+
+  classview 2391042 "QE_Entity_Sql"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
   end
 
   classview 2285314 "QE_Sql_Query"
@@ -3302,5 +3540,49 @@ ${inlines}
 	  b parent class_ref 5608962 // AsyncQueryConnection
       end
     end
+  end
+
+  classview 2377218 "QE_GraphQl"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+  end
+
+  classview 2377346 "QE_Rest"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
   end
 end

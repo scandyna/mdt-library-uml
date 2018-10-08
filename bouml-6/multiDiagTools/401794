@@ -1,6 +1,6 @@
 format 220
 "Mdt" // Mdt
-  revision 76
+  revision 82
   modified_by 2 "philippe"
   // class settings
   
@@ -1294,6 +1294,141 @@ ${inlines}
     end
   end
 
+  classview 2418050 "LibraryInfo_Core"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4644994 "LibraryInfo"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5696258 "LibraryInfo"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7650690 "getPrefixPath"
+	class_operation public return_type class_ref 161026 // QString
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7650562 "getPluginsPath"
+	class_operation public return_type class_ref 161026 // QString
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7650434 "getInstalledLibrariesPath"
+	class_operation public return_type class_ref 161026 // QString
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2438274 "Plugin_Core"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4671490 "PluginLoader"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5724162 "PluginLoader"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6268290 // <dependency>
+	relation 6236802 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6268290 // <dependency>
+	  b parent class_ref 5696258 // LibraryInfo
+      end
+    end
+  end
+
   package_ref 417026 // Audio
 
   classview 161666 "Error_Core"
@@ -1559,6 +1694,177 @@ ${inlines}
 	
 	
 	
+      end
+    end
+
+    classdiagram 4658050 "Error_Core_ErrorCode"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5689346 "ErrorCode"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4285570 "NoError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4285826 "UnknownError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4285698 "UniqueConstraintError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4285954 "ConnectionError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4293378 "ConnectionRefusedError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4286082 "StatementError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4286210 "TransactionError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4292738 "ReadError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4292866 "WriteError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4292994 "FatalError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4293122 "TimeOutError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4293250 "PermissionsError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4293506 "RemoteHostClosedError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
       end
     end
   end
@@ -1878,13 +2184,17 @@ ${members}};
 
   package_ref 871298 // EditCache
 
-  package_ref 884482 // UiCache
+  package_ref 877954 // Reflection
+
+  package_ref 905218 // Serialization
 
   package_ref 753026 // Entity
 
-  package_ref 877954 // Reflection
-
   package_ref 877826 // Repository
+
+  package_ref 911746 // Storage
+
+  package_ref 621826 // TextStorage
 
   package_ref 844802 // QueryExpression
 
@@ -1915,8 +2225,6 @@ ${members}};
   package_ref 654594 // FileSystem
 
   package_ref 641410 // PlainText
-
-  package_ref 621826 // TextStorage
 
   package_ref 700546 // Comm_Bus_sandbox
 

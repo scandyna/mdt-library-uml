@@ -1,15 +1,24 @@
-format 218
+format 220
 
 classcanvas 128002 class_ref 4769410 // VehicleTypeClass
   classdiagramsettings member_max_width 0 end
-  xyz 382 63 2000
+  xyz 643.5 264.5 2000
 end
 classcanvas 128130 class_ref 4528898 // SqlTable
   classdiagramsettings member_max_width 0 show_context_mode uml end
-  xyz 211 232 2000
+  xyz 40.5 264.5 2000
 end
 classcanvas 128258 class_ref 5051266 // SqlSchema
   classdiagramsettings member_max_width 0 end
-  xyz 187 390 2000
+  xyz 42 82 2000
+end
+classcanvas 128386 class_ref 2845442 // Schema
+  classdiagramsettings member_max_width 0 end
+  xyz 368 41 2000
+end
+relationcanvas 128514 relation_ref 6187522 // <directional composition>
+  from ref 128258 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 end

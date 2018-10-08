@@ -1,10 +1,12 @@
-format 211
+format 220
 "mdttesttool" // mdttools::mdttesttool
-  revision 81
+  revision 82
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 211
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -38,9 +42,13 @@ format 211
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -56,9 +64,13 @@ format 211
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -97,7 +109,7 @@ ${inlines}
       end
 
       attribute 972546 "LastError"
-	protected type class_ref 182402 // mdtError
+	protected type class_ref 182402 // Error
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -156,7 +168,7 @@ ${inlines}
       end
 
       operation 1719170 "lastError"
-	public return_type class_ref 182402 // mdtError
+	public return_type class_ref 182402 // Error
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -364,9 +376,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -553,9 +569,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -903,9 +923,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -1876,9 +1900,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -1957,9 +1985,13 @@ Then, we can travel thru relays (unit ID) until we find one that is not in list.
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -2336,9 +2368,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -4099,7 +4135,7 @@ ${inlines}
       end
 
       attribute 1313666 "pvLastError"
-	protected type class_ref 182402 // mdtError
+	protected type class_ref 182402 // Error
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -4111,7 +4147,7 @@ ${inlines}
       end
 
       operation 2143234 "lastError"
-	public return_type class_ref 182402 // mdtError
+	public return_type class_ref 182402 // Error
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -4495,7 +4531,7 @@ ${inlines}
       end
 
       attribute 1326978 "LastError"
-	protected type class_ref 182402 // mdtError
+	protected type class_ref 182402 // Error
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -4656,7 +4692,7 @@ ${inlines}
       end
 
       operation 2151042 "lastError"
-	public return_type class_ref 182402 // mdtError
+	public return_type class_ref 182402 // Error
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -4775,7 +4811,7 @@ ${inlines}
       mysql_decl ""
       
       attribute 1244802 "LastError"
-	private type class_ref 182402 // mdtError
+	private type class_ref 182402 // Error
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -5564,7 +5600,7 @@ ${inlines}
       end
 
       attribute 1612034 "LastError"
-	protected type class_ref 182402 // mdtError
+	protected type class_ref 182402 // Error
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -5733,7 +5769,7 @@ ${inlines}
       end
 
       operation 2496770 "lastError"
-	public return_type class_ref 182402 // mdtError
+	public return_type class_ref 182402 // Error
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -6505,9 +6541,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -6580,7 +6620,7 @@ ${includes}
 ${namespace_start}
 ${members}
 ${namespace_end}"
-      associated_classes
+      associated_elems
 	class_ref 1147394 // mdtTtTestLinkData
       end
     end
@@ -6604,7 +6644,7 @@ ${includes}
 ${namespace_start}
 ${members}
 ${namespace_end}"
-      associated_classes
+      associated_elems
 	class_ref 1147010 // mdtTtTestLinkDialog
       end
     end
@@ -6633,7 +6673,7 @@ ${includes}
 ${namespace_start}
 ${members}
 ${namespace_end}"
-      associated_classes
+      associated_elems
 	class_ref 1073794 // mdtTtTestNodeUnitData
       end
     end
@@ -6657,7 +6697,7 @@ ${includes}
 ${namespace_start}
 ${members}
 ${namespace_end}"
-      associated_classes
+      associated_elems
 	class_ref 1160450 // mdtTtTestNodeUnit
       end
     end
@@ -6681,7 +6721,7 @@ ${includes}
 ${namespace_start}
 ${members}
 ${namespace_end}"
-      associated_classes
+      associated_elems
 	class_ref 1166978 // mdtTtTestNodeUnitDialog
       end
     end
@@ -6691,9 +6731,13 @@ ${namespace_end}"
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -6886,7 +6930,7 @@ ${inlines}
 
     classdiagram 1230850 "mdtTtTestModelItemData"
       classdiagramsettings member_max_width 0 end
-      size A4
+      size A
     end
 
     class 1368962 "mdtTtTestModelItemData"

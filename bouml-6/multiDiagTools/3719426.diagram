@@ -1,12 +1,12 @@
-format 216
+format 220
 
 classcanvas 128002 class_ref 4332418 // Address
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 504.5 2000
+  xyz 40.5 552.5 2000
 end
 classcanvas 128130 class_ref 1538690 // mdtTcpipDeviceAddress
   classdiagramsettings member_max_width 0 end
-  xyz 249 343 2000
+  xyz 465 175 2000
 end
 classcanvas 128258 class_ref 1538562 // mdtAsrlDeviceAddress
   classdiagramsettings member_max_width 0 end
@@ -14,7 +14,7 @@ classcanvas 128258 class_ref 1538562 // mdtAsrlDeviceAddress
 end
 classcanvas 128386 class_ref 1538434 // mdtUsbDeviceAddress
   classdiagramsettings member_max_width 0 end
-  xyz 466 153 2000
+  xyz 242 345 2000
 end
 classcanvas 128514 class_ref 1538178 // mdtDeviceAddress
   classdiagramsettings member_max_width 0 end
@@ -22,27 +22,27 @@ classcanvas 128514 class_ref 1538178 // mdtDeviceAddress
 end
 classcanvas 129026 class_ref 1538306 // mdtDeviceAddressList
   classdiagramsettings member_max_width 0 end
-  xyz 250 42 3011
+  xyz 258 42 3011
 end
 relationcanvas 128642 relation_ref 1911554 // <directional composition>
-  decenter_end 473
-  from ref 128514 z 3006 stereotype "<<union>>" xyz 296.5 325.5 3006 to ref 128130
-  role_a_pos 338 316 3000 no_role_b
-  multiplicity_a_pos 311 316 3000 no_multiplicity_b
+  from ref 128514 z 3006 stereotype "<<union>>" xyz 409.5 215.5 3006 to ref 128130
+  role_a_pos 360 190 3000 no_role_b
+  multiplicity_a_pos 447 226 3000 no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 1911682 // <directional composition>
-  from ref 128514 z 3006 stereotype "<<union>>" xyz 187.5 215 3006 to ref 128258
+  from ref 128514 z 3006 stereotype "<<union>>" xyz 187 215 3006 to ref 128258
   role_a_pos 209 190 3000 no_role_b
   multiplicity_a_pos 209 226 3000 no_multiplicity_b
 end
 relationcanvas 128898 relation_ref 1911810 // <directional composition>
-  from ref 128514 z 3006 stereotype "<<union>>" xyz 411 215.5 3006 to ref 128386
-  role_a_pos 368 190 3000 no_role_b
-  multiplicity_a_pos 448 226 3000 no_multiplicity_b
+  decenter_end 519
+  from ref 128514 z 3006 stereotype "<<union>>" xyz 301 325.5 3006 to ref 128386
+  role_a_pos 345 318 3000 no_role_b
+  multiplicity_a_pos 318 318 3000 no_multiplicity_b
 end
 relationcanvas 129154 relation_ref 1911426 // <directional composition>
   from ref 129026 z 3012 to ref 128514
-  role_a_pos 339 96 3000 no_role_b
-  multiplicity_a_pos 314 96 3000 no_multiplicity_b
+  role_a_pos 343 96 3000 no_role_b
+  multiplicity_a_pos 318 96 3000 no_multiplicity_b
 end
 end

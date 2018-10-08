@@ -1,0 +1,35 @@
+format 220
+
+classcanvas 128002 class_ref 2796546 // QSqlDriver
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 231 42 2000
+end
+classcanvas 128130 class_ref 5702786 // QSQLiteDriver
+  classdiagramsettings member_max_width 0 end
+  xyz 224 130 2000
+end
+classcanvas 128386 class_ref 5702914 // QSqlDriverPlugin
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 52 37 2000
+end
+classcanvas 128514 class_ref 5703042 // QSQLiteDriverPlugin
+  classdiagramsettings member_max_width 0 end
+  xyz 40 130 2000
+end
+relationcanvas 128258 relation_ref 6194306 // <generalisation>
+  decenter_begin 457
+  from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 6194562 // <generalisation>
+  from ref 128514 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 6194690 // <dependency>
+  from ref 128514 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

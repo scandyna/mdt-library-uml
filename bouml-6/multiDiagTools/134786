@@ -1,6 +1,6 @@
 format 220
 "Qt" // Qt
-  revision 261
+  revision 267
   modified_by 2 "philippe"
   // class settings
   
@@ -2306,6 +2306,54 @@ ${inlines}
 	
 	
 	
+      end
+    end
+
+    class 5717122 "QObjectList"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6254594 // <directional composition>
+	relation 6223106 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 6254594 // <directional composition>
+	  b parent class_ref 138626 // QObject
+      end
+    end
+
+    class 5723778 "QFileInfoList"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6268034 // <directional composition>
+	relation 6236546 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 6268034 // <directional composition>
+	  b parent class_ref 432386 // QFileInfo
       end
     end
   end
@@ -4614,6 +4662,223 @@ ${inlines}
     end
   end
 
+  classview 2438402 "Core_JSON"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4671618 "QJsonObject"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5724546 "QJsonObject"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+  classview 2438146 "Core_Containers"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4671362 "QMap"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5723906 "QMap"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 5724034 "QMultiMap"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6268162 // <generalisation>
+	relation 6236674 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6268162 // <generalisation>
+	  b parent class_ref 5723906 // QMap
+      end
+    end
+  end
+
+  classview 2431618 "Core_Plugin"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4664706 "QPluginLoader"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5716994 "QPluginLoader"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6254466 // <generalisation>
+	relation 6222978 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6254466 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 7678594 "errorString"
+	public return_type class_ref 161026 // QString
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7677954 "instance"
+	public return_type class_ref 138626 // QObject
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7678338 "setFileName"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "fileName" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7678082 "staticInstances"
+	class_operation public return_type class_ref 5717122 // QObjectList
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
   classview 287106 "Sql"
     
     classdiagramsettings member_max_width 0 end
@@ -5365,6 +5630,81 @@ ${items}};
       end
     end
 
+    class 5710082 "QSqlDriverCreatorBase"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7664514 "createObject"
+	abstract cpp_virtual public return_type class_ref 2796546 // QSqlDriver
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6240770 // <dependency>
+	relation 6209282 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6240770 // <dependency>
+	  b parent class_ref 2796546 // QSqlDriver
+      end
+    end
+
+    class 5710210 "QSqlDriverCreator"
+      visibility package 
+      nformals 1
+      formal name "T" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6240514 // <generalisation>
+	relation 6209026 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6240514 // <generalisation>
+	  b parent class_ref 5710082 // QSqlDriverCreatorBase
+      end
+
+      operation 7664642 "createObject"
+	cpp_virtual cpp_inline public return_type class_ref 2796546 // QSqlDriver
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
     classdiagram 408834 "QSqlDatabase"
       classdiagramsettings member_max_width 0 end
       size A4
@@ -5456,6 +5796,14 @@ ${inlines}
 	
 	
       end
+
+      classrelation 6240642 // <dependency>
+	relation 6209154 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6240642 // <dependency>
+	  b parent class_ref 5710082 // QSqlDriverCreatorBase
+      end
     end
 
     classdiagram 874498 "QSqlIndex"
@@ -5538,6 +5886,67 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+    end
+  end
+
+  classview 2431490 "Sql_Plugin"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4651522 "QSqlDriverPlugin"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5702914 "QSqlDriverPlugin"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6225922 // <generalisation>
+	relation 6194434 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6225922 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 7664258 "create"
+	abstract cpp_virtual public return_type class_ref 2796546 // QSqlDriver
+	nparams 1
+	  param in name "key" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
     end
   end
 

@@ -1,6 +1,6 @@
 format 220
 "TypeTraits" // Mdt::Entity::TypeTraits
-  revision 10
+  revision 11
   modified_by 2 "philippe"
   // class settings
   
@@ -272,6 +272,27 @@ ${inlines}
     classdiagram 4045826 "EntityArticleExample"
       classdiagramsettings member_max_width 0 end
       size A4
+    end
+
+    classdiagram 4625154 "Entity_Traits_UniqueConstraint"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5682562 "UniqueConstraintTag"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 end

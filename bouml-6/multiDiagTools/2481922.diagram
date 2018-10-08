@@ -1,13 +1,26 @@
-format 211
+format 220
 
 classcanvas 128002 class_ref 2796546 // QSqlDriver
   classdiagramsettings member_max_width 0 end
-  xyz 159 51 2000
+  xyz 159 298 2000
 end
 classcanvas 128130 class_ref 2796674 // DbmsType
   classdiagramsettings member_max_width 0 end
-  xyz 40 39 2006
+  xyz 41 286 2006
+end
+classcanvas 128386 class_ref 5710082 // QSqlDriverCreatorBase
+  classdiagramsettings member_max_width 0 end
+  xyz 42 42 2000
+end
+classcanvas 128514 class_ref 5710210 // QSqlDriverCreator
+  classdiagramsettings member_max_width 0 end
+  xyz 42 146 2000
 end
 line 128258 ---+
   from ref 128130 z 2007 to ref 128002
+relationcanvas 128642 relation_ref 6209026 // <generalisation>
+  from ref 128514 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 end

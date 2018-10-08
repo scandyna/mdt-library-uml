@@ -32,9 +32,9 @@ NOTE:
 
 SOLUTION
 Use std::shared_ptr , easy, well known, works !"
-  xyzwh 1193 40.5 2000 501 187
+  xyzwh 821 67.5 2000 501 187
 note 138370 "Should have some read only repository"
-  xyzwh 489.5 1810.5 2000 373 61
+  xyzwh 91.5 1766.5 2000 373 61
 classcanvas 138498 class_ref 5310850 // AbstractCachedReadOnlyRepository
   classdiagramsettings member_max_width 0 end
   xyz 541 671 2005
@@ -70,7 +70,7 @@ Can be:
  - A local cache (QSLIte..) that calls definite cache
 
 Heu.. rowCounst(), data(row), ..."
-  xyzwh 40.5 1810.5 2000 369 157
+  xyzwh 93.5 1843.5 2000 369 157
 relationcanvas 131202 relation_ref 5431554 // <directional composition>
   from ref 130690 z 2015 to ref 128002
   no_role_a no_role_b

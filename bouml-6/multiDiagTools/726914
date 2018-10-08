@@ -1,6 +1,6 @@
 format 220
 "TestLib" // Mdt::TestLib
-  revision 12
+  revision 13
   modified_by 2 "philippe"
   // class settings
   
@@ -50,6 +50,11 @@ format 220
     
     activitydiagramsettings
      end
+    classdiagram 4678530 "TestLib_DoNotOptimizeAway"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
     classdiagram 3846018 "FakeRoot"
       classdiagramsettings member_max_width 0 end
       size A4
@@ -271,6 +276,22 @@ ${inlines}
 	
 	
       end
+    end
+
+    class 5744386 "DoNotOptimizeAway"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 
@@ -570,4 +591,99 @@ ${inlines}
       end
     end
   end
+
+  classview 2444930 "TestLib_SQLite"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4678402 "SQLiteTestBase"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5744258 "SQLiteTestBase"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6295170 // <generalisation>
+	relation 6263682 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6295170 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 7706754 "initDatabase"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7706882 "connectionParameters"
+	public return_type class_ref 5601666 // ConnectionParameters
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7707010 "database"
+	public return_type class_ref 405122 // QSqlDatabase
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
 end
