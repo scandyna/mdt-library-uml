@@ -1,0 +1,34 @@
+format 220
+
+classcanvas 128002 class_ref 1382914 // QItemSelectionModel
+  classdiagramsettings member_max_width 0 end
+  xyz 39 161.5 2000
+end
+classcanvas 128130 class_ref 5764482 // SelectionModelCurrentRowChanged
+  classdiagramsettings member_max_width 0 end
+  xyz 652.25 161.5 2000
+end
+classcanvas 128258 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 801 40.75 2006
+end
+relationcanvas 128386 relation_ref 1701122 // <generalisation>
+  geometry VHV unfixed
+  from ref 128002 z 2007 to point 324 125
+  line 128642 z 2007 to point 831 125
+  line 128770 z 2007 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 6305026 // <generalisation>
+  decenter_begin 490
+  from ref 128130 z 2007 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 6305154 // <unidirectional association>
+  from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

@@ -1,6 +1,6 @@
 format 220
 "Qt" // Qt
-  revision 267
+  revision 271
   modified_by 2 "philippe"
   // class settings
   
@@ -4037,6 +4037,51 @@ ${inlines}
 "
 	    classrelation_ref 3072130 // <unidirectional association>
 	  b parent class_ref 1914498 // QAbstractItemDelegate
+      end
+
+      class 5784706 "EditTrigger"
+	visibility package stereotype "enum"
+	cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+	java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+	php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+	python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+	idl_decl "${comment}enum ${name} {
+${items}};
+"
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 4313602 "DoubleClicked"
+	  public type class_ref 5784706 // EditTrigger
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 4313730 "EditKeyPressed"
+	  public type class_ref 5784706 // EditTrigger
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
       end
     end
 

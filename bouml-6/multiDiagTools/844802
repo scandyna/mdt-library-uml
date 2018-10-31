@@ -1,6 +1,6 @@
 format 220
 "QueryExpression" // Mdt::QueryExpression
-  revision 67
+  revision 68
   modified_by 2 "philippe"
   // class settings
   
@@ -2108,7 +2108,7 @@ ${inlines}
 
     classdiagram 4386946 "QE_SelectStatement"
       classdiagramsettings member_max_width 0 end
-      size Legal-Landscape
+      size B-Landscape
     end
 
     class 5304322 "SelectStatement"

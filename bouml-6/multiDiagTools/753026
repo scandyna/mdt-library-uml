@@ -1,6 +1,6 @@
 format 220
 "Entity" // Mdt::Entity
-  revision 216
+  revision 218
   modified_by 2 "philippe"
   // class settings
   
@@ -5885,7 +5885,7 @@ ${inlines}
 
     classdiagram 4533122 "Entity_AsyncCache"
       classdiagramsettings member_max_width 0 end
-      size A-Landscape
+      size B
     end
 
     class 5567874 "AbstractAsyncReadOnlyCache"

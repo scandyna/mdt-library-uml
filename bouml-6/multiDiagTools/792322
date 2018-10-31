@@ -1,6 +1,6 @@
 format 220
 "Railway" // Mdt::Railway
-  revision 127
+  revision 131
   modified_by 2 "philippe"
   // class settings
   
@@ -33,6 +33,8 @@ format 220
   package_ref 825090 // sandbox
 
   package_ref 825218 // sandbox2
+
+  package_ref 918402 // sandbox3
 
   package_ref 812034 // domain
 
@@ -1756,11 +1758,8 @@ ${inlines}
       size A4
     end
 
-    class 4777090 "VehicleTypeTableModel"
+    class 4777090 "EditVehicleTypeTableModel"
       visibility package 
-      nactuals 1
-      actual class class_ref 4639618 // RowResizableTableModel
-        rank 0 explicit_value ""
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -1773,12 +1772,60 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 5248514 // <generalisation>
-	relation 5219970 ---|>
+      classrelation 6336386 // <generalisation>
+	relation 6304898 ---|>
 	  a public
 	    cpp default "${type}"
-	    classrelation_ref 5248514 // <generalisation>
-	  b parent class_ref 4639618 // RowResizableTableModel
+	    classrelation_ref 6336386 // <generalisation>
+	  b parent class_ref 5165698 // AbstractEditableCachedTableModel
+      end
+
+      operation 7753986 "columnCount"
+	public explicit_return_type "int"
+	nparams 1
+	  param in name "parent" type class_ref 147330 // QModelIndex
+	    defaultvalue "QModelIndex()"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7754242 "horizontalHeaderDisplayRoleData"
+	cpp_virtual private return_type class_ref 161154 // QVariant
+	nparams 1
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7754114 "fetchRecords"
+	cpp_virtual private explicit_return_type "bool"
+	nparams 1
+	  param in name "count" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
       end
     end
 
@@ -1856,6 +1903,22 @@ ${inlines}
 	
       end
 
+      operation 7720322 "addCreatedVehicleType"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "r" type class_ref 5451138 // CreateVehicleTypeResponse
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
       operation 7609090 "fetchRecords"
 	cpp_virtual cpp_inline private explicit_return_type "bool"
 	nparams 1
@@ -1870,6 +1933,14 @@ ${inlines}
 	
 	
 	
+      end
+
+      classrelation 6308226 // <dependency>
+	relation 6276738 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6308226 // <dependency>
+	  b parent class_ref 5451138 // CreateVehicleTypeResponse
       end
     end
   end
@@ -3194,15 +3265,6 @@ ${inlines}
 	  b parent class_ref 5274370 // VehicleTypeItemDelegate
       end
 
-      classrelation 5946754 // <unidirectional association>
-	relation 5915266 --->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
-"
-	    classrelation_ref 5946754 // <unidirectional association>
-	  b parent class_ref 5451010 // CreateVehicleTypeRequest
-      end
-
       classrelation 5946882 // <unidirectional association>
 	relation 5915394 --->
 	  a role_name "" private
@@ -3210,6 +3272,40 @@ ${inlines}
 "
 	    classrelation_ref 5946882 // <unidirectional association>
 	  b parent class_ref 5451138 // CreateVehicleTypeResponse
+      end
+
+      operation 7726978 "createVehicleTypeRequested"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "req" type class_ref 5451010 // CreateVehicleTypeRequest
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7727106 "displayVehicleType"
+	stereotype "slot"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "id" type class_ref 5471618 // VehicleTypeId
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
       end
 
       operation 7362178 "createVehicleTypeRequest"
@@ -3250,6 +3346,22 @@ ${inlines}
 "
 	    classrelation_ref 5998722 // <unidirectional association>
 	  b parent class_ref 4854018 // VehicleType
+      end
+
+      operation 7726850 "save"
+	stereotype "slot"
+	private explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
       end
     end
 
@@ -3330,6 +3442,11 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+    end
+
+    classdiagram 4691586 "RW_Widgets_EditVehicleType2"
+      classdiagramsettings member_max_width 0 end
+      size A4
     end
   end
 

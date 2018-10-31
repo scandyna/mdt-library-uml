@@ -1,0 +1,54 @@
+format 220
+
+classcanvas 128002 class_ref 5554306 // AbstractReadOnlyCachedTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 256 249 2000
+end
+classcanvas 128130 class_ref 147202 // QAbstractTableModel
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 458 42 2000
+end
+classcanvas 128386 class_ref 5757954 // AbstractCachedTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 439 127 2000
+end
+classcanvas 128770 class_ref 5547778 // VariantRecord
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 665 146 2000
+end
+classcanvas 129026 class_ref 5165698 // AbstractEditableCachedTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 273 501 2006
+end
+classcanvas 129282 class_ref 5165954 // RemovedRowsDisplayMode
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 41 574 2012
+end
+relationcanvas 128514 relation_ref 6291458 // <generalisation>
+  decenter_begin 518
+  decenter_end 523
+  from ref 128386 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 6291586 // <generalisation>
+  decenter_begin 505
+  decenter_end 518
+  from ref 128002 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 6291714 // <directional composition>
+  from ref 128386 z 2001 to ref 128770
+  no_role_a no_role_b
+  multiplicity_a_pos 649 178 3000 no_multiplicity_b
+end
+line 129410 ---+
+  from ref 129282 z 2013 to ref 129026
+relationcanvas 130178 relation_ref 6298370 // <generalisation>
+  decenter_end 505
+  from ref 129026 z 2007 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

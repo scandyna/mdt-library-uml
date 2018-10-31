@@ -1,0 +1,146 @@
+format 220
+
+classcanvas 128002 class_ref 638338 // QTableView
+  classdiagramsettings member_max_width 0 end
+  xyz 909.5 210.5 2000
+end
+classcanvas 128130 class_ref 3191554 // DataWidgetMapper
+  classdiagramsettings member_max_width 0 end
+  xyz 721.5 40.5 2000
+end
+classcanvas 128258 class_ref 5451394 // VehicleTypeRepository
+  classdiagramsettings member_max_width 0 end
+  color lightred
+  xyz 81 550.5 2000
+end
+classcanvas 128386 class_ref 147202 // QAbstractTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 675.5 2000
+end
+classcanvas 128642 class_ref 5751042 // EditVehicleTypeTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 289.5 355.5 2000
+end
+classcanvas 129410 class_ref 1752450 // QIdentityProxyModel
+  classdiagramsettings member_max_width 0 end
+  xyz 310.5 100.5 2000
+end
+classcanvas 129794 class_ref 5751170 // ChooseVehicleTypeProxyModel
+  classdiagramsettings member_max_width 0 end
+  xyz 276.5 185.5 2000
+end
+classcanvas 129922 class_ref 5751298 // EditVehicleTypeWindow
+  classdiagramsettings member_max_width 0 end
+  color green
+  xyz 705.5 210.5 2000
+end
+classcanvas 131202 class_ref 5751426 // EditVehicleTypeStateMachine
+  classdiagramsettings member_max_width 0 end
+  xyz 425 270.5 2000
+end
+classcanvas 131714 class_ref 4902658 // CreateVehicleType
+  classdiagramsettings member_max_width 0 end
+  xyz 96 441 2006
+end
+classcanvas 131970 class_ref 5451010 // CreateVehicleTypeRequest
+  classdiagramsettings member_max_width 0 end
+  xyz 69 355.5 2012
+end
+classcanvas 132226 class_ref 5451138 // CreateVehicleTypeResponse
+  classdiagramsettings member_max_width 0 end
+  xyz 286.5 450.5 2012
+end
+note 132738 "Selection and sort:
+ - If a item is added, sort will breack current row"
+  xyzwh 37.5 165 2000 201 91
+note 133250 "What should be the problem with actual edit cache ?
+ - Dupplicate API with Qt Item model
+  -> Same signal/slots
+
+What to keep/do ?
+ - The edit state"
+  xyzwh 300 536 2000 459 171
+relationcanvas 130050 relation_ref 6283650 // <unidirectional association>
+  decenter_begin 200
+  decenter_end 666
+  from ref 129922 z 2001 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 6283778 // <unidirectional association>
+  geometry VH unfixed
+  decenter_end 555
+  from ref 129922 z 2001 to point 785 377
+  line 130818 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130306 relation_ref 6283906 // <unidirectional association>
+  decenter_begin 510
+  decenter_end 513
+  from ref 129794 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130690 relation_ref 6284162 // <generalisation>
+  decenter_begin 510
+  decenter_end 517
+  from ref 129794 z 2001 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130946 relation_ref 6284290 // <unidirectional association>
+  from ref 129922 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131074 relation_ref 6284418 // <unidirectional association>
+  from ref 129922 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131330 relation_ref 6284546 // <directional composition>
+  decenter_begin 666
+  decenter_end 333
+  from ref 129922 z 2001 to point 665 240
+  line 131458 z 2001 to point 665 285
+  line 131586 z 2001 to ref 131202
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131842 relation_ref 5908354 // <unidirectional association>
+  from ref 131714 z 2007 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132098 relation_ref 5915138 // <unidirectional association>
+  from ref 131714 z 2013 to ref 131970
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132354 relation_ref 5915010 // <unidirectional association>
+  decenter_end 555
+  from ref 131714 z 2013 to ref 132226
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132482 relation_ref 6284674 // <unidirectional association>
+  decenter_begin 513
+  decenter_end 512
+  from ref 128642 z 2013 to ref 132226
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132610 relation_ref 6284802 // <unidirectional association>
+  decenter_begin 555
+  decenter_end 555
+  from ref 128642 z 2013 to ref 131970
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 132866 -_-_ decenter_end 555
+  from ref 132738 z 2001 to ref 129794
+line 132994 -_-_ geometry VH unfixed decenter_begin 512
+  from ref 132738 z 2001 to point 137 60
+  line 133122 z 2001 to ref 128130
+end

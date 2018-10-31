@@ -27,9 +27,13 @@ note 129410 "See how Boost.Fusion works, and avoid having current dependecies pr
 See if, f.ex. it is possible to:
 bool serialize(Person p);
 "
-  xyzwh 65 337 2000 587 123
+  xyzwh 68 289 2000 587 123
 note 129666 "In the implementation which needs informations (f.ex. SQL repository), ........"
-  xyzwh 59 491 2000 557 55
+  xyzwh 73 424 2000 557 55
+note 129794 "C++ stdanards, see:
+ - N4746
+ - P0953"
+  xyzwh 175 453 2000 433 137
 relationcanvas 128258 relation_ref 6173954 // <directional composition>
   from ref 128130 z 2001 to ref 128002
   no_role_a no_role_b

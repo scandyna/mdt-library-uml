@@ -6,10 +6,20 @@ classcanvas 128002 class_ref 5567874 // AbstractAsyncReadOnlyCache
 end
 classcanvas 128130 class_ref 5655298 // ChooseVehicleTypeCache
   classdiagramsettings member_max_width 0 end
-  xyz 37 129 2000
+  xyz 37 130 2000
+end
+classcanvas 128514 class_ref 5451138 // CreateVehicleTypeResponse
+  classdiagramsettings member_max_width 0 end
+  xyz 512 178 2000
 end
 relationcanvas 128258 relation_ref 6160386 // <generalisation>
   from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 6276738 // <dependency>
+  decenter_begin 469
+  from ref 128130 z 2001 to ref 128514
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

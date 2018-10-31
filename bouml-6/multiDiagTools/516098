@@ -1,6 +1,6 @@
 format 220
 "ItemModel" // Mdt::ItemModel
-  revision 141
+  revision 147
   modified_by 2 "philippe"
   // class settings
   
@@ -2143,8 +2143,8 @@ ${inlines}
       size C
     end
 
-    class 5554306 "AbstractReadOnlyCachedTableModel"
-      visibility package 
+    class 5757954 "AbstractCachedTableModel"
+      abstract visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -2157,13 +2157,308 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 6061186 // <generalisation>
-	relation 6029698 ---|>
+      classrelation 6322946 // <generalisation>
+	relation 6291458 ---|>
 	  a public
 	    cpp default "${type}"
-	    classrelation_ref 6061186 // <generalisation>
-	  b parent class_ref 5206530 // AbstractTableModel
+	    classrelation_ref 6322946 // <generalisation>
+	  b parent class_ref 147202 // QAbstractTableModel
       end
+
+      attribute 4306946 "CacheRowCountLimit"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4307074 "LastError"
+	private type class_ref 182402 // Error
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 6323202 // <directional composition>
+	relation 6291714 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 6323202 // <directional composition>
+	  b parent class_ref 5547778 // VariantRecord
+      end
+    end
+
+    classdiagram 4279426 "CachedTableModel"
+      classdiagramsettings member_max_width 0 end
+      size B
+    end
+
+    class 5165826 "CachedTableModel"
+      visibility package 
+      nformals 1
+      formal name "Table" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5611778 // <generalisation>
+	relation 5580290 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5611778 // <generalisation>
+	  b parent class_ref 5165698 // AbstractEditableCachedTableModel
+      end
+
+      operation 6974466 "columnCount"
+	public explicit_return_type "int"
+	nparams 1
+	  param in name "parent" type class_ref 147330 // QModelIndex
+	    defaultvalue "QModelIndex()"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6974722 "data"
+	public return_type class_ref 161154 // QVariant
+	nparams 2
+	  param in name "index" type class_ref 147330 // QModelIndex
+	  param in name "role" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6975106 "cachedRowCount"
+	cpp_virtual public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6975234 "insertRowsToCache"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 2
+	  param in name "row" explicit_type "int"
+	  param in name "count" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 5612290 // <directional composition>
+	relation 5580802 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5612290 // <directional composition>
+	  b parent class_ref 5004290 // TableCache
+      end
+    end
+
+    classdiagram 4698114 "AbstractReadOnlyCachedTableModel"
+      classdiagramsettings member_max_width 0 end
+      size Legal-Landscape
+    end
+
+    class 5554306 "AbstractReadOnlyCachedTableModel"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6323074 // <generalisation>
+	relation 6291586 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6323074 // <generalisation>
+	  b parent class_ref 5757954 // AbstractCachedTableModel
+      end
+
+      operation 7733634 "rowCount"
+	cpp_virtual public explicit_return_type "int"
+	nparams 1
+	  param in name "parent" type class_ref 147330 // QModelIndex
+	    defaultvalue "QModelIndex()"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7733762 "dataChanged"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "topLeft" type class_ref 147330 // QModelIndex
+	  param in name "bottomRight" type class_ref 147330 // QModelIndex
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7747074 "fromBackendAppendRecord"
+	stereotype "slot"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "record" type class_ref 5547778 // VariantRecord
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7740546 "horizontalHeaderDisplayRoleData"
+	abstract cpp_virtual protected return_type class_ref 161154 // QVariant
+	nparams 1
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7747202 "fromBackendInsertRecords"
+	protected explicit_return_type "void"
+	nparams 3
+	  param in name "row" explicit_type "int"
+	  param in name "count" explicit_type "int"
+	  param in name "record" type class_ref 5547778 // VariantRecord
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7733890 "fetchRecords"
+	abstract cpp_virtual protected explicit_return_type "bool"
+	nparams 1
+	  param in name "count" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7753730 "beginInsertRows"
+	protected explicit_return_type "void"
+	nparams 3
+	  param in name "parent" type class_ref 147330 // QModelIndex
+	  param in name "first" explicit_type "int"
+	  param in name "last" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7753858 "beginInsertRows"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "rows" type class_ref 3755778 // RowRange
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 4704642 "AbstractEditableCachedTableModel"
+      classdiagramsettings member_max_width 0 end
+      size A4
     end
 
     class 5165698 "AbstractEditableCachedTableModel"
@@ -2310,17 +2605,6 @@ ${items}};
 	
       end
 
-      operation 6974850 "cachedRowCount"
-	abstract cpp_virtual protected explicit_return_type "int"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
       operation 6974978 "insertRowsToCache"
 	abstract cpp_virtual protected explicit_return_type "bool"
 	nparams 2
@@ -2371,148 +2655,12 @@ ${items}};
 	  b parent class_ref 5105026 // TableCacheOperation
       end
 
-      operation 7040386 "rowCountImpl"
-	cpp_virtual private explicit_return_type "int"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7040514 "insertRowsImpl"
-	cpp_virtual private explicit_return_type "bool"
-	nparams 2
-	  param in name "row" explicit_type "int"
-	  param in name "count" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 6061058 // <generalisation>
-	relation 6029570 ---|>
+      classrelation 6329858 // <generalisation>
+	relation 6298370 ---|>
 	  a public
 	    cpp default "${type}"
-	    classrelation_ref 6061058 // <generalisation>
+	    classrelation_ref 6329858 // <generalisation>
 	  b parent class_ref 5554306 // AbstractReadOnlyCachedTableModel
-      end
-    end
-
-    classdiagram 4279426 "CachedTableModel"
-      classdiagramsettings member_max_width 0 end
-      size B
-    end
-
-    class 5165826 "CachedTableModel"
-      visibility package 
-      nformals 1
-      formal name "Table" type "class" explicit_default_value ""
-        explicit_extends ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 5611778 // <generalisation>
-	relation 5580290 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 5611778 // <generalisation>
-	  b parent class_ref 5165698 // AbstractEditableCachedTableModel
-      end
-
-      operation 6974466 "columnCount"
-	public explicit_return_type "int"
-	nparams 1
-	  param in name "parent" type class_ref 147330 // QModelIndex
-	    defaultvalue "QModelIndex()"
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6974722 "data"
-	public return_type class_ref 161154 // QVariant
-	nparams 2
-	  param in name "index" type class_ref 147330 // QModelIndex
-	  param in name "role" explicit_type "int"
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6975106 "cachedRowCount"
-	cpp_virtual public explicit_return_type "int"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6975234 "insertRowsToCache"
-	cpp_virtual public explicit_return_type "bool"
-	nparams 2
-	  param in name "row" explicit_type "int"
-	  param in name "count" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 5612290 // <directional composition>
-	relation 5580802 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 5612290 // <directional composition>
-	  b parent class_ref 5004290 // TableCache
       end
     end
   end
@@ -3200,6 +3348,76 @@ ${inlines}
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 4711170 "ItemModel_CurrentRowChanged"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 5764482 "SelectionModelCurrentRowChanged"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6336514 // <generalisation>
+	relation 6305026 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6336514 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 7754370 "setSelectionModel"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "model" type class_ref 1382914 // QItemSelectionModel
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6336642 // <unidirectional association>
+	relation 6305154 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 6336642 // <unidirectional association>
+	  b parent class_ref 1382914 // QItemSelectionModel
+      end
+
+      operation 7754498 "currentRowChanged"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -8491,7 +8709,7 @@ ${inlines}
     end
   end
 
-  classview 2080770 "ItemModel_Sql"
+  classview 2080770 "ItemModel_Sql_Filter"
     
     classdiagramsettings member_max_width 0 end
     
@@ -8511,5 +8729,41 @@ ${inlines}
     
     activitydiagramsettings
      end
+    classdiagram 3115266 "FilterProxyModel"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 3540226 "FilterProxyModel"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 3540354 "SqlFilterProxyModel"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
   end
 end

@@ -6,54 +6,50 @@ classcanvas 128898 class_ref 147202 // QAbstractTableModel
 end
 classcanvas 129026 class_ref 5165698 // AbstractEditableCachedTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 417 792 2000
+  xyz 417 457 2000
 end
 classcanvas 129794 class_ref 5165954 // RemovedRowsDisplayMode
   classdiagramsettings member_max_width 0 end
-  xyz 39 879 2006
+  xyz 39 511 2006
 end
 classcanvas 130306 class_ref 5105026 // TableCacheOperation
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 986 898 2000
-end
-classcanvas 130562 class_ref 5206530 // AbstractTableModel
-  classdiagramsettings member_max_width 0 end
-  xyz 409 127 2006
+  xyz 554 714 2000
 end
 note 130946 "Should be renamed AbstractCachedEditableTableModel or similar"
-  xyzwh 525 1114 2000 311 69
+  xyzwh 985 530 2000 311 69
 classcanvas 131202 class_ref 5554306 // AbstractReadOnlyCachedTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 556 706 2000
+  xyz 404 247 2000
 end
 note 131586 "Should inherit QAbstractTableModel, to avoid fighting AbstractTableModel ??"
-  xyzwh 89 673 2000 279 103
-line 129922 ---+ decenter_begin 457 decenter_end 483
+  xyzwh 40.5 864.5 2000 279 103
+classcanvas 131842 class_ref 5757954 // AbstractCachedTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 587 127 2006
+end
+line 129922 ---+ decenter_begin 457 decenter_end 479
   from ref 129794 z 2007 to ref 129026
 relationcanvas 130434 relation_ref 5580546 // <dependency>
-  decenter_begin 483
-  decenter_end 434
   from ref 129026 z 2001 to ref 130306
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130690 relation_ref 5623042 // <generalisation>
-  from ref 130562 z 2007 to ref 128898
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 131330 relation_ref 6029570 // <generalisation>
+relationcanvas 131714 relation_ref 6298370 // <generalisation>
   from ref 129026 z 2001 to ref 131202
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131458 relation_ref 6029698 // <generalisation>
-  from ref 131202 z 2007 to ref 130562
+relationcanvas 131970 relation_ref 6291458 // <generalisation>
+  from ref 131842 z 2007 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 131074 -_-_
+relationcanvas 132098 relation_ref 6291586 // <generalisation>
+  from ref 131202 z 2007 to ref 131842
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 131074 -_-_ decenter_begin 434 decenter_end 479
   from ref 130946 z 2001 to ref 129026
-line 131714 -_-_
-  from ref 131458 z 2008 to ref 131586
 end

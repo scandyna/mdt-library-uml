@@ -1,10 +1,12 @@
-format 215
+format 221
 "ItemEditor" // Mdt::ItemEditor
-  revision 241
+  revision 260
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 215
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -34,9 +38,13 @@ format 215
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -52,9 +60,13 @@ format 215
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -70,9 +82,13 @@ format 215
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -88,9 +104,13 @@ format 215
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -106,9 +126,13 @@ format 215
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -432,9 +456,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -493,9 +521,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -671,9 +703,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -794,9 +830,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -1021,9 +1061,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -1295,35 +1339,17 @@ ${inlines}
     end
   end
 
-  classview 1491842 "MappedWidgetList"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    classdiagram 2787586 "MappedWidgetList"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-  end
-
   classview 1498370 "EditEvent"
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -1539,9 +1565,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -1554,63 +1584,6 @@ ${inlines}
     classdiagram 3334146 "PopertyMap"
       classdiagramsettings member_max_width 0 end
       size B-Landscape
-    end
-
-    class 3850498 "WidgetEditableProperty"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 3353602 "PropertyName"
-	private type class_ref 236162 // QByteArray
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 3360386 "IsReversed"
-	private explicit_type "bool"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      operation 5392386 "WidgetEditableProperty"
-	public explicit_return_type ""
-	nparams 2
-	  param in name "name" explicit_type "char"
-	multiplicity "*"
-	  param in name "reversed" explicit_type "bool"
-	cpp_decl "  ${comment}${inline}${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${volatile}${throw};
-"
-	cpp_def "${comment}${inline}${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${volatile}${throw} 
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
     end
 
     class 3843842 "WidgetEditablePropertyMapItem"
@@ -1868,9 +1841,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -2017,13 +1994,683 @@ ${inlines}
     end
   end
 
-  classview 1504898 "DataWidgetMapper"
+  classview 1491842 "IE_Widgets_MappedWidgetList"
     
     classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
     
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 2787586 "MappedWidgetList"
+      classdiagramsettings member_max_width 0 end
+      size C-Landscape
+    end
+
+    class 3198082 "MappedWidget"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 2981762 "Widget"
+	private type class_ref 316162 // QWidget
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 2981634 "Column"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 2995074 "PreviousStyleSheet"
+	private type class_ref 3863554 // WidgetStyleSheet
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 4648834 "MappedWidget"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "widget" type class_ref 316162 // QWidget
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 4649090 "widget"
+	public return_type class_ref 316162 // QWidget
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 4648962 "column"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 4655874 "originalStyleSheet"
+	public return_type class_ref 161026 // QString
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6376194 // <generalisation>
+	relation 6344706 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6376194 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 7795970 "setWidgetValue"
+	abstract cpp_virtual public explicit_return_type "void"
+	nparams 1
+	  param in name "value" type class_ref 161154 // QVariant
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7810050 "widgetValue"
+	abstract cpp_virtual public return_type class_ref 161154 // QVariant
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7796098 "setWidgetEditable"
+	abstract cpp_virtual public explicit_return_type "bool"
+	nparams 1
+	  param in name "editable" explicit_type "bool"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7809922 "setWidgetEnabled"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "enabled" explicit_type "bool"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7810306 "editionStarted"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5791490 "MappedWidgetQLineEdit"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6382722 // <generalisation>
+	relation 6351234 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6382722 // <generalisation>
+	  b parent class_ref 3198082 // MappedWidget
+      end
+    end
+
+    class 5791618 "MappedWidgetQComboBox"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6382850 // <generalisation>
+	relation 6351362 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6382850 // <generalisation>
+	  b parent class_ref 3198082 // MappedWidget
+      end
+
+      operation 7803266 "MappedWidgetQComboBox"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "cb" type class_ref 505218 // QComboBox
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7809794 "setWidgetValue"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 1
+	  param in name "value" type class_ref 161154 // QVariant
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7810178 "widgetValue"
+	cpp_virtual public return_type class_ref 161154 // QVariant
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7803010 "setWidgetEditable"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 1
+	  param in name "editable" explicit_type "bool"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6396162 // <directional composition>
+	relation 6364674 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6396162 // <directional composition>
+	  b parent class_ref 3850498 // WidgetEditableProperty
+      end
+    end
+
+    class 5791746 "MappedWidgetMyCustom"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6382978 // <generalisation>
+	relation 6351490 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6382978 // <generalisation>
+	  b parent class_ref 3198082 // MappedWidget
+      end
+
+      operation 7802626 "setWidgetValue"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 2
+	  param in name "model" type class_ref 146946 // QAbstractItemModel
+	  param in name "index" type class_ref 147330 // QModelIndex
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7802754 "setWidgetEditable"
+	cpp_virtual public explicit_return_type "void"
+	nparams 1
+	  param in name "editable" explicit_type "bool"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 3158146 "MappedWidgetList"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 3641346 // <directional composition>
+	relation 3622146 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 3641346 // <directional composition>
+	  b parent class_ref 3198082 // MappedWidget
+      end
+
+      attribute 2954882 "WidgetList"
+	private type class_ref 3198082 // MappedWidget
+	multiplicity "*"
+	stereotype "vector"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 4599554 "addMapping"
+	abstract cpp_virtual public explicit_return_type "void"
+	nparams 2
+	  param in name "widget" type class_ref 316162 // QWidget
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7830402 "getIndexForWidget"
+	public explicit_return_type "int"
+	nparams 1
+	  param in name "widget" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5791874 "MappedWidgetListMyCustomKit"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6383106 // <generalisation>
+	relation 6351618 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6383106 // <generalisation>
+	  b parent class_ref 3158146 // MappedWidgetList
+      end
+
+      operation 7803138 "addMapping"
+	cpp_virtual public explicit_return_type "void"
+	nparams 2
+	  param in name "widget" type class_ref 316162 // QWidget
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 3850498 "WidgetEditableProperty"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 3353602 "PropertyName"
+	private type class_ref 236162 // QByteArray
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 3360386 "IsReversed"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 5392386 "WidgetEditableProperty"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "name" explicit_type "char"
+	multiplicity "*"
+	  param in name "reversed" explicit_type "bool"
+	cpp_decl "  ${comment}${inline}${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5798402 "MappedWidgetGeneric"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6389634 // <generalisation>
+	relation 6358146 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6389634 // <generalisation>
+	  b parent class_ref 3198082 // MappedWidget
+      end
+
+      attribute 4320770 "EditablePropertyName"
+	private type class_ref 236162 // QByteArray
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 7816834 "MappedWidgetGeneric"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "widget" type class_ref 316162 // QWidget
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7816962 "setWidgetValue"
+	cpp_virtual public explicit_return_type "void"
+	nparams 1
+	  param in name "value" type class_ref 161154 // QVariant
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7817090 "widgetValue"
+	cpp_virtual public return_type class_ref 161154 // QVariant
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7823746 "setWidgetEditable"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 1
+	  param in name "editable" explicit_type "bool"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7817218 "hasWidgetUserProperty"
+	private explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 1504898 "IE_Widgets_DataWidgetMapper"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -2385,184 +3032,14 @@ ${inlines}
 	    classrelation_ref 4532482 // <directional composition>
 	  b parent class_ref 3998722 // DataWidgetMapperItemDelegate
       end
-    end
 
-    class 3198082 "MappedWidget"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 2981762 "Widget"
-	private type class_ref 316162 // QWidget
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 2981634 "Column"
-	private explicit_type "int"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 2995074 "PreviousStyleSheet"
-	private type class_ref 3863554 // WidgetStyleSheet
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      operation 4648834 "MappedWidget"
-	public explicit_return_type ""
-	nparams 3
-	  param in name "widget" type class_ref 316162 // QWidget
-	  param in name "column" explicit_type "int"
-	  param in name "styleSheet" type class_ref 161026 // QString
-	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${volatile}${throw};
-"
-	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${volatile}${throw} 
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 4649090 "widget"
-	public return_type class_ref 316162 // QWidget
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 4648962 "column"
-	public explicit_return_type "int"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 4655874 "originalStyleSheet"
-	public return_type class_ref 161026 // QString
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-    end
-
-    class 3158146 "MappedWidgetList"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 3593986 // <unidirectional association>
-	relation 3574786 --->
+      classrelation 6363138 // <unidirectional association>
+	relation 6331650 --->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
 "
-	    classrelation_ref 3593986 // <unidirectional association>
-	  b parent class_ref 316162 // QWidget
-      end
-
-      attribute 2954882 "WidgetList"
-	private type class_ref 3198082 // MappedWidget
-	multiplicity "*"
-	stereotype "vector"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      operation 4599554 "addMapping"
-	public explicit_return_type "void"
-	nparams 3
-	  param in name "widget" type class_ref 316162 // QWidget
-	  param in name "column" explicit_type "int"
-	  param in name "oStyleSheet" type class_ref 161026 // QString
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 3641346 // <directional composition>
-	relation 3622146 *-->
-	  a role_name "" multiplicity "*" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	    classrelation_ref 3641346 // <directional composition>
-	  b parent class_ref 3198082 // MappedWidget
+	    classrelation_ref 6363138 // <unidirectional association>
+	  b parent class_ref 5771010 // WidgetEditionStartedSignal
       end
     end
 
@@ -2628,15 +3105,312 @@ ${inlines}
 	
       end
     end
+
+    classdiagram 4717698 "WidgetEditionStartedSignal"
+      classdiagramsettings member_max_width 0 end
+      size B-Landscape
+    end
+
+    class 5771010 "WidgetEditionStartedSignal"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6369666 // <generalisation>
+	relation 6338178 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6369666 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 7788546 "addWidget"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "widget" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7788674 "removeWidget"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "widget" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7767810 "getEditionStartedSignal"
+	abstract cpp_virtual public return_type class_ref 2988034 // QMetaMethod
+	nparams 1
+	  param in name "w" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7788418 "editionStarted"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7789314 "connectWidgetEditionStartedSignal"
+	abstract cpp_virtual protected explicit_return_type "void"
+	nparams 1
+	  param in name "widget" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7789442 "disconnectWidgetEditionStartedSignal"
+	abstract cpp_virtual protected explicit_return_type "void"
+	nparams 1
+	  param in name "widget" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7788802 "onWidgetEditionStarted"
+	stereotype "slot"
+	private explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7789186 "connectQComboBoxEditionStartedSignals"
+	private explicit_return_type "void"
+	nparams 1
+	  param in name "cb" type class_ref 505218 // QComboBox
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5778050 "WidgetEditionStartedSignalMyCustom"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7768194 "getEditionStartedSignal"
+	cpp_virtual public return_type class_ref 2988034 // QMetaMethod
+	nparams 1
+	  param in name "w" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7768322 "editionsStartedSignalImpl"
+	public return_type class_ref 2988034 // QMetaMethod
+	nparams 1
+	  param in name "w" explicit_type "MyCustomWidget"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6356610 // <generalisation>
+	relation 6325122 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6356610 // <generalisation>
+	  b parent class_ref 5771010 // WidgetEditionStartedSignal
+      end
+    end
+
+    classdiagram 4717826 "MappedWidgetAttributes"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5771138 "MappedWidgetAttributes"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7761026 "editionStartedSignal"
+	abstract cpp_virtual public return_type class_ref 2988034 // QMetaMethod
+	nparams 1
+	  param in name "w" type class_ref 316162 // QWidget
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5771266 "MappedWidgetAttributesQt"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7761154 "editionStartedSignal"
+	public return_type class_ref 2988034 // QMetaMethod
+	nparams 1
+	  param in name "cb" type class_ref 505218 // QComboBox
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6343170 // <generalisation>
+	relation 6311682 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6343170 // <generalisation>
+	  b parent class_ref 5771138 // MappedWidgetAttributes
+      end
+    end
+
+    class 5771394 "MappedWidgetAttributesMyCustom"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6343298 // <generalisation>
+	relation 6311810 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6343298 // <generalisation>
+	  b parent class_ref 5771266 // MappedWidgetAttributesQt
+      end
+    end
   end
 
   classview 1774850 "ModelWrapper"
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -2935,9 +3709,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -2990,9 +3768,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -3923,9 +4705,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -3961,9 +4747,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -4823,9 +5613,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -5586,9 +6380,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -5604,9 +6402,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -5968,9 +6770,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -6233,9 +7039,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -6276,9 +7086,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -7112,9 +7926,13 @@ ${items}};
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -7134,9 +7952,13 @@ ${items}};
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -7328,9 +8150,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -7685,9 +8511,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -9065,9 +9895,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -9103,9 +9937,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -9121,9 +9959,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -10894,9 +11736,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -11164,9 +12010,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -11218,9 +12068,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -11308,9 +12162,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -11471,9 +12329,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
