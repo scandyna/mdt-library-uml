@@ -1,6 +1,6 @@
-format 220
+format 221
 "Railway" // Mdt::Railway
-  revision 131
+  revision 138
   modified_by 2 "philippe"
   // class settings
   
@@ -1755,7 +1755,7 @@ ${inlines}
 
     classdiagram 4346114 "VehicleTypeTableModel"
       classdiagramsettings member_max_width 0 end
-      size A4
+      size B
     end
 
     class 4777090 "EditVehicleTypeTableModel"
@@ -1819,6 +1819,90 @@ ${inlines}
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6409730 // <unidirectional association>
+	relation 6378242 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 6409730 // <unidirectional association>
+	  b parent class_ref 5451010 // CreateVehicleTypeRequest
+      end
+
+      classrelation 6409858 // <unidirectional association>
+	relation 6378370 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 6409858 // <unidirectional association>
+	  b parent class_ref 5451138 // CreateVehicleTypeResponse
+      end
+
+      operation 7857026 "setVehicleTypeRepository"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7864194 "createVehicleTypeRequested"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "request" type class_ref 5451010 // CreateVehicleTypeRequest
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7864322 "createVehicleTypeSucceed"
+	stereotype "slot"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "response" type class_ref 5451138 // CreateVehicleTypeResponse
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7864450 "createVehicleTypeFailed"
+	stereotype "slot"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "error" type class_ref 182402 // Error
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2239,6 +2323,17 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      attribute 4327426 "transactionId"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
     end
 
     class 5451138 "CreateVehicleTypeResponse"

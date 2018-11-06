@@ -1,0 +1,19 @@
+format 221
+
+classcanvas 128002 class_ref 5811842 // ConstexprValueWrapper
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+classcanvas 128258 class_ref 5811970 // SemiRegularConstexprValueWrapper
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 185.5 2005
+end
+classcanvas 128386 class_ref 5812098 // RegularConstexprValueWrapper
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 330.5 2005
+end
+note 128514 "Make constructor(s) explicit (wrappers are mostly for type safety)"
+  xyzwh 391 270 2000 409 59
+note 128642 "Also: << operators"
+  xyzwh 394 359 2000 223 49
+end

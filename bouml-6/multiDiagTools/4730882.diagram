@@ -1,0 +1,35 @@
+format 221
+
+classcanvas 128002 class_ref 5166210 // EditableVariantTableCache
+  classdiagramsettings member_max_width 0 end
+  xyz 561 42 2000
+end
+classcanvas 128130 class_ref 5547778 // VariantRecord
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 421 42 2000
+end
+classcanvas 128386 class_ref 5004290 // TableCache
+  classdiagramsettings member_max_width 0 end
+  xyz 41 130 2005
+end
+classcanvas 128514 class_ref 5091202 // TableCacheOperationMap
+  classdiagramsettings member_max_width 0 end
+  xyz 490 286 2011
+end
+relationcanvas 128258 relation_ref 6371202 // <directional composition>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  multiplicity_a_pos 533 74 3000 no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 5526658 // <directional composition>
+  from ref 128386 z 2012 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 6371330 // <directional composition>
+  decenter_begin 519
+  from ref 128002 z 2012 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

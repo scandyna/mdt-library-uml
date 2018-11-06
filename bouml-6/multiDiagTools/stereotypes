@@ -15,6 +15,7 @@
     -_-|> 1 "bind"
   end
   
+  rolepart_stereotypes  0
   use_case_stereotypes 1 "realization"
   
     ---|> 4 "{complete,disjoint}" "{incomplete,disjoint}" "{complete,overlapping}" "{incomplete,overlapping}"
@@ -41,6 +42,7 @@
   expansionregion_stereotypes  0
   activitypartition_stereotypes  0
   pin_stereotypes  0
+  port_stereotypes  0
   component_stereotypes  6 "buildComponent" "entity" "implement" "process" "service" "subsystem"
   deploymentnode_stereotypes  3 "cpu" "device" "executionEnvironment"
   classview_stereotypes  0
@@ -48,6 +50,7 @@
   componentview_stereotypes  0
   deploymentview_stereotypes  0
   classdiagram_stereotypes  0
+  classcompositediagram_stereotypes  0
   seqdiagram_stereotypes  0
   msg_stereotypes  0
   coldiagram_stereotypes  0

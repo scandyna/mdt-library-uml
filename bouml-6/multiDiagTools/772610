@@ -1,6 +1,6 @@
-format 220
+format 221
 "Container" // Mdt::Container
-  revision 22
+  revision 26
   modified_by 2 "philippe"
   // class settings
   
@@ -1934,6 +1934,59 @@ ${items}};
 	mysql_decl ""
 	MysqlColumn
       end
+
+      attribute 4327554 "Pending"
+	public type class_ref 5105026 // TableCacheOperation
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 5804930 "TableCacheTransaction"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4327298 "Id"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 7863682 "isNull"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
 
     class 5004546 "TableCacheOperationIndex"
@@ -2082,8 +2135,8 @@ ${inlines}
 	
       end
 
-      operation 6930690 "getRowsToInsertIntoStorage"
-	cpp_inline public return_type class_ref 3775490 // RowList
+      operation 6930690 "getRowsToAddToBackend"
+	cpp_inline public return_type class_ref 5811586 // TableCacheRowTransactionList
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -2118,6 +2171,69 @@ ${inlines}
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7863554 "getRowForTransaction"
+	public explicit_return_type "int"
+	nparams 1
+	  param in name "transaction" type class_ref 5804930 // TableCacheTransaction
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7871362 "createTransaction"
+	public return_type class_ref 5804930 // TableCacheTransaction
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7871490 "newRowTransaction"
+	public return_type class_ref 5811458 // TableCacheRowTransaction
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7878018 "getRowForTransaction"
+	public explicit_return_type "int"
+	nparams 1
+	  param in name "transaction" type class_ref 5804930 // TableCacheTransaction
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2480,7 +2596,7 @@ ${inlines}
       
     end
 
-    class 5166210 "VariantTableCache"
+    class 5811458 "TableCacheRowTransaction"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -2494,6 +2610,101 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 6422914 // <directional composition>
+	relation 6391426 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6422914 // <directional composition>
+	  b parent class_ref 5804930 // TableCacheTransaction
+      end
+
+      attribute 4334082 "Row"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 7870978 "row"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7871106 "transaction"
+	public return_type class_ref 5804930 // TableCacheTransaction
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7871234 "transactionId"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5811586 "TableCacheRowTransactionList"
+      visibility package stereotype "typedef" base_type class_ref 5811714 // Vector
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6423170 // <directional composition>
+	relation 6391682 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 6423170 // <directional composition>
+	  b parent class_ref 5811458 // TableCacheRowTransaction
+      end
+
+      classrelation 6423426 // <dependency>
+	relation 6391938 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6423426 // <dependency>
+	  b parent class_ref 5811714 // Vector
+      end
     end
   end
 
@@ -2545,6 +2756,107 @@ ${inlines}
     end
 
     class 5547778 "VariantRecord"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+  classview 2457986 "VariantTableCache"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4730882 "VariantTableCache"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5166210 "EditableVariantTableCache"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6402690 // <directional composition>
+	relation 6371202 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 6402690 // <directional composition>
+	  b parent class_ref 5547778 // VariantRecord
+      end
+
+      classrelation 6402818 // <directional composition>
+	relation 6371330 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6402818 // <directional composition>
+	  b parent class_ref 5091202 // TableCacheOperationMap
+      end
+    end
+  end
+
+  classview 2464514 "Vector"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4737410 "Container_Vector"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5811714 "Vector"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
