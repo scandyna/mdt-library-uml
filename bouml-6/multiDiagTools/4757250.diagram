@@ -1,0 +1,10 @@
+format 221
+
+deploymentnodecanvas 128002 deploymentnode_ref 128002 // SomeServer
+  xyzwh 104 175 2000 96 33
+end
+componentcanvas 128386 component_ref 128258 // TaskListServer
+  
+  xyzwh 126 257 2005 167 57
+end
+end

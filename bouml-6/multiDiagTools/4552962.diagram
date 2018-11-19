@@ -1,7 +1,11 @@
-format 220
+format 221
 
 classcanvas 128002 class_ref 5437570 // AbstractSelectQueryFactory
   classdiagramsettings member_max_width 0 end
   xyz 268 125 2000
+end
+classcanvas 128130 class_ref 5601922 // AbstractAsyncSelectQueryFactory
+  classdiagramsettings member_max_width 0 end
+  xyz 108 451 2000
 end
 end

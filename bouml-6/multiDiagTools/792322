@@ -1,6 +1,6 @@
 format 221
 "Railway" // Mdt::Railway
-  revision 138
+  revision 143
   modified_by 2 "philippe"
   // class settings
   
@@ -1878,7 +1878,7 @@ ${inlines}
 	
       end
 
-      operation 7864322 "createVehicleTypeSucceed"
+      operation 7864322 "createVehicleTypeSucceeded"
 	stereotype "slot"
 	public explicit_return_type "void"
 	nparams 1
@@ -1898,11 +1898,12 @@ ${inlines}
       operation 7864450 "createVehicleTypeFailed"
 	stereotype "slot"
 	public explicit_return_type "void"
-	nparams 1
+	nparams 2
+	  param in name "request" type class_ref 5451010 // CreateVehicleTypeRequest
 	  param in name "error" type class_ref 182402 // Error
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2307,6 +2308,40 @@ ${inlines}
 	    classrelation_ref 6032386 // <unidirectional association>
 	  b parent class_ref 4916226 // VehicleTypeClassRepository
       end
+
+      operation 7912322 "CreateVehicleType"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "repository" type class_ref 5451394 // VehicleTypeRepository
+	  param in name "parent" type class_ref 138626 // QObject
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7912450 "execute"
+	stereotype "slot"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "request" type class_ref 5451010 // CreateVehicleTypeRequest
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
 
     class 5451010 "CreateVehicleTypeRequest"
@@ -2337,6 +2372,253 @@ ${inlines}
     end
 
     class 5451138 "CreateVehicleTypeResponse"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4347138 "vehicleTypeId"
+	public type class_ref 5471618 // VehicleTypeId
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4347266 "vehicleTypeClassId"
+	public type class_ref 4922882 // VehicleTypeClassId
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4347394 "manufacturerSerie"
+	public type class_ref 161026 // QString
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4347522 "transactionId"
+	public explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    classdiagram 4750594 "UpdateVehicleType"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 5825154 "UpdateVehicleType"
+      visibility package stereotype "interactor"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6436610 // <unidirectional association>
+	relation 6405122 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 6436610 // <unidirectional association>
+	  b parent class_ref 5825282 // UpdateVehicleTypeRequest
+      end
+
+      classrelation 6436738 // <unidirectional association>
+	relation 6405250 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 6436738 // <unidirectional association>
+	  b parent class_ref 5825410 // UpdateVehicleTypeResponse
+      end
+
+      classrelation 6436866 // <generalisation>
+	relation 6405378 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6436866 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 7912578 "UpdateVehicleType"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "repository" type class_ref 5451394 // VehicleTypeRepository
+	  param in name "parent" type class_ref 138626 // QObject
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7912706 "execute"
+	stereotype "slot"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "request" type class_ref 5825282 // UpdateVehicleTypeRequest
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7912834 "succeeded"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "response" type class_ref 5825410 // UpdateVehicleTypeResponse
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7912962 "failed"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "request" type class_ref 5825282 // UpdateVehicleTypeRequest
+	  param in name "error" type class_ref 182402 // Error
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5825282 "UpdateVehicleTypeRequest"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4361474 "vehicleTypeId"
+	public type class_ref 5471618 // VehicleTypeId
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4361346 "vehicleTypeClassId"
+	public type class_ref 4922882 // VehicleTypeClassId
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4361602 "manufacturerSerie"
+	public type class_ref 161026 // QString
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4361730 "transactionId"
+	public explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 5825410 "UpdateVehicleTypeResponse"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {

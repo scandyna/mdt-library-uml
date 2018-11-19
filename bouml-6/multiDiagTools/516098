@@ -1,6 +1,6 @@
 format 221
 "ItemModel" // Mdt::ItemModel
-  revision 155
+  revision 160
   modified_by 2 "philippe"
   // class settings
   
@@ -2346,6 +2346,23 @@ ${inlines}
 	
       end
 
+      operation 7926018 "fetchRecordsRequested"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "count" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
       operation 7747074 "fromBackendAppendRecord"
 	stereotype "slot"
 	protected explicit_return_type "void"
@@ -2620,6 +2637,23 @@ ${items}};
 	
       end
 
+      operation 7926146 "addRecordToBackendRequested"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "rowTransaction" type class_ref 5811458 // TableCacheRowTransaction
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
       operation 6974210 "revert"
 	stereotype "slot"
 	cpp_virtual public explicit_return_type "void"
@@ -2776,6 +2810,52 @@ ${items}};
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7898882 "allowRemoveRows"
+	abstract cpp_virtual protected explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7899266 "allowRemoveRow"
+	abstract cpp_virtual protected explicit_return_type "bool"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7899010 "allowSetData"
+	abstract cpp_virtual protected explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7899138 "allowSetData"
+	abstract cpp_virtual protected explicit_return_type "bool"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	
 	

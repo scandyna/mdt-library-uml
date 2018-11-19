@@ -1,6 +1,6 @@
-format 220
+format 221
 "TaskList" // apps::TaskList
-  revision 7
+  revision 8
   modified_by 2 "philippe"
   // class settings
   
@@ -30,6 +30,41 @@ format 220
   activitydiagramsettings
    end
   
+  componentview 128002 "Sandbox"
+    //component diagram settings
+    componentdiagramsettings
+     end
+    componentdiagram 4757122 "TaskListSandbox"
+      componentdiagramsettings
+       end
+      size A4
+    end
+
+    component 128002 "TaskListClient"
+    end
+
+    component 128130 "VehicleType"
+    end
+
+    component 128258 "TaskListServer"
+    end
+  end
+
+  deploymentview 513666 "Sandbox"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    deploymentdiagram 4757250 "TaskListDeployment"
+      deploymentdiagramsettings
+       end
+      size A4
+    end
+
+    deploymentnode 128002 "SomeServer"
+      associated_diagram deploymentdiagram_ref 4757250 // TaskListDeployment
+    end
+  end
+
   classview 2020738 "TaskList"
     
     classdiagramsettings member_max_width 0 end
