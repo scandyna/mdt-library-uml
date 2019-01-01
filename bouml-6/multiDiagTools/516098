@@ -1,6 +1,6 @@
 format 221
 "ItemModel" // Mdt::ItemModel
-  revision 160
+  revision 175
   modified_by 2 "philippe"
   // class settings
   
@@ -2296,7 +2296,7 @@ ${inlines}
 
     classdiagram 4698114 "AbstractReadOnlyCachedTableModel"
       classdiagramsettings member_max_width 0 end
-      size Legal-Landscape
+      size C
     end
 
     class 5554306 "AbstractReadOnlyCachedTableModel"
@@ -2313,6 +2313,18 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      operation 7953922 "fetchRecordFromBackend"
+	abstract cpp_virtual protected explicit_return_type "bool"
+	nparams 1
+	  param in name "rt" type class_ref 5811458 // TableCacheRowTask
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
       operation 7733634 "rowCount"
 	cpp_virtual public explicit_return_type "int"
 	nparams 1
@@ -2329,15 +2341,14 @@ ${inlines}
 	
       end
 
-      operation 7733762 "dataChanged"
-	stereotype "signal"
-	public explicit_return_type "void"
-	nparams 2
-	  param in name "topLeft" type class_ref 147330 // QModelIndex
-	  param in name "bottomRight" type class_ref 147330 // QModelIndex
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${abstract};
+      operation 7953794 "fetchRow"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}{
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
   ${body}}
 "
 	
@@ -2346,14 +2357,29 @@ ${inlines}
 	
       end
 
-      operation 7926018 "fetchRecordsRequested"
+      operation 7933186 "lastError"
+	public return_type class_ref 182402 // Error
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7933314 "errorOccured"
 	stereotype "signal"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "count" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	  param in name "error" type class_ref 182402 // Error
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2441,6 +2467,23 @@ ${inlines}
 	
       end
 
+      operation 7995778 "fromBackendRemoveRows"
+	protected explicit_return_type "void"
+	nparams 2
+	  param in name "row" explicit_type "int"
+	  param in name "count" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
       operation 7733890 "fetchRecords"
 	abstract cpp_virtual protected explicit_return_type "bool"
 	nparams 1
@@ -2474,6 +2517,22 @@ ${inlines}
 	protected explicit_return_type "void"
 	nparams 1
 	  param in name "rows" type class_ref 3755778 // RowRange
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7933058 "setLastError"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "error" type class_ref 182402 // Error
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
@@ -2521,11 +2580,151 @@ ${inlines}
 	
 	
       end
+
+      classrelation 6463618 // <directional composition>
+	relation 6432130 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6463618 // <directional composition>
+	  b parent class_ref 5865218 // TableCacheTaskMap
+      end
+
+      operation 7968642 "beginRowTask"
+	protected return_type class_ref 5811458 // TableCacheRowTask
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7968770 "beginRowTasks"
+	protected return_type class_ref 5811586 // TableCacheRowTaskList
+	nparams 1
+	  param in name "rows" type class_ref 3775490 // RowList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7863938 "taskSucceeded"
+	protected explicit_return_type "void"
+	nparams 2
+	  param in name "task" type class_ref 5804930 // TableCacheTask
+	  param in name "record" type class_ref 5547778 // VariantRecord
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7864066 "taskFailed"
+	protected explicit_return_type "void"
+	nparams 2
+	  param in name "task" type class_ref 5804930 // TableCacheTask
+	  param in name "error" type class_ref 182402 // Error
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7969026 "isTaskPendingForRow"
+	protected explicit_return_type "bool"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7968898 "isTaskFailedForRow"
+	protected explicit_return_type "bool"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7975554 "beginBackendTransaction"
+	abstract cpp_virtual protected explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7975682 "commitBackendTransaction"
+	abstract cpp_virtual protected explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 7975810 "rollbackBackendTransaction"
+	abstract cpp_virtual protected explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
     end
 
     classdiagram 4704642 "AbstractEditableCachedTableModel"
       classdiagramsettings member_max_width 0 end
-      size A4
+      size B
     end
 
     class 5165698 "AbstractEditableCachedTableModel"
@@ -2641,7 +2840,7 @@ ${items}};
 	stereotype "signal"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "rowTransaction" type class_ref 5811458 // TableCacheRowTransaction
+	  param in name "rowTransaction" type class_ref 5811458 // TableCacheRowTask
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
@@ -2745,8 +2944,20 @@ ${items}};
 	abstract cpp_virtual protected explicit_return_type "bool"
 	nparams 2
 	  param in name "row" explicit_type "int"
-	  param in name "transaction" type class_ref 5804930 // TableCacheTransaction
+	  param in name "transaction" type class_ref 5804930 // TableCacheTask
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 8002306 "removeRecordFromBackend"
+	abstract cpp_virtual protected explicit_return_type "bool"
+	nparams 1
+	  param in name "rt" type class_ref 5811458 // TableCacheRowTask
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	
 	
@@ -2774,42 +2985,8 @@ ${items}};
 	abstract cpp_virtual protected explicit_return_type "bool"
 	nparams 2
 	  param in name "row" explicit_type "int"
-	  param in name "transaction" type class_ref 5804930 // TableCacheTransaction
+	  param in name "transaction" type class_ref 5804930 // TableCacheTask
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
-      operation 7863938 "transactionSucceeded"
-	protected explicit_return_type "void"
-	nparams 2
-	  param in name "transaction" type class_ref 5804930 // TableCacheTransaction
-	  param in name "record" type class_ref 5547778 // VariantRecord
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7864066 "transactionFailed"
-	protected explicit_return_type "void"
-	nparams 2
-	  param in name "transaction" type class_ref 5804930 // TableCacheTransaction
-	  param in name "error" type class_ref 182402 // Error
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
 "
 	
 	

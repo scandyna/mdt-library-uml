@@ -30,6 +30,10 @@ classcanvas 133250 class_ref 3850498 // WidgetEditableProperty
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
   xyz 873 542 2011
 end
+classcanvas 133762 class_ref 5858690 // MappedWidgetRelationalQComboBox
+  classdiagramsettings member_max_width 0 end
+  xyz 335 720 2000
+end
 relationcanvas 128770 relation_ref 3622146 // <directional composition>
   from ref 128002 z 2007 to ref 128642
   no_role_a no_role_b
@@ -60,6 +64,11 @@ relationcanvas 132866 relation_ref 6358146 // <generalisation>
 end
 relationcanvas 133378 relation_ref 6364674 // <directional composition>
   from ref 129538 z 2012 to ref 133250
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133890 relation_ref 6425218 // <generalisation>
+  from ref 133762 z 2006 to ref 129538
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -1,0 +1,17 @@
+format 221
+
+note 128002 "Reflection lib must only provide a API for reflection.
+It will use Boost.Fusion
+
+It do not provide attributes or everything else.
+
+For Domain attributes, maybe provide them in the Entity library ?
+
+For storage specific attributes, provide them in the Serialisation library ?"
+  xyzwh 40.5 40.5 2000 647 167
+note 128130 "C++ stdanards, see:
+ - N4746
+ - P0953
+ - p0993"
+  xyzwh 40.5 288.5 2000 353 125
+end

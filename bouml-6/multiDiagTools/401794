@@ -1,6 +1,6 @@
 format 221
 "Mdt" // Mdt
-  revision 86
+  revision 90
   modified_by 2 "philippe"
   // class settings
   
@@ -1892,6 +1892,17 @@ ${items}};
 	mysql_decl ""
 	MysqlColumn
       end
+
+      attribute 4409218 "NotFoundError"
+	public type class_ref 5689346 // ErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
     end
   end
 
@@ -2198,6 +2209,37 @@ ${members}};
     end
   end
 
+  classview 2484226 "PrimaryKey"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4783490 "PrimaryKey_Sandbox"
+      classdiagramsettings member_max_width 0 show_context_mode uml end
+      size A4
+    end
+
+    classdiagram 4783618 "PrimaryKeyRecord_Sandbox"
+      classdiagramsettings member_max_width 0 show_context_mode uml end
+      size A4
+    end
+  end
+
   classview 2464642 "ValueWrapper"
     
     classdiagramsettings member_max_width 0 end
@@ -2297,9 +2339,13 @@ ${inlines}
 
   package_ref 905218 // Serialization
 
+  package_ref 938370 // Entity_2
+
   package_ref 753026 // Entity
 
   package_ref 877826 // Repository
+
+  package_ref 931842 // MemoryStore
 
   package_ref 911746 // Storage
 

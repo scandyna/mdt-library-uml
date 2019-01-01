@@ -1,0 +1,42 @@
+format 221
+
+classcanvas 128002 class_ref 5940738 // PrimaryKeyAlgorithm
+  classdiagramsettings member_max_width 0 end
+  xyz 39 132 2000
+end
+classcanvas 128130 class_ref 5940866 // UniqueId
+  classdiagramsettings member_max_width 0 end
+  xyz 98 240 2000
+end
+classcanvas 128386 class_ref 5948546 // PrimaryKey
+  classdiagramsettings member_max_width 0 end
+  xyz 89 40 2000
+end
+note 129026 "The magic:
+
+Each variant of PK uses:
+using StructDef = ...
+using FieldList = ..."
+  xyzwh 40.5 376.5 2000 417 101
+classcanvas 129154 class_ref 5948674 // AutoIncrementUniqueId
+  classdiagramsettings member_max_width 0 end
+  xyz 255 140 2005
+end
+relationcanvas 128642 relation_ref 6520578 // <dependency>
+  decenter_end 448
+  from ref 128002 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 6520834 // <dependency>
+  decenter_end 434
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 6520962 // <dependency>
+  from ref 128002 z 2006 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

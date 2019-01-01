@@ -1,0 +1,62 @@
+format 221
+
+classcanvas 128002 class_ref 5933570 // FieldAttributes
+  classdiagramsettings member_max_width 0 end
+  xyz 489.5 328.5 2000
+end
+classcanvas 128130 class_ref 5941378 // FieldRequired
+  classdiagramsettings member_max_width 0 end
+  xyz 581.5 791.5 2000
+end
+classcanvas 128258 class_ref 5941506 // FieldMaxLength
+  classdiagramsettings member_max_width 0 end
+  xyz 672.5 583.5 2000
+end
+note 128386 "ProvidedFieldAttributes.h
+
+struct FieldRequired
+{
+};
+
+template<int N>
+struct FieldMaxLength
+{
+  using length = N;
+};"
+  xyzwh 378 41 2000 277 207
+note 128514 "MyCustomAttributes.h
+
+strcut MyFieldAttribute
+{
+};
+"
+  xyzwh 42 582 2000 261 131
+note 128642 "#include \"MyCustomAttributes.h\"
+
+MDT_REFLECT_STRUCT(
+  ...
+  (id, FiledMaxLength<20>)
+  (name, MyFieldAttributes)
+)"
+  xyzwh 32.5 389.5 2000 369 175
+note 128770 "ProvidedAttributesHelper.h
+
+bool isFieldRequired();
+...
+
+
+template<typename Attribute, ...>
+fieldHasAttribute();"
+  xyzwh 39 64 2000 299 161
+note 129026 "MyCustomAttributesHelpers.h
+
+hasFieldMyAttributes();
+..."
+  xyzwh 345 604 2000 247 87
+note 129282 "See key_of   to get the StructDef::field while traversing DataStruct"
+  xyzwh 25.5 263.5 2000 461 45
+line 128898 -_-_
+  from ref 128770 z 2001 to ref 128386
+line 129154 -_-_
+  from ref 128514 z 2001 to ref 129026
+end

@@ -1,0 +1,35 @@
+format 221
+
+classcanvas 128002 class_ref 5933058 // Person
+  classdiagramsettings member_max_width 0 end
+  xyz 289 121 2000
+end
+classcanvas 128130 class_ref 5933186 // AddressName
+  classdiagramsettings member_max_width 0 end
+  xyz 561 40 2000
+end
+note 128258 "Domain objects"
+  xyzwh 388 39 2000 137 43
+classcanvas 128642 class_ref 5933314 // PersonDataStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 106 120 2000
+end
+note 128770 "Base for reflection + domain attributes"
+  xyzwh 40 249 2000 281 47
+note 129154 "MDT_REFLECT(PersonDataStruct, Person)
+MDT_DEFINE_FIELD_ATTRIBUTES"
+  xyzwh 188 422 2000 379 101
+relationcanvas 129026 relation_ref 6507010 // <directional composition>
+  decenter_begin 448
+  decenter_end 449
+  from ref 128002 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 128386 -_-_
+  from ref 128002 z 2001 to ref 128258
+line 128514 -_-_ decenter_end 585
+  from ref 128258 z 2001 to ref 128130
+line 128898 -_-_ decenter_end 483
+  from ref 128642 z 2001 to ref 128770
+end

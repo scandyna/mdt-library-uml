@@ -1,0 +1,25 @@
+format 221
+
+classcanvas 128002 class_ref 5282306 // EntityName
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 381.5 2000
+end
+classcanvas 128130 class_ref 5282434 // FieldName
+  classdiagramsettings member_max_width 0 end
+  xyz 529.5 40.5 2000
+end
+classcanvas 128258 class_ref 5317762 // SelectField
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+classcanvas 128386 class_ref 5941890 // XXXX
+  classdiagramsettings member_max_width 0 end
+  xyz 41 217 2000
+end
+note 128514 "const auto person = entityName<PersonDef>();
+
+const auto personId = selectField<PersonDef, PersonDef::id>();"
+  xyzwh 265 217 2000 519 89
+line 128642 -_-_
+  from ref 128386 z 2001 to ref 128514
+end

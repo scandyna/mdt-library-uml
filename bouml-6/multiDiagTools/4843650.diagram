@@ -1,0 +1,52 @@
+format 221
+
+classcanvas 128002 class_ref 5675650 // Person
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 272 128 2000
+end
+classcanvas 128130 class_ref 5675778 // PersonDef
+  classdiagramsettings member_max_width 0 end
+  xyz 129 36 2000
+end
+classcanvas 128258 class_ref 5675522 // PersonDataStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 106 113 2006
+end
+classcanvas 128642 class_ref 5940354 // id
+  classdiagramsettings member_max_width 0 end
+  xyz 250 36 2006
+end
+classcanvas 128898 class_ref 5940482 // name
+  classdiagramsettings member_max_width 0 end
+  xyz 41 36 2006
+end
+classcanvas 129794 class_ref 5941762 // ReflectField
+  classdiagramsettings member_max_width 0 end
+  xyz 215 292 2000
+end
+classcanvas 129922 class_ref 5940610 // Reflect
+  classdiagramsettings member_max_width 0 end
+  xyz 42 265 2000
+end
+relationcanvas 128386 relation_ref 6174082 // <dependency>
+  from ref 128258 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 6173954 // <directional composition>
+  decenter_begin 585
+  decenter_end 549
+  from ref 128002 z 2007 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 128770 ---+
+  from ref 128642 z 2007 to ref 128130
+line 129026 ---+
+  from ref 128898 z 2007 to ref 128130
+relationcanvas 130050 relation_ref 6513922 // <dependency>
+  from ref 129922 z 2001 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

@@ -1,10 +1,12 @@
-format 214
+format 221
 "std" // std
-  revision 7
+  revision 8
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 214
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -30,9 +34,13 @@ format 214
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -297,9 +305,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -497,9 +509,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -540,9 +556,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -760,6 +780,78 @@ ${inlines}
 	    classrelation_ref 4907138 // <generalisation>
 	  b parent class_ref 4372226 // runtime_error
       end
+    end
+
+    class 5845122 "error_category"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 5845250 "error_condition"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 5845378 "error_code"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 5845506 "errc"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 end

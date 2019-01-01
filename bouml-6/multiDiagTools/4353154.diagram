@@ -1,16 +1,16 @@
-format 220
+format 221
 
 classcanvas 132482 class_ref 5318274 // EntitySelectStatement
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 521 192 2005
+  xyz 515.4 467.1 2005
 end
 classcanvas 133506 class_ref 5642114 // ChooseVehicleTypeClassCache
   classdiagramsettings member_max_width 0 end
-  xyz 41 128 2000
+  xyz 39.3 417.15 2000
 end
 classcanvas 133634 class_ref 5567874 // AbstractAsyncReadOnlyCache
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 122 42 2006
+  xyz 114.3 335.7 2006
 end
 note 133890 "The cached query is interesting.
 Should work on it to:
@@ -24,9 +24,24 @@ Needs to implement approx 3 methods, but is much more flexible:
  - No select query factory constraint
  --> Can make the cache shared via a simple std::shared_ptr
  - The statement is visible in the same class"
-  xyzwh 40.5 400.5 2000 521 257
+  xyzwh 40.5 657.6 2000 521 257
+classcanvas 135810 class_ref 5554306 // AbstractReadOnlyCachedTableModel
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 930.05 220.9 2000
+end
+classcanvas 136066 class_ref 5852034 // ChooseVehicleTypeClassTableModel
+  classdiagramsettings member_max_width 0 end
+  xyz 377.45 187.9 2000
+end
+note 136450 "NOTE: schould not create a ne model, but use EditVehicleTypeClassModel.
+
+Or, it should be a proxy model"
+  xyzwh 430.4 41.3 2000 401 105
+classcanvas 136706 class_ref 5852162 // ChooseVehicleTypeClassProxyModel
+  classdiagramsettings member_max_width 0 end
+  xyz 873.35 73.3 2000
+end
 relationcanvas 133762 relation_ref 6146818 // <generalisation>
-  decenter_begin 507
   from ref 133506 z 2007 to ref 133634
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -36,4 +51,18 @@ relationcanvas 135682 relation_ref 6160258 // <directional composition>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 136194 relation_ref 6418562 // <generalisation>
+  from ref 136066 z 2001 to ref 135810
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136322 relation_ref 6418690 // <directional composition>
+  from ref 136066 z 2006 to ref 132482
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 136578 -_-_
+  from ref 136066 z 2001 to ref 136450
+line 136834 -_-_
+  from ref 136450 z 2001 to ref 136706
 end

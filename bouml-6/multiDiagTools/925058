@@ -1,0 +1,1037 @@
+format 221
+"TaskList" // Mdt::Railway::TaskList
+  revision 9
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2491138 "Domain"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4810498 "RW_TaskList_overview"
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+      size A4
+    end
+
+    class 5919874 "TrainType"
+      visibility package stereotype "entity"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6518786 // <directional aggregation>
+	relation 6487298 o-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 6518786 // <directional aggregation>
+	  b parent class_ref 5885570 // VehicleType
+      end
+
+      attribute 4408834 "Name"
+	private explicit_type ""
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4408962 "Alias"
+	private explicit_type ""
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4409090 "ManufacturerSerie"
+	private explicit_type ""
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    classdiagram 4796802 "RW_TL_VehicleType"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5885570 "VehicleType"
+      visibility package stereotype "entity"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6484610 // <directional aggregation>
+	relation 6453122 o-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
+"
+	    classrelation_ref 6484610 // <directional aggregation>
+	  b parent class_ref 5885698 // Place
+      end
+
+      attribute 4388482 "Name"
+	private explicit_type ""
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4388610 "Alias"
+	private explicit_type ""
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4388738 "ManufacturerSerie"
+	private explicit_type ""
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 8015362 "VehicleType"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "name" type class_ref 5898882 // VehicleTypeName
+	  param in name "serie" explicit_type ""
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8056834 "name"
+	public return_type class_ref 161026 // QString
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8036482 "operator=="
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5885698 "Place"
+      visibility package stereotype "entity"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 4810626 "RW_TL_Task"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5899650 "Task"
+      visibility package stereotype "entity"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 4810754 "RW_TL_Project"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5899778 "Project"
+      visibility package stereotype "entity"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+  classview 2504450 "UseCase"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4817282 "RW_TL_GetAllVehicleTypes"
+      classdiagramsettings member_max_width 0 end
+      size A4-Landscape
+    end
+
+    class 5906306 "GetAllVehicleTypes"
+      visibility package stereotype "interactor"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6505090 // <dependency>
+	relation 6473602 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6505090 // <dependency>
+	  b parent class_ref 5906434 // GetAllVehicleTypesRecord
+      end
+
+      operation 8028802 "execute"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8028930 "newRecordFetched"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "record" type class_ref 5906434 // GetAllVehicleTypesRecord
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6505218 // <generalisation>
+	relation 6473730 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6505218 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 6505602 // <unidirectional association>
+	relation 6474114 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 6505602 // <unidirectional association>
+	  b parent class_ref 5892226 // VehicleTypeRepository
+      end
+
+      classrelation 6512130 // <dependency>
+	relation 6480642 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6512130 // <dependency>
+	  b parent class_ref 5912962 // GetAllVehicleTypesError
+      end
+    end
+
+    class 5906434 "GetAllVehicleTypesRecord"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4401922 "id"
+	public type class_ref 161154 // QVariant
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4402050 "name"
+	public type class_ref 161154 // QVariant
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4402178 "alias"
+	public type class_ref 161154 // QVariant
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4402306 "manufacturerSerie"
+	public type class_ref 161154 // QVariant
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 5912962 "GetAllVehicleTypesError"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 4810114 "RW_TL_CreateVehicleType"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 5899394 "CreateVehicleTypeRequest"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 5899522 "CreateVehicleTypeResponse"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 5899010 "CreateVehicleType"
+      visibility package stereotype "interactor"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl ""
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6497666 // <dependency>
+	relation 6466178 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6497666 // <dependency>
+	  b parent class_ref 5899522 // CreateVehicleTypeResponse
+      end
+
+      classrelation 6497794 // <dependency>
+	relation 6466306 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6497794 // <dependency>
+	  b parent class_ref 5899394 // CreateVehicleTypeRequest
+      end
+
+      classrelation 6498306 // <unidirectional association>
+	relation 6466818 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 6498306 // <unidirectional association>
+	  b parent class_ref 5892226 // VehicleTypeRepository
+      end
+
+      classrelation 6498434 // <unidirectional association>
+	relation 6466946 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 6498434 // <unidirectional association>
+	  b parent class_ref 5885570 // VehicleType
+      end
+
+      operation 8022274 "CreateVehicleType"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "repository" type class_ref 5892226 // VehicleTypeRepository
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2497666 "Repository"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4803330 "VehicleTypeRepository"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5892226 "VehicleTypeRepository"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8015490 "add"
+	abstract cpp_virtual public return_type class_ref 5471618 // VehicleTypeId
+	nparams 1
+	  param in name "vehicle" type class_ref 5885570 // VehicleType
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 8015618 "getById"
+	abstract cpp_virtual public return_type class_ref 5885570 // VehicleType
+	nparams 1
+	  param in name "id" type class_ref 5471618 // VehicleTypeId
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 8056962 "getAllAsync"
+	abstract cpp_virtual public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 8015746 "remove"
+	abstract cpp_virtual public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 8057346 "lastError"
+	abstract cpp_virtual public return_type class_ref 182402 // Error
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6498562 // <dependency>
+	relation 6467074 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6498562 // <dependency>
+	  b parent class_ref 5885570 // VehicleType
+      end
+
+      classrelation 6531970 // <generalisation>
+	relation 6500482 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6531970 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 8057090 "newVehicleTypeFetched"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "v" type class_ref 5885570 // VehicleType
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2497794 "Repository_Sql"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4803458 "SqlVehicleTypeRepository"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5892354 "SqlVehicleTypeRepository"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6491138 // <generalisation>
+	relation 6459650 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6491138 // <generalisation>
+	  b parent class_ref 5892226 // VehicleTypeRepository
+      end
+    end
+  end
+
+  classview 2504706 "ItemModel"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4810370 "RW_TL_EditVehicleTypeTableModel"
+      classdiagramsettings member_max_width 0 end
+      size Legal-Landscape
+    end
+
+    class 5899266 "EditVehicleTypeTableModel"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6497922 // <dependency>
+	relation 6466434 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6497922 // <dependency>
+	  b parent class_ref 5899394 // CreateVehicleTypeRequest
+      end
+
+      classrelation 6498050 // <dependency>
+	relation 6466562 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6498050 // <dependency>
+	  b parent class_ref 5899522 // CreateVehicleTypeResponse
+      end
+
+      classrelation 6505346 // <dependency>
+	relation 6473858 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6505346 // <dependency>
+	  b parent class_ref 5906434 // GetAllVehicleTypesRecord
+      end
+
+      operation 8029442 "columnCount"
+	public explicit_return_type "int"
+	nparams 1
+	  param in name "parent" type class_ref 147330 // QModelIndex
+	    defaultvalue "QModelIndex()"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8029570 "idColumn"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8029698 "nameColumn"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8029826 "aliasColumn"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8029954 "manufacturerSerieColumn"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8029186 "fetchAllRequested"
+	stereotype "signal"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8029058 "onNewRecordFetched"
+	stereotype "slot"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "record" type class_ref 5906434 // GetAllVehicleTypesRecord
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6505474 // <generalisation>
+	relation 6473986 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6505474 // <generalisation>
+	  b parent class_ref 5165698 // AbstractEditableCachedTableModel
+      end
+
+      operation 8029314 "horizontalHeaderDisplayRoleData"
+	cpp_virtual private return_type class_ref 161154 // QVariant
+	nparams 1
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2504578 "Gui_Widgets"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4810242 "RW_TL_EditVehicleTypeWindow"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5899138 "EditVehicleTypeWindow"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6498178 // <directional composition>
+	relation 6466690 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6498178 // <directional composition>
+	  b parent class_ref 5899266 // EditVehicleTypeTableModel
+      end
+    end
+  end
+
+  classview 2517890 "Server"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+  end
+end

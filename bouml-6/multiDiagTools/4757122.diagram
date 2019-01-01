@@ -2,14 +2,22 @@ format 221
 
 componentcanvas 128002 component_ref 128002 // TaskListClient
   
-  xyzwh 211 116 2000 167 57
+  xyzwh 199 121 2000 167 57
 end
 componentcanvas 128130 component_ref 128130 // VehicleType
   
-  xyzwh 224 295 2000 167 57
+  xyzwh 291 315 2000 167 57
 end
 componentcanvas 128258 component_ref 128258 // TaskListServer
   
-  xyzwh 208 204 2005 167 57
+  xyzwh 127 425 2005 167 57
 end
+arrowjunctioncanvas 128386 class_ref 5831938 // TaskListClientReq
+  xyz 79 141 3005 label_xy 35 160
+arrowjunctioncanvas 128642 class_ref 5832066 // TaskListProvides
+  xyz 473 138 3005 label_xy 432 157
+line 128514 ---(
+  from ref 128002 z 3006 to ref 128386
+line 128770 ---O
+  from ref 128002 z 3006 to ref 128642
 end

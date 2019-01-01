@@ -1,0 +1,11 @@
+format 221
+
+classcanvas 128002 class_ref 5941250 // SqlUniqueConstraint
+  classdiagramsettings member_max_width 0 end
+  xyz 402 89 2000
+end
+classcanvas 128130 class_ref 2775810 // Table
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 4 166 2000
+end
+end

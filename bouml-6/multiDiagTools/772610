@@ -1,6 +1,6 @@
 format 221
 "Container" // Mdt::Container
-  revision 31
+  revision 42
   modified_by 2 "philippe"
   // class settings
   
@@ -1924,7 +1924,7 @@ ${items}};
 	MysqlColumn
       end
 
-      attribute 4090882 "Deleting"
+      attribute 4090882 "Delete"
 	public type class_ref 5105026 // TableCacheOperation
 	cpp_decl "  ${name}${value},${comment}"
 	java_decl ""
@@ -1933,104 +1933,6 @@ ${items}};
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
-      end
-    end
-
-    class 5818626 "TableCacheTransactionState"
-      visibility package stereotype "enum"
-      cpp_decl "${comment}enum ${name} {
-${items}
-};
-"
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
-${items};
-${members}}
-"
-      php_decl "${comment}${visibility}final class ${name} {
-${items}}
-"
-      python_2_2 python_decl "class ${name}:
-${docstring}${members}
-"
-      idl_decl "${comment}enum ${name} {
-${items}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 4354562 "None"
-	public type class_ref 5818626 // TableCacheTransactionState
-	cpp_decl "  ${name}${value},${comment}"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4354690 "Pending"
-	public type class_ref 5818626 // TableCacheTransactionState
-	cpp_decl "  ${name}${value},${comment}"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4354818 "Failed"
-	public type class_ref 5818626 // TableCacheTransactionState
-	cpp_decl "  ${name}${value},${comment}"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-    end
-
-    class 5804930 "TableCacheTransaction"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 4327298 "Id"
-	private explicit_type "int"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      operation 7863682 "isNull"
-	public explicit_return_type "bool"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
       end
     end
 
@@ -2098,87 +2000,6 @@ ${inlines}
 
       operation 6916866 "operation"
 	public return_type class_ref 5105026 // TableCacheOperation
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      attribute 4340610 "TransactionId"
-	private explicit_type "int"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      classrelation 6430082 // <directional composition>
-	relation 6398594 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 6430082 // <directional composition>
-	  b parent class_ref 5818626 // TableCacheTransactionState
-      end
-
-      operation 7898370 "setTransactionPending"
-	public explicit_return_type "void"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7898626 "isTransactionPending"
-	public explicit_return_type "bool"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7898498 "setTransactionFailed"
-	public explicit_return_type "void"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7898754 "isTransactionFailed"
-	public explicit_return_type "bool"
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -2278,7 +2099,7 @@ ${inlines}
       end
 
       operation 6930690 "getRowsToAddToBackend"
-	cpp_inline public return_type class_ref 5811586 // TableCacheRowTransactionList
+	cpp_inline public return_type class_ref 3775490 // RowList
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -2293,7 +2114,7 @@ ${inlines}
       end
 
       operation 7905794 "getRowsToUpdateInBackend"
-	cpp_inline public return_type class_ref 5811586 // TableCacheRowTransactionList
+	cpp_inline public return_type class_ref 3775490 // RowList
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -2340,122 +2161,10 @@ ${inlines}
       operation 7863554 "getRowForTransaction"
 	public explicit_return_type "int"
 	nparams 1
-	  param in name "transaction" type class_ref 5804930 // TableCacheTransaction
+	  param in name "transaction" type class_ref 5804930 // TableCacheTask
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7871362 "createTransaction"
-	public return_type class_ref 5804930 // TableCacheTransaction
-	nparams 1
-	  param in name "row" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7878018 "getRowForTransaction"
-	public explicit_return_type "int"
-	nparams 1
-	  param in name "transaction" type class_ref 5804930 // TableCacheTransaction
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7891202 "setTransactionPendingForRow"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "row" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7891458 "setTransactionsPending"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "rt" type class_ref 5811586 // TableCacheRowTransactionList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7891074 "isTransactionPendingForRow"
-	public explicit_return_type "bool"
-	nparams 1
-	  param in name "row" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7884546 "setTransactionDoneForRow"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "row" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 7891330 "setTransactionFailedForRow"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "row" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2466,7 +2175,7 @@ ${inlines}
       end
 
       operation 7871490 "newRowTransaction"
-	public return_type class_ref 5811458 // TableCacheRowTransaction
+	public return_type class_ref 5811458 // TableCacheRowTask
 	nparams 1
 	  param in name "row" explicit_type "int"
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
@@ -2514,7 +2223,54 @@ ${inlines}
       end
     end
 
-    class 5811458 "TableCacheRowTransaction"
+    classdiagram 4776962 "TableCacheTrask"
+      classdiagramsettings member_max_width 0 end
+      size Legal-Landscape
+    end
+
+    class 5804930 "TableCacheTask"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4327298 "Id"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 7863682 "isNull"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 5811458 "TableCacheRowTask"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -2534,7 +2290,7 @@ ${inlines}
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	    classrelation_ref 6422914 // <directional composition>
-	  b parent class_ref 5804930 // TableCacheTransaction
+	  b parent class_ref 5804930 // TableCacheTask
       end
 
       attribute 4334082 "Row"
@@ -2565,7 +2321,7 @@ ${inlines}
       end
 
       operation 7871106 "transaction"
-	public return_type class_ref 5804930 // TableCacheTransaction
+	public return_type class_ref 5804930 // TableCacheTask
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -2595,7 +2351,7 @@ ${inlines}
       end
     end
 
-    class 5811586 "TableCacheRowTransactionList"
+    class 5811586 "TableCacheRowTaskList"
       visibility package stereotype "typedef" base_type class_ref 5811714 // Vector
       cpp_decl "${comment}typedef ${type} ${name};
 "
@@ -2613,7 +2369,7 @@ ${inlines}
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
 "
 	    classrelation_ref 6423170 // <directional composition>
-	  b parent class_ref 5811458 // TableCacheRowTransaction
+	  b parent class_ref 5811458 // TableCacheRowTask
       end
 
       classrelation 6423426 // <dependency>
@@ -2622,6 +2378,159 @@ ${inlines}
 	    cpp default "#include in source"
 	    classrelation_ref 6423426 // <dependency>
 	  b parent class_ref 5811714 // Vector
+      end
+    end
+
+    class 5865218 "TableCacheTaskMap"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6463234 // <directional composition>
+	relation 6431746 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 6463234 // <directional composition>
+	  b parent class_ref 5865346 // TableCacheTaskMapItem
+      end
+
+      operation 7967490 "beginRowTask"
+	public return_type class_ref 5811458 // TableCacheRowTask
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7968514 "beginRowTasks"
+	public return_type class_ref 5811586 // TableCacheRowTaskList
+	nparams 1
+	  param in name "rows" type class_ref 3775490 // RowList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7967234 "shiftRows"
+	public return_type class_ref 3775490 // RowList
+	nparams 2
+	  param in name "row" explicit_type "int"
+	  param in name "cout" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7967618 "getRowForTask"
+	public explicit_return_type "int"
+	nparams 1
+	  param in name "task" type class_ref 5804930 // TableCacheTask
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7968130 "setTaskDoneForRow"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7968258 "setTaskFailedForRow"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7968002 "isTaskPendingForRow"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7968386 "isTaskFailedForRow"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
       end
     end
 
@@ -2975,6 +2884,105 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+    end
+
+    class 5865346 "TableCacheTaskMapItem"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6463362 // <directional composition>
+	relation 6431874 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6463362 // <directional composition>
+	  b parent class_ref 5804930 // TableCacheTask
+      end
+
+      operation 7982338 "taskId"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7989122 "setPending"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7982466 "isPending"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7989250 "setFailed"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7982594 "isFailed"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
   end
 

@@ -1,6 +1,6 @@
 format 221
 "ItemEditor" // Mdt::ItemEditor
-  revision 261
+  revision 263
   modified_by 2 "philippe"
   // class settings
   
@@ -2047,6 +2047,114 @@ ${inlines}
 	    classrelation_ref 6396162 // <directional composition>
 	  b parent class_ref 3850498 // WidgetEditableProperty
       end
+
+      attribute 4368258 "Enabled"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4368386 "Editable"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 5858690 "MappedWidgetRelationalQComboBox"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6456706 // <generalisation>
+	relation 6425218 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6456706 // <generalisation>
+	  b parent class_ref 5791618 // MappedWidgetQComboBox
+      end
+
+      attribute 4368514 "ComboBoxModelValueColumn"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 7953666 "MappedWidgetRelationalQComboBox"
+	public explicit_return_type ""
+	nparams 3
+	  param in name "cb" type class_ref 505218 // QComboBox
+	  param in name "col" explicit_type "int"
+	  param in name "cbValueCol" explicit_type "int"
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7953410 "setWidgetValue"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 1
+	  param in name "value" type class_ref 161154 // QVariant
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 7953538 "widgetValue"
+	cpp_virtual public return_type class_ref 161154 // QVariant
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
 
     class 5791746 "MappedWidgetMyCustom"
@@ -2429,6 +2537,75 @@ ${inlines}
 	    cpp default "${type}"
 	    classrelation_ref 3634818 // <generalisation>
 	  b parent class_ref 138626 // QObject
+      end
+
+      class 5871874 "SubmitPolicy"
+	visibility package stereotype "enum"
+	cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+	java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+	php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+	python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+	idl_decl "${comment}enum ${name} {
+${items}};
+"
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 4375042 "AutoSubmit"
+	  public type class_ref 5871874 // SubmitPolicy
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 4375170 "ManualSubmit"
+	  public type class_ref 5871874 // SubmitPolicy
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+
+      class 5872002 "RowChangePermission"
+	visibility package stereotype "enum"
+	cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+	java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+	php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+	python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+	idl_decl "${comment}enum ${name} {
+${items}};
+"
+	explicit_switch_type ""
+	mysql_decl ""
+	
       end
 
       attribute 2988290 "CurrentRow"

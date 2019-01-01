@@ -1,0 +1,36 @@
+format 221
+
+classcanvas 128002 class_ref 5885570 // VehicleType
+  classdiagramsettings member_max_width 0 end
+  xyz 35 184 2000
+end
+classcanvas 129538 class_ref 5885698 // Place
+  classdiagramsettings member_max_width 0 end
+  xyz 179 376 2000
+end
+note 129794 "Aggregate Root"
+  xyzwh 400 239 2000 129 43
+classcanvas 130050 class_ref 5898882 // VehicleTypeName
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 40.5 512.5 2000
+end
+classcanvas 130306 class_ref 5919874 // TrainType
+  classdiagramsettings member_max_width 0 end
+  xyz 128 40 2006
+end
+relationcanvas 129666 relation_ref 6453122 // <directional aggregation>
+  from ref 128002 z 2001 to ref 129538
+  no_role_a no_role_b
+  multiplicity_a_pos 185 354 3000 no_multiplicity_b
+end
+relationcanvas 130434 relation_ref 6487298 // <directional aggregation>
+  from ref 130306 z 2007 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 129922 -_-_ decenter_end 581
+  from ref 128002 z 2001 to ref 129794
+line 130562 -_-_ geometry HV unfixed decenter_begin 533
+  from ref 130306 z 2007 to point 462 93
+  line 130818 z 2007 to ref 129794
+end

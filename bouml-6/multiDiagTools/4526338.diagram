@@ -1,0 +1,35 @@
+format 221
+
+classcanvas 128258 class_ref 5933442 // API
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 313.5 2000
+end
+classcanvas 128386 class_ref 5933570 // FieldAttributes
+  classdiagramsettings member_max_width 0 end
+  xyz 501.5 40.5 2000
+end
+note 128514 "MDT_REFLECT(PersonDataStruct, Person)
+MDT_XXX_SET_FIELD_ATTRIBUTES(Person::id, isPk)
+
+isFieldRequired<Person::id>();"
+  xyzwh 40.5 500.5 2000 399 87
+note 128642 "using PersonPrimaryKey = PrimaryKey<Person, Person::id>;"
+  xyzwh 40.5 667.5 2000 421 55
+note 128770 "Maybe:
+
+class Person
+{
+};
+
+MDT_REFLECT(
+  Person,
+  (id),
+  (firstName, firstName())
+)"
+  xyzwh 40.5 40.5 2000 381 193
+note 128898 "Remember:
+
+Reflection is done generating tuples !
+(actually..)"
+  xyzwh 313.5 313.5 2000 267 85
+end

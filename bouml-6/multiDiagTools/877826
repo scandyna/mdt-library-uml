@@ -1,6 +1,6 @@
-format 220
+format 221
 "Repository" // Mdt::Repository
-  revision 2
+  revision 3
   modified_by 2 "philippe"
   // class settings
   
@@ -30,7 +30,7 @@ format 220
   activitydiagramsettings
    end
   
-  classview 2377474 "Repository_Core"
+  classview 2377474 "Core_MemoryRepository"
     
     classdiagramsettings member_max_width 0 end
     

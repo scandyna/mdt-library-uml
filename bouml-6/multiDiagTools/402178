@@ -1,6 +1,6 @@
-format 220
+format 221
 "Sql" // Mdt::Sql
-  revision 118
+  revision 120
   modified_by 2 "philippe"
   // class settings
   
@@ -2595,7 +2595,7 @@ ${inlines}
     activitydiagramsettings
      end
     classdiagram 4572546 "Sql_AsyncQuery"
-      classdiagramsettings member_max_width 0 end
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
       size C-Landscape
     end
 
@@ -7609,4 +7609,92 @@ ${inlines}
       
     end
   end
+
+  classview 2531330 "Sql_Reflection"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4837122 "Reflection_Sql"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5933698 "API"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 5933826 "SqlAttributes"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8064642 "isFieldPartOfPrimaryKey"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8064770 "getPrimaryKey"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
 end

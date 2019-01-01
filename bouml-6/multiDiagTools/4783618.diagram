@@ -1,0 +1,15 @@
+format 221
+
+classcanvas 128002 class_ref 4803842 // PrimaryKeyRecord
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 275.5 2000
+end
+classcanvas 128130 class_ref 3830018 // PrimaryKeyRecord
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 462.5 2000
+end
+classcanvas 128258 class_ref 5226370 // PrimaryKeyRecord
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2005
+end
+end

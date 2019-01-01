@@ -1,10 +1,12 @@
-format 215
+format 221
 "Translation" // Mdt::Translation
-  revision 10
+  revision 11
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 215
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -30,9 +34,13 @@ format 215
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -796,9 +804,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     

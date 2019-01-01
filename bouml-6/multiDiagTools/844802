@@ -1,6 +1,6 @@
 format 221
 "QueryExpression" // Mdt::QueryExpression
-  revision 70
+  revision 72
   modified_by 2 "philippe"
   // class settings
   
@@ -3337,12 +3337,13 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      operation 7552514 "createSelectQuery"
-	cpp_virtual public return_type class_ref 5582082 // AbstractAsyncSelectQuery
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+      operation 7508866 "setup"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "cp" type class_ref 5601666 // ConnectionParameters
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -3352,13 +3353,12 @@ ${inlines}
 	
       end
 
-      operation 7508866 "setup"
-	public explicit_return_type "bool"
-	nparams 1
-	  param in name "cp" type class_ref 5601666 // ConnectionParameters
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+      operation 7552514 "createSelectQuery"
+	cpp_virtual public return_type class_ref 5582082 // AbstractAsyncSelectQuery
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -3637,5 +3637,91 @@ ${inlines}
     
     activitydiagramsettings
      end
+  end
+
+  classview 2531202 "QE_Reflection"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4844674 "QE_SelectStatement_Reflection"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5941890 "XXXX"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8072450 "entityName"
+	public return_type class_ref 5282306 // EntityName
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8072578 "fieldName"
+	public return_type class_ref 5282434 // FieldName
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8072706 "selectField"
+	public return_type class_ref 5317762 // SelectField
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
   end
 end

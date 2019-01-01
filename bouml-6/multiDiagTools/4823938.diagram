@@ -1,0 +1,16 @@
+format 221
+
+classcanvas 128002 class_ref 5919618 // Table
+  classdiagramsettings member_max_width 0 end
+  xyz 41 40 2000
+end
+classcanvas 128898 class_ref 5926530 // TableWithAutoId
+  classdiagramsettings member_max_width 0 end
+  xyz 86 257 2000
+end
+relationcanvas 129154 relation_ref 6493954 // <generalisation>
+  from ref 128898 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

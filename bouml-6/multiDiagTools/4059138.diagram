@@ -1,6 +1,6 @@
-format 219
+format 221
 
-classcanvas 128002 class_ref 4777090 // VehicleTypeTableModel
+classcanvas 128002 class_ref 4777090 // EditVehicleTypeTableModel
   classdiagramsettings member_max_width 0 end
   xyz 88 518.5 2000
 end
@@ -12,17 +12,9 @@ classcanvas 128258 class_ref 4639618 // RowResizableTableModel
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
   xyz 42 412.5 2005
 end
-classcanvas 128514 class_ref 4840066 // AbstractVehicleTypeRepository
-  classdiagramsettings member_max_width 0 end
-  xyz 131 273.25 2000
-end
 classcanvas 128642 class_ref 4860930 // EditVehicleType
   classdiagramsettings member_max_width 0 end
   xyz 39 41.5 2000
-end
-classcanvas 128898 class_ref 5274498 // VehicleType
-  classdiagramsettings member_max_width 0 end
-  xyz 457.5 281.25 2000
 end
 classcanvas 129026 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
@@ -32,31 +24,9 @@ classcanvas 129410 class_ref 4854018 // VehicleType
   classdiagramsettings member_max_width 0 end
   xyz 536 422.5 3005
 end
-relationcanvas 128386 relation_ref 5219970 // <generalisation>
-  from ref 128002 z 2006 to ref 128258
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 128770 relation_ref 5307650 // <unidirectional association>
-  from ref 128642 z 2001 to ref 128514
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 129154 relation_ref 5692802 // <generalisation>
-  from ref 128898 z 2001 to ref 129026
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 129282 relation_ref 5700226 // <unidirectional association>
-  decenter_begin 422
-  decenter_end 442
-  from ref 128898 z 2001 to ref 128514
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
 relationcanvas 129538 relation_ref 5291650 // <association>
   from ref 128130 z 3006 to ref 129410
   no_role_a no_role_b
-  multiplicity_a_pos 520 470 3000 no_multiplicity_b
+  multiplicity_a_pos 520 462 3000 no_multiplicity_b
 end
 end
