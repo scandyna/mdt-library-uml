@@ -1,9 +1,39 @@
 format 221
 
-classcanvas 128002 class_ref 5941122 // UniqueConstraint
+classcanvas 128002 class_ref 5941122 // UniqueConstraintAlgorithm
   classdiagramsettings member_max_width 0 end
-  xyz 118 167 2000
+  xyz 39 122 2000
 end
-note 128130 "using PersonUniqueConstraint = UniqueConstraint<PersonDef, PersonDef::firstName, PersonDef::lastName>;"
-  xyzwh 45 283 2000 703 113
+note 128130 "using PersonUniqueConstraint = UniqueConstraint<PersonDef::firstName, PersonDef::lastName>;
+"
+  xyzwh 38.5 263.5 2000 625 51
+classcanvas 128258 class_ref 5955202 // UniqueConstraint
+  classdiagramsettings member_max_width 0 end
+  xyz 266 124 2000
+end
+classcanvas 128514 class_ref 6002050 // UniqueConstrainTag
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 167 40 2000
+end
+classcanvas 128642 class_ref 6002178 // IsUniqueConstraint
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 527 40 2000
+end
+relationcanvas 128386 relation_ref 6527490 // <dependency>
+  from ref 128002 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 6554242 // <generalisation>
+  from ref 128258 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 6554370 // <dependency>
+  decenter_begin 585
+  decenter_end 585
+  from ref 128642 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 end

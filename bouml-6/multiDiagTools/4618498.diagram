@@ -14,7 +14,7 @@ classcanvas 128386 class_ref 5675778 // PersonDef
 end
 note 128642 "Generated via MDT_REFLECT()"
   xyzwh 163 46 2000 271 51
-classcanvas 128898 class_ref 5675906 // Field
+classcanvas 128898 class_ref 5675906 // FieldAlgorithm
   classdiagramsettings member_max_width 0 end
   xyz 529 140 2000
 end
@@ -27,7 +27,7 @@ note 129410 "See how Boost.Fusion works, and avoid having current dependecies pr
 See if, f.ex. it is possible to:
 bool serialize(Person p);
 "
-  xyzwh 68 289 2000 571 91
+  xyzwh 95 619 2000 571 91
 note 129666 "In the implementation which needs informations (f.ex. SQL repository), ........"
   xyzwh 77 399 2000 557 55
 note 129794 "C++ stdanards, see:
@@ -43,11 +43,6 @@ relationcanvas 128514 relation_ref 6174082 // <dependency>
   from ref 128002 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 129026 relation_ref 6174210 // <directional composition>
-  from ref 128386 z 2001 to ref 128898
-  no_role_a no_role_b
-  multiplicity_a_pos 513 179 3000 no_multiplicity_b
 end
 relationcanvas 129282 relation_ref 6174338 // <dependency>
   from ref 128002 z 2001 to ref 129154

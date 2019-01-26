@@ -4,4 +4,9 @@ classcanvas 128002 class_ref 5940610 // ReflectStruct
   classdiagramsettings member_max_width 0 end
   xyz 40.5 40.5 2000
 end
+note 128130 "Idealy:
+Fin d a way to get StructDef from Struct.
+
+Note; generating functions from macros seems not possible.."
+  xyzwh 40 236 2000 511 113
 end

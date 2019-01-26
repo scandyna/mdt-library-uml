@@ -2,34 +2,33 @@ format 221
 
 classcanvas 128002 class_ref 5885570 // VehicleType
   classdiagramsettings member_max_width 0 end
-  xyz 150 40 2000
+  xyz 154 132 2000
 end
 classcanvas 128130 class_ref 5885698 // Place
   classdiagramsettings member_max_width 0 end
-  xyz 171 136 2006
+  xyz 315 138 2006
 end
 classcanvas 128386 class_ref 5899650 // Task
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 272.5 2000
+  xyz 173.5 264.5 2000
 end
 classcanvas 128514 class_ref 5899778 // Project
   classdiagramsettings member_max_width 0 end
-  xyz 157.5 272.5 2000
+  xyz 40.5 264.5 2000
 end
 classcanvas 128642 class_ref 5919874 // TrainType
   classdiagramsettings member_max_width 0 end
-  xyz 41 40 2000
+  xyz 41 132 2000
 end
 relationcanvas 128258 relation_ref 6453122 // <directional aggregation>
+  decenter_end 395
   from ref 128002 z 2007 to ref 128130
   no_role_a no_role_b
-  multiplicity_a_pos 177 114 3000 no_multiplicity_b
+  multiplicity_a_pos 299 168 3000 no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 6487298 // <directional aggregation>
-  decenter_begin 561
-  decenter_end 561
   from ref 128642 z 2001 to ref 128002
   no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
+  multiplicity_a_pos 138 168 3000 no_multiplicity_b
 end
 end

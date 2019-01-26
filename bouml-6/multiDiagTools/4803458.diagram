@@ -30,6 +30,6 @@ end
 relationcanvas 128770 relation_ref 6453122 // <directional aggregation>
   from ref 128386 z 2013 to ref 128642
   no_role_a no_role_b
-  multiplicity_a_pos 620 104 3000 no_multiplicity_b
+  multiplicity_a_pos 617 104 3000 no_multiplicity_b
 end
 end

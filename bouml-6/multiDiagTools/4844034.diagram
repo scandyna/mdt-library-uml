@@ -2,40 +2,68 @@ format 221
 
 classcanvas 128002 class_ref 5940738 // PrimaryKeyAlgorithm
   classdiagramsettings member_max_width 0 end
-  xyz 39 132 2000
+  xyz 303 256 2000
 end
-classcanvas 128130 class_ref 5940866 // UniqueId
+classcanvas 128130 class_ref 5940866 // IdPrimaryKey
   classdiagramsettings member_max_width 0 end
-  xyz 98 240 2000
+  xyz 175 160 2000
 end
 classcanvas 128386 class_ref 5948546 // PrimaryKey
   classdiagramsettings member_max_width 0 end
-  xyz 89 40 2000
+  xyz 181 264 2000
 end
 note 129026 "The magic:
 
 Each variant of PK uses:
 using StructDef = ...
 using FieldList = ..."
-  xyzwh 40.5 376.5 2000 417 101
-classcanvas 129154 class_ref 5948674 // AutoIncrementUniqueId
+  xyzwh 40.5 496.5 2000 417 101
+classcanvas 129154 class_ref 5948674 // AutoIncrementIdPrimaryKey
   classdiagramsettings member_max_width 0 end
-  xyz 255 140 2005
+  xyz 40 360 2005
+end
+classcanvas 129410 class_ref 5975682 // PrimaryKeyClassTag
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 62 40 2000
 end
 relationcanvas 128642 relation_ref 6520578 // <dependency>
-  decenter_end 448
+  decenter_begin 438
+  decenter_end 421
   from ref 128002 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128898 relation_ref 6520834 // <dependency>
-  decenter_end 434
-  from ref 128002 z 2001 to ref 128130
+  geometry VH unfixed
+  decenter_end 421
+  from ref 128002 z 2001 to point 390 181
+  line 130178 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129282 relation_ref 6520962 // <dependency>
-  from ref 128002 z 2006 to ref 129154
+  geometry VH unfixed
+  decenter_end 421
+  from ref 128002 z 2006 to point 390 381
+  line 130434 z 2006 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129538 relation_ref 6534402 // <generalisation>
+  from ref 128130 z 2001 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 6534530 // <generalisation>
+  geometry VHV unfixed
+  from ref 129154 z 2006 to point 134 120
+  line 130562 z 2006 to point 222 120
+  line 130690 z 2006 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 6534658 // <generalisation>
+  from ref 128386 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -1,6 +1,6 @@
 format 221
 "Sql" // Mdt::Sql
-  revision 120
+  revision 123
   modified_by 2 "philippe"
   // class settings
   
@@ -33,6 +33,8 @@ format 221
   package_ref 601986 // Expression
 
   package_ref 858242 // QueryExpression
+
+  package_ref 958082 // Reflection
 
   package_ref 443522 // Schema
 
@@ -7635,22 +7637,6 @@ ${inlines}
       size A4
     end
 
-    class 5933698 "API"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-    end
-
     class 5933826 "SqlAttributes"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
@@ -7696,5 +7682,4 @@ ${inlines}
       end
     end
   end
-
 end

@@ -1,11 +1,11 @@
 format 221
 
-classcanvas 128002 class_ref 5941762 // ReflectStructMember
+classcanvas 128002 class_ref 5941762 // ReflectField
   classdiagramsettings member_max_width 0 end
-  xyz 134 108 2000
+  xyz 43.5 42.5 2000
 end
-classcanvas 128130 class_ref 5675906 // Field
+classcanvas 128130 class_ref 5675906 // FieldAlgorithm
   classdiagramsettings member_max_width 0 end
-  xyz 144 268 2000
+  xyz 43.5 138.5 2000
 end
 end

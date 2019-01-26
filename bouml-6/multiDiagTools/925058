@@ -1,6 +1,6 @@
 format 221
 "TaskList" // Mdt::Railway::TaskList
-  revision 9
+  revision 12
   modified_by 2 "philippe"
   // class settings
   
@@ -71,8 +71,8 @@ ${inlines}
       
       classrelation 6518786 // <directional aggregation>
 	relation 6487298 o-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
 "
 	    classrelation_ref 6518786 // <directional aggregation>
 	  b parent class_ref 5885570 // VehicleType
@@ -308,7 +308,7 @@ ${inlines}
      end
     classdiagram 4817282 "RW_TL_GetAllVehicleTypes"
       classdiagramsettings member_max_width 0 end
-      size A4-Landscape
+      size Legal-Landscape
     end
 
     class 5906306 "GetAllVehicleTypes"

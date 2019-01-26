@@ -2,25 +2,25 @@ format 221
 
 classcanvas 128002 class_ref 5906306 // GetAllVehicleTypes
   classdiagramsettings member_max_width 0 end
-  xyz 365.5 118.5 2000
+  xyz 391.5 183.5 2000
 end
 classcanvas 128130 class_ref 5906434 // GetAllVehicleTypesRecord
   classdiagramsettings member_max_width 0 end
-  xyz 506.5 247 2000
+  xyz 152.25 175.5 2000
 end
 classcanvas 128386 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 573.5 39.5 2000
+  xyz 1074 39.5 2000
 end
 note 128642 "Should benchmark to see if conversions are a real overhead"
-  xyzwh 39.5 268.75 2000 431 57
+  xyzwh 39.5 320.75 2000 431 57
 classcanvas 128898 class_ref 5892226 // VehicleTypeRepository
   classdiagramsettings member_max_width 0 end
-  xyz 886 119.5 2000
+  xyz 911 157.5 2000
 end
 classcanvas 129154 class_ref 5912962 // GetAllVehicleTypesError
   classdiagramsettings member_max_width 0 end
-  xyz 158.5 143.5 2000
+  xyz 548.5 312.5 2000
 end
 relationcanvas 128258 relation_ref 6473602 // <dependency>
   from ref 128002 z 2001 to ref 128130
@@ -28,7 +28,10 @@ relationcanvas 128258 relation_ref 6473602 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 6473730 // <generalisation>
-  from ref 128002 z 2001 to ref 128386
+  geometry VHV unfixed
+  from ref 128002 z 2001 to point 629 118
+  line 129538 z 2001 to point 1104 118
+  line 129666 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -47,6 +50,6 @@ relationcanvas 129410 relation_ref 6500482 // <generalisation>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 128770 -_-_ decenter_end 561
+line 128770 -_-_ decenter_begin 517
   from ref 128130 z 2001 to ref 128642
 end

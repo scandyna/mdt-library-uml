@@ -1,0 +1,58 @@
+format 221
+
+classcanvas 128130 class_ref 5968386 // IsReflectedStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 177.5 2000
+end
+classcanvas 128258 class_ref 5968514 // FieldTag
+  classdiagramsettings member_max_width 0 end
+  xyz 338 173 2000
+end
+classcanvas 128386 class_ref 5968642 // IsField
+  classdiagramsettings member_max_width 0 end
+  xyz 244 173 2000
+end
+classcanvas 128514 class_ref 5968770 // StructDefTag
+  classdiagramsettings member_max_width 0 end
+  xyz 161 294 2000
+end
+classcanvas 128642 class_ref 5968898 // IsStructDef
+  classdiagramsettings member_max_width 0 end
+  xyz 39 294 2000
+end
+classcanvas 128770 class_ref 5975426 // IsPrimaryKey
+  classdiagramsettings member_max_width 0 end
+  xyz 40 406 2000
+end
+classcanvas 128898 class_ref 5975554 // IsFieldAssociatedWithReflectedStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+classcanvas 129026 class_ref 5975682 // PrimaryKeyClassTag
+  classdiagramsettings member_max_width 0 end
+  xyz 178 406 2000
+end
+classcanvas 129538 class_ref 6002050 // UniqueConstrainTag
+  classdiagramsettings member_max_width 0 end
+  xyz 64 501 2000
+end
+classcanvas 129666 class_ref 6002178 // IsUniqueConstraint
+  classdiagramsettings member_max_width 0 end
+  xyz 257 629 2000
+end
+relationcanvas 129154 relation_ref 6534018 // <dependency>
+  from ref 128770 z 2001 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 6534146 // <dependency>
+  from ref 128642 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 6534274 // <dependency>
+  from ref 128386 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

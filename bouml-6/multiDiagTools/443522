@@ -1,6 +1,6 @@
 format 221
 "Schema" // Mdt::Sql::Schema
-  revision 142
+  revision 150
   modified_by 2 "philippe"
   // class settings
   
@@ -30,6 +30,8 @@ format 221
   activitydiagramsettings
    end
   
+  package_ref 951554 // Reflection
+
   package_ref 522754 // sandbox
 
   classview 1327234 "Overview"
@@ -952,11 +954,11 @@ ${inlines}
 	
       end
 
-      operation 4203522 "fieldTypeFromQMetaType"
-	abstract cpp_virtual public return_type class_ref 2774914 // FieldType
+      operation 8119426 "fieldTypeName"
+	abstract cpp_virtual public return_type class_ref 161026 // QString
 	nparams 1
-	  param in name "qmt" explicit_type "QMetaType::Type"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	  param in name "ft" type class_ref 2774914 // FieldType
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	
 	
@@ -964,11 +966,11 @@ ${inlines}
 	
       end
 
-      operation 4203778 "fieldTypeToQMetaType"
-	abstract cpp_virtual public explicit_return_type "QMetaType::Type"
+      operation 4167554 "fieldTypeFromString"
+	abstract cpp_virtual public return_type class_ref 2774914 // FieldType
 	nparams 1
-	  param in name "ft" type class_ref 2774914 // FieldType
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	  param in name "name" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	
 	
@@ -1052,18 +1054,6 @@ ${inlines}
 	abstract cpp_virtual public return_type class_ref 161026 // QString
 	nparams 1
 	  param in name "index" type class_ref 2782466 // Index
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
-      operation 4167554 "fieldTypeFromName"
-	abstract cpp_virtual public return_type class_ref 2774914 // FieldType
-	nparams 1
-	  param in name "name" type class_ref 161026 // QString
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	
@@ -1165,6 +1155,14 @@ ${inlines}
 	
 	
       end
+
+      classrelation 6579202 // <generalisation>
+	relation 6547714 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6579202 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
     end
 
     class 2796290 "DriverMySql"
@@ -1232,6 +1230,29 @@ ${inlines}
 	  a public
 	    cpp default "${type}"
 	    classrelation_ref 3270914 // <generalisation>
+	  b parent class_ref 2795906 // DriverImplementationInterface
+      end
+    end
+
+    class 5995522 "DriverGeneric"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6572674 // <generalisation>
+	relation 6541186 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6572674 // <generalisation>
 	  b parent class_ref 2795906 // DriverImplementationInterface
       end
     end
@@ -7619,7 +7640,7 @@ ${inlines}
     end
   end
 
-  classview 2531458 "Sql_Reflection"
+  classview 2531458 "Schema_Reflection"
     
     classdiagramsettings member_max_width 0 end
     
@@ -7639,7 +7660,7 @@ ${inlines}
     
     activitydiagramsettings
      end
-    classdiagram 4844802 "Sql_Reflection"
+    classdiagram 4844802 "Sql_Schema_Reflection"
       classdiagramsettings member_max_width 0 end
       size A4
     end
@@ -7712,33 +7733,15 @@ ${inlines}
 	    classrelation_ref 6551938 // <unidirectional association>
 	  b parent class_ref 4680706 // FieldTypeMap
       end
-    end
 
-    classdiagram 4844162 "Sql_Reflection_PrimaryKey"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 5940994 "ReflectionPrimaryKey"
-      visibility package stereotype "plainFunctions"
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
+      operation 8139522 "addForeignKeyFromRelationToTable"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "table" type class_ref 2775810 // Table
+	  param in name "fks" type class_ref 3450498 // ForeignKeySettings
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      operation 8072194 "fromReflected"
-	public return_type class_ref 2775554 // PrimaryKey
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -7747,35 +7750,11 @@ ${inlines}
 	
 	
       end
-
-      classrelation 6545026 // <dependency>
-	relation 6513538 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 6545026 // <dependency>
-	  b parent class_ref 2775554 // PrimaryKey
-      end
     end
 
     classdiagram 4844418 "Sql_Reflection_UniqueConstraint"
       classdiagramsettings member_max_width 0 end
       size A4
-    end
-
-    class 5941250 "ReflectionUniqueConstraint"
-      visibility package stereotype "plainFunctions"
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
     end
   end
 end

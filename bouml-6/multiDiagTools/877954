@@ -1,6 +1,6 @@
 format 221
 "Reflection" // Mdt::Reflection
-  revision 9
+  revision 21
   modified_by 2 "philippe"
   // class settings
   
@@ -30,6 +30,8 @@ format 221
   activitydiagramsettings
    end
   
+  package_ref 944898 // TypeTraits
+
   classview 2337922 "Core"
     
     classdiagramsettings member_max_width 0 end
@@ -60,59 +62,9 @@ format 221
       size A4
     end
 
-    classdiagram 4790146 "Reflection_Ideas"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    classdiagram 4526338 "Reflection_Base"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    classdiagram 4526466 "Reflection_ValueObject"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
     classdiagram 4843906 "Reflection_FieldAttributes"
       classdiagramsettings member_max_width 0 end
       size A4
-    end
-
-    class 5941378 "FieldRequired"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-    end
-
-    class 5941506 "FieldMaxLength"
-      visibility package 
-      nformals 1
-      formal name "Length" type "class" explicit_default_value ""
-        explicit_extends ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
     end
 
     class 5933570 "FieldAttributes"
@@ -165,7 +117,7 @@ ${inlines}
       size A4
     end
 
-    class 5941762 "ReflectStructMember"
+    class 5941762 "ReflectField"
       visibility package stereotype "plainFunctions"
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -195,7 +147,7 @@ ${inlines}
       end
     end
 
-    class 5675906 "Field"
+    class 5675906 "FieldAlgorithm"
       visibility package stereotype "plainFunctions"
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -209,7 +161,7 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      operation 8086018 "fieldQMetaType"
+      operation 8106370 "qmetaTypeFromField"
 	public explicit_return_type "QMetaType::Type"
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
@@ -224,7 +176,38 @@ ${inlines}
 	
       end
 
-      operation 8086146 "fieldName"
+      operation 8086146 "fieldNameAtFromStruct"
+	public explicit_return_type "char"
+	multiplicity "*"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8093186 "structFieldIndex"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8093314 "fieldNameFromStructDef"
 	public explicit_return_type "char"
 	multiplicity "*"
 	nparams 0
@@ -385,7 +368,43 @@ ${inlines}
 	  a public
 	    cpp default "#include in source"
 	    classrelation_ref 6545410 // <dependency>
-	  b parent class_ref 5941762 // ReflectStructMember
+	  b parent class_ref 5941762 // ReflectField
+      end
+    end
+
+    classdiagram 4851330 "Reflection_Struct"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5961730 "StructAlgorithm"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8099842 "nameFromStructDef"
+	public explicit_return_type "char"
+	multiplicity "*"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
       end
     end
 
@@ -401,6 +420,11 @@ ${inlines}
         explicit_extends ""
       formal name "FieldList..." type "class" explicit_default_value ""
         explicit_extends ""
+      nactuals 2
+      actual class class_ref 5940866 // IdPrimaryKey
+        rank 0 explicit_value ""
+      actual class class_ref 5940866 // IdPrimaryKey
+        rank 1 explicit_value ""
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -413,6 +437,13 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 6566146 // <generalisation>
+	relation 6534658 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6566146 // <generalisation>
+	  b parent class_ref 5940866 // IdPrimaryKey
+      end
     end
 
     class 5940738 "PrimaryKeyAlgorithm"
@@ -457,7 +488,7 @@ ${inlines}
 	  a public
 	    cpp default "#include in source"
 	    classrelation_ref 6552322 // <dependency>
-	  b parent class_ref 5940866 // UniqueId
+	  b parent class_ref 5940866 // IdPrimaryKey
       end
 
       classrelation 6552450 // <dependency>
@@ -465,11 +496,11 @@ ${inlines}
 	  a public
 	    cpp default "#include in source"
 	    classrelation_ref 6552450 // <dependency>
-	  b parent class_ref 5948674 // AutoIncrementUniqueId
+	  b parent class_ref 5948674 // AutoIncrementIdPrimaryKey
       end
     end
 
-    class 5940866 "UniqueId"
+    class 5940866 "IdPrimaryKey"
       visibility package 
       nformals 2
       formal name "StructDef" type "class" explicit_default_value ""
@@ -488,9 +519,16 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 6565890 // <generalisation>
+	relation 6534402 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6565890 // <generalisation>
+	  b parent class_ref 5975682 // PrimaryKeyClassTag
+      end
     end
 
-    class 5948674 "AutoIncrementUniqueId"
+    class 5948674 "AutoIncrementIdPrimaryKey"
       visibility package 
       nformals 2
       formal name "StructDef" type "class" explicit_default_value ""
@@ -509,14 +547,49 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 6566018 // <generalisation>
+	relation 6534530 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6566018 // <generalisation>
+	  b parent class_ref 5975682 // PrimaryKeyClassTag
+      end
     end
 
     classdiagram 4844290 "Reflection_UniqueConstraint"
       classdiagramsettings member_max_width 0 end
-      size A4
+      size A
     end
 
-    class 5941122 "UniqueConstraint"
+    class 5955202 "UniqueConstraint"
+      visibility package 
+      nformals 2
+      formal name "Struct" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "FieldList..." type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6585730 // <generalisation>
+	relation 6554242 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6585730 // <generalisation>
+	  b parent class_ref 6002050 // UniqueConstrainTag
+      end
+    end
+
+    class 5941122 "UniqueConstraintAlgorithm"
       visibility package stereotype "plainFunctions"
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -530,6 +603,13 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 6558978 // <dependency>
+	relation 6527490 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6558978 // <dependency>
+	  b parent class_ref 5955202 // UniqueConstraint
+      end
     end
 
     class 5676034 "PersonAttributes"
@@ -548,8 +628,16 @@ ${inlines}
       
     end
 
-    class 5933442 "API"
+    classdiagram 4877826 "Reflection_Relation"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6015362 "PrimaryStruct"
       visibility package 
+      nformals 1
+      formal name "Struct" type "class" explicit_default_value ""
+        explicit_extends ""
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -562,64 +650,83 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      operation 8064130 "typeName"
-	public explicit_return_type "string"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+    end
+
+    class 6015490 "RelationOneSideStruct"
+      visibility package 
+      nformals 1
+      formal name "Struct" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
 {
-  ${body}}
+${members}};
+${inlines}
 "
-	
-	
-	
-	
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6008706 "Relation"
+      visibility package 
+      nformals 2
+      formal name "PrimaryXYZ" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "...ForeignFields" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6599042 // <dependency>
+	relation 6567554 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6599042 // <dependency>
+	  b parent class_ref 6015490 // RelationOneSideStruct
       end
 
-      operation 8064258 "memberTypeName"
-	public explicit_return_type "string"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
+      classrelation 6599170 // <dependency>
+	relation 6567682 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6599170 // <dependency>
+	  b parent class_ref 6015362 // PrimaryStruct
       end
+    end
 
-      operation 8064898 "memberValue"
-	public explicit_return_type ""
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+    class 6008834 "RelationAlgorithm"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
 {
-  ${body}}
+${members}};
+${inlines}
 "
-	
-	
-	
-	
-      end
-
-      operation 8065026 "memberDefaultValue"
-	public explicit_return_type ""
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6592386 // <dependency>
+	relation 6560898 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6592386 // <dependency>
+	  b parent class_ref 6008706 // Relation
       end
     end
 
@@ -721,15 +828,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 6205698 // <directional composition>
-	relation 6174210 *-->
-	  a role_name "" multiplicity "*" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	    classrelation_ref 6205698 // <directional composition>
-	  b parent class_ref 5675906 // Field
-      end
-
       class 5940354 "id"
 	visibility package 
 	cpp_decl "${comment}${template}class ${name}${inherit}
@@ -765,9 +863,6 @@ ${inlines}
 
     class 5941634 "SomeFieldId"
       visibility package 
-      nactuals 1
-      actual class class_ref 5941506 // FieldMaxLength
-        rank 0 explicit_value ""
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -780,21 +875,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 6545154 // <generalisation>
-	relation 6513666 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 6545154 // <generalisation>
-	  b parent class_ref 5941506 // FieldMaxLength
-      end
-
-      classrelation 6545282 // <generalisation>
-	relation 6513794 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 6545282 // <generalisation>
-	  b parent class_ref 5941378 // FieldRequired
-      end
     end
   end
 end
