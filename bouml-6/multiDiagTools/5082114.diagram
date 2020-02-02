@@ -1,4 +1,4 @@
-format 221
+format 222
 
 classcanvas 128002 class_ref 5608834 // AbstractAsyncQueryThreadWorker
   classdiagramsettings member_max_width 0 end
@@ -47,7 +47,7 @@ relationcanvas 128642 relation_ref 6870018 // <generalisation>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129154 relation_ref 6870146 // <directional composition>
-  from ref 128130 z 2001 stereotype "<<map>>" xyz 1291.5 421.5 3000 to ref 129026
+  from ref 128130 z 2001 stereotype "<<map>>" xyz 1291 421 3000 to ref 129026
   no_role_a no_role_b
   multiplicity_a_pos 1305 420 3000 no_multiplicity_b
 end
