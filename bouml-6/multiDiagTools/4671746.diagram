@@ -1,15 +1,24 @@
-format 220
+format 221
 
 classcanvas 128002 class_ref 5601666 // ConnectionParameters
   classdiagramsettings member_max_width 0 end
-  xyz 408 35 2000
+  xyz 407 163 2000
 end
 classcanvas 128130 class_ref 5574786 // SQLiteConnectionParameters
   classdiagramsettings member_max_width 0 end
-  xyz 39 79 2006
+  xyz 39 163 2006
+end
+classcanvas 128386 class_ref 6209410 // SQLiteOpenMode
+  classdiagramsettings member_max_width 0 end
+  xyz 104 39 2012
 end
 relationcanvas 128258 relation_ref 6090242 // <dependency>
   from ref 128130 z 2007 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 6790530 // <directional composition>
+  from ref 128130 z 2013 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

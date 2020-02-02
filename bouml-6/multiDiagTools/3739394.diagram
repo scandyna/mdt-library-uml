@@ -1,12 +1,12 @@
-format 214
+format 221
 
 classcanvas 128002 class_ref 4372226 // runtime_error
   classdiagramsettings member_max_width 0 end
-  xyz 36 123 2000
+  xyz 71 207 2000
 end
 classcanvas 128130 class_ref 4372098 // exception
   classdiagramsettings member_max_width 0 end
-  xyz 48 40.5 2000
+  xyz 39 42 2000
 end
 relationcanvas 128258 relation_ref 4880642 // <generalisation>
   from ref 128002 z 2001 to ref 128130

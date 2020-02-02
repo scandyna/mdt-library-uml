@@ -1,0 +1,36 @@
+format 221
+
+classcanvas 128002 class_ref 6101762 // QueryField
+  classdiagramsettings member_max_width 0 end
+  xyz 169 42 2000
+end
+classcanvas 128130 class_ref 6088578 // QueryField
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 296 48 2000
+end
+classcanvas 128386 class_ref 6101890 // QueryEntity
+  classdiagramsettings member_max_width 0 end
+  xyz 41 130 2000
+end
+classcanvas 128514 class_ref 6088322 // QueryEntity
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 289 140 2006
+end
+relationcanvas 128258 relation_ref 6640642 // <dependency>
+  decenter_end 585
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 6627586 // <dependency>
+  decenter_begin 480
+  from ref 128130 z 2007 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 6640770 // <dependency>
+  from ref 128386 z 2007 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

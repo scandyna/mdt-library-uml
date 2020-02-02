@@ -1,24 +1,28 @@
-format 220
+format 221
 
 classcanvas 128002 class_ref 2994946 // UpdateQuery
   classdiagramsettings member_max_width 0 end
-  xyz 437.25 308 2000
+  xyz 437.25 272 2000
 end
 classcanvas 128258 class_ref 5226242 // UpdateStatement
   classdiagramsettings member_max_width 0 end
-  xyz 40.75 300 2000
+  xyz 40.75 266 2000
 end
 classcanvas 129922 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 580 40.75 2011
+  xyz 580 39.5 2011
 end
 classcanvas 130690 class_ref 5227010 // AbstractQuery
   classdiagramsettings member_max_width 0 end
-  xyz 488 125 2017
+  xyz 489 117.5 2017
 end
 classcanvas 131074 class_ref 5226882 // OnUpdateFailureOperation
   classdiagramsettings member_max_width 0 end
-  xyz 121 127 2006
+  xyz 119 138 2006
+end
+classcanvas 131330 class_ref 6281474 // UpdateQueryAffectedRowsFailureMode
+  classdiagramsettings member_max_width 0 end
+  xyz 133.25 465.75 2000
 end
 relationcanvas 130178 relation_ref 5630210 // <directional composition>
   from ref 128002 z 2001 to ref 128258
@@ -37,7 +41,15 @@ relationcanvas 130946 relation_ref 5630850 // <generalisation>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131202 relation_ref 5630338 // <directional composition>
+  decenter_begin 509
   from ref 128258 z 2007 to ref 131074
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131458 relation_ref 6883586 // <directional composition>
+  decenter_begin 490
+  decenter_end 492
+  from ref 128002 z 2001 to ref 131330
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -1,19 +1,19 @@
-format 220
+format 221
 
 classcanvas 128002 class_ref 5601666 // ConnectionParameters
   classdiagramsettings member_max_width 0 end
-  xyz 408 35 2000
+  xyz 407 35 2000
 end
 classcanvas 128130 class_ref 5574786 // SQLiteConnectionParameters
   classdiagramsettings member_max_width 0 end
-  xyz 383 255 2006
+  xyz 431 225 2006
 end
 classcanvas 128386 class_ref 5574914 // MySqlConnectionParameters
   classdiagramsettings member_max_width 0 end
-  xyz 39 57 2012
+  xyz 39 53 2012
 end
 relationcanvas 128258 relation_ref 6090242 // <dependency>
-  decenter_begin 510
+  decenter_begin 486
   from ref 128130 z 2007 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b

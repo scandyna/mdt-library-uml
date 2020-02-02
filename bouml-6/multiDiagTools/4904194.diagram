@@ -1,0 +1,148 @@
+format 221
+
+classcanvas 128002 class_ref 5899266 // EditVehicleTypeTableModel
+  classdiagramsettings member_max_width 0 end
+  color gray
+  xyz 242.833 236.889 2000
+end
+classcanvas 128130 class_ref 5885570 // VehicleType
+  classdiagramsettings member_max_width 0 end
+  xyz 733.389 452.556 2000
+end
+classcanvas 128514 class_ref 5899394 // CreateVehicleTypeRequest
+  classdiagramsettings member_max_width 0 end
+  xyz 243.833 318.389 2006
+end
+classcanvas 128770 class_ref 5899522 // CreateVehicleTypeResponse
+  classdiagramsettings member_max_width 0 end
+  xyz 520.111 230.278 2006
+end
+classcanvas 129026 class_ref 5899010 // CreateVehicleType
+  classdiagramsettings member_max_width 0 end
+  color lightred
+  xyz 548.722 355.667 2012
+end
+classcanvas 129538 class_ref 5892226 // VehicleTypeRepository
+  classdiagramsettings member_max_width 0 end
+  color lightyellow
+  xyz 533.722 460.556 2018
+end
+classcanvas 129922 class_ref 5899138 // EditVehicleTypeWindow
+  classdiagramsettings member_max_width 0 end
+  color green
+  xyz 256.222 148.778 2006
+end
+classcanvas 130434 class_ref 5892354 // SqlVehicleTypeRepository
+  classdiagramsettings member_max_width 0 end
+  color lightyellow
+  xyz 527.111 548.667 2024
+end
+classcanvas 132226 class_ref 6041858 // CreateVehicleTypeError
+  classdiagramsettings member_max_width 0 end
+  xyz 40.3333 230.278 2018
+end
+classcanvas 132738 class_ref 6041986 // Presenter
+  classdiagramsettings member_max_width 0 end
+  color lightgreen
+  xyz 576.722 148.778 2000
+end
+classcanvas 132994 class_ref 6042114 // ViewModel
+  classdiagramsettings member_max_width 0 end
+  color lightgreen
+  xyz 454.111 148.778 2000
+end
+note 133506 "Flags, like:
+ - Button x/y enabled
+ - Text color"
+  xyzwh 423.5 41.8889 2000 149 65
+relationcanvas 128642 relation_ref 6466434 // <dependency>
+  decenter_begin 518
+  decenter_end 519
+  from ref 128002 z 2007 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 6466562 // <dependency>
+  decenter_end 442
+  from ref 128002 z 2007 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 6466178 // <dependency>
+  from ref 129026 z 2013 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 6466306 // <dependency>
+  decenter_begin 163
+  decenter_end 770
+  from ref 129026 z 2013 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 6466946 // <unidirectional association>
+  geometry HV unfixed
+  decenter_end 541
+  from ref 129026 z 2013 to point 776 383
+  line 134274 z 2013 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 6467074 // <dependency>
+  from ref 129538 z 2019 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 6466818 // <unidirectional association>
+  decenter_begin 527
+  decenter_end 522
+  from ref 129026 z 2019 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 6466690 // <directional composition>
+  decenter_end 518
+  from ref 129922 z 2007 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 6459650 // <generalisation>
+  decenter_end 522
+  from ref 130434 z 2025 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132354 relation_ref 6594178 // <dependency>
+  decenter_begin 836
+  from ref 129026 z 2019 to point 508 406
+  line 133890 z 2019 to point 508 420
+  line 134018 z 2019 to point 121 420
+  line 134146 z 2019 to ref 132226
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132482 relation_ref 6594306 // <dependency>
+  decenter_end 442
+  from ref 128002 z 2019 to ref 132226
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132866 relation_ref 6594434 // <dependency>
+  decenter_begin 547
+  from ref 132738 z 2007 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133122 relation_ref 6594562 // <dependency>
+  from ref 132738 z 2001 to ref 132994
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133762 relation_ref 6594690 // <dependency>
+  from ref 129922 z 2007 to ref 132994
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 133634 -_-_ decenter_end 476
+  from ref 132994 z 2001 to ref 133506
+end

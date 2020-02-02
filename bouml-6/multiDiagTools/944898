@@ -1,6 +1,6 @@
 format 221
 "TypeTraits" // Mdt::Reflection::TypeTraits
-  revision 4
+  revision 9
   modified_by 2 "philippe"
   // class settings
   
@@ -149,7 +149,7 @@ ${inlines}
       end
     end
 
-    class 5975426 "IsPrimaryKey"
+    class 5975426 "IsPrimaryKeyClass"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -246,6 +246,140 @@ ${inlines}
 	    classrelation_ref 6585858 // <dependency>
 	  b parent class_ref 6002050 // UniqueConstrainTag
       end
+    end
+
+    class 6048642 "IsStructDefAssociatedWithReflectedStruct"
+      visibility package 
+      nformals 2
+      formal name "StructDef" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Struct" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6048770 "IsAutoIncrementIdPrimaryKey"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6049154 "IsFieldStructDefAssociatedWithPrimaryKey"
+      visibility package 
+      nformals 2
+      formal name "Field" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Pk" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6068738 "IsReflectedStructAssociatedWithPrimaryKey"
+      visibility package 
+      nformals 2
+      formal name "Struct" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Pk" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6081794 "IsIdPrimaryKeyClass"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6134914 "IsPrimaryKeyRecord"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6711938 // <dependency>
+	relation 6680450 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6711938 // <dependency>
+	  b parent class_ref 6135042 // PrimaryKeyRecordTag
+      end
+    end
+
+    class 6135042 "PrimaryKeyRecordTag"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 end

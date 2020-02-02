@@ -1,0 +1,11 @@
+format 221
+
+classcanvas 128002 class_ref 5404290 // SqlTransform
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 76 58 2000
+end
+classcanvas 128130 class_ref 6095234 // QueryExpressionSqlTransform
+  classdiagramsettings member_max_width 0 end
+  xyz 70 437 2000
+end
+end

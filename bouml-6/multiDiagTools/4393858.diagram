@@ -1,4 +1,4 @@
-format 219
+format 221
 
 classcanvas 128130 class_ref 5317762 // SelectField
   classdiagramsettings member_max_width 0 end
@@ -83,7 +83,7 @@ relationcanvas 133250 relation_ref 5833090 // <directional composition>
   decenter_end 931
   from ref 132482 z 2007 to ref 128130
   no_role_a no_role_b
-  multiplicity_a_pos 629 274 3000 no_multiplicity_b
+  multiplicity_a_pos 629 252 3000 no_multiplicity_b
 end
 line 129794 -_-_ decenter_end 549
   from ref 128386 z 2001 to ref 129666

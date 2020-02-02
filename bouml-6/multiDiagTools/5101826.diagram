@@ -1,0 +1,24 @@
+format 222
+
+classcanvas 128002 class_ref 6255234 // Led
+  classdiagramsettings member_max_width 0 end
+  xyz 49.5 121.25 2000
+end
+classcanvas 128130 class_ref 316162 // QWidget
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 38.5 40.25 2006
+end
+classcanvas 129154 class_ref 6315778 // DrawBackend
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 242 2000
+end
+classcanvas 129282 class_ref 6315906 // LedWidget
+  classdiagramsettings member_max_width 0 end
+  xyz 187 109 2000
+end
+relationcanvas 128258 relation_ref 6903682 // <generalisation>
+  from ref 128002 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

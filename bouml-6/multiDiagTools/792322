@@ -1,6 +1,6 @@
 format 221
 "Railway" // Mdt::Railway
-  revision 158
+  revision 161
   modified_by 2 "philippe"
   // class settings
   
@@ -30,6 +30,10 @@ format 221
   activitydiagramsettings
    end
   
+  package_ref 984194 // VehicleTypeManagement
+
+  package_ref 898050 // EditVehicle
+
   classview 2504322 "VehicleTypeValueObjects"
     
     classdiagramsettings member_max_width 0 end
@@ -4124,8 +4128,6 @@ ${inlines}
     activitydiagramsettings
      end
   end
-
-  package_ref 898050 // EditVehicle
 
   package_ref 891010 // Maintenance
 

@@ -1,0 +1,7 @@
+format 221
+
+classcanvas 128002 class_ref 6168962 // QElapsedTimer
+  classdiagramsettings member_max_width 0 end
+  xyz 142 228 2000
+end
+end

@@ -1,10 +1,12 @@
-format 215
+format 221
 "Comm_Bus_sandbox" // Mdt::Comm_Bus_sandbox
-  revision 9
+  revision 10
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 215
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -30,9 +34,13 @@ format 215
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -407,22 +415,6 @@ ${inlines}
     classdiagram 3885954 "Wait_sandbox"
       classdiagramsettings member_max_width 0 end
       size A4
-    end
-
-    class 4508162 "Wait"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
     end
 
     classdiagram 3885826 "PortInterface_sandbox"

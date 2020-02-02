@@ -1,0 +1,16 @@
+format 221
+
+classcanvas 128130 class_ref 6195714 // AsyncQuery
+  classdiagramsettings member_max_width 0 end
+  xyz 144 254 2000
+end
+classcanvas 128386 class_ref 5608962 // AsyncQueryConnection
+  classdiagramsettings member_max_width 0 end
+  xyz 42 40 2006
+end
+relationcanvas 128770 relation_ref 6762242 // <dependency>
+  from ref 128130 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

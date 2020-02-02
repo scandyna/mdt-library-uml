@@ -1,0 +1,268 @@
+format 221
+"TestLib" // Mdt::Railway::TaskList::TestLib
+  revision 8
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2649858 "ResponseHandler"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5002882 "RW_TL_ResponseHandler"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6161538 "ResponseHandler"
+      visibility package 
+      nformals 2
+      formal name "Emitter" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Record" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6745218 // <generalisation>
+	relation 6713730 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6745218 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 8256898 "connectEmitter"
+	cpp_inline public explicit_return_type "void"
+	nparams 2
+	  param in name "e" explicit_type "Emitter"
+	  param in name "sig" explicit_type "Signal"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8257026 "recordCount"
+	cpp_inline public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8257154 "recordAt"
+	cpp_inline public explicit_return_type "Record"
+	nparams 1
+	  param in name "i" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8257282 "addRecord"
+	cpp_inline public explicit_return_type "void"
+	nparams 1
+	  param in name "rec" explicit_type "Record"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2643330 "Repositories"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4996354 "RW_TL_VehicleTypeRepositoryTestBase"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 6148482 "VehicleTypeRepositoryTestBase"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8243458 "addGetUpdateRemoveTest"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "repository" type class_ref 5892226 // VehicleTypeRepository
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6732162 // <dependency>
+	relation 6700674 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6732162 // <dependency>
+	  b parent class_ref 5892226 // VehicleTypeRepository
+      end
+    end
+
+    class 6155010 "VehicleTypeResponseHandler"
+      visibility package 
+      nactuals 2
+      actual class class_ref 6161538 // ResponseHandler
+        rank 0 explicit_value ""
+      actual class class_ref 6161538 // ResponseHandler
+        rank 1 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6738690 // <unidirectional association>
+	relation 6707202 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 6738690 // <unidirectional association>
+	  b parent class_ref 5892226 // VehicleTypeRepository
+      end
+
+      operation 8249986 "connectRepository"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "repo" type class_ref 5892226 // VehicleTypeRepository
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6745346 // <generalisation>
+	relation 6713858 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6745346 // <generalisation>
+	  b parent class_ref 6161538 // ResponseHandler
+      end
+    end
+  end
+end

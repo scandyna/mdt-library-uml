@@ -1,6 +1,6 @@
-format 221
+format 222
 "Mdt" // Mdt
-  revision 90
+  revision 104
   modified_by 2 "philippe"
   // class settings
   
@@ -1455,7 +1455,11 @@ ${inlines}
     end
   end
 
+  package_ref 403330 // Async
+
   package_ref 417026 // Audio
+
+  package_ref 1017346 // Automation
 
   classview 161666 "Error_Core"
     
@@ -1908,6 +1912,8 @@ ${items}};
 
   package_ref 401922 // ErrorLogger
 
+  package_ref 1030402 // Logger
+
   classview 854018 "Error_Widgets"
     
     classdiagramsettings member_max_width 0 end
@@ -2207,6 +2213,186 @@ ${members}};
 	
       end
     end
+
+    class 6168450 "ExpectedResultOk"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6168578 "ExpectedResult"
+      visibility package stereotype "typedef" explicit_base_type ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6752386 // <dependency>
+	relation 6720898 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6752386 // <dependency>
+	  b parent class_ref 6168450 // ExpectedResultOk
+      end
+
+      classrelation 6752514 // <dependency>
+	relation 6721026 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6752514 // <dependency>
+	  b parent class_ref 2859394 // Expected
+      end
+    end
+
+    classdiagram 5068930 "ExpectedOptional"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6248578 "ExpectedOptional"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+  classview 2695682 "Led"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5121666 "mdtLed_Legacy"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 5101826 "Led"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6255234 "Led"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6935170 // <generalisation>
+	relation 6903682 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6935170 // <generalisation>
+	  b parent class_ref 316162 // QWidget
+      end
+    end
+
+    class 6315906 "LedWidget"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 5102082 "Led_Designer"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6302338 "LedDesignerPlugin"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6935298 // <generalisation>
+	relation 6903810 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6935298 // <generalisation>
+	  b parent class_ref 6302210 // QDesignerCustomWidgetInterface
+      end
+    end
+
+    class 6315778 "DrawBackend"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
   end
 
   classview 2484226 "PrimaryKey"
@@ -2236,6 +2422,32 @@ ${members}};
 
     classdiagram 4783618 "PrimaryKeyRecord_Sandbox"
       classdiagramsettings member_max_width 0 show_context_mode uml end
+      size A4
+    end
+  end
+
+  classview 2584066 "UniqueId"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4923778 "UniqueId_sandbox"
+      classdiagramsettings show_members_context uml member_max_width 0 show_context_mode uml end
       size A4
     end
   end
@@ -2327,8 +2539,6 @@ ${inlines}
 
   package_ref 772610 // Container
 
-  package_ref 402946 // Device
-
   package_ref 430082 // Dsp
 
   package_ref 680706 // DeployUtils
@@ -2343,9 +2553,13 @@ ${inlines}
 
   package_ref 753026 // Entity
 
+  package_ref 1023874 // Frame
+
   package_ref 877826 // Repository
 
   package_ref 931842 // MemoryStore
+
+  package_ref 964610 // SqlStore
 
   package_ref 911746 // Storage
 
@@ -2391,13 +2605,9 @@ ${inlines}
 
   package_ref 402434 // Usb
 
-  package_ref 628354 // Usbtmc
-
   package_ref 674178 // UicNumber
 
   package_ref 402562 // Modbus
-
-  package_ref 403330 // Wait
 
   package_ref 726914 // TestLib
 

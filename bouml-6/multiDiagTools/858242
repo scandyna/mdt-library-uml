@@ -1,6 +1,6 @@
-format 219
+format 221
 "QueryExpression" // Mdt::Sql::QueryExpression
-  revision 1
+  revision 3
   modified_by 2 "philippe"
   // class settings
   

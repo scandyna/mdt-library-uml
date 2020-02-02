@@ -1,31 +1,29 @@
-format 219
+format 221
 
 classcanvas 128002 class_ref 5226242 // UpdateStatement
   classdiagramsettings member_max_width 0 end
-  xyz 290 184 2000
+  xyz 218 122 2000
 end
 classcanvas 128130 class_ref 3239682 // WhereExpression
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 410 434 2006
+  xyz 338 336 2006
 end
 classcanvas 128386 class_ref 5226882 // OnUpdateFailureOperation
   classdiagramsettings member_max_width 0 end
-  xyz 41 235 2006
+  xyz 617 131 2006
 end
 classcanvas 128642 class_ref 5226754 // FieldNameValueMap
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 690 186 2006
+  xyz 618 256 2006
 end
 classcanvas 128898 class_ref 5226370 // PrimaryKeyRecord
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 690 274 2012
+  xyz 330 40 2012
 end
 classcanvas 129154 class_ref 5240194 // StatementAlgorithm
-  classdiagramsettings member_max_width 0 end
-  xyz 248 39 2011
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 39 178 2011
 end
-note 129410 "TODO: see QSqlDriver::sqlStatement()"
-  xyzwh 278.5 497.5 2000 279 57
 relationcanvas 128258 relation_ref 5629954 // <directional composition>
   decenter_begin 509
   from ref 128002 z 2007 to ref 128130
@@ -33,25 +31,26 @@ relationcanvas 128258 relation_ref 5629954 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 5630338 // <directional composition>
+  decenter_begin 312
   from ref 128002 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 5638018 // <directional composition>
-  decenter_begin 114
+  decenter_begin 913
+  decenter_end 585
   from ref 128002 z 2007 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129026 relation_ref 5630466 // <dependency>
-  decenter_begin 535
+  decenter_begin 509
+  decenter_end 526
   from ref 128002 z 2013 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129282 relation_ref 5644546 // <unidirectional association>
-  decenter_begin 509
-  decenter_end 507
+relationcanvas 129282 relation_ref 5644546 // <dependency>
   from ref 128002 z 2012 to ref 129154
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b

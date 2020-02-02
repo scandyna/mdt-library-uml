@@ -18,7 +18,7 @@ classcanvas 128386 class_ref 5941890 // XXXX
 end
 note 128514 "const auto person = entityName<PersonDef>();
 
-const auto personId = selectField<PersonDef, PersonDef::id>();"
+const auto personId = selectField<PersonDef::id>();"
   xyzwh 265 217 2000 519 89
 line 128642 -_-_
   from ref 128386 z 2001 to ref 128514

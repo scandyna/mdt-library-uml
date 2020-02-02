@@ -1,6 +1,6 @@
 format 221
 "std" // std
-  revision 8
+  revision 11
   modified_by 2 "philippe"
   // class settings
   
@@ -852,6 +852,124 @@ ${items}};
       explicit_switch_type ""
       mysql_decl ""
       
+    end
+  end
+
+  classview 2656386 "chrono"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5009538 "std_chrono"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6168706 "duration"
+      visibility package 
+      nformals 2
+      formal name "Rep" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Period" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6168834 "ratio"
+      visibility package 
+      nformals 2
+      formal name "Num" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Denom" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6182146 "milliseconds"
+      visibility package stereotype "typedef" explicit_base_type ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6766594 // <dependency>
+	relation 6735106 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6766594 // <dependency>
+	  b parent class_ref 6168706 // duration
+      end
+
+      classrelation 6766850 // <dependency>
+	relation 6735362 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6766850 // <dependency>
+	  b parent class_ref 6182274 // milli
+      end
+    end
+
+    class 6182274 "milli"
+      visibility package stereotype "typedef" explicit_base_type ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6766722 // <dependency>
+	relation 6735234 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6766722 // <dependency>
+	  b parent class_ref 6168834 // ratio
+      end
     end
   end
 end

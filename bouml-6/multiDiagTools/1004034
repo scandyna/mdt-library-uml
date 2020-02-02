@@ -1,10 +1,12 @@
-format 211
-"Usbtmc" // Mdt::Usbtmc
+format 221
+"UseCase" // Mdt::Railway::TaskList::UseCase
   revision 1
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 211
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end

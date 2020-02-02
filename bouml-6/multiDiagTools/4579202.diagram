@@ -2,7 +2,7 @@ format 221
 
 classcanvas 128002 class_ref 5547778 // VariantRecord
   classdiagramsettings member_max_width 0 end
-  xyz 179 309 2000
+  xyz 117 309 2000
 end
 note 128130 "Also add Qt tags"
   xyzwh 429 373 2000 191 55

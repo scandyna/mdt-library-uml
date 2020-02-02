@@ -1,6 +1,6 @@
 format 221
 "MemoryStore" // Mdt::MemoryStore
-  revision 3
+  revision 5
   modified_by 2 "philippe"
   // class settings
   

@@ -1,6 +1,8 @@
-format 218
+format 222
 
 note 128002 "For combination of isolations checks:
  - See Marshall Clow, for_all_pairs()"
-  xyzwh 126 178 2000 417 89
+  xyzwh 40.5 40.5 2000 417 89
+note 128130 "See URI (Uniform Resource Identifier)"
+  xyzwh 40.5 209.5 2000 345 47
 end

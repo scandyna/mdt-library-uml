@@ -1,0 +1,27 @@
+format 221
+
+classcanvas 128002 class_ref 6134786 // PrimaryKeyRecordAlgorithm
+  classdiagramsettings member_max_width 0 end
+  xyz 42 120 2000
+end
+classcanvas 128130 class_ref 6135170 // PrimaryKeyRecord
+  classdiagramsettings member_max_width 0 end
+  xyz 414 136 2000
+end
+classcanvas 128386 class_ref 6135042 // PrimaryKeyRecordTag
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 313 40 2000
+end
+relationcanvas 128258 relation_ref 6680578 // <dependency>
+  decenter_begin 438
+  decenter_end 390
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 6680706 // <generalisation>
+  from ref 128130 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

@@ -1,0 +1,34 @@
+format 222
+
+classcanvas 128002 class_ref 6295426 // FrameReaderHelper
+  classdiagramsettings member_max_width 0 end
+  xyz 40 214 2000
+end
+note 128130 "Frame could be std::string, QByteArray (STL compatible containers)"
+  xyzwh 44.5 153.5 2000 459 43
+classcanvas 128258 class_ref 6295554 // FrameRegion
+  classdiagramsettings member_max_width 0 end
+  xyz 415 214 2000
+end
+note 128642 "auto region = frh.nextRegion();
+int readen = io->read( region.begin(), region.size() );
+frh.setReaden( region, readen );
+
+io->read( fch.currentRegion.begin(), fch.currentRegion.size() );"
+  xyzwh 40.5 40.5 2000 427 97
+note 128770 "NOTE: what has STL, Boost ??"
+  xyzwh 42.5 485.5 2000 213 43
+classcanvas 128898 class_ref 6295682 // FrameReaderEndCondition
+  classdiagramsettings member_max_width 0 end
+  xyz 493.5 334.5 2000
+end
+note 129026 "Also elements to ignore
+
+May use std::remove() at commit time.."
+  xyzwh 176.5 330.5 2000 291 79
+relationcanvas 128386 relation_ref 6897154 // <dependency>
+  from ref 128002 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

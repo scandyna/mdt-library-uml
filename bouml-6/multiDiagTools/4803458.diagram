@@ -2,22 +2,30 @@ format 221
 
 classcanvas 128002 class_ref 5892226 // VehicleTypeRepository
   classdiagramsettings member_max_width 0 end
-  xyz 41 137 2000
+  xyz 857 40 2000
 end
 classcanvas 128130 class_ref 5892354 // SqlVehicleTypeRepository
   classdiagramsettings member_max_width 0 end
-  xyz 143 320 2000
+  xyz 816 385 2000
 end
 classcanvas 128386 class_ref 5885570 // VehicleType
   classdiagramsettings member_max_width 0 end
-  xyz 467 136 2006
+  xyz 35 50 2006
 end
 classcanvas 128642 class_ref 5885698 // Place
   classdiagramsettings member_max_width 0 end
-  xyz 611 40 2012
+  xyz 179 232 2012
+end
+classcanvas 128898 class_ref 6161666 // ReflectionAsyncStorageTableWithId
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 441 354 2005
+end
+classcanvas 129410 class_ref 6161794 // ReflectionAsyncStorageTableBase
+  classdiagramsettings member_max_width 0 end
+  xyz 401 159 2011
 end
 relationcanvas 128258 relation_ref 6459650 // <generalisation>
-  decenter_end 488
+  decenter_end 508
   from ref 128130 z 2001 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -30,6 +38,18 @@ end
 relationcanvas 128770 relation_ref 6453122 // <directional aggregation>
   from ref 128386 z 2013 to ref 128642
   no_role_a no_role_b
-  multiplicity_a_pos 617 104 3000 no_multiplicity_b
+  multiplicity_a_pos 185 210 3000 no_multiplicity_b
+end
+relationcanvas 129538 relation_ref 6714114 // <generalisation>
+  decenter_end 508
+  from ref 128898 z 2012 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 6856834 // <directional composition>
+  decenter_begin 549
+  from ref 128130 z 2006 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 end

@@ -1,0 +1,71 @@
+format 221
+
+classcanvas 128002 class_ref 6209026 // DatabaseSetup
+  classdiagramsettings member_max_width 0 end
+  xyz 39.75 157.75 2000
+end
+classcanvas 128130 class_ref 6209154 // SQLiteDatabaseSetup
+  classdiagramsettings member_max_width 0 end
+  xyz 39.75 267.5 2000
+end
+classcanvas 128386 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 924.5 39.5 2006
+end
+classcanvas 128642 class_ref 5057794 // SQLiteDatabase
+  classdiagramsettings member_max_width 0 end
+  xyz 279.75 508.5 2000
+end
+classcanvas 128770 class_ref 6202498 // Connection
+  classdiagramsettings member_max_width 0 end
+  xyz 593.5 694.5 2000
+end
+classcanvas 128898 class_ref 5601666 // ConnectionParameters
+  classdiagramsettings member_max_width 0 end
+  xyz 306 158 2005
+end
+classcanvas 129666 class_ref 6209282 // SQLiteConnection
+  classdiagramsettings member_max_width 0 end
+  xyz 719.5 345.25 2000
+end
+classcanvas 130946 class_ref 5574786 // SQLiteConnectionParameters
+  classdiagramsettings member_max_width 0 end
+  xyz 326.75 351.5 2014
+end
+relationcanvas 128258 relation_ref 6776322 // <generalisation>
+  from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 6776194 // <generalisation>
+  geometry VHV unfixed
+  from ref 128002 z 2007 to point 151 118
+  line 132226 z 2007 to point 954 118
+  line 132354 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131074 relation_ref 6090242 // <dependency>
+  decenter_begin 510
+  from ref 130946 z 2015 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131586 relation_ref 6776962 // <directional composition>
+  from ref 129666 z 2015 to ref 130946
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131714 relation_ref 6777090 // <directional composition>
+  decenter_begin 508
+  decenter_end 510
+  from ref 128642 z 2015 to ref 130946
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132482 relation_ref 6783618 // <generalisation>
+  from ref 128642 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

@@ -1,6 +1,6 @@
 format 221
 "QueryExpression" // Mdt::QueryExpression
-  revision 72
+  revision 85
   modified_by 2 "philippe"
   // class settings
   
@@ -34,7 +34,11 @@ format 221
 
   package_ref 851714 // BuildExpressionTree
 
-  classview 2238466 "QueryExpression"
+  package_ref 977666 // Reflection
+
+  package_ref 990722 // Debug
+
+  classview 2590850 "QE_Core_Field"
     
     classdiagramsettings member_max_width 0 end
     
@@ -54,223 +58,9 @@ format 221
     
     activitydiagramsettings
      end
-    classdiagram 4359810 "Overview"
+    classdiagram 4956930 "QE_EntityAndField"
       classdiagramsettings member_max_width 0 end
       size A4
-    end
-
-    classdiagram 4359938 "QueryExpression_Terminal"
-      classdiagramsettings member_max_width 0 end
-      size A-Landscape
-    end
-
-    class 5281794 "Terminal"
-      visibility package 
-      nformals 2
-      formal name "Tag" type "class" explicit_default_value ""
-        explicit_extends ""
-      formal name "Domain" type "class" explicit_default_value ""
-        explicit_extends ""
-      nactuals 3
-      actual class class_ref 3225730 // extends
-        rank 0 explicit_value ""
-      actual class class_ref 3225730 // extends
-        rank 1 explicit_value ""
-      actual class class_ref 3225730 // extends
-        rank 2 explicit_value ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 5738882 // <generalisation>
-	relation 5707394 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 5738882 // <generalisation>
-	  b parent class_ref 3225730 // extends
-      end
-    end
-
-    class 5282690 "FieldList"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-    end
-  end
-
-  classview 2272130 "QE_Core"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    classcompositediagramsettings end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    objectcompositediagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    classdiagram 4407042 "QE_EntityName"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 5282306 "EntityName"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 4145410 "Name"
-	private type class_ref 161026 // QString
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      operation 7183362 "EntityName"
-	public explicit_return_type ""
-	nparams 1
-	  param in name "name" type class_ref 161026 // QString
-	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw};
-"
-	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-    end
-
-    classdiagram 4407170 "QE_FieldName"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 5282434 "FieldName"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      operation 7183618 "FieldName"
-	public explicit_return_type ""
-	nparams 1
-	  param in name "name" type class_ref 161026 // QString
-	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw};
-"
-	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      attribute 4165762 "Name"
-	private type class_ref 161026 // QString
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-    end
-
-    classdiagram 4393858 "QE_SelectField"
-      classdiagramsettings member_max_width 0 end
-      size B-Landscape
-    end
-
-    class 5318018 "SelectAllField"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 4192386 "Entity"
-	private type class_ref 5324802 // SelectEntity
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      classrelation 5864450 // <directional composition>
-	relation 5832962 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 5864450 // <directional composition>
-	  b parent class_ref 5324802 // SelectEntity
-      end
     end
 
     class 5318146 "EntityAndField"
@@ -420,6 +210,120 @@ ${inlines}
 	
 	
 	
+      end
+    end
+
+    classdiagram 4930562 "QE_QueryEntity"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6088322 "QueryEntity"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 4930690 "QE_QueryField"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6088578 "QueryField"
+      visibility package 
+      nactuals 3
+      actual class class_ref 3225730 // extends
+        rank 0 explicit_value ""
+      actual class class_ref 3225730 // extends
+        rank 1 explicit_value ""
+      actual class class_ref 3225730 // extends
+        rank 2 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6659074 // <dependency>
+	relation 6627586 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6659074 // <dependency>
+	  b parent class_ref 6088322 // QueryEntity
+      end
+
+      classrelation 6685314 // <generalisation>
+	relation 6653826 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6685314 // <generalisation>
+	  b parent class_ref 3225730 // extends
+      end
+
+      classrelation 6685442 // <directional composition>
+	relation 6653954 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6685442 // <directional composition>
+	  b parent class_ref 5318146 // EntityAndField
+      end
+    end
+
+    classdiagram 4393858 "QE_SelectField"
+      classdiagramsettings member_max_width 0 end
+      size B-Landscape
+    end
+
+    class 5318018 "SelectAllField"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4192386 "Entity"
+	private type class_ref 5324802 // SelectEntity
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 5864450 // <directional composition>
+	relation 5832962 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 5864450 // <directional composition>
+	  b parent class_ref 5324802 // SelectEntity
       end
     end
 
@@ -644,6 +548,227 @@ ${inlines}
 "
 	    classrelation_ref 5864578 // <directional composition>
 	  b parent class_ref 5317762 // SelectField
+      end
+    end
+  end
+
+  classview 2616962 "SelectField"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+  end
+
+  classview 2238466 "QueryExpression"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4359810 "Overview"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 4359938 "QueryExpression_Terminal"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 5281794 "Terminal"
+      visibility package 
+      nformals 2
+      formal name "Tag" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Domain" type "class" explicit_default_value ""
+        explicit_extends ""
+      nactuals 3
+      actual class class_ref 3225730 // extends
+        rank 0 explicit_value ""
+      actual class class_ref 3225730 // extends
+        rank 1 explicit_value ""
+      actual class class_ref 3225730 // extends
+        rank 2 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 5738882 // <generalisation>
+	relation 5707394 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 5738882 // <generalisation>
+	  b parent class_ref 3225730 // extends
+      end
+    end
+
+    class 5282690 "FieldList"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+  classview 2272130 "QE_Core"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4407042 "QE_EntityName"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5282306 "EntityName"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4145410 "Name"
+	private type class_ref 161026 // QString
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 7183362 "EntityName"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "name" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 4407170 "QE_FieldName"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 5282434 "FieldName"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 7183618 "FieldName"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "name" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${v0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      attribute 4165762 "Name"
+	private type class_ref 161026 // QString
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
       end
     end
   end
@@ -1928,15 +2053,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 6198402 // <directional composition>
-	relation 6166914 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 6198402 // <directional composition>
-	  b parent class_ref 5324802 // SelectEntity
-      end
-
       classrelation 6198658 // <directional composition>
 	relation 6167170 *-->
 	  a role_name "" private
@@ -2016,6 +2132,15 @@ ${inlines}
 	
 	
 	
+      end
+
+      classrelation 6685570 // <directional composition>
+	relation 6654082 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6685570 // <directional composition>
+	  b parent class_ref 6088322 // QueryEntity
       end
     end
 
@@ -3251,14 +3376,6 @@ ${inlines}
 	
       end
 
-      classrelation 6131202 // <directional composition>
-	relation 6099714 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 6131202 // <directional composition>
-	  b parent class_ref 5608578 // AsyncQuery
-      end
     end
 
     class 5615490 "SqlAsyncSelectQueryThreadWorker"
@@ -3280,7 +3397,7 @@ ${inlines}
 	  a public
 	    cpp default "${type}"
 	    classrelation_ref 6151426 // <generalisation>
-	  b parent class_ref 5608834 // AsyncQueryThreadWorker
+	  b parent class_ref 5608834 // AbstractAsyncQueryThreadWorker
       end
 
       operation 7567106 "processQuery"
@@ -3721,6 +3838,178 @@ ${inlines}
 	
 	
 	
+      end
+    end
+  end
+
+  classview 2597378 "QE_Reflection_QueryField"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4930818 "QE_Reflection_QueryField"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6088706 "ReflectionQueryField"
+      visibility package 
+      nformals 1
+      formal name "Field" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6658946 // <generalisation>
+	relation 6627458 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6658946 // <generalisation>
+	  b parent class_ref 6088578 // QueryField
+      end
+    end
+  end
+
+  classview 2610434 "QE_Reflection_Statement"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4969986 "QE_Reflection_PrimaryKeyAlgorithm"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6128130 "ReflectionPrimaryKeyRecordAlgorithm"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6698754 // <dependency>
+	relation 6667266 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6698754 // <dependency>
+	  b parent class_ref 5317506 // FilterExpression
+      end
+
+      classrelation 6698882 // <dependency>
+	relation 6667394 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6698882 // <dependency>
+	  b parent class_ref 5940738 // PrimaryKeyAlgorithm
+      end
+
+      operation 8216578 "filterExpressionFromStructPrimaryKey"
+	public return_type class_ref 5317506 // FilterExpression
+	nparams 1
+	  param in name "s" explicit_type "Struct"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8223362 "filterExpressionFromPrimaryKeyRecord"
+	public return_type class_ref 5317506 // FilterExpression
+	nparams 1
+	  param in name "pkr" explicit_type "Pkr"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 4950402 "QE_ReflectionSelectStatement"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6108418 "ReflectionSelectStatement"
+      visibility package 
+      nformals 1
+      formal name "StructDef" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6678786 // <generalisation>
+	relation 6647298 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6678786 // <generalisation>
+	  b parent class_ref 5304322 // SelectStatement
       end
     end
   end

@@ -1,0 +1,64 @@
+format 221
+
+classcanvas 128002 class_ref 5608834 // AbstractAsyncQueryThreadWorker
+  classdiagramsettings member_max_width 0 end
+  xyz 55 40 2000
+end
+classcanvas 128386 class_ref 6195842 // AsyncQueryConnectionImpl
+  classdiagramsettings member_max_width 0 end
+  xyz 81 200 2000
+end
+classcanvas 128514 class_ref 5608962 // AsyncQueryConnection
+  classdiagramsettings member_max_width 0 end
+  xyz 90 120 2006
+end
+classcanvas 128770 class_ref 6188930 // AsyncQueryBase
+  classdiagramsettings member_max_width 0 end
+  xyz 307 200 2012
+end
+classcanvas 129154 class_ref 6188802 // AsyncInsertQuery
+  classdiagramsettings member_max_width 0 end
+  xyz 305 280 2018
+end
+relationcanvas 128642 relation_ref 6762370 // <directional composition>
+  decenter_begin 521
+  from ref 128514 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 6762498 // <dependency>
+  decenter_end 585
+  from ref 128770 z 2013 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 6769026 // <unidirectional association>
+  geometry VH unfixed
+  decenter_end 585
+  from ref 128770 z 2013 to point 366 141
+  line 131842 z 2013 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 6741890 // <generalisation>
+  from ref 129154 z 2019 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 6755586 // <dependency>
+  decenter_begin 390
+  decenter_end 585
+  from ref 129154 z 2019 to point 40 296
+  line 129666 z 2019 to point 40 144
+  line 131970 z 2019 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131714 relation_ref 6810242 // <dependency>
+  decenter_begin 521
+  decenter_end 514
+  from ref 128514 z 2007 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

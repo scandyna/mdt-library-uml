@@ -1,6 +1,6 @@
 format 221
 "Reflection" // Mdt::Reflection
-  revision 21
+  revision 26
   modified_by 2 "philippe"
   // class settings
   
@@ -420,11 +420,6 @@ ${inlines}
         explicit_extends ""
       formal name "FieldList..." type "class" explicit_default_value ""
         explicit_extends ""
-      nactuals 2
-      actual class class_ref 5940866 // IdPrimaryKey
-        rank 0 explicit_value ""
-      actual class class_ref 5940866 // IdPrimaryKey
-        rank 1 explicit_value ""
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -437,12 +432,12 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 6566146 // <generalisation>
-	relation 6534658 ---|>
+      classrelation 6705410 // <generalisation>
+	relation 6673922 ---|>
 	  a public
 	    cpp default "${type}"
-	    classrelation_ref 6566146 // <generalisation>
-	  b parent class_ref 5940866 // IdPrimaryKey
+	    classrelation_ref 6705410 // <generalisation>
+	  b parent class_ref 5975682 // PrimaryKeyClassTag
       end
     end
 
@@ -553,6 +548,50 @@ ${inlines}
 	    cpp default "${type}"
 	    classrelation_ref 6566018 // <generalisation>
 	  b parent class_ref 5975682 // PrimaryKeyClassTag
+      end
+    end
+
+    classdiagram 4976642 "Reflection_PrimaryKeyRecord"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6134786 "PrimaryKeyRecordAlgorithm"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8229890 "primaryKeyRecordFromStruct"
+	public explicit_return_type "Record"
+	nparams 1
+	  param in name "s" explicit_type "Struct"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6712066 // <dependency>
+	relation 6680578 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6712066 // <dependency>
+	  b parent class_ref 6135170 // PrimaryKeyRecord
       end
     end
 
@@ -875,6 +914,29 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+    end
+
+    class 6135170 "PrimaryKeyRecord"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6712194 // <generalisation>
+	relation 6680706 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6712194 // <generalisation>
+	  b parent class_ref 6135042 // PrimaryKeyRecordTag
+      end
     end
   end
 end

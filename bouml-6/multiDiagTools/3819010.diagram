@@ -1,7 +1,9 @@
-format 215
+format 222
 
 classcanvas 128002 class_ref 4426370 // DeviceApiSandbox
   classdiagramsettings member_max_width 0 end
-  xyz 204 282 2000
+  xyz 40.5 40.5 2000
 end
+note 128130 "See URI (Uniform Resource Identifier)"
+  xyzwh 40.5 191.5 2000 345 47
 end

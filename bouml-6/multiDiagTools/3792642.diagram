@@ -1,4 +1,4 @@
-format 214
+format 221
 
 note 128002 "With several instruments, used for the same task in a script:
  - Send requests async
@@ -8,5 +8,90 @@ note 128002 "With several instruments, used for the same task in a script:
 Some usage:
  - Scan
  - Setup instruments"
-  xyzwh 148 185 2000 651 233
+  xyzwh 40.5 669.2 2000 523 159
+classcanvas 128130 class_ref 4508162 // Wait
+  classdiagramsettings member_max_width 0 end
+  xyz 689 517.3 2000
+end
+classcanvas 128386 class_ref 425730 // QCoreApplication
+  classdiagramsettings member_max_width 0 end
+  xyz 40.4 518.3 2005
+end
+classcanvas 129410 class_ref 6175490 // WaitDonePredicate_Old
+  classdiagramsettings member_max_width 0 end
+  xyz 661.1 412.35 2000
+end
+classcanvas 129538 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 713.05 40.65 2011
+end
+classcanvas 130306 class_ref 363266 // QTimer
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 884.2 226.5 2011
+end
+classcanvas 130946 class_ref 6175618 // WaitDonePredicate
+  classdiagramsettings member_max_width 0 end
+  xyz 641.1 160.5 2017
+end
+classcanvas 133378 class_ref 6202370 // WaitDonePredicateWithError
+  classdiagramsettings member_max_width 0 end
+  xyz 389.15 411.85 2017
+end
+relationcanvas 129026 relation_ref 6721282 // <dependency>
+  from ref 128130 z 2006 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 4659202 // <generalisation>
+  geometry VHV unfixed
+  decenter_end 446
+  from ref 128386 z 2012 to point 191 123
+  line 134786 z 2012 to point 739 123
+  line 134914 z 2012 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 6728194 // <generalisation>
+  geometry VHV unfixed
+  decenter_end 446
+  from ref 130306 z 2012 to point 911 123
+  line 130690 z 2012 to point 739 123
+  line 130818 z 2012 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131074 relation_ref 6728322 // <generalisation>
+  decenter_end 446
+  from ref 130946 z 2018 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131202 relation_ref 6728450 // <generalisation>
+  from ref 129410 z 2018 to ref 130946
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131970 relation_ref 6734978 // <directional composition>
+  from ref 130946 z 2018 to ref 130306
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133506 relation_ref 6769282 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 510
+  from ref 133378 z 2018 to point 503 370
+  line 135042 z 2018 to point 740 370
+  line 135170 z 2018 to ref 130946
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133890 relation_ref 6769410 // <unidirectional association>
+  geometry VHV unfixed
+  decenter_end 935
+  from ref 128130 z 2018 to point 864 370
+  line 134530 z 2018 to point 828 370
+  line 134658 z 2018 to ref 130946
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 end

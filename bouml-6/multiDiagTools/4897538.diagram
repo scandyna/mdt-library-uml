@@ -1,0 +1,19 @@
+format 221
+
+classcanvas 128002 class_ref 6035202 // Reflection
+  classdiagramsettings member_max_width 0 end
+  xyz 89 169 2000
+end
+classcanvas 128130 class_ref 5131778 // InsertStatement
+  classdiagramsettings member_max_width 0 end
+  xyz 398 148 2000
+end
+classcanvas 128258 class_ref 5226242 // UpdateStatement
+  classdiagramsettings member_max_width 0 end
+  xyz 367 204 2000
+end
+classcanvas 128386 class_ref 5246722 // DeleteStatement
+  classdiagramsettings member_max_width 0 end
+  xyz 362 398 2000
+end
+end

@@ -1,0 +1,6 @@
+format 222
+
+note 128002 "Usb and Usbtmc should  be in the same library.
+If building shared libs, and have usb.so and usbtmc.so, lot of calls will be occur.."
+  xyzwh 47 76 2000 539 73
+end

@@ -1,6 +1,6 @@
 format 221
 "Reflection" // Mdt::Sql::Reflection
-  revision 1
+  revision 12
   modified_by 2 "philippe"
   // class settings
   
@@ -30,4 +30,102 @@ format 221
   activitydiagramsettings
    end
   
+  package_ref 971138 // Impl
+
+  classview 2584194 "PrimaryKeyRecord"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4923906 "Sql_Reflection_PrimaryKeyRecord"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6062210 "PrimaryKeyRecordAlgorithm"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6645762 // <dependency>
+	relation 6614274 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6645762 // <dependency>
+	  b parent class_ref 5226370 // PrimaryKeyRecord
+      end
+
+      operation 8161794 "primaryKeyRecordFromValues"
+	public return_type class_ref 5226370 // PrimaryKeyRecord
+	nparams 1
+	  param in name "values" type class_ref 5233666 // QVariantList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8161922 "primaryKeyRecordHasCorrectFieldCount"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "pkr" type class_ref 5226370 // PrimaryKeyRecord
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8162050 "primaryKeyRecordHasCorrectFieldNameList"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "pkr" type class_ref 5226370 // PrimaryKeyRecord
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
 end

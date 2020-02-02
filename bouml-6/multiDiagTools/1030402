@@ -1,0 +1,143 @@
+format 222
+"Logger" // Mdt::Logger
+  revision 1
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2702338 "Logger"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5108610 "Logger_sandbox"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6308866 "Logger"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6308994 "ConsoleLogger"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6941826 // <generalisation>
+	relation 6910338 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6941826 // <generalisation>
+	  b parent class_ref 6308866 // Logger
+      end
+    end
+
+    class 6309122 "FileLogger"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6941954 // <generalisation>
+	relation 6910466 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6941954 // <generalisation>
+	  b parent class_ref 6308866 // Logger
+      end
+    end
+
+    class 6309250 "AsyncFileLogger"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6942082 // <generalisation>
+	relation 6910594 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6942082 // <generalisation>
+	  b parent class_ref 6308866 // Logger
+      end
+    end
+  end
+end

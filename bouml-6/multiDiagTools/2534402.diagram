@@ -1,7 +1,25 @@
-format 214
+format 221
 
 classcanvas 128130 class_ref 2859394 // Expected
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 40.5 2005
+  xyz 209 36 2005
+end
+classcanvas 128258 class_ref 6168450 // ExpectedResultOk
+  classdiagramsettings member_max_width 0 end
+  xyz 39 256 2000
+end
+classcanvas 128386 class_ref 6168578 // ExpectedResult
+  classdiagramsettings member_max_width 0 end
+  xyz 48 154 2000
+end
+relationcanvas 128514 relation_ref 6720898 // <dependency>
+  from ref 128386 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 6721026 // <dependency>
+  from ref 128386 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 end

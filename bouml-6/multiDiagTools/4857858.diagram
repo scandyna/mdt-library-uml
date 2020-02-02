@@ -2,27 +2,27 @@ format 221
 
 classcanvas 128130 class_ref 5968386 // IsReflectedStruct
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 177.5 2000
+  xyz 401.5 314.5 2000
 end
 classcanvas 128258 class_ref 5968514 // FieldTag
   classdiagramsettings member_max_width 0 end
-  xyz 338 173 2000
+  xyz 551 696 2000
 end
 classcanvas 128386 class_ref 5968642 // IsField
   classdiagramsettings member_max_width 0 end
-  xyz 244 173 2000
+  xyz 457 696 2000
 end
 classcanvas 128514 class_ref 5968770 // StructDefTag
   classdiagramsettings member_max_width 0 end
-  xyz 161 294 2000
+  xyz 161 584 2000
 end
 classcanvas 128642 class_ref 5968898 // IsStructDef
   classdiagramsettings member_max_width 0 end
-  xyz 39 294 2000
+  xyz 39 584 2000
 end
-classcanvas 128770 class_ref 5975426 // IsPrimaryKey
+classcanvas 128770 class_ref 5975426 // IsPrimaryKeyClass
   classdiagramsettings member_max_width 0 end
-  xyz 40 406 2000
+  xyz 338 584 2000
 end
 classcanvas 128898 class_ref 5975554 // IsFieldAssociatedWithReflectedStruct
   classdiagramsettings member_max_width 0 end
@@ -30,15 +30,43 @@ classcanvas 128898 class_ref 5975554 // IsFieldAssociatedWithReflectedStruct
 end
 classcanvas 129026 class_ref 5975682 // PrimaryKeyClassTag
   classdiagramsettings member_max_width 0 end
-  xyz 178 406 2000
+  xyz 512 584 2000
 end
 classcanvas 129538 class_ref 6002050 // UniqueConstrainTag
   classdiagramsettings member_max_width 0 end
-  xyz 64 501 2000
+  xyz 592 173 2000
 end
 classcanvas 129666 class_ref 6002178 // IsUniqueConstraint
   classdiagramsettings member_max_width 0 end
-  xyz 257 629 2000
+  xyz 416 173 2000
+end
+classcanvas 129922 class_ref 6048642 // IsStructDefAssociatedWithReflectedStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 314.5 2000
+end
+classcanvas 130050 class_ref 6048770 // IsAutoIncrementIdPrimaryKey
+  classdiagramsettings member_max_width 0 end
+  xyz 409.5 451.5 2005
+end
+classcanvas 130178 class_ref 6049154 // IsFieldStructDefAssociatedWithPrimaryKey
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 451.5 2010
+end
+classcanvas 130306 class_ref 6068738 // IsReflectedStructAssociatedWithPrimaryKey
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 177.5 2005
+end
+classcanvas 130434 class_ref 6081794 // IsIdPrimaryKeyClass
+  classdiagramsettings member_max_width 0 end
+  xyz 373.5 40.5 2000
+end
+classcanvas 130562 class_ref 6134914 // IsPrimaryKeyRecord
+  classdiagramsettings member_max_width 0 end
+  xyz 41 696 2000
+end
+classcanvas 130690 class_ref 6135042 // PrimaryKeyRecordTag
+  classdiagramsettings member_max_width 0 end
+  xyz 223 696 2000
 end
 relationcanvas 129154 relation_ref 6534018 // <dependency>
   from ref 128770 z 2001 to ref 129026
@@ -52,6 +80,16 @@ relationcanvas 129282 relation_ref 6534146 // <dependency>
 end
 relationcanvas 129410 relation_ref 6534274 // <dependency>
   from ref 128386 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 6554370 // <dependency>
+  from ref 129666 z 2001 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130818 relation_ref 6680450 // <dependency>
+  from ref 130562 z 2001 to ref 130690
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
