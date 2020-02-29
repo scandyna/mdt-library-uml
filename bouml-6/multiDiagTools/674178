@@ -1,6 +1,6 @@
 format 222
 "UicNumber" // Mdt::UicNumber
-  revision 4
+  revision 9
   modified_by 2 "philippe"
   // class settings
   
@@ -30,32 +30,6 @@ format 222
   activitydiagramsettings
    end
   
-  classview 1867778 "UicNumber_Core"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    classcompositediagramsettings end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    objectcompositediagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    classdiagram 3598850 "ideas"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-  end
-
   classview 128258 "Algorithm"
     
     classdiagramsettings member_max_width 0 end
@@ -94,6 +68,69 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      operation 8500994 "stringWithoutAnySpace"
+	public explicit_return_type "string"
+	nparams 1
+	  param in name "str" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8514050 "countryCodeFromString"
+	public return_type class_ref 6329090 // CountryCode
+	nparams 1
+	  param in name "s" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8514178 "trimmString"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "s" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8514306 "trimmedString"
+	public explicit_return_type "string"
+	nparams 1
+	  param in name "str" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
   end
 
@@ -119,7 +156,7 @@ ${inlines}
      end
     classdiagram 128130 "UicNumber"
       classdiagramsettings member_max_width 0 end
-      size A4
+      size A-Landscape
     end
 
     class 6322562 "UicNumber"
@@ -153,7 +190,7 @@ ${inlines}
       end
 
       operation 8494338 "validate"
-	class_operation cpp_inline public explicit_return_type "bool"
+	class_operation cpp_inline public explicit_return_type ""
 	nparams 1
 	  param in name "uicNumber" explicit_type "StringType"
 	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
@@ -182,28 +219,56 @@ ${inlines}
 	
       end
 
-      attribute 4549890 "Type"
-	private explicit_type ""
-	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+      classrelation 6948610 // <directional composition>
+	relation 6917122 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
+	    classrelation_ref 6948610 // <directional composition>
+	  b parent class_ref 134786 // TypeCode
       end
 
-      attribute 128130 "Country"
-	private explicit_type ""
-	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+      classrelation 6948738 // <directional composition>
+	relation 6917250 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
+	    classrelation_ref 6948738 // <directional composition>
+	  b parent class_ref 6329090 // CountryCode
+      end
+
+      classrelation 6948866 // <directional composition>
+	relation 6917378 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6948866 // <directional composition>
+	  b parent class_ref 6329218 // NationalBlock
+      end
+
+      classrelation 6948994 // <directional composition>
+	relation 6917506 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6948994 // <directional composition>
+	  b parent class_ref 6329346 // CheckDigit
+      end
+
+      classrelation 6955522 // <dependency>
+	relation 6924034 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6955522 // <dependency>
+	  b parent class_ref 6322434 // Algorithm
+      end
+
+      classrelation 6955650 // <dependency>
+	relation 6924162 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6955650 // <dependency>
+	  b parent class_ref 6335874 // ValidationState
       end
     end
 
@@ -228,6 +293,128 @@ ${items}};
       explicit_switch_type ""
       mysql_decl ""
       
+    end
+
+    class 6329090 "CountryCode"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4556418 "Invalid"
+	public type class_ref 6329090 // CountryCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 6329218 "NationalBlock"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6329346 "CheckDigit"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6335874 "ValidationState"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8507522 "operator bool"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 1867778 "UicNumber_Core"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 3598850 "ideas"
+      classdiagramsettings member_max_width 0 end
+      size A4
     end
   end
 end

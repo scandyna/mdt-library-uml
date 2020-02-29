@@ -2,22 +2,81 @@ format 222
 
 classcanvas 128002 class_ref 6322562 // UicNumber
   classdiagramsettings member_max_width 0 end
-  xyz 40 233 2000
+  xyz 236 130.5 2000
 end
 classcanvas 128130 class_ref 6322434 // Algorithm
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 429.5 2000
+  xyz 602.5 190.75 2000
 end
 note 128258 "Tests:
  - std::string
 
 Optional test with Qt:
  - QString"
-  xyzwh 40.5 40.5 2000 345 117
+  xyzwh 40.5 473 2000 345 117
 note 128386 "Take comparison functors into account"
-  xyzwh 239.5 429.5 2000 275 55
+  xyzwh 40.5 670 2000 275 55
 classcanvas 128514 class_ref 134786 // TypeCode
   classdiagramsettings member_max_width 0 end
-  xyz 377 265 2005
+  xyz 362 272.5 2005
+end
+note 128770 "Alowed in a raw string:
+ - numerical digits
+ - spaces
+ - '-'"
+  xyzwh 465.5 473 2000 309 95
+classcanvas 128898 class_ref 6329090 // CountryCode
+  classdiagramsettings member_max_width 0 end
+  xyz 41.75 146.5 2000
+end
+classcanvas 129282 class_ref 6329218 // NationalBlock
+  classdiagramsettings member_max_width 0 end
+  xyz 586.25 353.75 2000
+end
+classcanvas 129538 class_ref 6329346 // CheckDigit
+  classdiagramsettings member_max_width 0 end
+  xyz 632.75 128.75 2000
+end
+classcanvas 129922 class_ref 6335874 // ValidationState
+  classdiagramsettings member_max_width 0 end
+  xyz 325 40.25 2000
+end
+relationcanvas 129026 relation_ref 6917122 // <directional composition>
+  from ref 128002 z 2006 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 6917250 // <directional composition>
+  from ref 128002 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 6917378 // <directional composition>
+  geometry VH unfixed
+  decenter_begin 954
+  decenter_end 414
+  from ref 128002 z 2001 to point 547 367
+  line 130434 z 2001 to ref 129282
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 6917506 // <directional composition>
+  decenter_begin 142
+  decenter_end 780
+  from ref 128002 z 2001 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 6924034 // <dependency>
+  decenter_begin 857
+  decenter_end 236
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 6924162 // <dependency>
+  from ref 128002 z 2001 to ref 129922
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 end

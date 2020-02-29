@@ -5,6 +5,8 @@ classcanvas 128002 class_ref 4152066 // StandardPaths
   xyz 538 98 2000
 end
 note 128130 "Use a standard Mdt directory to get database files, so that it is shared accross applications.
-Also, if app was installed \"standalone\", this problem is solved in Mdt::Application, not everywhere."
+Also, if app was installed \"standalone\", this problem is solved in Mdt::Application, not everywhere.
+
+OR: no files at all (standard will not move every day, so hardcode..)"
   xyzwh 124.5 193.5 2000 625 105
 end
