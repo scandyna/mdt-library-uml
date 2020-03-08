@@ -1,6 +1,6 @@
 format 222
 "UicNumber" // Mdt::UicNumber
-  revision 9
+  revision 14
   modified_by 2 "philippe"
   // class settings
   
@@ -156,7 +156,7 @@ ${inlines}
      end
     classdiagram 128130 "UicNumber"
       classdiagramsettings member_max_width 0 end
-      size A-Landscape
+      size B-Landscape
     end
 
     class 6322562 "UicNumber"
@@ -269,6 +269,22 @@ ${inlines}
 	    cpp default "#include in source"
 	    classrelation_ref 6955650 // <dependency>
 	  b parent class_ref 6335874 // ValidationState
+      end
+
+      classrelation 6969346 // <dependency>
+	relation 6937858 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6969346 // <dependency>
+	  b parent class_ref 6355458 // StringFormatValidationState
+      end
+
+      classrelation 6983042 // <dependency>
+	relation 6951554 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6983042 // <dependency>
+	  b parent class_ref 6355586 // StringFormatValidationError
       end
     end
 
@@ -389,6 +405,306 @@ ${inlines}
 	
 	
       end
+
+      classrelation 6962178 // <dependency>
+	relation 6930690 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6962178 // <dependency>
+	  b parent class_ref 6342402 // ValidationError
+      end
+
+      classrelation 6969090 // <directional composition>
+	relation 6937602 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6969090 // <directional composition>
+	  b parent class_ref 6348930 // ValidationErrorCode
+      end
+    end
+
+    class 6348930 "ValidationErrorCode"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6342402 "ValidationError"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 5128322 "UicNumber_StringFormatValidation"
+      classdiagramsettings member_max_width 0 end
+      size C-Landscape
+    end
+
+    class 6355458 "StringFormatValidationState"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8520834 "operator bool"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8521474 "errorCode"
+	public return_type class_ref 6355714 // StringFormatValidationErrorCode
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8521218 "errorMessageString"
+	class_operation public explicit_return_type "string"
+	nparams 1
+	  param in name "ec" type class_ref 6355714 // StringFormatValidationErrorCode
+	
+	
+	
+	
+	
+      end
+
+      classrelation 6968834 // <directional composition>
+	relation 6937346 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6968834 // <directional composition>
+	  b parent class_ref 6355714 // StringFormatValidationErrorCode
+      end
+    end
+
+    class 6355586 "StringFormatValidationError"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6969474 // <directional composition>
+	relation 6937986 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 6969474 // <directional composition>
+	  b parent class_ref 6355714 // StringFormatValidationErrorCode
+      end
+
+      classrelation 6969602 // <dependency>
+	relation 6938114 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6969602 // <dependency>
+	  b parent class_ref 6355458 // StringFormatValidationState
+      end
+
+      classrelation 6982914 // <generalisation>
+	relation 6951426 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6982914 // <generalisation>
+	  b parent class_ref 6368898 // logic_error
+      end
+
+      operation 8534786 "StringFormatValidationError"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "ec" type class_ref 6355714 // StringFormatValidationErrorCode
+	cpp_decl "  ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}${t0} ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8534914 "errorCode"
+	public return_type class_ref 6355714 // StringFormatValidationErrorCode
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 6355714 "StringFormatValidationErrorCode"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4562946 "NoError"
+	public type class_ref 6355714 // StringFormatValidationErrorCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+  end
+
+  classview 2715394 "UicNumber_Qt"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5128194 "UicNumber_StringFormatValidation_Qt"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 6355842 "StringFormatValidationStateQt"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6969218 // <dependency>
+	relation 6937730 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6969218 // <dependency>
+	  b parent class_ref 6355458 // StringFormatValidationState
+      end
+
+      operation 8521346 "errorMessageQString"
+	class_operation public explicit_return_type "string"
+	nparams 1
+	  param in name "ec" type class_ref 6355714 // StringFormatValidationErrorCode
+	
+	
+	
+	
+	
+      end
     end
   end
 
@@ -415,6 +731,96 @@ ${inlines}
     classdiagram 3598850 "ideas"
       classdiagramsettings member_max_width 0 end
       size A4
+    end
+  end
+
+  classview 2721922 "UicNumber_QtGui"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5134850 "UicNumberValidator"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6362370 "UicNumberValidator"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6976130 // <generalisation>
+	relation 6944642 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6976130 // <generalisation>
+	  b parent class_ref 418690 // QValidator
+      end
+
+      classrelation 6976258 // <dependency>
+	relation 6944770 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6976258 // <dependency>
+	  b parent class_ref 6355458 // StringFormatValidationState
+      end
+
+      operation 8528130 "fixup"
+	const cpp_virtual public explicit_return_type "void"
+	nparams 1
+	  param inout name "input" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8528002 "validate"
+	cpp_virtual public explicit_return_type "State"
+	nparams 2
+	  param inout name "input" type class_ref 161026 // QString
+	  param inout name "pos" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} & ${p0}, ${t1} & ${p1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} & ${p0}, ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
   end
 end

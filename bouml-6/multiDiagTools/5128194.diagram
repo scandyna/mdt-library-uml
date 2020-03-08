@@ -1,0 +1,30 @@
+format 222
+
+classcanvas 128002 class_ref 6355842 // StringFormatValidationStateQt
+  classdiagramsettings member_max_width 0 end
+  xyz 191 66 2000
+end
+classcanvas 128130 class_ref 6355458 // StringFormatValidationState
+  classdiagramsettings member_max_width 0 end
+  xyz 193 157 2000
+end
+classcanvas 128514 class_ref 6355714 // StringFormatValidationErrorCode
+  classdiagramsettings member_max_width 0 end
+  xyz 664 156 2006
+end
+note 128770 "Will return same messages, but uses tr()."
+  xyzwh 40 42 2000 113 93
+relationcanvas 128258 relation_ref 6937730 // <dependency>
+  decenter_begin 489
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 6937346 // <directional composition>
+  from ref 128130 z 2007 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 128898 -_-_ decenter_begin 415
+  from ref 128002 z 2001 to ref 128770
+end

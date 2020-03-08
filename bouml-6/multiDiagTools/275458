@@ -1,6 +1,6 @@
-format 221
+format 222
 "std" // std
-  revision 11
+  revision 12
   modified_by 2 "philippe"
   // class settings
   
@@ -652,6 +652,50 @@ ${inlines}
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 5141378 "logic_error"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6368898 "logic_error"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 6982786 // <generalisation>
+	relation 6951298 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 6982786 // <generalisation>
+	  b parent class_ref 4372098 // exception
+      end
+
+      operation 8534658 "what"
+	cpp_virtual public explicit_return_type "char"
+	multiplicity "*"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
