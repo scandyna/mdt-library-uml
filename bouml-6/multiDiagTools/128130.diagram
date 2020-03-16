@@ -2,77 +2,82 @@ format 222
 
 classcanvas 128002 class_ref 6322562 // UicNumber
   classdiagramsettings member_max_width 0 end
-  xyz 161 310.5 2000
+  xyz 536 199 2000
 end
 classcanvas 128130 class_ref 6322434 // Algorithm
-  classdiagramsettings member_max_width 0 end
-  xyz 602.5 228.25 2000
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 207 274 2000
 end
 classcanvas 128514 class_ref 134786 // TypeCode
-  classdiagramsettings member_max_width 0 end
-  xyz 287 212.5 2005
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 594 346 2005
 end
 classcanvas 128898 class_ref 6329090 // CountryCode
-  classdiagramsettings member_max_width 0 end
-  xyz 251.75 454 2000
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 904 226 2000
 end
-classcanvas 129282 class_ref 6329218 // NationalBlock
+classcanvas 129282 class_ref 6329218 // VariableBlock
   classdiagramsettings member_max_width 0 end
-  xyz 601.25 391.25 2000
+  xyz 711 344 2000
 end
 classcanvas 129538 class_ref 6329346 // CheckDigit
   classdiagramsettings member_max_width 0 end
-  xyz 40.25 342.5 2000
+  xyz 663 120 2000
 end
 classcanvas 129922 class_ref 6335874 // ValidationState
   classdiagramsettings member_max_width 0 end
-  xyz 962.5 137.75 2000
+  xyz 773 450 2000
 end
 classcanvas 130562 class_ref 6342402 // ValidationError
   classdiagramsettings member_max_width 0 end
-  xyz 984.5 40 2000
+  xyz 795 544 2000
 end
 classcanvas 130818 class_ref 6348930 // ValidationErrorCode
   classdiagramsettings member_max_width 0 end
-  xyz 971.25 227.5 2000
+  xyz 594 450 2000
+end
+classcanvas 132738 class_ref 6375426 // UicNumber11DigitArray
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 192 170 2006
+end
+classcanvas 133250 class_ref 6381954 // CheckDigitAlgorithm
+  classdiagramsettings member_max_width 0 end
+  xyz 80 39 2000
 end
 relationcanvas 129026 relation_ref 6917122 // <directional composition>
+  decenter_begin 291
   from ref 128002 z 2006 to ref 128514
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129154 relation_ref 6917250 // <directional composition>
-  decenter_end 477
+  decenter_begin 532
   from ref 128002 z 2001 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129410 relation_ref 6917378 // <directional composition>
-  decenter_begin 857
-  decenter_end 219
+  decenter_begin 680
   from ref 128002 z 2001 to ref 129282
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129666 relation_ref 6917506 // <directional composition>
+  decenter_begin 510
   from ref 128002 z 2001 to ref 129538
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129794 relation_ref 6924034 // <dependency>
-  decenter_end 881
-  from ref 128002 z 2001 to point 565 363
-  line 131714 z 2001 to point 565 340
-  line 132738 z 2001 to ref 128130
+  decenter_begin 831
+  decenter_end 229
+  from ref 128002 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130050 relation_ref 6924162 // <dependency>
-  decenter_begin 142
-  decenter_end 716
-  from ref 128002 z 2001 to point 528 325
-  line 131970 z 2001 to point 528 175
-  line 132866 z 2001 to ref 129922
+  decenter_begin 948
+  from ref 128002 z 2001 to ref 129922
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -82,8 +87,36 @@ relationcanvas 130690 relation_ref 6930690 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132610 relation_ref 6937602 // <directional composition>
-  decenter_end 475
+  decenter_begin 566
   from ref 129922 z 2001 to ref 130818
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132866 relation_ref 6958082 // <dependency>
+  from ref 128130 z 2007 to ref 132738
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133378 relation_ref 6964738 // <dependency>
+  decenter_begin 158
+  decenter_end 802
+  from ref 128002 z 2001 to point 496 216
+  line 135426 z 2001 to point 496 112
+  line 135554 z 2001 to ref 133250
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134402 relation_ref 6964866 // <dependency>
+  decenter_begin 538
+  from ref 133250 z 2001 to point 40 88
+  line 135682 z 2001 to point 40 304
+  line 135810 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135298 relation_ref 6964994 // <dependency>
+  decenter_begin 509
+  from ref 133250 z 2007 to ref 132738
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -1,6 +1,6 @@
 format 222
 "UicNumber" // Mdt::UicNumber
-  revision 14
+  revision 20
   modified_by 2 "philippe"
   // class settings
   
@@ -30,6 +30,8 @@ format 222
   activitydiagramsettings
    end
   
+  package_ref 1036930 // Impl
+
   classview 128258 "Algorithm"
     
     classdiagramsettings member_max_width 0 end
@@ -131,6 +133,14 @@ ${inlines}
 	
 	
       end
+
+      classrelation 6989570 // <dependency>
+	relation 6958082 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6989570 // <dependency>
+	  b parent class_ref 6375426 // UicNumber11DigitArray
+      end
     end
   end
 
@@ -159,11 +169,24 @@ ${inlines}
       size B-Landscape
     end
 
+    class 6329346 "CheckDigit"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
     class 6322562 "UicNumber"
       visibility package 
-      nformals 1
-      formal name "StringType" type "class" explicit_default_value ""
-        explicit_extends ""
       cpp_decl "${comment}${template}class ${name}${inherit} {
 ${members}};
 ${inlines}
@@ -243,7 +266,7 @@ ${inlines}
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	    classrelation_ref 6948866 // <directional composition>
-	  b parent class_ref 6329218 // NationalBlock
+	  b parent class_ref 6329218 // VariableBlock
       end
 
       classrelation 6948994 // <directional composition>
@@ -271,20 +294,35 @@ ${inlines}
 	  b parent class_ref 6335874 // ValidationState
       end
 
-      classrelation 6969346 // <dependency>
-	relation 6937858 -_->
+      classrelation 6996226 // <dependency>
+	relation 6964738 -_->
 	  a public
 	    cpp default "#include in source"
-	    classrelation_ref 6969346 // <dependency>
-	  b parent class_ref 6355458 // StringFormatValidationState
+	    classrelation_ref 6996226 // <dependency>
+	  b parent class_ref 6381954 // CheckDigitAlgorithm
       end
 
-      classrelation 6983042 // <dependency>
-	relation 6951554 -_->
+      operation 8541826 "computeCheckDigit"
+	cpp_inline private explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7003266 // <dependency>
+	relation 6971778 -_->
 	  a public
 	    cpp default "#include in source"
-	    classrelation_ref 6983042 // <dependency>
-	  b parent class_ref 6355586 // StringFormatValidationError
+	    classrelation_ref 7003266 // <dependency>
+	  b parent class_ref 6388610 // StringFormatValidation
       end
     end
 
@@ -309,6 +347,27 @@ ${items}};
       explicit_switch_type ""
       mysql_decl ""
       
+      attribute 4569474 "Unknown"
+	public type class_ref 134786 // TypeCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4569602 "Invalid"
+	public type class_ref 134786 // TypeCode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
     end
 
     class 6329090 "CountryCode"
@@ -345,23 +404,7 @@ ${items}};
       end
     end
 
-    class 6329218 "NationalBlock"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-    end
-
-    class 6329346 "CheckDigit"
+    class 6329218 "VariableBlock"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -449,23 +492,23 @@ ${items}};
     end
 
     class 6342402 "ValidationError"
-      visibility package stereotype "enum"
-      cpp_decl "${comment}enum ${name} {
-${items}
-};
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
 "
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
-${items};
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
 ${members}}
 "
-      php_decl "${comment}${visibility}final class ${name} {
-${items}}
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
 "
-      python_2_2 python_decl "class ${name}:
+      python_2_2 python_decl "class ${name}${inherit}:
 ${docstring}${members}
 "
-      idl_decl "${comment}enum ${name} {
-${items}};
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
 "
       explicit_switch_type ""
       mysql_decl ""
@@ -475,6 +518,45 @@ ${items}};
     classdiagram 5128322 "UicNumber_StringFormatValidation"
       classdiagramsettings member_max_width 0 end
       size C-Landscape
+    end
+
+    class 6388610 "StringFormatValidation"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7003010 // <dependency>
+	relation 6971522 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7003010 // <dependency>
+	  b parent class_ref 6355458 // StringFormatValidationState
+      end
+
+      classrelation 7003138 // <dependency>
+	relation 6971650 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7003138 // <dependency>
+	  b parent class_ref 6322434 // Algorithm
+      end
+
+      classrelation 7003394 // <dependency>
+	relation 6971906 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7003394 // <dependency>
+	  b parent class_ref 6355586 // StringFormatValidationError
+      end
     end
 
     class 6355458 "StringFormatValidationState"
@@ -646,6 +728,96 @@ ${items}};
 	MysqlColumn
       end
     end
+
+    class 6375426 "UicNumber11DigitArray"
+      visibility package stereotype "typedef" explicit_base_type ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 5147906 "CheckDigitAlgorithm"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 6381954 "CheckDigitAlgorithm"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8541698 "computeCheckDigit"
+	public explicit_return_type "int8_t"
+	nparams 1
+	  param in name "uic" type class_ref 6375426 // UicNumber11DigitArray
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8541442 "computeCheckDigit"
+	public explicit_return_type "int8_t"
+	nparams 1
+	  param in name "s" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6996354 // <dependency>
+	relation 6964866 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6996354 // <dependency>
+	  b parent class_ref 6322434 // Algorithm
+      end
+
+      classrelation 6996482 // <dependency>
+	relation 6964994 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6996482 // <dependency>
+	  b parent class_ref 6375426 // UicNumber11DigitArray
+      end
+
+      classrelation 7003522 // <dependency>
+	relation 6972034 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7003522 // <dependency>
+	  b parent class_ref 6388610 // StringFormatValidation
+      end
+    end
   end
 
   classview 2715394 "UicNumber_Qt"
@@ -704,6 +876,45 @@ ${inlines}
 	
 	
 	
+      end
+    end
+
+    class 6382082 "CheckDigitAlgorithmQt"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8541570 "computeCheckDigit"
+	public explicit_return_type "int8_t"
+	nparams 1
+	  param in name "s" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 6996098 // <dependency>
+	relation 6964610 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 6996098 // <dependency>
+	  b parent class_ref 6381954 // CheckDigitAlgorithm
       end
     end
   end
