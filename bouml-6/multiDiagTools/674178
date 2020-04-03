@@ -1,6 +1,6 @@
 format 222
 "UicNumber" // Mdt::UicNumber
-  revision 20
+  revision 25
   modified_by 2 "philippe"
   // class settings
   
@@ -198,12 +198,43 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      operation 8494210 "toString"
-	cpp_inline public explicit_return_type "StringType"
+      operation 8548738 "to11DigitArray"
+	public return_type class_ref 6375426 // UicNumber11DigitArray
 	nparams 0
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8548610 "to12CharDigitArray"
+	public return_type class_ref 6395266 // UicNumber12CharDigitArray
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8541826 "computeCheckDigit"
+	cpp_inline private explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
   ${body}}
 "
 	
@@ -234,6 +265,22 @@ ${inlines}
 	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8494210 "toString"
+	class_operation cpp_inline public explicit_return_type "StringType"
+	nparams 2
+	  param in name "uic" type class_ref 4770306 // UicNumber
+	  param in name "fmt" explicit_type "StringFormatFunc"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${typeprefix}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${typeprefix}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}{
   ${body}}
 "
 	
@@ -302,27 +349,20 @@ ${inlines}
 	  b parent class_ref 6381954 // CheckDigitAlgorithm
       end
 
-      operation 8541826 "computeCheckDigit"
-	cpp_inline private explicit_return_type ""
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
       classrelation 7003266 // <dependency>
 	relation 6971778 -_->
 	  a public
 	    cpp default "#include in source"
 	    classrelation_ref 7003266 // <dependency>
 	  b parent class_ref 6388610 // StringFormatValidation
+      end
+
+      classrelation 7010050 // <dependency>
+	relation 6978562 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7010050 // <dependency>
+	  b parent class_ref 6395138 // StringFormat
       end
     end
 
@@ -513,6 +553,94 @@ ${members}};
       explicit_switch_type ""
       mysql_decl ""
       
+    end
+
+    class 6375426 "UicNumber11DigitArray"
+      visibility package stereotype "typedef" explicit_base_type ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6395266 "UicNumber12CharDigitArray"
+      visibility package stereotype "typedef" explicit_base_type ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 5154434 "Uic_StringFormat"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6395138 "StringFormat"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8548354 "toTractiveStockFormat"
+	public explicit_return_type "StringType"
+	nparams 1
+	  param in name "digits" type class_ref 6395266 // UicNumber12CharDigitArray
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8548482 "toPassengerCoachFormat"
+	public explicit_return_type "StringType"
+	nparams 1
+	  param in name "digits" type class_ref 6395266 // UicNumber12CharDigitArray
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
 
     classdiagram 5128322 "UicNumber_StringFormatValidation"
@@ -729,20 +857,6 @@ ${items}};
       end
     end
 
-    class 6375426 "UicNumber11DigitArray"
-      visibility package stereotype "typedef" explicit_base_type ""
-      cpp_decl "${comment}typedef ${type} ${name};
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl "${comment}typedef ${type} ${name};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-    end
-
     classdiagram 5147906 "CheckDigitAlgorithm"
       classdiagramsettings member_max_width 0 end
       size A-Landscape
@@ -919,32 +1033,6 @@ ${inlines}
     end
   end
 
-  classview 1867778 "UicNumber_Core"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    classcompositediagramsettings end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    objectcompositediagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    classdiagram 3598850 "ideas"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-  end
-
   classview 2721922 "UicNumber_QtGui"
     
     classdiagramsettings member_max_width 0 end
@@ -1032,6 +1120,32 @@ ${inlines}
 	
 	
       end
+    end
+  end
+
+  classview 1867778 "UicNumber_Core"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 3598850 "ideas"
+      classdiagramsettings member_max_width 0 end
+      size A4
     end
   end
 end

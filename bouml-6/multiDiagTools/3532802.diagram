@@ -29,6 +29,9 @@ classcanvas 129922 class_ref 4104962 // StringRecordList
   classdiagramsettings member_max_width 0 end
   xyz 96 466 2006
 end
+note 131074 "Should provide iterator / range compatible interface.
+Something compatible to, f.ex. vector<vector<string>>"
+  xyzwh 76 550 2000 441 69
 relationcanvas 128258 relation_ref 4574594 // <directional composition>
   from ref 128130 z 2001 to ref 128002
   no_role_a no_role_b

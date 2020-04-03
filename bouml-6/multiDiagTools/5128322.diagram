@@ -2,43 +2,41 @@ format 222
 
 classcanvas 128002 class_ref 6322562 // UicNumber
   classdiagramsettings member_max_width 0 end
-  xyz 40 319 2005
+  xyz 82 441 2005
 end
 classcanvas 128130 class_ref 6355458 // StringFormatValidationState
   classdiagramsettings member_max_width 0 end
-  xyz 609 328 2000
+  xyz 433 728 2000
 end
 classcanvas 128386 class_ref 6355714 // StringFormatValidationErrorCode
   classdiagramsettings member_max_width 0 end
-  xyz 1080 336 2006
+  xyz 508 328 2006
 end
 classcanvas 128642 class_ref 6355586 // StringFormatValidationError
   classdiagramsettings member_max_width 0 end
-  xyz 607 217 2005
+  xyz 431 217 2005
 end
 classcanvas 129026 class_ref 6355842 // StringFormatValidationStateQt
   classdiagramsettings member_max_width 0 end
-  xyz 603 458 2006
+  xyz 427 858 2006
 end
 classcanvas 129794 class_ref 4372098 // exception
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 773 40 2000
+  xyz 597 40 2000
 end
 classcanvas 130178 class_ref 6368898 // logic_error
   classdiagramsettings member_max_width 0 end
-  xyz 766 122 2011
+  xyz 590 122 2011
 end
 classcanvas 131202 class_ref 6388610 // StringFormatValidation
   classdiagramsettings member_max_width 0 end
-  xyz 409 346 2000
+  xyz 217 626 2000
 end
 classcanvas 131330 class_ref 6322434 // Algorithm
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 423 446 2011
+  xyz 479 626 2011
 end
 relationcanvas 128514 relation_ref 6937346 // <directional composition>
-  decenter_begin 539
-  decenter_end 547
   from ref 128130 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -49,16 +47,16 @@ relationcanvas 129154 relation_ref 6937730 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129410 relation_ref 6937986 // <directional composition>
-  geometry HV unfixed
-  decenter_begin 549
-  decenter_end 483
-  from ref 128642 z 2007 to point 1213 253
-  line 132482 z 2007 to ref 128386
+  from ref 128642 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129538 relation_ref 6938114 // <dependency>
-  from ref 128642 z 2006 to ref 128130
+  decenter_begin 549
+  decenter_end 449
+  from ref 128642 z 2006 to point 904 256
+  line 132866 z 2006 to point 904 768
+  line 132994 z 2006 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -73,17 +71,17 @@ relationcanvas 130434 relation_ref 6951426 // <generalisation>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131458 relation_ref 6924034 // <dependency>
-  geometry VH unfixed
-  decenter_begin 510
-  decenter_end 426
-  from ref 128002 z 2012 to point 205 469
+  geometry HV unfixed
+  from ref 128002 z 2012 to point 542 510
   line 131970 z 2012 to ref 131330
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131586 relation_ref 6971522 // <dependency>
-  decenter_end 539
-  from ref 131202 z 2001 to ref 128130
+  geometry VH unfixed
+  decenter_end 449
+  from ref 131202 z 2001 to point 294 765
+  line 132738 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -93,16 +91,16 @@ relationcanvas 131714 relation_ref 6971650 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131842 relation_ref 6971778 // <dependency>
-  decenter_begin 532
+  decenter_begin 508
   from ref 128002 z 2006 to ref 131202
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132226 relation_ref 6971906 // <dependency>
-  geometry VH unfixed
   decenter_end 549
-  from ref 131202 z 2006 to point 486 253
-  line 132354 z 2006 to ref 128642
+  from ref 131202 z 2006 to point 40 656
+  line 132354 z 2006 to point 40 256
+  line 132610 z 2006 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

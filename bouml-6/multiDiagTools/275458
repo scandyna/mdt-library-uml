@@ -1,6 +1,6 @@
 format 222
 "std" // std
-  revision 12
+  revision 13
   modified_by 2 "philippe"
   // class settings
   
@@ -30,6 +30,8 @@ format 222
   activitydiagramsettings
    end
   
+  package_ref 1049986 // filesystem
+
   classview 847490 "fstream"
     
     classdiagramsettings member_max_width 0 end
@@ -572,6 +574,11 @@ ${inlines}
     
     activitydiagramsettings
      end
+    classdiagram 5160962 "exception_overview"
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+      size A4
+    end
+
     classdiagram 3739266 "exception"
       classdiagramsettings member_max_width 0 end
       size A4
@@ -703,6 +710,52 @@ ${inlines}
 	
 	
 	
+      end
+    end
+
+    class 6401794 "invalid_argument"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7016578 // <generalisation>
+	relation 6985090 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7016578 // <generalisation>
+	  b parent class_ref 6368898 // logic_error
+      end
+    end
+
+    class 6401922 "out_of_range"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7016706 // <generalisation>
+	relation 6985218 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7016706 // <generalisation>
+	  b parent class_ref 6368898 // logic_error
       end
     end
 

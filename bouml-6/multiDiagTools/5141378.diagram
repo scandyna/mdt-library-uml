@@ -2,14 +2,38 @@ format 222
 
 classcanvas 128002 class_ref 6368898 // logic_error
   classdiagramsettings member_max_width 0 end
-  xyz 118 210 2000
+  xyz 186 210 2000
 end
 classcanvas 128130 class_ref 4372098 // exception
   classdiagramsettings member_max_width 0 end
-  xyz 39 42 2005
+  xyz 103 42 2005
+end
+classcanvas 128386 class_ref 6401794 // invalid_argument
+  classdiagramsettings member_max_width 0 end
+  xyz 35 344 2000
+end
+classcanvas 128642 class_ref 6401922 // out_of_range
+  classdiagramsettings member_max_width 0 end
+  xyz 192 344 2000
 end
 relationcanvas 128258 relation_ref 6951298 // <generalisation>
+  decenter_begin 461
   from ref 128002 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 6985090 // <generalisation>
+  geometry VHV unfixed
+  decenter_end 461
+  from ref 128386 z 2001 to point 94 304
+  line 128898 z 2001 to point 237 304
+  line 129026 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 6985218 // <generalisation>
+  decenter_end 461
+  from ref 128642 z 2001 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
