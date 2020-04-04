@@ -1,6 +1,6 @@
 format 222
 "Mdt" // Mdt
-  revision 106
+  revision 109
   modified_by 2 "philippe"
   // class settings
   
@@ -178,6 +178,76 @@ ${inlines}
   package_ref 529538 // sandbox
 
   package_ref 549506 // Algorithm
+
+  componentview 134530 "Application"
+    //component diagram settings
+    componentdiagramsettings
+     end
+    componentdiagram 5167618 "Application_overview"
+      componentdiagramsettings
+       end
+      size A4
+    end
+
+    component 134786 "CoreApplicationForNonQtUsage"
+      simplerelation 128258
+	-_->
+	  on component_ref 134914 // QtCore
+      end
+    end
+
+    component 135298 "GuiApplicationForNonQtUsage"
+      simplerelation 128386
+	-_->
+	  on component_ref 135042 // QtGui
+      end
+    end
+
+    component 135426 "QtSingleCoreApplication"
+      simplerelation 128514
+	-_->
+	  on component_ref 134914 // QtCore
+      end
+
+      simplerelation 128642
+	-_->
+	  on component_ref 135170 // QtNetwork
+      end
+    end
+
+    component 135554 "SingleCoreApplication"
+      simplerelation 128770
+	-_->
+	  on component_ref 135426 // QtSingleCoreApplication
+      end
+    end
+
+    component 135810 "Application"
+      simplerelation 129410
+	-_->
+	  on component_ref 135682 // QtWidgets
+      end
+    end
+
+    component 135938 "QtSingleApplication"
+      simplerelation 129154
+	-_->
+	  on component_ref 135682 // QtWidgets
+      end
+
+      simplerelation 129282
+	-_->
+	  on component_ref 135170 // QtNetwork
+      end
+    end
+
+    component 136066 "SingleApplication"
+      simplerelation 129538
+	-_->
+	  on component_ref 135938 // QtSingleApplication
+      end
+    end
+  end
 
   classview 1848066 "Application_Core"
     
@@ -898,6 +968,615 @@ ${inlines}
     end
   end
 
+  classview 2741890 "CoreApplicationForNonQtUsage"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5168386 "CoreApplicationForNonQtUsage"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6408578 "CoreApplicationForNonQtUsage"
+      visibility package 
+      nformals 1
+      formal name "Worker" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6408706 "ApplicationForNonQtUsageTemplate"
+      visibility package 
+      nformals 1
+      formal name "App" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+  classview 2748546 "CoreApplicationForNonQtUsage_example"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5174914 "CoreApplicationForNonQtUsage_example"
+      classdiagramsettings member_max_width 0 end
+      size B-Landscape
+    end
+
+    class 6415234 "MyLibrary_NonQtApi"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4576130 "Mutex"
+	private explicit_type "Mutex"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4576258 "Response"
+	private explicit_type "string"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 8555266 "sendCommand"
+	public return_type class_ref 6415362 // AppError
+	nparams 1
+	  param in name "cmd" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7023362 // <dependency>
+	relation 6991874 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7023362 // <dependency>
+	  b parent class_ref 6415362 // AppError
+      end
+
+      classrelation 7023490 // <directional composition>
+	relation 6992002 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7023490 // <directional composition>
+	  b parent class_ref 6408578 // CoreApplicationForNonQtUsage
+      end
+
+      operation 8555394 "hasReceivedResponse"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8555522 "response"
+	public explicit_return_type "string"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8555650 "setValue"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "val" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8555778 "value"
+	public explicit_return_type "string"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8555906 "onResponseReceived"
+	stereotype "slot"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "response" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8556034 "invokeSendCommand"
+	stereotype "signal"
+	protected explicit_return_type "void"
+	nparams 2
+	  param out name "err" type class_ref 6415362 // AppError
+	  param in name "cmd" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8556162 "invokeSetValue"
+	stereotype "signal"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "val" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8556290 "invokeValue"
+	stereotype "signal"
+	protected explicit_return_type "void"
+	nparams 1
+	  param out name "val" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8556418 "conectSignalAndSlots"
+	private explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7023874 // <generalisation>
+	relation 6992386 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7023874 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 7024130 // <unidirectional association>
+	relation 6992642 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 7024130 // <unidirectional association>
+	  b parent class_ref 6415746 // MyLibrary_NonQtApi_Worker
+      end
+    end
+
+    class 6415362 "AppError"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6415490 "MyLibrary_NonQt_C_Api"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7023618 // <directional composition>
+	relation 6992130 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7023618 // <directional composition>
+	  b parent class_ref 6415234 // MyLibrary_NonQtApi
+      end
+
+      operation 8556546 "myLibrary_sendCommand"
+	public explicit_return_type "int"
+	nparams 2
+	  param in name "lib" type class_ref 6415234 // MyLibrary_NonQtApi
+	  param in name "cmd" explicit_type "char"
+	multiplicity "*"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8556674 "myLibrary_response"
+	public explicit_return_type "void"
+	nparams 3
+	  param in name "lib" type class_ref 6415234 // MyLibrary_NonQtApi
+	  param out name "response" explicit_type "char"
+	multiplicity "*"
+	  param in name "strCapacity" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}, ${t2} ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} & ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8556802 "myLibrary_value"
+	public explicit_return_type "void"
+	nparams 3
+	  param in name "lib" type class_ref 6415234 // MyLibrary_NonQtApi
+	  param out name "value" explicit_type "char"
+	multiplicity "*"
+	  param in name "strCapacity" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}, ${t2} ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} & ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 6415618 "MyLibrary_Api"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7023746 // <generalisation>
+	relation 6992258 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7023746 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      attribute 4576386 "Value"
+	private explicit_type "string"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 8556930 "sendCommand"
+	public return_type class_ref 6415362 // AppError
+	nparams 1
+	  param in name "cmd" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8557058 "setValue"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "val" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8557186 "value"
+	public explicit_return_type "string"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8557314 "responseReceived"
+	stereotype "signal"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "response" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 6415746 "MyLibrary_NonQtApi_Worker"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7024002 // <generalisation>
+	relation 6992514 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7024002 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 8557442 "myLibraryApi"
+	public return_type class_ref 6415618 // MyLibrary_Api
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7024258 // <directional composition>
+	relation 6992770 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7024258 // <directional composition>
+	  b parent class_ref 6415618 // MyLibrary_Api
+      end
+
+      operation 8557570 "sendCommand"
+	stereotype "slot"
+	public explicit_return_type "void"
+	nparams 2
+	  param out name "err" type class_ref 6415362 // AppError
+	  param in name "cmd" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8557698 "value"
+	stereotype "slot"
+	public explicit_return_type "void"
+	nparams 1
+	  param out name "val" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
   classview 1867906 "Application_Gui"
     
     classdiagramsettings member_max_width 0 end
@@ -954,6 +1633,28 @@ ${inlines}
 	  b parent class_ref 4152322 // CoreApplicationImpl
       end
     end
+  end
+
+  classview 2742018 "GuiApplicationForNonQtUsage"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
   end
 
   classview 1293570 "Application_Widgets"

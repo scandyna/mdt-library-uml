@@ -1,6 +1,6 @@
 format 222
 "Qt" // Qt
-  revision 282
+  revision 283
   modified_by 2 "philippe"
   // class settings
   
@@ -30,6 +30,65 @@ format 222
   activitydiagramsettings
    end
   
+  componentview 134658 "Qt"
+    //component diagram settings
+    componentdiagramsettings
+     end
+    componentdiagram 5167874 "Qt_overview"
+      componentdiagramsettings
+       end
+      size A4
+    end
+
+    componentdiagram 5167746 "QtCore"
+      componentdiagramsettings
+       end
+      size A4
+    end
+
+    component 134914 "QtCore"
+    end
+
+    componentdiagram 5168002 "QtGui"
+      componentdiagramsettings
+       end
+      size A4
+    end
+
+    component 135042 "QtGui"
+      simplerelation 128002
+	-_->
+	  on component_ref 134914 // QtCore
+      end
+    end
+
+    componentdiagram 5168130 "QtNetwork"
+      componentdiagramsettings
+       end
+      size A4
+    end
+
+    component 135170 "QtNetwork"
+      simplerelation 128130
+	-_->
+	  on component_ref 134914 // QtCore
+      end
+    end
+
+    componentdiagram 5168258 "QtWidgets"
+      componentdiagramsettings
+       end
+      size A4
+    end
+
+    component 135682 "QtWidgets"
+      simplerelation 129026
+	-_->
+	  on component_ref 135042 // QtGui
+      end
+    end
+  end
+
   package_ref 575746 // Qt
 
   classview 134914 "Qt4"

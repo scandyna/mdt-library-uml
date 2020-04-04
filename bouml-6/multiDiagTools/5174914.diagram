@@ -1,0 +1,90 @@
+format 222
+
+classcanvas 128002 class_ref 6408578 // CoreApplicationForNonQtUsage
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  color mediumyellow
+  xyz 1010.25 203.75 2000
+end
+classcanvas 128130 class_ref 6415234 // MyLibrary_NonQtApi
+  classdiagramsettings member_max_width 0 end
+  color mediumyellow
+  xyz 684.5 301.5 2000
+end
+classcanvas 128258 class_ref 6415362 // AppError
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 1191.5 390.25 2005
+end
+classcanvas 128642 class_ref 6415490 // MyLibrary_NonQt_C_Api
+  classdiagramsettings member_max_width 0 end
+  color mediumyellow
+  xyz 40.25 366.25 2000
+end
+note 128898 "No slots or whatever depends on a Qt event loop"
+  xyzwh 808.25 586.25 2000 213 59
+classcanvas 129410 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 638.5 39.5 2005
+end
+classcanvas 129538 class_ref 6415618 // MyLibrary_Api
+  classdiagramsettings member_max_width 0 end
+  xyz 58.5 156.5 2005
+end
+classcanvas 130562 class_ref 6415746 // MyLibrary_NonQtApi_Worker
+  classdiagramsettings member_max_width 0 end
+  xyz 464.5 171.5 2000
+end
+relationcanvas 128386 relation_ref 6991874 // <dependency>
+  decenter_end 557
+  from ref 128130 z 2006 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 6992002 // <directional composition>
+  decenter_begin 974
+  decenter_end 513
+  from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 6992130 // <directional composition>
+  decenter_begin 532
+  from ref 128642 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 6992258 // <generalisation>
+  geometry VHV unfixed
+  from ref 129538 z 2006 to point 239 118
+  line 131202 z 2006 to point 668 118
+  line 131330 z 2006 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 6992386 // <generalisation>
+  geometry VHV unfixed
+  from ref 128130 z 2006 to point 915 118
+  line 131586 z 2006 to point 668 118
+  line 131714 z 2006 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130690 relation_ref 6992514 // <generalisation>
+  from ref 130562 z 2006 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130818 relation_ref 6992642 // <unidirectional association>
+  decenter_begin 27
+  decenter_end 564
+  from ref 128130 z 2001 to ref 130562
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131458 relation_ref 6992770 // <directional composition>
+  from ref 130562 z 2006 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 129282 -_-_ decenter_end 516
+  from ref 128130 z 2001 to ref 128898
+end

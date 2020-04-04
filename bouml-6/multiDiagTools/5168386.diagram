@@ -1,0 +1,11 @@
+format 222
+
+classcanvas 128002 class_ref 6408578 // CoreApplicationForNonQtUsage
+  classdiagramsettings member_max_width 0 end
+  xyz 85 348 2000
+end
+classcanvas 128130 class_ref 6408706 // ApplicationForNonQtUsageTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 91 144 2000
+end
+end

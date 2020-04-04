@@ -1,0 +1,21 @@
+format 222
+
+componentcanvas 128002 component_ref 135682 // QtWidgets
+  
+  xyzwh 136 311 2000 167 57
+end
+componentcanvas 128130 component_ref 134914 // QtCore
+  
+  xyzwh 132 82 2000 167 57
+end
+componentcanvas 128386 component_ref 135042 // QtGui
+  
+  xyzwh 134 204 2006 167 57
+end
+simplerelationcanvas 128514 simplerelation_ref 128002
+  from ref 128386 z 2007 to ref 128130
+end
+simplerelationcanvas 128642 simplerelation_ref 129026
+  from ref 128002 z 2007 to ref 128386
+end
+end
