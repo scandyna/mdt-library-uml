@@ -1,6 +1,6 @@
-format 221
-"TaskList" // apps::TaskList
-  revision 10
+format 222
+"T475TaskList" // apps::T475TaskList
+  revision 12
   modified_by 2 "philippe"
   // class settings
   
@@ -304,6 +304,22 @@ ${inlines}
 	    classrelation_ref 5098882 // <directional composition>
 	  b parent class_ref 4570498 // Task
       end
+
+      operation 8571010 "addTask"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
     end
 
     class 4570882 "Category"
@@ -573,4 +589,68 @@ ${inlines}
     end
   end
 
+  classview 2761602 "TaskList_sandbox2"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5194498 "TaskList_sandbox2"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6435842 "NewTask"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4582914 "StartTime"
+	private explicit_type "TimeStamp"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4583042 "EndTime"
+	private explicit_type "TimeStamp"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+  end
 end

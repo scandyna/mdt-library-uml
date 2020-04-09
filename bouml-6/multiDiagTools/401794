@@ -1,6 +1,6 @@
 format 222
 "Mdt" // Mdt
-  revision 109
+  revision 113
   modified_by 2 "philippe"
   // class settings
   
@@ -1010,11 +1010,48 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 7030786 // <directional composition>
+	relation 6999298 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7030786 // <directional composition>
+	  b parent class_ref 425730 // QCoreApplication
+      end
+
+      classrelation 7030914 // <directional composition>
+	relation 6999426 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7030914 // <directional composition>
+	  b parent class_ref 6422402 // CoreApplicationForNonQtUsageImpl
+      end
+
+      operation 8564482 "CoreApplicationForNonQtUsage"
+	cpp_inline public explicit_return_type ""
+	nparams 2
+	  param in name "argc" explicit_type "int"
+	  param in name "argv" explicit_type "char"
+	multiplicity "*"
+	cpp_decl "  ${comment}${inline}${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
 
     class 6408706 "ApplicationForNonQtUsageTemplate"
       visibility package 
-      nformals 1
+      nformals 2
+      formal name "Worker" type "class" explicit_default_value ""
+        explicit_extends ""
       formal name "App" type "class" explicit_default_value ""
         explicit_extends ""
       cpp_decl "${comment}${template}class ${name}${inherit}
@@ -1030,9 +1067,32 @@ ${inlines}
       mysql_decl ""
       
     end
+
+    class 6422402 "CoreApplicationForNonQtUsageImpl"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7031042 // <generalisation>
+	relation 6999554 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7031042 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+    end
   end
 
-  classview 2748546 "CoreApplicationForNonQtUsage_example"
+  classview 2748546 "MyNonQtCoreLibrary_example"
     
     classdiagramsettings member_max_width 0 end
     
@@ -1052,7 +1112,7 @@ ${inlines}
     
     activitydiagramsettings
      end
-    classdiagram 5174914 "CoreApplicationForNonQtUsage_example"
+    classdiagram 5174914 "MyNonQtCoreLibrary_example"
       classdiagramsettings member_max_width 0 end
       size B-Landscape
     end
@@ -1096,7 +1156,7 @@ ${inlines}
       end
 
       operation 8555266 "sendCommand"
-	public return_type class_ref 6415362 // AppError
+	public return_type class_ref 6415362 // MyLibraryError
 	nparams 1
 	  param in name "cmd" explicit_type "string"
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
@@ -1116,7 +1176,7 @@ ${inlines}
 	  a public
 	    cpp default "#include in source"
 	    classrelation_ref 7023362 // <dependency>
-	  b parent class_ref 6415362 // AppError
+	  b parent class_ref 6415362 // MyLibraryError
       end
 
       classrelation 7023490 // <directional composition>
@@ -1210,7 +1270,7 @@ ${inlines}
 	stereotype "signal"
 	protected explicit_return_type "void"
 	nparams 2
-	  param out name "err" type class_ref 6415362 // AppError
+	  param out name "err" type class_ref 6415362 // MyLibraryError
 	  param in name "cmd" explicit_type "string"
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
@@ -1291,7 +1351,7 @@ ${inlines}
       end
     end
 
-    class 6415362 "AppError"
+    class 6415362 "MyLibraryError"
       visibility package stereotype "enum"
       cpp_decl "${comment}enum ${name} {
 ${items}
@@ -1430,7 +1490,7 @@ ${inlines}
       end
 
       operation 8556930 "sendCommand"
-	public return_type class_ref 6415362 // AppError
+	public return_type class_ref 6415362 // MyLibraryError
 	nparams 1
 	  param in name "cmd" explicit_type "string"
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
@@ -1516,7 +1576,7 @@ ${inlines}
 	  b parent class_ref 138626 // QObject
       end
 
-      operation 8557442 "myLibraryApi"
+      operation 8557442 "libraryApi"
 	public return_type class_ref 6415618 // MyLibrary_Api
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
@@ -1544,7 +1604,7 @@ ${inlines}
 	stereotype "slot"
 	public explicit_return_type "void"
 	nparams 2
-	  param out name "err" type class_ref 6415362 // AppError
+	  param out name "err" type class_ref 6415362 // MyLibraryError
 	  param in name "cmd" explicit_type "string"
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
@@ -1655,6 +1715,299 @@ ${inlines}
     
     activitydiagramsettings
      end
+    classdiagram 5181442 "GuiApplicationForNonQtUsage"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 6422274 "GuiApplicationForNonQtUsage"
+      visibility package 
+      nformals 1
+      formal name "Worker" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7031170 // <directional composition>
+	relation 6999682 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7031170 // <directional composition>
+	  b parent class_ref 4152194 // QGuiApplication
+      end
+
+      classrelation 7031426 // <directional composition>
+	relation 6999938 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7031426 // <directional composition>
+	  b parent class_ref 6422530 // GuiApplicationForNonQtUsageImpl
+      end
+
+      operation 8564354 "GuiApplicationForNonQtUsage"
+	cpp_inline public explicit_return_type ""
+	nparams 2
+	  param in name "argc" explicit_type "int"
+	  param in name "argv" explicit_type "char"
+	multiplicity "*"
+	cpp_decl "  ${comment}${inline}${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 6422530 "GuiApplicationForNonQtUsageImpl"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7031298 // <generalisation>
+	relation 6999810 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7031298 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+    end
+  end
+
+  classview 2755074 "MyNonQtGuiLibrary_example"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5187970 "MyNonQtGuiLibrary_example"
+      classdiagramsettings member_max_width 0 end
+      size B-Landscape
+    end
+
+    class 6429058 "MyLibrary_Api"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8564226 "createReport"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "info" type class_ref 6442498 // ReportInformations
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7037954 // <generalisation>
+	relation 7006466 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7037954 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 7038594 // <dependency>
+	relation 7007106 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7038594 // <dependency>
+	  b parent class_ref 6442498 // ReportInformations
+      end
+
+      classrelation 7038722 // <dependency>
+	relation 7007234 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7038722 // <dependency>
+	  b parent class_ref 6442626 // CreateReportError
+      end
+    end
+
+    class 6429186 "MyLibrary_NonQtApi"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7038210 // <generalisation>
+	relation 7006722 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7038210 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 7038338 // <directional composition>
+	relation 7006850 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7038338 // <directional composition>
+	  b parent class_ref 6422274 // GuiApplicationForNonQtUsage
+      end
+
+      classrelation 7038466 // <unidirectional association>
+	relation 7006978 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 7038466 // <unidirectional association>
+	  b parent class_ref 6442370 // MyLibrary_NonQtApi_Worker
+      end
+
+      operation 8577538 "createReport"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "info" type class_ref 6442498 // ReportInformations
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8577666 "invokeCreateReport"
+	stereotype "signal"
+	protected explicit_return_type "void"
+	nparams 1
+	  param in name "info" type class_ref 6442498 // ReportInformations
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 6442370 "MyLibrary_NonQtApi_Worker"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7038082 // <generalisation>
+	relation 7006594 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7038082 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+    end
+
+    class 6442498 "ReportInformations"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6442626 "CreateReportError"
+      visibility package stereotype "exception"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}exception ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
   end
 
   classview 1293570 "Application_Widgets"

@@ -1,0 +1,55 @@
+format 222
+
+classcanvas 128002 class_ref 6422274 // GuiApplicationForNonQtUsage
+  classdiagramsettings member_max_width 0 end
+  xyz 195.75 236.75 2000
+end
+classcanvas 128130 class_ref 6408706 // ApplicationForNonQtUsageTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 387 2005
+end
+classcanvas 128258 class_ref 425730 // QCoreApplication
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 39.75 156.5 2000
+end
+classcanvas 128386 class_ref 4152194 // QGuiApplication
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 40.5 247.5 2006
+end
+classcanvas 128642 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 703.5 39.5 2011
+end
+classcanvas 129026 class_ref 6422530 // GuiApplicationForNonQtUsageImpl
+  classdiagramsettings member_max_width 0 end
+  xyz 617.5 247.5 2010
+end
+relationcanvas 128514 relation_ref 4650242 // <generalisation>
+  from ref 128386 z 2007 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 4659202 // <generalisation>
+  geometry VHV unfixed
+  from ref 128258 z 2012 to point 99 118
+  line 129922 z 2012 to point 733 118
+  line 130050 z 2012 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 6999682 // <directional composition>
+  from ref 128002 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 6999810 // <generalisation>
+  from ref 129026 z 2012 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 6999938 // <directional composition>
+  from ref 128002 z 2011 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end
