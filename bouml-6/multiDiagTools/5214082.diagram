@@ -1,0 +1,7 @@
+format 222
+
+classcanvas 128002 class_ref 6456194 // QUrl
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+end

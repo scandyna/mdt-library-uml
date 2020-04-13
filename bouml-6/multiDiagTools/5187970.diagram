@@ -2,43 +2,46 @@ format 222
 
 classcanvas 128002 class_ref 6429058 // MyLibrary_Api
   classdiagramsettings member_max_width 0 end
-  xyz 1020.25 339 2000
+  xyz 783 157 2000
 end
 classcanvas 128130 class_ref 6429186 // MyLibrary_NonQtApi
   classdiagramsettings member_max_width 0 end
   color mediumyellow
-  xyz 319.75 157.75 2000
+  xyz 293.75 365.75 2000
 end
 classcanvas 128258 class_ref 6442370 // MyLibrary_NonQtApi_Worker
   classdiagramsettings member_max_width 0 end
-  xyz 935.5 260.5 2000
+  xyz 545.5 163 2000
 end
 classcanvas 128386 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 1002.5 39.5 2000
+  xyz 612.5 39.5 2000
 end
 classcanvas 129410 class_ref 6422274 // GuiApplicationForNonQtUsage
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
   color mediumyellow
-  xyz 40.25 164.75 2005
+  xyz 1236.25 385.75 2005
 end
 note 129666 "No slots or whatever depends on a Qt event loop"
-  xyzwh 782.25 163.75 2000 213 59
+  xyzwh 278.25 203.75 2000 213 59
 classcanvas 130178 class_ref 6442498 // ReportInformations
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 1366.25 345 2000
+  xyz 690.25 247.5 2000
 end
 classcanvas 130434 class_ref 6442626 // CreateReportError
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 853.5 338.25 2000
+  xyz 1133 153 2000
 end
-note 130690 "How does exceptions propagate with Queued signa/slots ?"
-  xyzwh 129 349 2000 397 55
+note 130690 "How does exceptions propagate with Queued signa/slots ?
+
+It seems that exceptions are simply not propagated accross threads
+
+See: https://en.cppreference.com/w/cpp/error/exception_ptr"
+  xyzwh 309.75 514 2000 391 119
 relationcanvas 128514 relation_ref 7006466 // <generalisation>
   geometry VHV unfixed
-  decenter_begin 488
-  from ref 128002 z 2001 to point 1168 118
-  line 129154 z 2001 to point 1032 118
+  from ref 128002 z 2001 to point 935 118
+  line 129154 z 2001 to point 642 118
   line 129282 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -51,40 +54,58 @@ end
 relationcanvas 128770 relation_ref 7006722 // <generalisation>
   geometry VHV unfixed
   decenter_begin 508
-  from ref 128130 z 2001 to point 531 118
-  line 128898 z 2001 to point 1032 118
+  from ref 128130 z 2001 to point 505 118
+  line 128898 z 2001 to point 642 118
   line 129026 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129538 relation_ref 7006850 // <directional composition>
-  decenter_begin 549
+  decenter_begin 732
   decenter_end 561
   from ref 128130 z 2006 to ref 129410
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129922 relation_ref 7006978 // <unidirectional association>
-  geometry VH unfixed
-  decenter_begin 508
-  from ref 128130 z 2001 to point 531 278
-  line 130050 z 2001 to ref 128258
+  decenter_begin 832
+  from ref 128130 z 2001 to ref 128258
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130306 relation_ref 7007106 // <dependency>
+  decenter_begin 35
+  decenter_end 759
   from ref 128002 z 2001 to ref 130178
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130562 relation_ref 7007234 // <dependency>
-  decenter_end 442
   from ref 128002 z 2001 to ref 130434
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 129794 -_-_ decenter_begin 549 decenter_end 559
+relationcanvas 130946 relation_ref 7013762 // <dependency>
+  decenter_begin 183
+  from ref 128130 z 2001 to point 1195 375
+  line 131586 z 2001 to ref 130434
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131074 relation_ref 7013890 // <dependency>
+  decenter_begin 969
+  decenter_end 94
+  from ref 128130 z 2001 to ref 130178
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131458 relation_ref 7020418 // <directional composition>
+  from ref 128258 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 129794 -_-_
   from ref 128130 z 2001 to ref 129666
-line 130818 -_-_
+line 130818 -_-_ decenter_begin 508 decenter_end 508
   from ref 128130 z 2001 to ref 130690
 end

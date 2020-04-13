@@ -26,6 +26,12 @@ classcanvas 129026 class_ref 1538306 // mdtDeviceAddressList
 end
 note 129282 "See URI (Uniform Resource Identifier)"
   xyzwh 188 516 2000 345 47
+classcanvas 129410 class_ref 6456194 // QUrl
+  classdiagramsettings member_max_width 0 end
+  xyz 70 392 2000
+end
+note 129538 "Variant ?"
+  xyzwh 475 349 2000 103 39
 relationcanvas 128642 relation_ref 1911554 // <directional composition>
   from ref 128514 z 3006 stereotype "<<union>>" xyz 409 215 3006 to ref 128130
   role_a_pos 360 190 3000 no_role_b
@@ -47,4 +53,6 @@ relationcanvas 129154 relation_ref 1911426 // <directional composition>
   role_a_pos 343 96 3000 no_role_b
   multiplicity_a_pos 318 96 3000 no_multiplicity_b
 end
+line 129666 -_-_
+  from ref 128514 z 3006 to ref 129538
 end
