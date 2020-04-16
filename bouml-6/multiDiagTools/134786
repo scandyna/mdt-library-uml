@@ -1,6 +1,6 @@
 format 222
 "Qt" // Qt
-  revision 286
+  revision 287
   modified_by 2 "philippe"
   // class settings
   
@@ -7099,6 +7099,38 @@ ${inlines}
       end
     end
 
+    class 2706562 "QActionGroup"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 3088770 // <generalisation>
+	relation 3070594 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 3088770 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 3088898 // <unidirectional association>
+	relation 3070722 --->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
+"
+	    classrelation_ref 3088898 // <unidirectional association>
+	  b parent class_ref 693250 // QAction
+      end
+    end
+
     classdiagram 860162 "QAbstractScrollArea"
       classdiagramsettings member_max_width 0 end
       size A4
@@ -7354,7 +7386,7 @@ ${inlines}
       
     end
 
-    class 2706562 "QActionGroup"
+    class 6476162 "QPagedPaintDevice"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -7368,21 +7400,35 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 3088770 // <generalisation>
-	relation 3070594 ---|>
+      classrelation 7079298 // <generalisation>
+	relation 7047810 ---|>
 	  a public
 	    cpp default "${type}"
-	    classrelation_ref 3088770 // <generalisation>
-	  b parent class_ref 138626 // QObject
+	    classrelation_ref 7079298 // <generalisation>
+	  b parent class_ref 2160386 // QPaintDevice
       end
+    end
 
-      classrelation 3088898 // <unidirectional association>
-	relation 3070722 --->
-	  a role_name "" multiplicity "*" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
+    class 6476290 "QPdfWriter"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
 "
-	    classrelation_ref 3088898 // <unidirectional association>
-	  b parent class_ref 693250 // QAction
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7079426 // <generalisation>
+	relation 7047938 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7079426 // <generalisation>
+	  b parent class_ref 6476162 // QPagedPaintDevice
       end
     end
 

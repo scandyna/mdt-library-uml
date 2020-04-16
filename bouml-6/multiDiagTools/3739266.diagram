@@ -4,4 +4,8 @@ classcanvas 128002 class_ref 4372098 // exception
   classdiagramsettings member_max_width 0 end
   xyz 40.5 40.5 2000
 end
+classcanvas 128130 class_ref 6476034 // exception_ptr
+  classdiagramsettings member_max_width 0 end
+  xyz 116 322 2000
+end
 end

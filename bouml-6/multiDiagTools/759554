@@ -1,6 +1,6 @@
 format 222
 "T475TaskList" // apps::T475TaskList
-  revision 12
+  revision 13
   modified_by 2 "philippe"
   // class settings
   
@@ -209,16 +209,13 @@ ${inlines}
 	MysqlColumn
       end
 
-      classrelation 5167490 // <association>
-	relation 5141122 ----
+      classrelation 5167490 // <directional composition>
+	relation 5141122 *-->
 	  a role_name "" multiplicity "*" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 5167490 // <association>
-	  b role_name "" multiplicity "*" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
-"
-	    classrelation_ref 5167618 // <association>
+	    classrelation_ref 5167490 // <directional composition>
+	  b parent class_ref 4632578 // Place
       end
 
       classrelation 5167746 // <association>
@@ -280,6 +277,15 @@ ${inlines}
 "
 	    classrelation_ref 5168898 // <association>
       end
+
+      classrelation 7072770 // <unidirectional association>
+	relation 7041282 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 7072770 // <unidirectional association>
+	  b parent class_ref 4571394 // TaskGroup
+      end
     end
 
     class 4570626 "TaskList"
@@ -319,7 +325,6 @@ ${inlines}
 	
 	
       end
-
     end
 
     class 4570882 "Category"
@@ -408,14 +413,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 5167106 // <directional composition>
-	relation 5140866 *-->
-	  a role_name "" multiplicity "*" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	    classrelation_ref 5167106 // <directional composition>
-	  b parent class_ref 4570498 // Task
-      end
     end
 
     class 4632578 "Place"
@@ -432,9 +429,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 5167618 // <association>
-	relation_ref 5141122 // <association>
-      end
     end
 
     class 4659714 "Document"
@@ -651,6 +645,22 @@ ${inlines}
 	mysql_decl ""
 	MysqlColumn
       end
+    end
+
+    class 6469506 "TrainPlace"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 end
