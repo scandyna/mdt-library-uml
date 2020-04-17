@@ -2,47 +2,50 @@ format 222
 
 classcanvas 128002 class_ref 4570626 // TaskList
   classdiagramsettings member_max_width 0 end
-  xyz 193 242 2000
+  xyz 41 134 2000
 end
 classcanvas 128386 class_ref 4571394 // TaskGroup
   classdiagramsettings member_max_width 0 end
-  xyz 360 140 2000
+  xyz 208 240 2000
 end
 classcanvas 128514 class_ref 4570498 // Task
   classdiagramsettings member_max_width 0 end
-  xyz 162 116 2006
+  xyz 170 116 2006
 end
 classcanvas 128898 class_ref 6435842 // NewTask
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 376.5 2000
+  xyz 40.5 360.5 2000
 end
 classcanvas 129026 class_ref 4632578 // Place
   classdiagramsettings member_max_width 0 end
-  xyz 217 40 2012
+  xyz 225 40 2012
 end
 classcanvas 129282 class_ref 4659714 // Document
   classdiagramsettings member_max_width 0 end
-  xyz 42 140 2012
+  xyz 370 140 2012
 end
 classcanvas 129538 class_ref 6469506 // TrainPlace
   classdiagramsettings member_max_width 0 end
-  xyz 285.5 376.5 2000
+  xyz 464.5 360.5 2000
+end
+classcanvas 129922 class_ref 6482818 // CreateTask
+  classdiagramsettings member_max_width 0 end
+  xyz 285.5 360.5 2000
 end
 relationcanvas 128770 relation_ref 5072642 // <directional composition>
-  decenter_begin 540
   from ref 128002 z 2007 to ref 128514
   no_role_a no_role_b
-  multiplicity_a_pos 224 212 3000 no_multiplicity_b
+  multiplicity_a_pos 154 168 3000 no_multiplicity_b
 end
 relationcanvas 129154 relation_ref 5141122 // <directional composition>
   from ref 128514 z 2013 to ref 129026
   no_role_a no_role_b
-  multiplicity_a_pos 225 88 3000 no_multiplicity_b
+  multiplicity_a_pos 233 88 3000 no_multiplicity_b
 end
 relationcanvas 129410 relation_ref 5141378 // <association>
   from ref 128514 z 2013 to ref 129282
   no_role_a no_role_b
-  multiplicity_a_pos 128 168 3000 multiplicity_b_pos 146 168 3000
+  multiplicity_a_pos 354 168 3000 multiplicity_b_pos 336 168 3000
 end
 relationcanvas 129666 relation_ref 7041282 // <unidirectional association>
   from ref 128514 z 2007 to ref 128386
