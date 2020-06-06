@@ -1,6 +1,6 @@
 format 222
 "DeployUtils" // Mdt::DeployUtils
-  revision 75
+  revision 76
   modified_by 2 "philippe"
   // class settings
   
@@ -58,7 +58,7 @@ format 222
     end
 
     classdiagram 3605506 "DeployUtilsSnadbox"
-      classdiagramsettings member_max_width 0 end
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
       size B
     end
 
@@ -4042,7 +4042,7 @@ ${inlines}
 
     classdiagram 3605634 "DeployUtilsLinuxSandbox"
       classdiagramsettings member_max_width 0 end
-      size A-Landscape
+      size C-Landscape
     end
 
     class 4160130 "StripWrapper"

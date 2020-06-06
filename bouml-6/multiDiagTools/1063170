@@ -1,0 +1,129 @@
+format 222
+"Ui_Widgets" // apps::T475TaskList::Ui_Widgets
+  revision 1
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2787842 "CreateNewTaskWidget"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5227266 "CreateNewTaskWidget"
+      classdiagramsettings member_max_width 0 end
+      size A4-Landscape
+    end
+
+    class 6489858 "CreateNewTaskWidget"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7086338 // <dependency>
+	relation 7054850 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7086338 // <dependency>
+	  b parent class_ref 6489602 // CreateNewTaskError
+      end
+
+      classrelation 7086466 // <dependency>
+	relation 7054978 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7086466 // <dependency>
+	  b parent class_ref 6489346 // CreateNewTaskRequest
+      end
+
+      classrelation 7086722 // <generalisation>
+	relation 7055234 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7086722 // <generalisation>
+	  b parent class_ref 316162 // QWidget
+      end
+
+      classrelation 7086978 // <unidirectional association>
+	relation 7055490 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 7086978 // <unidirectional association>
+	  b parent class_ref 6489986 // CreateNewTaskPresenter
+      end
+    end
+
+    class 6489986 "CreateNewTaskPresenter"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7087106 // <dependency>
+	relation 7055618 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7087106 // <dependency>
+	  b parent class_ref 6489474 // CreateNewTaskResponse
+      end
+    end
+  end
+end

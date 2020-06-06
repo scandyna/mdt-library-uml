@@ -1,0 +1,25 @@
+format 222
+
+classcanvas 128002 class_ref 2050434 // CsvParserSettings
+  classdiagramsettings member_max_width 0 end
+  xyz 266 110 2000
+end
+classcanvas 128130 class_ref 2078850 // CsvGeneratorSettings
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 240.5 2000
+end
+classcanvas 128258 class_ref 6558594 // QCsvParserSettingsWidget
+  classdiagramsettings member_max_width 0 end
+  xyz 40 116 2000
+end
+classcanvas 128386 class_ref 6558722 // QCsvParserSettingsDialog
+  classdiagramsettings member_max_width 0 end
+  xyz 42 40 2000
+end
+relationcanvas 128642 relation_ref 7118978 // <directional composition>
+  decenter_begin 519
+  from ref 128386 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

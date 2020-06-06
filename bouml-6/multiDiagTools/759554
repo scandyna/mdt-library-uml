@@ -1,6 +1,6 @@
 format 222
 "T475TaskList" // apps::T475TaskList
-  revision 14
+  revision 17
   modified_by 2 "philippe"
   // class settings
   
@@ -30,6 +30,12 @@ format 222
   activitydiagramsettings
    end
   
+  package_ref 1063042 // UseCase
+
+  package_ref 1063298 // Repository
+
+  package_ref 1063170 // Ui_Widgets
+
   classview 2477698 "Sandbox"
     
     classdiagramsettings member_max_width 0 end
@@ -160,7 +166,7 @@ ${inlines}
     end
 
     class 4570498 "Task"
-      visibility package 
+      visibility package stereotype "entity"
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
 ${members}};
@@ -666,30 +672,6 @@ ${inlines}
       php_decl ""
       python_2_2 python_decl ""
       idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-    end
-
-    class 6482818 "CreateTask"
-      visibility package stereotype "UseCase"
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      python_2_2 python_decl "class ${name}${inherit}:
-${docstring}${members}
-"
-      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
-${members}};
-"
       explicit_switch_type ""
       mysql_decl ""
       

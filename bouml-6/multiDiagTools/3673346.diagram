@@ -1,4 +1,4 @@
-format 214
+format 222
 
 classcanvas 128002 class_ref 4244610 // QtPluginInfo
   classdiagramsettings member_max_width 0 end
@@ -46,7 +46,7 @@ classcanvas 134786 class_ref 4251522 // QtLibrary
 end
 classcanvas 138882 class_ref 4265218 // QtModule
   classdiagramsettings member_max_width 0 end
-  xyz 826 38 2000
+  xyz 670 123 2000
 end
 classcanvas 139010 class_ref 4265346 // QtModuleList
   classdiagramsettings member_max_width 0 end
@@ -117,7 +117,7 @@ end
 relationcanvas 139138 relation_ref 4798210 // <directional composition>
   from ref 139010 z 2001 to ref 138882
   no_role_a no_role_b
-  multiplicity_a_pos 810 82 3000 no_multiplicity_b
+  multiplicity_a_pos 725 101 3000 no_multiplicity_b
 end
 relationcanvas 139650 relation_ref 4893954 // <directional composition>
   from ref 128002 z 2001 to ref 139522

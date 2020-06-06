@@ -1,4 +1,4 @@
-format 214
+format 222
 
 note 128002 "Try this rule:
  - If a prefix path is given, search elements in known subdirectories
@@ -9,6 +9,17 @@ note 128002 "Try this rule:
 Also document that:
  - Prefix is used for libraries for non RPATH systems
  - To find Qt Plugins on all systems
- - To find translations, icons, etc on all systems"
-  xyzwh 56 97 2000 719 237
+ - To find translations, icons, etc on all systems
+
+Also not that:
+ - Use to deploy final executables
+ - For dev environment, use Conan"
+  xyzwh 55 100 2000 715 241
+note 128130 "About CMake interface:
+mdt_install_dependent_shared_libraries(TARGET ...)
+mdt_install_qt5_platform_plugins(...)
+mdt_install_qt5_sqldrivers(...)
+
+See also what ECM does"
+  xyzwh 56 358 2000 683 153
 end

@@ -1,0 +1,192 @@
+format 222
+"UseCase" // apps::T475TaskList::UseCase
+  revision 2
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2787714 "sandbox"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5227138 "TaskList_UseCases_sandbox"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 6482818 "CreateNewTask"
+      visibility package stereotype "UseCase"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7085954 // <dependency>
+	relation 7054466 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7085954 // <dependency>
+	  b parent class_ref 6489346 // CreateNewTaskRequest
+      end
+
+      classrelation 7086082 // <dependency>
+	relation 7054594 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7086082 // <dependency>
+	  b parent class_ref 6489474 // CreateNewTaskResponse
+      end
+
+      classrelation 7086210 // <dependency>
+	relation 7054722 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7086210 // <dependency>
+	  b parent class_ref 6489602 // CreateNewTaskError
+      end
+
+      classrelation 7086850 // <generalisation>
+	relation 7055362 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7086850 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 7087874 // <unidirectional association>
+	relation 7056386 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 7087874 // <unidirectional association>
+	  b parent class_ref 6490114 // TaskRepository
+      end
+    end
+
+    class 6489346 "CreateNewTaskRequest"
+      visibility package stereotype "struct"
+      cpp_decl "${comment}${template}struct ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}struct ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6489474 "CreateNewTaskResponse"
+      visibility package stereotype "struct"
+      cpp_decl "${comment}${template}struct ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}struct ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6489602 "CreateNewTaskError"
+      visibility package stereotype "exception"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}exception ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6489730 "TaskId"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+end

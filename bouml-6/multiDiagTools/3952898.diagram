@@ -1,4 +1,4 @@
-format 220
+format 222
 
 classcanvas 128002 class_ref 4570498 // Task
   classdiagramsettings member_max_width 0 end
@@ -34,7 +34,7 @@ classcanvas 129666 class_ref 4660098 // Specification
 end
 classcanvas 131202 class_ref 4660226 // Tools
   classdiagramsettings member_max_width 0 end
-  xyz 35.6947 377.447 2000
+  xyz 488.695 46.447 2000
 end
 classcanvas 131714 class_ref 4660354 // Collaborater
   classdiagramsettings member_max_width 0 end
@@ -51,15 +51,10 @@ relationcanvas 129794 relation_ref 5140738 // <unidirectional association>
   no_role_a no_role_b
   multiplicity_a_pos 144 72 3000 no_multiplicity_b
 end
-relationcanvas 129922 relation_ref 5140866 // <directional composition>
-  from ref 129026 z 2001 to ref 128002
-  no_role_a no_role_b
-  multiplicity_a_pos 310 178 3000 no_multiplicity_b
-end
-relationcanvas 130178 relation_ref 5141122 // <association>
+relationcanvas 130178 relation_ref 5141122 // <directional composition>
   from ref 128002 z 2001 to ref 129154
   no_role_a no_role_b
-  multiplicity_a_pos 148 178 3000 multiplicity_b_pos 240 178 3000
+  multiplicity_a_pos 148 178 3000 no_multiplicity_b
 end
 relationcanvas 130306 relation_ref 5141250 // <association>
   from ref 128002 z 2001 to ref 129538
@@ -70,34 +65,34 @@ relationcanvas 130434 relation_ref 5141378 // <association>
   geometry VHV unfixed
   decenter_begin 622
   decenter_end 116
-  from ref 128002 z 2001 to point 281 248
+  from ref 128002 z 2001 to point 277 248
   line 130690 z 2001 to point 304 248
   line 130818 z 2001 to ref 129282
   no_role_a no_role_b
-  multiplicity_a_pos 291 354 3000 multiplicity_b_pos 268 200 3000
+  multiplicity_a_pos 291 354 3000 multiplicity_b_pos 264 210 3000
 end
 relationcanvas 130562 relation_ref 5141506 // <association>
   geometry VHV unfixed
   decenter_begin 355
   decenter_end 153
-  from ref 128002 z 2001 to point 269 288
+  from ref 128002 z 2001 to point 267 288
   line 130946 z 2001 to point 175 288
   line 131074 z 2001 to ref 129410
   no_role_a no_role_b
-  multiplicity_a_pos 162 355 3000 multiplicity_b_pos 256 200 3000
+  multiplicity_a_pos 162 355 3000 multiplicity_b_pos 254 210 3000
 end
 relationcanvas 131330 relation_ref 5141634 // <association>
   decenter_begin 200
   decenter_end 808
   from ref 128002 z 2001 to ref 131202
   no_role_a no_role_b
-  multiplicity_a_pos 82 377 3000 multiplicity_b_pos 250 190 3000
+  multiplicity_a_pos 472 83 3000 multiplicity_b_pos 302 161 3000
 end
 relationcanvas 131842 relation_ref 5141762 // <association>
   geometry VHV unfixed
   decenter_begin 800
   decenter_end 340
-  from ref 128002 z 2001 to point 290 208
+  from ref 128002 z 2001 to point 283 208
   line 132098 z 2001 to point 576 208
   line 132226 z 2001 to ref 131714
   no_role_a no_role_b
@@ -112,5 +107,10 @@ relationcanvas 132482 relation_ref 5205890 // <association>
   from ref 131714 z 2001 to ref 132354
   no_role_a no_role_b
   multiplicity_a_pos 578 495 3000 multiplicity_b_pos 578 435 3000
+end
+relationcanvas 132738 relation_ref 7041282 // <unidirectional association>
+  from ref 128002 z 2001 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 end

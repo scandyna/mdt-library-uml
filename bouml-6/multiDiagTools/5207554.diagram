@@ -2,46 +2,78 @@ format 222
 
 classcanvas 128002 class_ref 6449154 // QTextDocument
   classdiagramsettings member_max_width 0 end
-  xyz 80.5 195.5 2000
+  xyz 314.5 156.5 2000
 end
 classcanvas 128130 class_ref 138626 // QObject
   classdiagramsettings member_max_width 0 end
-  xyz 248.5 78.5 2000
+  xyz 339.5 39.5 2000
 end
 classcanvas 128386 class_ref 6449282 // QTextFrame
   classdiagramsettings member_max_width 0 end
-  xyz 87 312.5 2000
+  xyz 41.5 273.5 2000
 end
 classcanvas 128642 class_ref 6449410 // QTextObject
   classdiagramsettings member_max_width 0 end
-  xyz 235.5 195.5 2000
+  xyz 183.5 156.5 2000
 end
 classcanvas 129154 class_ref 6449538 // QTextBlockGroup
   classdiagramsettings member_max_width 0 end
-  xyz 215.25 312.5 2000
+  xyz 163.25 273.5 2000
 end
 classcanvas 129794 class_ref 6449666 // QTextBlock
   classdiagramsettings member_max_width 0 end
-  xyz 378.25 312.5 2000
+  xyz 326.25 273.5 2000
 end
 classcanvas 130434 class_ref 6462722 // QTextFragment
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 432.5 2000
+  xyz 592.5 471.5 2000
 end
 classcanvas 131202 class_ref 6462850 // QTextCursor
   classdiagramsettings member_max_width 0 end
-  xyz 578 278 2000
+  xyz 510.5 40.5 2000
+end
+classcanvas 131330 class_ref 6496770 // QTextFormat
+  classdiagramsettings member_max_width 0 end
+  xyz 225 471 2000
+end
+classcanvas 131458 class_ref 6496898 // QTextCharFormat
+  classdiagramsettings member_max_width 0 end
+  xyz 378 591 2000
+end
+classcanvas 131714 class_ref 6497026 // QTextBlockFormat
+  classdiagramsettings member_max_width 0 end
+  xyz 207 591 2000
+end
+classcanvas 132738 class_ref 6497154 // QTextImageFormat
+  classdiagramsettings member_max_width 0 end
+  xyz 378 671 2000
+end
+classcanvas 132994 class_ref 6503682 // QTextFrameFormat
+  classdiagramsettings member_max_width 0 end
+  xyz 37 591 2000
+end
+classcanvas 133250 class_ref 6503810 // QTextTableFormat
+  classdiagramsettings member_max_width 0 end
+  xyz 40 671 2000
+end
+classcanvas 134018 class_ref 6503938 // QTextTable
+  classdiagramsettings member_max_width 0 end
+  xyz 41.25 351.5 2000
+end
+classcanvas 134274 class_ref 6504066 // QTextTableCell
+  classdiagramsettings member_max_width 0 end
+  xyz 162.5 351.5 2000
 end
 relationcanvas 128258 relation_ref 7027330 // <generalisation>
-  geometry VHV unfixed
-  from ref 128002 z 2001 to point 135 157
-  line 128898 z 2001 to point 278 157
-  line 129026 z 2001 to ref 128130
+  from ref 128002 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 7027586 // <generalisation>
-  from ref 128642 z 2001 to ref 128130
+  geometry VHV unfixed
+  from ref 128642 z 2001 to point 226 118
+  line 132482 z 2001 to point 369 118
+  line 132610 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -53,24 +85,63 @@ relationcanvas 129282 relation_ref 7027714 // <generalisation>
 end
 relationcanvas 129410 relation_ref 7027842 // <generalisation>
   geometry VHV unfixed
-  from ref 128386 z 2001 to point 129 274
-  line 130690 z 2001 to point 278 274
-  line 130818 z 2001 to ref 128642
+  from ref 128386 z 2001 to point 83 235
+  line 133506 z 2001 to point 226 235
+  line 133634 z 2001 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130050 relation_ref 7028098 // <directional composition>
-  from ref 128002 z 2001 to point 40 216
-  line 130178 z 2001 to point 40 40
-  line 130306 z 2001 to point 365 40
-  line 130946 z 2001 to point 365 216
-  line 131074 z 2001 to ref 128642
+  from ref 128002 z 2001 to ref 128642
   no_role_a no_role_b
-  multiplicity_a_pos 335 224 3000 no_multiplicity_b
+  multiplicity_a_pos 283 184 3000 no_multiplicity_b
 end
 relationcanvas 130562 relation_ref 7034626 // <directional composition>
   from ref 129154 z 2001 to ref 129794
   no_role_a no_role_b
-  multiplicity_a_pos 362 340 3000 no_multiplicity_b
+  multiplicity_a_pos 310 301 3000 no_multiplicity_b
+end
+relationcanvas 131586 relation_ref 7063042 // <generalisation>
+  geometry VHV unfixed
+  from ref 131458 z 2001 to point 438 551
+  line 132226 z 2001 to point 270 551
+  line 132354 z 2001 to ref 131330
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131842 relation_ref 7063170 // <generalisation>
+  from ref 131714 z 2001 to ref 131330
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132866 relation_ref 7063298 // <generalisation>
+  decenter_begin 466
+  from ref 132738 z 2001 to ref 131458
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133122 relation_ref 7069826 // <generalisation>
+  geometry VHV unfixed
+  from ref 132994 z 2001 to point 102 551
+  line 133762 z 2001 to point 270 551
+  line 133890 z 2001 to ref 131330
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133378 relation_ref 7069954 // <generalisation>
+  from ref 133250 z 2001 to ref 132994
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134146 relation_ref 7070082 // <generalisation>
+  decenter_begin 542
+  from ref 134018 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134402 relation_ref 7070210 // <directional composition>
+  from ref 134018 z 2001 to ref 134274
+  no_role_a no_role_b
+  multiplicity_a_pos 146 379 3000 no_multiplicity_b
 end
 end

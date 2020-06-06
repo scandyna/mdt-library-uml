@@ -1,0 +1,72 @@
+format 222
+
+classcanvas 128002 class_ref 6517122 // QCsvFileReader
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 522.5 156.5 2000
+end
+classcanvas 128130 class_ref 6572034 // QAsyncCsvFileReader
+  classdiagramsettings member_max_width 0 end
+  xyz 41 156.5 2000
+end
+classcanvas 128258 class_ref 6572162 // QAsyncCsvFileReaderThreadWorker
+  classdiagramsettings member_max_width 0 end
+  xyz 236.5 156.5 2005
+end
+classcanvas 128642 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 547.5 39.5 2006
+end
+classcanvas 129666 class_ref 222722 // QThread
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 644 234.5 2012
+end
+note 130690 "Should be able to select a thread.
+What was done in the Sql lib ?"
+  xyzwh 40.5 354.5 2000 543 65
+relationcanvas 128386 relation_ref 7132930 // <directional composition>
+  from ref 128130 z 2006 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 7133058 // <directional composition>
+  from ref 128258 z 2006 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 7083266 // <generalisation>
+  from ref 128002 z 2007 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 7133186 // <generalisation>
+  geometry VHV unfixed
+  from ref 128258 z 2007 to point 356 118
+  line 130434 z 2007 to point 577 118
+  line 130562 z 2007 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 7133314 // <generalisation>
+  geometry VHV unfixed
+  from ref 128130 z 2007 to point 116 118
+  line 129410 z 2007 to point 577 118
+  line 129538 z 2007 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 1508354 // <generalisation>
+  geometry VHV unfixed
+  from ref 129666 z 2013 to point 675 118
+  line 130050 z 2013 to point 577 118
+  line 130178 z 2013 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129922 relation_ref 7133442 // <directional composition>
+  geometry VH unfixed
+  from ref 128130 z 2013 to point 116 252
+  line 130306 z 2013 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

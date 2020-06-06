@@ -1,0 +1,55 @@
+format 222
+
+classcanvas 128130 class_ref 6489346 // CreateNewTaskRequest
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 39.4 110.5 2006
+end
+classcanvas 128386 class_ref 6489474 // CreateNewTaskResponse
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 435.4 200.95 2006
+end
+classcanvas 128642 class_ref 6489602 // CreateNewTaskError
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 247.05 200.95 2006
+end
+classcanvas 128898 class_ref 6489858 // CreateNewTaskWidget
+  classdiagramsettings member_max_width 0 end
+  xyz 241.05 120.5 2000
+end
+classcanvas 129666 class_ref 316162 // QWidget
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 281.7 40.1 2000
+end
+classcanvas 129922 class_ref 6489986 // CreateNewTaskPresenter
+  classdiagramsettings member_max_width 0 end
+  xyz 436.4 120.5 2000
+end
+relationcanvas 129026 relation_ref 7054850 // <dependency>
+  decenter_begin 477
+  decenter_end 475
+  from ref 128898 z 2007 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 7054978 // <dependency>
+  from ref 128898 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 7055234 // <generalisation>
+  decenter_begin 477
+  from ref 128898 z 2001 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 7055490 // <unidirectional association>
+  from ref 128898 z 2001 to ref 129922
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130434 relation_ref 7055618 // <dependency>
+  from ref 129922 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

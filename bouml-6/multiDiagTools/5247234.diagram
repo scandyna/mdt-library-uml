@@ -1,0 +1,13 @@
+format 222
+
+note 128002 "Inline namespace.
+Aviable:
+using namespace std::chrono_literals
+using namespace std::literals
+using namespace std::literals::chrono_literals"
+  xyzwh 40.5 40.5 2000 351 117
+classcanvas 128130 class_ref 6524546 // chrono_literals
+  classdiagramsettings member_max_width 0 end
+  xyz 173 358 2000
+end
+end

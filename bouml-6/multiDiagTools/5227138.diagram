@@ -1,0 +1,79 @@
+format 222
+
+classcanvas 128002 class_ref 6482818 // CreateNewTask
+  classdiagramsettings member_max_width 0 end
+  xyz 254.75 110.75 2000
+end
+classcanvas 128130 class_ref 6489346 // CreateNewTaskRequest
+  classdiagramsettings member_max_width 0 end
+  xyz 53.25 110.75 2005
+end
+classcanvas 128258 class_ref 6489474 // CreateNewTaskResponse
+  classdiagramsettings member_max_width 0 end
+  xyz 222.75 208.25 2000
+end
+classcanvas 128642 class_ref 6489602 // CreateNewTaskError
+  classdiagramsettings member_max_width 0 end
+  xyz 443.5 149.75 2000
+end
+classcanvas 128898 class_ref 6489730 // TaskId
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 348 2000
+end
+classcanvas 129026 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 281 39.5 2005
+end
+note 129410 "Value objects"
+  xyzwh 38.5 221.5 2000 145 41
+classcanvas 129666 class_ref 6490114 // TaskRepository
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 589.5 72 2000
+end
+classcanvas 129794 class_ref 4570498 // Task
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 626.5 151.75 2000
+end
+relationcanvas 128386 relation_ref 7054466 // <dependency>
+  decenter_begin 557
+  decenter_end 557
+  from ref 128002 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 7054594 // <dependency>
+  decenter_begin 531
+  decenter_end 520
+  from ref 128002 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 7054722 // <dependency>
+  decenter_begin 852
+  decenter_end 245
+  from ref 128002 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 7055362 // <generalisation>
+  decenter_begin 531
+  from ref 128002 z 2006 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130690 relation_ref 7056386 // <unidirectional association>
+  decenter_begin 245
+  from ref 128002 z 2001 to point 404 125
+  line 130946 z 2001 to point 404 105
+  line 131074 z 2001 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130818 relation_ref 7056514 // <dependency>
+  from ref 129666 z 2001 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 129538 -_-_ decenter_begin 557
+  from ref 128258 z 2001 to ref 129410
+end

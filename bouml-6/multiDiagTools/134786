@@ -1,6 +1,6 @@
 format 222
 "Qt" // Qt
-  revision 287
+  revision 290
   modified_by 2 "philippe"
   // class settings
   
@@ -4633,6 +4633,83 @@ ${inlines}
 	
 	
 	
+      end
+    end
+  end
+
+  classview 2814466 "Core_File"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5254146 "QFileDevice"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6531586 "QFileDevice"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7122690 // <generalisation>
+	relation 7091202 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7122690 // <generalisation>
+	  b parent class_ref 322818 // QIODevice
+      end
+    end
+
+    classdiagram 5254018 "QSaveFile"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6531458 "QSaveFile"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7122818 // <generalisation>
+	relation 7091330 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7122818 // <generalisation>
+	  b parent class_ref 6531586 // QFileDevice
       end
     end
   end
@@ -12600,6 +12677,185 @@ ${inlines}
     end
 
     class 6462850 "QTextCursor"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6496770 "QTextFormat"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6496898 "QTextCharFormat"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7094530 // <generalisation>
+	relation 7063042 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7094530 // <generalisation>
+	  b parent class_ref 6496770 // QTextFormat
+      end
+    end
+
+    class 6497026 "QTextBlockFormat"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7094658 // <generalisation>
+	relation 7063170 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7094658 // <generalisation>
+	  b parent class_ref 6496770 // QTextFormat
+      end
+    end
+
+    class 6497154 "QTextImageFormat"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7094786 // <generalisation>
+	relation 7063298 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7094786 // <generalisation>
+	  b parent class_ref 6496898 // QTextCharFormat
+      end
+    end
+
+    class 6503682 "QTextFrameFormat"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7101314 // <generalisation>
+	relation 7069826 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7101314 // <generalisation>
+	  b parent class_ref 6496770 // QTextFormat
+      end
+    end
+
+    class 6503810 "QTextTableFormat"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7101442 // <generalisation>
+	relation 7069954 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7101442 // <generalisation>
+	  b parent class_ref 6503682 // QTextFrameFormat
+      end
+    end
+
+    class 6503938 "QTextTable"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7101570 // <generalisation>
+	relation 7070082 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7101570 // <generalisation>
+	  b parent class_ref 6449282 // QTextFrame
+      end
+
+      classrelation 7101698 // <directional composition>
+	relation 7070210 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 7101698 // <directional composition>
+	  b parent class_ref 6504066 // QTextTableCell
+      end
+    end
+
+    class 6504066 "QTextTableCell"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {

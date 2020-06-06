@@ -1,0 +1,104 @@
+format 222
+"Repository" // apps::T475TaskList::Repository
+  revision 1
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2787970 "sandbox"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5227394 "TaskRepository"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6490114 "TaskRepository"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7088002 // <dependency>
+	relation 7056514 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7088002 // <dependency>
+	  b parent class_ref 4570498 // Task
+      end
+    end
+
+    class 6490242 "SqlTaskRepository"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7087234 // <generalisation>
+	relation 7055746 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7087234 // <generalisation>
+	  b parent class_ref 6490114 // TaskRepository
+      end
+    end
+  end
+end

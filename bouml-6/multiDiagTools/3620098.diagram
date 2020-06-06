@@ -1,4 +1,4 @@
-format 214
+format 222
 
 classcanvas 128002 class_ref 4176642 // BinaryDependenciesImplementationInterface
   classdiagramsettings member_max_width 0 end
@@ -17,7 +17,7 @@ classcanvas 131586 class_ref 4197634 // BinaryDependenciesObjdump
   xyz 447 538 2006
 end
 note 132354 "Only instanciated in findDependencies()"
-  xyzwh 42 319 2000 285 51
+  xyzwh 13 195 2000 285 51
 relationcanvas 129666 relation_ref 4687746 // <generalisation>
   geometry VHV unfixed
   from ref 129538 z 2001 to point 326 496
