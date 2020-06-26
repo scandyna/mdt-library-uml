@@ -1,28 +1,40 @@
-format 210
+format 222
 
 classcanvas 128002 class_ref 2036226 // io_base
   classdiagramsettings member_max_width 0 end
-  xyz 324 38 2000
+  xyz 297.271 41.0417 2000
 end
 classcanvas 128130 class_ref 2036354 // basic_ios
   classdiagramsettings member_max_width 0 end
-  xyz 322 153 2000
+  xyz 292.271 125.625 2000
 end
 classcanvas 128386 class_ref 2036482 // basic_istream
   classdiagramsettings member_max_width 0 end
-  xyz 307 294 2000
+  xyz 276.167 226.625 2000
 end
 classcanvas 128642 class_ref 2036610 // basic_ifstream
   classdiagramsettings member_max_width 0 end
-  xyz 302 423 2000
+  xyz 213.271 435.604 2000
 end
 classcanvas 128898 class_ref 2036738 // ifstream
   classdiagramsettings member_max_width 0 end
-  xyz 589 422 2000
+  xyz 487.271 468.708 2000
 end
 classcanvas 129154 class_ref 2036866 // istreambuf_iterator
   classdiagramsettings member_max_width 0 end
-  xyz 29 622 2000
+  xyz 38.4583 600.896 2000
+end
+classcanvas 129282 class_ref 6611586 // istream_iterator
+  classdiagramsettings member_max_width 0 end
+  xyz 486.896 369.708 2000
+end
+classcanvas 129538 class_ref 6611714 // basic_streambuf
+  classdiagramsettings member_max_width 0 end
+  xyz 582.792 613.792 2000
+end
+classcanvas 130690 class_ref 6611842 // basic_filebuf
+  classdiagramsettings member_max_width 0 end
+  xyz 595.792 714.792 2005
 end
 relationcanvas 128258 relation_ref 2362882 // <generalisation>
   from ref 128130 z 2001 to ref 128002
@@ -40,7 +52,44 @@ relationcanvas 128770 relation_ref 2363138 // <generalisation>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129026 relation_ref 2363266 // <dependency>
+  decenter_end 520
   from ref 128898 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 7166850 // <unidirectional association>
+  geometry VHV unfixed
+  decenter_begin 150
+  decenter_end 910
+  from ref 129282 z 2001 to point 500 326
+  line 130562 z 2001 to point 365 326
+  line 130946 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 7166978 // <unidirectional association>
+  from ref 129154 z 2001 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 7167106 // <directional composition>
+  geometry HV unfixed
+  decenter_begin 719
+  from ref 128386 z 2001 to point 639 264
+  line 129922 z 2001 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 7167234 // <unidirectional association>
+  geometry VH unfixed
+  decenter_end 719
+  from ref 129154 z 2001 to point 168 264
+  line 130306 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130818 relation_ref 7167362 // <generalisation>
+  from ref 130690 z 2006 to ref 129538
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

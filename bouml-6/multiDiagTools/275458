@@ -1,6 +1,6 @@
 format 222
 "std" // std
-  revision 18
+  revision 19
   modified_by 2 "philippe"
   // class settings
   
@@ -134,6 +134,15 @@ ${inlines}
 	    classrelation_ref 2379394 // <generalisation>
 	  b parent class_ref 2036354 // basic_ios
       end
+
+      classrelation 7198594 // <directional composition>
+	relation 7167106 *-->
+	  a role_name "" public
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7198594 // <directional composition>
+	  b parent class_ref 6611714 // basic_streambuf
+      end
     end
 
     class 2036610 "basic_ifstream"
@@ -253,6 +262,119 @@ ${inlines}
       end
     end
 
+    class 6611714 "basic_streambuf"
+      visibility package 
+      nformals 2
+      formal name "CharT" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Traits" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6611842 "basic_filebuf"
+      visibility package 
+      nformals 2
+      formal name "CharT" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Traits" type "class" explicit_default_value ""
+        explicit_extends ""
+      nactuals 2
+      actual class class_ref 6611714 // basic_streambuf
+        rank 0 explicit_value ""
+      actual class class_ref 6611714 // basic_streambuf
+        rank 1 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7198850 // <generalisation>
+	relation 7167362 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7198850 // <generalisation>
+	  b parent class_ref 6611714 // basic_streambuf
+      end
+    end
+  end
+
+  classview 2827522 "iterator"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5293698 "iterator"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6611586 "istream_iterator"
+      visibility package 
+      nformals 4
+      formal name "T" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "CharT" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Traits" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "Distance" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7198338 // <unidirectional association>
+	relation 7166850 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 7198338 // <unidirectional association>
+	  b parent class_ref 2036482 // basic_istream
+      end
+    end
+
     class 2036866 "istreambuf_iterator"
       visibility package 
       nformals 2
@@ -301,6 +423,24 @@ ${inlines}
 	
 	
 	
+      end
+
+      classrelation 7198466 // <unidirectional association>
+	relation 7166978 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 7198466 // <unidirectional association>
+	  b parent class_ref 6611714 // basic_streambuf
+      end
+
+      classrelation 7198722 // <unidirectional association>
+	relation 7167234 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 7198722 // <unidirectional association>
+	  b parent class_ref 2036482 // basic_istream
       end
     end
   end

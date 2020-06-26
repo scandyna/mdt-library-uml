@@ -1,0 +1,11 @@
+format 222
+
+classcanvas 128002 class_ref 6611586 // istream_iterator
+  classdiagramsettings member_max_width 0 end
+  xyz 160 575 2005
+end
+classcanvas 128130 class_ref 2036866 // istreambuf_iterator
+  classdiagramsettings member_max_width 0 end
+  xyz 193 719 2005
+end
+end

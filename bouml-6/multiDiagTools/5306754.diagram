@@ -1,0 +1,10 @@
+format 222
+
+note 128002 "2 parts:
+ - Attributes integration
+ - Parser integration
+
+BoostSpiritQCharParser
+BoostSpiritQStringParser"
+  xyzwh 49 134 2000 357 123
+end

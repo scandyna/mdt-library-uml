@@ -1,6 +1,6 @@
 format 222
-"Csv1203" // Mdt::PlainText::Grammar::Csv1203
-  revision 4
+"Csv" // Mdt::PlainText::Grammar::Csv
+  revision 7
   modified_by 2 "philippe"
   // class settings
   
@@ -55,12 +55,12 @@ format 222
       size A4
     end
 
-    class 6510594 "TableRule"
+    class 6510594 "FileRule"
       visibility package 
       nformals 2
       formal name "SourceIterator" type "class" explicit_default_value ""
         explicit_extends ""
-      formal name "Table" type "class" explicit_default_value ""
+      formal name "DestinationTable" type "class" explicit_default_value ""
         explicit_extends ""
       nactuals 4
       actual class class_ref 2034818 // grammar
@@ -100,7 +100,7 @@ ${inlines}
 	  b parent class_ref 2034818 // grammar
       end
 
-      attribute 4596098 "mTableRule"
+      attribute 4596098 "FileRule"
 	private type class_ref 2034946 // rule
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
@@ -127,7 +127,7 @@ ${inlines}
       nformals 2
       formal name "SourceIterator" type "class" explicit_default_value ""
         explicit_extends ""
-      formal name "Record" type "class" explicit_default_value ""
+      formal name "DestinationRecord" type "class" explicit_default_value ""
         explicit_extends ""
       nactuals 4
       actual class class_ref 2034818 // grammar
@@ -167,7 +167,7 @@ ${inlines}
 	  b parent class_ref 2034946 // rule
       end
 
-      attribute 4596226 "mRecordRule"
+      attribute 4596226 "RecordRule"
 	private type class_ref 2034946 // rule
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
@@ -194,7 +194,7 @@ ${inlines}
       nformals 2
       formal name "SourceIterator" type "class" explicit_default_value ""
         explicit_extends ""
-      formal name "FieldData" type "class" explicit_default_value ""
+      formal name "DestinationData" type "class" explicit_default_value ""
         explicit_extends ""
       nactuals 4
       actual class class_ref 2034818 // grammar
@@ -217,7 +217,7 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 4596354 "mFieldColumnRule"
+      attribute 4596354 "FieldColumnRule"
 	private type class_ref 2034946 // rule
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
@@ -236,6 +236,22 @@ ${inlines}
 	    classrelation_ref 7157634 // <generalisation>
 	  b parent class_ref 2034818 // grammar
       end
+    end
+
+    class 6585346 "TableRule"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 end
