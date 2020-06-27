@@ -7,4 +7,8 @@ note 128002 "2 parts:
 BoostSpiritQCharParser
 BoostSpiritQStringParser"
   xyzwh 49 134 2000 357 123
+classcanvas 128130 class_ref 6631682 // BoostSpiritQStringConstIterator
+  classdiagramsettings member_max_width 0 end
+  xyz 377 361 2000
+end
 end

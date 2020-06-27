@@ -1,38 +1,7 @@
 format 222
 
-classcanvas 128002 class_ref 4045570 // BoostSpiritQStringUnicodeConstIterator
-  classdiagramsettings member_max_width 0 end
-  xyz 39.2 39.6 2000
-end
-classcanvas 128130 class_ref 6631426 // QStringUnicodeCodePointConstIterator
-  classdiagramsettings member_max_width 0 end
-  xyz 344.6 41.6 2000
-end
-classcanvas 128258 class_ref 6631554 // BoostSpiritQStringStandardWideConstIterator
-  classdiagramsettings member_max_width 0 end
-  xyz 319.9 135.8 2000
-end
-note 128642 "Has this any sense ???"
-  xyzwh 662.9 139.1 2000 213 37
 classcanvas 128898 class_ref 6631682 // BoostSpiritQStringConstIterator
   classdiagramsettings member_max_width 0 end
-  xyz 40 271.4 2000
+  xyz 40.5 40.5 2000
 end
-note 129026 "Think this is the only one rquired"
-  xyzwh 296 270.4 2000 241 43
-relationcanvas 128386 relation_ref 7193858 // <dependency>
-  from ref 128002 z 2001 to ref 128130
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 128514 relation_ref 7193986 // <dependency>
-  decenter_begin 514
-  from ref 128258 z 2001 to ref 128130
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-line 128770 -_-_ decenter_end 594
-  from ref 128258 z 2001 to ref 128642
-line 129154 -_-_
-  from ref 128898 z 2001 to ref 129026
 end
