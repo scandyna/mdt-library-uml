@@ -1,10 +1,12 @@
-format 213
+format 222
 "boost" // boost
-  revision 7
+  revision 11
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 213
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -26,6 +30,71 @@ format 213
   activitydiagramsettings
    end
   
+  classview 2834050 "iterator"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5313282 "boost_iterator"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6671362 "iterator_facade"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6677890 "iterator_adaptor"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7272706 // <generalisation>
+	relation 7241218 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7272706 // <generalisation>
+	  b parent class_ref 6671362 // iterator_facade
+      end
+    end
+  end
+
   package_ref 260994 // statechart
 
   package_ref 274050 // spirit
@@ -36,9 +105,13 @@ format 213
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -157,9 +230,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     

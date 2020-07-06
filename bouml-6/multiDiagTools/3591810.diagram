@@ -12,6 +12,9 @@ classcanvas 128642 class_ref 4145282 // Mode
   classdiagramsettings member_max_width 0 end
   xyz 41 63 2006
 end
+note 128898 "Should be something like QTextFileReader
+Note: see what is in common with QTextFileInputConstIterator"
+  xyzwh 145 293 2000 473 83
 relationcanvas 128514 relation_ref 4643458 // <dependency>
   from ref 128002 z 2001 to ref 128130
   no_role_a no_role_b

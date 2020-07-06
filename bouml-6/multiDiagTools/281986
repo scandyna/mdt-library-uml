@@ -1,10 +1,12 @@
-format 211
+format 222
 "mdtcsv" // mdtcsv
-  revision 46
+  revision 47
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 211
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -32,9 +36,13 @@ format 211
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -454,9 +462,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -921,15 +933,6 @@ ${inlines}
 	  b parent class_ref 2057474 // QTextDecoder
       end
 
-      classrelation 2399746 // <unidirectional association>
-	relation 2383362 --->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
-"
-	    classrelation_ref 2399746 // <unidirectional association>
-	  b parent class_ref 322818 // QIODevice
-      end
-
       attribute 2125186 "LastError"
 	private type class_ref 182402 // Error
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
@@ -945,7 +948,7 @@ ${inlines}
       operation 3186562 "setSource"
 	public explicit_return_type "bool"
 	nparams 2
-	  param in name "device" type class_ref 322818 // QIODevice
+	  param in name "device" explicit_type "QIODevice"
 	  param in name "encoding" type class_ref 236162 // QByteArray
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
@@ -1612,9 +1615,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -1821,9 +1828,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -2019,9 +2030,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     

@@ -1,6 +1,6 @@
 format 222
 "PlainText" // Mdt::PlainText
-  revision 56
+  revision 65
   modified_by 2 "philippe"
   // class settings
   
@@ -59,598 +59,6 @@ format 222
     classdiagram 3506050 "GeneratorSettings"
       classdiagramsettings member_max_width 0 end
       size A4
-    end
-
-    class 4065282 "FileMultiPassIterator"
-      visibility package stereotype "typedef" base_type class_ref 4045314 // FileInputIterator
-      cpp_decl "${comment}typedef ${type} ${name};
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl "${comment}typedef ${type} ${name};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4594178 // <dependency>
-	relation 4568066 -_->
-	  a private
-	    cpp default "#include in source"
-	    classrelation_ref 4594178 // <dependency>
-	  b parent class_ref 4045314 // FileInputIterator
-      end
-    end
-
-    classdiagram 3532802 "Data"
-      classdiagramsettings member_max_width 0 end
-      size B-Landscape
-    end
-
-    class 4078338 "RecordTemplate"
-      visibility package 
-      nformals 1
-      formal name "T" type "class" explicit_default_value ""
-        explicit_extends ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 3500418 "Record"
-	private explicit_type "T"
-	multiplicity "*"
-	stereotype "vector"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      operation 5746690 "appendColumn"
-	cpp_inline public explicit_return_type "void"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5746818 "setColumnCount"
-	cpp_inline public explicit_return_type "void"
-	nparams 1
-	  param in name "count" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5745666 "columnCount"
-	cpp_inline public explicit_return_type "int"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5746946 "setData"
-	cpp_inline public explicit_return_type "void"
-	nparams 2
-	  param in name "column" explicit_type "int"
-	  param in name "data" explicit_type "T"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5745794 "data"
-	cpp_inline public explicit_return_type "T"
-	nparams 1
-	  param in name "column" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5745922 "value"
-	cpp_inline public explicit_return_type "T"
-	nparams 1
-	  param in name "index" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5746050 "clear"
-	cpp_inline public explicit_return_type "void"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-    end
-
-    class 4104578 "Record"
-      visibility package stereotype "typedef" base_type class_ref 4078338 // RecordTemplate
-      nactuals 1
-      actual class class_ref 4078338 // RecordTemplate
-        rank 0 explicit_value ""
-      cpp_decl "${comment}typedef ${type} ${name};
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl "${comment}typedef ${type} ${name};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4620546 // <realization>
-	relation 4594434 -_-|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 4620546 // <realization>
-	  b parent class_ref 4078338 // RecordTemplate
-      end
-    end
-
-    class 4104706 "StringRecord"
-      visibility package stereotype "typedef" base_type class_ref 4078338 // RecordTemplate
-      nactuals 1
-      actual class class_ref 4078338 // RecordTemplate
-        rank 0 explicit_value ""
-      cpp_decl "${comment}typedef ${type} ${name};
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl "${comment}typedef ${type} ${name};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4620674 // <realization>
-	relation 4594562 -_-|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 4620674 // <realization>
-	  b parent class_ref 4078338 // RecordTemplate
-      end
-    end
-
-    class 4084866 "RecordListTemplate"
-      visibility package 
-      nformals 1
-      formal name "T" type "class" explicit_default_value ""
-        explicit_extends ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4600706 // <directional composition>
-	relation 4574594 *-->
-	  a role_name "" multiplicity "*" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	    classrelation_ref 4600706 // <directional composition>
-	  b parent class_ref 4078338 // RecordTemplate
-      end
-
-      attribute 3500546 "List"
-	private type class_ref 4078338 // RecordTemplate
-	multiplicity "*"
-	stereotype "vector"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      operation 5760770 "appendRecord"
-	cpp_inline public explicit_return_type "void"
-	nparams 1
-	  param in name "record" type class_ref 4078338 // RecordTemplate
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5746178 "rowCount"
-	cpp_inline public explicit_return_type "int"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5746562 "columnCount"
-	cpp_inline public explicit_return_type "int"
-	nparams 1
-	  param in name "row" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5760898 "setData"
-	cpp_inline public explicit_return_type "void"
-	nparams 3
-	  param in name "row" explicit_type "int"
-	  param in name "column" explicit_type "int"
-	  param in name "data" explicit_type "T"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5746306 "data"
-	cpp_inline public explicit_return_type "T"
-	nparams 2
-	  param in name "row" explicit_type "int"
-	  param in name "column" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5746434 "value"
-	cpp_inline public explicit_return_type "T"
-	nparams 2
-	  param in name "row" explicit_type "int"
-	  param in name "column" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5761026 "clear"
-	cpp_inline public explicit_return_type "void"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-    end
-
-    class 4104834 "RecordList"
-      visibility package stereotype "typedef" base_type class_ref 4097922 // RecordListTableModel
-      nactuals 1
-      actual class class_ref 4084866 // RecordListTemplate
-        rank 0 explicit_value ""
-      cpp_decl "${comment}typedef ${type} ${name};
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl "${comment}typedef ${type} ${name};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4620930 // <realization>
-	relation 4594818 -_-|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 4620930 // <realization>
-	  b parent class_ref 4084866 // RecordListTemplate
-      end
-    end
-
-    class 4104962 "StringRecordList"
-      visibility package stereotype "typedef" base_type class_ref 4097922 // RecordListTableModel
-      nactuals 1
-      actual class class_ref 4084866 // RecordListTemplate
-        rank 0 explicit_value ""
-      cpp_decl "${comment}typedef ${type} ${name};
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl "${comment}typedef ${type} ${name};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4620802 // <realization>
-	relation 4594690 -_-|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 4620802 // <realization>
-	  b parent class_ref 4084866 // RecordListTemplate
-      end
-    end
-
-    classdiagram 3545858 "RecordListTableModel"
-      classdiagramsettings member_max_width 0 end
-      size A4-Landscape
-    end
-
-    class 4097922 "RecordListTableModel"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4613890 // <generalisation>
-	relation 4587778 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 4613890 // <generalisation>
-	  b parent class_ref 147202 // QAbstractTableModel
-      end
-
-      operation 5753474 "rowCount"
-	cpp_virtual public explicit_return_type "int"
-	nparams 1
-	  param in name "parent" type class_ref 147330 // QModelIndex
-	    defaultvalue "QModelIndex()"
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5753602 "columnCount"
-	public explicit_return_type "int"
-	nparams 1
-	  param in name "parent" type class_ref 147330 // QModelIndex
-	    defaultvalue "QModelIndex()"
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5753730 "headerData"
-	public return_type class_ref 161154 // QVariant
-	nparams 3
-	  param in name "section" explicit_type "int"
-	  param in name "orientation" explicit_type "int"
-	  param in name "role" explicit_type "int"
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5754114 "data"
-	public return_type class_ref 161154 // QVariant
-	nparams 2
-	  param in name "index" type class_ref 147330 // QModelIndex
-	  param in name "role" explicit_type "int"
-	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5753858 "canFetchMore"
-	public explicit_return_type "bool"
-	nparams 1
-	  param in name "parent" type class_ref 147330 // QModelIndex
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5753986 "fetchMore"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "parent" type class_ref 147330 // QModelIndex
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      attribute 3507074 "RecordList"
-	private type class_ref 4084866 // RecordListTemplate
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 3507202 "ColumnCount"
-	private explicit_type "int"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      operation 5754242 "updateColumnCount"
-	private explicit_return_type "void"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 4633986 // <directional composition>
-	relation 4607874 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 4633986 // <directional composition>
-	  b parent class_ref 4104834 // RecordList
-      end
     end
 
     classdiagram 3539330 "CsvStringParser"
@@ -772,182 +180,6 @@ ${inlines}
 
       attribute 3514114 "End"
 	private explicit_type "BoostSpiritQStringUnicodeConstIterator"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-    end
-
-    classdiagram 3558914 "CsvFileParser"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 4111490 "CsvFileParser"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4627458 // <directional composition>
-	relation 4601346 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 4627458 // <directional composition>
-	  b parent class_ref 4071810 // CsvParserTemplate
-      end
-
-      operation 5787778 "setCsvSettings"
-	public explicit_return_type "void"
-	nparams 1
-	  param in name "settings" type class_ref 2050434 // CsvParserSettings
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5787906 "openFile"
-	public explicit_return_type "bool"
-	nparams 2
-	  param in name "fileInfo" type class_ref 432386 // QFileInfo
-	  param in name "encoding" type class_ref 236162 // QByteArray
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5788034 "isOpen"
-	public explicit_return_type "bool"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5788162 "closeFile"
-	public explicit_return_type "void"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5788290 "atEnd"
-	public explicit_return_type "bool"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5788418 "readLine"
-	public return_type class_ref 4104706 // StringRecord
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5788546 "readAll"
-	public return_type class_ref 4104962 // StringRecordList
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5788674 "lastError"
-	public return_type class_ref 182402 // Error
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      attribute 3513730 "FileIterator"
-	private type class_ref 4045314 // FileInputIterator
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 3513858 "File"
-	private type class_ref 390530 // QFile
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -1157,7 +389,7 @@ ${members}};
     
     activitydiagramsettings
      end
-    classdiagram 5260674 "QRuntimeError"
+    classdiagram 5260674 "PlainText_QtCore_Error"
       classdiagramsettings member_max_width 0 end
       size A4
     end
@@ -1201,12 +433,62 @@ ${inlines}
       end
     end
 
+    class 6658306 "QFileReadError"
+      visibility package stereotype "exception"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}exception ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7252866 // <generalisation>
+	relation 7221378 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7252866 // <generalisation>
+	  b parent class_ref 6545154 // QRuntimeError
+      end
+    end
+
+    class 6664834 "QTextCodecNotFoundError"
+      visibility package stereotype "exception"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}exception ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7259650 // <generalisation>
+	relation 7228162 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7259650 // <generalisation>
+	  b parent class_ref 6545154 // QRuntimeError
+      end
+    end
+
     classdiagram 3506178 "QFileIterator"
       classdiagramsettings member_max_width 0 end
-      size A4-Landscape
+      size Legal-Landscape
     end
 
-    class 6644866 "BoostSpiritQIODeviceInputConstIterator"
+    class 6651522 "QTextFileInputConstIterator"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -1220,17 +502,33 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 7239042 // <directional composition>
-	relation 7207554 *-->
+      classrelation 7245698 // <directional composition>
+	relation 7214210 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 7239042 // <directional composition>
-	  b parent class_ref 6644994 // BoostSpiritQIODeviceInputConstIteratorSharedData
+	    classrelation_ref 7245698 // <directional composition>
+	  b parent class_ref 6651650 // QTextFileInputConstIteratorSharedData
+      end
+
+      classrelation 7252994 // <dependency>
+	relation 7221506 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7252994 // <dependency>
+	  b parent class_ref 6658306 // QFileReadError
+      end
+
+      classrelation 7266178 // <generalisation>
+	relation 7234690 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7266178 // <generalisation>
+	  b parent class_ref 6671362 // iterator_facade
       end
     end
 
-    class 4045314 "FileInputIterator"
+    class 6651650 "QTextFileInputConstIteratorSharedData"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -1244,144 +542,62 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      operation 5738882 "operator="
-	public return_type class_ref 4045314 // FileInputIterator
-	nparams 1
-	  param in name "other" type class_ref 4045314 // FileInputIterator
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5738754 "setSource"
-	public explicit_return_type "bool"
-	nparams 2
-	  param in name "device" type class_ref 322818 // QIODevice
-	  param in name "encoding" type class_ref 236162 // QByteArray
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5739138 "clear"
-	public explicit_return_type "void"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5739010 "operator++"
-	public return_type class_ref 4045314 // FileInputIterator
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 4580354 // <directional composition>
-	relation 4554242 *-->
+      classrelation 7246082 // <directional composition>
+	relation 7214594 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 4580354 // <directional composition>
-	  b parent class_ref 4045442 // FileInputIteratorSharedData
-      end
-    end
-
-    class 4045442 "FileInputIteratorSharedData"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4580226 // <unidirectional association>
-	relation 4554114 --->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
-"
-	    classrelation_ref 4580226 // <unidirectional association>
+	    classrelation_ref 7246082 // <directional composition>
 	  b parent class_ref 2057474 // QTextDecoder
       end
 
-      attribute 3493634 "RawDataBuffer"
-	private explicit_type "char"
-	multiplicity "*"
-	stereotype "vector"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 3493762 "UnicodeBuffer"
-	private type class_ref 161026 // QString
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      classrelation 4580482 // <unidirectional association>
-	relation 4554370 --->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
-"
-	    classrelation_ref 4580482 // <unidirectional association>
-	  b parent class_ref 322818 // QIODevice
-      end
-
-      classrelation 4580610 // <directional composition>
-	relation 4554498 *-->
+      classrelation 7252738 // <directional composition>
+	relation 7221250 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 4580610 // <directional composition>
-	  b parent class_ref 182402 // Error
+	    classrelation_ref 7252738 // <directional composition>
+	  b parent class_ref 6531586 // QFileDevice
+      end
+
+      classrelation 7259522 // <generalisation>
+	relation 7228034 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7259522 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+    end
+
+    class 6658178 "BoostSpiritQTextFileInputConstIterator"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7252610 // <directional composition>
+	relation 7221122 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7252610 // <directional composition>
+	  b parent class_ref 6651522 // QTextFileInputConstIterator
+      end
+
+      classrelation 7292930 // <generalisation>
+	relation 7261442 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7292930 // <generalisation>
+	  b parent class_ref 6677890 // iterator_adaptor
       end
     end
 
@@ -1404,35 +620,18 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 7279746 // <generalisation>
+	relation 7248258 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7279746 // <generalisation>
+	  b parent class_ref 6677890 // iterator_adaptor
+      end
     end
 
     classdiagram 5306754 "BoostSpiritQtIntegration"
       classdiagramsettings member_max_width 0 end
       size A4
-    end
-
-    class 6644994 "BoostSpiritQIODeviceInputConstIteratorSharedData"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7239170 // <unidirectional association>
-	relation 7207682 --->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
-"
-	    classrelation_ref 7239170 // <unidirectional association>
-	  b parent class_ref 322818 // QIODevice
-      end
     end
   end
 
@@ -1745,7 +944,7 @@ ${inlines}
 	  a public
 	    cpp default "#include in source"
 	    classrelation_ref 7212034 // <dependency>
-	  b parent class_ref 6510594 // FileRule
+	  b parent class_ref 6510594 // CsvFileRule
       end
 
       operation 5781250 "readLine"
@@ -2370,6 +1569,154 @@ ${items}};
       
     end
 
+    class 6684418 "CsvFileWriterTemplate"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7279362 // <directional composition>
+	relation 7247874 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7279362 // <directional composition>
+	  b parent class_ref 2078850 // CsvGeneratorSettings
+      end
+
+      operation 8689922 "setFilePath"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "path" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8690050 "filePath"
+	public explicit_return_type "string"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8690178 "setCsvSettings"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "s" type class_ref 2078850 // CsvGeneratorSettings
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8690306 "csvSettings"
+	public return_type class_ref 2078850 // CsvGeneratorSettings
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8690434 "open"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "m" type class_ref 6538242 // FileWriteOpenMode
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8690562 "isOpen"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8690690 "appendLine"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "rec" explicit_type "Record"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8690818 "close"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
     class 6531074 "CsvFileWriter"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
@@ -2384,15 +1731,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 7122178 // <directional composition>
-	relation 7090690 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7122178 // <directional composition>
-	  b parent class_ref 2078850 // CsvGeneratorSettings
-      end
-
       classrelation 7122306 // <dependency>
 	relation 7090818 -_->
 	  a public
@@ -2401,15 +1739,75 @@ ${inlines}
 	  b parent class_ref 6531330 // CsvFileWriteError
       end
 
+      operation 8689410 "setFilePath"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "path" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8689538 "filePath"
+	public explicit_return_type "string"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8689666 "setCsvSettings"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "s" type class_ref 2078850 // CsvGeneratorSettings
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8689794 "csvSettings"
+	public return_type class_ref 2078850 // CsvGeneratorSettings
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
       operation 8611330 "open"
 	public explicit_return_type "void"
-	nparams 3
-	  param in name "filePath" explicit_type "string"
-	  param in name "s" type class_ref 2078850 // CsvGeneratorSettings
+	nparams 1
 	  param in name "m" type class_ref 6538242 // FileWriteOpenMode
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}, ${t2} ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2437,10 +1835,11 @@ ${inlines}
       operation 8611970 "appendLine"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "rec" explicit_type "Record"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	  param in name "rec" explicit_type "string"
+	multiplicity "*"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2463,6 +1862,15 @@ ${inlines}
 	
 	
 	
+      end
+
+      classrelation 7279618 // <directional composition>
+	relation 7248130 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7279618 // <directional composition>
+	  b parent class_ref 6684418 // CsvFileWriterTemplate
       end
     end
 
@@ -3307,6 +2715,774 @@ ${inlines}
 "
 	    classrelation_ref 7150466 // <directional composition>
 	  b parent class_ref 6558594 // QCsvParserSettingsWidget
+      end
+    end
+  end
+
+  classview 2840578 "PlainText_OLD"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 3532802 "Data"
+      classdiagramsettings member_max_width 0 end
+      size B-Landscape
+    end
+
+    class 4078338 "RecordTemplate"
+      visibility package 
+      nformals 1
+      formal name "T" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 3500418 "Record"
+	private explicit_type "T"
+	multiplicity "*"
+	stereotype "vector"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 5746690 "appendColumn"
+	cpp_inline public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5746818 "setColumnCount"
+	cpp_inline public explicit_return_type "void"
+	nparams 1
+	  param in name "count" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5745666 "columnCount"
+	cpp_inline public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5746946 "setData"
+	cpp_inline public explicit_return_type "void"
+	nparams 2
+	  param in name "column" explicit_type "int"
+	  param in name "data" explicit_type "T"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5745794 "data"
+	cpp_inline public explicit_return_type "T"
+	nparams 1
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5745922 "value"
+	cpp_inline public explicit_return_type "T"
+	nparams 1
+	  param in name "index" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5746050 "clear"
+	cpp_inline public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 4104578 "Record"
+      visibility package stereotype "typedef" base_type class_ref 4078338 // RecordTemplate
+      nactuals 1
+      actual class class_ref 4078338 // RecordTemplate
+        rank 0 explicit_value ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 4620546 // <realization>
+	relation 4594434 -_-|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 4620546 // <realization>
+	  b parent class_ref 4078338 // RecordTemplate
+      end
+    end
+
+    class 4104706 "StringRecord"
+      visibility package stereotype "typedef" base_type class_ref 4078338 // RecordTemplate
+      nactuals 1
+      actual class class_ref 4078338 // RecordTemplate
+        rank 0 explicit_value ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 4620674 // <realization>
+	relation 4594562 -_-|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 4620674 // <realization>
+	  b parent class_ref 4078338 // RecordTemplate
+      end
+    end
+
+    class 4084866 "RecordListTemplate"
+      visibility package 
+      nformals 1
+      formal name "T" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 4600706 // <directional composition>
+	relation 4574594 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 4600706 // <directional composition>
+	  b parent class_ref 4078338 // RecordTemplate
+      end
+
+      attribute 3500546 "List"
+	private type class_ref 4078338 // RecordTemplate
+	multiplicity "*"
+	stereotype "vector"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 5760770 "appendRecord"
+	cpp_inline public explicit_return_type "void"
+	nparams 1
+	  param in name "record" type class_ref 4078338 // RecordTemplate
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5746178 "rowCount"
+	cpp_inline public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5746562 "columnCount"
+	cpp_inline public explicit_return_type "int"
+	nparams 1
+	  param in name "row" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5760898 "setData"
+	cpp_inline public explicit_return_type "void"
+	nparams 3
+	  param in name "row" explicit_type "int"
+	  param in name "column" explicit_type "int"
+	  param in name "data" explicit_type "T"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5746306 "data"
+	cpp_inline public explicit_return_type "T"
+	nparams 2
+	  param in name "row" explicit_type "int"
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5746434 "value"
+	cpp_inline public explicit_return_type "T"
+	nparams 2
+	  param in name "row" explicit_type "int"
+	  param in name "column" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5761026 "clear"
+	cpp_inline public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 4104834 "RecordList"
+      visibility package stereotype "typedef" base_type class_ref 4097922 // RecordListTableModel
+      nactuals 1
+      actual class class_ref 4084866 // RecordListTemplate
+        rank 0 explicit_value ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 4620930 // <realization>
+	relation 4594818 -_-|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 4620930 // <realization>
+	  b parent class_ref 4084866 // RecordListTemplate
+      end
+    end
+
+    class 4104962 "StringRecordList"
+      visibility package stereotype "typedef" base_type class_ref 4097922 // RecordListTableModel
+      nactuals 1
+      actual class class_ref 4084866 // RecordListTemplate
+        rank 0 explicit_value ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 4620802 // <realization>
+	relation 4594690 -_-|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 4620802 // <realization>
+	  b parent class_ref 4084866 // RecordListTemplate
+      end
+    end
+
+    classdiagram 3545858 "RecordListTableModel"
+      classdiagramsettings member_max_width 0 end
+      size A4-Landscape
+    end
+
+    class 4097922 "RecordListTableModel"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 4613890 // <generalisation>
+	relation 4587778 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 4613890 // <generalisation>
+	  b parent class_ref 147202 // QAbstractTableModel
+      end
+
+      operation 5753474 "rowCount"
+	cpp_virtual public explicit_return_type "int"
+	nparams 1
+	  param in name "parent" type class_ref 147330 // QModelIndex
+	    defaultvalue "QModelIndex()"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5753602 "columnCount"
+	public explicit_return_type "int"
+	nparams 1
+	  param in name "parent" type class_ref 147330 // QModelIndex
+	    defaultvalue "QModelIndex()"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5753730 "headerData"
+	public return_type class_ref 161154 // QVariant
+	nparams 3
+	  param in name "section" explicit_type "int"
+	  param in name "orientation" explicit_type "int"
+	  param in name "role" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5754114 "data"
+	public return_type class_ref 161154 // QVariant
+	nparams 2
+	  param in name "index" type class_ref 147330 // QModelIndex
+	  param in name "role" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5753858 "canFetchMore"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "parent" type class_ref 147330 // QModelIndex
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5753986 "fetchMore"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "parent" type class_ref 147330 // QModelIndex
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      attribute 3507074 "RecordList"
+	private type class_ref 4084866 // RecordListTemplate
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 3507202 "ColumnCount"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 5754242 "updateColumnCount"
+	private explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 4633986 // <directional composition>
+	relation 4607874 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 4633986 // <directional composition>
+	  b parent class_ref 4104834 // RecordList
+      end
+    end
+
+    classdiagram 3558914 "CsvFileParser"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 4111490 "CsvFileParser"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 4627458 // <directional composition>
+	relation 4601346 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 4627458 // <directional composition>
+	  b parent class_ref 4071810 // CsvParserTemplate
+      end
+
+      operation 5787778 "setCsvSettings"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "settings" type class_ref 2050434 // CsvParserSettings
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5787906 "openFile"
+	public explicit_return_type "bool"
+	nparams 2
+	  param in name "fileInfo" type class_ref 432386 // QFileInfo
+	  param in name "encoding" type class_ref 236162 // QByteArray
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5788034 "isOpen"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5788162 "closeFile"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5788290 "atEnd"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5788418 "readLine"
+	public return_type class_ref 4104706 // StringRecord
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5788546 "readAll"
+	public return_type class_ref 4104962 // StringRecordList
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5788674 "lastError"
+	public return_type class_ref 182402 // Error
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      attribute 3513730 "FileIterator"
+	private explicit_type "FileInputIterator"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 3513858 "File"
+	private type class_ref 390530 // QFile
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
       end
     end
   end

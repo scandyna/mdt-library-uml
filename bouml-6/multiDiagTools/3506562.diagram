@@ -2,6 +2,24 @@ format 222
 
 classcanvas 128898 class_ref 6631682 // BoostSpiritQStringConstIterator
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 40.5 2000
+  xyz 36 200 2000
+end
+classcanvas 129026 class_ref 6677890 // iterator_adaptor
+  classdiagramsettings member_max_width 0 end
+  xyz 87 120 2000
+end
+classcanvas 129282 class_ref 6671362 // iterator_facade
+  classdiagramsettings member_max_width 0 end
+  xyz 91 40 2006
+end
+relationcanvas 129154 relation_ref 7248258 // <generalisation>
+  from ref 128898 z 2001 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 7241218 // <generalisation>
+  from ref 129026 z 2007 to ref 129282
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 end

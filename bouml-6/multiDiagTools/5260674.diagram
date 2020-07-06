@@ -2,14 +2,36 @@ format 222
 
 classcanvas 128002 class_ref 6545154 // QRuntimeError
   classdiagramsettings member_max_width 0 end
-  xyz 40 186 2000
+  xyz 208 210 2000
 end
 classcanvas 128130 class_ref 4372226 // runtime_error
   classdiagramsettings member_max_width 0 end
-  xyz 47 39 2000
+  xyz 215 41 2000
+end
+classcanvas 128386 class_ref 6658306 // QFileReadError
+  classdiagramsettings member_max_width 0 end
+  xyz 265 346 2000
+end
+classcanvas 128642 class_ref 6664834 // QTextCodecNotFoundError
+  classdiagramsettings member_max_width 0 end
+  xyz 40 346 2000
 end
 relationcanvas 128258 relation_ref 7105026 // <generalisation>
   from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 7221378 // <generalisation>
+  from ref 128386 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 7228162 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 518
+  from ref 128642 z 2001 to point 133 304
+  line 128898 z 2001 to point 318 304
+  line 129026 z 2001 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
