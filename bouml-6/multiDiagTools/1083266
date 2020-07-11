@@ -1,6 +1,6 @@
 format 222
 "Csv" // Mdt::PlainText::Grammar::Csv
-  revision 9
+  revision 16
   modified_by 2 "philippe"
   // class settings
   
@@ -52,10 +52,15 @@ format 222
      end
     classdiagram 5233922 "CsvGrammar"
       classdiagramsettings member_max_width 0 end
+      size B-Landscape
+    end
+
+    classdiagram 5319810 "CsvGrammar_overview"
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
       size A4
     end
 
-    class 6510594 "CsvFileRule"
+    class 6510594 "CsvFile"
       visibility package 
       nformals 2
       formal name "SourceIterator" type "class" explicit_default_value ""
@@ -112,17 +117,26 @@ ${inlines}
 	MysqlColumn
       end
 
-      classrelation 7299458 // <directional composition>
-	relation 7267970 *-->
+      classrelation 7327746 // <directional composition>
+	relation 7296258 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 7299458 // <directional composition>
-	  b parent class_ref 6565250 // RecordRule
+	    classrelation_ref 7327746 // <directional composition>
+	  b parent class_ref 6697474 // NonEmptyFieldColumn
+      end
+
+      classrelation 7327874 // <directional composition>
+	relation 7296386 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7327874 // <directional composition>
+	  b parent class_ref 6565378 // FieldColumn
       end
     end
 
-    class 6565250 "RecordRule"
+    class 6565250 "CsvRecord"
       visibility package 
       nformals 2
       formal name "SourceIterator" type "class" explicit_default_value ""
@@ -179,22 +193,31 @@ ${inlines}
 	MysqlColumn
       end
 
-      classrelation 7157890 // <directional composition>
-	relation 7126402 *-->
+      classrelation 7327490 // <directional composition>
+	relation 7296002 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 7157890 // <directional composition>
-	  b parent class_ref 6565378 // FieldColumnRule
+	    classrelation_ref 7327490 // <directional composition>
+	  b parent class_ref 6697474 // NonEmptyFieldColumn
+      end
+
+      classrelation 7327618 // <directional composition>
+	relation 7296130 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7327618 // <directional composition>
+	  b parent class_ref 6565378 // FieldColumn
       end
     end
 
-    class 6565378 "FieldColumnRule"
+    class 6565378 "FieldColumn"
       visibility package 
       nformals 2
       formal name "SourceIterator" type "class" explicit_default_value ""
         explicit_extends ""
-      formal name "DestinationData" type "class" explicit_default_value ""
+      formal name "DestinationString" type "class" explicit_default_value ""
         explicit_extends ""
       nactuals 4
       actual class class_ref 2034818 // grammar
@@ -236,6 +259,24 @@ ${inlines}
 	    classrelation_ref 7157634 // <generalisation>
 	  b parent class_ref 2034818 // grammar
       end
+
+      classrelation 7320578 // <directional composition>
+	relation 7289090 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7320578 // <directional composition>
+	  b parent class_ref 6697730 // UnprotectedField
+      end
+
+      classrelation 7320706 // <directional composition>
+	relation 7289218 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7320706 // <directional composition>
+	  b parent class_ref 6697602 // ProtectedField
+      end
     end
 
     class 6585346 "TableRule"
@@ -252,6 +293,236 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+    end
+
+    class 6697474 "NonEmptyFieldColumn"
+      visibility package 
+      nformals 2
+      formal name "SourceIterator" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "DestinationString" type "class" explicit_default_value ""
+        explicit_extends ""
+      nactuals 4
+      actual class class_ref 2034818 // grammar
+        rank 0 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 1 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 2 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 3 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7312898 // <generalisation>
+	relation 7281410 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7312898 // <generalisation>
+	  b parent class_ref 2034818 // grammar
+      end
+
+      classrelation 7320834 // <directional composition>
+	relation 7289346 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7320834 // <directional composition>
+	  b parent class_ref 6697858 // NonEmptyUnprotectedField
+      end
+
+      classrelation 7320962 // <directional composition>
+	relation 7289474 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7320962 // <directional composition>
+	  b parent class_ref 6697602 // ProtectedField
+      end
+    end
+
+    class 6697602 "ProtectedField"
+      visibility package 
+      nformals 2
+      formal name "SourceIterator" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "DestinationString" type "class" explicit_default_value ""
+        explicit_extends ""
+      nactuals 4
+      actual class class_ref 2034818 // grammar
+        rank 0 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 1 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 2 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 3 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7313154 // <generalisation>
+	relation 7281666 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7313154 // <generalisation>
+	  b parent class_ref 2034818 // grammar
+      end
+
+      classrelation 7320450 // <directional composition>
+	relation 7288962 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7320450 // <directional composition>
+	  b parent class_ref 6697986 // SafeChar
+      end
+    end
+
+    class 6697730 "UnprotectedField"
+      visibility package 
+      nformals 2
+      formal name "SourceIterator" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "DestinationString" type "class" explicit_default_value ""
+        explicit_extends ""
+      nactuals 4
+      actual class class_ref 2034818 // grammar
+        rank 0 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 1 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 2 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 3 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7313282 // <generalisation>
+	relation 7281794 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7313282 // <generalisation>
+	  b parent class_ref 2034818 // grammar
+      end
+
+      classrelation 7320066 // <directional composition>
+	relation 7288578 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7320066 // <directional composition>
+	  b parent class_ref 6697986 // SafeChar
+      end
+    end
+
+    class 6697858 "NonEmptyUnprotectedField"
+      visibility package 
+      nformals 2
+      formal name "SourceIterator" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "DestinationString" type "class" explicit_default_value ""
+        explicit_extends ""
+      nactuals 4
+      actual class class_ref 2034818 // grammar
+        rank 0 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 1 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 2 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 3 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7313410 // <generalisation>
+	relation 7281922 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7313410 // <generalisation>
+	  b parent class_ref 2034818 // grammar
+      end
+
+      classrelation 7320322 // <directional composition>
+	relation 7288834 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7320322 // <directional composition>
+	  b parent class_ref 6697986 // SafeChar
+      end
+    end
+
+    class 6697986 "SafeChar"
+      visibility package 
+      nformals 2
+      formal name "SourceIterator" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "DestinationChar" type "class" explicit_default_value ""
+        explicit_extends ""
+      nactuals 4
+      actual class class_ref 2034818 // grammar
+        rank 0 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 1 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 2 explicit_value ""
+      actual class class_ref 2034818 // grammar
+        rank 3 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7313538 // <generalisation>
+	relation 7282050 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7313538 // <generalisation>
+	  b parent class_ref 2034818 // grammar
+      end
     end
   end
 end

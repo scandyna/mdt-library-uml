@@ -1,6 +1,6 @@
 format 222
 "PlainText" // Mdt::PlainText
-  revision 65
+  revision 68
   modified_by 2 "philippe"
   // class settings
   
@@ -936,7 +936,7 @@ ${inlines}
 	  a public
 	    cpp default "#include in source"
 	    classrelation_ref 7211906 // <dependency>
-	  b parent class_ref 6565250 // RecordRule
+	  b parent class_ref 6565250 // CsvRecord
       end
 
       classrelation 7212034 // <dependency>
@@ -944,7 +944,7 @@ ${inlines}
 	  a public
 	    cpp default "#include in source"
 	    classrelation_ref 7212034 // <dependency>
-	  b parent class_ref 6510594 // CsvFileRule
+	  b parent class_ref 6510594 // CsvFile
       end
 
       operation 5781250 "readLine"

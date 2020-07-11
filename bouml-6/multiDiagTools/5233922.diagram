@@ -2,60 +2,204 @@ format 222
 
 classcanvas 128002 class_ref 2034818 // grammar
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 182 40 2005
+  xyz 482.667 40.5 2005
 end
-classcanvas 128130 class_ref 6510594 // CsvFileRule
+classcanvas 128130 class_ref 6510594 // CsvFile
   classdiagramsettings member_max_width 0 end
-  xyz 15 178 2000
+  xyz 1211.5 275.167 2000
 end
-classcanvas 128386 class_ref 6565250 // RecordRule
+classcanvas 128386 class_ref 6565250 // CsvRecord
   classdiagramsettings member_max_width 0 end
-  xyz 238 178 2000
+  xyz 1099.17 170.667 2000
 end
-classcanvas 129922 class_ref 6565378 // FieldColumnRule
+classcanvas 129922 class_ref 6565378 // FieldColumn
   classdiagramsettings member_max_width 0 end
-  xyz 534 178 2000
+  xyz 79.3333 218.167 2000
 end
 note 130818 "Could be good to be able to give the reccord's fields format (int, double, ...)
 
-Requires also that the user givse the correct record type for each field (Record template argument)"
-  xyzwh 40.5 328.5 2000 647 87
+Requires also that the user givse the correct record type for each field (Record template argument)
+
+Example:
+int_ >> FieldColumn >> _double_ >> -eol
+"
+  xyzwh 40.5 513.167 2000 679 125
 classcanvas 130946 class_ref 6585346 // TableRule
   classdiagramsettings member_max_width 0 end
-  xyz 600.5 40.5 2000
+  xyz 721.5 718.167 2000
+end
+note 131458 "We need, maybe, 2 rules for record:
+ - One to be able to read line by line, the one that accepts a optional EOL
+- One to be used in CsvFileRule, that does not consume the EOL
+
+((NOTE: eol parser does not output attribiutes, but consumes, ok.. ))"
+  xyzwh 40.5 718.167 2000 601 101
+classcanvas 132866 class_ref 6697474 // NonEmptyFieldColumn
+  classdiagramsettings member_max_width 0 end
+  xyz 901.5 176.667 2000
+end
+classcanvas 133762 class_ref 6697602 // ProtectedField
+  classdiagramsettings member_max_width 0 end
+  xyz 320.5 262.167 2000
+end
+classcanvas 134018 class_ref 6697730 // UnprotectedField
+  classdiagramsettings member_max_width 0 end
+  xyz 406.5 170.333 2011
+end
+classcanvas 134274 class_ref 6697858 // NonEmptyUnprotectedField
+  classdiagramsettings member_max_width 0 end
+  xyz 674.333 170.333 2011
+end
+classcanvas 135554 class_ref 6697986 // SafeChar
+  classdiagramsettings member_max_width 0 end
+  xyz 565.5 170.333 2011
 end
 relationcanvas 128514 relation_ref 7125506 // <generalisation>
-  from ref 128386 z 2006 to ref 128002
+  geometry VHV unfixed
+  decenter_begin 473
+  from ref 128386 z 2006 to point 1158 135
+  line 132226 z 2006 to point 601 135
+  line 132354 z 2006 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129538 relation_ref 7126018 // <generalisation>
   geometry VHV unfixed
-  from ref 128130 z 2006 to point 67 136
-  line 129666 z 2006 to point 301 136
+  decenter_begin 532
+  from ref 128130 z 2006 to point 1266 135
+  line 129666 z 2006 to point 601 135
   line 129794 z 2006 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130050 relation_ref 7126146 // <generalisation>
   geometry VHV unfixed
-  from ref 129922 z 2006 to point 612 136
-  line 131074 z 2006 to point 301 136
-  line 131202 z 2006 to ref 128002
+  from ref 129922 z 2006 to point 158 135
+  line 134786 z 2006 to point 601 135
+  line 134914 z 2006 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130562 relation_ref 7126402 // <directional composition>
-  decenter_begin 434
-  decenter_end 434
-  from ref 128386 z 2001 to ref 129922
+relationcanvas 132994 relation_ref 7281410 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 477
+  from ref 132866 z 2006 to point 974 135
+  line 137858 z 2006 to point 601 135
+  line 137986 z 2006 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131330 relation_ref 7267970 // <directional composition>
-  decenter_begin 434
-  decenter_end 434
-  from ref 128130 z 2001 to ref 128386
+relationcanvas 133890 relation_ref 7281666 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 466
+  from ref 133762 z 2006 to point 366 135
+  line 134530 z 2006 to point 601 135
+  line 134658 z 2006 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134146 relation_ref 7281794 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 528
+  from ref 134018 z 2012 to point 468 135
+  line 135042 z 2012 to point 601 135
+  line 135170 z 2012 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134402 relation_ref 7281922 // <generalisation>
+  geometry VHV unfixed
+  from ref 134274 z 2012 to point 766 135
+  line 140546 z 2012 to point 601 135
+  line 140674 z 2012 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135682 relation_ref 7282050 // <generalisation>
+  decenter_begin 549
+  from ref 135554 z 2012 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136322 relation_ref 7288578 // <directional composition>
+  from ref 134018 z 2012 to ref 135554
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136578 relation_ref 7288834 // <directional composition>
+  from ref 134274 z 2012 to ref 135554
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136706 relation_ref 7288962 // <directional composition>
+  geometry HV unfixed
+  decenter_begin 543
+  decenter_end 549
+  from ref 133762 z 2012 to point 601 290
+  line 138626 z 2012 to ref 135554
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136834 relation_ref 7289090 // <directional composition>
+  decenter_begin 173
+  decenter_end 719
+  from ref 129922 z 2012 to point 281 230
+  line 140034 z 2012 to point 281 211
+  line 140162 z 2012 to ref 134018
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136962 relation_ref 7289218 // <directional composition>
+  decenter_begin 811
+  decenter_end 210
+  from ref 129922 z 2001 to ref 133762
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 137090 relation_ref 7289346 // <directional composition>
+  decenter_begin 385
+  from ref 132866 z 2012 to ref 134274
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 137218 relation_ref 7289474 // <directional composition>
+  decenter_begin 477
+  decenter_end 466
+  from ref 132866 z 2001 to point 977 357
+  line 137346 z 2001 to point 369 357
+  line 137474 z 2001 to ref 133762
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 138882 relation_ref 7296258 // <directional composition>
+  geometry HV unfixed
+  decenter_begin 536
+  decenter_end 918
+  from ref 128130 z 2001 to point 1044 309
+  line 139394 z 2001 to ref 132866
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 139010 relation_ref 7296386 // <directional composition>
+  decenter_begin 532
+  from ref 128130 z 2001 to point 1269 395
+  line 140290 z 2001 to point 160 395
+  line 140418 z 2001 to ref 129922
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 139138 relation_ref 7296002 // <directional composition>
+  from ref 128386 z 2001 to ref 132866
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 139266 relation_ref 7296130 // <directional composition>
+  decenter_end 536
+  from ref 128386 z 2001 to point 1357 205
+  line 139522 z 2001 to point 1357 433
+  line 139650 z 2001 to point 40 433
+  line 139778 z 2001 to point 40 255
+  line 139906 z 2001 to ref 129922
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
