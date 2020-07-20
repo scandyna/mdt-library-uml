@@ -1,6 +1,6 @@
 format 222
 "Qt" // Qt
-  revision 293
+  revision 294
   modified_by 2 "philippe"
   // class settings
   
@@ -4347,6 +4347,55 @@ ${inlines}
     end
   end
 
+  classview 2847106 "Core_IO"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5326338 "QIODevice"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6711170 "QIODevice"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7354242 // <generalisation>
+	relation 7322754 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7354242 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+    end
+  end
+
   classview 2814466 "Core_File"
     
     classdiagramsettings member_max_width 0 end
@@ -4386,6 +4435,13 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 7354370 // <generalisation>
+	relation 7322882 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7354370 // <generalisation>
+	  b parent class_ref 6711170 // QIODevice
+      end
     end
 
     classdiagram 5254018 "QSaveFile"

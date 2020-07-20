@@ -2,102 +2,92 @@ format 222
 
 classcanvas 128002 class_ref 6510594 // CsvFile
   classdiagramsettings member_max_width 0 end
-  xyz 131 136 2005
+  xyz 39 136 2005
 end
 classcanvas 128130 class_ref 6565250 // CsvRecord
   classdiagramsettings member_max_width 0 end
-  xyz 287 40 2005
+  xyz 175 228 2005
 end
 classcanvas 128258 class_ref 6565378 // FieldColumn
   classdiagramsettings member_max_width 0 end
-  xyz 282 136 2010
-end
-classcanvas 128386 class_ref 6585346 // TableRule
-  classdiagramsettings member_max_width 0 end
-  xyz 40.5 464.5 2000
+  xyz 338 228 2010
 end
 classcanvas 129026 class_ref 6697474 // NonEmptyFieldColumn
   classdiagramsettings member_max_width 0 end
-  xyz 81 232 2022
+  xyz 137 136 2022
 end
 classcanvas 129282 class_ref 6697602 // ProtectedField
   classdiagramsettings member_max_width 0 end
-  xyz 280 232 2005
+  xyz 332 136 2005
 end
 classcanvas 129410 class_ref 6697730 // UnprotectedField
   classdiagramsettings member_max_width 0 end
-  xyz 415 136 2005
+  xyz 471 228 2005
 end
 classcanvas 129538 class_ref 6697858 // NonEmptyUnprotectedField
   classdiagramsettings member_max_width 0 end
-  xyz 66 328 2027
+  xyz 434 40 2027
 end
 classcanvas 129666 class_ref 6697986 // SafeChar
   classdiagramsettings member_max_width 0 end
-  xyz 297 328 2005
+  xyz 497 136 2005
 end
 note 132610 "Could be good to be able to give the reccord's fields format (int, double, ...)
 
 Requires also that the user givse the correct record type for each field (Record template argument)
 
 Example:
-int_ >> FieldColumn >> _double_ >> -eol
+Record = int_ >> FieldColumn >> _double_ >> -eol
 "
-  xyzwh 35 526.667 2000 679 125
+  xyzwh 40.5 456.5 2000 679 125
+classcanvas 132866 class_ref 6704514 // CsvFileLine
+  classdiagramsettings member_max_width 0 end
+  xyz 169 320 2000
+end
 relationcanvas 129794 relation_ref 7288578 // <directional composition>
-  geometry VH unfixed
-  decenter_begin 528
-  decenter_end 421
-  from ref 129410 z 2006 to point 477 349
-  line 132354 z 2006 to ref 129666
+  decenter_end 436
+  from ref 129410 z 2006 to ref 129666
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130050 relation_ref 7288834 // <directional composition>
-  decenter_begin 421
-  decenter_end 421
+  decenter_end 436
   from ref 129538 z 2028 to ref 129666
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130178 relation_ref 7288962 // <directional composition>
-  decenter_begin 457
-  decenter_end 436
+  decenter_end 421
   from ref 129282 z 2006 to ref 129666
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130306 relation_ref 7289090 // <directional composition>
-  decenter_begin 561
-  decenter_end 561
   from ref 128258 z 2011 to ref 129410
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130434 relation_ref 7289218 // <directional composition>
-  decenter_end 457
   from ref 128258 z 2011 to ref 129282
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130690 relation_ref 7289346 // <directional composition>
-  from ref 129026 z 2028 to ref 129538
+  geometry VH unfixed
+  decenter_end 421
+  from ref 129026 z 2028 to point 214 61
+  line 133890 z 2028 to ref 129538
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130818 relation_ref 7289474 // <directional composition>
-  decenter_begin 561
-  decenter_end 561
+  decenter_begin 421
   from ref 129026 z 2023 to ref 129282
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131586 relation_ref 7296002 // <directional composition>
-  decenter_begin 561
-  decenter_end 561
-  from ref 128130 z 2023 to point 40 72
-  line 132098 z 2023 to point 40 264
-  line 132226 z 2023 to ref 129026
+  from ref 128130 z 2023 to ref 129026
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -107,13 +97,23 @@ relationcanvas 131714 relation_ref 7296130 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131842 relation_ref 7296258 // <directional composition>
+  decenter_begin 421
+  decenter_end 421
   from ref 128002 z 2023 to ref 129026
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131970 relation_ref 7296386 // <directional composition>
-  decenter_end 561
-  from ref 128002 z 2011 to ref 128258
+relationcanvas 133122 relation_ref 7303042 // <directional composition>
+  geometry VH unfixed
+  decenter_begin 423
+  from ref 128002 z 2006 to point 61 254
+  line 133762 z 2006 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133250 relation_ref 7303170 // <directional composition>
+  decenter_begin 540
+  from ref 132866 z 2006 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

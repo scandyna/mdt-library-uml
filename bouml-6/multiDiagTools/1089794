@@ -1,6 +1,6 @@
 format 222
-"Grammar" // Mdt::PlainText::Grammar
-  revision 4
+"chrono" // Mdt::PlainText::Grammar::chrono
+  revision 1
   modified_by 2 "philippe"
   // class settings
   
@@ -30,9 +30,4 @@ format 222
   activitydiagramsettings
    end
   
-  package_ref 1083266 // Csv
-
-  package_ref 1089794 // chrono
-
-  package_ref 1089922 // QDateTime
 end

@@ -1,6 +1,6 @@
 format 222
 "PlainText" // Mdt::PlainText
-  revision 68
+  revision 74
   modified_by 2 "philippe"
   // class settings
   
@@ -80,15 +80,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 4607362 // <directional composition>
-	relation 4581250 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 4607362 // <directional composition>
-	  b parent class_ref 4071810 // CsvParserTemplate
-      end
-
       operation 5774466 "setCsvSettings"
 	public explicit_return_type "void"
 	nparams 1
@@ -367,6 +358,42 @@ ${members}};
 	  b parent class_ref 4372226 // runtime_error
       end
     end
+
+    classdiagram 5332994 "BasicFileInfo_unix"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6717826 "BasicFileInfo_unix"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8704002 "isDirectory"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "path" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
   end
 
   classview 2728578 "PlainText_QtCore"
@@ -484,7 +511,7 @@ ${members}};
     end
 
     classdiagram 3506178 "QFileIterator"
-      classdiagramsettings member_max_width 0 end
+      classdiagramsettings show_members_full_definition no member_max_width 0 end
       size Legal-Landscape
     end
 
@@ -567,6 +594,25 @@ ${inlines}
 	    classrelation_ref 7259522 // <generalisation>
 	  b parent class_ref 138626 // QObject
       end
+
+      operation 8697474 "readFromFileAndDecode"
+	class_operation package explicit_return_type ""
+	nparams 3
+	  param in name "file" type class_ref 6711170 // QIODevice
+	  param in name "rawDataBuffer" explicit_type "char"
+	multiplicity "*"
+	  param in name "unicodeBuffer" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
 
     class 6658178 "BoostSpiritQTextFileInputConstIterator"
@@ -632,6 +678,61 @@ ${inlines}
     classdiagram 5306754 "BoostSpiritQtIntegration"
       classdiagramsettings member_max_width 0 end
       size A4
+    end
+
+    classdiagram 5332866 "QTextFileReader"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6717698 "QTextFileReader"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7360898 // <generalisation>
+	relation 7329410 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7360898 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 7361026 // <directional composition>
+	relation 7329538 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7361026 // <directional composition>
+	  b parent class_ref 390530 // QFile
+      end
+
+      classrelation 7361154 // <directional composition>
+	relation 7329666 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7361154 // <directional composition>
+	  b parent class_ref 2035458 // QTextCodec
+      end
+
+      classrelation 7361282 // <directional composition>
+	relation 7329794 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7361282 // <directional composition>
+	  b parent class_ref 2057474 // QTextDecoder
+      end
     end
   end
 
@@ -909,114 +1010,6 @@ ${members}};
       end
     end
 
-    classdiagram 3526274 "CsvParserTemplate"
-      classdiagramsettings member_max_width 0 end
-      size A-Landscape
-    end
-
-    class 4071810 "CsvParserTemplate"
-      visibility package 
-      nformals 1
-      formal name "SourceIterator" type "class" explicit_default_value ""
-        explicit_extends ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7211906 // <dependency>
-	relation 7180418 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7211906 // <dependency>
-	  b parent class_ref 6565250 // CsvRecord
-      end
-
-      classrelation 7212034 // <dependency>
-	relation 7180546 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7212034 // <dependency>
-	  b parent class_ref 6510594 // CsvFile
-      end
-
-      operation 5781250 "readLine"
-	cpp_inline public explicit_return_type "Record"
-	nparams 2
-	  param in name "first" explicit_type "SourceIterator"
-	  param in name "last" explicit_type "SourceIterator"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 8673538 "readLine"
-	cpp_inline public explicit_return_type "Record"
-	nparams 3
-	  param in name "first" explicit_type "SourceIterator"
-	  param in name "last" explicit_type "SourceIterator"
-	  param in name "rule" explicit_type "RecordRule"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 8666882 "readAll"
-	cpp_inline public explicit_return_type "Table"
-	nparams 2
-	  param in name "first" explicit_type "SourceIterator"
-	  param in name "last" explicit_type "SourceIterator"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 7212162 // <directional composition>
-	relation 7180674 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7212162 // <directional composition>
-	  b parent class_ref 2050434 // CsvParserSettings
-      end
-
-      classrelation 7218690 // <dependency>
-	relation 7187202 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7218690 // <dependency>
-	  b parent class_ref 6578690 // CsvParseError
-      end
-    end
-
     classdiagram 5240450 "CsvFileReader"
       classdiagramsettings member_max_width 0 end
       size A
@@ -1163,21 +1156,6 @@ ${inlines}
 	
       end
 
-      operation 8653570 "readLine"
-	public explicit_return_type "Record"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
       operation 8673410 "readLine"
 	public explicit_return_type "Record"
 	nparams 1
@@ -1196,10 +1174,11 @@ ${inlines}
 
       operation 8653698 "readAll"
 	public explicit_return_type "RecordList"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+	nparams 1
+	  param in name "rule" explicit_type "Rule"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -1224,13 +1203,13 @@ ${inlines}
 	
       end
 
-      classrelation 7218818 // <directional composition>
-	relation 7187330 *-->
+      classrelation 7334402 // <directional composition>
+	relation 7302914 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 7218818 // <directional composition>
-	  b parent class_ref 4071810 // CsvParserTemplate
+	    classrelation_ref 7334402 // <directional composition>
+	  b parent class_ref 2050434 // CsvParserSettings
       end
     end
 
@@ -1932,15 +1911,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 7232130 // <directional composition>
-	relation 7200642 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7232130 // <directional composition>
-	  b parent class_ref 4071810 // CsvParserTemplate
-      end
-
       operation 8680066 "setFilePath"
 	public explicit_return_type "void"
 	nparams 1
@@ -2081,10 +2051,11 @@ ${inlines}
 
       operation 8680962 "readLine"
 	public explicit_return_type "Record"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+	nparams 1
+	  param in name "rule" explicit_type "Rule"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2096,10 +2067,11 @@ ${inlines}
 
       operation 8681090 "readAll"
 	public explicit_return_type "RecordList"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+	nparams 1
+	  param in name "rule" explicit_type "Rule"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2130,6 +2102,15 @@ ${inlines}
 	    cpp default "${type}"
 	    classrelation_ref 7238786 // <generalisation>
 	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 7347714 // <directional composition>
+	relation 7316226 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7347714 // <directional composition>
+	  b parent class_ref 2050434 // CsvParserSettings
       end
     end
 
@@ -3329,15 +3310,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 4627458 // <directional composition>
-	relation 4601346 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 4627458 // <directional composition>
-	  b parent class_ref 4071810 // CsvParserTemplate
-      end
-
       operation 5787778 "setCsvSettings"
 	public explicit_return_type "void"
 	nparams 1

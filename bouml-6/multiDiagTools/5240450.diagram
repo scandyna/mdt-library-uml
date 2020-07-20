@@ -23,10 +23,6 @@ classcanvas 130818 class_ref 6605058 // CsvFileReaderTemplate
   classdiagramsettings member_max_width 0 end
   xyz 205 298 2006
 end
-classcanvas 131458 class_ref 4071810 // CsvParserTemplate
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 292 580 2006
-end
 relationcanvas 131074 relation_ref 7160066 // <dependency>
   decenter_begin 481
   from ref 130818 z 2007 to ref 128130
@@ -40,14 +36,8 @@ relationcanvas 131330 relation_ref 7160322 // <directional composition>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131586 relation_ref 7180674 // <directional composition>
-  from ref 131458 z 2007 to ref 128642
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 131714 relation_ref 7187330 // <directional composition>
-  decenter_begin 510
-  from ref 130818 z 2007 to ref 131458
+relationcanvas 131842 relation_ref 7302914 // <directional composition>
+  from ref 130818 z 2007 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
