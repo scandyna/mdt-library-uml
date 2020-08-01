@@ -1,0 +1,11 @@
+format 222
+
+classcanvas 128002 class_ref 6724354 // EndOfLine
+  classdiagramsettings member_max_width 0 end
+  xyz 104 68 2000
+end
+classcanvas 128130 class_ref 6538242 // FileWriteOpenMode
+  classdiagramsettings member_max_width 0 end
+  xyz 413 100 2000
+end
+end

@@ -2,68 +2,62 @@ format 222
 
 classcanvas 128002 class_ref 6531202 // QCsvFileWriter
   classdiagramsettings member_max_width 0 end
-  xyz 215.5 117 2000
+  xyz 565.5 157.5 2000
 end
 classcanvas 128130 class_ref 2078850 // CsvGeneratorSettings
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 945.5 345 2000
-end
-classcanvas 128258 class_ref 4111490 // CsvFileParser
-  classdiagramsettings member_max_width 0 end
-  xyz 40.5 465 2005
+  xyz 568.5 338.5 2000
 end
 classcanvas 128386 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 534.5 39.5 2000
+  xyz 690.5 39.5 2000
 end
 classcanvas 129410 class_ref 6538370 // QCsvFileWriteError
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 40.25 143.25 2000
-end
-classcanvas 129666 class_ref 6538498 // QCsvFileWriterSettings
-  classdiagramsettings member_max_width 0 end
-  xyz 481.5 261 2005
-end
-classcanvas 129794 class_ref 6538626 // CsvFileWriterSettings
-  classdiagramsettings member_max_width 0 end
-  xyz 946.5 267 2006
+  xyz 40.25 328.5 2000
 end
 classcanvas 130178 class_ref 6538242 // FileWriteOpenMode
-  classdiagramsettings member_max_width 0 end
-  xyz 953.5 169.25 2012
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 300.25 442.25 2012
 end
 classcanvas 130562 class_ref 6531074 // CsvFileWriter
   classdiagramsettings member_max_width 0 end
-  xyz 118 326 2010
+  xyz 40.5 582 2010
+end
+classcanvas 130690 class_ref 6731522 // QCsvFileWriterTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 214.5 314.5 2000
+end
+classcanvas 131586 class_ref 6738050 // QCsvGeneratorField
+  classdiagramsettings member_max_width 0 end
+  xyz 141 209 2000
 end
 relationcanvas 128514 relation_ref 7090562 // <generalisation>
   from ref 128002 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129538 relation_ref 7097986 // <dependency>
-  decenter_end 442
-  from ref 128002 z 2001 to ref 129410
+relationcanvas 130818 relation_ref 7343490 // <generalisation>
+  geometry VHV unfixed
+  from ref 130690 z 2001 to point 369 118
+  line 130946 z 2001 to point 720 118
+  line 131074 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129922 relation_ref 7098114 // <directional composition>
-  from ref 129794 z 2007 to ref 128130
+relationcanvas 131202 relation_ref 7343618 // <dependency>
+  from ref 130690 z 2001 to ref 129410
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130050 relation_ref 7098370 // <directional composition>
-  from ref 129666 z 2007 to ref 129794
+relationcanvas 131330 relation_ref 7343746 // <directional composition>
+  from ref 130690 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130306 relation_ref 7098242 // <directional composition>
-  from ref 129794 z 2013 to ref 130178
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130434 relation_ref 7098498 // <directional composition>
-  from ref 128002 z 2006 to ref 129666
+relationcanvas 131458 relation_ref 7343874 // <directional composition>
+  decenter_end 525
+  from ref 130690 z 2013 to ref 130178
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

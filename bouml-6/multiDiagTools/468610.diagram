@@ -1,4 +1,4 @@
-format 211
+format 222
 
 classcanvas 128002 class_ref 471938 // mdtUsbPort
   classdiagramsettings member_max_width 0 end
@@ -32,18 +32,18 @@ end
 relationcanvas 128642 relation_ref 564226 // <directional composition>
   decenter_end 508
   from ref 128386 z 2001 to ref 128514
-  role_a_pos 337 237 3000 no_role_b
-  multiplicity_a_pos 376 273 3000 no_multiplicity_b
+  no_role_a no_role_b
+  multiplicity_a_pos 376 235 3000 no_multiplicity_b
 end
 relationcanvas 128898 relation_ref 564354 // <directional composition>
   decenter_begin 485
   from ref 128514 z 2001 to ref 128770
-  role_a_pos 569 499 3000 no_role_b
-  multiplicity_a_pos 529 499 3000 no_multiplicity_b
+  no_role_a no_role_b
+  multiplicity_a_pos 529 504 3000 no_multiplicity_b
 end
 relationcanvas 129154 relation_ref 564482 // <directional composition>
   from ref 128770 z 2001 to ref 129026
-  role_a_pos 717 670 3000 no_role_b
-  multiplicity_a_pos 770 706 3000 no_multiplicity_b
+  no_role_a no_role_b
+  multiplicity_a_pos 770 661 3000 no_multiplicity_b
 end
 end

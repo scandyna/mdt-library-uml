@@ -11,4 +11,8 @@ classcanvas 128130 class_ref 6631682 // BoostSpiritQStringConstIterator
   classdiagramsettings member_max_width 0 end
   xyz 377 361 2000
 end
+classcanvas 128258 class_ref 6752002 // BoostSpiritKarmaQStringContainer
+  classdiagramsettings member_max_width 0 end
+  xyz 189 600 2000
+end
 end

@@ -1,6 +1,6 @@
-format 221
+format 222
 "Serialization" // Mdt::Serialization
-  revision 2
+  revision 3
   modified_by 2 "philippe"
   // class settings
   
@@ -30,7 +30,51 @@ format 221
   activitydiagramsettings
    end
   
-  classview 2518018 "Serialization_Sql"
+  classview 2873346 "Serialization"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+  end
+
+  classview 2873474 "Serialization_QtCore"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+  end
+
+  classview 2518018 "Serialization_QtSql"
     
     classdiagramsettings member_max_width 0 end
     

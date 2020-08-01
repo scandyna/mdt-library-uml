@@ -1,10 +1,12 @@
-format 211
+format 222
 "mdtport" // mdtport
-  revision 61
+  revision 62
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 211
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -36,9 +40,13 @@ format 211
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -2752,9 +2760,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -5016,9 +5028,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -5646,9 +5662,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -5690,9 +5710,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -5821,17 +5845,17 @@ ${inlines}
 	
       end
 
-      classrelation 1853698 // pvDeviceList (<directional composition>)
+      classrelation 1853698 // <directional composition>
 	relation 1837826 *-->
-	  a role_name "pvDeviceList" multiplicity "0..*" private
+	  a role_name "" multiplicity "0..*" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 1853698 // pvDeviceList (<directional composition>)
+	    classrelation_ref 1853698 // <directional composition>
 	  b parent class_ref 478466 // mdtUsbDeviceDescriptor
       end
 
       attribute 1513986 "pvLastError"
-	private type class_ref 182402 // mdtError
+	private type class_ref 182402 // Error
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -5843,7 +5867,7 @@ ${inlines}
       end
 
       operation 2367234 "lastError"
-	public return_type class_ref 182402 // mdtError
+	public return_type class_ref 182402 // Error
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -5926,12 +5950,12 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 571266 // pvConfigs (<directional composition>)
+      classrelation 571266 // <directional composition>
 	relation 564226 *-->
-	  a role_name "pvConfigs" multiplicity "0..*" private
+	  a role_name "" multiplicity "0..*" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 571266 // pvConfigs (<directional composition>)
+	    classrelation_ref 571266 // <directional composition>
 	  b parent class_ref 478594 // mdtUsbConfigDescriptor
       end
 
@@ -6163,12 +6187,12 @@ ${inlines}
 	
       end
 
-      classrelation 1853570 // pvDescriptor (<directional composition>)
+      classrelation 1853570 // <directional composition>
 	relation 1837698 *-->
-	  a role_name "pvDescriptor" multiplicity "1" private
+	  a role_name "" multiplicity "1" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 1853570 // pvDescriptor (<directional composition>)
+	    classrelation_ref 1853570 // <directional composition>
 	  b parent class_ref 1443970 // libusb_device_descriptor
       end
 
@@ -6185,7 +6209,7 @@ ${inlines}
       end
 
       attribute 1514242 "pvLastError"
-	private type class_ref 182402 // mdtError
+	private type class_ref 182402 // Error
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -6197,7 +6221,7 @@ ${inlines}
       end
 
       operation 2367874 "lastError"
-	public return_type class_ref 182402 // mdtError
+	public return_type class_ref 182402 // Error
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -6413,12 +6437,12 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 571394 // pvInterfaces (<directional composition>)
+      classrelation 571394 // <directional composition>
 	relation 564354 *-->
-	  a role_name "pvInterfaces" multiplicity "0..*" private
+	  a role_name "" multiplicity "0..*" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 571394 // pvInterfaces (<directional composition>)
+	    classrelation_ref 571394 // <directional composition>
 	  b parent class_ref 478722 // mdtUsbInterfaceDescriptor
       end
 
@@ -6666,12 +6690,12 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 1860226 // interface (<unidirectional association>)
+      classrelation 1860226 // <unidirectional association>
 	relation 1844354 --->
-	  a role_name "interface" multiplicity "*" public
+	  a role_name "" multiplicity "*" public
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
 "
-	    classrelation_ref 1860226 // interface (<unidirectional association>)
+	    classrelation_ref 1860226 // <unidirectional association>
 	  b parent class_ref 1505538 // libusb_interface
       end
 
@@ -6719,12 +6743,12 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 571522 // pvEndpoints (<directional composition>)
+      classrelation 571522 // <directional composition>
 	relation 564482 *-->
-	  a role_name "pvEndpoints" multiplicity "0..*" private
+	  a role_name "" multiplicity "0..*" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
 "
-	    classrelation_ref 571522 // pvEndpoints (<directional composition>)
+	    classrelation_ref 571522 // <directional composition>
 	  b parent class_ref 478850 // mdtUsbEndointDescriptor
       end
 
@@ -6930,12 +6954,12 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 1860354 // altsetting (<unidirectional association>)
+      classrelation 1860354 // <unidirectional association>
 	relation 1844482 --->
-	  a role_name "altsetting" multiplicity "*" private
+	  a role_name "" multiplicity "*" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
 "
-	    classrelation_ref 1860354 // altsetting (<unidirectional association>)
+	    classrelation_ref 1860354 // <unidirectional association>
 	  b parent class_ref 1498882 // libusb_interface_descriptor
       end
 
@@ -6966,12 +6990,12 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 1860482 // endpoint (<unidirectional association>)
+      classrelation 1860482 // <unidirectional association>
 	relation 1844610 --->
-	  a role_name "endpoint" multiplicity "*" public
+	  a role_name "" multiplicity "*" public
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
 "
-	    classrelation_ref 1860482 // endpoint (<unidirectional association>)
+	    classrelation_ref 1860482 // <unidirectional association>
 	  b parent class_ref 1499010 // libusb_endpoint_descriptor
       end
 
@@ -7347,12 +7371,12 @@ ${inlines}
 	
       end
 
-      classrelation 1860610 // pvDescriptor (<directional composition>)
+      classrelation 1860610 // <directional composition>
 	relation 1844738 *-->
-	  a role_name "pvDescriptor" multiplicity "1" private
+	  a role_name "" multiplicity "1" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 1860610 // pvDescriptor (<directional composition>)
+	    classrelation_ref 1860610 // <directional composition>
 	  b parent class_ref 1499010 // libusb_endpoint_descriptor
       end
 
@@ -7452,9 +7476,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -7780,9 +7808,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -7824,7 +7856,7 @@ ${inlines}
       end
 
       attribute 1562754 "pvLastError"
-	private type class_ref 182402 // mdtError
+	private type class_ref 182402 // Error
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -8070,9 +8102,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -8280,7 +8316,7 @@ ${inlines}
       end
 
       attribute 1569410 "pvLastError"
-	private type class_ref 182402 // mdtError
+	private type class_ref 182402 // Error
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -8336,7 +8372,7 @@ ${inlines}
       operation 2439042 "thSetError"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "error" type class_ref 182402 // mdtError
+	  param in name "error" type class_ref 182402 // Error
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
@@ -8455,9 +8491,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -8595,9 +8635,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -8787,9 +8831,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -9231,9 +9279,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -9953,9 +10005,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -9985,9 +10041,13 @@ ${inlines}
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -10201,7 +10261,7 @@ ${inlines}
       end
 
       attribute 1597698 "pvLastError"
-	private type class_ref 182402 // mdtError
+	private type class_ref 182402 // Error
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -10213,7 +10273,7 @@ ${inlines}
       end
 
       operation 2460034 "lastError"
-	public return_type class_ref 182402 // mdtError
+	public return_type class_ref 182402 // Error
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "

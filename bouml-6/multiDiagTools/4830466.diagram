@@ -1,4 +1,4 @@
-format 221
+format 222
 
 note 128002 "Reflection lib must only provide a API for reflection.
 It will use Boost.Fusion
@@ -14,4 +14,8 @@ note 128130 "C++ stdanards, see:
  - P0953
  - p0993"
   xyzwh 40.5 288.5 2000 353 125
+note 128258 "Should separate REFLECT_STRUCT
+and
+attaching properties"
+  xyzwh 55 468 2000 369 83
 end

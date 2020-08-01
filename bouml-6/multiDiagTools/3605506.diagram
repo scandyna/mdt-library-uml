@@ -48,7 +48,7 @@ classcanvas 130178 class_ref 4161026 // QmlYxZ
 end
 classcanvas 130306 class_ref 4161282 // FindTranslation
   classdiagramsettings member_max_width 0 end
-  xyz 368.5 439.7 2000
+  xyz 367.5 439.7 2000
 end
 classcanvas 130690 class_ref 4161538 // Platform
   classdiagramsettings member_max_width 0 end

@@ -2,20 +2,38 @@ format 222
 
 classcanvas 128130 class_ref 2050434 // CsvParserSettings
   classdiagramsettings member_max_width 0 end
-  xyz 42 37 2006
+  xyz 42 413 2006
 end
 classcanvas 128386 class_ref 2078850 // CsvGeneratorSettings
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 232.5 2006
+  xyz 39 210 2006
 end
 note 129026 "Allow variable column size option"
-  xyzwh 40.5 419.5 2000 287 47
+  xyzwh 40.5 608.5 2000 287 47
 classcanvas 129154 class_ref 6598530 // CsvParserSettingsValidity
   classdiagramsettings member_max_width 0 end
-  xyz 329 60 2000
+  xyz 327 436 2000
+end
+classcanvas 129410 class_ref 6724354 // EndOfLine
+  classdiagramsettings member_max_width 0 end
+  xyz 75 41 2012
+end
+classcanvas 129666 class_ref 6731394 // CsvGeneratorSettingsValidity
+  classdiagramsettings member_max_width 0 end
+  xyz 289 242 2018
 end
 relationcanvas 129282 relation_ref 7153410 // <dependency>
   from ref 128130 z 2007 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129538 relation_ref 7336322 // <directional composition>
+  from ref 128386 z 2013 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 7343362 // <dependency>
+  from ref 128386 z 2019 to ref 129666
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -1,6 +1,6 @@
 format 222
 "Usb" // Mdt::Usb
-  revision 6
+  revision 7
   modified_by 2 "philippe"
   // class settings
   
@@ -54,6 +54,33 @@ format 222
       classdiagramsettings member_max_width 0 end
       size A4
     end
+
+    classdiagram 5352834 "Usb_Core_overview"
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+      size A4
+    end
+  end
+
+  classview 2866690 "Usb_Drivers"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
   end
 
   classview 1921154 "Usb_Widgets"
@@ -102,5 +129,27 @@ format 222
       classdiagramsettings member_max_width 0 end
       size A4
     end
+  end
+
+  classview 2866818 "Usb_Tools_QtWidgets"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
   end
 end

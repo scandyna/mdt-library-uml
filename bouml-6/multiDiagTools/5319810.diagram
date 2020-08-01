@@ -10,7 +10,7 @@ classcanvas 128130 class_ref 6565250 // CsvRecord
 end
 classcanvas 128258 class_ref 6565378 // FieldColumn
   classdiagramsettings member_max_width 0 end
-  xyz 338 228 2010
+  xyz 337 244 2010
 end
 classcanvas 129026 class_ref 6697474 // NonEmptyFieldColumn
   classdiagramsettings member_max_width 0 end
@@ -22,7 +22,7 @@ classcanvas 129282 class_ref 6697602 // ProtectedField
 end
 classcanvas 129410 class_ref 6697730 // UnprotectedField
   classdiagramsettings member_max_width 0 end
-  xyz 471 228 2005
+  xyz 491 254 2005
 end
 classcanvas 129538 class_ref 6697858 // NonEmptyUnprotectedField
   classdiagramsettings member_max_width 0 end

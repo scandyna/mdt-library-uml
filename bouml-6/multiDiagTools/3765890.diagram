@@ -16,10 +16,14 @@ Also not that:
  - For dev environment, use Conan"
   xyzwh 55 100 2000 715 241
 note 128130 "About CMake interface:
+mdt_get_dependent_shared_libraries(TARGET ...)
+mdt_get_shared_libraries _target__depends _on(TARGET ...)
 mdt_install_dependent_shared_libraries(TARGET ...)
 mdt_install_qt5_platform_plugins(...)
 mdt_install_qt5_sqldrivers(...)
 
 See also what ECM does"
-  xyzwh 56 358 2000 683 153
+  xyzwh 41 360 2000 699 165
+note 128258 "MdtSharedLibrariesDepencyHelpers"
+  xyzwh 223 664 2000 315 41
 end

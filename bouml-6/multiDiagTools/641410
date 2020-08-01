@@ -1,6 +1,6 @@
 format 222
 "PlainText" // Mdt::PlainText
-  revision 74
+  revision 82
   modified_by 2 "philippe"
   // class settings
   
@@ -32,8 +32,6 @@ format 222
   
   package_ref 1069954 // Grammar
 
-  package_ref 1069826 // Csv
-
   package_ref 1043458 // Impl
 
   classview 1834754 "PlainText"
@@ -59,6 +57,123 @@ format 222
     classdiagram 3506050 "GeneratorSettings"
       classdiagramsettings member_max_width 0 end
       size A4
+    end
+
+    classdiagram 5346050 "FileSettings"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6724354 "EndOfLine"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4616194 "Native"
+	public type class_ref 6724354 // EndOfLine
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4616450 "Cr"
+	public type class_ref 6724354 // EndOfLine
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4616706 "Lf"
+	public type class_ref 6724354 // EndOfLine
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4616834 "CrLf"
+	public type class_ref 6724354 // EndOfLine
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 6538242 "FileWriteOpenMode"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4616962 "Append"
+	public type class_ref 6538242 // FileWriteOpenMode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4617090 "Truncate"
+	public type class_ref 6538242 // FileWriteOpenMode
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
     end
 
     classdiagram 3539330 "CsvStringParser"
@@ -659,6 +774,68 @@ ${inlines}
 ${members}};
 ${inlines}
 "
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7396098 // <generalisation>
+	relation 7364610 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7396098 // <generalisation>
+	  b parent class_ref 6671362 // iterator_facade
+      end
+    end
+
+    class 6745346 "BoostSpiritQStringOutputIterator"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7395970 // <generalisation>
+	relation 7364482 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7395970 // <generalisation>
+	  b parent class_ref 6671362 // iterator_facade
+      end
+    end
+
+    class 6745474 "BoostSpiritQStringIteratorTemplate"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
       java_decl ""
       php_decl ""
       python_2_2 python_decl ""
@@ -666,18 +843,34 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 7279746 // <generalisation>
-	relation 7248258 ---|>
+      classrelation 7389186 // <generalisation>
+	relation 7357698 ---|>
 	  a public
 	    cpp default "${type}"
-	    classrelation_ref 7279746 // <generalisation>
-	  b parent class_ref 6677890 // iterator_adaptor
+	    classrelation_ref 7389186 // <generalisation>
+	  b parent class_ref 6671362 // iterator_facade
       end
     end
 
     classdiagram 5306754 "BoostSpiritQtIntegration"
       classdiagramsettings member_max_width 0 end
       size A4
+    end
+
+    class 6752002 "BoostSpiritKarmaQStringContainer"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
 
     classdiagram 5332866 "QTextFileReader"
@@ -922,8 +1115,8 @@ ${inlines}
 	MysqlColumn
       end
 
-      attribute 2138370 "mEol"
-	private explicit_type "string"
+      attribute 2138370 "Eol"
+	private type class_ref 6724354 // EndOfLine
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""
@@ -934,7 +1127,7 @@ ${inlines}
 	MysqlColumn
       end
 
-      attribute 2138498 "mAllwaysProtectTextFields"
+      attribute 2138498 "AllwaysProtectTextFields"
 	private explicit_type "bool"
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
@@ -944,6 +1137,35 @@ ${inlines}
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
+      end
+
+      classrelation 7367810 // <directional composition>
+	relation 7336322 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7367810 // <directional composition>
+	  b parent class_ref 6724354 // EndOfLine
+      end
+
+      attribute 4617218 "AddEXP"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 7374850 // <dependency>
+	relation 7343362 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7374850 // <dependency>
+	  b parent class_ref 6731394 // CsvGeneratorSettingsValidity
       end
     end
 
@@ -1486,12 +1708,12 @@ ${inlines}
       
     end
 
-    classdiagram 5253762 "CsvFileWriter"
+    classdiagram 5346306 "CsvGeneratorRecord"
       classdiagramsettings member_max_width 0 end
-      size A-Landscape
+      size A4
     end
 
-    class 6538626 "CsvFileWriterSettings"
+    class 6724738 "CsvGeneratorField"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -1505,47 +1727,101 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 7129602 // <directional composition>
-	relation 7098114 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+      attribute 4617346 "String"
+	private explicit_type "string"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
-	    classrelation_ref 7129602 // <directional composition>
-	  b parent class_ref 2078850 // CsvGeneratorSettings
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
       end
 
-      classrelation 7129730 // <directional composition>
-	relation 7098242 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+      attribute 4617474 "Protection"
+	private type class_ref 6724866 // Protection
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
-	    classrelation_ref 7129730 // <directional composition>
-	  b parent class_ref 6538242 // FileWriteOpenMode
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
       end
-    end
 
-    class 6538242 "FileWriteOpenMode"
-      visibility package stereotype "enum"
-      cpp_decl "${comment}enum ${name} {
+      class 6724866 "Protection"
+	visibility package stereotype "enum"
+	cpp_decl "${comment}enum ${name} {
 ${items}
 };
 "
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+	java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
 ${items};
 ${members}}
 "
-      php_decl "${comment}${visibility}final class ${name} {
+	php_decl "${comment}${visibility}final class ${name} {
 ${items}}
 "
-      python_2_2 python_decl "class ${name}:
+	python_2_2 python_decl "class ${name}:
 ${docstring}${members}
 "
-      idl_decl "${comment}enum ${name} {
+	idl_decl "${comment}enum ${name} {
 ${items}};
+"
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 4617602 "DoProtect"
+	  public type class_ref 6724866 // Protection
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 4617730 "DoNotProtect"
+	  public type class_ref 6724866 // Protection
+	  cpp_decl "  ${name}${value},${comment}"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+    end
+
+    class 6724610 "CsvGeneratorRecord"
+      visibility package stereotype "typedef" explicit_base_type ""
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
 "
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 7368066 // <directional composition>
+	relation 7336578 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 7368066 // <directional composition>
+	  b parent class_ref 6724738 // CsvGeneratorField
+      end
+    end
+
+    classdiagram 5253762 "CsvFileWriter"
+      classdiagramsettings member_max_width 0 end
+      size A4-Landscape
     end
 
     class 6684418 "CsvFileWriterTemplate"
@@ -1633,13 +1909,28 @@ ${inlines}
 	
       end
 
-      operation 8690434 "open"
+      operation 8710530 "setOpenMode"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "m" type class_ref 6538242 // FileWriteOpenMode
+	  param in name "mode" type class_ref 6538242 // FileWriteOpenMode
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8690434 "open"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -1666,11 +1957,12 @@ ${inlines}
 
       operation 8690690 "appendLine"
 	public explicit_return_type "void"
-	nparams 1
+	nparams 2
 	  param in name "rec" explicit_type "Record"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	  param in name "rule" explicit_type "Rule"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -1693,6 +1985,15 @@ ${inlines}
 	
 	
 	
+      end
+
+      classrelation 7367938 // <directional composition>
+	relation 7336450 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7367938 // <directional composition>
+	  b parent class_ref 6538242 // FileWriteOpenMode
       end
     end
 
@@ -1780,13 +2081,43 @@ ${inlines}
 	
       end
 
-      operation 8611330 "open"
+      operation 8710658 "setOpenMode"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "m" type class_ref 6538242 // FileWriteOpenMode
+	  param in name "mode" type class_ref 6538242 // FileWriteOpenMode
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8710786 "openMode"
+	public return_type class_ref 6538242 // FileWriteOpenMode
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8611330 "open"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -1814,11 +2145,11 @@ ${inlines}
       operation 8611970 "appendLine"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "rec" explicit_type "string"
+	  param in name "rec" type class_ref 6724738 // CsvGeneratorField
 	multiplicity "*"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -1851,6 +2182,14 @@ ${inlines}
 	    classrelation_ref 7279618 // <directional composition>
 	  b parent class_ref 6684418 // CsvFileWriterTemplate
       end
+
+      classrelation 7368322 // <dependency>
+	relation 7336834 -_->
+	  a private
+	    cpp default "#include in source"
+	    classrelation_ref 7368322 // <dependency>
+	  b parent class_ref 6724738 // CsvGeneratorField
+      end
     end
 
     class 6531330 "CsvFileWriteError"
@@ -1865,6 +2204,30 @@ ${inlines}
       python_2_2 python_decl ""
       idl_decl "${comment}exception ${name} {
 ${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6731394 "CsvGeneratorSettingsValidity"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
 "
       explicit_switch_type ""
       mysql_decl ""
@@ -2446,7 +2809,7 @@ ${inlines}
       size B-Landscape
     end
 
-    class 6538498 "QCsvFileWriterSettings"
+    class 6731522 "QCsvFileWriterTemplate"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -2460,17 +2823,74 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 7129858 // <directional composition>
-	relation 7098370 *-->
+      classrelation 7374978 // <generalisation>
+	relation 7343490 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7374978 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 7375106 // <dependency>
+	relation 7343618 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7375106 // <dependency>
+	  b parent class_ref 6538370 // QCsvFileWriteError
+      end
+
+      classrelation 7375234 // <directional composition>
+	relation 7343746 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 7129858 // <directional composition>
-	  b parent class_ref 6538626 // CsvFileWriterSettings
+	    classrelation_ref 7375234 // <directional composition>
+	  b parent class_ref 2078850 // CsvGeneratorSettings
       end
 
-      operation 8612738 "Encoding"
-	public return_type class_ref 236162 // QByteArray
+      classrelation 7375362 // <directional composition>
+	relation 7343874 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7375362 // <directional composition>
+	  b parent class_ref 6538242 // FileWriteOpenMode
+      end
+
+      operation 8717314 "setFilePath"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "path" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8717570 "setFileEncoding"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "encoding" type class_ref 236162 // QByteArray
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8717442 "filePath"
+	public return_type class_ref 161026 // QString
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -2507,24 +2927,44 @@ ${inlines}
 	  b parent class_ref 138626 // QObject
       end
 
-      classrelation 7129474 // <dependency>
-	relation 7097986 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7129474 // <dependency>
-	  b parent class_ref 6538370 // QCsvFileWriteError
+      operation 8717826 "setFilePath"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "path" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8717698 "setFileEncoding"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "encoding" type class_ref 236162 // QByteArray
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
       end
 
       operation 8612226 "open"
 	public explicit_return_type "void"
-	nparams 4
-	  param in name "filePath" type class_ref 161026 // QString
-	  param in name "s" type class_ref 2078850 // CsvGeneratorSettings
-	  param in name "m" type class_ref 6538242 // FileWriteOpenMode
-	  param in name "encoding" type class_ref 236162 // QByteArray
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, ${t2} ${p2}${v2}, const ${t3} & ${p3}${v3}${)}${const}${volatile}${throw}${abstract};
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, ${t2} ${p2}, const ${t3} & ${p3}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2579,15 +3019,6 @@ ${inlines}
 	
 	
       end
-
-      classrelation 7129986 // <directional composition>
-	relation 7098498 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7129986 // <directional composition>
-	  b parent class_ref 6538498 // QCsvFileWriterSettings
-      end
     end
 
     class 6538370 "QCsvFileWriteError"
@@ -2631,6 +3062,22 @@ ${members}};
 	    classrelation_ref 7232258 // <generalisation>
 	  b parent class_ref 6545154 // QRuntimeError
       end
+    end
+
+    class 6738050 "QCsvGeneratorField"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 

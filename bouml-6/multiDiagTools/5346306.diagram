@@ -1,0 +1,24 @@
+format 222
+
+classcanvas 128002 class_ref 6724738 // CsvGeneratorField
+  classdiagramsettings member_max_width 0 end
+  xyz 225 165 2000
+end
+classcanvas 128130 class_ref 6724610 // CsvGeneratorRecord
+  classdiagramsettings member_max_width 0 end
+  xyz 39 170 2000
+end
+classcanvas 128386 class_ref 6724866 // Protection
+  classdiagramsettings member_max_width 0 end
+  xyz 215 39 2006
+end
+note 128770 "How to interact with Spirit ?"
+  xyzwh 65 288 2000 321 79
+relationcanvas 128258 relation_ref 7336578 // <directional composition>
+  from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  multiplicity_a_pos 209 208 3000 no_multiplicity_b
+end
+line 128514 ---+
+  from ref 128386 z 2007 to ref 128002
+end
