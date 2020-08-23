@@ -1,6 +1,6 @@
 format 222
 "Qi" // Mdt::PlainText::Grammar::Csv::Qi
-  revision 2
+  revision 6
   modified_by 2 "philippe"
   // class settings
   
@@ -416,13 +416,13 @@ ${inlines}
 	  b parent class_ref 2034818 // grammar
       end
 
-      classrelation 7320450 // <directional composition>
-	relation 7288962 *-->
+      classrelation 7448706 // <directional composition>
+	relation 7417218 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 7320450 // <directional composition>
-	  b parent class_ref 6697986 // SafeChar
+	    classrelation_ref 7448706 // <directional composition>
+	  b parent class_ref 6805122 // Char
       end
     end
 
@@ -462,13 +462,13 @@ ${inlines}
 	  b parent class_ref 2034818 // grammar
       end
 
-      classrelation 7320066 // <directional composition>
-	relation 7288578 *-->
+      classrelation 7448450 // <directional composition>
+	relation 7416962 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 7320066 // <directional composition>
-	  b parent class_ref 6697986 // SafeChar
+	    classrelation_ref 7448450 // <directional composition>
+	  b parent class_ref 6805122 // Char
       end
     end
 
@@ -508,13 +508,13 @@ ${inlines}
 	  b parent class_ref 2034818 // grammar
       end
 
-      classrelation 7320322 // <directional composition>
-	relation 7288834 *-->
+      classrelation 7448834 // <directional composition>
+	relation 7417346 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 7320322 // <directional composition>
-	  b parent class_ref 6697986 // SafeChar
+	    classrelation_ref 7448834 // <directional composition>
+	  b parent class_ref 6805122 // Char
       end
     end
 
@@ -552,6 +552,56 @@ ${inlines}
 	    cpp default "${type}"
 	    classrelation_ref 7313538 // <generalisation>
 	  b parent class_ref 2034818 // grammar
+      end
+    end
+
+    class 6798594 "StrictUnprotectedField"
+      visibility package 
+      nformals 2
+      formal name "SourceIterator" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "DestinationString" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6805122 "Char"
+      visibility package 
+      nformals 2
+      formal name "SourceIterator" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "DestinationChar" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7448578 // <directional composition>
+	relation 7417090 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7448578 // <directional composition>
+	  b parent class_ref 6697986 // SafeChar
       end
     end
   end

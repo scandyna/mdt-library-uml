@@ -1,18 +1,50 @@
 format 222
 
-note 128002 "2 parts:
- - Attributes integration
- - Parser integration
-
-BoostSpiritQCharParser
-BoostSpiritQStringParser"
-  xyzwh 49 134 2000 357 123
-classcanvas 128130 class_ref 6631682 // BoostSpiritQStringConstIterator
+classcanvas 128386 class_ref 6758530 // QStringConstIterator
   classdiagramsettings member_max_width 0 end
-  xyz 377 361 2000
+  xyz 232 204 2000
 end
-classcanvas 128258 class_ref 6752002 // BoostSpiritKarmaQStringContainer
+classcanvas 129794 class_ref 160770 // QStringList
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 82 40 2000
+end
+classcanvas 130690 class_ref 6818178 // QStringUnicodeView
   classdiagramsettings member_max_width 0 end
-  xyz 189 600 2000
+  xyz 48 204 2000
+end
+classcanvas 130946 class_ref 6818434 // QStringListUnicodeView
+  classdiagramsettings member_max_width 0 end
+  xyz 37 120 2005
+end
+classcanvas 131586 class_ref 6818562 // QStringContainerUnicodeConstIterator
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 239 112 2005
+end
+classcanvas 131842 class_ref 6818690 // QStringContainerUnicodeView
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 320.5 2005
+end
+relationcanvas 131074 relation_ref 7436930 // <unidirectional association>
+  from ref 130946 z 2006 to ref 130690
+  no_role_a no_role_b
+  multiplicity_a_pos 105 182 3000 no_multiplicity_b
+end
+relationcanvas 131202 relation_ref 7437058 // <unidirectional association>
+  decenter_end 447
+  from ref 130946 z 2006 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131330 relation_ref 7437186 // <directional composition>
+  from ref 130690 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131714 relation_ref 7437314 // <dependency>
+  decenter_begin 390
+  decenter_end 421
+  from ref 130946 z 2006 to ref 131586
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
 end
 end

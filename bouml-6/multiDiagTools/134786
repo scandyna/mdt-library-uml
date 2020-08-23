@@ -1,6 +1,6 @@
 format 222
 "Qt" // Qt
-  revision 294
+  revision 295
   modified_by 2 "philippe"
   // class settings
   
@@ -371,6 +371,37 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      class 6765570 "iterator"
+	visibility package 
+	cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+      end
+
+      class 6765698 "const_iterator"
+	visibility package 
+	cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+      end
     end
 
     classdiagram 149250 "QVariant"

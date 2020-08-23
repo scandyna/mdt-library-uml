@@ -2,40 +2,46 @@ format 222
 
 classcanvas 128514 class_ref 2057474 // QTextDecoder
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 440 380.8 2000
+  xyz 273.95 290.6 2000
 end
 classcanvas 130562 class_ref 6651522 // QTextFileInputConstIterator
   classdiagramsettings member_max_width 0 end
-  xyz 397 204.5 2000
+  xyz 720.9 290.6 2000
 end
 classcanvas 130690 class_ref 6651650 // QTextFileInputConstIteratorSharedData
   classdiagramsettings member_max_width 0 end
-  xyz 360 286.65 2000
+  xyz 417.4 286.65 2000
 end
 classcanvas 130946 class_ref 390530 // QFile
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 684.25 372.6 2006
+  xyz 417.75 376.7 2006
 end
 classcanvas 131458 class_ref 6658178 // BoostSpiritQTextFileInputConstIterator
   classdiagramsettings member_max_width 0 end
-  xyz 82.2 380.8 2000
+  xyz 82.2 372.6 2000
 end
 classcanvas 131970 class_ref 6531586 // QFileDevice
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 664.3 290.6 2012
+  xyz 504.4 376.7 2012
 end
 classcanvas 132610 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 254 290.6 2000
+  xyz 516.4 204.5 2000
 end
 classcanvas 132866 class_ref 6671362 // iterator_facade
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 415 81.5 2000
+  xyz 740.95 81.5 2000
 end
 classcanvas 135042 class_ref 6677890 // iterator_adaptor
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 135.25 204.5 2006
+  xyz 133.2 204.5 2006
 end
+classcanvas 136194 class_ref 6792066 // QTextFileUnicodeInputConstIterator
+  classdiagramsettings member_max_width 0 end
+  xyz 696.95 376.7 2000
+end
+note 136450 "Should be: QTextFileUnicodeInputConstIterator"
+  xyzwh 46.2 454.6 2000 333 41
 relationcanvas 130818 relation_ref 7214210 // <directional composition>
   from ref 130562 z 2001 to ref 130690
   no_role_a no_role_b
@@ -47,10 +53,10 @@ relationcanvas 131330 relation_ref 7214594 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131586 relation_ref 7221122 // <directional composition>
-  from ref 131458 z 2001 to point 40 401
+  from ref 131458 z 2001 to point 40 393
   line 135682 z 2001 to point 40 40
-  line 135810 z 2001 to point 626 40
-  line 135938 z 2001 to point 626 225
+  line 135810 z 2001 to point 950 40
+  line 135938 z 2001 to point 950 311
   line 136066 z 2001 to ref 130562
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -77,8 +83,8 @@ relationcanvas 132994 relation_ref 7234690 // <generalisation>
 end
 relationcanvas 135170 relation_ref 7241218 // <generalisation>
   geometry VHV unfixed
-  from ref 135042 z 2007 to point 212 163
-  line 135426 z 2007 to point 489 163
+  from ref 135042 z 2007 to point 210 163
+  line 135426 z 2007 to point 814 163
   line 135554 z 2007 to ref 132866
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -88,4 +94,11 @@ relationcanvas 135298 relation_ref 7261442 // <generalisation>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 136322 relation_ref 7403906 // <directional composition>
+  from ref 136194 z 2001 to ref 130562
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 136578 -_-_
+  from ref 131458 z 2001 to ref 136450
 end
