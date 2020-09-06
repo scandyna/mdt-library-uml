@@ -2,40 +2,36 @@ format 222
 
 classcanvas 128002 class_ref 6651522 // QTextFileInputConstIterator
   classdiagramsettings member_max_width 0 end
-  xyz 346 36 2000
+  xyz 322 390 2000
 end
-classcanvas 128130 class_ref 6658178 // BoostSpiritQTextFileInputConstIterator
+classcanvas 128386 class_ref 6758530 // QStringUnicodeConstIterator
   classdiagramsettings member_max_width 0 end
-  xyz 42 36 2006
+  xyz 40.5 40.5 2000
 end
-classcanvas 128386 class_ref 6758530 // QStringConstIterator
+classcanvas 128514 class_ref 6765186 // QStringUnicodeBackInsertIterator
   classdiagramsettings member_max_width 0 end
-  xyz 40 236 2000
-end
-classcanvas 128514 class_ref 6765186 // QStringBackInsertIterator
-  classdiagramsettings member_max_width 0 end
-  xyz 41 356 2000
+  xyz 40.5 161.5 2000
 end
 classcanvas 128642 class_ref 6792066 // QTextFileUnicodeInputConstIterator
   classdiagramsettings member_max_width 0 end
-  xyz 320 112 2006
+  xyz 40 390 2006
 end
-note 128898 "Should be: QStringUnicodeConstIterator"
-  xyzwh 225 234 2000 319 45
-note 129154 "Should be QStringUnicodeBackInsertIterator"
-  xyzwh 256 355 2000 313 43
-relationcanvas 128258 relation_ref 7221122 // <directional composition>
-  from ref 128130 z 2007 to ref 128002
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
+classcanvas 128898 class_ref 6844802 // QTextFileOutputIterator
+  classdiagramsettings member_max_width 0 end
+  xyz 296 278 2000
+end
+classcanvas 129026 class_ref 6844930 // QTextFileUnicodeOutputIterator
+  classdiagramsettings member_max_width 0 end
+  xyz 41 278 2006
 end
 relationcanvas 128770 relation_ref 7403906 // <directional composition>
   from ref 128642 z 2007 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 129026 -_-_
-  from ref 128386 z 2001 to ref 128898
-line 129282 -_-_
-  from ref 128514 z 2001 to ref 129154
+relationcanvas 129154 relation_ref 7476994 // <directional composition>
+  from ref 129026 z 2007 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 end

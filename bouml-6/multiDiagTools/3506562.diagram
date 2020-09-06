@@ -2,31 +2,23 @@ format 222
 
 classcanvas 129282 class_ref 6671362 // iterator_facade
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 419 40 2006
+  xyz 83 40 2006
 end
-classcanvas 132226 class_ref 6758530 // QStringConstIterator
+classcanvas 132226 class_ref 6758530 // QStringUnicodeConstIterator
   classdiagramsettings member_max_width 0 end
-  xyz 400 120 2006
+  xyz 38 120 2006
 end
-classcanvas 132738 class_ref 6765186 // QStringBackInsertIterator
+classcanvas 132738 class_ref 6765186 // QStringUnicodeBackInsertIterator
   classdiagramsettings member_max_width 0 end
   xyz 41 373 2000
 end
-note 132866 "Should be: QStringUnicodeConstIterator"
-  xyzwh 41 114 2000 319 45
-note 132994 "Should be QStringUnicodeBackInsertIterator"
-  xyzwh 256 372 2000 313 43
 classcanvas 133378 class_ref 6818562 // QStringContainerUnicodeConstIterator
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 240.5 2000
+  xyz 41.5 240.5 2000
 end
 relationcanvas 132610 relation_ref 7377666 // <generalisation>
   from ref 132226 z 2007 to ref 129282
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 133122 -_-_ decenter_begin 390
-  from ref 132226 z 2007 to ref 132866
-line 133250 -_-_
-  from ref 132738 z 2001 to ref 132994
 end

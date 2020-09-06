@@ -1,6 +1,6 @@
 format 222
 "PlainText" // Mdt::PlainText
-  revision 98
+  revision 113
   modified_by 2 "philippe"
   // class settings
   
@@ -54,6 +54,61 @@ format 222
     
     activitydiagramsettings
      end
+    classdiagram 5385474 "ContainerView"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6831746 "ContainerAliasView"
+      visibility package 
+      nformals 2
+      formal name "SourceContainer" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "AliasValue" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7488642 // <directional composition>
+	relation 7457154 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7488642 // <directional composition>
+	  b parent class_ref 6838274 // ContainerAliasViewConstIterator
+      end
+    end
+
+    class 6838274 "ContainerAliasViewConstIterator"
+      visibility package 
+      nformals 2
+      formal name "SourceIterator" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "AliasValue" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
     classdiagram 5378946 "EndOfLine"
       classdiagramsettings member_max_width 0 end
       size A4
@@ -129,110 +184,6 @@ ${items}};
 	class_operation public return_type class_ref 6724354 // EndOfLine
 	nparams 0
 	
-	
-	
-	
-	
-      end
-    end
-
-    class 6811650 "EndOfLineChar"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 4631042 "Eol"
-	private explicit_type "char"
-	multiplicity "2"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${multiplicity}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      operation 8724866 "toString"
-	public explicit_return_type "string"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 8724482 "native"
-	class_operation public return_type class_ref 6811650 // EndOfLineChar
-	nparams 0
-	
-	
-	
-	
-	
-      end
-
-      operation 8724738 "fromEndOfLine"
-	class_operation public return_type class_ref 6811650 // EndOfLineChar
-	nparams 1
-	  param in name "eol" type class_ref 6724354 // EndOfLine
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 8724610 "isEndOfLine"
-	class_operation public explicit_return_type "bool"
-	nparams 1
-	  param in name "c" explicit_type "char"
-	
-	
-	
-	
-	
-      end
-
-      classrelation 7455362 // <dependency>
-	relation 7423874 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7455362 // <dependency>
-	  b parent class_ref 6724354 // EndOfLine
-      end
-
-      operation 8724994 "isEndOfLine"
-	class_operation public explicit_return_type "bool"
-	nparams 1
-	  param in name "s" explicit_type "string"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
 	
 	
 	
@@ -849,38 +800,6 @@ ${inlines}
       end
     end
 
-    class 6658178 "BoostSpiritQTextFileInputConstIterator"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7252610 // <directional composition>
-	relation 7221122 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7252610 // <directional composition>
-	  b parent class_ref 6651522 // QTextFileInputConstIterator
-      end
-
-      classrelation 7292930 // <generalisation>
-	relation 7261442 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 7292930 // <generalisation>
-	  b parent class_ref 6677890 // iterator_adaptor
-      end
-    end
-
     class 6792066 "QTextFileUnicodeInputConstIterator"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
@@ -905,12 +824,60 @@ ${inlines}
       end
     end
 
+    class 6844802 "QTextFileOutputIterator"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7515010 // <directional composition>
+	relation 7483522 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7515010 // <directional composition>
+	  b parent class_ref 6851458 // QTextFileOutputIteratorImpl
+      end
+    end
+
+    class 6844930 "QTextFileUnicodeOutputIterator"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7508482 // <directional composition>
+	relation 7476994 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7508482 // <directional composition>
+	  b parent class_ref 6844802 // QTextFileOutputIterator
+      end
+    end
+
     classdiagram 3506562 "StringIterator"
       classdiagramsettings member_max_width 0 end
       size A-Landscape
     end
 
-    class 6758530 "QStringConstIterator"
+    class 6758530 "QStringUnicodeConstIterator"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -933,7 +900,7 @@ ${inlines}
       end
     end
 
-    class 6765186 "QStringBackInsertIterator"
+    class 6765186 "QStringUnicodeBackInsertIterator"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -949,26 +916,7 @@ ${inlines}
       
     end
 
-    class 6818562 "QStringContainerUnicodeConstIterator"
-      visibility package 
-      nformals 1
-      formal name "Container" type "class" explicit_default_value ""
-        explicit_extends ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-    end
-
-    classdiagram 5306754 "BoostSpiritQtIntegration"
+    classdiagram 5306754 "QStringUnicodeViews"
       classdiagramsettings member_max_width 0 end
       size B
     end
@@ -993,68 +941,70 @@ ${inlines}
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	    classrelation_ref 7468674 // <directional composition>
-	  b parent class_ref 6758530 // QStringConstIterator
+	  b parent class_ref 6758530 // QStringUnicodeConstIterator
       end
     end
 
     class 6818434 "QStringListUnicodeView"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
+      visibility package stereotype "typedef" base_type class_ref 160770 // QStringList
+      cpp_decl "${comment}typedef ${type} ${name};
 "
       java_decl ""
       php_decl ""
       python_2_2 python_decl ""
-      idl_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 7468418 // <unidirectional association>
-	relation 7436930 --->
-	  a role_name "" multiplicity "*" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type} *> ${name}${value};
-"
-	    classrelation_ref 7468418 // <unidirectional association>
-	  b parent class_ref 6818178 // QStringUnicodeView
-      end
-
-      classrelation 7468546 // <unidirectional association>
-	relation 7437058 --->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
-"
-	    classrelation_ref 7468546 // <unidirectional association>
+      classrelation 7468546 // <dependency>
+	relation 7437058 -_->
+	  a private
+	    cpp default "#include in source"
+	    classrelation_ref 7468546 // <dependency>
 	  b parent class_ref 160770 // QStringList
       end
 
-      classrelation 7468802 // <dependency>
-	relation 7437314 -_->
+      classrelation 7501826 // <dependency>
+	relation 7470338 -_->
 	  a public
 	    cpp default "#include in source"
-	    classrelation_ref 7468802 // <dependency>
-	  b parent class_ref 6818562 // QStringContainerUnicodeConstIterator
+	    classrelation_ref 7501826 // <dependency>
+	  b parent class_ref 6818690 // QStringContainerUnicodeView
       end
     end
 
     class 6818690 "QStringContainerUnicodeView"
-      visibility package 
+      visibility package stereotype "typedef" base_type class_ref 6831746 // ContainerAliasView
       nformals 1
       formal name "Container" type "class" explicit_default_value ""
         explicit_extends ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
+      cpp_decl "${comment}typedef ${type} ${name};
 "
       java_decl ""
       php_decl ""
       python_2_2 python_decl ""
-      idl_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
       explicit_switch_type ""
       mysql_decl ""
       
+      classrelation 7475330 // <unidirectional association>
+	relation 7443842 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 7475330 // <unidirectional association>
+	  b parent class_ref 6818178 // QStringUnicodeView
+      end
+
+      classrelation 7501954 // <dependency>
+	relation 7470466 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7501954 // <dependency>
+	  b parent class_ref 6831746 // ContainerAliasView
+      end
     end
 
     classdiagram 5332866 "QTextFileReader"
@@ -1109,6 +1059,29 @@ ${inlines}
 "
 	    classrelation_ref 7361282 // <directional composition>
 	  b parent class_ref 2057474 // QTextDecoder
+      end
+    end
+
+    class 6851458 "QTextFileOutputIteratorImpl"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7515138 // <generalisation>
+	relation 7483650 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7515138 // <generalisation>
+	  b parent class_ref 138626 // QObject
       end
     end
   end
@@ -2028,10 +2001,27 @@ ${inlines}
 	
       end
 
-      operation 8690690 "appendLine"
+      operation 8690690 "writeLine"
 	public explicit_return_type "void"
 	nparams 2
 	  param in name "rec" explicit_type "Record"
+	  param in name "rule" explicit_type "Rule"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8738050 "writeTable"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "table" explicit_type "Table"
 	  param in name "rule" explicit_type "Rule"
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
@@ -2215,14 +2205,31 @@ ${inlines}
 	
       end
 
-      operation 8611970 "appendLine"
+      operation 8611970 "writeLine"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "rec" explicit_type "CsvGeneratorField"
+	  param in name "rec" explicit_type "string"
 	multiplicity "*"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8738178 "writeTable"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "table" explicit_type "string"
+	multiplicity "**"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -3083,6 +3090,15 @@ ${inlines}
 	
 	
 	
+      end
+
+      classrelation 7515266 // <directional composition>
+	relation 7483778 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7515266 // <directional composition>
+	  b parent class_ref 6731522 // QCsvFileWriterTemplate
       end
     end
 

@@ -1,6 +1,6 @@
 format 222
 "Karma" // Mdt::PlainText::Grammar::Csv::Karma
-  revision 9
+  revision 10
   modified_by 2 "philippe"
   // class settings
   
@@ -53,35 +53,6 @@ format 222
     classdiagram 5346178 "KarmaCsvGrammar"
       classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
       size A-Landscape
-    end
-
-    class 6724482 "CsvFileLine"
-      visibility package 
-      nformals 2
-      formal name "DestinationIterator" type "class" explicit_default_value ""
-        explicit_extends ""
-      formal name "SourceRecord" type "class" explicit_default_value ""
-        explicit_extends ""
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7382530 // <directional composition>
-	relation 7351042 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7382530 // <directional composition>
-	  b parent class_ref 6738818 // CsvRecord
-      end
     end
 
     class 6738306 "ProtectedField"
@@ -218,6 +189,35 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+    end
+
+    class 6825218 "CsvFile"
+      visibility package 
+      nformals 2
+      formal name "DestinationIterator" type "class" explicit_default_value ""
+        explicit_extends ""
+      formal name "SourceTable" type "class" explicit_default_value ""
+        explicit_extends ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7482114 // <directional composition>
+	relation 7450626 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7482114 // <directional composition>
+	  b parent class_ref 6738818 // CsvRecord
+      end
     end
   end
 end

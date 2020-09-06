@@ -2,48 +2,36 @@ format 222
 
 classcanvas 128002 class_ref 6531074 // CsvFileWriter
   classdiagramsettings member_max_width 0 end
-  xyz 207 141 2000
+  xyz 42 396 2000
 end
 classcanvas 128130 class_ref 2078850 // CsvGeneratorSettings
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 736 56 2000
+  xyz 416 232 2000
 end
 classcanvas 128386 class_ref 6531330 // CsvFileWriteError
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 346 42 2000
+  xyz 418 482 2000
 end
 classcanvas 128642 class_ref 6538242 // FileWriteOpenMode
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 1016 218 2000
+  xyz 144 42 2000
 end
-note 128770 "Record should be a template argument that fulfit some iterator requirment.
-Same for Table"
-  xyzwh 501.5 432.5 2000 465 53
 classcanvas 129666 class_ref 6684418 // CsvFileWriterTemplate
   classdiagramsettings member_max_width 0 end
-  xyz 642 150 2006
+  xyz 42 145 2006
 end
-note 130178 "NOTE
-Have also to quote text fields
-+
-escape properly, and also  EXP"
-  xyzwh 40.5 432.5 2000 381 101
 classcanvas 130306 class_ref 6724354 // EndOfLine
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 929 50 2005
-end
-classcanvas 130690 class_ref 3350146 // variant
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 1046.5 432.5 2000
+  xyz 449 314 2005
 end
 relationcanvas 128514 relation_ref 7090818 // <dependency>
-  decenter_begin 508
   from ref 128002 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129794 relation_ref 7247874 // <directional composition>
-  decenter_end 470
+  decenter_begin 479
+  decenter_end 390
   from ref 129666 z 2007 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -54,12 +42,13 @@ relationcanvas 130050 relation_ref 7248130 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130434 relation_ref 7336322 // <directional composition>
-  decenter_begin 585
+  decenter_begin 470
   from ref 128130 z 2006 to ref 130306
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130562 relation_ref 7336450 // <directional composition>
+  decenter_end 467
   from ref 129666 z 2007 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b

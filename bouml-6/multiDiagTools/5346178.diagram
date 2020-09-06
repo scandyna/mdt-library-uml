@@ -1,64 +1,62 @@
 format 222
 
-classcanvas 128002 class_ref 6724482 // CsvFileLine
-  classdiagramsettings member_max_width 0 end
-  xyz 37 328 2000
-end
 classcanvas 128258 class_ref 6738306 // ProtectedField
   classdiagramsettings member_max_width 0 end
-  xyz 296 136 2005
+  xyz 591 132 2005
 end
 classcanvas 128386 class_ref 6738434 // UnprotectedField
   classdiagramsettings member_max_width 0 end
-  xyz 143 232 2005
+  xyz 39 136 2005
 end
 classcanvas 128898 class_ref 6738690 // FieldColumn
   classdiagramsettings member_max_width 0 end
-  xyz 162 136 2005
+  xyz 324 136 2005
 end
 classcanvas 129666 class_ref 6738818 // CsvRecord
   classdiagramsettings member_max_width 0 end
-  xyz 39 136 2000
+  xyz 329 232 2000
 end
 note 130562 "Could also be QCsvGeneratorField
 
 Should be removed"
-  xyzwh 40.5 464.5 2000 251 75
+  xyzwh 40.5 368.5 2000 251 75
 note 131074 "The grammar should  be more CSV-1203 conform"
-  xyzwh 40.5 619.5 2000 375 51
+  xyzwh 40.5 523.5 2000 375 51
 classcanvas 131202 class_ref 6785538 // SafeChar
   classdiagramsettings member_max_width 0 end
-  xyz 313 40 2000
+  xyz 608 36 2000
+end
+classcanvas 131458 class_ref 6825218 // CsvFile
+  classdiagramsettings member_max_width 0 end
+  xyz 10 232 2000
 end
 relationcanvas 129026 relation_ref 7350530 // <directional composition>
-  decenter_end 528
+  decenter_begin 421
+  decenter_end 421
   from ref 128898 z 2006 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129154 relation_ref 7350658 // <directional composition>
-  decenter_begin 561
-  decenter_end 561
+  decenter_begin 421
   from ref 128898 z 2006 to ref 128258
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129794 relation_ref 7350914 // <directional composition>
-  decenter_begin 561
-  decenter_end 561
   from ref 129666 z 2006 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130178 relation_ref 7351042 // <directional composition>
-  from ref 128002 z 2001 to ref 129666
+relationcanvas 131330 relation_ref 7397250 // <directional composition>
+  from ref 128258 z 2006 to ref 131202
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131330 relation_ref 7397250 // <directional composition>
-  decenter_begin 457
-  decenter_end 436
-  from ref 128258 z 2006 to ref 131202
+relationcanvas 131842 relation_ref 7450626 // <directional composition>
+  decenter_begin 421
+  decenter_end 421
+  from ref 131458 z 2001 to ref 129666
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
