@@ -1,4 +1,4 @@
-format 222
+format 223
 
 note 128002 "Try this rule:
  - If a prefix path is given, search elements in known subdirectories
@@ -25,5 +25,10 @@ mdt_install_qt5_sqldrivers(...)
 See also what ECM does"
   xyzwh 41 360 2000 699 165
 note 128258 "MdtSharedLibrariesDepencyHelpers"
-  xyzwh 223 664 2000 315 41
+  xyzwh 175 553 2000 315 41
+note 128386 "Crate a library that contains the C++ part and CMake modules.
+Should not add this to mdt-cmake-modules, because it will bring binary compatibility issues, and every project (mines) depend on mdt-cmake-modules."
+  xyzwh 54 18 2000 713 69
+note 128514 "PluginsSelection"
+  xyzwh 181 613 2000 165 39
 end

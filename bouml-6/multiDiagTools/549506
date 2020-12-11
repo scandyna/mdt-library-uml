@@ -1,10 +1,12 @@
-format 218
+format 223
 "Algorithm" // Mdt::Algorithm
-  revision 5
+  revision 6
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 218
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -30,9 +34,13 @@ format 218
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -42,59 +50,6 @@ format 218
     
     activitydiagramsettings
      end
-    classdiagram 4140034 "MetaObject"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 4943362 "MetaObject"
-      visibility package stereotype "PlainFunctions"
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      operation 6740226 "hasProperty"
-	public explicit_return_type "bool"
-	nparams 2
-	  param in name "object" type class_ref 138626 // QObject
-	  param in name "property" explicit_type "char"
-	multiplicity "*"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6740354 "setPropertyIfExists"
-	public explicit_return_type ""
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-    end
-
     classdiagram 4265730 "Pair"
       classdiagramsettings member_max_width 0 end
       size A4
@@ -156,6 +111,80 @@ ${inlines}
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2913026 "Algirithm_QtCore"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 4140034 "MetaObject"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 4943362 "MetaObject"
+      visibility package stereotype "PlainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 6740226 "hasProperty"
+	public explicit_return_type "bool"
+	nparams 2
+	  param in name "object" type class_ref 138626 // QObject
+	  param in name "property" explicit_type "char"
+	multiplicity "*"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6740354 "setPropertyIfExists"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "

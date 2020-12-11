@@ -1,4 +1,4 @@
-format 222
+format 223
 
 classcanvas 128002 class_ref 4158978 // LibraryInfo
   classdiagramsettings member_max_width 0 end
@@ -10,7 +10,7 @@ classcanvas 128258 class_ref 4159234 // Library
 end
 classcanvas 128386 class_ref 4159490 // LibraryInfoList
   classdiagramsettings member_max_width 0 end
-  xyz 301.5 319.25 2000
+  xyz 303.5 319.25 2000
 end
 classcanvas 128770 class_ref 4159618 // DynamicLibraryExcludeList
   classdiagramsettings member_max_width 0 end
@@ -73,7 +73,7 @@ end
 relationcanvas 128642 relation_ref 4657666 // <directional composition>
   from ref 128386 z 2001 to ref 128002
   no_role_a no_role_b
-  multiplicity_a_pos 339 287 3000 no_multiplicity_b
+  multiplicity_a_pos 340 287 3000 no_multiplicity_b
 end
 relationcanvas 129410 relation_ref 4657922 // <dependency>
   from ref 129154 z 2006 to ref 129282

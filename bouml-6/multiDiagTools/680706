@@ -1,6 +1,6 @@
-format 222
+format 223
 "DeployUtils" // Mdt::DeployUtils
-  revision 78
+  revision 86
   modified_by 2 "philippe"
   // class settings
   
@@ -60,6 +60,27 @@ format 222
     classdiagram 3605506 "DeployUtilsSnadbox"
       classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
       size B
+    end
+
+    classdiagram 5424770 "DeployUtils_Algorithm"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6911618 "Algorithm"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
 
     class 4159618 "DynamicLibraryExcludeList"
@@ -4364,32 +4385,6 @@ ${inlines}
     end
 
     classdiagram 3759362 "DeployMdtApp"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-  end
-
-  classview 2853634 "DeployUtils_Cli"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    classcompositediagramsettings end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    objectcompositediagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    classdiagram 5339522 "DeployUtils_Cli"
       classdiagramsettings member_max_width 0 end
       size A4
     end

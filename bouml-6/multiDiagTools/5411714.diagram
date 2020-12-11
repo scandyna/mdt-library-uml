@@ -1,0 +1,41 @@
+format 223
+
+classcanvas 128002 class_ref 6871298 // DeployUtilsMain
+  classdiagramsettings member_max_width 0 end
+  color lightred
+  xyz 58 112 2000
+end
+classcanvas 128130 class_ref 6871426 // CommandLineParser
+  classdiagramsettings member_max_width 0 end
+  xyz 39 36 2006
+end
+classcanvas 128386 class_ref 6877954 // CommandLineParserResult
+  classdiagramsettings member_max_width 0 end
+  xyz 207 112 2000
+end
+classcanvas 128514 class_ref 6897922 // CopySharedLibrariesTargetDependsOnCommandLineParser
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 232.5 2000
+end
+relationcanvas 128258 relation_ref 7497218 // <directional composition>
+  decenter_begin 461
+  from ref 128002 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 7523458 // <directional composition>
+  decenter_begin 585
+  decenter_end 585
+  from ref 128002 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 7523586 // <directional composition>
+  geometry HV unfixed
+  decenter_end 518
+  from ref 128130 z 2007 to point 301 54
+  line 128898 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

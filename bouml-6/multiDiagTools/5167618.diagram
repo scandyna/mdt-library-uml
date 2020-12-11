@@ -1,4 +1,4 @@
-format 222
+format 223
 
 componentcanvas 128002 component_ref 134786 // CoreApplicationForNonQtUsage
   
@@ -26,7 +26,7 @@ componentcanvas 129154 component_ref 135426 // QtSingleCoreApplication
 end
 componentcanvas 129538 component_ref 135554 // SingleCoreApplication
   
-  color lightblue xyzwh 85 74 2000 167 57
+  color lightblue xyzwh 85 74 2000 175 57
 end
 componentcanvas 129794 component_ref 135682 // QtWidgets
   
@@ -43,6 +43,10 @@ end
 componentcanvas 130690 component_ref 136066 // SingleApplication
   
   color lightblue xyzwh 658 599 2000 167 57
+end
+componentcanvas 131202 component_ref 142594 // ConsoleApplication
+  
+  color lightblue xyzwh 544 141 2000 167 57
 end
 simplerelationcanvas 128386 simplerelation_ref 128002
   from ref 128258 z 2007 to ref 128130
@@ -79,5 +83,8 @@ simplerelationcanvas 130562 simplerelation_ref 129410
 end
 simplerelationcanvas 130818 simplerelation_ref 129538
   from ref 130690 z 2006 to ref 130178
+end
+simplerelationcanvas 131330 simplerelation_ref 136066
+  from ref 131202 z 2001 to ref 128130
 end
 end

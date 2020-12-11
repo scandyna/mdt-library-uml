@@ -1,6 +1,6 @@
-format 222
+format 223
 "Frame" // Mdt::Frame
-  revision 11
+  revision 12
   modified_by 2 "philippe"
   // class settings
   

@@ -1,4 +1,4 @@
-format 211
+format 222
 
 classcanvas 128002 class_ref 2514690 // Container
   classdiagramsettings member_max_width 0 end
@@ -34,7 +34,7 @@ relationcanvas 128258 relation_ref 2844290 // <directional composition>
   decenter_end 533
   from ref 128002 z 2001 to ref 128130
   no_role_a no_role_b
-  multiplicity_a_pos 357 214 3000 no_multiplicity_b
+  multiplicity_a_pos 357 208 3000 no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 2844418 // <generalisation>
   geometry VHV unfixed

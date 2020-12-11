@@ -1,4 +1,4 @@
-format 222
+format 223
 
 classcanvas 128002 class_ref 6255234 // Led
   classdiagramsettings member_max_width 0 end
@@ -15,6 +15,10 @@ end
 classcanvas 129282 class_ref 6315906 // LedWidget
   classdiagramsettings member_max_width 0 end
   xyz 187 109 2000
+end
+classcanvas 129410 class_ref 6864770 // LedPainter
+  classdiagramsettings member_max_width 0 end
+  xyz 185 189 2000
 end
 relationcanvas 128258 relation_ref 6903682 // <generalisation>
   from ref 128002 z 2007 to ref 128130

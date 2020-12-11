@@ -1,0 +1,941 @@
+format 223
+"DeployUtils_Cli" // apps::DeployUtils_Cli
+  revision 20
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2853634 "DeployUtils_Cli"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5411714 "DeployUtils_Cli_overview"
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 5431298 "DeployUtils_Cli_Exceptions"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 5339522 "DeployUtils_Cli"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6871298 "DeployUtilsMain"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7528578 // <generalisation>
+	relation 7497090 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7528578 // <generalisation>
+	  b parent class_ref 4162050 // AbstractConsoleApplicationMainFunction
+      end
+
+      operation 8751490 "runMain"
+	cpp_virtual private explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7528706 // <directional composition>
+	relation 7497218 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7528706 // <directional composition>
+	  b parent class_ref 6871426 // CommandLineParser
+      end
+
+      classrelation 7554946 // <directional composition>
+	relation 7523458 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7554946 // <directional composition>
+	  b parent class_ref 6877954 // CommandLineParserResult
+      end
+    end
+
+    classdiagram 5405186 "DeployUtils_Cli_CmdLineParsers"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 6871426 "CommandLineParser"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8791298 "applicationName"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7535234 // <generalisation>
+	relation 7503746 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7535234 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 8758018 "showMessage"
+	private explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8758146 "showErrorMessage"
+	private explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7555074 // <directional composition>
+	relation 7523586 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7555074 // <directional composition>
+	  b parent class_ref 6877954 // CommandLineParserResult
+      end
+
+      classrelation 7589762 // <directional composition>
+	relation 7558274 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7589762 // <directional composition>
+	  b parent class_ref 6924802 // ParserDefinition
+      end
+    end
+
+    class 6877954 "CommandLineParserResult"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6884482 "CommandLineCommand"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4631042 "GetSharedLibrariesTargetDependsOn"
+	public type class_ref 6884482 // CommandLineCommand
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4637570 "CopySharedLibrariesTargetDependsOn"
+	public type class_ref 6884482 // CommandLineCommand
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 8764674 "commandFromString"
+	class_operation public return_type class_ref 6884482 // CommandLineCommand
+	nparams 1
+	  param in name "str" type class_ref 161026 // QString
+	
+	
+	
+	
+	
+      end
+
+      operation 8764802 "commandName"
+	class_operation public return_type class_ref 161026 // QString
+	nparams 1
+	  param in name "cmd" type class_ref 6884482 // CommandLineCommand
+	
+	
+	
+	
+	
+      end
+    end
+
+    class 6884610 "GetSharedLibrariesTargetDependsOnCommand"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7541762 // <directional composition>
+	relation 7510274 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7541762 // <directional composition>
+	  b parent class_ref 6884738 // GetSharedLibrariesTargetDependsOnOption
+      end
+    end
+
+    class 6884738 "GetSharedLibrariesTargetDependsOnOption"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6891266 "GetSharedLibrariesTargetDependsOnCommandLineParser"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7548290 // <generalisation>
+	relation 7516802 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7548290 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+    end
+
+    class 6897794 "MessageLogger"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 6897922 "CopySharedLibrariesTargetDependsOnCommandLineParser"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7554818 // <generalisation>
+	relation 7523330 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7554818 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 8798338 "commandName"
+	public return_type class_ref 161026 // QString
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8813186 "command"
+	public return_type class_ref 6924930 // ParserDefinitionCommand
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7583234 // <directional composition>
+	relation 7551746 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7583234 // <directional composition>
+	  b parent class_ref 6924930 // ParserDefinitionCommand
+      end
+    end
+
+    class 6918146 "QRuntimeError"
+      visibility package stereotype "exception"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}exception ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7569282 // <generalisation>
+	relation 7537794 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7569282 // <generalisation>
+	  b parent class_ref 4372226 // runtime_error
+      end
+    end
+  end
+
+  classview 2899714 "DeployUtils_Cli_BashCompletion"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5431426 "DeployUtils_Cli_BC_Exceptions"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 6918274 "BashCompletionScriptFileWriteError"
+      visibility package stereotype "exception"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}exception ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7569410 // <generalisation>
+	relation 7537922 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7569410 // <generalisation>
+	  b parent class_ref 4372226 // runtime_error
+      end
+    end
+
+    classdiagram 5418242 "DeployUtils_BashCompletionGen"
+      classdiagramsettings member_max_width 0 end
+      size B-Landscape
+    end
+
+    class 6904450 "BashCompletionGenerator"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7562626 // <directional composition>
+	relation 7531138 *-->
+	  stereotype "map"
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7562626 // <directional composition>
+	  b parent class_ref 6904962 // BashCompletionGeneratorCommand
+      end
+
+      attribute 4644738 "ApplicationName"
+	private explicit_type "string"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 8797826 "setApplicationName"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "name" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8771330 "setMainCommand"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "cmd" type class_ref 6904962 // BashCompletionGeneratorCommand
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8771458 "addSubCommand"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "cmd" type class_ref 6904962 // BashCompletionGeneratorCommand
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8784770 "generateToFile"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "path" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 6904834 "BashCompletionGeneratorArgument"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4638082 "Name"
+	private explicit_type "string"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4638210 "CompleteDirectory"
+	private explicit_type "bool"
+	init_value "false"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 6904962 "BashCompletionGeneratorCommand"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7562498 // <directional composition>
+	relation 7531010 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 7562498 // <directional composition>
+	  b parent class_ref 6904834 // BashCompletionGeneratorArgument
+      end
+
+      classrelation 7562754 // <directional composition>
+	relation 7531266 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 7562754 // <directional composition>
+	  b parent class_ref 6905090 // BashCompletionGeneratorOption
+      end
+
+      attribute 4651266 "DirectoryCompletionEnabled"
+	private explicit_type "bool"
+	init_value "false"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 8797954 "BashCompletionGeneratorCommand"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "name" explicit_type "string"
+	cpp_decl "  ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}${t0} ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8798082 "addArgument"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "arg" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8777986 "addOption"
+	public explicit_return_type "void"
+	nparams 2
+	  param in name "sn" explicit_type "char"
+	  param in name "ln" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8798466 "fromParser"
+	class_operation public return_type class_ref 6904962 // BashCompletionGeneratorCommand
+	nparams 2
+	  param in name "parser" type class_ref 4161794 // QCommandLineParser
+	  param in name "commandName" explicit_type "string"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 6905090 "BashCompletionGeneratorOption"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4637826 "ShortName"
+	private explicit_type "char"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4637954 "Name"
+	private explicit_type "string"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 8798210 "BashCompletionGeneratorOption"
+	public explicit_return_type ""
+	nparams 2
+	  param in name "shortName" explicit_type "char"
+	  param in name "name" explicit_type "string"
+	cpp_decl "  ${comment}${inline}${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8778114 "nameWithDashes"
+	public explicit_return_type "string"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8778242 "shortNameWithDash"
+	public explicit_return_type "string"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 6904706 "BashCompletionType"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4637698 "Directory"
+	public type class_ref 6904706 // BashCompletionType
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 6904578 "DeployUtilsBashCompletionGenerator"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7561730 // <directional composition>
+	relation 7530242 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7561730 // <directional composition>
+	  b parent class_ref 6904450 // BashCompletionGenerator
+      end
+
+      classrelation 7561858 // <dependency>
+	relation 7530370 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7561858 // <dependency>
+	  b parent class_ref 6871426 // CommandLineParser
+      end
+
+      classrelation 7561986 // <dependency>
+	relation 7530498 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7561986 // <dependency>
+	  b parent class_ref 6891266 // GetSharedLibrariesTargetDependsOnCommandLineParser
+      end
+
+      classrelation 7562114 // <dependency>
+	relation 7530626 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7562114 // <dependency>
+	  b parent class_ref 6897922 // CopySharedLibrariesTargetDependsOnCommandLineParser
+      end
+    end
+  end
+end

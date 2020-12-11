@@ -1,6 +1,6 @@
-format 222
+format 223
 "Qt" // Qt
-  revision 295
+  revision 298
   modified_by 2 "philippe"
   // class settings
   
@@ -10237,6 +10237,22 @@ ${inlines}
 	public explicit_return_type "void"
 	nparams 1
 	  param in name "app" type class_ref 425730 // QCoreApplication
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8799874 "parse"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "arguments" type class_ref 160770 // QStringList
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}

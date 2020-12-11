@@ -1,0 +1,35 @@
+format 223
+
+classcanvas 128002 class_ref 4162050 // AbstractConsoleApplicationMainFunction
+  classdiagramsettings member_max_width 0 end
+  xyz 385.25 156 2000
+end
+classcanvas 128130 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 489 39.5 2006
+end
+classcanvas 128386 class_ref 425730 // QCoreApplication
+  classdiagramsettings member_max_width 0 end
+  xyz 39.75 174 2012
+end
+relationcanvas 128258 relation_ref 4659330 // <generalisation>
+  decenter_begin 487
+  from ref 128002 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 4659202 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 510
+  from ref 128386 z 2013 to point 193 118
+  line 128770 z 2013 to point 519 118
+  line 128898 z 2013 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 4659458 // <dependency>
+  from ref 128002 z 2013 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end
