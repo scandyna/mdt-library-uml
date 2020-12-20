@@ -2,54 +2,47 @@ format 223
 
 classcanvas 128002 class_ref 6924802 // ParserDefinition
   classdiagramsettings member_max_width 0 end
-  xyz 39 162 2000
-end
-classcanvas 128130 class_ref 4161794 // QCommandLineParser
-  classdiagramsettings member_max_width 0 end
-  xyz 739 423 2000
+  xyz 40 273 2000
 end
 classcanvas 128258 class_ref 6924930 // ParserDefinitionCommand
   classdiagramsettings member_max_width 0 end
-  xyz 474 203 2000
-end
-classcanvas 128642 class_ref 6904962 // BashCompletionGeneratorCommand
-  classdiagramsettings member_max_width 0 end
-  xyz 40 469 2000
+  xyz 465 255 2000
 end
 classcanvas 129026 class_ref 6925058 // ParserDefinitionPositionalArgument
   classdiagramsettings member_max_width 0 end
-  xyz 363 372 2000
-end
-classcanvas 129282 class_ref 6905090 // BashCompletionGeneratorOption
-  classdiagramsettings member_max_width 0 end
-  xyz 334 674 2006
+  xyz 491 454 2000
 end
 classcanvas 129538 class_ref 6925186 // ParserDefinitionOption
   classdiagramsettings member_max_width 0 end
-  xyz 520 4 2000
+  xyz 535 42 2000
+end
+classcanvas 129794 class_ref 6938498 // ArgumentType
+  classdiagramsettings member_max_width 0 end
+  xyz 468 578 2000
 end
 relationcanvas 128386 relation_ref 7544450 // <directional composition>
+  decenter_begin 529
+  decenter_end 522
   from ref 128002 z 2001 to ref 128258
   no_role_a no_role_b
-  multiplicity_a_pos 458 263 3000 no_multiplicity_b
+  multiplicity_a_pos 449 343 3000 no_multiplicity_b
 end
 relationcanvas 129154 relation_ref 7544706 // <directional composition>
+  decenter_begin 522
+  decenter_end 539
   from ref 128258 z 2001 to ref 129026
   no_role_a no_role_b
-  multiplicity_a_pos 540 372 3000 no_multiplicity_b
-end
-relationcanvas 129410 relation_ref 7531266 // <directional composition>
-  from ref 128642 z 2007 to ref 129282
-  no_role_a no_role_b
-  multiplicity_a_pos 485 652 3000 no_multiplicity_b
+  multiplicity_a_pos 609 432 3000 no_multiplicity_b
 end
 relationcanvas 129666 relation_ref 7544834 // <directional composition>
+  decenter_begin 510
+  decenter_end 517
   from ref 128258 z 2001 to ref 129538
   no_role_a no_role_b
-  multiplicity_a_pos 617 184 3000 no_multiplicity_b
+  multiplicity_a_pos 624 222 3000 no_multiplicity_b
 end
-relationcanvas 129794 relation_ref 7544962 // <dependency>
-  from ref 128258 z 2001 to ref 128130
+relationcanvas 130050 relation_ref 7578498 // <directional composition>
+  from ref 129026 z 2001 to ref 129794
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

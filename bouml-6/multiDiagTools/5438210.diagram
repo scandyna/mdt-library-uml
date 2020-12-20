@@ -20,13 +20,6 @@ note 128770 "Main goals:
  - Show help if -h/--help
  - setup parser regarding arguments (sub-commands)"
   xyzwh 425 400 2000 399 85
-relationcanvas 128386 relation_ref 7544962 // <dependency>
-  decenter_begin 486
-  decenter_end 492
-  from ref 128258 z 3006 to ref 128130
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
 relationcanvas 128514 relation_ref 7544450 // <directional composition>
   from ref 128002 z 3006 to ref 128258
   no_role_a no_role_b

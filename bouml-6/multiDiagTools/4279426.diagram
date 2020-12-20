@@ -1,35 +1,48 @@
-format 218
+format 223
 
-classcanvas 128002 class_ref 5165698 // AbstractCachedTableModel
+classcanvas 128002 class_ref 5165698 // AbstractEditableCachedTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 41 40 2000
+  xyz 353 39 2000
 end
 classcanvas 128130 class_ref 5165826 // CachedTableModel
   classdiagramsettings member_max_width 0 end
-  xyz 112 359 2006
+  xyz 456 399 2006
 end
 classcanvas 128386 class_ref 5091202 // TableCacheOperationMap
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 537 506 2000
+  xyz 37 184 2000
 end
 classcanvas 128514 class_ref 5004290 // TableCache
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 578 400 2006
+  xyz 82 432 2006
 end
+note 129026 "See The Registry Problem from Sean Parent:
+CppCon 2019: Sean Parent  Better Code: Relationships "
+  xyzwh 42 39 2000 289 91
 relationcanvas 128258 relation_ref 5580290 // <generalisation>
+  decenter_end 505
   from ref 128130 z 2007 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128642 relation_ref 5526658 // <directional composition>
-  decenter_end 483
   from ref 128514 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 5580802 // <directional composition>
+  decenter_begin 463
+  decenter_end 421
   from ref 128130 z 2007 to ref 128514
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 128898 relation_ref 6371458 // <directional composition>
+  decenter_end 390
+  from ref 128002 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 129154 -_-_
+  from ref 129026 z 2001 to ref 128386
 end
