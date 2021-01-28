@@ -1,6 +1,6 @@
-format 223
+format 224
 "DeployUtils_Cli" // apps::DeployUtils_Cli
-  revision 24
+  revision 28
   modified_by 2 "philippe"
   // class settings
   
@@ -65,6 +65,30 @@ format 223
       size A4
     end
 
+    class 6971778 "ErrorCode"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
     class 6871298 "DeployUtilsMain"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
@@ -123,7 +147,7 @@ ${inlines}
 
     classdiagram 5405186 "DeployUtils_Cli_CmdLineParsers"
       classdiagramsettings member_max_width 0 end
-      size A-Landscape
+      size C-Landscape
     end
 
     class 6871426 "CommandLineParser"
@@ -209,6 +233,31 @@ ${inlines}
 "
 	    classrelation_ref 7589762 // <directional composition>
 	  b parent class_ref 6924802 // ParserDefinition
+      end
+
+      classrelation 7637762 // <directional composition>
+	relation 7606274 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7637762 // <directional composition>
+	  b parent class_ref 6945026 // ParserResult
+      end
+
+      classrelation 7637890 // <dependency>
+	relation 7606402 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7637890 // <dependency>
+	  b parent class_ref 6925442 // Parser
+      end
+
+      classrelation 7638018 // <dependency>
+	relation 7606530 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7638018 // <dependency>
+	  b parent class_ref 6952066 // BashCompletionParser
       end
     end
 

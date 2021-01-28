@@ -1,4 +1,4 @@
-format 223
+format 224
 
 note 128002 "Try this rule:
  - If a prefix path is given, search elements in known subdirectories
@@ -23,7 +23,7 @@ mdt_install_qt5_platform_plugins(...)
 mdt_install_qt5_sqldrivers(...)
 
 See also what ECM does"
-  xyzwh 41 360 2000 699 165
+  xyzwh 54 360 2000 699 165
 note 128258 "MdtSharedLibrariesDepencyHelpers"
   xyzwh 175 553 2000 315 41
 note 128386 "Crate a library that contains the C++ part and CMake modules.

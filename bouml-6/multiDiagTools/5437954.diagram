@@ -1,4 +1,4 @@
-format 223
+format 224
 
 classcanvas 128002 class_ref 6924802 // ParserDefinition
   classdiagramsettings member_max_width 0 end
@@ -10,7 +10,7 @@ classcanvas 128258 class_ref 6924930 // ParserDefinitionCommand
 end
 classcanvas 129026 class_ref 6925058 // ParserDefinitionPositionalArgument
   classdiagramsettings member_max_width 0 end
-  xyz 491 454 2000
+  xyz 515 455 2000
 end
 classcanvas 129538 class_ref 6925186 // ParserDefinitionOption
   classdiagramsettings member_max_width 0 end
@@ -18,8 +18,10 @@ classcanvas 129538 class_ref 6925186 // ParserDefinitionOption
 end
 classcanvas 129794 class_ref 6938498 // ArgumentType
   classdiagramsettings member_max_width 0 end
-  xyz 468 578 2000
+  xyz 530 579 2000
 end
+note 130178 "Should add a number of maximum expected positional arguments (can be sued for user checks + completion)"
+  xyzwh 34 466 2000 361 55
 relationcanvas 128386 relation_ref 7544450 // <directional composition>
   decenter_begin 529
   decenter_end 522
@@ -32,7 +34,7 @@ relationcanvas 129154 relation_ref 7544706 // <directional composition>
   decenter_end 539
   from ref 128258 z 2001 to ref 129026
   no_role_a no_role_b
-  multiplicity_a_pos 609 432 3000 no_multiplicity_b
+  multiplicity_a_pos 629 433 3000 no_multiplicity_b
 end
 relationcanvas 129666 relation_ref 7544834 // <directional composition>
   decenter_begin 510
@@ -46,4 +48,6 @@ relationcanvas 130050 relation_ref 7578498 // <directional composition>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+line 130306 -_-_
+  from ref 128258 z 2001 to ref 130178
 end

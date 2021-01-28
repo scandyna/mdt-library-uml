@@ -1,6 +1,6 @@
-format 223
+format 224
 "Mdt" // Mdt
-  revision 134
+  revision 135
   modified_by 2 "philippe"
   // class settings
   
@@ -254,117 +254,6 @@ ${inlines}
       simplerelation 136066
 	-_->
 	  on component_ref 134914 // QtCore
-      end
-    end
-  end
-
-  classview 2893186 "ConsoleApplication"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    classcompositediagramsettings end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    objectcompositediagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-    classdiagram 5398658 "ConsoleApplication"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 4162050 "AbstractConsoleApplicationMainFunction"
-      abstract visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4685570 // <generalisation>
-	relation 4659330 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 4685570 // <generalisation>
-	  b parent class_ref 138626 // QObject
-      end
-
-      classrelation 4685698 // <dependency>
-	relation 4659458 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 4685698 // <dependency>
-	  b parent class_ref 425730 // QCoreApplication
-      end
-
-      operation 5834626 "getArguments"
-	class_operation public return_type class_ref 160770 // QStringList
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5834242 "runMain"
-	abstract cpp_virtual protected explicit_return_type "int"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
-      operation 5834370 "aboutToQuit"
-	stereotype "slot"
-	abstract cpp_virtual protected explicit_return_type "void"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
-      operation 5834498 "run"
-	stereotype "slot"
-	private explicit_return_type "void"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
       end
     end
   end
@@ -2456,6 +2345,121 @@ ${inlines}
     end
   end
 
+  classview 2893186 "ConsoleApplication"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5398658 "ConsoleApplication"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 4162050 "AbstractConsoleApplicationMainFunction"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 4685570 // <generalisation>
+	relation 4659330 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 4685570 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 4685698 // <dependency>
+	relation 4659458 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 4685698 // <dependency>
+	  b parent class_ref 425730 // QCoreApplication
+      end
+
+      operation 5834626 "getArguments"
+	class_operation public return_type class_ref 160770 // QStringList
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5834242 "runMain"
+	abstract cpp_virtual protected explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 5834370 "aboutToQuit"
+	stereotype "slot"
+	abstract cpp_virtual protected explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 5834498 "run"
+	stereotype "slot"
+	private explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  package_ref 1109762 // ConsoleApplication
+
+  package_ref 1116290 // CommandLineParser
+
   classview 2418050 "LibraryInfo_Core"
     
     classdiagramsettings member_max_width 0 end
@@ -2596,10 +2600,6 @@ ${inlines}
   package_ref 417026 // Audio
 
   package_ref 1017346 // Automation
-
-  package_ref 1116290 // CommandLineParser
-
-  package_ref 1109762 // ConsoleApplication
 
   classview 161666 "Error_Core"
     
