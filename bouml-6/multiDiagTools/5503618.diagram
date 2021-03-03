@@ -1,0 +1,83 @@
+format 224
+
+classcanvas 128002 class_ref 7012482 // BashCompletionParserCurrentArgumentType
+  classdiagramsettings show_members_full_definition no member_max_width 0 end
+  xyz 403 205 2000
+end
+classcanvas 128130 class_ref 7019138 // BashCompletionAction
+  classdiagramsettings member_max_width 0 end
+  xyz 265 132 2000
+end
+classcanvas 128258 class_ref 7012354 // BashCompletionParserCurrentArgument
+  classdiagramsettings member_max_width 0 end
+  xyz 9 278 2006
+end
+classcanvas 128514 class_ref 7025666 // BashCompletionActionList
+  classdiagramsettings member_max_width 0 end
+  xyz 41 132 2000
+end
+note 128770 "Try to decompose the specs:
+- 'command' level
+- fuzz part between main and sub-command name"
+  xyzwh 41.5 446.5 2000 457 83
+note 128898 "For the 'command' level,
+if not the fuzz part,
+the rest will probably be the same"
+  xyzwh 39.5 535.5 2000 385 77
+note 129026 "Could be a custom action provided by the library user"
+  xyzwh 459 121 2000 211 57
+classcanvas 129282 class_ref 7025794 // BashCompletionParserCommandReplyType
+  classdiagramsettings member_max_width 0 end
+  xyz 461.5 386.5 2000
+end
+note 129410 "In script:
+
+currentArgument = app completion-fint-current-argument ...
+
+case currentArgument in
+
+  options)
+    ...
+
+  source)
+    ...
+
+esac"
+  xyzwh 39 618 2000 357 239
+classcanvas 129794 class_ref 7025922 // BashCompletionCursorPositionType
+  classdiagramsettings member_max_width 0 end
+  xyz 190 395 2000
+end
+note 130050 "In script:
+
+completionState = app completion-find-current-state ...
+
+case completionState in
+
+  options)
+    ...
+
+  source)
+    ...
+
+esac"
+  xyzwh 406 619 2000 349 233
+note 130178 "Name:
+
+ CurrentReply
+ CurrentArgument"
+  xyzwh 480 529 2000 179 85
+relationcanvas 128386 relation_ref 7674242 // <directional composition>
+  decenter_begin 219
+  from ref 128258 z 2007 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 7680898 // <directional composition>
+  from ref 128514 z 2001 to ref 128130
+  no_role_a no_role_b
+  multiplicity_a_pos 342 187 3000 no_multiplicity_b
+end
+line 129154 -_-_
+  from ref 128130 z 2001 to ref 129026
+end

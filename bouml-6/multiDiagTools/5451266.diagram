@@ -40,6 +40,8 @@ note 132354 "Add methods to add custom logic at begin and at end
 
 Also, implement indend method (only left padding, not real indentation)"
   xyzwh 174.2 736 2000 512 86
+note 132738 "Actions.."
+  xyzwh 44 200 2012 135 39
 relationcanvas 128514 relation_ref 7531010 // <directional composition>
   from ref 128386 z 2007 to ref 128258
   no_role_a no_role_b
@@ -110,6 +112,11 @@ relationcanvas 131202 relation_ref 7578498 // <directional composition>
 end
 relationcanvas 131330 relation_ref 7578754 // <directional composition>
   from ref 128258 z 3018 to ref 131074
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132610 relation_ref 7626242 // <directional composition>
+  from ref 129794 z 3018 to ref 131074
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

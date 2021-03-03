@@ -1,4 +1,4 @@
-format 223
+format 224
 
 classcanvas 128002 class_ref 6952066 // BashCompletionParser
   classdiagramsettings member_max_width 0 end
@@ -20,6 +20,21 @@ classcanvas 129026 class_ref 6965250 // ParserResultInCommandLineIndexMap
   classdiagramsettings member_max_width 0 end
   xyz 38 50 2000
 end
+classcanvas 129538 class_ref 7012354 // BashCompletionParserCurrentArgument
+  classdiagramsettings member_max_width 0 end
+  xyz 51 465 2000
+end
+classcanvas 129666 class_ref 7012482 // BashCompletionParserCurrentArgumentType
+  classdiagramsettings member_max_width 0 end
+  xyz 402 442 2000
+end
+classcanvas 129922 class_ref 7019138 // BashCompletionAction
+  classdiagramsettings member_max_width 0 end
+  xyz 125 574 2000
+end
+note 130050 "See:
+- https://kislyuk.github.io/argcomplete/"
+  xyzwh 40.5 636.5 2000 321 73
 relationcanvas 128386 relation_ref 7585282 // <unidirectional association>
   from ref 128130 z 2007 to ref 128258
   no_role_a no_role_b
@@ -43,9 +58,8 @@ relationcanvas 129154 relation_ref 7619586 // <unidirectional association>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129282 relation_ref 7619714 // <directional composition>
-  decenter_begin 525
-  from ref 128642 z 2001 to ref 129026
+relationcanvas 129794 relation_ref 7674242 // <directional composition>
+  from ref 129538 z 2001 to ref 129666
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

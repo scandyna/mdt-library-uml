@@ -1,26 +1,26 @@
-format 223
+format 224
 
 classcanvas 128002 class_ref 6945026 // ParserResult
   classdiagramsettings member_max_width 0 end
-  xyz 39 148 2000
+  xyz 35 40 2000
 end
 classcanvas 128130 class_ref 6945154 // ParserResultCommand
   classdiagramsettings member_max_width 0 end
-  xyz 578 157 3005
+  xyz 66 212 3005
 end
 classcanvas 128642 class_ref 6945410 // ParserResultOption
   classdiagramsettings member_max_width 0 end
-  xyz 720 39 3011
+  xyz 544 239 3011
 end
 relationcanvas 128258 relation_ref 7585410 // <directional composition>
+  decenter_begin 507
   from ref 128002 z 3006 to ref 128130
   no_role_a no_role_b
-  multiplicity_a_pos 560 224 3000 no_multiplicity_b
+  multiplicity_a_pos 268 190 3000 no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 7585666 // <directional composition>
-  decenter_begin 489
   from ref 128130 z 3012 to ref 128642
   no_role_a no_role_b
-  multiplicity_a_pos 776 129 3000 no_multiplicity_b
+  multiplicity_a_pos 528 288 3000 no_multiplicity_b
 end
 end

@@ -1,0 +1,190 @@
+format 224
+"Impl" // Mdt::CommandLineParser::Impl
+  revision 12
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2932738 "ParserResult"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5490434 "Impl_ParserResult"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 6985986 "AddArgumentToResultCommand"
+      visibility package 
+      nactuals 1
+      actual class class_ref 3350274 // static_visitor
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7671938 // <generalisation>
+	relation 7640450 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7671938 // <generalisation>
+	  b parent class_ref 3350274 // static_visitor
+      end
+
+      classrelation 7672066 // <dependency>
+	relation 7640578 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7672066 // <dependency>
+	  b parent class_ref 6978306 // CommandLine
+      end
+
+      classrelation 7672322 // <dependency>
+	relation 7640834 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7672322 // <dependency>
+	  b parent class_ref 6945026 // ParserResult
+      end
+    end
+  end
+
+  classview 2932866 "BashCompletion"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5490562 "Impl_BashCompletion"
+      classdiagramsettings member_max_width 0 end
+      size Legal-Landscape
+    end
+
+    class 6986114 "XXXXX"
+      visibility package 
+      nactuals 1
+      actual class class_ref 3350274 // static_visitor
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7672194 // <dependency>
+	relation 7640706 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7672194 // <dependency>
+	  b parent class_ref 6978306 // CommandLine
+      end
+
+      classrelation 7672578 // <generalisation>
+	relation 7641090 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7672578 // <generalisation>
+	  b parent class_ref 3350274 // static_visitor
+      end
+    end
+
+    class 7012610 "BashCompletionParser"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8934530 "completionFindCurrentArgument"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+end

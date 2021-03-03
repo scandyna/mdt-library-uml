@@ -1,0 +1,170 @@
+format 224
+
+classcanvas 128002 class_ref 6978306 // CommandLine
+  classdiagramsettings member_max_width 0 end
+  xyz 453.85 231.4 2000
+end
+classcanvas 128130 class_ref 6978434 // Executable
+  classdiagramsettings member_max_width 0 end
+  xyz 1257.7 454.6 2000
+end
+classcanvas 128258 class_ref 6978562 // Option
+  classdiagramsettings member_max_width 0 end
+  xyz 726.45 507.6 2000
+end
+classcanvas 128386 class_ref 6978690 // OptionValue
+  classdiagramsettings member_max_width 0 end
+  xyz 1127.6 454.6 2000
+end
+classcanvas 128514 class_ref 6978818 // OptionWithValue
+  classdiagramsettings member_max_width 0 end
+  xyz 257.75 454.6 2000
+end
+classcanvas 128642 class_ref 6978946 // PositionalArgument
+  classdiagramsettings member_max_width 0 end
+  xyz 549.1 454.6 2000
+end
+classcanvas 128770 class_ref 6979074 // SubCommandName
+  classdiagramsettings member_max_width 0 end
+  xyz 946.8 454.6 2000
+end
+classcanvas 128898 class_ref 6979202 // Argument
+  classdiagramsettings member_max_width 0 end
+  xyz 802.1 266.4 2000
+end
+note 131330 "See:
+ - https://www.gnu.org/software/guile/manual/html_node/Command-Line-Format.html
+ - https://www.gnu.org/prep/standards/html_node/Command_002dLine-Interfaces.html"
+  xyzwh 40.5 575.6 2000 565 99
+classcanvas 131458 class_ref 6979330 // DoubleDash
+  classdiagramsettings member_max_width 0 end
+  xyz 417.3 454.6 2000
+end
+classcanvas 131970 class_ref 6979458 // SingleDash
+  classdiagramsettings member_max_width 0 end
+  xyz 824.15 454.6 2000
+end
+classcanvas 133378 class_ref 3350146 // variant
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 967.85 282.4 2000
+end
+classcanvas 133890 class_ref 6992642 // IsSubCommandArgument
+  classdiagramsettings member_max_width 0 end
+  xyz 519.85 48.7 2000
+end
+classcanvas 134018 class_ref 3350274 // static_visitor
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 737.7 40.7 2005
+end
+classcanvas 134402 class_ref 6999170 // Algorithm
+  classdiagramsettings member_max_width 0 end
+  xyz 543.85 130.95 2000
+end
+classcanvas 135042 class_ref 6999298 // CommandLineAlgorithm
+  classdiagramsettings member_max_width 0 end
+  xyz 39.55 266.4 2000
+end
+relationcanvas 129154 relation_ref 7632898 // <generalisation>
+  geometry VHV unfixed
+  from ref 128130 z 2001 to point 1296 413
+  line 135810 z 2001 to point 862 413
+  line 135938 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 7633026 // <generalisation>
+  geometry VHV unfixed
+  from ref 128258 z 2001 to point 796 413
+  line 132226 z 2001 to point 862 413
+  line 132354 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 7633154 // <generalisation>
+  geometry VHV unfixed
+  from ref 128386 z 2001 to point 1169 413
+  line 133634 z 2001 to point 862 413
+  line 133762 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129538 relation_ref 7633282 // <generalisation>
+  geometry VHV unfixed
+  from ref 128514 z 2001 to point 314 413
+  line 130562 z 2001 to point 862 413
+  line 130690 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 7633410 // <generalisation>
+  geometry VHV unfixed
+  from ref 128642 z 2001 to point 616 413
+  line 133122 z 2001 to point 862 413
+  line 133250 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 7633538 // <generalisation>
+  geometry VHV unfixed
+  from ref 128770 z 2001 to point 1013 413
+  line 136322 z 2001 to point 862 413
+  line 136450 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129922 relation_ref 7633666 // <directional composition>
+  from ref 128002 z 2001 to ref 128898
+  no_role_a no_role_b
+  multiplicity_a_pos 786 310 3000 no_multiplicity_b
+end
+relationcanvas 131586 relation_ref 7633794 // <generalisation>
+  geometry VHV unfixed
+  from ref 131458 z 2001 to point 460 413
+  line 134658 z 2001 to point 862 413
+  line 134786 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132098 relation_ref 7633922 // <generalisation>
+  from ref 131970 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133506 relation_ref 7640962 // <dependency>
+  from ref 128898 z 2001 to ref 133378
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134146 relation_ref 7647618 // <generalisation>
+  from ref 133890 z 2006 to ref 134018
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134914 relation_ref 7654402 // <dependency>
+  decenter_begin 519
+  decenter_end 514
+  from ref 134402 z 2001 to ref 133890
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135170 relation_ref 7654530 // <dependency>
+  from ref 135042 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135298 relation_ref 7654658 // <dependency>
+  geometry VH unfixed
+  decenter_begin 505
+  from ref 135042 z 2001 to point 226 158
+  line 136194 z 2001 to ref 134402
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136066 relation_ref 7661186 // <dependency>
+  decenter_begin 508
+  decenter_end 519
+  from ref 128002 z 2001 to ref 134402
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

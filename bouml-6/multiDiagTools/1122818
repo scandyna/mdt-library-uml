@@ -1,0 +1,560 @@
+format 224
+"CommandLine" // Mdt::CommandLineParser::CommandLine
+  revision 11
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 2926210 "CommandLine"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5483906 "CommandLine"
+      classdiagramsettings member_max_width 0 end
+      size C-Landscape
+    end
+
+    class 6978306 "CommandLine"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7665154 // <directional composition>
+	relation 7633666 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 7665154 // <directional composition>
+	  b parent class_ref 6979202 // Argument
+      end
+
+      operation 8894594 "argumentCount"
+	public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7692674 // <dependency>
+	relation 7661186 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7692674 // <dependency>
+	  b parent class_ref 6999170 // Algorithm
+      end
+
+      operation 8920962 "argumentAt"
+	public return_type class_ref 6979202 // Argument
+	nparams 1
+	  param in name "i" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8921090 "argumentAtIsPositionalArgument"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "i" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8921218 "argumentAtIsOption"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "i" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8921346 "argumentAtIsOptionValue"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "i" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8921474 "argumentAtIsOptionWithValue"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "i" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 6978434 "Executable"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7664386 // <generalisation>
+	relation 7632898 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7664386 // <generalisation>
+	  b parent class_ref 6979202 // Argument
+      end
+    end
+
+    class 6978562 "Option"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7664514 // <generalisation>
+	relation 7633026 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7664514 // <generalisation>
+	  b parent class_ref 6979202 // Argument
+      end
+
+      attribute 4731778 "ExpectsValue"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 6978690 "OptionValue"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7664642 // <generalisation>
+	relation 7633154 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7664642 // <generalisation>
+	  b parent class_ref 6979202 // Argument
+      end
+    end
+
+    class 6978818 "OptionWithValue"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7664770 // <generalisation>
+	relation 7633282 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7664770 // <generalisation>
+	  b parent class_ref 6979202 // Argument
+      end
+    end
+
+    class 6978946 "PositionalArgument"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7664898 // <generalisation>
+	relation 7633410 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7664898 // <generalisation>
+	  b parent class_ref 6979202 // Argument
+      end
+    end
+
+    class 6979074 "SubCommandName"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7665026 // <generalisation>
+	relation 7633538 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7665026 // <generalisation>
+	  b parent class_ref 6979202 // Argument
+      end
+    end
+
+    class 6979202 "Argument"
+      visibility package stereotype "variant"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8894722 "value"
+	public return_type class_ref 161026 // QString
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7672450 // <dependency>
+	relation 7640962 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7672450 // <dependency>
+	  b parent class_ref 3350146 // variant
+      end
+    end
+
+    class 6979330 "DoubleDash"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7665282 // <generalisation>
+	relation 7633794 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7665282 // <generalisation>
+	  b parent class_ref 6979202 // Argument
+      end
+    end
+
+    class 6979458 "SingleDash"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7665410 // <generalisation>
+	relation 7633922 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7665410 // <generalisation>
+	  b parent class_ref 6979202 // Argument
+      end
+    end
+
+    class 6992642 "IsSubCommandArgument"
+      visibility package 
+      nactuals 1
+      actual class class_ref 3350274 // static_visitor
+        rank 0 explicit_value ""
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7679106 // <generalisation>
+	relation 7647618 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7679106 // <generalisation>
+	  b parent class_ref 3350274 // static_visitor
+      end
+    end
+
+    class 6999170 "Algorithm"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7685890 // <dependency>
+	relation 7654402 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7685890 // <dependency>
+	  b parent class_ref 6992642 // IsSubCommandArgument
+      end
+    end
+
+    class 6999298 "CommandLineAlgorithm"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 8907778 "findSubCommandNameIndex"
+	public explicit_return_type "int"
+	nparams 1
+	  param in name "cmdl" type class_ref 6978306 // CommandLine
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7686018 // <dependency>
+	relation 7654530 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7686018 // <dependency>
+	  b parent class_ref 6978306 // CommandLine
+      end
+
+      classrelation 7686146 // <dependency>
+	relation 7654658 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7686146 // <dependency>
+	  b parent class_ref 6999170 // Algorithm
+      end
+    end
+
+    classdiagram 5497090 "CommandLineAttributes"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 7005826 "ArgumentListAttributes"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7699202 // <unidirectional association>
+	relation 7667714 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 7699202 // <unidirectional association>
+	  b parent class_ref 6978306 // CommandLine
+      end
+
+      operation 8928002 "findMainCommandPositionalArgumentIndexFromCommandLineIndex"
+	public explicit_return_type "int"
+	nparams 1
+	  param in name "commandLineIndex" explicit_type "int"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+end
