@@ -1,6 +1,6 @@
 format 224
 "CommandLineParser" // Mdt::CommandLineParser
-  revision 45
+  revision 65
   modified_by 2 "philippe"
   // class settings
   
@@ -181,7 +181,7 @@ ${inlines}
       size Legal-Landscape
     end
 
-    class 6938498 "ArgumentType"
+    class 6938498 "ValueType"
       visibility package stereotype "enum"
       cpp_decl "${comment}enum ${name} {
 ${items}
@@ -204,7 +204,7 @@ ${items}};
       mysql_decl ""
       
       attribute 4684930 "Unspecified"
-	public type class_ref 6938498 // ArgumentType
+	public explicit_type "ArgumentType"
 	cpp_decl "  ${name}${value},${comment}"
 	java_decl ""
 	php_decl ""
@@ -215,7 +215,7 @@ ${items}};
       end
 
       attribute 4685058 "Directory"
-	public type class_ref 6938498 // ArgumentType
+	public explicit_type "ArgumentType"
 	cpp_decl "  ${name}${value},${comment}"
 	java_decl ""
 	php_decl ""
@@ -226,7 +226,7 @@ ${items}};
       end
 
       attribute 4685186 "File"
-	public type class_ref 6938498 // ArgumentType
+	public explicit_type "ArgumentType"
 	cpp_decl "  ${name}${value},${comment}"
 	java_decl ""
 	php_decl ""
@@ -237,7 +237,7 @@ ${items}};
       end
 
       attribute 4685314 "DirectoryOrFile"
-	public type class_ref 6938498 // ArgumentType
+	public explicit_type "ArgumentType"
 	cpp_decl "  ${name}${value},${comment}"
 	java_decl ""
 	php_decl ""
@@ -530,13 +530,13 @@ ${inlines}
 	MysqlColumn
       end
 
-      classrelation 7609986 // <directional composition>
-	relation 7578498 *-->
+      classrelation 7806594 // <directional composition>
+	relation 7775106 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 7609986 // <directional composition>
-	  b parent class_ref 6938498 // ArgumentType
+	    classrelation_ref 7806594 // <directional composition>
+	  b parent class_ref 6938498 // ValueType
       end
     end
 
@@ -659,19 +659,10 @@ ${inlines}
 	MysqlColumn
       end
 
-      classrelation 7657730 // <directional composition>
-	relation 7626242 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7657730 // <directional composition>
-	  b parent class_ref 6938498 // ArgumentType
-      end
-
       operation 8888066 "setValueType"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "t" type class_ref 6938498 // ArgumentType
+	  param in name "t" explicit_type "ArgumentType"
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
@@ -695,6 +686,15 @@ ${inlines}
 	mysql_decl ""
 	MysqlColumn
       end
+
+      classrelation 7806722 // <directional composition>
+	relation 7775234 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7806722 // <directional composition>
+	  b parent class_ref 6938498 // ValueType
+      end
     end
 
     classdiagram 5470850 "ParserResult"
@@ -716,18 +716,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      attribute 4698498 "ErrorText"
-	private type class_ref 161026 // QString
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
       classrelation 7616898 // <directional composition>
 	relation 7585410 *-->
 	  a role_name "" multiplicity "2" private
@@ -735,21 +723,6 @@ ${inlines}
 "
 	    classrelation_ref 7616898 // <directional composition>
 	  b parent class_ref 6945154 // ParserResultCommand
-      end
-
-      operation 8833154 "hasError"
-	public explicit_return_type "bool"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
       end
 
       operation 8833410 "isSet"
@@ -987,7 +960,7 @@ ${inlines}
 
     classdiagram 5438210 "CommandLineParser"
       classdiagramsettings member_max_width 0 end
-      size Legal-Landscape
+      size B-Landscape
     end
 
     class 6925442 "Parser"
@@ -1004,12 +977,12 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 7576578 // <unidirectional association>
-	relation 7545090 --->
+      classrelation 7576578 // <directional composition>
+	relation 7545090 *-->
 	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 7576578 // <unidirectional association>
+	    classrelation_ref 7576578 // <directional composition>
 	  b parent class_ref 6924802 // ParserDefinition
       end
 
@@ -1031,11 +1004,12 @@ ${inlines}
 
       operation 8799746 "parse"
 	public explicit_return_type "bool"
-	nparams 1
+	nparams 2
 	  param in name "args" type class_ref 160770 // QStringList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	  param in name "def" type class_ref 6924802 // ParserDefinition
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -1045,12 +1019,41 @@ ${inlines}
 	
       end
 
-      classrelation 7616770 // <unidirectional association>
-	relation 7585282 --->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+      operation 8961538 "commandLine"
+	public return_type class_ref 6978306 // CommandLine
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
-	    classrelation_ref 7616770 // <unidirectional association>
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8961666 "toResult"
+	public return_type class_ref 6945026 // ParserResult
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7616770 // <dependency>
+	relation 7585282 -_->
+	  a private
+	    cpp default "#include in source"
+	    classrelation_ref 7616770 // <dependency>
 	  b parent class_ref 6945026 // ParserResult
       end
 
@@ -1071,15 +1074,6 @@ ${inlines}
 	
       end
 
-      classrelation 7617282 // <directional composition>
-	relation 7585794 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7617282 // <directional composition>
-	  b parent class_ref 6945538 // ParserCommand
-      end
-
       operation 8840962 "process"
 	class_operation public return_type class_ref 6945026 // ParserResult
 	nparams 2
@@ -1097,12 +1091,21 @@ ${inlines}
 	
       end
 
-      classrelation 7623938 // <dependency>
-	relation 7592450 -_->
+      classrelation 7739906 // <directional composition>
+	relation 7708418 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7739906 // <directional composition>
+	  b parent class_ref 6978306 // CommandLine
+      end
+
+      classrelation 7740034 // <dependency>
+	relation 7708546 -_->
 	  a public
 	    cpp default "#include in source"
-	    classrelation_ref 7623938 // <dependency>
-	  b parent class_ref 4161794 // QCommandLineParser
+	    classrelation_ref 7740034 // <dependency>
+	  b parent class_ref 7052418 // ParseError
       end
     end
 
@@ -1170,6 +1173,56 @@ ${inlines}
 	
 	
       end
+    end
+
+    class 7052418 "ParseError"
+      visibility package stereotype "exception"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}exception ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7780354 // <directional composition>
+	relation 7748866 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7780354 // <directional composition>
+	  b parent class_ref 7085570 // ParseErrorCode
+      end
+    end
+
+    class 7085570 "ParseErrorCode"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 
@@ -1432,10 +1485,16 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
+      associated_diagram classdiagram_ref 5529730 // Impl_BashCompletionScript
     end
 
     classdiagram 5451266 "BashCompletionGenerator"
-      classdiagramsettings member_max_width 0 end
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+      size A2-Landscape
+    end
+
+    classdiagram 5542786 "BashCompletionGenerator_Def"
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
       size C-Landscape
     end
 
@@ -1594,6 +1653,14 @@ ${inlines}
 	
 	
       end
+
+      classrelation 7766786 // <dependency>
+	relation 7735298 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7766786 // <dependency>
+	  b parent class_ref 7065474 // Script
+      end
     end
 
     class 6904834 "BashCompletionGeneratorPositionalArgument"
@@ -1630,22 +1697,13 @@ ${inlines}
 	  b parent class_ref 6925058 // ParserDefinitionPositionalArgument
       end
 
-      classrelation 7610242 // <directional composition>
-	relation 7578754 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7610242 // <directional composition>
-	  b parent class_ref 6938498 // ArgumentType
-      end
-
       classrelation 7725826 // <directional composition>
 	relation 7694338 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	    classrelation_ref 7725826 // <directional composition>
-	  b parent class_ref 7019138 // BashCompletionAction
+	  b parent class_ref 7019138 // Action
       end
     end
 
@@ -1748,7 +1806,23 @@ ${inlines}
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	    classrelation_ref 7725954 // <directional composition>
-	  b parent class_ref 7019138 // BashCompletionAction
+	  b parent class_ref 7019138 // Action
+      end
+
+      operation 8968322 "setValueAction"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "a" type class_ref 7019138 // Action
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
       end
     end
 
@@ -1869,20 +1943,20 @@ ${inlines}
 	  b parent class_ref 6904450 // BashCompletionGenerator
       end
 
-      classrelation 7637506 // <dependency>
-	relation 7606018 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7637506 // <dependency>
-	  b parent class_ref 6945026 // ParserResult
-      end
-
       classrelation 7637634 // <dependency>
 	relation 7606146 -_->
 	  a public
 	    cpp default "#include in source"
 	    classrelation_ref 7637634 // <dependency>
 	  b parent class_ref 6924802 // ParserDefinition
+      end
+
+      classrelation 7793538 // <dependency>
+	relation 7762050 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7793538 // <dependency>
+	  b parent class_ref 6958722 // BashCompletionParserQuery
       end
     end
 
@@ -1900,15 +1974,6 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      classrelation 7644546 // <unidirectional association>
-	relation 7613058 --->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
-"
-	    classrelation_ref 7644546 // <unidirectional association>
-	  b parent class_ref 6945026 // ParserResult
-      end
-
       attribute 4705282 "CursorPositionIndex"
 	private explicit_type "int"
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
@@ -2000,140 +2065,6 @@ ${inlines}
 "
 	    classrelation_ref 7705858 // <directional composition>
 	  b parent class_ref 7005826 // ArgumentListAttributes
-      end
-    end
-
-    class 6965250 "ParserResultInCommandLineIndexMap"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7651074 // <unidirectional association>
-	relation 7619586 --->
-	  a role_name "" public
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
-"
-	    classrelation_ref 7651074 // <unidirectional association>
-	  b parent class_ref 6945026 // ParserResult
-      end
-
-      operation 8868482 "commandLineArgumentCount"
-	public explicit_return_type "int"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 8868226 "mainCommandPositionalArgumentIndexFromCommandLineIndex"
-	public explicit_return_type "int"
-	nparams 1
-	  param in name "cli" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 8868354 "subCommandPositionalArgumentIndexFromCommandLineIndex"
-	public explicit_return_type "int"
-	nparams 1
-	  param in name "cli" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 8867842 "subCommandNameCommandLineIndex"
-	public explicit_return_type "int"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 8875010 "isCommandLineIndexInSubCommand"
-	public explicit_return_type "bool"
-	nparams 1
-	  param in name "cli" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 8867970 "isCommandLineIndexAtMainCommandOption"
-	public explicit_return_type "bool"
-	nparams 1
-	  param in name "ci" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 8868098 "isCommandLineIndexAtSubCommandOption"
-	public explicit_return_type "bool"
-	nparams 1
-	  param in name "ci" explicit_type "int"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
       end
     end
   end

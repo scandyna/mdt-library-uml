@@ -2,115 +2,69 @@ format 224
 
 classcanvas 128002 class_ref 6924802 // ParserDefinition
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 615 120 2000
+  xyz 343 40 2000
 end
 classcanvas 128130 class_ref 4161794 // QCommandLineParser
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 930 264 2000
-end
-classcanvas 128258 class_ref 6924930 // ParserDefinitionCommand
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 74 120 3005
+  xyz 409 436 2000
 end
 classcanvas 128642 class_ref 6925442 // Parser
   classdiagramsettings member_max_width 0 end
-  xyz 456 195 2000
+  xyz 184 121 2000
 end
-note 128770 "Main goals:
- - Show help if -h/--help
- - setup parser regarding arguments (sub-commands)
-"
-  xyzwh 199 205 2000 219 87
 classcanvas 129154 class_ref 6945026 // ParserResult
-  classdiagramsettings member_max_width 0 end
-  xyz 423 360 2000
-end
-classcanvas 129410 class_ref 6945154 // ParserResultCommand
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 225 408 2000
-end
-classcanvas 129666 class_ref 6925186 // ParserDefinitionOption
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 81 40 3011
-end
-classcanvas 129922 class_ref 6925058 // ParserDefinitionPositionalArgument
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 40 328 3011
-end
-classcanvas 130434 class_ref 6945410 // ParserResultOption
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 240 488 2000
+  classdiagramsettings hide_operations yes member_max_width 0 end
+  xyz 358 305 2000
 end
 classcanvas 130690 class_ref 6945538 // ParserCommand
   classdiagramsettings member_max_width 0 end
-  xyz 945 184 2000
+  xyz 248 436 2000
 end
 classcanvas 131458 class_ref 6952194 // CompletionParser
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 40.5 608.5 2000
+  xyz 40.5 440.5 2000
 end
-relationcanvas 128514 relation_ref 7544450 // <directional composition>
-  decenter_begin 390
-  decenter_end 390
-  from ref 128002 z 3006 to ref 128258
-  no_role_a no_role_b
-  multiplicity_a_pos 264 143 3000 no_multiplicity_b
+classcanvas 131586 class_ref 6978306 // CommandLine
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 40 177 2000
 end
-relationcanvas 129026 relation_ref 7545090 // <unidirectional association>
+classcanvas 131842 class_ref 7052418 // ParseError
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 658 167 2000
+end
+classcanvas 132482 class_ref 7085570 // ParseErrorCode
+  classdiagramsettings member_max_width 0 end
+  xyz 652 305 2000
+end
+relationcanvas 129026 relation_ref 7545090 // <directional composition>
   from ref 128642 z 2001 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129282 relation_ref 7585282 // <unidirectional association>
+relationcanvas 129282 relation_ref 7585282 // <dependency>
+  decenter_end 467
   from ref 128642 z 2001 to ref 129154
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129538 relation_ref 7585410 // <directional composition>
-  decenter_begin 525
-  decenter_end 585
-  from ref 129154 z 2001 to ref 129410
-  no_role_a no_role_b
-  multiplicity_a_pos 393 439 3000 no_multiplicity_b
-end
-relationcanvas 129794 relation_ref 7544834 // <directional composition>
-  decenter_begin 475
-  from ref 128258 z 3012 to ref 129666
-  no_role_a no_role_b
-  multiplicity_a_pos 144 88 3000 no_multiplicity_b
-end
-relationcanvas 130050 relation_ref 7544706 // <directional composition>
-  decenter_begin 475
-  from ref 128258 z 3012 to ref 129922
-  no_role_a no_role_b
-  multiplicity_a_pos 144 306 3000 no_multiplicity_b
-end
-relationcanvas 130562 relation_ref 7585666 // <directional composition>
-  decenter_end 467
-  from ref 129410 z 2001 to ref 130434
-  no_role_a no_role_b
-  multiplicity_a_pos 288 466 3000 no_multiplicity_b
-end
-relationcanvas 130818 relation_ref 7585794 // <directional composition>
-  decenter_begin 196
-  decenter_end 780
-  from ref 128642 z 2001 to ref 130690
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
 relationcanvas 130946 relation_ref 7585922 // <dependency>
-  decenter_begin 529
   from ref 130690 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131330 relation_ref 7592450 // <dependency>
-  decenter_begin 794
-  decenter_end 390
-  from ref 128642 z 2001 to ref 128130
+relationcanvas 131714 relation_ref 7708418 // <directional composition>
+  from ref 128642 z 2001 to ref 131586
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 128898 -_-_
-  from ref 128770 z 2001 to ref 128642
+relationcanvas 131970 relation_ref 7708546 // <dependency>
+  from ref 128642 z 2001 to ref 131842
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132610 relation_ref 7748866 // <directional composition>
+  from ref 131842 z 2001 to ref 132482
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 end

@@ -1,0 +1,123 @@
+format 224
+
+classcanvas 128002 class_ref 7065474 // Script
+  classdiagramsettings member_max_width 0 end
+  xyz 666 301 2000
+end
+classcanvas 128130 class_ref 7012482 // BashCompletionParserCurrentArgumentType
+  classdiagramsettings member_max_width 0 end
+  xyz 236.5 600.5 2000
+end
+classcanvas 128258 class_ref 6904450 // BashCompletionGenerator
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 682 408 2000
+end
+classcanvas 128386 class_ref 6904834 // BashCompletionGeneratorPositionalArgument
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 42 408 2000
+end
+classcanvas 128514 class_ref 6905090 // BashCompletionGeneratorOption
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 408 488 2000
+end
+classcanvas 128642 class_ref 6904962 // BashCompletionGeneratorCommand
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 393 408 2006
+end
+classcanvas 129154 class_ref 7019138 // Action
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 170 488 2006
+end
+classcanvas 129666 class_ref 7065602 // ScriptCaseStatement
+  classdiagramsettings member_max_width 0 end
+  xyz 861 151 2000
+end
+classcanvas 130306 class_ref 7072130 // ScriptCaseClause
+  classdiagramsettings member_max_width 0 end
+  xyz 962 41 2000
+end
+classcanvas 130690 class_ref 7072258 // ScriptCompletionsFunction
+  classdiagramsettings member_max_width 0 end
+  xyz 922 295 2000
+end
+classcanvas 131074 class_ref 7072386 // ScriptCompletionsFunctionVariable
+  classdiagramsettings member_max_width 0 end
+  xyz 930 417 2000
+end
+classcanvas 131330 class_ref 7072514 // ScriptCaseStatementExpression
+  classdiagramsettings member_max_width 0 end
+  xyz 607 184 2000
+end
+relationcanvas 128770 relation_ref 7531010 // <directional composition>
+  decenter_begin 585
+  decenter_end 585
+  from ref 128642 z 2007 to ref 128386
+  no_role_a no_role_b
+  multiplicity_a_pos 360 439 3000 no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 7531266 // <directional composition>
+  decenter_begin 514
+  from ref 128642 z 2007 to ref 128514
+  no_role_a no_role_b
+  multiplicity_a_pos 504 466 3000 no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 7531138 // <directional composition>
+  decenter_begin 585
+  decenter_end 585
+  from ref 128258 z 2007 stereotype "<<map>>" xyz 632 432 2007 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 7694466 // <directional composition>
+  decenter_begin 585
+  decenter_end 585
+  from ref 128514 z 2007 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 7694338 // <directional composition>
+  decenter_begin 510
+  decenter_end 566
+  from ref 128386 z 2007 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130434 relation_ref 7735170 // <directional composition>
+  decenter_begin 488
+  from ref 129666 z 2001 to ref 130306
+  no_role_a no_role_b
+  multiplicity_a_pos 1032 119 3000 no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 7735298 // <dependency>
+  decenter_begin 519
+  decenter_end 516
+  from ref 128258 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130818 relation_ref 7735426 // <directional composition>
+  decenter_begin 482
+  decenter_end 488
+  from ref 130690 z 2001 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130946 relation_ref 7735554 // <directional composition>
+  from ref 128002 z 2001 to ref 130690
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131202 relation_ref 7735682 // <directional composition>
+  decenter_begin 482
+  from ref 130690 z 2001 to ref 131074
+  no_role_a no_role_b
+  multiplicity_a_pos 1032 395 3000 no_multiplicity_b
+end
+relationcanvas 131458 relation_ref 7735810 // <directional composition>
+  decenter_begin 532
+  decenter_end 585
+  from ref 129666 z 2001 to ref 131330
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

@@ -1,6 +1,6 @@
 format 224
-"apps" // apps
-  revision 12
+"ModbusIoTool" // apps::ModbusIoTool
+  revision 1
   modified_by 2 "philippe"
   // class settings
   
@@ -30,25 +30,4 @@ format 224
   activitydiagramsettings
    end
   
-  package_ref 904578 // ErdschlussAndCcLogger
-
-  package_ref 911874 // IbsErdschlussAlarm
-
-  package_ref 759554 // T475TaskList
-
-  package_ref 779138 // PartList
-
-  package_ref 1010818 // DocumentKit
-
-  package_ref 792194 // VehicleQm
-
-  package_ref 805506 // RioCalc
-
-  package_ref 838274 // MdtBuildConfig
-
-  package_ref 1103106 // DeployUtils_Cli
-
-  package_ref 1103234 // DeployUtils_Gui
-
-  package_ref 1142402 // ModbusIoTool
 end

@@ -2,58 +2,58 @@ format 224
 
 classcanvas 128002 class_ref 6924802 // ParserDefinition
   classdiagramsettings member_max_width 0 end
-  xyz 416 441 2000
+  xyz 416 481 2000
 end
 classcanvas 128258 class_ref 6924930 // ParserDefinitionCommand
   classdiagramsettings member_max_width 0 end
-  xyz 441 227 2000
+  xyz 437 287 2000
 end
 classcanvas 129026 class_ref 6925058 // ParserDefinitionPositionalArgument
   classdiagramsettings member_max_width 0 end
-  xyz 488 64 2000
+  xyz 816 320 2000
 end
 classcanvas 129538 class_ref 6925186 // ParserDefinitionOption
   classdiagramsettings member_max_width 0 end
-  xyz 824 209 2000
+  xyz 476 40 2000
 end
-classcanvas 129794 class_ref 6938498 // ArgumentType
+classcanvas 129794 class_ref 6938498 // ValueType
   classdiagramsettings member_max_width 0 end
-  xyz 850 41 2000
+  xyz 834 81 2000
 end
 note 130178 "Should add a number of maximum expected positional arguments (can be sued for user checks + completion)"
-  xyzwh 40 277 2000 361 55
+  xyzwh 40 337 2000 361 55
 note 130434 "See:
  - https://www.gnu.org/software/guile/manual/html_node/Command-Line-Format.html
  - file:///usr/share/qt5/doc/qtcore/qcommandlineparser.html#values"
-  xyzwh 40.5 640.5 2000 523 85
+  xyzwh 40.5 680.5 2000 523 85
 relationcanvas 128386 relation_ref 7544450 // <directional composition>
   from ref 128002 z 2001 to ref 128258
   no_role_a no_role_b
-  multiplicity_a_pos 594 389 3000 no_multiplicity_b
+  multiplicity_a_pos 593 449 3000 no_multiplicity_b
 end
 relationcanvas 129154 relation_ref 7544706 // <directional composition>
+  decenter_begin 470
+  decenter_end 449
   from ref 128258 z 2001 to ref 129026
   no_role_a no_role_b
-  multiplicity_a_pos 593 160 3000 no_multiplicity_b
+  multiplicity_a_pos 800 367 3000 no_multiplicity_b
 end
 relationcanvas 129666 relation_ref 7544834 // <directional composition>
   from ref 128258 z 2001 to ref 129538
   no_role_a no_role_b
-  multiplicity_a_pos 808 315 3000 no_multiplicity_b
+  multiplicity_a_pos 593 256 3000 no_multiplicity_b
 end
-relationcanvas 130050 relation_ref 7578498 // <directional composition>
-  decenter_begin 449
+relationcanvas 130946 relation_ref 7775106 // <directional composition>
+  decenter_end 478
   from ref 129026 z 2001 to ref 129794
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 130562 relation_ref 7626242 // <directional composition>
-  decenter_begin 483
-  decenter_end 478
+relationcanvas 131074 relation_ref 7775234 // <directional composition>
   from ref 129538 z 2001 to ref 129794
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 130306 -_-_
+line 130306 -_-_ decenter_begin 470 decenter_end 418
   from ref 128258 z 2001 to ref 130178
 end

@@ -1,6 +1,6 @@
 format 224
 "DeployUtils_Cli" // apps::DeployUtils_Cli
-  revision 28
+  revision 40
   modified_by 2 "philippe"
   // class settings
   
@@ -60,9 +60,34 @@ format 224
       size A4
     end
 
+    class 7118594 "CommandLineParseError"
+      visibility package stereotype "exception"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}exception ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7820162 // <generalisation>
+	relation 7788674 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7820162 // <generalisation>
+	  b parent class_ref 6918146 // QRuntimeError
+      end
+    end
+
     classdiagram 5339522 "DeployUtils_Cli"
       classdiagramsettings member_max_width 0 end
-      size A4
+      size Legal-Landscape
     end
 
     class 6971778 "ErrorCode"
@@ -134,19 +159,10 @@ ${inlines}
 	    classrelation_ref 7528706 // <directional composition>
 	  b parent class_ref 6871426 // CommandLineParser
       end
-
-      classrelation 7554946 // <directional composition>
-	relation 7523458 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7554946 // <directional composition>
-	  b parent class_ref 6877954 // CommandLineParserResult
-      end
     end
 
     classdiagram 5405186 "DeployUtils_Cli_CmdLineParsers"
-      classdiagramsettings member_max_width 0 end
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
       size C-Landscape
     end
 
@@ -166,6 +182,21 @@ ${inlines}
       
       operation 8791298 "applicationName"
 	public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 8988546 "getCopySharedLibrariesTargetDependsOnRequest"
+	public return_type class_ref 7105282 // CopySharedLibrariesTargetDependsOnRequest
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -217,15 +248,6 @@ ${inlines}
 	
       end
 
-      classrelation 7555074 // <directional composition>
-	relation 7523586 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7555074 // <directional composition>
-	  b parent class_ref 6877954 // CommandLineParserResult
-      end
-
       classrelation 7589762 // <directional composition>
 	relation 7558274 *-->
 	  a role_name "" private
@@ -259,9 +281,26 @@ ${inlines}
 	    classrelation_ref 7638018 // <dependency>
 	  b parent class_ref 6952066 // BashCompletionParser
       end
+
+      classrelation 7813506 // <dependency>
+	relation 7782018 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7813506 // <dependency>
+	  b parent class_ref 7105282 // CopySharedLibrariesTargetDependsOnRequest
+      end
+
+      classrelation 7820290 // <directional composition>
+	relation 7788802 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7820290 // <directional composition>
+	  b parent class_ref 7118722 // CopySharedLibrariesTargetDependsOnCommandLineParserDefinition
+      end
     end
 
-    class 6877954 "CommandLineParserResult"
+    class 7118722 "CopySharedLibrariesTargetDependsOnCommandLineParserDefinition"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {
@@ -343,172 +382,6 @@ ${items}};
 	
       end
     end
-
-    class 6884610 "GetSharedLibrariesTargetDependsOnCommand"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7541762 // <directional composition>
-	relation 7510274 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7541762 // <directional composition>
-	  b parent class_ref 6884738 // GetSharedLibrariesTargetDependsOnOption
-      end
-    end
-
-    class 6884738 "GetSharedLibrariesTargetDependsOnOption"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-    end
-
-    class 6891266 "GetSharedLibrariesTargetDependsOnCommandLineParser"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7548290 // <generalisation>
-	relation 7516802 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 7548290 // <generalisation>
-	  b parent class_ref 138626 // QObject
-      end
-    end
-
-    class 6897794 "MessageLogger"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-    end
-
-    class 6897922 "CopySharedLibrariesTargetDependsOnCommandLineParser"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7554818 // <generalisation>
-	relation 7523330 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 7554818 // <generalisation>
-	  b parent class_ref 138626 // QObject
-      end
-
-      operation 8798338 "commandName"
-	public return_type class_ref 161026 // QString
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 8813186 "command"
-	public return_type class_ref 6924930 // ParserDefinitionCommand
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 7583234 // <directional composition>
-	relation 7551746 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7583234 // <directional composition>
-	  b parent class_ref 6924930 // ParserDefinitionCommand
-      end
-    end
-
-    class 6918146 "QRuntimeError"
-      visibility package stereotype "exception"
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl "${comment}exception ${name} {
-${members}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7569282 // <generalisation>
-	relation 7537794 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 7569282 // <generalisation>
-	  b parent class_ref 4372226 // runtime_error
-      end
-    end
   end
 
   classview 2899714 "DeployUtils_Cli_BashCompletion"
@@ -565,22 +438,6 @@ ${inlines}
 	    cpp default "#include in source"
 	    classrelation_ref 7561858 // <dependency>
 	  b parent class_ref 6871426 // CommandLineParser
-      end
-
-      classrelation 7561986 // <dependency>
-	relation 7530498 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7561986 // <dependency>
-	  b parent class_ref 6891266 // GetSharedLibrariesTargetDependsOnCommandLineParser
-      end
-
-      classrelation 7562114 // <dependency>
-	relation 7530626 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7562114 // <dependency>
-	  b parent class_ref 6897922 // CopySharedLibrariesTargetDependsOnCommandLineParser
       end
     end
   end

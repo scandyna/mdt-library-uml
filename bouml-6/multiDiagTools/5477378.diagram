@@ -2,64 +2,64 @@ format 224
 
 classcanvas 128002 class_ref 6952066 // BashCompletionParser
   classdiagramsettings member_max_width 0 end
-  xyz 209 305 2000
+  xyz 137 242 2000
 end
 classcanvas 128130 class_ref 6925442 // Parser
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 141 239 2000
-end
-classcanvas 128258 class_ref 6945026 // ParserResult
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 242 239 2006
+  xyz 426 36 2000
 end
 classcanvas 128642 class_ref 6958722 // BashCompletionParserQuery
   classdiagramsettings member_max_width 0 end
-  xyz 576 44 2000
-end
-classcanvas 129026 class_ref 6965250 // ParserResultInCommandLineIndexMap
-  classdiagramsettings member_max_width 0 end
-  xyz 38 50 2000
+  xyz 40 64 2000
 end
 classcanvas 129538 class_ref 7012354 // BashCompletionParserCurrentArgument
   classdiagramsettings member_max_width 0 end
-  xyz 51 465 2000
+  xyz 41 431 2000
 end
 classcanvas 129666 class_ref 7012482 // BashCompletionParserCurrentArgumentType
   classdiagramsettings member_max_width 0 end
-  xyz 402 442 2000
+  xyz 394 382 2000
 end
-classcanvas 129922 class_ref 7019138 // BashCompletionAction
+classcanvas 129922 class_ref 7019138 // Action
   classdiagramsettings member_max_width 0 end
-  xyz 125 574 2000
+  xyz 40.5 640.5 2000
 end
 note 130050 "See:
 - https://kislyuk.github.io/argcomplete/"
-  xyzwh 40.5 636.5 2000 321 73
-relationcanvas 128386 relation_ref 7585282 // <unidirectional association>
-  from ref 128130 z 2007 to ref 128258
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
+  xyzwh 451.5 640.5 2000 321 73
+classcanvas 130178 class_ref 6978306 // CommandLine
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 520 36 2006
 end
-relationcanvas 128514 relation_ref 7606018 // <dependency>
-  from ref 128002 z 2007 to ref 128258
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 128770 relation_ref 7613058 // <unidirectional association>
-  geometry VH unfixed
-  decenter_begin 510
-  from ref 128642 z 2007 to point 749 256
-  line 129410 z 2007 to ref 128258
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 129154 relation_ref 7619586 // <unidirectional association>
-  from ref 129026 z 2007 to ref 128258
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
+classcanvas 130434 class_ref 7005826 // ArgumentListAttributes
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 492 112 2012
 end
 relationcanvas 129794 relation_ref 7674242 // <directional composition>
   from ref 129538 z 2001 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130306 relation_ref 7708418 // <directional composition>
+  from ref 128130 z 2007 to ref 130178
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 7667714 // <unidirectional association>
+  decenter_begin 472
+  from ref 130434 z 2013 to ref 130178
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130690 relation_ref 7674370 // <directional composition>
+  decenter_begin 525
+  from ref 128642 z 2013 to ref 130434
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130818 relation_ref 7762050 // <dependency>
+  decenter_end 510
+  from ref 128002 z 2001 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

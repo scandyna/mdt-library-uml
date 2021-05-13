@@ -1,0 +1,5 @@
+format 224
+
+note 128002 "See f.ex. gflags on Windows"
+  xyzwh 96 171 2000 263 53
+end

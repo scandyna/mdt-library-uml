@@ -1,10 +1,12 @@
-format 213
+format 224
 "Impl" // Mdt::DeployUtils::Impl
-  revision 2
+  revision 3
   modified_by 2 "philippe"
   // class settings
   
   classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
   
   usecasediagramsettings end
   
@@ -13,6 +15,8 @@ format 213
   collaborationdiagramsettings end
   
   objectdiagramsettings end
+  
+  objectcompositediagramsettings end
   
   componentdiagramsettings
    end
@@ -32,9 +36,13 @@ format 213
     
     classdiagramsettings member_max_width 0 end
     
+    classcompositediagramsettings end
+    
     collaborationdiagramsettings end
     
     objectdiagramsettings end
+    
+    objectcompositediagramsettings end
     
     sequencediagramsettings end
     
@@ -49,4 +57,6 @@ format 213
   package_ref 687490 // Ldd
 
   package_ref 694018 // LibraryTree
+
+  package_ref 1148930 // Dumpbin
 end

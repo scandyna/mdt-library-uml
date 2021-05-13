@@ -1,0 +1,47 @@
+format 224
+
+note 128002 "Make also a Debug.h (or similar) which provides overloads to stream various types.
+
+Do implement in .cpp file ! (recursive dependencies!)"
+  xyzwh 40.5 432.5 2000 565 77
+classcanvas 128130 class_ref 4278530 // ConsoleStream
+  classdiagramsettings member_max_width 0 end
+  xyz 40 40 2000
+end
+classcanvas 128258 class_ref 4271874 // Console
+  classdiagramsettings member_max_width 0 end
+  xyz 138 216 2006
+end
+classcanvas 128514 class_ref 2132482 // QMessageLogger
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode no end
+  xyz 253.5 589.5 2000
+end
+classcanvas 128642 class_ref 2132098 // QDebugStateSaver
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode no end
+  xyz 458.5 589.5 2000
+end
+classcanvas 128770 class_ref 2132354 // QLoggingCategory
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode no end
+  xyz 40.5 589.5 2000
+end
+note 128898 "SEE spdlog !"
+  xyzwh 40.5 710.5 2005 119 39
+classcanvas 129026 class_ref 2132226 // QDebug
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 528 88 2006
+end
+note 129282 "Also some CMake style output logger"
+  xyzwh 192.5 708.5 2000 249 47
+relationcanvas 128386 relation_ref 4811778 // <unidirectional association>
+  from ref 128258 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 4811650 // <directional composition>
+  decenter_begin 525
+  decenter_end 585
+  from ref 128130 z 2007 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

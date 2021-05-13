@@ -1,6 +1,6 @@
 format 224
 "CommandLine" // Mdt::CommandLineParser::CommandLine
-  revision 11
+  revision 15
   modified_by 2 "philippe"
   // class settings
   
@@ -51,7 +51,7 @@ format 224
     activitydiagramsettings
      end
     classdiagram 5483906 "CommandLine"
-      classdiagramsettings member_max_width 0 end
+      classdiagramsettings hide_operations yes member_max_width 0 end
       size C-Landscape
     end
 
@@ -554,6 +554,87 @@ ${inlines}
 	
 	
 	
+      end
+    end
+
+    class 7092098 "ShortOptionList"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7786882 // <generalisation>
+	relation 7755394 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7786882 // <generalisation>
+	  b parent class_ref 6979202 // Argument
+      end
+
+      attribute 4772610 "LastOptionExpectsValue"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 7092226 "ShortOptionListWithLastHavingValue"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7787010 // <generalisation>
+	relation 7755522 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7787010 // <generalisation>
+	  b parent class_ref 6979202 // Argument
+      end
+    end
+
+    class 7098754 "UnknownOption"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7800066 // <generalisation>
+	relation 7768578 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7800066 // <generalisation>
+	  b parent class_ref 6979202 // Argument
       end
     end
   end

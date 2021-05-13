@@ -1,0 +1,75 @@
+format 224
+
+classcanvas 128002 class_ref 6897794 // MessageLogger
+  classdiagramsettings member_max_width 0 end
+  xyz 504 41 2000
+end
+classcanvas 128130 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 440.5 720.5 2000
+end
+classcanvas 128386 class_ref 7125250 // CMakeStyleMessageLogger
+  classdiagramsettings member_max_width 0 end
+  xyz 42 288 2000
+end
+classcanvas 128898 class_ref 4278530 // ConsoleStream
+  classdiagramsettings member_max_width 0 end
+  xyz 336 508 2000
+end
+classcanvas 129026 class_ref 4271874 // Console
+  classdiagramsettings member_max_width 0 end
+  xyz 42 508 2006
+end
+note 129282 "SEE spdlog !"
+  xyzwh 585.5 720.5 2005 119 39
+classcanvas 129410 class_ref 7125506 // Message
+  classdiagramsettings member_max_width 0 end
+  xyz 42 750 2005
+end
+classcanvas 129538 class_ref 7125634 // MessageType
+  classdiagramsettings member_max_width 0 end
+  xyz 191 722 2005
+end
+classcanvas 129794 class_ref 7125762 // ConsoleMessageLogger
+  classdiagramsettings member_max_width 0 end
+  xyz 273 288 2000
+end
+classcanvas 130690 class_ref 7132418 // AbstractMessageLoggerBackend
+  classdiagramsettings member_max_width 0 end
+  xyz 241 158 2000
+end
+note 131842 "Make a constructor that takes all params,
+and this one iniits the static instance."
+  xyzwh 537 369 2005 311 63
+relationcanvas 129154 relation_ref 4811778 // <unidirectional association>
+  from ref 129026 z 2007 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 7795714 // <directional composition>
+  from ref 129410 z 2006 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130818 relation_ref 7809026 // <directional composition>
+  from ref 128002 z 2001 to ref 130690
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130946 relation_ref 7809154 // <generalisation>
+  decenter_begin 473
+  from ref 129794 z 2001 to ref 130690
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131074 relation_ref 7809282 // <generalisation>
+  geometry VHV unfixed
+  from ref 128386 z 2001 to point 134 248
+  line 132226 z 2001 to point 350 248
+  line 132354 z 2001 to ref 130690
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 131970 -_-_ decenter_begin 485 decenter_end 488
+  from ref 131842 z 2006 to ref 128002
+end

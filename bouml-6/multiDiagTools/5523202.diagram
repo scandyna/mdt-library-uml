@@ -1,0 +1,11 @@
+format 224
+
+classcanvas 128002 class_ref 7019138 // Action
+  classdiagramsettings member_max_width 0 end
+  xyz 288 125 2000
+end
+classcanvas 128258 class_ref 7012482 // BashCompletionParserCurrentArgumentType
+  classdiagramsettings member_max_width 0 end
+  xyz 188 379 2005
+end
+end

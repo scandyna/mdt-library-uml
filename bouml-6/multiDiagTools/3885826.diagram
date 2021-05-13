@@ -1,4 +1,4 @@
-format 215
+format 224
 
 classcanvas 128258 class_ref 4508290 // SomePort
   classdiagramsettings member_max_width 0 end
@@ -10,7 +10,7 @@ classcanvas 128386 class_ref 329346 // QAbstractSocket
 end
 classcanvas 128514 class_ref 4508162 // Wait
   classdiagramsettings member_max_width 0 end
-  xyz 138.25 333.25 2000
+  xyz 144.25 513.25 2000
 end
 note 128770 "QAbstractSocket has a good API, but:
  - waitFor* methods are blocking (not wait)
