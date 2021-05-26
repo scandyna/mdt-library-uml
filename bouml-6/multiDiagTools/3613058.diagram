@@ -67,7 +67,7 @@ end
 relationcanvas 131458 relation_ref 4673538 // <directional composition>
   geometry HV unfixed
   decenter_end 478
-  from ref 131330 z 2006 to point 908 155
+  from ref 131330 z 2006 to point 908 161
   line 132098 z 2006 to ref 130690
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -77,7 +77,7 @@ relationcanvas 131842 relation_ref 4673794 // <directional composition>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131970 relation_ref 7815810 // <dependency>
+relationcanvas 131970 relation_ref 7815810 // <directional composition>
   decenter_begin 510
   from ref 131330 z 2001 to ref 129794
   no_role_a no_role_b

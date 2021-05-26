@@ -1,0 +1,47 @@
+format 224
+
+classcanvas 128002 class_ref 7146242 // ExecutableFileReader
+  classdiagramsettings member_max_width 0 end
+  xyz 35 152 2000
+end
+classcanvas 128130 class_ref 7146114 // ExecutableFile
+  classdiagramsettings member_max_width 0 end
+  xyz 163 324 2000
+end
+classcanvas 128386 class_ref 7145602 // ElfFileReader
+  classdiagramsettings member_max_width 0 end
+  xyz 105 41 2000
+end
+classcanvas 128642 class_ref 7146370 // PeFileReader
+  classdiagramsettings member_max_width 0 end
+  xyz 426 163 2000
+end
+classcanvas 128898 class_ref 7146498 // ExecutableFileFormat
+  classdiagramsettings member_max_width 0 end
+  xyz 305 281 2000
+end
+relationcanvas 128258 relation_ref 7830402 // <directional composition>
+  decenter_begin 509
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 7830530 // <dependency>
+  decenter_begin 509
+  decenter_end 516
+  from ref 128002 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 7830786 // <dependency>
+  decenter_end 585
+  from ref 128002 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 7830914 // <directional composition>
+  from ref 128130 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

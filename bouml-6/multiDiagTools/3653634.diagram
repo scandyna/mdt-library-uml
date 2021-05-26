@@ -26,6 +26,10 @@ classcanvas 129666 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
   xyz 170.5 40.75 2005
 end
+classcanvas 129922 class_ref 7145858 // ObjectFileType
+  classdiagramsettings member_max_width 0 end
+  xyz 387 414 2000
+end
 relationcanvas 128642 relation_ref 4722178 // <dependency>
   decenter_begin 542
   decenter_end 523

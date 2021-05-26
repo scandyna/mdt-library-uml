@@ -1,0 +1,11 @@
+format 224
+
+classcanvas 128002 class_ref 7145986 // PeFile
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 161.5 2000
+end
+classcanvas 128130 class_ref 7156226 // FileReader
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+end

@@ -2,30 +2,39 @@ format 224
 
 classcanvas 128002 class_ref 4158978 // LibraryInfo
   classdiagramsettings member_max_width 0 end
-  xyz 185 35 2000
+  xyz 401 114 2000
 end
 classcanvas 128130 class_ref 4159490 // LibraryInfoList
   classdiagramsettings member_max_width 0 end
-  xyz 40 92 2006
+  xyz 760 184 2006
 end
 classcanvas 128386 class_ref 4169730 // LibraryMode
   classdiagramsettings member_max_width 0 end
-  xyz 264 223 2006
+  xyz 480 327 2006
 end
 note 128642 "Somewhere (not in LibraryInfo), add a helper to know if a library with its path is system wide installed (also valid for Windows)"
-  xyzwh 40.5 392.5 2000 407 93
+  xyzwh 40.5 360.5 2000 407 93
 classcanvas 128770 class_ref 4169474 // LibraryName
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 498 248 2012
+  xyz 514 36 2012
 end
 classcanvas 129282 class_ref 7138946 // LibraryNameExtension
-  classdiagramsettings member_max_width 0 end
-  xyz 379 528 2018
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 314 36 2018
 end
+classcanvas 129538 class_ref 4168962 // PathList
+  classdiagramsettings member_max_width 0 end
+  xyz 40 159 2023
+end
+note 130050 "What is the goal of LibraryInfo ?
+
+Maybe to generic"
+  xyzwh 109 489 2000 245 71
 relationcanvas 128258 relation_ref 4657666 // <directional composition>
+  decenter_begin 390
   from ref 128130 z 2007 to ref 128002
   no_role_a no_role_b
-  multiplicity_a_pos 169 120 3000 no_multiplicity_b
+  multiplicity_a_pos 729 207 3000 no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 4673538 // <directional composition>
   from ref 128002 z 2007 to ref 128386
@@ -33,21 +42,25 @@ relationcanvas 128514 relation_ref 4673538 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128898 relation_ref 4666882 // <directional composition>
-  decenter_begin 585
   decenter_end 538
-  from ref 128770 z 2013 to ref 128386
+  from ref 128770 z 2013 to point 904 56
+  line 129794 z 2013 to point 904 376
+  line 129922 z 2013 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129026 relation_ref 7815810 // <dependency>
-  geometry HV unfixed
-  from ref 128002 z 2013 to point 542 110
-  line 129154 z 2013 to ref 128770
+relationcanvas 129026 relation_ref 7815810 // <directional composition>
+  from ref 128002 z 2013 to ref 128770
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129410 relation_ref 7822338 // <directional composition>
   from ref 128770 z 2019 to ref 129282
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 7828866 // <directional composition>
+  from ref 128002 z 2024 to ref 129538
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -1,0 +1,119 @@
+format 224
+
+classcanvas 128002 class_ref 7145474 // ElfFile
+  classdiagramsettings member_max_width 0 end
+  xyz 655.5 635.278 2000
+end
+classcanvas 128130 class_ref 7148546 // ProgramHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 462.5 635.278 2000
+end
+classcanvas 128258 class_ref 7148802 // SectionHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 244.5 631.278 2000
+end
+classcanvas 128386 class_ref 7155586 // Class
+  classdiagramsettings member_max_width 0 end
+  xyz 208.889 320.833 2000
+end
+classcanvas 128514 class_ref 7155970 // Ident
+  classdiagramsettings member_max_width 0 end
+  xyz 254.889 204.5 2006
+end
+classcanvas 128770 class_ref 7155714 // DataFormat
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5556 172.778 2012
+end
+classcanvas 129026 class_ref 7155842 // Version
+  classdiagramsettings member_max_width 0 end
+  xyz 213.889 40.5556 2012
+end
+classcanvas 129282 class_ref 7156098 // OsAbi
+  classdiagramsettings member_max_width 0 end
+  xyz 382.722 77.3333 2012
+end
+classcanvas 129538 class_ref 7162882 // ObjectFileType
+  classdiagramsettings member_max_width 0 end
+  xyz 514.111 409.889 2017
+end
+classcanvas 129666 class_ref 7163010 // Machine
+  classdiagramsettings member_max_width 0 end
+  xyz 556.111 113.556 2000
+end
+classcanvas 129794 class_ref 7163138 // FileHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 540.111 262.611 2023
+end
+classcanvas 130690 class_ref 7155458 // Header64_OLD
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 635.278 2005
+end
+note 130818 "Maybe, make 2 structs:
+- 1x with Program header infos
+- 1x with Section headers infos
+
+See if those infos are relevant without other fields of the header, like endianness, 32/64 bit, ...
+
+NOTE: the File Header is small, seems like not a obtimisation !"
+  xyzwh 59 447 2005 415 147
+classcanvas 130946 class_ref 7169666 // SectionType
+  classdiagramsettings member_max_width 0 end
+  xyz 484 814 2000
+end
+classcanvas 131202 class_ref 7169794 // SectionFlags
+  classdiagramsettings member_max_width 0 end
+  xyz 547 733 2000
+end
+relationcanvas 128642 relation_ref 7839106 // <directional composition>
+  from ref 128514 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 7838850 // <directional composition>
+  decenter_begin 560
+  from ref 128514 z 2013 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 7838978 // <directional composition>
+  from ref 128514 z 2013 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 7839234 // <directional composition>
+  decenter_begin 219
+  decenter_end 937
+  from ref 128514 z 2013 to ref 129282
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129922 relation_ref 7845762 // <directional composition>
+  decenter_begin 140
+  decenter_end 780
+  from ref 129794 z 2024 to point 341 277
+  line 130306 z 2024 to point 341 240
+  line 130434 z 2024 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 7845890 // <directional composition>
+  from ref 129794 z 2024 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 7846018 // <directional composition>
+  from ref 129794 z 2024 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131074 relation_ref 7859330 // <dependency>
+  from ref 128258 z 2001 to ref 130946
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131330 relation_ref 7859458 // <dependency>
+  from ref 128258 z 2001 to ref 131202
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

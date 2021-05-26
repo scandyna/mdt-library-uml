@@ -1,0 +1,53 @@
+format 224
+
+classcanvas 128130 class_ref 7156354 // FileReader
+  classdiagramsettings member_max_width 0 end
+  xyz 318.5 119.5 2000
+end
+classcanvas 128258 class_ref 7163138 // FileHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 40.25 95.5 2000
+end
+classcanvas 128514 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 612.5 39.5 2000
+end
+classcanvas 128770 class_ref 7148802 // SectionHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 546.25 248.75 2000
+end
+classcanvas 129026 class_ref 7169666 // SectionType
+  classdiagramsettings member_max_width 0 end
+  xyz 776.5 295.5 2006
+end
+classcanvas 129282 class_ref 7182850 // ByteArraySpan
+  classdiagramsettings member_max_width 0 end
+  xyz 253 369 2000
+end
+relationcanvas 128386 relation_ref 7852546 // <directional composition>
+  from ref 128130 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 7852802 // <generalisation>
+  from ref 128130 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 7865986 // <dependency>
+  decenter_end 518
+  from ref 128130 z 2001 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 7859330 // <dependency>
+  from ref 128770 z 2007 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 7872514 // <dependency>
+  from ref 128130 z 2001 to ref 129282
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

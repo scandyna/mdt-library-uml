@@ -1,6 +1,6 @@
 format 224
 "DeployUtils" // Mdt::DeployUtils
-  revision 108
+  revision 116
   modified_by 2 "philippe"
   // class settings
   
@@ -79,6 +79,31 @@ ${members}};
 	    cpp default "${type}"
 	    classrelation_ref 7569282 // <generalisation>
 	  b parent class_ref 4372226 // runtime_error
+      end
+    end
+
+    class 7148418 "ExecutableFileReadError"
+      visibility package stereotype "exception"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}exception ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7863810 // <generalisation>
+	relation 7832322 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7863810 // <generalisation>
+	  b parent class_ref 6918146 // QRuntimeError
       end
     end
   end
@@ -303,259 +328,6 @@ ${inlines}
     classdiagram 3605890 "Settings"
       classdiagramsettings member_max_width 0 end
       size A-Landscape
-    end
-
-    classdiagram 3613314 "Platform"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 4169602 "OperatingSystem"
-      visibility package stereotype "enum"
-      cpp_decl "${comment}enum ${name} {
-${items}
-};
-"
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
-${items};
-${members}}
-"
-      php_decl "${comment}${visibility}final class ${name} {
-${items}}
-"
-      python_2_2 python_decl "class ${name}:
-${docstring}${members}
-"
-      idl_decl "${comment}enum ${name} {
-${items}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 3563138 "Linux"
-	public type class_ref 4169602 // OperatingSystem
-	cpp_decl "  ${name}${value},${comment}"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 3563266 "Windows"
-	public type class_ref 4169602 // OperatingSystem
-	cpp_decl "  ${name}${value},${comment}"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-    end
-
-    class 4169218 "Compiler"
-      visibility package stereotype "enum"
-      cpp_decl "${comment}enum ${name} {
-${items}
-};
-"
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
-${items};
-${members}}
-"
-      php_decl "${comment}${visibility}final class ${name} {
-${items}}
-"
-      python_2_2 python_decl "class ${name}:
-${docstring}${members}
-"
-      idl_decl "${comment}enum ${name} {
-${items}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 3561858 "Gcc"
-	public type class_ref 4169218 // Compiler
-	cpp_decl "  ${name}${value},${comment}"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-    end
-
-    class 4169346 "Processor"
-      visibility package stereotype "enum"
-      cpp_decl "${comment}enum ${name} {
-${items}
-};
-"
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
-${items};
-${members}}
-"
-      php_decl "${comment}${visibility}final class ${name} {
-${items}}
-"
-      python_2_2 python_decl "class ${name}:
-${docstring}${members}
-"
-      idl_decl "${comment}enum ${name} {
-${items}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 3561986 "X86_32"
-	public type class_ref 4169346 // Processor
-	cpp_decl "  ${name}${value},${comment}"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 3562114 "X86_64"
-	public type class_ref 4169346 // Processor
-	cpp_decl "  ${name}${value},${comment}"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-    end
-
-    class 4161538 "Platform"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
-${members}}
-"
-      python_2_2 python_decl "class ${name}${inherit}:
-${docstring}${members}
-"
-      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
-${members}};
-"
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4692994 // <directional composition>
-	relation 4666754 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 4692994 // <directional composition>
-	  b parent class_ref 4169602 // OperatingSystem
-      end
-
-      operation 5850498 "nativePlatform"
-	class_operation public return_type class_ref 4161538 // Platform
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 4715138 // <directional composition>
-	relation 4688898 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 4715138 // <directional composition>
-	  b parent class_ref 4169218 // Compiler
-      end
-
-      classrelation 4715266 // <directional composition>
-	relation 4689026 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 4715266 // <directional composition>
-	  b parent class_ref 4169346 // Processor
-      end
-    end
-
-    class 4160514 "Paths"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4684162 // <dependency>
-	relation 4657922 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 4684162 // <dependency>
-	  b parent class_ref 4151810 // QStandardPaths
-      end
-
-      attribute 3554562 "SourceBinaryFilePath"
-	private type class_ref 161026 // QString
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 3555074 "ToolchainLocation"
-	private type class_ref 161026 // QString
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 3555202 "DestinationDirectoryPath"
-	private type class_ref 161026 // QString
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
     end
 
     classdiagram 3640450 "FileCopier"
@@ -831,192 +603,6 @@ ${items}};
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-    end
-
-    classdiagram 3653634 "BinaryFormat"
-      classdiagramsettings member_max_width 0 end
-      size A-Landscape
-    end
-
-    class 4204290 "BinaryFormat"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      operation 5898114 "readFormat"
-	public explicit_return_type "bool"
-	nparams 1
-	  param in name "binaryFilePath" type class_ref 161026 // QString
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 4748418 // <dependency>
-	relation 4722178 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 4748418 // <dependency>
-	  b parent class_ref 4204418 // ObjdumpBinaryFormatParser
-      end
-
-      classrelation 4748546 // <dependency>
-	relation 4722306 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 4748546 // <dependency>
-	  b parent class_ref 4159746 // ObjdumpWrapper
-      end
-
-      operation 5898242 "operatingSystem"
-	public return_type class_ref 4169602 // OperatingSystem
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 4755586 // <generalisation>
-	relation 4729346 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 4755586 // <generalisation>
-	  b parent class_ref 138626 // QObject
-      end
-    end
-
-    class 4204418 "ObjdumpBinaryFormatParser"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      operation 5898370 "parseFormat"
-	public explicit_return_type "bool"
-	nparams 1
-	  param in name "data" type class_ref 161026 // QString
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 4748930 // <directional composition>
-	relation 4722690 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 4748930 // <directional composition>
-	  b parent class_ref 4169346 // Processor
-      end
-
-      classrelation 4749058 // <directional composition>
-	relation 4722818 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 4749058 // <directional composition>
-	  b parent class_ref 4169602 // OperatingSystem
-      end
-
-      operation 5898754 "operatingSystem"
-	public return_type class_ref 4169602 // OperatingSystem
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5898882 "processor"
-	public return_type class_ref 4169346 // Processor
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5899010 "setOperatingSystem"
-	private explicit_return_type "bool"
-	nparams 1
-	  param in name "os" type class_ref 161026 // QString
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 5899138 "setProcessor"
-	private explicit_return_type "bool"
-	nparams 1
-	  param in name "proc" type class_ref 161026 // QString
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -2872,6 +2458,1276 @@ ${inlines}
       size A4
     end
 
+    classdiagram 3605634 "DeployUtilsLinuxSandbox"
+      classdiagramsettings member_max_width 0 end
+      size C-Landscape
+    end
+
+    class 4160130 "StripWrapper"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 4684290 // <generalisation>
+	relation 4658050 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 4684290 // <generalisation>
+	  b parent class_ref 4161666 // ToolExecutableWrapper
+      end
+    end
+
+    class 4161154 "DesktopFile"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 3605762 "DeployUtilsWindowsSandbox"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 3799170 "TranslationData"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 3785730 "Translations"
+      classdiagramsettings member_max_width 0 end
+      size B-Landscape
+    end
+
+    class 4161282 "FindTranslation"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 6143106 "findTranslations"
+	public return_type class_ref 4393090 // TranslationInfoList
+	nparams 3
+	  param in name "library" type class_ref 4158978 // LibraryInfo
+	  param in name "language" explicit_type "QLocale::Language"
+	  param in name "prefixList" type class_ref 4168962 // PathList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6143234 "findTranslations"
+	public return_type class_ref 4393090 // TranslationInfoList
+	nparams 3
+	  param in name "libraries" type class_ref 4159490 // LibraryInfoList
+	  param in name "language" explicit_type "QLocale::Language"
+	  param in name "prefixList" type class_ref 4168962 // PathList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6164738 "findQtTranslations"
+	class_operation public return_type class_ref 4393090 // TranslationInfoList
+	nparams 3
+	  param in name "qtModule" type class_ref 4265218 // QtModule
+	  param in name "languages" type class_ref 160770 // QStringList
+	  param in name "prefix" type class_ref 4168962 // PathList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6164866 "findQtTranslations"
+	class_operation public return_type class_ref 4393090 // TranslationInfoList
+	nparams 3
+	  param in name "qtModules" type class_ref 4265346 // QtModuleList
+	  param in name "languages" type class_ref 160770 // QStringList
+	  param in name "prefix" type class_ref 4168962 // PathList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6164994 "findMdtTranslations"
+	class_operation public return_type class_ref 4393090 // TranslationInfoList
+	nparams 3
+	  param in name "mdtLibrary" type class_ref 4158978 // LibraryInfo
+	  param in name "languages" type class_ref 160770 // QStringList
+	  param in name "prefix" type class_ref 4168962 // PathList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6165122 "findMdtTranslations"
+	class_operation public return_type class_ref 4393090 // TranslationInfoList
+	nparams 3
+	  param in name "mdtLibraries" type class_ref 4159490 // LibraryInfoList
+	  param in name "languages" type class_ref 160770 // QStringList
+	  param in name "prefix" type class_ref 4168962 // PathList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6165250 "findQtTranslationsRoot"
+	class_operation public return_type class_ref 161026 // QString
+	nparams 1
+	  param in name "prefix" type class_ref 4168962 // PathList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6165378 "findMdtTranslationsRoot"
+	class_operation public return_type class_ref 161026 // QString
+	nparams 1
+	  param in name "prefix" type class_ref 4168962 // PathList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6185730 "getQmFileBaseNameListForQtModule"
+	public return_type class_ref 160770 // QStringList
+	nparams 1
+	  param in name "qtModule" type class_ref 4265218 // QtModule
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6186114 "getQmFileBaseNameListForQtModules"
+	public return_type class_ref 160770 // QStringList
+	nparams 1
+	  param in name "qtModules" type class_ref 4265346 // QtModuleList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 6185858 "qmFileBaseNameForMdtLibrary"
+	public return_type class_ref 161026 // QString
+	nparams 1
+	  param in name "mdtLibrary" type class_ref 4158978 // LibraryInfo
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 4406530 "Translation"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 6171906 "joinTranslations"
+	public explicit_return_type "bool"
+	nparams 3
+	  param in name "translations" type class_ref 4393090 // TranslationInfoList
+	  param in name "destination" type class_ref 161026 // QString
+	  param in name "prefix" type class_ref 4168962 // PathList
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 4954498 // <generalisation>
+	relation 4928258 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 4954498 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 6219266 "lastError"
+	public return_type class_ref 182402 // Error
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 3759234 "DeployMdt"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    classdiagram 3759362 "DeployMdtApp"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+  end
+
+  classview 2992002 "Platform"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 3613314 "Platform"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 4169602 "OperatingSystem"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 3563138 "Linux"
+	public type class_ref 4169602 // OperatingSystem
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 3563266 "Windows"
+	public type class_ref 4169602 // OperatingSystem
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 4169218 "Compiler"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 3561858 "Gcc"
+	public type class_ref 4169218 // Compiler
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 4169346 "Processor"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 3561986 "X86_32"
+	public type class_ref 4169346 // Processor
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 3562114 "X86_64"
+	public type class_ref 4169346 // Processor
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 7145730 "Endianness"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4799618 "BigEndian"
+	public type class_ref 7145730 // Endianness
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4799746 "LittleEndian"
+	public type class_ref 7145730 // Endianness
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 7145858 "ObjectFileType"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4799874 "Unknown"
+	public type class_ref 7145858 // ObjectFileType
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4800002 "Executable"
+	public type class_ref 7145858 // ObjectFileType
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4800130 "SharedLibrary"
+	public type class_ref 7145858 // ObjectFileType
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 4161538 "Platform"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      php_decl "${comment}${final}${abstract}class ${name}${extends}${implements} {
+${members}}
+"
+      python_2_2 python_decl "class ${name}${inherit}:
+${docstring}${members}
+"
+      idl_decl "${comment}${abstract}${custom}valuetype ${name}${inherit} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 4692994 // <directional composition>
+	relation 4666754 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 4692994 // <directional composition>
+	  b parent class_ref 4169602 // OperatingSystem
+      end
+
+      operation 5850498 "nativePlatform"
+	class_operation public return_type class_ref 4161538 // Platform
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 4715138 // <directional composition>
+	relation 4688898 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 4715138 // <directional composition>
+	  b parent class_ref 4169218 // Compiler
+      end
+
+      classrelation 4715266 // <directional composition>
+	relation 4689026 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 4715266 // <directional composition>
+	  b parent class_ref 4169346 // Processor
+      end
+    end
+
+    classdiagram 3653634 "BinaryFormat"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 4204290 "BinaryFormat"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 5898114 "readFormat"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "binaryFilePath" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 4748418 // <dependency>
+	relation 4722178 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 4748418 // <dependency>
+	  b parent class_ref 4204418 // ObjdumpBinaryFormatParser
+      end
+
+      classrelation 4748546 // <dependency>
+	relation 4722306 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 4748546 // <dependency>
+	  b parent class_ref 4159746 // ObjdumpWrapper
+      end
+
+      operation 5898242 "operatingSystem"
+	public return_type class_ref 4169602 // OperatingSystem
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 4755586 // <generalisation>
+	relation 4729346 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 4755586 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+    end
+
+    class 4204418 "ObjdumpBinaryFormatParser"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 5898370 "parseFormat"
+	public explicit_return_type "bool"
+	nparams 1
+	  param in name "data" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 4748930 // <directional composition>
+	relation 4722690 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 4748930 // <directional composition>
+	  b parent class_ref 4169346 // Processor
+      end
+
+      classrelation 4749058 // <directional composition>
+	relation 4722818 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 4749058 // <directional composition>
+	  b parent class_ref 4169602 // OperatingSystem
+      end
+
+      operation 5898754 "operatingSystem"
+	public return_type class_ref 4169602 // OperatingSystem
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5898882 "processor"
+	public return_type class_ref 4169346 // Processor
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5899010 "setOperatingSystem"
+	private explicit_return_type "bool"
+	nparams 1
+	  param in name "os" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 5899138 "setProcessor"
+	private explicit_return_type "bool"
+	nparams 1
+	  param in name "proc" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2991874 "Elf"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5575810 "ElfFileReader"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7145602 "ElfFileReader"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7860482 // <generalisation>
+	relation 7828994 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7860482 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 7884162 // <directional composition>
+	relation 7852674 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7884162 // <directional composition>
+	  b parent class_ref 7156354 // FileReader
+      end
+
+      operation 9056258 "readFileHeader"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9056386 "isElfFile"
+	class_operation public explicit_return_type "bool"
+	nparams 1
+	  param in name "path" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2992130 "Pe_Windows"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5576322 "PeFileReader"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7146370 "PeFileReader"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7862146 // <directional composition>
+	relation 7830658 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7862146 // <directional composition>
+	  b parent class_ref 7145986 // PeFile
+      end
+    end
+  end
+
+  classview 2992386 "MachO"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5576450 "MachOFile"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+  end
+
+  classview 2992258 "ExecutableFile"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5576066 "ExecutableFile"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 7146498 "ExecutableFileFormat"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}
+};
+"
+      java_decl "${comment}${@}${visibility}${static}${final}${abstract}enum ${name}${implements} {
+${items};
+${members}}
+"
+      php_decl "${comment}${visibility}final class ${name} {
+${items}}
+"
+      python_2_2 python_decl "class ${name}:
+${docstring}${members}
+"
+      idl_decl "${comment}enum ${name} {
+${items}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4800258 "ELF"
+	public type class_ref 7146498 // ExecutableFileFormat
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4800386 "PE"
+	public type class_ref 7146498 // ExecutableFileFormat
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4800514 "MachO"
+	public type class_ref 7146498 // ExecutableFileFormat
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4844546 "Unknown"
+	public type class_ref 7146498 // ExecutableFileFormat
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 7146114 "ExecutableFile"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7861250 // <directional composition>
+	relation 7829762 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7861250 // <directional composition>
+	  b parent class_ref 4169602 // OperatingSystem
+      end
+
+      classrelation 7861378 // <directional composition>
+	relation 7829890 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7861378 // <directional composition>
+	  b parent class_ref 4169346 // Processor
+      end
+
+      classrelation 7861506 // <directional composition>
+	relation 7830018 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7861506 // <directional composition>
+	  b parent class_ref 7145730 // Endianness
+      end
+
+      classrelation 7861634 // <directional composition>
+	relation 7830146 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7861634 // <directional composition>
+	  b parent class_ref 7145858 // ObjectFileType
+      end
+
+      classrelation 7861762 // <dependency>
+	relation 7830274 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7861762 // <dependency>
+	  b parent class_ref 7145474 // ElfFile
+      end
+
+      classrelation 7862402 // <directional composition>
+	relation 7830914 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7862402 // <directional composition>
+	  b parent class_ref 7146498 // ExecutableFileFormat
+      end
+
+    end
+
+    classdiagram 5576194 "ExecutableFileReader"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7146242 "ExecutableFileReader"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7861890 // <directional composition>
+	relation 7830402 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7861890 // <directional composition>
+	  b parent class_ref 7146114 // ExecutableFile
+      end
+
+      classrelation 7862018 // <dependency>
+	relation 7830530 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7862018 // <dependency>
+	  b parent class_ref 7145602 // ElfFileReader
+      end
+
+      classrelation 7862274 // <dependency>
+	relation 7830786 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7862274 // <dependency>
+	  b parent class_ref 7146370 // PeFileReader
+      end
+
+      operation 9029634 "readFileFormat"
+	public return_type class_ref 7146498 // ExecutableFileFormat
+	nparams 1
+	  param in name "file" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9029378 "readElfFile"
+	public return_type class_ref 7146114 // ExecutableFile
+	nparams 1
+	  param in name "f" type class_ref 161026 // QString
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9029506 "readPeFile"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  classview 2985218 "ToolsWrappers"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
     classdiagram 3620482 "ToolsWrappers"
       classdiagramsettings member_max_width 0 end
       size A4
@@ -3224,7 +4080,28 @@ ${inlines}
 	
       end
     end
+  end
 
+  classview 2985346 "QtToolsWrappers"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
     classdiagram 3812482 "QtToolsWrapper"
       classdiagramsettings member_max_width 0 end
       size A4
@@ -3367,334 +4244,6 @@ ${inlines}
 	
       end
     end
-
-    classdiagram 3605634 "DeployUtilsLinuxSandbox"
-      classdiagramsettings member_max_width 0 end
-      size C-Landscape
-    end
-
-    class 4160130 "StripWrapper"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 4684290 // <generalisation>
-	relation 4658050 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 4684290 // <generalisation>
-	  b parent class_ref 4161666 // ToolExecutableWrapper
-      end
-    end
-
-    class 4161154 "DesktopFile"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-    end
-
-    classdiagram 3605762 "DeployUtilsWindowsSandbox"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    classdiagram 3799170 "TranslationData"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    classdiagram 3785730 "Translations"
-      classdiagramsettings member_max_width 0 end
-      size B-Landscape
-    end
-
-    class 4161282 "FindTranslation"
-      visibility package stereotype "plainFunctions"
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      operation 6143106 "findTranslations"
-	public return_type class_ref 4393090 // TranslationInfoList
-	nparams 3
-	  param in name "library" type class_ref 4158978 // LibraryInfo
-	  param in name "language" explicit_type "QLocale::Language"
-	  param in name "prefixList" type class_ref 4168962 // PathList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6143234 "findTranslations"
-	public return_type class_ref 4393090 // TranslationInfoList
-	nparams 3
-	  param in name "libraries" type class_ref 4159490 // LibraryInfoList
-	  param in name "language" explicit_type "QLocale::Language"
-	  param in name "prefixList" type class_ref 4168962 // PathList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6164738 "findQtTranslations"
-	class_operation public return_type class_ref 4393090 // TranslationInfoList
-	nparams 3
-	  param in name "qtModule" type class_ref 4265218 // QtModule
-	  param in name "languages" type class_ref 160770 // QStringList
-	  param in name "prefix" type class_ref 4168962 // PathList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6164866 "findQtTranslations"
-	class_operation public return_type class_ref 4393090 // TranslationInfoList
-	nparams 3
-	  param in name "qtModules" type class_ref 4265346 // QtModuleList
-	  param in name "languages" type class_ref 160770 // QStringList
-	  param in name "prefix" type class_ref 4168962 // PathList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6164994 "findMdtTranslations"
-	class_operation public return_type class_ref 4393090 // TranslationInfoList
-	nparams 3
-	  param in name "mdtLibrary" type class_ref 4158978 // LibraryInfo
-	  param in name "languages" type class_ref 160770 // QStringList
-	  param in name "prefix" type class_ref 4168962 // PathList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6165122 "findMdtTranslations"
-	class_operation public return_type class_ref 4393090 // TranslationInfoList
-	nparams 3
-	  param in name "mdtLibraries" type class_ref 4159490 // LibraryInfoList
-	  param in name "languages" type class_ref 160770 // QStringList
-	  param in name "prefix" type class_ref 4168962 // PathList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6165250 "findQtTranslationsRoot"
-	class_operation public return_type class_ref 161026 // QString
-	nparams 1
-	  param in name "prefix" type class_ref 4168962 // PathList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6165378 "findMdtTranslationsRoot"
-	class_operation public return_type class_ref 161026 // QString
-	nparams 1
-	  param in name "prefix" type class_ref 4168962 // PathList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6185730 "getQmFileBaseNameListForQtModule"
-	public return_type class_ref 160770 // QStringList
-	nparams 1
-	  param in name "qtModule" type class_ref 4265218 // QtModule
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6186114 "getQmFileBaseNameListForQtModules"
-	public return_type class_ref 160770 // QStringList
-	nparams 1
-	  param in name "qtModules" type class_ref 4265346 // QtModuleList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 6185858 "qmFileBaseNameForMdtLibrary"
-	public return_type class_ref 161026 // QString
-	nparams 1
-	  param in name "mdtLibrary" type class_ref 4158978 // LibraryInfo
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-    end
-
-    class 4406530 "Translation"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      operation 6171906 "joinTranslations"
-	public explicit_return_type "bool"
-	nparams 3
-	  param in name "translations" type class_ref 4393090 // TranslationInfoList
-	  param in name "destination" type class_ref 161026 // QString
-	  param in name "prefix" type class_ref 4168962 // PathList
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 4954498 // <generalisation>
-	relation 4928258 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 4954498 // <generalisation>
-	  b parent class_ref 138626 // QObject
-      end
-
-      operation 6219266 "lastError"
-	public return_type class_ref 182402 // Error
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-    end
-
-    classdiagram 3759234 "DeployMdt"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    classdiagram 3759362 "DeployMdtApp"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
   end
 
   classview 2972162 "Path"
@@ -3720,6 +4269,65 @@ ${inlines}
     classdiagram 3613186 "Paths"
       classdiagramsettings member_max_width 0 end
       size A4
+    end
+
+    class 4160514 "Paths"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 4684162 // <dependency>
+	relation 4657922 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 4684162 // <dependency>
+	  b parent class_ref 4151810 // QStandardPaths
+      end
+
+      attribute 3554562 "SourceBinaryFilePath"
+	private type class_ref 161026 // QString
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 3555074 "ToolchainLocation"
+	private type class_ref 161026 // QString
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 3555202 "DestinationDirectoryPath"
+	private type class_ref 161026 // QString
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
     end
 
     class 4168962 "PathList"
@@ -4261,7 +4869,7 @@ ${inlines}
 
     classdiagram 3619970 "LibraryInfo"
       classdiagramsettings member_max_width 0 end
-      size A4
+      size A-Landscape
     end
 
     class 4158978 "LibraryInfo"
@@ -4385,12 +4993,34 @@ ${inlines}
 	
       end
 
-      classrelation 7847298 // <dependency>
-	relation 7815810 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7847298 // <dependency>
+      classrelation 7847298 // <directional composition>
+	relation 7815810 *-->
+	  a role_name "" public
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7847298 // <directional composition>
 	  b parent class_ref 4169474 // LibraryName
+      end
+
+      attribute 4799362 "Runpath"
+	private type class_ref 4168962 // PathList
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 7860354 // <directional composition>
+	relation 7828866 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7860354 // <directional composition>
+	  b parent class_ref 4168962 // PathList
       end
     end
 

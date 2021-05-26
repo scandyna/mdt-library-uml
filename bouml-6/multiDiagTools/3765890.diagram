@@ -31,4 +31,19 @@ Should not add this to mdt-cmake-modules, because it will bring binary compatibi
   xyzwh 54 18 2000 713 69
 note 128514 "PluginsSelection"
   xyzwh 181 613 2000 165 39
+note 128642 "Windows:
+see the concept of \"Known dll's\", which will allways be loaded from a system diretory.
+
+and how to get them from the registry."
+  xyzwh 147 679 2000 439 105
+note 128770 "Should be able to read native ENV PATH with native separators:
+PATH a;b;c
+LD_LIBRARY_PATH a:b:c
+
+Usae cases:
+- conan create
+- usage on Windows shell with PATH set'up
+
+Also document all that.."
+  xyzwh 144 275 2000 485 163
 end
