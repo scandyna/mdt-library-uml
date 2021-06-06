@@ -1,4 +1,4 @@
-format 215
+format 224
 
 classcanvas 128002 class_ref 4399874 // QmFileName
   classdiagramsettings member_max_width 0 end
@@ -20,6 +20,6 @@ end
 relationcanvas 128514 relation_ref 4901122 // <directional composition>
   from ref 128386 z 2013 to ref 128130
   no_role_a no_role_b
-  multiplicity_a_pos 257 304 3000 no_multiplicity_b
+  multiplicity_a_pos 258 258 3000 no_multiplicity_b
 end
 end

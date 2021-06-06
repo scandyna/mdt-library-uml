@@ -1,9 +1,5 @@
 format 224
 
-classcanvas 128002 class_ref 7145474 // ElfFile
-  classdiagramsettings member_max_width 0 end
-  xyz 655.5 635.278 2000
-end
 classcanvas 128130 class_ref 7148546 // ProgramHeader
   classdiagramsettings member_max_width 0 end
   xyz 462.5 635.278 2000
@@ -34,7 +30,7 @@ classcanvas 129282 class_ref 7156098 // OsAbi
 end
 classcanvas 129538 class_ref 7162882 // ObjectFileType
   classdiagramsettings member_max_width 0 end
-  xyz 514.111 409.889 2017
+  xyz 523.111 457.889 2017
 end
 classcanvas 129666 class_ref 7163010 // Machine
   classdiagramsettings member_max_width 0 end
@@ -44,18 +40,6 @@ classcanvas 129794 class_ref 7163138 // FileHeader
   classdiagramsettings member_max_width 0 end
   xyz 540.111 262.611 2023
 end
-classcanvas 130690 class_ref 7155458 // Header64_OLD
-  classdiagramsettings member_max_width 0 end
-  xyz 40.5 635.278 2005
-end
-note 130818 "Maybe, make 2 structs:
-- 1x with Program header infos
-- 1x with Section headers infos
-
-See if those infos are relevant without other fields of the header, like endianness, 32/64 bit, ...
-
-NOTE: the File Header is small, seems like not a obtimisation !"
-  xyzwh 59 447 2005 415 147
 classcanvas 130946 class_ref 7169666 // SectionType
   classdiagramsettings member_max_width 0 end
   xyz 484 814 2000

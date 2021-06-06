@@ -1,0 +1,57 @@
+format 224
+
+classcanvas 128002 class_ref 7189634 // DynamicSection
+  classdiagramsettings member_max_width 0 end
+  xyz 522 272 2000
+end
+classcanvas 128130 class_ref 7189378 // DynamicStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 474 130 2006
+end
+classcanvas 128386 class_ref 7189506 // DynamicSectionTag
+  classdiagramsettings member_max_width 0 end
+  xyz 695 260 2012
+end
+classcanvas 128642 class_ref 7196162 // DynamicSectionStringTable
+  classdiagramsettings member_max_width 0 end
+  xyz 41 143 2012
+end
+classcanvas 128898 class_ref 7196290 // DotDynamicSectionStruct
+  classdiagramsettings member_max_width 0 end
+  xyz 496 38 2012
+end
+classcanvas 129154 class_ref 7196418 // DotDynamicSection
+  classdiagramsettings member_max_width 0 end
+  xyz 296 38 2018
+end
+relationcanvas 128258 relation_ref 7879170 // <directional composition>
+  decenter_begin 529
+  decenter_end 516
+  from ref 128002 z 2007 to ref 128130
+  no_role_a no_role_b
+  multiplicity_a_pos 568 238 3000 no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 7879042 // <dependency>
+  decenter_begin 534
+  from ref 128130 z 2013 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 7885954 // <dependency>
+  decenter_end 534
+  from ref 128642 z 2013 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 7886082 // <directional composition>
+  decenter_end 516
+  from ref 128898 z 2013 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 7886210 // <directional composition>
+  from ref 129154 z 2019 to ref 128898
+  no_role_a no_role_b
+  multiplicity_a_pos 480 72 3000 no_multiplicity_b
+end
+end

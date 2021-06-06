@@ -19,7 +19,7 @@ note 128898 "See QLibrary, QLibraryInfo,
 Note: OSX also supports .so ? ..bundle  , .framework ?
 
 Maybe, also check CMake doc"
-  xyzwh 40.5 480.5 2000 389 101
+  xyzwh 49.5 187.5 2000 389 101
 relationcanvas 128258 relation_ref 4667010 // <directional composition>
   decenter_begin 508
   from ref 128002 z 2007 to ref 128130

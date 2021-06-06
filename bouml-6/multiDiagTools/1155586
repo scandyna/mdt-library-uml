@@ -1,6 +1,6 @@
 format 224
 "Elf" // Mdt::DeployUtils::Impl::Elf
-  revision 12
+  revision 23
   modified_by 2 "philippe"
   // class settings
   
@@ -109,22 +109,6 @@ ${inlines}
 	    classrelation_ref 7870722 // <directional composition>
 	  b parent class_ref 7156098 // OsAbi
       end
-    end
-
-    class 7145474 "ElfFile"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
     end
 
     class 7148546 "ProgramHeader"
@@ -512,141 +496,6 @@ ${items}};
       end
     end
 
-    class 7155458 "Header64_OLD"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 4812290 "e_entry"
-	private explicit_type "uint64_t"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4812418 "e_phoff"
-	private explicit_type "uint64_t"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4812546 "e_shoff"
-	private explicit_type "uint64_t"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4812674 "e_flags"
-	private explicit_type "uint32_t"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4812802 "e_ehsize"
-	private explicit_type "uint16_t"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4812930 "e_phentsize"
-	private explicit_type "uint16_t"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4813058 "e_phnum"
-	private explicit_type "uint16_t"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4813186 "e_shentsize"
-	private explicit_type "uint16_t"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4813314 "e_shnum"
-	private explicit_type "uint16_t"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4813442 "e_shstrndx"
-	private explicit_type "uint16_t"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-    end
-
     class 7163138 "FileHeader"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
@@ -765,9 +614,24 @@ ${inlines}
 	
 	
       end
+
+      operation 9069698 "isExecutableOrSharedLibrary"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
 
-    classdiagram 5590018 "Sections"
+    classdiagram 5590018 "Elf_SectionHeaders"
       classdiagramsettings member_max_width 0 end
       size A4
     end
@@ -1042,232 +906,9 @@ ${inlines}
       end
     end
 
-    classdiagram 5583490 "EldFileReader_Impl"
+    classdiagram 5609602 "Elf_dynamicSection"
       classdiagramsettings member_max_width 0 end
       size A-Landscape
-    end
-
-    class 7156354 "FileReader"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7884034 // <directional composition>
-	relation 7852546 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7884034 // <directional composition>
-	  b parent class_ref 7163138 // FileHeader
-      end
-
-      classrelation 7884290 // <generalisation>
-	relation 7852802 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 7884290 // <generalisation>
-	  b parent class_ref 138626 // QObject
-      end
-
-      operation 9043202 "extractSectionName"
-	class_operation public explicit_return_type "string"
-	nparams 3
-	  param in name "map" explicit_type "uchar"
-	multiplicity "*"
-	  param in name "fh" type class_ref 7163138 // FileHeader
-	  param in name "X" explicit_type ""
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 9042818 "extractAllSectionHeaders"
-	class_operation public return_type class_ref 7148802 // SectionHeader
-	multiplicity "*"
-	nparams 2
-	  param in name "map" explicit_type "uchar"
-	multiplicity "*"
-	  param in name "fh" type class_ref 7163138 // FileHeader
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 9042946 "extractSectionHeadersForType"
-	class_operation public return_type class_ref 7148802 // SectionHeader
-	multiplicity "*"
-	nparams 3
-	  param in name "map" explicit_type "uchar"
-	multiplicity "*"
-	  param in name "fh" type class_ref 7163138 // FileHeader
-	  param in name "t" type class_ref 7169666 // SectionType
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}, ${t2} ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 7897474 // <dependency>
-	relation 7865986 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7897474 // <dependency>
-	  b parent class_ref 7148802 // SectionHeader
-      end
-
-      classrelation 7904002 // <dependency>
-	relation 7872514 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7904002 // <dependency>
-	  b parent class_ref 7182850 // ByteArraySpan
-      end
-    end
-
-    class 7182850 "ByteArraySpan"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      attribute 4837122 "array"
-	public explicit_type "uchar"
-	multiplicity "*"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4837250 "size"
-	public explicit_type "uint64_t"
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-    end
-
-    class 7189378 "DynamicStruct"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7910530 // <dependency>
-	relation 7879042 -_->
-	  a public
-	    cpp default "#include in source"
-	    classrelation_ref 7910530 // <dependency>
-	  b parent class_ref 7189506 // DynamicSectionTag
-      end
-
-      attribute 4843778 "tag"
-	public explicit_type ""
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      attribute 4843906 "val_or_ptr"
-	public explicit_type ""
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-
-      operation 9063042 "tagType"
-	public explicit_return_type "DynamicSectionTag"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 9063170 "isStringTableOffset"
-	public explicit_return_type "bool"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
     end
 
     class 7189506 "DynamicSectionTag"
@@ -1358,6 +999,83 @@ ${inlines}
 "
 	    classrelation_ref 7910658 // <directional composition>
 	  b parent class_ref 7189378 // DynamicStruct
+      end
+    end
+
+    class 7189378 "DynamicStruct"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7910530 // <dependency>
+	relation 7879042 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7910530 // <dependency>
+	  b parent class_ref 7189506 // DynamicSectionTag
+      end
+
+      attribute 4843778 "tag"
+	public explicit_type ""
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4843906 "val_or_ptr"
+	public explicit_type ""
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 9063042 "tagType"
+	public explicit_return_type "DynamicSectionTag"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9063170 "isStringTableOffset"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
       end
     end
 
@@ -1494,6 +1212,129 @@ ${inlines}
 
       attribute 4851458 "dynstr"
 	public type class_ref 7189378 // DynamicStruct
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    classdiagram 5583490 "ElfFileReader_Impl"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 7156354 "FileReader"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7884034 // <directional composition>
+	relation 7852546 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 7884034 // <directional composition>
+	  b parent class_ref 7163138 // FileHeader
+      end
+
+      classrelation 7884290 // <generalisation>
+	relation 7852802 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7884290 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 9043202 "extractSectionName"
+	class_operation public explicit_return_type "string"
+	nparams 3
+	  param in name "map" explicit_type "uchar"
+	multiplicity "*"
+	  param in name "fh" type class_ref 7163138 // FileHeader
+	  param in name "X" explicit_type ""
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9042818 "extractAllSectionHeaders"
+	class_operation public return_type class_ref 7148802 // SectionHeader
+	multiplicity "*"
+	nparams 2
+	  param in name "map" explicit_type "uchar"
+	multiplicity "*"
+	  param in name "fh" type class_ref 7163138 // FileHeader
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9042946 "extractSectionHeadersForType"
+	class_operation public return_type class_ref 7148802 // SectionHeader
+	multiplicity "*"
+	nparams 3
+	  param in name "map" explicit_type "uchar"
+	multiplicity "*"
+	  param in name "fh" type class_ref 7163138 // FileHeader
+	  param in name "t" type class_ref 7169666 // SectionType
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}, ${t2} ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}, ${t2} ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7897474 // <dependency>
+	relation 7865986 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7897474 // <dependency>
+	  b parent class_ref 7148802 // SectionHeader
+      end
+
+      classrelation 7904002 // <dependency>
+	relation 7872514 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7904002 // <dependency>
+	  b parent class_ref 7182850 // ByteArraySpan
+      end
+
+      attribute 4871170 "FileName"
+	private type class_ref 161026 // QString
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
 	java_decl ""

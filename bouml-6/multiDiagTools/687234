@@ -1,6 +1,6 @@
 format 224
 "Impl" // Mdt::DeployUtils::Impl
-  revision 4
+  revision 9
   modified_by 2 "philippe"
   // class settings
   
@@ -30,9 +30,7 @@ format 224
   activitydiagramsettings
    end
   
-  package_ref 687362 // Objdump
-
-  classview 1881346 "DeployUtils_Core"
+  classview 3005954 "FileMapper"
     
     classdiagramsettings member_max_width 0 end
     
@@ -52,7 +50,186 @@ format 224
     
     activitydiagramsettings
      end
+    classdiagram 5603074 "ByteArraySpan"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7182850 "ByteArraySpan"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4837122 "array"
+	public explicit_type "uchar"
+	multiplicity "*"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4837250 "size"
+	public explicit_type "qint64"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 9097730 "subSpan"
+	public return_type class_ref 7182850 // ByteArraySpan
+	nparams 2
+	  param in name "offset" explicit_type "qint64"
+	  param in name "count" explicit_type "qint64"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 5596546 "FileMapper"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 7209602 "FileMapper"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 4864642 "CurrentMap"
+	private explicit_type "*"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4857986 "Offset"
+	private explicit_type "qint64"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4858114 "Size"
+	private explicit_type "qint64"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 9091202 "map"
+	public return_type class_ref 7182850 // ByteArraySpan
+	nparams 3
+	  param in name "file" type class_ref 6531586 // QFileDevice
+	  param in name "offset" explicit_type "qint64"
+	  param in name "size" explicit_type "qint64"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9098114 "mapIfRequired"
+	public return_type class_ref 7182850 // ByteArraySpan
+	nparams 3
+	  param in name "file" type class_ref 6531586 // QFileDevice
+	  param in name "offset" explicit_type "qint64"
+	  param in name "size" explicit_type "qint64"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 7938178 // <dependency>
+	relation 7906690 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7938178 // <dependency>
+	  b parent class_ref 7182850 // ByteArraySpan
+      end
+
+      classrelation 7938306 // <dependency>
+	relation 7906818 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7938306 // <dependency>
+	  b parent class_ref 6531586 // QFileDevice
+      end
+
+      classrelation 7944834 // <dependency>
+	relation 7913346 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 7944834 // <dependency>
+	  b parent class_ref 7202946 // FileOpenError
+      end
+    end
   end
+
+  package_ref 687362 // Objdump
 
   package_ref 687490 // Ldd
 

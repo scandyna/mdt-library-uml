@@ -34,11 +34,11 @@ classcanvas 131586 class_ref 7156098 // OsAbi
 end
 classcanvas 131842 class_ref 7156354 // FileReader
   classdiagramsettings member_max_width 0 end
-  xyz 71.5 233.722 2000
+  xyz 10.5 202.722 2000
 end
 classcanvas 132098 class_ref 7162882 // ObjectFileType
   classdiagramsettings member_max_width 0 end
-  xyz 222.556 40.8889 2005
+  xyz 214.556 29.8889 2005
 end
 classcanvas 132226 class_ref 7163010 // Machine
   classdiagramsettings member_max_width 0 end
@@ -46,7 +46,7 @@ classcanvas 132226 class_ref 7163010 // Machine
 end
 classcanvas 132354 class_ref 7163138 // FileHeader
   classdiagramsettings member_max_width 0 end
-  xyz 303.556 228.389 2000
+  xyz 374.556 460.389 2000
 end
 relationcanvas 131202 relation_ref 7838850 // <directional composition>
   from ref 131074 z 2001 to ref 130818

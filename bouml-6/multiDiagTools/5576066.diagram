@@ -2,73 +2,60 @@ format 224
 
 classcanvas 128002 class_ref 7146114 // ExecutableFile
   classdiagramsettings member_max_width 0 end
-  xyz 260.357 301.143 2000
+  xyz 259.056 293.333 2000
 end
 classcanvas 128130 class_ref 4169602 // OperatingSystem
   classdiagramsettings member_max_width 0 end
-  xyz 41.1071 170.714 2000
+  xyz 446.389 354.889 2000
 end
 classcanvas 128258 class_ref 4169346 // Processor
   classdiagramsettings member_max_width 0 end
-  xyz 489.286 321.536 2000
+  xyz 239.056 414.111 2000
 end
 classcanvas 128386 class_ref 7145730 // Endianness
   classdiagramsettings member_max_width 0 end
-  xyz 230.214 40.3929 2000
+  xyz 40.8333 268.333 2000
 end
 classcanvas 128514 class_ref 7145858 // ObjectFileType
   classdiagramsettings member_max_width 0 end
-  xyz 208.821 382.821 2000
+  xyz 445.222 209.222 2000
 end
 classcanvas 129154 class_ref 7145474 // ElfFile
   classdiagramsettings member_max_width 0 end
-  xyz 488.429 239.643 2006
+  xyz 40.5 585.167 2006
 end
 classcanvas 130306 class_ref 7146498 // ExecutableFileFormat
   classdiagramsettings member_max_width 0 end
-  xyz 447.357 75.1071 2000
+  xyz 200.056 40.7778 2000
 end
 relationcanvas 128642 relation_ref 7829762 // <directional composition>
-  geometry VH unfixed
-  decenter_begin 161
-  from ref 128002 z 2001 to point 274 213
-  line 131202 z 2001 to ref 128130
+  decenter_begin 780
+  decenter_end 208
+  from ref 128002 z 2001 to point 404 327
+  line 132226 z 2001 to point 404 373
+  line 132354 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 7829890 // <directional composition>
-  decenter_begin 914
-  decenter_end 197
   from ref 128002 z 2001 to ref 128258
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128898 relation_ref 7830018 // <directional composition>
-  decenter_begin 552
   from ref 128002 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129026 relation_ref 7830146 // <directional composition>
+  decenter_begin 219
+  decenter_end 834
   from ref 128002 z 2001 to ref 128514
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129922 relation_ref 7830274 // <dependency>
-  decenter_begin 560
-  decenter_end 780
-  from ref 128002 z 2007 to point 447 324
-  line 130818 z 2007 to point 447 274
-  line 130946 z 2007 to ref 129154
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
 relationcanvas 130434 relation_ref 7830914 // <directional composition>
-  decenter_begin 219
-  decenter_end 858
-  from ref 128002 z 2001 to point 406 307
-  line 130562 z 2001 to point 406 184
-  line 131074 z 2001 to ref 130306
+  from ref 128002 z 2001 to ref 130306
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -34,7 +34,7 @@ classcanvas 129282 class_ref 7189634 // DynamicSection
 end
 classcanvas 129538 class_ref 7196162 // DynamicSectionStringTable
   classdiagramsettings member_max_width 0 end
-  xyz 197 615 2005
+  xyz 285 709 2005
 end
 classcanvas 129922 class_ref 7182850 // ByteArraySpan
   classdiagramsettings member_max_width 0 end
@@ -43,7 +43,7 @@ end
 note 130306 "Better: do a specific struct for the .dynamic section, that also refers to the .dynstr string table
 
 ALSO: test that .dynamic is loaded"
-  xyzwh 259 296 2000 365 91
+  xyzwh 303 354 2000 365 91
 classcanvas 130562 class_ref 7196290 // DotDynamicSectionStruct
   classdiagramsettings member_max_width 0 end
   xyz 75 388 2005

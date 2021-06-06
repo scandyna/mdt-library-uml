@@ -23,19 +23,19 @@ mdt_install_qt5_platform_plugins(...)
 mdt_install_qt5_sqldrivers(...)
 
 See also what ECM does"
-  xyzwh 54 360 2000 699 165
+  xyzwh 56 356 2000 699 165
 note 128258 "MdtSharedLibrariesDepencyHelpers"
-  xyzwh 175 553 2000 315 41
+  xyzwh 30 544 2000 315 41
 note 128386 "Crate a library that contains the C++ part and CMake modules.
 Should not add this to mdt-cmake-modules, because it will bring binary compatibility issues, and every project (mines) depend on mdt-cmake-modules."
   xyzwh 54 18 2000 713 69
 note 128514 "PluginsSelection"
-  xyzwh 181 613 2000 165 39
+  xyzwh 67 596 2000 165 39
 note 128642 "Windows:
 see the concept of \"Known dll's\", which will allways be loaded from a system diretory.
 
 and how to get them from the registry."
-  xyzwh 147 679 2000 439 105
+  xyzwh 68 711 2000 439 105
 note 128770 "Should be able to read native ENV PATH with native separators:
 PATH a;b;c
 LD_LIBRARY_PATH a:b:c
@@ -45,5 +45,5 @@ Usae cases:
 - usage on Windows shell with PATH set'up
 
 Also document all that.."
-  xyzwh 144 275 2000 485 163
+  xyzwh 355 529 2000 445 165
 end
