@@ -2,44 +2,43 @@ format 224
 
 classcanvas 128002 class_ref 7146370 // PeFileReader
   classdiagramsettings member_max_width 0 end
-  xyz 336 188 2000
-end
-classcanvas 128386 class_ref 7145602 // ElfFileReader
-  classdiagramsettings member_max_width 0 end
-  xyz 473 188 2000
+  xyz 190.25 338.5 2000
 end
 classcanvas 128514 class_ref 7202946 // FileOpenError
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 40.5 424.5 2000
+  xyz 291.5 458.5 2000
 end
 classcanvas 128642 class_ref 7148418 // ExecutableFileReadError
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 223.5 424.5 2000
+  xyz 40.5 458.5 2000
 end
 classcanvas 128770 class_ref 7156226 // FileReader
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 40 188 2000
+  xyz 328 338.5 2000
 end
 classcanvas 129026 class_ref 7203074 // AbstractExecutableFileReaderEngine
   classdiagramsettings member_max_width 0 end
-  xyz 496 41 2000
+  xyz 41.25 120 2000
+end
+classcanvas 129922 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 209.5 39.5 2007
 end
 relationcanvas 128898 relation_ref 7893122 // <directional composition>
   from ref 128002 z 2001 to ref 128770
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129154 relation_ref 7893378 // <generalisation>
-  decenter_end 481
-  from ref 128386 z 2001 to ref 129026
+relationcanvas 129282 relation_ref 7893506 // <generalisation>
+  decenter_begin 536
+  decenter_end 508
+  from ref 128002 z 2001 to ref 129026
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129282 relation_ref 7893506 // <generalisation>
-  decenter_end 481
-  from ref 128002 z 2001 to point 384 152
-  line 129410 z 2001 to point 616 152
-  line 129538 z 2001 to ref 129026
+relationcanvas 130050 relation_ref 7893250 // <generalisation>
+  decenter_begin 508
+  from ref 129026 z 2008 to ref 129922
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -8,7 +8,7 @@ classcanvas 128514 class_ref 4169218 // Compiler
   classdiagramsettings member_max_width 0 end
   xyz 263 162 2006
 end
-classcanvas 128770 class_ref 4169346 // Processor
+classcanvas 128770 class_ref 4169346 // ProcessorISA
   classdiagramsettings member_max_width 0 end
   xyz 40 35 2006
 end

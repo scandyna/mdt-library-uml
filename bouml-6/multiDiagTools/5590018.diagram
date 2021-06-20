@@ -2,55 +2,27 @@ format 224
 
 classcanvas 128002 class_ref 7148802 // SectionHeader
   classdiagramsettings member_max_width 0 end
-  xyz 41 39 2000
+  xyz 41 143 2000
 end
 classcanvas 128130 class_ref 7169666 // SectionType
   classdiagramsettings member_max_width 0 end
-  xyz 271 98 2006
+  xyz 271 202 2006
 end
 classcanvas 128386 class_ref 7169794 // SectionFlags
   classdiagramsettings member_max_width 0 end
-  xyz 89 306 2006
+  xyz 89 42 2006
 end
 classcanvas 128642 class_ref 7176322 // SectionIndexType
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 776.5 2000
+  xyz 528.5 40.5 2000
 end
 classcanvas 128770 class_ref 7163138 // FileHeader
   classdiagramsettings member_max_width 0 end
-  xyz 528.5 40.5 2000
-end
-classcanvas 128898 class_ref 7189378 // DynamicStruct
-  classdiagramsettings member_max_width 0 end
-  xyz 290 462 2000
-end
-classcanvas 129026 class_ref 7189506 // DynamicSectionTag
-  classdiagramsettings member_max_width 0 end
-  xyz 544 449 2000
-end
-classcanvas 129282 class_ref 7189634 // DynamicSection
-  classdiagramsettings member_max_width 0 end
-  xyz 132 489 2005
-end
-classcanvas 129538 class_ref 7196162 // DynamicSectionStringTable
-  classdiagramsettings member_max_width 0 end
-  xyz 285 709 2005
+  xyz 40.5 448.5 2000
 end
 classcanvas 129922 class_ref 7182850 // ByteArraySpan
   classdiagramsettings member_max_width 0 end
-  xyz 41 617 2000
-end
-note 130306 "Better: do a specific struct for the .dynamic section, that also refers to the .dynstr string table
-
-ALSO: test that .dynamic is loaded"
-  xyzwh 303 354 2000 365 91
-classcanvas 130562 class_ref 7196290 // DotDynamicSectionStruct
-  classdiagramsettings member_max_width 0 end
-  xyz 75 388 2005
-end
-classcanvas 130946 class_ref 7196418 // DotDynamicSection
-  classdiagramsettings member_max_width 0 end
-  xyz 23 540 2005
+  xyz 367.5 448.5 2000
 end
 relationcanvas 128258 relation_ref 7859330 // <dependency>
   from ref 128002 z 2007 to ref 128130
@@ -62,41 +34,4 @@ relationcanvas 128514 relation_ref 7859458 // <dependency>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 129154 relation_ref 7879042 // <dependency>
-  from ref 128898 z 2001 to ref 129026
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 129410 relation_ref 7879170 // <directional composition>
-  from ref 129282 z 2006 to ref 128898
-  no_role_a no_role_b
-  multiplicity_a_pos 274 517 3000 no_multiplicity_b
-end
-relationcanvas 130050 relation_ref 7885826 // <dependency>
-  decenter_end 549
-  from ref 129538 z 2006 to ref 129922
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130178 relation_ref 7885954 // <dependency>
-  decenter_begin 508
-  decenter_end 516
-  from ref 129538 z 2006 to ref 128898
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130690 relation_ref 7886082 // <directional composition>
-  from ref 130562 z 2006 to ref 128898
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 131074 relation_ref 7886210 // <directional composition>
-  from ref 130946 z 2006 to ref 130562
-  no_role_a no_role_b
-  multiplicity_a_pos 133 448 3000 no_multiplicity_b
-end
-line 130434 -_-_
-  from ref 130306 z 2001 to ref 128898
-line 130818 -_-_
-  from ref 130306 z 2006 to ref 130562
 end

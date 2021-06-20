@@ -1,54 +1,51 @@
 format 224
 
-classcanvas 128002 class_ref 7145474 // ElfFile
-  classdiagramsettings member_max_width 0 end
-  xyz 481.722 159.5 2000
-end
 classcanvas 130050 class_ref 7148546 // ProgramHeader
   classdiagramsettings member_max_width 0 end
-  xyz 62.5 318.722 2000
+  xyz 40.5 853.944 2000
 end
 classcanvas 130306 class_ref 7148802 // SectionHeader
   classdiagramsettings member_max_width 0 end
-  xyz 65.5 413.722 2000
+  xyz 273 546.556 2000
 end
 classcanvas 130690 class_ref 7155586 // Class
   classdiagramsettings member_max_width 0 end
-  xyz 441.222 298.056 2000
+  xyz 960.556 227.444 2000
 end
 classcanvas 130818 class_ref 7155714 // DataFormat
   classdiagramsettings member_max_width 0 end
-  xyz 746.667 241.111 2000
+  xyz 619.111 172.778 2000
 end
 classcanvas 130946 class_ref 7155842 // Version
   classdiagramsettings member_max_width 0 end
-  xyz 619.333 108.889 2005
+  xyz 792.444 40.5556 2005
 end
 classcanvas 131074 class_ref 7155970 // Ident
   classdiagramsettings member_max_width 0 end
-  xyz 660.333 277.389 2000
+  xyz 833.444 204.5 2000
 end
 classcanvas 131586 class_ref 7156098 // OsAbi
   classdiagramsettings member_max_width 0 end
-  xyz 615.056 446.333 2000
+  xyz 961.278 40.8889 2000
 end
 classcanvas 131842 class_ref 7156354 // FileReader
   classdiagramsettings member_max_width 0 end
-  xyz 10.5 202.722 2000
+  xyz 39.7222 404.556 2000
 end
 classcanvas 132098 class_ref 7162882 // ObjectFileType
   classdiagramsettings member_max_width 0 end
-  xyz 214.556 29.8889 2005
+  xyz 746.444 573.889 2005
 end
 classcanvas 132226 class_ref 7163010 // Machine
   classdiagramsettings member_max_width 0 end
-  xyz 264.556 327.667 2000
+  xyz 1020.78 400.556 2000
 end
 classcanvas 132354 class_ref 7163138 // FileHeader
   classdiagramsettings member_max_width 0 end
-  xyz 374.556 460.389 2000
+  xyz 732.444 377.556 2000
 end
 relationcanvas 131202 relation_ref 7838850 // <directional composition>
+  decenter_begin 560
   from ref 131074 z 2001 to ref 130818
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -60,22 +57,22 @@ relationcanvas 131330 relation_ref 7838978 // <directional composition>
 end
 relationcanvas 131458 relation_ref 7839106 // <directional composition>
   decenter_begin 780
-  decenter_end 100
+  decenter_end 119
   from ref 131074 z 2001 to ref 130690
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131714 relation_ref 7839234 // <directional composition>
-  from ref 131074 z 2001 to ref 131586
+  decenter_begin 219
+  decenter_end 937
+  from ref 131074 z 2001 to point 919 213
+  line 134658 z 2001 to point 919 177
+  line 134786 z 2001 to ref 131586
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 133250 relation_ref 7845762 // <directional composition>
-  decenter_begin 543
-  decenter_end 219
-  from ref 132354 z 2001 to point 619 259
-  line 133634 z 2001 to point 619 281
-  line 133762 z 2001 to ref 131074
+  from ref 132354 z 2001 to ref 131074
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -95,6 +92,7 @@ relationcanvas 134402 relation_ref 7852546 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 134530 relation_ref 7865986 // <dependency>
+  decenter_begin 503
   from ref 131842 z 2001 to ref 130306
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b

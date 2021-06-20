@@ -20,14 +20,15 @@ classcanvas 128514 class_ref 7145858 // ObjectFileType
   classdiagramsettings member_max_width 0 end
   xyz 445.222 209.222 2000
 end
-classcanvas 129154 class_ref 7145474 // ElfFile
-  classdiagramsettings member_max_width 0 end
-  xyz 40.5 585.167 2006
-end
 classcanvas 130306 class_ref 7146498 // ExecutableFileFormat
   classdiagramsettings member_max_width 0 end
   xyz 200.056 40.7778 2000
 end
+note 132482 "Maybe rename:
+- MachineType
+or
+- ProcessorArchitecture"
+  xyzwh 180 588 2000 345 103
 relationcanvas 128642 relation_ref 7829762 // <directional composition>
   decenter_begin 780
   decenter_end 208
@@ -59,4 +60,6 @@ relationcanvas 130434 relation_ref 7830914 // <directional composition>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+line 132610 -_-_
+  from ref 128258 z 2001 to ref 132482
 end

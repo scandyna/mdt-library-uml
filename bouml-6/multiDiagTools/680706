@@ -1,6 +1,6 @@
 format 224
 "DeployUtils" // Mdt::DeployUtils
-  revision 120
+  revision 128
   modified_by 2 "philippe"
   // class settings
   
@@ -2231,7 +2231,7 @@ ${items}};
       end
     end
 
-    class 4169346 "Processor"
+    class 4169346 "ProcessorISA"
       visibility package stereotype "enum"
       cpp_decl "${comment}enum ${name} {
 ${items}
@@ -2254,7 +2254,7 @@ ${items}};
       mysql_decl ""
       
       attribute 3561986 "X86_32"
-	public type class_ref 4169346 // Processor
+	public type class_ref 4169346 // ProcessorISA
 	cpp_decl "  ${name}${value},${comment}"
 	java_decl ""
 	php_decl ""
@@ -2265,7 +2265,7 @@ ${items}};
       end
 
       attribute 3562114 "X86_64"
-	public type class_ref 4169346 // Processor
+	public type class_ref 4169346 // ProcessorISA
 	cpp_decl "  ${name}${value},${comment}"
 	java_decl ""
 	php_decl ""
@@ -2438,7 +2438,7 @@ ${members}};
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	    classrelation_ref 4715266 // <directional composition>
-	  b parent class_ref 4169346 // Processor
+	  b parent class_ref 4169346 // ProcessorISA
       end
     end
 
@@ -2553,7 +2553,7 @@ ${inlines}
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	    classrelation_ref 4748930 // <directional composition>
-	  b parent class_ref 4169346 // Processor
+	  b parent class_ref 4169346 // ProcessorISA
       end
 
       classrelation 4749058 // <directional composition>
@@ -2581,7 +2581,7 @@ ${inlines}
       end
 
       operation 5898882 "processor"
-	public return_type class_ref 4169346 // Processor
+	public return_type class_ref 4169346 // ProcessorISA
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -2723,7 +2723,7 @@ ${inlines}
 	
       end
 
-      operation 9076610 "isDynamicLinkedExecutableOrLibrary"
+      operation 9076610 "isExecutableOrSharedLibrary"
 	public explicit_return_type "bool"
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
@@ -2999,7 +2999,7 @@ ${inlines}
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
 	    classrelation_ref 7861378 // <directional composition>
-	  b parent class_ref 4169346 // Processor
+	  b parent class_ref 4169346 // ProcessorISA
       end
 
       classrelation 7861506 // <directional composition>
@@ -3032,7 +3032,7 @@ ${inlines}
 
     classdiagram 5576194 "ExecutableFileReader"
       classdiagramsettings member_max_width 0 end
-      size B
+      size B-Landscape
     end
 
     class 7146242 "ExecutableFileReader"
@@ -3067,6 +3067,21 @@ ${inlines}
 
       operation 9077122 "close"
 	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9104642 "isExecutableOrSharedLibrary"
+	public explicit_return_type "bool"
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -3197,10 +3212,10 @@ ${inlines}
       explicit_switch_type ""
       mysql_decl ""
       
-      operation 9077506 "open"
+      operation 9077506 "openFile"
 	public explicit_return_type "void"
 	nparams 1
-	  param in name "filePath" type class_ref 161026 // QString
+	  param in name "file" type class_ref 432386 // QFileInfo
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
 	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
@@ -3213,8 +3228,8 @@ ${inlines}
 	
       end
 
-      operation 9084162 "file"
-	protected return_type class_ref 390530 // QFile
+      operation 9111170 "isOpen"
+	public explicit_return_type "bool"
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -3228,11 +3243,72 @@ ${inlines}
 	
       end
 
-      operation 9077634 "doOpen"
+      operation 9111298 "close"
+	public explicit_return_type "void"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9111426 "isElfFile"
+	cpp_virtual public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9111554 "isPeImageFile"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9084162 "mapIfRequired"
+	protected return_type class_ref 7182850 // ByteArraySpan
+	nparams 2
+	  param in name "offset" explicit_type "int64"
+	  param in name "size" explicit_type "int64"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9077634 "doIsElfFile"
 	abstract cpp_virtual private explicit_return_type "void"
-	nparams 1
-	  param in name "filePath" type class_ref 161026 // QString
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
 	
 	
@@ -3255,6 +3331,17 @@ ${inlines}
 "
 	    classrelation_ref 7931522 // <directional composition>
 	  b parent class_ref 390530 // QFile
+      end
+
+      operation 9111682 "doIsPeImageFile"
+	abstract cpp_virtual private explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
       end
     end
   end

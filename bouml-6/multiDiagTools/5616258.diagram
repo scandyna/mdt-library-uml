@@ -1,0 +1,19 @@
+format 224
+
+classcanvas 128002 class_ref 7216514 // SectionHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+classcanvas 128130 class_ref 7236482 // ImportDirectory
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 275.5 2000
+end
+classcanvas 128514 class_ref 7236738 // ImageDataDirectory
+  classdiagramsettings member_max_width 0 end
+  xyz 389.5 40.5 2000
+end
+classcanvas 128770 class_ref 7243394 // DelayLoadDirectory
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 492.5 2000
+end
+end

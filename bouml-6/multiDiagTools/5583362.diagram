@@ -48,6 +48,14 @@ classcanvas 131202 class_ref 7169794 // SectionFlags
   classdiagramsettings member_max_width 0 end
   xyz 547 733 2000
 end
+classcanvas 131458 class_ref 4169346 // Processor
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 48 444 2000
+end
+classcanvas 131586 class_ref 7145730 // Endianness
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 26 551 2005
+end
 relationcanvas 128642 relation_ref 7839106 // <directional composition>
   from ref 128514 z 2007 to ref 128386
   no_role_a no_role_b

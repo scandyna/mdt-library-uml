@@ -1,6 +1,6 @@
 format 224
 "Elf" // Mdt::DeployUtils::Impl::Elf
-  revision 23
+  revision 27
   modified_by 2 "philippe"
   // class settings
   
@@ -52,10 +52,26 @@ format 224
      end
     classdiagram 5576706 "Elf_Impl"
       classdiagramsettings member_max_width 0 end
-      size B
+      size B-Landscape
     end
 
-    classdiagram 5583362 "ElfFile"
+    class 7148546 "ProgramHeader"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 5583362 "Elf_FileHeader"
       classdiagramsettings member_max_width 0 end
       size A4
     end
@@ -109,22 +125,6 @@ ${inlines}
 	    classrelation_ref 7870722 // <directional composition>
 	  b parent class_ref 7156098 // OsAbi
       end
-    end
-
-    class 7148546 "ProgramHeader"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
     end
 
     class 7155586 "Class"
@@ -583,6 +583,21 @@ ${inlines}
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
+      end
+
+      operation 9111810 "seemsValid"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
       end
 
       operation 9036290 "minExpectedFileSize"
@@ -1148,78 +1163,6 @@ ${inlines}
 	
 	
 	
-      end
-    end
-
-    class 7196290 "DotDynamicSectionStruct"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7917570 // <directional composition>
-	relation 7886082 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7917570 // <directional composition>
-	  b parent class_ref 7189378 // DynamicStruct
-      end
-
-      attribute 4851330 "dynamic"
-	public type class_ref 7189378 // DynamicStruct
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
-      end
-    end
-
-    class 7196418 "DotDynamicSection"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 7917698 // <directional composition>
-	relation 7886210 *-->
-	  a role_name "" multiplicity "*" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	    classrelation_ref 7917698 // <directional composition>
-	  b parent class_ref 7196290 // DotDynamicSectionStruct
-      end
-
-      attribute 4851458 "dynstr"
-	public type class_ref 7189378 // DynamicStruct
-	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
-"
-	java_decl ""
-	php_decl ""
-	python_decl ""
-	idl_decl ""
-	mysql_decl ""
-	MysqlColumn
       end
     end
 

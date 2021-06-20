@@ -14,7 +14,7 @@ classcanvas 128514 class_ref 4204418 // ObjdumpBinaryFormatParser
   classdiagramsettings member_max_width 0 end
   xyz 389.5 92.75 2000
 end
-classcanvas 128898 class_ref 4169346 // Processor
+classcanvas 128898 class_ref 4169346 // ProcessorISA
   classdiagramsettings member_max_width 0 end
   xyz 455.5 279.5 2000
 end

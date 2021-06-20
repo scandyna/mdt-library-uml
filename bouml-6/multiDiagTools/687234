@@ -1,6 +1,6 @@
 format 224
 "Impl" // Mdt::DeployUtils::Impl
-  revision 9
+  revision 12
   modified_by 2 "philippe"
   // class settings
   
@@ -30,7 +30,7 @@ format 224
   activitydiagramsettings
    end
   
-  classview 3005954 "FileMapper"
+  classview 3005954 "ExecutableFileReader"
     
     classdiagramsettings member_max_width 0 end
     
@@ -225,6 +225,78 @@ ${inlines}
 	    cpp default "#include in source"
 	    classrelation_ref 7944834 // <dependency>
 	  b parent class_ref 7202946 // FileOpenError
+      end
+    end
+
+    classdiagram 5622786 "ExecutableFileReaderUtils"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7229954 "ExecutableFileReaderUtils"
+      visibility package stereotype "plainFunctions"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+  classview 3012482 "Exceptions"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5635842 "Impl_Exceptions"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7243266 "NotNullTerminatedStringError"
+      visibility package stereotype "exception"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}exception ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 7978114 // <generalisation>
+	relation 7946626 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 7978114 // <generalisation>
+	  b parent class_ref 6918146 // QRuntimeError
       end
     end
   end
