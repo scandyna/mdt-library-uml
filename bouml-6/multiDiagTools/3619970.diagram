@@ -6,7 +6,7 @@ classcanvas 128002 class_ref 4158978 // LibraryInfo
 end
 classcanvas 128130 class_ref 4159490 // LibraryInfoList
   classdiagramsettings member_max_width 0 end
-  xyz 536 431 2006
+  xyz 560 492 2006
 end
 classcanvas 128386 class_ref 4169730 // LibraryMode
   classdiagramsettings member_max_width 0 end
@@ -29,7 +29,7 @@ end
 note 130050 "What is the goal of LibraryInfo ?
 
 Maybe to generic"
-  xyzwh 500.5 492.5 2000 245 71
+  xyzwh 510.5 556.5 2000 245 71
 classcanvas 130178 class_ref 4252162 // SearchPathList
   classdiagramsettings member_max_width 0 end
   xyz 40 170 2029
@@ -39,10 +39,12 @@ The RUNPATH is NOT! part of the dependency !!
 So NO, has nothing to do in LibraryInfo !!
 "
   xyzwh 68 598 2000 411 81
+note 130690 "TODO: should be ExecutableFileInfo"
+  xyzwh 130 44 2000 223 63
 relationcanvas 128258 relation_ref 4657666 // <directional composition>
   from ref 128130 z 2007 to ref 128002
   no_role_a no_role_b
-  multiplicity_a_pos 570 395 3000 no_multiplicity_b
+  multiplicity_a_pos 587 449 3000 no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 4673538 // <directional composition>
   decenter_end 538

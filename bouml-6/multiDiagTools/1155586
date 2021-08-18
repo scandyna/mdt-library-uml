@@ -1,6 +1,6 @@
 format 224
 "Elf" // Mdt::DeployUtils::Impl::Elf
-  revision 27
+  revision 31
   modified_by 2 "philippe"
   // class settings
   
@@ -1286,6 +1286,118 @@ ${inlines}
 	idl_decl ""
 	mysql_decl ""
 	MysqlColumn
+      end
+    end
+
+    classdiagram 5649154 "ElfFileWriter_Impl"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7263874 "FileWriter"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8012290 // <generalisation>
+	relation 7980802 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 8012290 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 8012418 // <dependency>
+	relation 7980930 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8012418 // <dependency>
+	  b parent class_ref 7148802 // SectionHeader
+      end
+
+      classrelation 8012546 // <dependency>
+	relation 7981058 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8012546 // <dependency>
+	  b parent class_ref 7182850 // ByteArraySpan
+      end
+
+      classrelation 8012674 // <dependency>
+	relation 7981186 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8012674 // <dependency>
+	  b parent class_ref 7163138 // FileHeader
+      end
+
+      classrelation 8012802 // <dependency>
+	relation 7981314 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8012802 // <dependency>
+	  b parent class_ref 7189634 // DynamicSection
+      end
+    end
+
+    classdiagram 5676034 "ElfFileIoEngine_Impl"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7310978 "ElfFileIoEngine"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8067842 // <dependency>
+	relation 8036354 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8067842 // <dependency>
+	  b parent class_ref 7163138 // FileHeader
+      end
+
+      classrelation 8067970 // <dependency>
+	relation 8036482 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8067970 // <dependency>
+	  b parent class_ref 7148802 // SectionHeader
+      end
+
+      classrelation 8068098 // <dependency>
+	relation 8036610 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8068098 // <dependency>
+	  b parent class_ref 7189634 // DynamicSection
+      end
+
+      classrelation 8068226 // <dependency>
+	relation 8036738 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8068226 // <dependency>
+	  b parent class_ref 7182850 // ByteArraySpan
       end
     end
   end

@@ -35,7 +35,7 @@ note 128642 "Windows:
 see the concept of \"Known dll's\", which will allways be loaded from a system diretory.
 
 and how to get them from the registry."
-  xyzwh 68 711 2000 439 105
+  xyzwh 19 712 2000 439 105
 note 128770 "Should be able to read native ENV PATH with native separators:
 PATH a;b;c
 LD_LIBRARY_PATH a:b:c
@@ -46,4 +46,6 @@ Usae cases:
 
 Also document all that.."
   xyzwh 355 529 2000 445 165
+note 128898 "See ld.so man"
+  xyzwh 495 716 2000 149 47
 end

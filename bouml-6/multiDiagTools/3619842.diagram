@@ -2,24 +2,32 @@ format 224
 
 classcanvas 128002 class_ref 4169474 // LibraryName
   classdiagramsettings member_max_width 0 end
-  xyz 458 42 2000
+  xyz 458 122 2000
 end
 classcanvas 128130 class_ref 4169858 // LibraryVersion
   classdiagramsettings member_max_width 0 end
-  xyz 474 251 2006
+  xyz 474 331 2006
 end
 note 128386 "Shoud see QVersionNumber"
-  xyzwh 90 311 2000 243 41
+  xyzwh 71 394 2000 243 41
 classcanvas 128642 class_ref 7138946 // LibraryNameExtension
   classdiagramsettings member_max_width 0 end
-  xyz 41 96 2000
+  xyz 41 176 2000
 end
 note 128898 "See QLibrary, QLibraryInfo,
 
 Note: OSX also supports .so ? ..bundle  , .framework ?
 
 Maybe, also check CMake doc"
-  xyzwh 49.5 187.5 2000 389 101
+  xyzwh 40.5 560.5 2000 389 101
+classcanvas 129026 class_ref 7256706 // LibraryNameList
+  classdiagramsettings member_max_width 0 end
+  xyz 610 40 2000
+end
+classcanvas 129282 class_ref 7291010 // ExecutableName
+  classdiagramsettings member_max_width 0 end
+  xyz 101 315 2000
+end
 relationcanvas 128258 relation_ref 4667010 // <directional composition>
   decenter_begin 508
   from ref 128002 z 2007 to ref 128130
@@ -28,6 +36,13 @@ relationcanvas 128258 relation_ref 4667010 // <directional composition>
 end
 relationcanvas 128770 relation_ref 7822338 // <directional composition>
   from ref 128002 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 7966850 // <directional composition>
+  decenter_begin 529
+  decenter_end 508
+  from ref 129026 z 2001 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

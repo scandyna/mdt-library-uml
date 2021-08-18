@@ -26,20 +26,24 @@ classcanvas 129154 class_ref 7223170 // MachineType
 end
 classcanvas 129410 class_ref 7223298 // Characteristics
   classdiagramsettings member_max_width 0 end
-  xyz 826 392 2000
+  xyz 896 429 2000
 end
 classcanvas 129666 class_ref 7223426 // MagicType
   classdiagramsettings member_max_width 0 end
-  xyz 305 410 2000
+  xyz 300 439 2000
 end
 note 130818 "TESTS:
 Generate random arrays/files and see if a assertion or crach occurs in debug/instrumented
 
 ALSO: test variable map sizes"
-  xyzwh 147.5 572.5 2000 355 103
+  xyzwh 230.5 570.5 2000 355 103
 classcanvas 130946 class_ref 7236738 // ImageDataDirectory
   classdiagramsettings member_max_width 0 end
   xyz 308 43 2000
+end
+classcanvas 131202 class_ref 7297538 // CoffStringTableHandle
+  classdiagramsettings member_max_width 0 end
+  xyz 712 501 2000
 end
 relationcanvas 128386 relation_ref 7919874 // <directional composition>
   from ref 128002 z 2001 to ref 128258
@@ -63,7 +67,7 @@ relationcanvas 129282 relation_ref 7926658 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129538 relation_ref 7926786 // <dependency>
-  decenter_begin 479
+  decenter_begin 672
   from ref 128514 z 2001 to ref 129410
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -76,6 +80,12 @@ relationcanvas 129794 relation_ref 7926914 // <dependency>
 end
 relationcanvas 131074 relation_ref 7933570 // <dependency>
   from ref 128770 z 2001 to ref 130946
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131330 relation_ref 8022274 // <dependency>
+  decenter_begin 290
+  from ref 128514 z 2001 to ref 131202
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

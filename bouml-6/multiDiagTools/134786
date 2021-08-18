@@ -1,6 +1,6 @@
 format 224
 "Qt" // Qt
-  revision 302
+  revision 305
   modified_by 2 "philippe"
   // class settings
   
@@ -4747,6 +4747,90 @@ ${inlines}
     end
 
     class 6456194 "QUrl"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+  classview 3025666 "QtCore_system"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5655810 "QSysInfo"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7270658 "QSysInfo"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 5655938 "QOperatingSystemVersion"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7270786 "QOperatingSystemVersion"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 5656066 "QVersionNumber"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7270914 "QVersionNumber"
       visibility package 
       cpp_decl "${comment}${template}class ${name}${inherit}
 {

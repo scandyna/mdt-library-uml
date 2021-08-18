@@ -1,0 +1,33 @@
+format 224
+
+classcanvas 128002 class_ref 7263618 // ElfFileWriter
+  classdiagramsettings member_max_width 0 end
+  xyz 187 208 2000
+end
+classcanvas 128130 class_ref 7263490 // AbstractExecutableFileWriterEngine
+  classdiagramsettings member_max_width 0 end
+  xyz 35 42 2000
+end
+classcanvas 128386 class_ref 7304066 // AbstractExecutableFileIoEngine
+  classdiagramsettings member_max_width 0 end
+  xyz 464 55 2000
+end
+classcanvas 128514 class_ref 7145602 // ElfFileReader
+  classdiagramsettings member_max_width 0 end
+  xyz 532 371 2000
+end
+classcanvas 128642 class_ref 7203074 // AbstractExecutableFileReaderEngine
+  classdiagramsettings member_max_width 0 end
+  xyz 104 436 2006
+end
+relationcanvas 128258 relation_ref 7980546 // <generalisation>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 7893378 // <generalisation>
+  from ref 128514 z 2007 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

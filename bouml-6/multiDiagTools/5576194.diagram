@@ -6,7 +6,7 @@ classcanvas 128002 class_ref 7146242 // ExecutableFileReader
 end
 classcanvas 128130 class_ref 7146114 // ExecutableFile
   classdiagramsettings member_max_width 0 end
-  xyz 96 108 2000
+  xyz 303 305 2000
 end
 classcanvas 128386 class_ref 7145602 // ElfFileReader
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
@@ -32,8 +32,6 @@ classcanvas 129410 class_ref 7203074 // AbstractExecutableFileReaderEngine
   classdiagramsettings member_max_width 0 end
   xyz 455 255 2000
 end
-note 129538 "Try to instanciate native platform engine first"
-  xyzwh 425.5 749.5 2000 367 45
 note 130178 "If a library has RUNPATH, those must be the absolute first in the search for this particular library when searching the file.
 This is why storing Runpath is good.
 
@@ -45,21 +43,21 @@ NOTE:
 If we have a RUNPATH, each dependency should be resolved soon.
 "
   xyzwh 37.5 559.5 2000 543 179
-note 130306 "Make a test that gets deps on testLibrary.
-(like elfFileReaderTest_Unix)
-This should work on all supported platforms out of the box"
-  xyzwh 40.5 747.5 2000 377 79
 note 131202 "TESTS:
 Generate random arrays/files and see if a assertion or crach occurs in debug/instrumented
 
 ALSO: test variable map sizes"
   xyzwh 36 441 2000 355 103
-relationcanvas 128258 relation_ref 7830402 // <directional composition>
-  from ref 128002 z 2001 to ref 128130
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
+classcanvas 131330 class_ref 4161538 // Platform
+  classdiagramsettings member_max_width 0 end
+  xyz 31 100 2005
+end
+classcanvas 131714 class_ref 7284354 // ExecutableFileIoSelector
+  classdiagramsettings member_max_width 0 end
+  xyz 609 50 2007
 end
 relationcanvas 128514 relation_ref 7830530 // <dependency>
+  decenter_begin 456
   decenter_end 390
   from ref 128002 z 2001 to point 888 126
   line 130946 z 2001 to point 888 528
@@ -93,6 +91,17 @@ relationcanvas 129794 relation_ref 7893506 // <generalisation>
   from ref 128642 z 2001 to point 510 472
   line 129922 z 2001 to point 645 472
   line 130050 z 2001 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131458 relation_ref 7953282 // <dependency>
+  from ref 128002 z 2006 to ref 131330
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131586 relation_ref 7953410 // <directional composition>
+  decenter_end 412
+  from ref 131330 z 2006 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

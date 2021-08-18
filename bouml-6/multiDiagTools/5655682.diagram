@@ -1,0 +1,55 @@
+format 224
+
+classcanvas 128002 class_ref 7270402 // MsvcVersion
+  classdiagramsettings member_max_width 0 end
+  xyz 40 289 2000
+end
+classcanvas 128130 class_ref 7270530 // MsvcFinder
+  classdiagramsettings member_max_width 0 end
+  xyz 287.75 244 2000
+end
+classcanvas 128258 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 476 169.5 2000
+end
+classcanvas 128514 class_ref 7270658 // QSysInfo
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 640.5 2000
+end
+classcanvas 128642 class_ref 7270786 // QOperatingSystemVersion
+  classdiagramsettings member_max_width 0 end
+  xyz 392.5 640.5 2000
+end
+classcanvas 128770 class_ref 7270914 // QVersionNumber
+  classdiagramsettings member_max_width 0 end
+  xyz 191.5 640.5 2000
+end
+classcanvas 128898 class_ref 7277442 // BuildType
+  classdiagramsettings member_max_width 0 end
+  xyz 436 469.5 2000
+end
+classcanvas 129154 class_ref 4169346 // ProcessorISA
+  classdiagramsettings member_max_width 0 end
+  xyz 494.25 40.5 2000
+end
+classcanvas 129666 class_ref 7277570 // FindCompilerError
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 760.5 309 2000
+end
+relationcanvas 129026 relation_ref 7994370 // <dependency>
+  from ref 128130 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 7994626 // <dependency>
+  decenter_end 521
+  from ref 128130 z 2001 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129538 relation_ref 7994754 // <directional composition>
+  from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

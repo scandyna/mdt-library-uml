@@ -1,6 +1,6 @@
 format 224
 "Pe" // Mdt::DeployUtils::Impl::Pe
-  revision 17
+  revision 24
   modified_by 2 "philippe"
   // class settings
   
@@ -296,6 +296,44 @@ ${inlines}
 	mysql_decl ""
 	MysqlColumn
       end
+
+      operation 9233922 "isDebugStripped"
+	public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 8053762 // <dependency>
+	relation 8022274 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8053762 // <dependency>
+	  b parent class_ref 7297538 // CoffStringTableHandle
+      end
+
+      operation 9247234 "coffStringTableOffset"
+	public explicit_return_type "int64_t"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
     end
 
     class 7216642 "PeHeader"
@@ -507,6 +545,18 @@ ${inlines}
       end
 
       attribute 4900226 "importTable"
+	public explicit_type "uint64_t"
+	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 4953730 "debug"
 	public explicit_type "uint64_t"
 	cpp_decl "    ${comment}${static}${mutable}${volatile}${const}${type} pv${name}${value};
 "
@@ -966,6 +1016,37 @@ ${inlines}
 	mysql_decl ""
 	MysqlColumn
       end
+    end
+
+    class 7297538 "CoffStringTableHandle"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 9240450 "byteCount"
+	public explicit_return_type "uint32_t"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
     end
   end
 end

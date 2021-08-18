@@ -1,0 +1,7 @@
+format 224
+
+classcanvas 128002 class_ref 7270786 // QOperatingSystemVersion
+  classdiagramsettings member_max_width 0 end
+  xyz 128 292 2000
+end
+end

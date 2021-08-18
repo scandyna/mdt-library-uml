@@ -2,31 +2,39 @@ format 224
 
 classcanvas 128002 class_ref 4161538 // Platform
   classdiagramsettings member_max_width 0 end
-  xyz 225 58 2000
+  xyz 275.833 149.444 2000
 end
 classcanvas 128514 class_ref 4169218 // Compiler
   classdiagramsettings member_max_width 0 end
-  xyz 263 162 2006
+  xyz 306.889 39.3333 2006
 end
 classcanvas 128770 class_ref 4169346 // ProcessorISA
   classdiagramsettings member_max_width 0 end
-  xyz 40 35 2006
+  xyz 281.889 239.389 2006
 end
 classcanvas 129026 class_ref 4169602 // OperatingSystem
   classdiagramsettings member_max_width 0 end
-  xyz 447 35 2000
+  xyz 40.1667 130.444 2000
 end
 classcanvas 129538 class_ref 4204290 // BinaryFormat
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 328.5 2000
+  xyz 331.5 409.056 2000
 end
 classcanvas 129666 class_ref 7145730 // Endianness
   classdiagramsettings member_max_width 0 end
-  xyz 407 421 2000
+  xyz 540.889 209.944 2000
 end
 classcanvas 129794 class_ref 7145858 // ObjectFileType
   classdiagramsettings member_max_width 0 end
-  xyz 109 499 2000
+  xyz 40.5 409.056 2000
+end
+classcanvas 129922 class_ref 7146498 // ExecutableFileFormat
+  classdiagramsettings member_max_width 0 end
+  xyz 541.444 47.6667 2005
+end
+classcanvas 130562 class_ref 7277442 // BuildType
+  classdiagramsettings member_max_width 0 end
+  xyz 338 698 2000
 end
 relationcanvas 129154 relation_ref 4666754 // <directional composition>
   from ref 128002 z 2001 to ref 129026
@@ -34,13 +42,28 @@ relationcanvas 129154 relation_ref 4666754 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129282 relation_ref 4688898 // <directional composition>
-  decenter_begin 519
   from ref 128002 z 2007 to ref 128514
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129410 relation_ref 4689026 // <directional composition>
   from ref 128002 z 2007 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 7953154 // <directional composition>
+  decenter_begin 830
+  decenter_end 208
+  from ref 128002 z 2001 to point 499 193
+  line 130306 z 2001 to point 499 228
+  line 130434 z 2001 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 7953410 // <directional composition>
+  decenter_begin 169
+  decenter_end 874
+  from ref 128002 z 2006 to ref 129922
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -2,33 +2,34 @@ format 224
 
 classcanvas 128002 class_ref 7145602 // ElfFileReader
   classdiagramsettings member_max_width 0 end
-  xyz 335 288.25 2000
+  xyz 352.5 379.25 2000
 end
 classcanvas 128130 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 450 39.5 2000
+  xyz 456.5 39.5 2000
 end
 classcanvas 128386 class_ref 7156354 // FileReader
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 42 345 2000
+  xyz 42 436 2000
 end
 classcanvas 129282 class_ref 7148418 // ExecutableFileReadError
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 40.5 530 2000
+  xyz 40.5 621 2000
 end
 classcanvas 129666 class_ref 7202946 // FileOpenError
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 291.5 530 2000
+  xyz 291.5 621 2000
 end
 classcanvas 130434 class_ref 7203074 // AbstractExecutableFileReaderEngine
   classdiagramsettings member_max_width 0 end
-  xyz 358 158.5 2000
+  xyz 294.75 159 2000
 end
 classcanvas 131202 class_ref 390530 // QFile
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 274.75 182.5 2006
+  xyz 209.75 228 2006
 end
 relationcanvas 128514 relation_ref 7852674 // <directional composition>
+  decenter_begin 478
   from ref 128002 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -36,7 +37,7 @@ end
 relationcanvas 128642 relation_ref 7852802 // <generalisation>
   geometry VHV unfixed
   from ref 128386 z 2001 to point 168 118
-  line 131714 z 2001 to point 480 118
+  line 131714 z 2001 to point 486 118
   line 131842 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b

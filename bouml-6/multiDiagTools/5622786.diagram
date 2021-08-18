@@ -4,4 +4,8 @@ classcanvas 128002 class_ref 7229954 // ExecutableFileReaderUtils
   classdiagramsettings member_max_width 0 end
   xyz 167 214 2000
 end
+classcanvas 128130 class_ref 7284354 // ExecutableFileIoSelector
+  classdiagramsettings member_max_width 0 end
+  xyz 270 439 2000
+end
 end
