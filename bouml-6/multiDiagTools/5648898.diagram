@@ -2,37 +2,34 @@ format 224
 
 classcanvas 128002 class_ref 7263362 // ExecutableFileWriter
   classdiagramsettings member_max_width 0 end
-  xyz 39 123.5 2000
+  xyz 40.5 510.5 2000
 end
 classcanvas 128130 class_ref 7263490 // AbstractExecutableFileWriterEngine
   classdiagramsettings member_max_width 0 end
-  xyz 340.25 114.5 2000
+  xyz 41.25 153.5 2000
 end
 classcanvas 128642 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 502 39.5 2006
+  xyz 638.5 39.5 2006
 end
 classcanvas 129282 class_ref 7202946 // FileOpenError
   classdiagramsettings member_max_width 0 end
-  xyz 66 330 2000
+  xyz 383.5 510.5 2000
 end
 classcanvas 129410 class_ref 7203074 // AbstractExecutableFileReaderEngine
   classdiagramsettings member_max_width 0 end
-  xyz 516 322 2012
+  xyz 473.5 250 2012
 end
 note 129666 "isElfFile()"
-  xyzwh 340 365 2000 95 47
+  xyzwh 191.25 312.75 2000 95 47
 classcanvas 130050 class_ref 7304066 // AbstractExecutableFileIoEngine
   classdiagramsettings member_max_width 0 end
-  xyz 161 72 2000
-end
-relationcanvas 128514 relation_ref 7980290 // <directional composition>
-  from ref 128002 z 2001 to ref 128130
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
+  xyz 905.5 153 2000
 end
 relationcanvas 128898 relation_ref 7980418 // <generalisation>
-  from ref 128130 z 2007 to ref 128642
+  from ref 128130 z 2007 to point 235 118
+  line 130306 z 2007 to point 671 118
+  line 130434 z 2007 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -42,12 +39,14 @@ relationcanvas 129538 relation_ref 7893250 // <generalisation>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130178 relation_ref 8028802 // <generalisation>
-  from ref 130050 z 2007 to ref 128642
+  from ref 130050 z 2007 to point 1048 118
+  line 130562 z 2007 to point 671 118
+  line 130690 z 2007 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 129794 -_-_
+line 129794 -_-_ decenter_begin 491 decenter_end 463
   from ref 128130 z 2001 to ref 129666
-line 129922 -_-_
+line 129922 -_-_ decenter_begin 574
   from ref 129666 z 2013 to ref 129410
 end
