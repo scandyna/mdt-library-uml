@@ -1,0 +1,26 @@
+format 224
+
+classcanvas 128002 class_ref 7148546 // ProgramHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 127 41 2000
+end
+classcanvas 128258 class_ref 7357058 // SegmentType
+  classdiagramsettings member_max_width 0 end
+  xyz 346 95 2000
+end
+classcanvas 128514 class_ref 7370242 // ProgramHeaderTable
+  classdiagramsettings member_max_width 0 end
+  xyz 41 272 2000
+end
+relationcanvas 128386 relation_ref 8089602 // <dependency>
+  decenter_end 450
+  from ref 128002 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 8102914 // <directional composition>
+  from ref 128514 z 2001 to ref 128002
+  no_role_a no_role_b
+  multiplicity_a_pos 201 239 3000 no_multiplicity_b
+end
+end

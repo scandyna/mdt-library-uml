@@ -1,0 +1,135 @@
+format 224
+
+classcanvas 128002 class_ref 7409538 // SymbolTableEntry
+  classdiagramsettings member_max_width 0 end
+  xyz 617.7 116.9 2000
+end
+classcanvas 128130 class_ref 7409666 // SymbolTable
+  classdiagramsettings member_max_width 0 end
+  xyz 671.6 39.5 2000
+end
+classcanvas 128386 class_ref 7409794 // PartialSymbolTable
+  classdiagramsettings member_max_width 0 end
+  xyz 187 316.4 2000
+end
+classcanvas 128514 class_ref 7409922 // PartialSymbolTableEntry
+  classdiagramsettings member_max_width 0 end
+  xyz 634.6 349.4 2000
+end
+classcanvas 128898 class_ref 7416450 // SymbolBinding
+  classdiagramsettings member_max_width 0 end
+  xyz 850.8 127 2000
+end
+classcanvas 129154 class_ref 7416578 // SymbolType
+  classdiagramsettings member_max_width 0 end
+  xyz 486.4 127 2000
+end
+classcanvas 129410 class_ref 7148802 // SectionHeader
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 335.1 164.3 2000
+end
+classcanvas 129538 class_ref 7423106 // SectionAssociationSymbolTable
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 41.2 242.3 2000
+end
+classcanvas 129666 class_ref 7324034 // SectionHeaderTable
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 322 242.3 2006
+end
+classcanvas 130306 class_ref 7468930 // DynamicObjectSymbolTableEntry
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 602.7 468.5 2000
+end
+classcanvas 130562 class_ref 7475458 // SectionSymbolAssociationMap
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 588.5 2000
+end
+classcanvas 130690 class_ref 7475714 // SectionIndexChangeMap
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 501 242.3 2012
+end
+note 130946 "Bad idea"
+  xyzwh 89.2 164.3 2000 121 41
+note 131842 "Bad idea"
+  xyzwh 467.8 469.5 2000 97 39
+classcanvas 132098 class_ref 7482242 // IndexedSectionHeaderList
+  classdiagramsettings member_max_width 0 end
+  xyz 328 632 2000
+end
+relationcanvas 128258 relation_ref 8137090 // <directional composition>
+  decenter_end 523
+  from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  multiplicity_a_pos 703 94 3000 no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 8137218 // <directional composition>
+  from ref 128386 z 2001 to ref 128514
+  no_role_a no_role_b
+  multiplicity_a_pos 618 383 3000 no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 8137346 // <directional composition>
+  decenter_end 523
+  from ref 128514 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 8143874 // <dependency>
+  decenter_begin 460
+  from ref 128002 z 2001 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 8144002 // <dependency>
+  decenter_begin 460
+  from ref 128002 z 2001 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129794 relation_ref 8056706 // <directional composition>
+  decenter_end 533
+  from ref 129666 z 2007 to ref 129410
+  no_role_a no_role_b
+  multiplicity_a_pos 375 212 3000 no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 8177538 // <directional composition>
+  geometry VH unfixed
+  from ref 129538 z 2001 to point 147 373
+  line 131714 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 8177666 // <dependency>
+  decenter_begin 390
+  decenter_end 390
+  from ref 129538 z 2007 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130434 relation_ref 8177794 // <directional composition>
+  decenter_begin 520
+  from ref 130306 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130818 relation_ref 8184450 // <dependency>
+  decenter_begin 390
+  decenter_end 390
+  from ref 129666 z 2013 to ref 130690
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131586 relation_ref 8184706 // <dependency>
+  from ref 128386 z 2007 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132354 relation_ref 8191362 // <dependency>
+  from ref 132098 z 2007 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 131074 -_-_
+  from ref 129538 z 2001 to ref 130946
+line 131970 -_-_ decenter_begin 585 decenter_end 589
+  from ref 130306 z 2001 to ref 131842
+end

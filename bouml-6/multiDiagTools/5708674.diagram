@@ -1,0 +1,81 @@
+format 224
+
+classcanvas 128002 class_ref 7163138 // FileHeader
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 632 200 2000
+end
+classcanvas 128130 class_ref 7155970 // Ident
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 650 120 2006
+end
+classcanvas 128386 class_ref 7148546 // ProgramHeader
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 520 40 2000
+end
+classcanvas 128514 class_ref 7370114 // FileAllHeaders
+  classdiagramsettings member_max_width 0 end
+  xyz 218 158 2000
+end
+classcanvas 128898 class_ref 7370242 // ProgramHeaderTable
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 335 40 2006
+end
+classcanvas 129282 class_ref 7324034 // SectionHeaderTable
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 39 200 2000
+end
+classcanvas 129410 class_ref 7148802 // SectionHeader
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 56 280 3005
+end
+classcanvas 129794 class_ref 7462402 // MoveSectionAlignment
+  classdiagramsettings member_max_width 0 end
+  xyz 265 319 2000
+end
+relationcanvas 128258 relation_ref 7845762 // <directional composition>
+  from ref 128002 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 8102658 // <directional composition>
+  decenter_begin 464
+  decenter_end 390
+  from ref 128514 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 8102914 // <directional composition>
+  decenter_begin 585
+  decenter_end 585
+  from ref 128898 z 2007 to ref 128386
+  no_role_a no_role_b
+  multiplicity_a_pos 504 71 3000 no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 8103042 // <directional composition>
+  decenter_begin 509
+  from ref 128514 z 2007 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129538 relation_ref 8056706 // <directional composition>
+  decenter_begin 525
+  decenter_end 533
+  from ref 129282 z 3006 to ref 129410
+  no_role_a no_role_b
+  multiplicity_a_pos 96 258 3000 no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 8103170 // <directional composition>
+  decenter_begin 464
+  decenter_end 390
+  from ref 128514 z 2001 to ref 129282
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129922 relation_ref 8171010 // <dependency>
+  decenter_begin 509
+  decenter_end 512
+  from ref 128514 z 2001 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

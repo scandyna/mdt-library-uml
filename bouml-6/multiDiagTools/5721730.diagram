@@ -1,0 +1,39 @@
+format 224
+
+classcanvas 128002 class_ref 7389826 // OffsetChange
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 560.5 2000
+end
+classcanvas 128130 class_ref 7383298 // FileWriterFileLayout
+  classdiagramsettings member_max_width 0 end
+  xyz 42 364 2000
+end
+classcanvas 128258 class_ref 7403010 // OffsetRange
+  classdiagramsettings member_max_width 0 end
+  xyz 226 304 2000
+end
+classcanvas 128514 class_ref 7148546 // ProgramHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 671 289 2000
+end
+classcanvas 128642 class_ref 7148802 // SectionHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 329 39 2000
+end
+relationcanvas 128386 relation_ref 8130306 // <directional composition>
+  from ref 128130 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 8130434 // <dependency>
+  from ref 128258 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 8130562 // <dependency>
+  decenter_begin 488
+  from ref 128258 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

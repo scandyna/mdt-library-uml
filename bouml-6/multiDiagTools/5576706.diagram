@@ -44,6 +44,10 @@ classcanvas 132354 class_ref 7163138 // FileHeader
   classdiagramsettings member_max_width 0 end
   xyz 732.444 377.556 2000
 end
+classcanvas 134914 class_ref 7389826 // OffsetChange
+  classdiagramsettings member_max_width 0 end
+  xyz 287 160 2000
+end
 relationcanvas 131202 relation_ref 7838850 // <directional composition>
   decenter_begin 560
   from ref 131074 z 2001 to ref 130818

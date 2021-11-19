@@ -1,6 +1,6 @@
 format 224
 "Impl" // Mdt::DeployUtils::Impl
-  revision 14
+  revision 16
   modified_by 2 "philippe"
   // class settings
   
@@ -312,6 +312,31 @@ ${members}};
 	  a public
 	    cpp default "${type}"
 	    classrelation_ref 7978114 // <generalisation>
+	  b parent class_ref 6918146 // QRuntimeError
+      end
+    end
+
+    class 7344002 "StringTableError"
+      visibility package stereotype "exception"
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}exception ${name} {
+${members}};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8101250 // <generalisation>
+	relation 8069762 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 8101250 // <generalisation>
 	  b parent class_ref 6918146 // QRuntimeError
       end
     end

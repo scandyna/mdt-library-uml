@@ -2,14 +2,24 @@ format 224
 
 classcanvas 128002 class_ref 7304066 // AbstractExecutableFileIoEngine
   classdiagramsettings member_max_width 0 end
-  xyz 42 39 2000
+  xyz 42 42 2000
 end
 classcanvas 128130 class_ref 7304194 // ElfFileIoEngine
   classdiagramsettings member_max_width 0 end
-  xyz 46 330 2006
+  xyz 42 350 2006
+end
+classcanvas 128386 class_ref 7156354 // FileReader
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 360 356 2000
 end
 relationcanvas 128258 relation_ref 8028930 // <generalisation>
+  decenter_begin 512
   from ref 128130 z 2007 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 8043266 // <directional composition>
+  from ref 128130 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

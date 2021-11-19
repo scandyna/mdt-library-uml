@@ -2,36 +2,59 @@ format 224
 
 classcanvas 128002 class_ref 7189634 // DynamicSection
   classdiagramsettings member_max_width 0 end
-  xyz 526 192 2000
+  xyz 785.4 204.2 2000
 end
 classcanvas 128130 class_ref 7189378 // DynamicStruct
   classdiagramsettings member_max_width 0 end
-  xyz 478 50 2006
+  xyz 477.3 203.3 2006
 end
 classcanvas 128386 class_ref 7189506 // DynamicSectionTag
   classdiagramsettings member_max_width 0 end
-  xyz 728 37 2012
+  xyz 509.3 359.2 2012
 end
 classcanvas 128642 class_ref 7196162 // DynamicSectionStringTable
   classdiagramsettings member_max_width 0 end
-  xyz 41 63 2012
+  xyz 39.9 221.3 2012
 end
+classcanvas 128898 class_ref 7148802 // SectionHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 792.5 389.1 2000
+end
+classcanvas 129282 class_ref 7330946 // DynamicData
+  classdiagramsettings member_max_width 0 end
+  xyz 557.5 104.1 2000
+end
+classcanvas 129666 class_ref 7330562 // StringTable
+  classdiagramsettings member_max_width 0 end
+  xyz 722.4 40.4 2000
+end
+note 129922 "Obselete.."
+  xyzwh 269.9 339.7 2000 117 39
 relationcanvas 128258 relation_ref 7879170 // <directional composition>
+  decenter_end 529
   from ref 128002 z 2007 to ref 128130
   no_role_a no_role_b
-  multiplicity_a_pos 572 158 3000 no_multiplicity_b
+  multiplicity_a_pos 759 273 3000 no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 7879042 // <dependency>
-  decenter_begin 534
-  decenter_end 527
+  decenter_begin 483
+  decenter_end 478
   from ref 128130 z 2013 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 7885954 // <dependency>
-  decenter_end 534
+  decenter_begin 542
+  decenter_end 529
   from ref 128642 z 2013 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 129794 relation_ref 8069890 // <directional composition>
+  from ref 128002 z 2001 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 130050 -_-_ decenter_begin 470 decenter_end 491
+  from ref 129922 z 2013 to ref 128642
 end

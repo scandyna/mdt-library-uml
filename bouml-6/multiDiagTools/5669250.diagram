@@ -2,37 +2,50 @@ format 224
 
 classcanvas 128002 class_ref 7304066 // AbstractExecutableFileIoEngine
   classdiagramsettings member_max_width 0 end
-  xyz 466 42 2000
+  xyz 786 210 2000
 end
 classcanvas 128130 class_ref 7146242 // ExecutableFileReader
   classdiagramsettings member_max_width 0 end
-  xyz 39 318 2000
+  xyz 375 42 2000
 end
 classcanvas 128258 class_ref 7263362 // ExecutableFileWriter
   classdiagramsettings member_max_width 0 end
-  xyz 473 519 2000
+  xyz 41 291 2000
 end
 classcanvas 128642 class_ref 7304322 // ExecutableFileIoEngine
   classdiagramsettings member_max_width 0 end
-  xyz 410 354 2000
+  xyz 346 282 2000
 end
-classcanvas 130306 class_ref 7203074 // AbstractExecutableFileReaderEngine
+classcanvas 130434 class_ref 7317506 // ExecutableFileOpenMode
   classdiagramsettings member_max_width 0 end
-  xyz 37.5 570.5 2000
+  xyz 417 471 2000
 end
 relationcanvas 129666 relation_ref 8029442 // <directional composition>
+  decenter_begin 510
   from ref 128130 z 2001 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129794 relation_ref 8029570 // <directional composition>
-  decenter_begin 513
   from ref 128258 z 2001 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129922 relation_ref 8029698 // <directional composition>
   from ref 128642 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 8049794 // <dependency>
+  from ref 128642 z 2001 to ref 130434
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130690 relation_ref 8049922 // <dependency>
+  geometry VH unfixed
+  decenter_end 538
+  from ref 128002 z 2001 to point 926 517
+  line 130818 z 2001 to ref 130434
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -1,0 +1,31 @@
+format 224
+
+classcanvas 128002 class_ref 7330562 // StringTable
+  classdiagramsettings member_max_width 0 end
+  xyz 65 349 2000
+end
+classcanvas 128130 class_ref 7148802 // SectionHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+classcanvas 128258 class_ref 7330690 // StringTableTemplate
+  classdiagramsettings member_max_width 0 end
+  xyz 193 511 2000
+end
+classcanvas 128386 class_ref 7330818 // StringTableView
+  classdiagramsettings member_max_width 0 end
+  xyz 39 519 2000
+end
+note 128770 "Maybe CRTP: <Derived, Iterator>"
+  xyzwh 476 378 2000 241 51
+relationcanvas 128514 relation_ref 8082946 // <dependency>
+  from ref 128002 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 8083074 // <dependency>
+  from ref 128386 z 2001 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end
