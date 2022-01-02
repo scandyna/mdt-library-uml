@@ -2,31 +2,31 @@ format 224
 
 classcanvas 128002 class_ref 7310978 // FileIoEngine
   classdiagramsettings member_max_width 0 end
-  xyz 78.4444 407.111 2000
+  xyz 186 266 2000
 end
 classcanvas 128130 class_ref 7163138 // FileHeader
-  classdiagramsettings member_max_width 0 end
-  xyz 499.889 286.111 2000
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 520 368 2000
 end
 classcanvas 128258 class_ref 7148802 // SectionHeader
-  classdiagramsettings member_max_width 0 end
-  xyz 270.333 76.1111 2000
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 372 464 2000
 end
 classcanvas 128386 class_ref 7189634 // DynamicSection
-  classdiagramsettings member_max_width 0 end
-  xyz 87.0556 501.222 2000
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 202 184 2000
 end
 classcanvas 128514 class_ref 7182850 // ByteArraySpan
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 94.4444 325 2005
+  xyz 370 272 2005
 end
 classcanvas 129154 class_ref 7156354 // FileReader
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 87.4444 159.111 2011
+  xyz 363 362 2011
 end
 classcanvas 130306 class_ref 7263874 // FileWriter
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 297.944 338.722 2011
+  xyz 40 82 2011
 end
 note 131970 "To patch:
 - find each sections after dynamic sections's referenced string table
@@ -34,22 +34,27 @@ note 131970 "To patch:
 - also shift bin data..
 
 Note: what about program headers / segments ?"
-  xyzwh 91 660 2000 487 119
+  xyzwh 40.5 584.5 2000 487 119
+classcanvas 132098 class_ref 7376770 // FileWriterFile
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 208 96 2017
+end
 relationcanvas 128898 relation_ref 8036610 // <dependency>
-  decenter_end 521
+  decenter_end 461
   from ref 128002 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129026 relation_ref 8036738 // <dependency>
+  decenter_begin 415
+  decenter_end 390
   from ref 128002 z 2006 to ref 128514
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129282 relation_ref 7852546 // <directional composition>
-  from ref 129154 z 2012 to point 148 40
-  line 131458 z 2012 to point 623 40
-  line 131586 z 2012 to ref 128130
+  decenter_end 585
+  from ref 129154 z 2012 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -64,45 +69,35 @@ relationcanvas 129538 relation_ref 7872514 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129922 relation_ref 8050050 // <dependency>
-  from ref 128002 z 2012 to point 40 433
-  line 131202 z 2012 to point 40 189
-  line 131330 z 2012 to ref 129154
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130434 relation_ref 7980930 // <dependency>
-  decenter_begin 527
-  from ref 130306 z 2012 to ref 128258
+  from ref 128002 z 2012 to point 256 392
+  line 131202 z 2012 to ref 129154
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130562 relation_ref 7981058 // <dependency>
-  decenter_begin 229
-  decenter_end 658
-  from ref 130306 z 2012 to ref 128514
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130690 relation_ref 7981186 // <dependency>
-  decenter_begin 557
-  from ref 130306 z 2012 to ref 128130
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130818 relation_ref 7981314 // <dependency>
-  geometry VH unfixed
-  decenter_begin 527
-  from ref 130306 z 2012 to point 362 498
-  line 131074 z 2012 to ref 128386
+  from ref 130306 z 2012 to point 104 40
+  line 132482 z 2012 to point 424 40
+  line 132610 z 2012 to ref 128514
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130946 relation_ref 8050178 // <dependency>
-  decenter_begin 245
-  decenter_end 852
-  from ref 128002 z 2012 to point 257 420
-  line 131714 z 2012 to point 257 392
-  line 131842 z 2012 to ref 130306
+  geometry HV unfixed
+  decenter_begin 415
+  from ref 128002 z 2012 to point 102 285
+  line 131714 z 2012 to ref 130306
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132226 relation_ref 8110210 // <directional composition>
+  decenter_end 461
+  from ref 132098 z 2018 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132354 relation_ref 8110338 // <dependency>
+  decenter_end 390
+  from ref 130306 z 2018 to ref 132098
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

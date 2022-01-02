@@ -2,15 +2,43 @@ format 224
 
 classcanvas 128002 class_ref 7249922 // ExecutableFileInfo
   classdiagramsettings member_max_width 0 end
-  xyz 234 37 2000
+  xyz 234 437 2000
 end
 classcanvas 128130 class_ref 7250050 // ExecutableFileInfoList
   classdiagramsettings member_max_width 0 end
-  xyz 40 52 2000
+  xyz 40 452 2000
 end
+classcanvas 128386 class_ref 7528834 // BinaryDependenciesFile
+  classdiagramsettings member_max_width 0 end
+  xyz 274 148 2000
+end
+classcanvas 128514 class_ref 4385922 // RPath
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 407 320 2005
+end
+classcanvas 128770 class_ref 7535362 // BinaryDependenciesFileList
+  classdiagramsettings member_max_width 0 end
+  xyz 41 196 2000
+end
+note 129026 "Think that dependencies should stay out of this class !
+See also const not working..
+Or... not"
+  xyzwh 257 39 2000 359 75
 relationcanvas 128258 relation_ref 7959938 // <directional composition>
   from ref 128130 z 2001 to ref 128002
   no_role_a no_role_b
-  multiplicity_a_pos 218 80 3000 no_multiplicity_b
+  multiplicity_a_pos 218 480 3000 no_multiplicity_b
 end
+relationcanvas 128642 relation_ref 8246530 // <directional composition>
+  from ref 128386 z 2006 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 8246914 // <directional composition>
+  from ref 128770 z 2001 to ref 128386
+  no_role_a no_role_b
+  multiplicity_a_pos 258 224 3000 no_multiplicity_b
+end
+line 129154 -_-_ decenter_end 487
+  from ref 128386 z 2001 to ref 129026
 end
