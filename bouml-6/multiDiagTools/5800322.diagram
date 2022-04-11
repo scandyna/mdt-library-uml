@@ -1,0 +1,26 @@
+format 224
+
+classcanvas 128002 class_ref 4265218 // QtModule
+  classdiagramsettings member_max_width 0 end
+  xyz 81 39 2000
+end
+classcanvas 128130 class_ref 4265346 // QtModuleList
+  classdiagramsettings member_max_width 0 end
+  xyz 42 214 2006
+end
+classcanvas 128386 class_ref 7615234 // QtSharedLibraryFileList
+  classdiagramsettings member_max_width 0 end
+  xyz 530 220 2000
+end
+relationcanvas 128258 relation_ref 4798210 // <directional composition>
+  decenter_end 488
+  from ref 128130 z 2007 to ref 128002
+  no_role_a no_role_b
+  multiplicity_a_pos 249 185 3000 no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 8375810 // <dependency>
+  from ref 128130 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

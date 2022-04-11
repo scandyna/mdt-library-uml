@@ -1,6 +1,6 @@
 format 224
 "Impl" // Mdt::DeployUtils::Impl
-  revision 16
+  revision 21
   modified_by 2 "philippe"
   // class settings
   
@@ -340,6 +340,33 @@ ${members}};
 	  b parent class_ref 6918146 // QRuntimeError
       end
     end
+  end
+
+  classview 3038722 "SharedLibraryFinder"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5767426 "Impl_SharedLibraryFinder"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
   end
 
   package_ref 687362 // Objdump

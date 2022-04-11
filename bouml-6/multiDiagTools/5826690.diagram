@@ -1,0 +1,73 @@
+format 224
+
+note 128002 "List plugins to include for a given module.
+Example:
+QtGui:
+ platforms/
+   xcb, eglfs
+ imageformats/
+  gif, jpeg
+
+See also, as ex., Platforms group
+https://doc.qt.io/qt-6/qt-conf.html"
+  xyzwh 40.5 40.5 2002 323 177
+classcanvas 128130 class_ref 7660930 // QtPlugins
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 343 297 2000
+end
+classcanvas 128386 class_ref 7601794 // QtModulePlugins
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 36 297 2011
+end
+classcanvas 128642 class_ref 4161538 // Platform
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 40.5 497.5 2000
+end
+classcanvas 128898 class_ref 4265218 // QtModule
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 443.5 40.5 2016
+end
+classcanvas 129154 class_ref 7628290 // QtPluginFileList
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 191 297 2017
+end
+classcanvas 129538 class_ref 7588482 // QtPluginFile
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 207 377 2023
+end
+classcanvas 129794 class_ref 7694082 // QtPluginsSet
+  classdiagramsettings member_max_width 0 end
+  xyz 48 377 2000
+end
+relationcanvas 129282 relation_ref 8396290 // <dependency>
+  decenter_begin 585
+  decenter_end 585
+  from ref 128130 z 2018 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129410 relation_ref 8409858 // <dependency>
+  decenter_end 585
+  from ref 128386 z 2018 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 8369154 // <directional composition>
+  decenter_end 450
+  from ref 129154 z 2024 to ref 129538
+  no_role_a no_role_b
+  multiplicity_a_pos 232 355 3000 no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 8464514 // <dependency>
+  decenter_begin 390
+  decenter_end 390
+  from ref 129794 z 2024 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 8464642 // <dependency>
+  from ref 128386 z 2012 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

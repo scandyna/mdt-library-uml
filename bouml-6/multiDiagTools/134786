@@ -1,6 +1,6 @@
 format 224
 "Qt" // Qt
-  revision 305
+  revision 308
   modified_by 2 "philippe"
   // class settings
   
@@ -2026,6 +2026,22 @@ ${inlines}
 	    classrelation_ref 6268034 // <directional composition>
 	  b parent class_ref 432386 // QFileInfo
       end
+    end
+
+    class 7647874 "QChar"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 
@@ -4500,6 +4516,34 @@ ${inlines}
 	    cpp default "${type}"
 	    classrelation_ref 7122818 // <generalisation>
 	  b parent class_ref 6531586 // QFileDevice
+      end
+    end
+
+    classdiagram 5826562 "QSettings"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7693954 "QSettings"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8482306 // <generalisation>
+	relation 8450690 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 8482306 // <generalisation>
+	  b parent class_ref 138626 // QObject
       end
     end
   end

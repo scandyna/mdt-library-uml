@@ -1,0 +1,100 @@
+format 224
+
+classcanvas 128002 class_ref 7575170 // DeployApplication
+  classdiagramsettings member_max_width 0 end
+  xyz 275 338.25 2000
+end
+classcanvas 128130 class_ref 7575298 // DeployApplicationRequest
+  classdiagramsettings member_max_width 0 end
+  xyz 249 436 2000
+end
+classcanvas 128386 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 430.5 117.5 2000
+end
+classcanvas 128642 class_ref 7118466 // OverwriteBehavior
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 79 429.25 2000
+end
+classcanvas 128898 class_ref 7284226 // CompilerLocationType
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 814.5 283 2000
+end
+classcanvas 129154 class_ref 6897794 // MessageLogger
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 442.25 351.5 2000
+end
+classcanvas 132482 class_ref 7581954 // CompilerLocationRequest
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 594.5 293 2006
+end
+classcanvas 133122 class_ref 7674114 // SharedLibrariesDeployer
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 377.5 234.5 2018
+end
+classcanvas 135298 class_ref 4160770 // QtConf
+  classdiagramsettings member_max_width 0 end
+  xyz 532 526 2000
+end
+relationcanvas 128258 relation_ref 8307970 // <dependency>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 8308098 // <generalisation>
+  geometry VHV unfixed
+  from ref 128002 z 2001 to point 337 196
+  line 131586 z 2001 to point 460 196
+  line 131714 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 8308226 // <directional composition>
+  decenter_end 442
+  from ref 128130 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 8308482 // <dependency>
+  decenter_begin 557
+  from ref 128002 z 2001 to ref 129154
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132610 relation_ref 8321922 // <directional composition>
+  from ref 132482 z 2007 to ref 128898
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132738 relation_ref 8322050 // <directional composition>
+  from ref 128130 z 2007 to point 339 528
+  line 134146 z 2007 to point 40 528
+  line 134274 z 2007 to point 40 40
+  line 135042 z 2007 to point 684 40
+  line 135170 z 2007 to ref 132482
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133250 relation_ref 8416386 // <generalisation>
+  from ref 133122 z 2019 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133378 relation_ref 8416642 // <dependency>
+  geometry VH unfixed
+  from ref 133122 z 2019 to point 460 311
+  line 133762 z 2019 to ref 132482
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133634 relation_ref 8417538 // <directional composition>
+  decenter_begin 557
+  from ref 128002 z 2019 to point 235 372
+  line 134402 z 2019 to point 235 79
+  line 134530 z 2019 to point 586 79
+  line 134658 z 2019 to point 586 255
+  line 134786 z 2019 to ref 133122
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

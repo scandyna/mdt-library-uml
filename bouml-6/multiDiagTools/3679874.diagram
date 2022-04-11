@@ -1,15 +1,52 @@
-format 214
+format 224
 
-classcanvas 128002 class_ref 4251522 // QtLibrary
+classcanvas 128002 class_ref 4251522 // QtSharedLibrary
   classdiagramsettings member_max_width 0 end
-  xyz 37 124.75 2000
+  xyz 223.6 115.1 2000
 end
 classcanvas 128130 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 294 40.75 2000
+  xyz 482.3 39.8 2000
+end
+classcanvas 128386 class_ref 7615106 // QtSharedLibraryFile
+  classdiagramsettings member_max_width 0 end
+  xyz 917.8 321.1 2000
+end
+classcanvas 128514 class_ref 4265218 // QtModule
+  classdiagramsettings member_max_width 0 end
+  xyz 841.8 142.65 2000
+end
+classcanvas 128770 class_ref 7615234 // QtSharedLibraryFileList
+  classdiagramsettings member_max_width 0 end
+  xyz 432.3 351.2 2000
+end
+classcanvas 129154 class_ref 7621762 // QtSharedLibraryError
+  classdiagramsettings member_max_width 0 end
+  xyz 237.95 351.85 2000
 end
 relationcanvas 128258 relation_ref 4763650 // <generalisation>
   from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 8355586 // <directional composition>
+  from ref 128386 z 2001 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 8355714 // <directional composition>
+  from ref 128770 z 2001 to ref 128386
+  no_role_a no_role_b
+  multiplicity_a_pos 899 379 3000 no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 8355842 // <dependency>
+  from ref 128002 z 2001 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 8362498 // <dependency>
+  decenter_end 557
+  from ref 128002 z 2001 to ref 129154
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

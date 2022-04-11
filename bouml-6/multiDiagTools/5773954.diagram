@@ -1,0 +1,34 @@
+format 224
+
+classcanvas 128002 class_ref 7568514 // LogLevel
+  classdiagramsettings member_max_width 0 end
+  xyz 386 118 2000
+end
+classcanvas 128130 class_ref 6871426 // CommandLineParser
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 351 40 2000
+end
+classcanvas 128386 class_ref 7105282 // CopySharedLibrariesTargetDependsOnRequest
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 35 128 2006
+end
+relationcanvas 128258 relation_ref 8301314 // <directional composition>
+  from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 7782018 // <dependency>
+  geometry HV unfixed
+  decenter_begin 390
+  from ref 128130 z 2007 to point 190 53
+  line 128770 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128642 relation_ref 8301442 // <dependency>
+  decenter_end 426
+  from ref 128386 z 2007 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

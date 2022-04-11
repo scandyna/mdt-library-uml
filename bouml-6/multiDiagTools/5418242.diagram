@@ -1,16 +1,16 @@
-format 223
+format 224
 
 classcanvas 128514 class_ref 6871426 // CommandLineParser
   classdiagramsettings member_max_width 0 end
-  xyz 227 112 2000
+  xyz 40 87 2000
 end
 classcanvas 131586 class_ref 6904450 // BashCompletionGenerator
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 42 36 2000
+  xyz 710 40 2000
 end
 classcanvas 131714 class_ref 6924802 // ParserDefinition
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 263 36 2006
+  xyz 743 120 2006
 end
 relationcanvas 131842 relation_ref 7564930 // <dependency>
   from ref 131586 z 2007 to ref 131714
@@ -18,6 +18,8 @@ relationcanvas 131842 relation_ref 7564930 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131970 relation_ref 7558274 // <directional composition>
+  decenter_begin 457
+  decenter_end 390
   from ref 128514 z 2007 to ref 131714
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b

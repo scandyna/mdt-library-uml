@@ -1,79 +1,53 @@
 format 224
 
-classcanvas 128002 class_ref 7522178 // AbstractSharedLibraryFinder
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 254 254 2000
-end
 classcanvas 128130 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 417.5 39.5 2005
+  xyz 339.5 39.5 2005
 end
 classcanvas 128386 class_ref 7521922 // SharedLibraryFinderLinux
   classdiagramsettings member_max_width 0 end
-  xyz 646.5 156.5 2000
+  xyz 61.5 306 2000
 end
 classcanvas 128514 class_ref 7522050 // SharedLibraryFinderWindows
   classdiagramsettings member_max_width 0 end
-  xyz 40.75 384 2000
-end
-classcanvas 129154 class_ref 7522306 // SharedLibraryFinder
-  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 281 325.5 2000
+  xyz 505.5 306 2000
 end
 classcanvas 129410 class_ref 4385922 // RPath
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 708 464 2000
+  xyz 691 52.5 2000
 end
 classcanvas 129666 class_ref 7284098 // CompilerFinder
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 391.25 156.5 2011
+  xyz 40.25 156.5 2011
 end
-note 130178 "Should see the rules for Windows and for Linux befaore implementing a common base"
-  xyzwh 40.5 504 2000 397 69
 note 130306 "For Windows:
 See known dll's
 "
-  xyzwh 517.5 504 2000 151 65
-note 130434 "This is overdesign !
-Abstraction, if required, should be in BinaryDependencies"
-  xyzwh 489.5 236.75 2000 207 69
+  xyzwh 40.5 426 2000 151 65
 classcanvas 131970 class_ref 7528834 // BinaryDependenciesFile
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 652.5 384 2000
+  xyz 633 130.5 2000
 end
-relationcanvas 128258 relation_ref 8232322 // <generalisation>
-  geometry VHV unfixed
-  from ref 128002 z 2006 to point 350 118
-  line 132098 z 2006 to point 447 118
-  line 132226 z 2006 to ref 128130
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
+classcanvas 133122 class_ref 7541890 // AbstractSharedLibraryFinder
+  classdiagramsettings member_max_width 0 end
+  xyz 191.5 157.75 2000
 end
-relationcanvas 129282 relation_ref 8232834 // <directional composition>
-  from ref 129154 z 2001 to ref 128002
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
+note 133250 "Should become statefull, so platform specific setup could be provided"
+  xyzwh 271.5 426 2000 447 45
+classcanvas 134274 class_ref 7548418 // SharedLibraryFinderBDTest
+  classdiagramsettings member_max_width 0 end
+  xyz 280.75 306 2000
+end
+classcanvas 134786 class_ref 7146242 // ExecutableFileReader
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 798.5 426 2012
 end
 relationcanvas 129794 relation_ref 8001538 // <generalisation>
+  geometry VHV unfixed
   decenter_begin 531
-  from ref 129666 z 2012 to ref 128130
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130818 relation_ref 8239618 // <generalisation>
-  geometry VHV unfixed
-  from ref 128386 z 2006 to point 733 118
-  line 131714 z 2006 to point 447 118
-  line 131842 z 2006 to ref 128130
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130946 relation_ref 8239746 // <generalisation>
-  geometry VHV unfixed
-  decenter_begin 517
-  from ref 128514 z 2006 to point 141 118
-  line 131458 z 2006 to point 447 118
-  line 131586 z 2006 to ref 128130
+  from ref 129666 z 2012 to point 96 118
+  line 139906 z 2012 to point 369 118
+  line 140034 z 2012 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -82,19 +56,39 @@ relationcanvas 132354 relation_ref 8246530 // <directional composition>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 132610 relation_ref 8246658 // <dependency>
-  from ref 128514 z 2001 to ref 131970
+relationcanvas 133634 relation_ref 8260354 // <generalisation>
+  from ref 133122 z 2006 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 132738 relation_ref 8246786 // <dependency>
-  from ref 128386 z 2001 to ref 131970
+relationcanvas 134402 relation_ref 8267010 // <generalisation>
+  from ref 134274 z 2001 to ref 133122
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-line 130562 -_-_ decenter_begin 550
-  from ref 130434 z 2001 to ref 128002
-line 130690 -_-_ geometry VH unfixed
-  from ref 130434 z 2001 to point 590 343
-  line 132482 z 2001 to ref 129154
+relationcanvas 135298 relation_ref 8267266 // <dependency>
+  decenter_begin 183
+  decenter_end 780
+  from ref 133122 z 2001 to point 593 170
+  line 140418 z 2001 to point 593 164
+  line 140546 z 2001 to ref 131970
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 138626 relation_ref 8281218 // <generalisation>
+  geometry VHV unfixed
+  from ref 128386 z 2001 to point 148 268
+  line 138882 z 2001 to point 369 268
+  line 139010 z 2001 to ref 133122
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 138754 relation_ref 8281346 // <generalisation>
+  geometry VHV unfixed
+  from ref 128514 z 2001 to point 603 268
+  line 140162 z 2001 to point 369 268
+  line 140290 z 2001 to ref 133122
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 end

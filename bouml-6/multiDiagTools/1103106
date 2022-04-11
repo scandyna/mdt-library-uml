@@ -1,6 +1,6 @@
 format 224
 "DeployUtils_Cli" // apps::DeployUtils_Cli
-  revision 46
+  revision 60
   modified_by 2 "philippe"
   // class settings
   
@@ -85,6 +85,49 @@ ${members}};
       end
     end
 
+    classdiagram 5780610 "DeployUtils_Cli_CommonOptions"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7575042 "CommonCommandLineParserDefinitionOptions"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8340354 // <generalisation>
+	relation 8308866 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 8340354 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 9459074 "makeCompilerLocationOption"
+	class_operation public return_type class_ref 6925186 // ParserDefinitionOption
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
     classdiagram 5339522 "DeployUtils_Cli"
       classdiagramsettings member_max_width 0 end
       size Legal-Landscape
@@ -159,11 +202,70 @@ ${inlines}
 	    classrelation_ref 7528706 // <directional composition>
 	  b parent class_ref 6871426 // CommandLineParser
       end
+
+      classrelation 8340098 // <directional composition>
+	relation 8308610 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 8340098 // <directional composition>
+	  b parent class_ref 7575170 // DeployApplication
+      end
     end
 
     classdiagram 5405186 "DeployUtils_Cli_CmdLineParsers"
       classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
       size C-Landscape
+    end
+
+    class 7561986 "CommandLineParserDefinition"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8325890 // <generalisation>
+	relation 8294402 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 8325890 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 8326146 // <directional composition>
+	relation 8294658 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 8326146 // <directional composition>
+	  b parent class_ref 7118722 // CopySharedLibrariesTargetDependsOnCommandLineParserDefinition
+      end
+
+      classrelation 8326274 // <directional composition>
+	relation 8294786 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 8326274 // <directional composition>
+	  b parent class_ref 6924802 // ParserDefinition
+      end
+
+      classrelation 8340226 // <directional composition>
+	relation 8308738 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 8340226 // <directional composition>
+	  b parent class_ref 7575426 // DeployApplicationCommandLineParserDefinition
+      end
     end
 
     class 6871426 "CommandLineParser"
@@ -248,15 +350,6 @@ ${inlines}
 	
       end
 
-      classrelation 7589762 // <directional composition>
-	relation 7558274 *-->
-	  a role_name "" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 7589762 // <directional composition>
-	  b parent class_ref 6924802 // ParserDefinition
-      end
-
       classrelation 7637762 // <directional composition>
 	relation 7606274 *-->
 	  a role_name "" private
@@ -290,13 +383,30 @@ ${inlines}
 	  b parent class_ref 7105282 // CopySharedLibrariesTargetDependsOnRequest
       end
 
-      classrelation 7820290 // <directional composition>
-	relation 7788802 *-->
+      classrelation 8326018 // <directional composition>
+	relation 8294530 *-->
 	  a role_name "" private
 	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
 "
-	    classrelation_ref 7820290 // <directional composition>
-	  b parent class_ref 7118722 // CopySharedLibrariesTargetDependsOnCommandLineParserDefinition
+	    classrelation_ref 8326018 // <directional composition>
+	  b parent class_ref 7561986 // CommandLineParserDefinition
+      end
+
+      classrelation 8332802 // <directional composition>
+	relation 8301314 *-->
+	  a role_name "" public
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 8332802 // <directional composition>
+	  b parent class_ref 7568514 // LogLevel
+      end
+
+      classrelation 8502914 // <dependency>
+	relation 8471298 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8502914 // <dependency>
+	  b parent class_ref 7575298 // DeployApplicationRequest
       end
     end
 
@@ -381,6 +491,22 @@ ${items}};
 	
 	
       end
+    end
+
+    class 7575426 "DeployApplicationCommandLineParserDefinition"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 

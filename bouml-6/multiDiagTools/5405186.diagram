@@ -2,88 +2,108 @@ format 224
 
 classcanvas 128002 class_ref 6871426 // CommandLineParser
   classdiagramsettings member_max_width 0 end
-  xyz 254 236.714 2000
+  xyz 1501.85 411.279 2000
 end
 classcanvas 128130 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 295 40.5 2006
+  xyz 1545.01 39.4559 2006
 end
 classcanvas 128642 class_ref 6884482 // CommandLineCommand
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 489.5 2000
+  xyz 40.5 609.059 2000
 end
 classcanvas 131330 class_ref 6924802 // ParserDefinition
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 480.714 266 2006
+  xyz 874.279 177.809 2006
 end
 classcanvas 131970 class_ref 6945026 // ParserResult
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 490.714 102 2005
+  xyz 823.75 255.632 2005
 end
 classcanvas 132226 class_ref 6925442 // Parser
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 511.714 184 2012
+  xyz 1134.43 255.632 2012
 end
 classcanvas 132738 class_ref 6952066 // BashCompletionParser
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 160 348.25 2012
+  xyz 1202.49 157 2012
 end
 classcanvas 135170 class_ref 7105282 // CopySharedLibrariesTargetDependsOnRequest
   classdiagramsettings member_max_width 0 end
-  xyz 373 492 2000
+  xyz 1420.01 489.103 2000
 end
 classcanvas 135426 class_ref 7118722 // CopySharedLibrariesTargetDependsOnCommandLineParserDefinition
   classdiagramsettings member_max_width 0 end
-  xyz 159 692 2000
+  xyz 41.1471 203.75 2000
+end
+classcanvas 135682 class_ref 7561986 // CommandLineParserDefinition
+  classdiagramsettings member_max_width 0 end
+  xyz 537.971 203.75 2000
+end
+classcanvas 138498 class_ref 7575426 // DeployApplicationCommandLineParserDefinition
+  classdiagramsettings member_max_width 0 end
+  xyz 481.132 454.515 2000
+end
+classcanvas 139010 class_ref 7694082 // QtPluginsSet
+  classdiagramsettings member_max_width 0 end
+  xyz 1730.06 333.456 2000
+end
+classcanvas 139138 class_ref 7575298 // DeployApplicationRequest
+  classdiagramsettings member_max_width 0 end
+  xyz 1688.06 411.279 2000
 end
 relationcanvas 128258 relation_ref 7503746 // <generalisation>
   from ref 128002 z 2007 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 131586 relation_ref 7558274 // <directional composition>
-  decenter_begin 780
-  decenter_end 219
-  from ref 128002 z 2007 to ref 131330
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
 relationcanvas 132098 relation_ref 7606274 // <directional composition>
-  geometry VH unfixed
-  decenter_begin 877
-  from ref 128002 z 2006 to point 380 120
-  line 134914 z 2006 to ref 131970
+  geometry VHV unfixed
+  decenter_begin 61
+  decenter_end 955
+  from ref 128002 z 2006 to point 1507 373
+  line 139778 z 2006 to point 1079 373
+  line 139906 z 2006 to ref 131970
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132354 relation_ref 7545090 // <directional composition>
+  decenter_begin 74
+  decenter_end 951
   from ref 132226 z 2013 to ref 131330
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132482 relation_ref 7585282 // <dependency>
+  decenter_begin 560
+  decenter_end 560
   from ref 132226 z 2013 to ref 131970
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132610 relation_ref 7606402 // <dependency>
-  decenter_begin 219
-  decenter_end 780
-  from ref 128002 z 2013 to point 441 242
-  line 134530 z 2013 to point 441 219
-  line 134658 z 2013 to ref 132226
+  geometry VHV unfixed
+  decenter_begin 210
+  decenter_end 943
+  from ref 128002 z 2013 to point 1529 334
+  line 139522 z 2013 to point 1347 334
+  line 139650 z 2013 to ref 132226
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132994 relation_ref 7606146 // <dependency>
-  geometry HV unfixed
-  from ref 132738 z 2013 to point 623 376
-  line 134786 z 2013 to ref 131330
+  decenter_begin 639
+  from ref 132738 z 2013 to ref 131330
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 133122 relation_ref 7606530 // <dependency>
-  from ref 128002 z 2013 to ref 132738
+  geometry VHV unfixed
+  decenter_begin 353
+  decenter_end 958
+  from ref 128002 z 2013 to point 1550 295
+  line 138754 z 2013 to point 1520 295
+  line 138882 z 2013 to ref 132738
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -92,8 +112,49 @@ relationcanvas 135298 relation_ref 7782018 // <dependency>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 135554 relation_ref 7788802 // <directional composition>
-  from ref 128002 z 2001 to ref 135426
+relationcanvas 135810 relation_ref 8294402 // <generalisation>
+  geometry VHV unfixed
+  from ref 135682 z 2007 to point 638 118
+  line 140034 z 2007 to point 1575 118
+  line 140162 z 2007 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135938 relation_ref 8294530 // <directional composition>
+  decenter_begin 219
+  decenter_end 780
+  from ref 128002 z 2001 to point 784 416
+  line 137090 z 2001 to point 784 239
+  line 140290 z 2001 to ref 135682
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136962 relation_ref 8294658 // <directional composition>
+  decenter_begin 560
+  decenter_end 560
+  from ref 135682 z 2001 to ref 135426
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 137218 relation_ref 8294786 // <directional composition>
+  decenter_begin 243
+  decenter_end 780
+  from ref 135682 z 2007 to ref 131330
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 138626 relation_ref 8308738 // <directional composition>
+  from ref 135682 z 2001 to ref 138498
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 139266 relation_ref 8471170 // <directional composition>
+  from ref 139138 z 2001 to ref 139010
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 139394 relation_ref 8471298 // <dependency>
+  from ref 128002 z 2001 to ref 139138
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

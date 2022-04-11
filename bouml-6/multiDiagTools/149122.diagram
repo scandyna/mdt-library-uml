@@ -1,4 +1,4 @@
-format 222
+format 224
 
 classcanvas 128002 class_ref 161026 // QString
   classdiagramsettings member_max_width 0 end
@@ -11,6 +11,10 @@ end
 classcanvas 128386 class_ref 6765698 // const_iterator
   classdiagramsettings member_max_width 0 end
   xyz 42 36 2006
+end
+classcanvas 128642 class_ref 7647874 // QChar
+  classdiagramsettings member_max_width 0 end
+  xyz 194 418 2000
 end
 line 128258 ---+ decenter_begin 559
   from ref 128130 z 2007 to ref 128002
