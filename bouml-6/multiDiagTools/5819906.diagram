@@ -2,60 +2,79 @@ format 224
 
 classcanvas 128898 class_ref 7687170 // AbstractIsExistingValidSharedLibrary
   classdiagramsettings member_max_width 0 end
-  xyz 167 42 2000
+  xyz 320.889 41.3333 2000
 end
 classcanvas 129026 class_ref 7615106 // QtSharedLibraryFile
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 86 336 2000
+  xyz 468.833 259.167 2000
 end
 classcanvas 129154 class_ref 4251522 // QtSharedLibrary
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 266 336 2005
+  xyz 480.833 341.167 2005
 end
 classcanvas 129410 class_ref 7687298 // IsExistingValidSharedLibrary
   classdiagramsettings member_max_width 0 end
-  xyz 226 256 2010
+  xyz 231.278 327.5 2010
 end
 classcanvas 129666 class_ref 7687426 // TestIsExistingValidSharedLibrary
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 65 176 2011
+  xyz 370.889 177.167 2011
 end
 classcanvas 130306 class_ref 7146242 // ExecutableFileReader
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 37 256 2014
+  xyz 40.1667 259.167 2014
 end
+classcanvas 131458 class_ref 4161538 // Platform
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 82.1667 341.167 2020
+end
+classcanvas 132610 class_ref 7720450 // QtDistributionDirectory
+  classdiagramsettings member_max_width 0 end
+  xyz 564.056 422.111 2017
+end
+note 133250 "Qt distribution should be optional
+Make 2 constructors, then make checks internally"
+  xyzwh 117.889 436.833 2000 239 67
 relationcanvas 129282 relation_ref 8443650 // <dependency>
-  decenter_begin 390
-  decenter_end 390
   from ref 129154 z 2006 to ref 129026
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129538 relation_ref 8443778 // <generalisation>
-  decenter_begin 517
-  from ref 129410 z 2011 to ref 128898
+  geometry VHV unfixed
+  decenter_begin 512
+  from ref 129410 z 2011 to point 329 136
+  line 131074 z 2011 to point 479 136
+  line 131202 z 2011 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129794 relation_ref 8443906 // <generalisation>
-  geometry VHV unfixed
-  from ref 129666 z 2012 to point 174 136
-  line 130050 z 2012 to point 326 136
-  line 130178 z 2012 to ref 128898
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 129922 relation_ref 8444034 // <dependency>
-  decenter_begin 517
-  decenter_end 529
-  from ref 129410 z 2011 to ref 129154
+  from ref 129666 z 2012 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130562 relation_ref 8444162 // <unidirectional association>
-  decenter_begin 390
-  decenter_end 390
-  from ref 129410 z 2015 to ref 130306
+  geometry VH unfixed
+  decenter_begin 96
+  from ref 129410 z 2015 to point 247 277
+  line 133122 z 2015 to ref 130306
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131586 relation_ref 7953282 // <dependency>
+  from ref 130306 z 2021 to ref 131458
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131714 relation_ref 8491650 // <directional composition>
+  decenter_begin 780
+  from ref 129410 z 2021 to ref 131458
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133378 relation_ref 8512386 // <dependency>
+  from ref 132610 z 2018 to ref 129026
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

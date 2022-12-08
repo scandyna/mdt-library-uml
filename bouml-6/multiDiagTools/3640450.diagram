@@ -12,6 +12,10 @@ classcanvas 128642 class_ref 7118466 // OverwriteBehavior
   classdiagramsettings member_max_width 0 end
   xyz 42 116 2000
 end
+classcanvas 128898 class_ref 7740290 // FileCopierFile
+  classdiagramsettings member_max_width 0 end
+  xyz 79 313 2000
+end
 relationcanvas 128514 relation_ref 4695554 // <generalisation>
   from ref 128002 z 2001 to ref 128386
   no_role_a no_role_b
@@ -19,6 +23,11 @@ relationcanvas 128514 relation_ref 4695554 // <generalisation>
 end
 relationcanvas 128770 relation_ref 7980034 // <directional composition>
   from ref 128002 z 2001 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 8539394 // <dependency>
+  from ref 128002 z 2001 to ref 128898
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

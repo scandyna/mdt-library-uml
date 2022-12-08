@@ -1,0 +1,82 @@
+format 224
+
+classcanvas 128002 class_ref 7786626 // BinaryDependenciesGraph
+  classdiagramsettings member_max_width 0 end
+  xyz 82 119 2000
+end
+classcanvas 128130 class_ref 7773314 // BinaryDependenciesResult
+  classdiagramsettings member_max_width 0 end
+  xyz 548 128 2000
+end
+classcanvas 128386 class_ref 7528834 // BinaryDependenciesFile
+  classdiagramsettings member_max_width 0 end
+  xyz 594 252 2006
+end
+classcanvas 128642 class_ref 7535362 // BinaryDependenciesFileList
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 201 300 2012
+end
+note 129410 "Hmm..."
+  xyzwh 962 295 2000 125 51
+classcanvas 129666 class_ref 7793154 // BinaryDependenciesFile_New
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 544.5 2000
+end
+classcanvas 129922 class_ref 7541890 // AbstractSharedLibraryFinder
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 658 424 2012
+end
+classcanvas 130818 class_ref 7146242 // ExecutableFileReader
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 217 40 2000
+end
+note 131202 "Is this class useful ?"
+  xyzwh 386 31 2000 147 41
+relationcanvas 128258 relation_ref 8592514 // <dependency>
+  decenter_begin 457
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 8579458 // <dependency>
+  decenter_begin 508
+  from ref 128130 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 8246914 // <directional composition>
+  from ref 128642 z 2013 to ref 128386
+  no_role_a no_role_b
+  multiplicity_a_pos 578 328 3000 no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 8599170 // <dependency>
+  from ref 128002 z 2013 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 8267266 // <dependency>
+  decenter_begin 517
+  from ref 129922 z 2013 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130178 relation_ref 8612610 // <dependency>
+  decenter_begin 457
+  decenter_end 585
+  from ref 128002 z 2013 to point 40 168
+  line 130306 z 2013 to point 40 448
+  line 131074 z 2013 to ref 129922
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130946 relation_ref 8612738 // <dependency>
+  decenter_end 523
+  from ref 128002 z 2001 to ref 130818
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 129538 -_-_
+  from ref 128514 z 2010 to ref 129410
+line 131330 -_-_
+  from ref 131202 z 2001 to ref 128002
+end

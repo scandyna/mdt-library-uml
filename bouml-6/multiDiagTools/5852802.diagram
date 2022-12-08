@@ -1,0 +1,122 @@
+format 224
+
+classcanvas 128002 class_ref 7793154 // BinaryDependenciesFile_New
+  classdiagramsettings member_max_width 0 end
+  xyz 296.5 543 2000
+end
+classcanvas 128130 class_ref 7799682 // GraphFile
+  classdiagramsettings member_max_width 0 end
+  xyz 800.75 80.25 2000
+end
+classcanvas 128386 class_ref 7528834 // BinaryDependenciesFile
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 815 202 2000
+end
+classcanvas 128642 class_ref 7799810 // GraphBuildVisitor
+  classdiagramsettings member_max_width 0 end
+  xyz 679 320.75 2000
+end
+classcanvas 128770 class_ref 7799938 // default_bfs_visitor
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
+  xyz 650.75 423 2000
+end
+classcanvas 129026 class_ref 7541890 // AbstractSharedLibraryFinder
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 579 202 2006
+end
+classcanvas 129410 class_ref 7800066 // GraphAL
+  classdiagramsettings member_max_width 0 end
+  xyz 129 544.5 2011
+end
+classcanvas 129538 class_ref 7806594 // Graph
+  classdiagramsettings member_max_width 0 end
+  xyz 39 554.5 2000
+end
+classcanvas 129794 class_ref 7813122 // VertexDescriptor
+  classdiagramsettings member_max_width 0 end
+  xyz 1359 227.75 2000
+end
+classcanvas 129922 class_ref 7813250 // DiscoveredDependencies
+  classdiagramsettings member_max_width 0 end
+  xyz 1068.75 222.75 2000
+end
+classcanvas 130178 class_ref 7813378 // DiscoveredDependenciesList
+  classdiagramsettings member_max_width 0 end
+  xyz 1094.75 325.5 2000
+end
+classcanvas 130562 class_ref 7819906 // GraphBuildVisitorWorker
+  classdiagramsettings member_max_width 0 end
+  xyz 78.5 313.75 2000
+end
+classcanvas 130690 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 645 85 2012
+end
+relationcanvas 128514 relation_ref 8605826 // <directional composition>
+  decenter_begin 518
+  from ref 128130 z 2001 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 8605954 // <generalisation>
+  decenter_end 519
+  from ref 128642 z 2001 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 8267266 // <dependency>
+  from ref 129026 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129666 relation_ref 8612866 // <directional composition>
+  from ref 129538 z 2012 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130050 relation_ref 8619394 // <directional composition>
+  from ref 129922 z 2001 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130306 relation_ref 8619522 // <directional composition>
+  decenter_begin 517
+  decenter_end 513
+  from ref 130178 z 2001 to ref 129922
+  no_role_a no_role_b
+  multiplicity_a_pos 1181 300 3000 no_multiplicity_b
+end
+relationcanvas 130434 relation_ref 8619650 // <unidirectional association>
+  from ref 128642 z 2001 to ref 130178
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130818 relation_ref 8260354 // <generalisation>
+  from ref 129026 z 2013 to ref 130690
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130946 relation_ref 8626178 // <generalisation>
+  geometry VHV unfixed
+  from ref 130562 z 2013 to point 356 164
+  line 131330 z 2013 to point 675 164
+  line 131458 z 2013 to ref 130690
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131074 relation_ref 8626306 // <unidirectional association>
+  from ref 128642 z 2001 to ref 130562
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131202 relation_ref 8626434 // <unidirectional association>
+  from ref 130562 z 2007 to point 40 346
+  line 131586 z 2007 to point 40 40
+  line 131714 z 2007 to point 1028 40
+  line 131842 z 2007 to point 1028 281
+  line 131970 z 2007 to point 677 281
+  line 132098 z 2007 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

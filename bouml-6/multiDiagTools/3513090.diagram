@@ -1,4 +1,4 @@
-format 214
+format 224
 
 classcanvas 128002 class_ref 4052098 // CoreApplication
   classdiagramsettings member_max_width 0 end
@@ -16,7 +16,7 @@ classcanvas 129154 class_ref 4152066 // StandardPaths
   classdiagramsettings member_max_width 0 end
   xyz 339 384 2006
 end
-note 129410 "By default, CoreApplication should init Mdt specific stuff, like Erroor backends.
+note 129410 "By default, CoreApplication should init Mdt specific stuff, like Error backends.
 If the user do not want that, it should probably inherit QCoreApplication."
   xyzwh 40.5 568.5 2000 647 91
 note 129538 "For translation: is the problem outside of *Application ??"

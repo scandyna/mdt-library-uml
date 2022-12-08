@@ -39,6 +39,10 @@ classcanvas 129794 class_ref 7694082 // QtPluginsSet
   classdiagramsettings member_max_width 0 end
   xyz 48 377 2000
 end
+classcanvas 130306 class_ref 7707394 // QtModulePluginsSet
+  classdiagramsettings member_max_width 0 end
+  xyz 53 236 2000
+end
 relationcanvas 129282 relation_ref 8396290 // <dependency>
   decenter_begin 585
   decenter_end 585
@@ -70,4 +74,6 @@ relationcanvas 130178 relation_ref 8464642 // <dependency>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+line 130434 -_-_
+  from ref 128002 z 2003 to ref 130306
 end

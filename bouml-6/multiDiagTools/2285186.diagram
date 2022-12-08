@@ -1,4 +1,4 @@
-format 213
+format 224
 
 classcanvas 128002 class_ref 2574338 // adjacency_list
   classdiagramsettings member_max_width 0 end
@@ -7,5 +7,9 @@ end
 classcanvas 128130 class_ref 4237954 // labeled_graph
   classdiagramsettings member_max_width 0 end
   xyz 40.5 40.5 2000
+end
+classcanvas 128258 class_ref 7799938 // default_bfs_visitor
+  classdiagramsettings member_max_width 0 end
+  xyz 144 437 2000
 end
 end

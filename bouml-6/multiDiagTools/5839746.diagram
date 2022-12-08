@@ -1,0 +1,75 @@
+format 224
+
+classcanvas 128002 class_ref 7773314 // BinaryDependenciesResult
+  classdiagramsettings member_max_width 0 end
+  xyz 532 168 2000
+end
+classcanvas 128130 class_ref 7773442 // BinaryDependenciesResultLibrary
+  classdiagramsettings member_max_width 0 end
+  xyz 265 176 3005
+end
+classcanvas 128386 class_ref 7773570 // BinaryDependenciesResultList
+  classdiagramsettings member_max_width 0 end
+  xyz 160 416 2006
+end
+classcanvas 129026 class_ref 7528834 // BinaryDependenciesFile
+  classdiagramsettings member_max_width 0 end
+  xyz 986 144 2000
+end
+note 129410 "Should go away or implementation of solver should be fixed.
+
+See note in BinaryDependenciesResult documentation."
+  xyzwh 160 543 2000 353 99
+note 129666 "Maybe add a list of errors ?"
+  xyzwh 623 52 2000 235 41
+classcanvas 129922 class_ref 7256578 // FindDependencyError
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 896 42 2000
+end
+note 130178 "We should:
+ - Have a list od dependencies for a set of targets
+ - Have errors (not found dependencies) attached to a specific target"
+  xyzwh 39 296 2000 595 81
+classcanvas 130818 class_ref 7780098 // BinaryDependenciesResultTarget
+  classdiagramsettings member_max_width 0 end
+  xyz 672 297 2000
+end
+relationcanvas 128258 relation_ref 8572546 // <directional composition>
+  from ref 128002 z 3006 to ref 128130
+  no_role_a no_role_b
+  multiplicity_a_pos 505 216 3000 no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 8572418 // <directional composition>
+  geometry HV unfixed
+  decenter_begin 449
+  decenter_end 949
+  from ref 128386 z 2007 to point 925 453
+  line 130562 z 2007 to ref 128002
+  no_role_a no_role_b
+  multiplicity_a_pos 912 264 3000 no_multiplicity_b
+end
+relationcanvas 129282 relation_ref 8579458 // <dependency>
+  decenter_end 467
+  from ref 128002 z 2001 to ref 129026
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130946 relation_ref 8585986 // <directional composition>
+  decenter_begin 604
+  from ref 128002 z 2001 to ref 130818
+  no_role_a no_role_b
+  multiplicity_a_pos 768 275 3000 no_multiplicity_b
+end
+line 129538 -_-_ decenter_begin 510
+  from ref 128386 z 2007 to ref 129410
+line 129794 -_-_ decenter_end 508
+  from ref 129666 z 2001 to ref 128002
+line 130050 -_-_
+  from ref 129666 z 2001 to ref 129922
+line 130306 -_-_ decenter_begin 862 decenter_end 47
+  from ref 130178 z 2001 to ref 128002
+line 130434 -_-_ decenter_end 510
+  from ref 130178 z 2007 to ref 128386
+line 131074 -_-_ decenter_end 549
+  from ref 130178 z 2001 to ref 130818
+end

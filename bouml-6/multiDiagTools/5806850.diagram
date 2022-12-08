@@ -2,19 +2,23 @@ format 224
 
 classcanvas 128002 class_ref 7661058 // DestinationDirectoryStructure
   classdiagramsettings member_max_width 0 end
-  xyz 342 40 2000
+  xyz 338 160 2000
 end
 classcanvas 128130 class_ref 7667586 // DestinationDirectory
   classdiagramsettings member_max_width 0 end
-  xyz 40 47 2000
+  xyz 40 167 2000
 end
 classcanvas 128386 class_ref 4161538 // Platform
   classdiagramsettings member_max_width 0 end
-  xyz 145 186 2000
+  xyz 145 54 2000
 end
 classcanvas 128642 class_ref 4169602 // OperatingSystem
   classdiagramsettings member_max_width 0 end
-  xyz 367 167 2006
+  xyz 367 35 2006
+end
+classcanvas 129666 class_ref 7720450 // QtDistributionDirectory
+  classdiagramsettings member_max_width 0 end
+  xyz 27 411 2006
 end
 relationcanvas 128258 relation_ref 8402946 // <directional composition>
   decenter_end 539
@@ -23,13 +27,12 @@ relationcanvas 128258 relation_ref 8402946 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 4666754 // <directional composition>
-  decenter_begin 415
-  decenter_end 450
   from ref 128386 z 2007 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128898 relation_ref 8403330 // <dependency>
+  decenter_begin 514
   from ref 128002 z 2007 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b

@@ -1,0 +1,45 @@
+format 224
+
+classcanvas 128002 class_ref 7766658 // QtPluginSharedLibrariesDependencies
+  classdiagramsettings member_max_width 0 end
+  xyz 40 127 2000
+end
+classcanvas 128130 class_ref 7766786 // QtPluginSharedLibraryDependency
+  classdiagramsettings member_max_width 0 end
+  xyz 506 136 2000
+end
+classcanvas 128514 class_ref 7773314 // BinaryDependenciesResult
+  classdiagramsettings member_max_width 0 end
+  xyz 42 364 2000
+end
+classcanvas 128642 class_ref 7773442 // BinaryDependenciesResultEntry
+  classdiagramsettings member_max_width 0 end
+  xyz 492 380 2000
+end
+classcanvas 128770 class_ref 7773570 // BinaryDependenciesResultList
+  classdiagramsettings member_max_width 0 end
+  xyz 64 288 2000
+end
+note 129154 "NOT interesting ?"
+  xyzwh 112 41 2000 281 47
+relationcanvas 128258 relation_ref 8565890 // <directional composition>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  multiplicity_a_pos 490 176 3000 no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 8572418 // <directional composition>
+  from ref 128770 z 2001 to ref 128514
+  no_role_a no_role_b
+  multiplicity_a_pos 150 342 3000 no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 8572546 // <directional composition>
+  from ref 128514 z 2001 to ref 128642
+  no_role_a no_role_b
+  multiplicity_a_pos 476 420 3000 no_multiplicity_b
+end
+line 129282 -_-_ decenter_begin 512 decenter_end 508
+  from ref 129154 z 2001 to ref 128002
+line 129538 -_-_ geometry HV unfixed
+  from ref 129154 z 2001 to point 622 62
+  line 129666 z 2001 to ref 128130
+end

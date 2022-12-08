@@ -2,47 +2,59 @@ format 224
 
 classcanvas 128002 class_ref 4160770 // QtConf
   classdiagramsettings member_max_width 0 end
-  xyz 444 141.5 2000
+  xyz 596.222 246.444 2000
 end
 classcanvas 128130 class_ref 7693954 // QSettings
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 42 156.5 2000
+  xyz 508.667 163.5 2000
 end
 classcanvas 128386 class_ref 7694210 // QtConfWriter
   classdiagramsettings member_max_width 0 end
-  xyz 157.75 156.5 2000
+  xyz 622.944 163.5 2000
 end
 classcanvas 128642 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 170.5 39.5 2006
+  xyz 513.667 40.5 2006
 end
 classcanvas 129538 class_ref 7667586 // DestinationDirectory
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 833.5 137 2000
+  xyz 750.278 359.389 2000
 end
 classcanvas 129666 class_ref 7661058 // DestinationDirectoryStructure
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 800.25 59 2006
+  xyz 934.389 359.389 2006
 end
 classcanvas 129922 class_ref 7700738 // DestinationDirectoryQtConf
   classdiagramsettings member_max_width 0 end
-  xyz 274.75 53 2000
+  xyz 792.389 255.444 2000
 end
+classcanvas 131074 class_ref 7727106 // QtConfReader
+  classdiagramsettings member_max_width 0 end
+  xyz 326.111 227.278 2000
+end
+classcanvas 131842 class_ref 7720450 // QtDistributionDirectory
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 297.111 441.389 2014
+end
+note 133122 "QtDistributionDirectory allways depends on a qt.conf."
+  xyzwh 40.3333 428.111 2000 219 63
 relationcanvas 128514 relation_ref 8450946 // <dependency>
+  decenter_begin 525
   from ref 128386 z 2001 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 8450690 // <generalisation>
-  geometry VHV unfixed
-  from ref 128130 z 2007 to point 77 118
-  line 129026 z 2007 to point 200 118
-  line 129154 z 2007 to ref 128642
+  from ref 128130 z 2007 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128898 relation_ref 8451074 // <generalisation>
-  from ref 128386 z 2007 to ref 128642
+  geometry VHV unfixed
+  decenter_begin 525
+  from ref 128386 z 2007 to point 670 122
+  line 133506 z 2007 to point 543 122
+  line 133634 z 2007 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -52,13 +64,11 @@ relationcanvas 129282 relation_ref 8451202 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129794 relation_ref 8402946 // <directional composition>
-  decenter_end 517
   from ref 129538 z 2007 to ref 129666
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130050 relation_ref 8457730 // <dependency>
-  decenter_begin 507
   from ref 129922 z 2001 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -68,4 +78,35 @@ relationcanvas 130178 relation_ref 8457858 // <dependency>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 131202 relation_ref 8491394 // <directional composition>
+  decenter_begin 219
+  decenter_end 780
+  from ref 131074 z 2001 to point 468 231
+  line 132482 z 2001 to point 468 195
+  line 132610 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131330 relation_ref 8491522 // <generalisation>
+  geometry VHV unfixed
+  from ref 131074 z 2007 to point 375 122
+  line 132226 z 2007 to point 543 122
+  line 132354 z 2007 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132994 relation_ref 8499074 // <dependency>
+  decenter_begin 780
+  decenter_end 183
+  from ref 131074 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133250 relation_ref 8499202 // <dependency>
+  from ref 131842 z 2015 to ref 131074
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 133378 -_-_
+  from ref 133122 z 2016 to ref 133250
 end
