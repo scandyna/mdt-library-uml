@@ -1,6 +1,6 @@
 format 224
 "BinaryDependencies" // Mdt::DeployUtils::Impl::BinaryDependencies
-  revision 4
+  revision 8
   modified_by 2 "philippe"
   // class settings
   
@@ -52,7 +52,7 @@ format 224
      end
     classdiagram 5852802 "BinaryDependenciesGraph_Impl"
       classdiagramsettings member_max_width 0 end
-      size B-Landscape
+      size C-Landscape
     end
 
     class 7799682 "GraphFile"
@@ -202,6 +202,14 @@ ${inlines}
 "
 	    classrelation_ref 8644482 // <directional composition>
 	  b parent class_ref 7800066 // GraphAL
+      end
+
+      classrelation 8664578 // <dependency>
+	relation 8632962 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8664578 // <dependency>
+	  b parent class_ref 7826434 // GraphResultVisitor
       end
     end
 
@@ -354,6 +362,30 @@ ${inlines}
 	
 	
 	
+      end
+    end
+
+    class 7826434 "GraphResultVisitor"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8664706 // <unidirectional association>
+	relation 8633090 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 8664706 // <unidirectional association>
+	  b parent class_ref 7773314 // BinaryDependenciesResult
       end
     end
   end

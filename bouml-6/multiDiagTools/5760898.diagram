@@ -134,11 +134,6 @@ relationcanvas 145282 relation_ref 8512386 // <dependency>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 145410 relation_ref 8519042 // <unidirectional association>
-  from ref 142210 z 2024 to ref 140674
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
 relationcanvas 145666 relation_ref 8519170 // <generalisation>
   from ref 128514 z 2001 to ref 145538
   no_role_a no_role_b

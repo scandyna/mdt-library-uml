@@ -2,67 +2,72 @@ format 224
 
 classcanvas 128002 class_ref 7575170 // DeployApplication
   classdiagramsettings member_max_width 0 end
-  xyz 574 455.25 2000
+  xyz 470.5 469.562 2000
 end
 classcanvas 128130 class_ref 7575298 // DeployApplicationRequest
   classdiagramsettings member_max_width 0 end
-  xyz 249 332 2000
+  xyz 122 342.5 2000
 end
 classcanvas 128386 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 606 39.5 2000
+  xyz 416.5 41.5 2000
 end
 classcanvas 128642 class_ref 7118466 // OverwriteBehavior
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 469 318.75 2000
+  xyz 340.5 335.188 2000
 end
 classcanvas 128898 class_ref 7284226 // CompilerLocationType
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 262 156.25 2000
+  xyz 288.188 238.438 2000
 end
 classcanvas 129154 class_ref 6897794 // MessageLogger
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 741.25 468.5 2000
+  xyz 637.062 476.875 2000
 end
 classcanvas 132482 class_ref 7581954 // CompilerLocationRequest
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 250 254 2006
+  xyz 74.625 245.75 2006
 end
 classcanvas 133122 class_ref 7674114 // SharedLibrariesDeployer
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 39.5 254 2018
+  xyz 78.625 159.75 2018
 end
 classcanvas 135298 class_ref 4160770 // QtConf
   classdiagramsettings member_max_width 0 end
-  xyz 40.5 712 2000
+  xyz 40.5 727.875 2000
 end
 classcanvas 135426 class_ref 7720450 // QtDistributionDirectory
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 558 592 2000
+  xyz 454.5 605.875 2000
+end
+classcanvas 136194 class_ref 7515394 // RPathWriter
+  classdiagramsettings member_max_width 0 end
+  xyz 407.188 159.75 2006
 end
 relationcanvas 128258 relation_ref 8307970 // <dependency>
   geometry VHV unfixed
-  decenter_begin 93
-  decenter_end 928
-  from ref 128002 z 2001 to point 583 417
-  line 135682 z 2001 to point 414 417
+  decenter_begin 69
+  decenter_end 911
+  from ref 128002 z 2001 to point 476 432
+  line 135682 z 2001 to point 284 432
   line 135810 z 2001 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 8308098 // <generalisation>
-  from ref 128002 z 2001 to ref 128386
+  geometry VHV unfixed
+  from ref 128002 z 2001 to point 532 121
+  line 136706 z 2001 to point 446 121
+  line 136834 z 2001 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 8308226 // <directional composition>
-  decenter_end 557
   from ref 128130 z 2001 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129282 relation_ref 8308482 // <dependency>
-  decenter_begin 557
   from ref 128002 z 2001 to ref 129154
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -73,14 +78,15 @@ relationcanvas 132610 relation_ref 8321922 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132738 relation_ref 8322050 // <directional composition>
+  decenter_begin 232
   from ref 128130 z 2007 to ref 132482
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 133250 relation_ref 8416386 // <generalisation>
   geometry VHV unfixed
-  from ref 133122 z 2019 to point 122 118
-  line 135938 z 2019 to point 636 118
+  from ref 133122 z 2019 to point 161 121
+  line 135938 z 2019 to point 446 121
   line 136066 z 2019 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -91,15 +97,34 @@ relationcanvas 133378 relation_ref 8416642 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 133634 relation_ref 8417538 // <directional composition>
-  geometry HV unfixed
-  decenter_begin 557
-  from ref 128002 z 2019 to point 122 486
-  line 134402 z 2019 to ref 133122
+  from ref 128002 z 2019 to point 40 497
+  line 134402 z 2019 to point 40 180
+  line 137218 z 2019 to ref 133122
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 135554 relation_ref 8492290 // <directional composition>
   from ref 128002 z 2001 to ref 135426
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136322 relation_ref 8224898 // <generalisation>
+  from ref 136194 z 2007 to ref 128386
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136450 relation_ref 8652674 // <directional composition>
+  geometry VHV unfixed
+  decenter_begin 294
+  decenter_end 831
+  from ref 128002 z 2007 to point 505 239
+  line 136962 z 2007 to point 478 239
+  line 137090 z 2007 to ref 136194
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136578 relation_ref 8652802 // <directional composition>
+  from ref 133122 z 2019 to ref 136194
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

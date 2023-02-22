@@ -2,39 +2,39 @@ format 224
 
 classcanvas 128002 class_ref 7674114 // SharedLibrariesDeployer
   classdiagramsettings member_max_width 0 end
-  xyz 328 236 2000
+  xyz 406 392 2000
 end
 classcanvas 128130 class_ref 138626 // QObject
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 580 39.5 2000
+  xyz 658 39.5 2000
 end
 classcanvas 128386 class_ref 4183938 // BinaryDependencies
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 650.5 156.5 2006
+  xyz 39.5 234.5 2006
 end
 classcanvas 128642 class_ref 7118466 // OverwriteBehavior
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 40 286.25 2000
+  xyz 1210 435.75 2000
 end
 classcanvas 128770 class_ref 4190722 // FileCopier
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 210 293 2006
+  xyz 1094 449 2006
 end
 classcanvas 130050 class_ref 7581954 // CompilerLocationRequest
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 939 293 2000
+  xyz 328 670 2000
 end
 classcanvas 130178 class_ref 7284226 // CompilerLocationType
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 951 195.25 2006
+  xyz 548 660 2006
 end
 classcanvas 132098 class_ref 4385922 // RPath
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 723.5 429.5 2000
+  xyz 743 670 2000
 end
 classcanvas 132482 class_ref 7263362 // ExecutableFileWriter
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 446 429.5 2006
+  xyz 696 585.5 2006
 end
 note 134402 "Add RPath option
 
@@ -42,30 +42,38 @@ See https://doc.qt.io/qt-5/configure-options.html
 
 Maybe, only change RPath if source  lib has some RPath
 If source is system wide, always set RPath"
-  xyzwh 26 546 2000 415 135
+  xyzwh 40.5 900.5 2000 415 135
 classcanvas 134786 class_ref 4160514 // Paths
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 917 521 2000
+  xyz 535.5 900.5 2000
 end
 classcanvas 134914 class_ref 4168962 // PathList
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 918 445 2005
+  xyz 300.5 449 2005
 end
 classcanvas 135170 class_ref 7740290 // FileCopierFile
   classdiagramsettings member_max_width 0 end
-  xyz 241 412 2012
+  xyz 1043 640 2012
 end
 classcanvas 135426 class_ref 7746818 // CopiedSharedLibraryFile
   classdiagramsettings member_max_width 0 end
-  xyz 519 538 2000
+  xyz 832.5 660 2000
 end
 classcanvas 136578 class_ref 7760130 // CopiedSharedLibraryFileList
   classdiagramsettings member_max_width 0 end
-  xyz 522 643 2000
+  xyz 820.5 780.5 2000
 end
 classcanvas 136834 class_ref 7773314 // BinaryDependenciesResult
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-  xyz 1007 401 2000
+  xyz 221 234.5 2000
+end
+classcanvas 137346 class_ref 7773442 // BinaryDependenciesResultLibrary
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 198 156.5 2019
+end
+classcanvas 137730 class_ref 7773570 // BinaryDependenciesResultList
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 443 234.5 2006
 end
 relationcanvas 128258 relation_ref 8416386 // <generalisation>
   from ref 128002 z 2001 to ref 128130
@@ -74,22 +82,22 @@ relationcanvas 128258 relation_ref 8416386 // <generalisation>
 end
 relationcanvas 128514 relation_ref 4688514 // <generalisation>
   geometry VHV unfixed
-  from ref 128386 z 2007 to point 720 118
-  line 134146 z 2007 to point 610 118
+  from ref 128386 z 2007 to point 109 118
+  line 134146 z 2007 to point 688 118
   line 134274 z 2007 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128898 relation_ref 4695554 // <generalisation>
   geometry VHV unfixed
-  from ref 128770 z 2007 to point 246 118
-  line 129410 z 2007 to point 610 118
+  from ref 128770 z 2007 to point 1130 118
+  line 129410 z 2007 to point 688 118
   line 129538 z 2007 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129026 relation_ref 7980034 // <directional composition>
-  decenter_end 442
+  decenter_end 557
   from ref 128770 z 2007 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -100,13 +108,18 @@ relationcanvas 130306 relation_ref 8321922 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130562 relation_ref 8416642 // <dependency>
+  decenter_begin 19
   from ref 128002 z 2001 to ref 130050
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130818 relation_ref 8416770 // <directional composition>
-  decenter_begin 694
-  from ref 128002 z 2007 to ref 128386
+  geometry VHV unfixed
+  decenter_begin 19
+  decenter_end 903
+  from ref 128002 z 2007 to point 414 352
+  line 138370 z 2007 to point 167 352
+  line 138498 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -121,6 +134,7 @@ relationcanvas 132610 relation_ref 8225154 // <dependency>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132738 relation_ref 8417282 // <dependency>
+  decenter_begin 636
   from ref 128002 z 2007 to ref 132482
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -146,6 +160,7 @@ relationcanvas 135682 relation_ref 8546050 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 135810 relation_ref 8546178 // <dependency>
+  decenter_begin 899
   from ref 128002 z 2001 to ref 135426
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -153,10 +168,41 @@ end
 relationcanvas 136706 relation_ref 8559362 // <directional composition>
   from ref 136578 z 2001 to ref 135426
   no_role_a no_role_b
-  multiplicity_a_pos 593 606 3000 no_multiplicity_b
+  multiplicity_a_pos 902 728 3000 no_multiplicity_b
 end
 relationcanvas 136962 relation_ref 8572674 // <dependency>
-  from ref 128002 z 2001 to ref 136834
+  geometry VHV unfixed
+  decenter_begin 87
+  decenter_end 918
+  from ref 128002 z 2001 to point 453 313
+  line 138114 z 2001 to point 388 313
+  line 138242 z 2001 to ref 136834
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 137090 relation_ref 8572802 // <dependency>
+  from ref 128386 z 2007 to ref 136834
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 137474 relation_ref 8572546 // <directional composition>
+  from ref 136834 z 2020 to ref 137346
+  no_role_a no_role_b
+  multiplicity_a_pos 298 204 3000 no_multiplicity_b
+end
+relationcanvas 137858 relation_ref 8572418 // <directional composition>
+  from ref 137730 z 2007 to ref 136834
+  no_role_a no_role_b
+  multiplicity_a_pos 415 262 3000 no_multiplicity_b
+end
+relationcanvas 137986 relation_ref 8639618 // <dependency>
+  decenter_begin 247
+  from ref 128002 z 2007 to ref 137730
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 138626 relation_ref 8646146 // <directional composition>
+  from ref 137346 z 2020 to ref 132098
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
