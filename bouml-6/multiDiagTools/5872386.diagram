@@ -1,0 +1,185 @@
+format 224
+
+classcanvas 128002 class_ref 7839746 // ExecutableFileInstaller
+  classdiagramsettings member_max_width 0 end
+  xyz 777.015 581.044 2000
+end
+classcanvas 128130 class_ref 7839874 // SharedLibraryInstaller
+  classdiagramsettings member_max_width 0 end
+  xyz 972.956 581.044 2000
+end
+classcanvas 128386 class_ref 7840002 // QtPluginInstaller
+  classdiagramsettings member_max_width 0 end
+  xyz 694.426 373.25 2000
+end
+classcanvas 128642 class_ref 138626 // QObject
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 1019.26 248.574 2006
+end
+classcanvas 129922 class_ref 4385922 // RPath
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 442.132 123.897 2000
+end
+classcanvas 130178 class_ref 7846786 // ExecutableFileToInstall
+  classdiagramsettings member_max_width 0 end
+  xyz 390.441 497.926 2000
+end
+classcanvas 130306 class_ref 7846914 // ExecutableFileToInstallList
+  classdiagramsettings member_max_width 0 end
+  xyz 378.441 581.044 2000
+end
+classcanvas 130818 class_ref 7847042 // CopiedExecutableFile
+  classdiagramsettings member_max_width 0 end
+  xyz 535.279 123.897 2000
+end
+classcanvas 131202 class_ref 4190722 // FileCopier
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 1103.31 373.25 2012
+end
+classcanvas 131842 class_ref 7740290 // FileCopierFile
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 1093.62 456.368 2018
+end
+classcanvas 132098 class_ref 4169602 // OperatingSystem
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 406.132 695.721 2000
+end
+note 132610 "Takes care to have each file in a unique way"
+  xyzwh 40.7647 580.044 2000 295 43
+classcanvas 133122 class_ref 4161538 // Platform
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 822.015 705.721 2006
+end
+classcanvas 133378 class_ref 7847170 // CopiedExecutableFileList
+  classdiagramsettings member_max_width 0 end
+  xyz 525.588 40.7794 2000
+end
+relationcanvas 128258 relation_ref 8673154 // <dependency>
+  from ref 128130 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128514 relation_ref 8673282 // <dependency>
+  geometry VHV unfixed
+  decenter_begin 865
+  decenter_end 337
+  from ref 128386 z 2001 to point 794 456
+  line 135042 z 2001 to point 827 456
+  line 135170 z 2001 to ref 128002
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128770 relation_ref 8679810 // <generalisation>
+  geometry VHV unfixed
+  from ref 128002 z 2007 to point 853 331
+  line 131586 z 2007 to point 1049 331
+  line 131714 z 2007 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 8679938 // <generalisation>
+  decenter_begin 516
+  from ref 128130 z 2007 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129026 relation_ref 8680066 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 521
+  from ref 128386 z 2007 to point 753 331
+  line 129154 z 2007 to point 1049 331
+  line 129282 z 2007 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130434 relation_ref 8680322 // <directional composition>
+  from ref 130306 z 2001 to ref 130178
+  no_role_a no_role_b
+  multiplicity_a_pos 454 545 3000 no_multiplicity_b
+end
+relationcanvas 130562 relation_ref 8680450 // <dependency>
+  from ref 128002 z 2001 to ref 130306
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130690 relation_ref 8680578 // <directional composition>
+  from ref 130178 z 2001 to ref 129922
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130946 relation_ref 8680706 // <directional composition>
+  decenter_begin 560
+  decenter_end 560
+  from ref 130818 z 2001 to ref 129922
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131074 relation_ref 8680834 // <dependency>
+  geometry VHV unfixed
+  decenter_begin 57
+  decenter_end 516
+  from ref 128002 z 2001 to point 783 539
+  line 135938 z 2001 to point 610 539
+  line 136066 z 2001 to ref 130818
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131330 relation_ref 4695554 // <generalisation>
+  geometry VHV unfixed
+  decenter_begin 532
+  from ref 131202 z 2013 to point 1141 331
+  line 134146 z 2013 to point 1049 331
+  line 134274 z 2013 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131458 relation_ref 8680962 // <directional composition>
+  decenter_begin 191
+  decenter_end 560
+  from ref 128002 z 2013 to point 807 497
+  line 136450 z 2013 to point 654 497
+  line 136578 z 2013 to point 654 206
+  line 136706 z 2013 to point 1222 206
+  line 136834 z 2013 to point 1222 396
+  line 136962 z 2013 to ref 131202
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131970 relation_ref 8539394 // <dependency>
+  decenter_begin 532
+  from ref 131202 z 2019 to ref 131842
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132226 relation_ref 8681090 // <directional composition>
+  from ref 130306 z 2001 to ref 132098
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133250 relation_ref 4666754 // <directional composition>
+  from ref 133122 z 2007 to ref 132098
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133506 relation_ref 8681218 // <directional composition>
+  decenter_end 516
+  from ref 133378 z 2001 to ref 130818
+  no_role_a no_role_b
+  multiplicity_a_pos 597 101 3000 no_multiplicity_b
+end
+relationcanvas 135426 relation_ref 8688002 // <dependency>
+  decenter_begin 560
+  from ref 130818 z 2019 to point 1264 146
+  line 136194 z 2019 to point 1264 474
+  line 136322 z 2019 to ref 131842
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135810 relation_ref 8694530 // <directional composition>
+  from ref 128002 z 2007 to ref 133122
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 132738 -_-_
+  from ref 130306 z 2001 to ref 132610
+end

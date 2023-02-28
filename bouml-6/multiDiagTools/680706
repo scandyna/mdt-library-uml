@@ -1,6 +1,6 @@
 format 224
 "DeployUtils" // Mdt::DeployUtils
-  revision 274
+  revision 280
   modified_by 2 "philippe"
   // class settings
   
@@ -5882,7 +5882,6 @@ ${inlines}
 	
 	
       end
-
     end
 
     class 7535362 "BinaryDependenciesFileList"
@@ -6082,13 +6081,14 @@ ${inlines}
 	  b parent class_ref 138626 // QObject
       end
 
-      operation 9445762 "findLibrariesAbsolutePath"
+      operation 9445762 "findLibraryAbsolutePath"
 	cpp_virtual public explicit_return_type ""
-	nparams 1
-	  param in name "file" explicit_type ""
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+	nparams 2
+	  param in name "libraryName" type class_ref 161026 // QString
+	  param in name "dependentFile" type class_ref 7528834 // BinaryDependenciesFile
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -6098,14 +6098,13 @@ ${inlines}
 	
       end
 
-      operation 9452546 "isExistingSharedLibrary"
+      operation 9452546 "validateIsExistingValidSharedLibrary"
 	public explicit_return_type "bool"
-	nparams 2
-	  param in name "lib" type class_ref 432386 // QFileInfo
-	  param in name "op" explicit_type "T"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+	nparams 1
+	  param in name "libraryFile" type class_ref 432386 // QFileInfo
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
 "
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}
 {
   ${body}}
 "
@@ -6132,7 +6131,7 @@ ${inlines}
 	  b parent class_ref 7687170 // AbstractIsExistingValidSharedLibrary
       end
 
-      operation 9539458 "performLibrarySpecificAction"
+      operation 9539458 "validateSpecificSharedLibrary"
 	abstract cpp_virtual private explicit_return_type "void"
 	nparams 1
 	  param in name "library" type class_ref 7528834 // BinaryDependenciesFile
@@ -6462,6 +6461,15 @@ ${inlines}
 	    cpp default "#include in source"
 	    classrelation_ref 8604418 // <dependency>
 	  b parent class_ref 7773314 // BinaryDependenciesResult
+      end
+
+      classrelation 8698242 // <directional aggregation>
+	relation 8666626 o-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 8698242 // <directional aggregation>
+	  b parent class_ref 7541890 // AbstractSharedLibraryFinder
       end
     end
 
@@ -6942,15 +6950,6 @@ ${inlines}
 	    classrelation_ref 8611074 // <dependency>
 	  b parent class_ref 7528834 // BinaryDependenciesFile
       end
-
-      classrelation 8617602 // <directional composition>
-	relation 8585986 *-->
-	  a role_name "" multiplicity "*" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	    classrelation_ref 8617602 // <directional composition>
-	  b parent class_ref 7780098 // BinaryDependenciesResultTarget
-      end
     end
 
     class 7773442 "BinaryDependenciesResultLibrary"
@@ -7076,51 +7075,6 @@ ${inlines}
 
       operation 9573250 "getLibrariesAbsoluteFilePathList"
 	public return_type class_ref 160770 // QStringList
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-    end
-
-    class 7780098 "BinaryDependenciesResultTarget"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      operation 9579778 "isSolved"
-	public explicit_return_type "bool"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	cpp_def "${comment}${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 9579906 "errors"
-	public explicit_return_type ""
 	nparams 0
 	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
 "
@@ -8243,6 +8197,233 @@ ${inlines}
     end
   end
 
+  classview 3091074 "ExecutableFileInstaller"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5872386 "ExecutableFileInstaller"
+      classdiagramsettings member_max_width 0 end
+      size Legal-Landscape
+    end
+
+    class 7839746 "ExecutableFileInstaller"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8711426 // <generalisation>
+	relation 8679810 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 8711426 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 8712066 // <dependency>
+	relation 8680450 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8712066 // <dependency>
+	  b parent class_ref 7846914 // ExecutableFileToInstallList
+      end
+
+      classrelation 8712450 // <dependency>
+	relation 8680834 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8712450 // <dependency>
+	  b parent class_ref 7847042 // CopiedExecutableFile
+      end
+
+      classrelation 8712578 // <directional composition>
+	relation 8680962 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 8712578 // <directional composition>
+	  b parent class_ref 4190722 // FileCopier
+      end
+
+      classrelation 8726146 // <directional composition>
+	relation 8694530 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 8726146 // <directional composition>
+	  b parent class_ref 4161538 // Platform
+      end
+    end
+
+    class 7840002 "QtPluginInstaller"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8704898 // <dependency>
+	relation 8673282 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8704898 // <dependency>
+	  b parent class_ref 7839746 // ExecutableFileInstaller
+      end
+
+      classrelation 8711682 // <generalisation>
+	relation 8680066 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 8711682 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+    end
+
+    class 7846786 "ExecutableFileToInstall"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8712194 // <directional composition>
+	relation 8680578 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 8712194 // <directional composition>
+	  b parent class_ref 4385922 // RPath
+      end
+    end
+
+    class 7846914 "ExecutableFileToInstallList"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8711938 // <directional composition>
+	relation 8680322 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 8711938 // <directional composition>
+	  b parent class_ref 7846786 // ExecutableFileToInstall
+      end
+
+      classrelation 8712706 // <directional composition>
+	relation 8681090 *-->
+	  a role_name "" public
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 8712706 // <directional composition>
+	  b parent class_ref 4169602 // OperatingSystem
+      end
+    end
+
+    class 7847042 "CopiedExecutableFile"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8712322 // <directional composition>
+	relation 8680706 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 8712322 // <directional composition>
+	  b parent class_ref 4385922 // RPath
+      end
+
+      classrelation 8719618 // <dependency>
+	relation 8688002 -_->
+	  a private
+	    cpp default "#include in source"
+	    classrelation_ref 8719618 // <dependency>
+	  b parent class_ref 7740290 // FileCopierFile
+      end
+    end
+
+    class 7847170 "CopiedExecutableFileList"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8712834 // <directional composition>
+	relation 8681218 *-->
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 8712834 // <directional composition>
+	  b parent class_ref 7847042 // CopiedExecutableFile
+      end
+    end
+  end
+
   classview 3064962 "Qt_Library_Module"
     
     classdiagramsettings member_max_width 0 end
@@ -9203,6 +9384,50 @@ ${inlines}
 	  a public
 	    cpp default "#include in source"
 	    classrelation_ref 8691330 // <dependency>
+	  b parent class_ref 7773570 // BinaryDependenciesResultList
+      end
+    end
+
+    classdiagram 5878914 "SharedLibraryInstaller"
+      classdiagramsettings member_max_width 0 end
+      size A
+    end
+
+    class 7839874 "SharedLibraryInstaller"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8704770 // <dependency>
+	relation 8673154 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8704770 // <dependency>
+	  b parent class_ref 7839746 // ExecutableFileInstaller
+      end
+
+      classrelation 8711554 // <generalisation>
+	relation 8679938 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 8711554 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      classrelation 8712962 // <dependency>
+	relation 8681346 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8712962 // <dependency>
 	  b parent class_ref 7773570 // BinaryDependenciesResultList
       end
     end

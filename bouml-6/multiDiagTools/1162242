@@ -1,6 +1,6 @@
 format 224
 "BinaryDependencies" // Mdt::DeployUtils::Impl::BinaryDependencies
-  revision 8
+  revision 10
   modified_by 2 "philippe"
   // class settings
   
