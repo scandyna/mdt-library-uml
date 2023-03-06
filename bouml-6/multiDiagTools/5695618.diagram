@@ -8,9 +8,4 @@ classcanvas 128130 class_ref 7350530 // DynamicSectionReadError
   classdiagramsettings member_max_width 0 end
   xyz 38 146 2000
 end
-relationcanvas 128258 relation_ref 8076418 // <generalisation>
-  from ref 128130 z 2001 to ref 128002
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
 end

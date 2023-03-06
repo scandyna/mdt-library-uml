@@ -140,4 +140,9 @@ relationcanvas 134530 relation_ref 8110594 // <directional composition>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 134658 relation_ref 8205058 // <generalisation>
+  from ref 130690 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 end
