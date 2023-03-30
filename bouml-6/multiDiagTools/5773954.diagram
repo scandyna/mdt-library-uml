@@ -12,6 +12,9 @@ classcanvas 128386 class_ref 7105282 // CopySharedLibrariesTargetDependsOnReques
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
   xyz 35 128 2006
 end
+note 128898 "Should go to MdtApplication project
+Or.. its own project ?"
+  xyzwh 113.5 223.5 2000 297 59
 relationcanvas 128258 relation_ref 8301314 // <directional composition>
   from ref 128130 z 2001 to ref 128002
   no_role_a no_role_b

@@ -20,6 +20,8 @@ classcanvas 130434 class_ref 7317506 // ExecutableFileOpenMode
   classdiagramsettings member_max_width 0 end
   xyz 417 471 2000
 end
+note 130946 "Should all go to ExecutableFile_Core"
+  xyzwh 39 83 2000 269 43
 relationcanvas 129666 relation_ref 8029442 // <directional composition>
   decenter_begin 510
   from ref 128130 z 2001 to ref 128642

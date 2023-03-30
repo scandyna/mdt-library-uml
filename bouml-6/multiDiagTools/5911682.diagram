@@ -1,0 +1,11 @@
+format 224
+
+classcanvas 128130 class_ref 7317506 // ExecutableFileOpenMode
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 247.5 2000
+end
+classcanvas 128258 class_ref 7146498 // ExecutableFileFormat
+  classdiagramsettings member_max_width 0 end
+  xyz 40.5 40.5 2000
+end
+end

@@ -2,59 +2,51 @@ format 224
 
 classcanvas 128002 class_ref 4372226 // runtime_error
   classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 show_context_mode uml end
-  xyz 1088 42 2000
+  xyz 928 42 2000
 end
 classcanvas 128386 class_ref 6918146 // QRuntimeError
   classdiagramsettings member_max_width 0 end
-  xyz 1098 146 2006
+  xyz 938 146 2006
 end
 classcanvas 128898 class_ref 7202946 // FileOpenError
   classdiagramsettings member_max_width 0 end
-  xyz 41 290 2000
+  xyz 1257 290 2000
 end
 classcanvas 129410 class_ref 7256578 // FindDependencyError
   classdiagramsettings member_max_width 0 end
-  xyz 352 290 2000
+  xyz 40 290 2000
 end
 classcanvas 129922 class_ref 7263234 // FileCopyError
   classdiagramsettings member_max_width 0 end
-  xyz 1274 290 2000
-end
-classcanvas 130690 class_ref 7263746 // ExecutableFileWriteError
-  classdiagramsettings member_max_width 0 end
-  xyz 711 290 2000
+  xyz 426 290 2000
 end
 classcanvas 131202 class_ref 7277570 // FindCompilerError
   classdiagramsettings member_max_width 0 end
-  xyz 543 290 2000
-end
-classcanvas 131970 class_ref 7508866 // RPathFormatError
-  classdiagramsettings member_max_width 0 end
-  xyz 1576 290 2000
+  xyz 1399 290 2000
 end
 classcanvas 132482 class_ref 7621762 // QtSharedLibraryError
   classdiagramsettings member_max_width 0 end
-  xyz 1081 290 2000
+  xyz 233 290 2000
 end
 classcanvas 132738 class_ref 7634818 // UnknownQtModuleError
   classdiagramsettings member_max_width 0 end
-  xyz 1945 290 2000
+  xyz 729 290 2000
 end
 classcanvas 133762 class_ref 7641346 // FindQtPluginError
   classdiagramsettings member_max_width 0 end
-  xyz 184 290 2000
+  xyz 1088 290 2000
 end
 classcanvas 135170 class_ref 7680642 // DeployApplicationError
   classdiagramsettings member_max_width 0 end
-  xyz 1744 290 2000
+  xyz 1568 290 2000
 end
 classcanvas 135938 class_ref 7700866 // WriteQtConfError
   classdiagramsettings member_max_width 0 end
-  xyz 1415 290 2000
+  xyz 567 290 2000
 end
 classcanvas 136706 class_ref 7733634 // ReadQtConfError
   classdiagramsettings member_max_width 0 end
-  xyz 919 290 2000
+  xyz 931 290 2000
 end
 relationcanvas 128514 relation_ref 7537794 // <generalisation>
   from ref 128386 z 2007 to ref 128002
@@ -64,17 +56,17 @@ end
 relationcanvas 129026 relation_ref 7892866 // <generalisation>
   geometry VHV unfixed
   decenter_begin 533
-  from ref 128898 z 2007 to point 93 248
-  line 130946 z 2007 to point 1150 248
+  from ref 128898 z 2007 to point 1309 248
+  line 130946 z 2007 to point 990 248
   line 131074 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129538 relation_ref 7966722 // <generalisation>
   geometry VHV unfixed
-  decenter_begin 522
-  from ref 129410 z 2007 to point 429 248
-  line 137474 z 2007 to point 1150 248
+  decenter_begin 470
+  from ref 129410 z 2007 to point 109 248
+  line 137474 z 2007 to point 990 248
   line 137602 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -82,64 +74,50 @@ end
 relationcanvas 130050 relation_ref 7979906 // <generalisation>
   geometry VHV unfixed
   decenter_begin 455
-  from ref 129922 z 2007 to point 1317 248
-  line 137218 z 2007 to point 1150 248
+  from ref 129922 z 2007 to point 469 248
+  line 137218 z 2007 to point 990 248
   line 137346 z 2007 to ref 128386
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
-relationcanvas 130818 relation_ref 7980674 // <generalisation>
-  geometry VHV unfixed
-  decenter_begin 473
-  from ref 130690 z 2007 to point 789 248
-  line 136450 z 2007 to point 1150 248
-  line 136578 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131330 relation_ref 7994882 // <generalisation>
   geometry VHV unfixed
-  from ref 131202 z 2007 to point 606 248
-  line 131458 z 2007 to point 1150 248
+  from ref 131202 z 2007 to point 1462 248
+  line 131458 z 2007 to point 990 248
   line 131586 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
-relationcanvas 132098 relation_ref 8218242 // <generalisation>
-  geometry VHV unfixed
-  from ref 131970 z 2007 to point 1638 248
-  line 133506 z 2007 to point 1150 248
-  line 133634 z 2007 to ref 128386
-  no_role_a no_role_b
-  no_multiplicity_a no_multiplicity_b
-end
 relationcanvas 132610 relation_ref 8362370 // <generalisation>
+  geometry VHV unfixed
   decenter_begin 470
-  from ref 132482 z 2007 to ref 128386
+  from ref 132482 z 2007 to point 301 248
+  line 137730 z 2007 to point 990 248
+  line 137858 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132866 relation_ref 8376066 // <generalisation>
   geometry VHV unfixed
   decenter_begin 473
-  from ref 132738 z 2007 to point 2021 248
-  line 135426 z 2007 to point 1150 248
-  line 135554 z 2007 to ref 128386
+  from ref 132738 z 2007 to point 805 248
+  line 137986 z 2007 to point 990 248
+  line 138114 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 134530 relation_ref 8430594 // <generalisation>
   geometry VHV unfixed
-  from ref 133762 z 2007 to point 246 248
-  line 134658 z 2007 to point 1150 248
+  from ref 133762 z 2007 to point 1150 248
+  line 134658 z 2007 to point 990 248
   line 134786 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 135298 relation_ref 8437122 // <generalisation>
   geometry VHV unfixed
-  from ref 135170 z 2007 to point 1822 248
-  line 135682 z 2007 to point 1150 248
+  from ref 135170 z 2007 to point 1646 248
+  line 135682 z 2007 to point 990 248
   line 135810 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -147,18 +125,14 @@ end
 relationcanvas 136066 relation_ref 8457986 // <generalisation>
   geometry VHV unfixed
   decenter_begin 463
-  from ref 135938 z 2007 to point 1469 248
-  line 136194 z 2007 to point 1150 248
+  from ref 135938 z 2007 to point 621 248
+  line 136194 z 2007 to point 990 248
   line 136322 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 136834 relation_ref 8518914 // <generalisation>
-  geometry VHV unfixed
-  decenter_begin 463
-  from ref 136706 z 2007 to point 973 248
-  line 136962 z 2007 to point 1150 248
-  line 137090 z 2007 to ref 128386
+  from ref 136706 z 2007 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

@@ -36,6 +36,8 @@ classcanvas 130562 class_ref 7277442 // BuildType
   classdiagramsettings member_max_width 0 end
   xyz 338 698 2000
 end
+note 130690 "Is not present in MdtExecutableFile"
+  xyzwh 191 617 2000 183 55
 relationcanvas 129154 relation_ref 4666754 // <directional composition>
   from ref 128002 z 2001 to ref 129026
   no_role_a no_role_b
@@ -67,4 +69,6 @@ relationcanvas 130178 relation_ref 7953410 // <directional composition>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+line 130818 -_-_
+  from ref 130690 z 2001 to ref 130562
 end

@@ -2,65 +2,69 @@ format 224
 
 classcanvas 128002 class_ref 7376770 // FileWriterFile
   classdiagramsettings hide_attributes no hide_operations no member_max_width 0 end
-  xyz 320 120 2000
+  xyz 336.611 121.833 2000
 end
 classcanvas 128130 class_ref 7324034 // SectionHeaderTable
   classdiagramsettings member_max_width 0 end
-  xyz 208.25 611.5 2000
+  xyz 1223.78 345.722 2000
 end
 classcanvas 128258 class_ref 7148802 // SectionHeader
   classdiagramsettings member_max_width 0 end
-  xyz 66 611.5 3005
+  xyz 1240.78 263.722 3005
 end
 classcanvas 128514 class_ref 7148546 // ProgramHeader
   classdiagramsettings member_max_width 0 end
-  xyz 58.75 533.5 2000
+  xyz 1097.83 427.722 2000
 end
 classcanvas 128642 class_ref 7370242 // ProgramHeaderTable
   classdiagramsettings member_max_width 0 end
-  xyz 38.5 455.5 2006
+  xyz 910 427.722 2006
 end
 classcanvas 129154 class_ref 7163138 // FileHeader
   classdiagramsettings member_max_width 0 end
-  xyz 364 455.5 2000
+  xyz 1120.67 263.722 2000
 end
 classcanvas 129410 class_ref 7189634 // DynamicSection
   classdiagramsettings member_max_width 0 end
-  xyz 274.5 338.5 2000
+  xyz 168.778 117.944 2000
 end
 classcanvas 129538 class_ref 7330562 // StringTable
   classdiagramsettings member_max_width 0 end
-  xyz 430.25 338.5 2006
+  xyz 41.2778 117.944 2006
 end
 classcanvas 129922 class_ref 7370114 // FileAllHeaders
   classdiagramsettings member_max_width 0 end
-  xyz 222 455.5 2012
+  xyz 933.278 322.944 2012
 end
 classcanvas 130946 class_ref 7383298 // FileWriterFileLayout
   classdiagramsettings hide_attributes no hide_operations no member_max_width 0 end
-  xyz 893 189 2000
+  xyz 532.611 336.611 2000
 end
 classcanvas 131202 class_ref 7389826 // OffsetChange
   classdiagramsettings hide_attributes no hide_operations no member_max_width 0 end
-  xyz 40.5 731.5 2005
+  xyz 40.5 548.722 2005
 end
 classcanvas 131330 class_ref 7462402 // MoveSectionAlignment
   classdiagramsettings member_max_width 0 end
-  xyz 126.75 182.25 2006
+  xyz 910.833 180.833 2006
 end
 classcanvas 132482 class_ref 138626 // QObject
   classdiagramsettings member_max_width 0 end
-  xyz 554 39.5 2000
+  xyz 568.333 40.5 2000
+end
+classcanvas 132866 class_ref 7363586 // FileOffsetChanges
+  classdiagramsettings member_max_width 0 end
+  xyz 162.056 199.944 2006
 end
 relationcanvas 128386 relation_ref 8056706 // <directional composition>
   from ref 128130 z 3006 to ref 128258
   no_role_a no_role_b
-  multiplicity_a_pos 180 639 3000 no_multiplicity_b
+  multiplicity_a_pos 1277 311 3000 no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 8102914 // <directional composition>
   from ref 128642 z 2007 to ref 128514
   no_role_a no_role_b
-  multiplicity_a_pos 97 511 3000 no_multiplicity_b
+  multiplicity_a_pos 1081 455 3000 no_multiplicity_b
 end
 relationcanvas 129666 relation_ref 8069890 // <directional composition>
   from ref 129410 z 2007 to ref 129538
@@ -68,13 +72,17 @@ relationcanvas 129666 relation_ref 8069890 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129794 relation_ref 8110210 // <directional composition>
-  decenter_begin 24
+  decenter_begin 83
   from ref 128002 z 2001 to ref 129410
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130050 relation_ref 8102658 // <directional composition>
-  from ref 129922 z 2013 to ref 129154
+  decenter_begin 219
+  decenter_end 111
+  from ref 129922 z 2013 to point 1079 327
+  line 133250 z 2013 to point 1079 300
+  line 133378 z 2013 to ref 129154
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -84,18 +92,18 @@ relationcanvas 130178 relation_ref 8103042 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130306 relation_ref 8103170 // <directional composition>
-  decenter_end 474
+  decenter_begin 682
+  decenter_end 219
   from ref 129922 z 2013 to ref 128130
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 130818 relation_ref 8110594 // <directional composition>
-  geometry VHV unfixed
-  decenter_begin 439
-  decenter_end 866
-  from ref 128002 z 2013 to point 551 417
-  line 132098 z 2013 to point 310 417
-  line 132738 z 2013 to ref 129922
+  geometry HV unfixed
+  decenter_begin 893
+  decenter_end 133
+  from ref 128002 z 2013 to point 944 278
+  line 132098 z 2013 to ref 129922
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
@@ -105,20 +113,31 @@ relationcanvas 131074 relation_ref 8117122 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131586 relation_ref 8170882 // <dependency>
-  decenter_end 442
+  decenter_begin 513
+  decenter_end 540
   from ref 128002 z 2007 to ref 131330
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 131714 relation_ref 8171010 // <dependency>
-  decenter_begin 123
-  decenter_end 685
+  decenter_begin 523
   from ref 129922 z 2013 to ref 131330
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 132610 relation_ref 8205058 // <generalisation>
   from ref 128002 z 2001 to ref 132482
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132994 relation_ref 8096130 // <dependency>
+  from ref 132866 z 2007 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133122 relation_ref 8720898 // <directional composition>
+  decenter_begin 541
+  from ref 128002 z 2007 to ref 132866
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

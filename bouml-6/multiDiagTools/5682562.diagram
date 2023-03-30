@@ -2,27 +2,35 @@ format 224
 
 classcanvas 128002 class_ref 7304322 // ExecutableFileIoEngine
   classdiagramsettings member_max_width 0 end
-  xyz 392 120 2000
+  xyz 520 120 2000
 end
 classcanvas 128130 class_ref 7146242 // ExecutableFileReader
   classdiagramsettings member_max_width 0 end
-  xyz 393 40 2006
+  xyz 521 40 2006
 end
 classcanvas 128386 class_ref 7263362 // ExecutableFileWriter
   classdiagramsettings member_max_width 0 end
-  xyz 592 120 2006
+  xyz 528 192 2006
 end
 classcanvas 128642 class_ref 7304066 // AbstractExecutableFileIoEngine
   classdiagramsettings member_max_width 0 end
-  xyz 137 120 2006
+  xyz 285 272 2006
 end
 classcanvas 128898 class_ref 7310850 // PeFileIoEngine
   classdiagramsettings member_max_width 0 end
-  xyz 191 240 2012
+  xyz 247 392 2012
 end
 classcanvas 129154 class_ref 7304194 // ElfFileIoEngine
   classdiagramsettings member_max_width 0 end
-  xyz 42 240 2012
+  xyz 338 472 2012
+end
+classcanvas 134146 class_ref 7310978 // FileIoEngine
+  classdiagramsettings member_max_width 0 show_context_mode uml end
+  xyz 42 472 2000
+end
+classcanvas 134786 class_ref 7317506 // ExecutableFileOpenMode
+  classdiagramsettings member_max_width 0 end
+  xyz 305 106 2012
 end
 relationcanvas 128258 relation_ref 8029442 // <directional composition>
   decenter_begin 523
@@ -31,32 +39,48 @@ relationcanvas 128258 relation_ref 8029442 // <directional composition>
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128514 relation_ref 8029570 // <directional composition>
-  decenter_begin 585
-  decenter_end 585
   from ref 128386 z 2007 to ref 128002
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 128770 relation_ref 8029698 // <directional composition>
-  decenter_begin 585
+  decenter_begin 390
   decenter_end 585
-  from ref 128002 z 2007 to ref 128642
+  from ref 128002 z 2007 to point 720 136
+  line 135170 z 2007 to point 720 296
+  line 135298 z 2007 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129026 relation_ref 8036226 // <generalisation>
-  decenter_begin 457
-  decenter_end 479
-  from ref 128898 z 2013 to ref 128642
+  geometry VHV unfixed
+  decenter_begin 532
+  from ref 128898 z 2013 to point 301 352
+  line 134402 z 2013 to point 390 352
+  line 134530 z 2013 to ref 128642
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 129282 relation_ref 8028930 // <generalisation>
-  geometry VHV unfixed
-  decenter_end 479
-  from ref 129154 z 2013 to point 94 200
-  line 133890 z 2013 to point 237 200
-  line 134018 z 2013 to ref 128642
+  from ref 129154 z 2013 to ref 128642
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134274 relation_ref 8734338 // <directional composition>
+  decenter_begin 585
+  decenter_end 585
+  from ref 129154 z 2013 to ref 134146
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134914 relation_ref 8049794 // <dependency>
+  decenter_begin 390
+  from ref 128002 z 2013 to ref 134786
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135042 relation_ref 8049922 // <dependency>
+  from ref 128642 z 2013 to ref 134786
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end

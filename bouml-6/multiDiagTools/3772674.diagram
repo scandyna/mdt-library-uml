@@ -39,6 +39,8 @@ end
 note 133122 "Probably a more complex thing.
 Will depend on platform (syswide libs, etc...)"
   xyzwh 465 704 2000 303 63
+note 133378 "Those are now from ExecutableFile library."
+  xyzwh 66 160 2000 291 43
 relationcanvas 128258 relation_ref 4894210 // <unidirectional association>
   from ref 128002 z 2001 to ref 128130
   no_role_a no_role_b
@@ -104,6 +106,24 @@ relationcanvas 131714 relation_ref 8225282 // <dependency>
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
+relationcanvas 134018 relation_ref 8727554 // <generalisation>
+  from ref 130562 z 2007 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134146 relation_ref 8727682 // <generalisation>
+  from ref 130818 z 2007 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
 line 133250 -_-_
   from ref 131074 z 2001 to ref 133122
+line 133506 -_-_
+  from ref 133378 z 2001 to ref 129538
+line 133634 -_-_
+  from ref 133378 z 2001 to ref 130562
+line 133762 -_-_
+  from ref 133378 z 2001 to ref 129794
+line 133890 -_-_
+  from ref 133378 z 2001 to ref 130818
 end

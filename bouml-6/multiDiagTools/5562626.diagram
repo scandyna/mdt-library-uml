@@ -41,6 +41,9 @@ end
 note 131842 "Make a constructor that takes all params,
 and this one iniits the static instance."
   xyzwh 537 369 2005 311 63
+note 132482 "Should go to MdtApplication project
+Or.. its own project ?"
+  xyzwh 97.5 66.5 2000 297 59
 relationcanvas 129154 relation_ref 4811778 // <unidirectional association>
   from ref 129026 z 2007 to ref 128898
   no_role_a no_role_b
