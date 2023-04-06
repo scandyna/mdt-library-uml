@@ -1,6 +1,6 @@
 format 224
 "Elf" // Mdt::ExecutableFile::Elf
-  revision 12
+  revision 14
   modified_by 2 "philippe"
   // class settings
   
@@ -4077,7 +4077,7 @@ ${inlines}
     end
   end
 
-  classview 3151234 "LayoutView_Core"
+  classview 3151234 "FileLayout"
     
     classdiagramsettings member_max_width 0 end
     
@@ -4097,49 +4097,9 @@ ${inlines}
     
     activitydiagramsettings
      end
-  end
-
-  classview 3151362 "LayoutView_Console"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    classcompositediagramsettings end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    objectcompositediagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
-  end
-
-  classview 3151490 "LayoutView_Widgets"
-    
-    classdiagramsettings member_max_width 0 end
-    
-    classcompositediagramsettings end
-    
-    collaborationdiagramsettings end
-    
-    objectdiagramsettings end
-    
-    objectcompositediagramsettings end
-    
-    sequencediagramsettings end
-    
-    statediagramsettings
-     end
-    
-    
-    activitydiagramsettings
-     end
+    classdiagram 5924866 "Elf_FileLayout"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
   end
 end

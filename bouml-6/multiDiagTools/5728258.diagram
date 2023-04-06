@@ -54,7 +54,7 @@ note 131842 "Bad idea"
   xyzwh 467.8 469.5 2000 97 39
 classcanvas 132098 class_ref 7482242 // IndexedSectionHeaderList
   classdiagramsettings member_max_width 0 end
-  xyz 328 632 2000
+  xyz 252 509 2000
 end
 relationcanvas 128258 relation_ref 8137090 // <directional composition>
   decenter_end 523

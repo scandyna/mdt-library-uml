@@ -1,0 +1,7 @@
+format 224
+
+classcanvas 128002 class_ref 895234 // QGraphicsItem
+  classdiagramsettings member_max_width 0 end
+  xyz 67 208 2000
+end
+end

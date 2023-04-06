@@ -1,0 +1,118 @@
+format 224
+"ElfLayoutViewer" // apps::ElfLayoutViewer
+  revision 3
+  modified_by 2 "philippe"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  classcompositediagramsettings end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  objectcompositediagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  package_ref 1182082 // Ui
+
+  classview 3190914 "ElfLayoutViewer"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5931522 "ElfLayoutViewer"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+  end
+
+  classview 3197442 "Ui"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5938050 "ElfLayoutViewe_Ui"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7874178 "MainWindow"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8779778 // <directional composition>
+	relation 8748162 *-->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 8779778 // <directional composition>
+	  b parent class_ref 7874050 // MainWindow
+      end
+
+      classrelation 8779906 // <generalisation>
+	relation 8748290 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 8779906 // <generalisation>
+	  b parent class_ref 552450 // QMainWindow
+      end
+    end
+  end
+end

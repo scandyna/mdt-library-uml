@@ -1,6 +1,6 @@
 format 224
 "DeployUtils" // Mdt::DeployUtils
-  revision 290
+  revision 292
   modified_by 2 "philippe"
   // class settings
   
@@ -1943,6 +1943,137 @@ ${inlines}
     classdiagram 5576450 "MachOFile"
       classdiagramsettings member_max_width 0 end
       size A4
+    end
+  end
+
+  classview 3177602 "Platform"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5918210 "Platform"
+      classdiagramsettings member_max_width 0 end
+      size A-Landscape
+    end
+
+    class 7860354 "Platform"
+      visibility package stereotype "typedef" base_type class_ref 4161538 // Platform
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8772482 // <dependency>
+	relation 8740866 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8772482 // <dependency>
+	  b parent class_ref 4161538 // Platform
+      end
+    end
+
+    class 7866882 "OperatingSystem"
+      visibility package stereotype "typedef" base_type class_ref 4169602 // OperatingSystem
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8772610 // <dependency>
+	relation 8740994 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8772610 // <dependency>
+	  b parent class_ref 4169602 // OperatingSystem
+      end
+    end
+
+    class 7867010 "ProcessorISA"
+      visibility package stereotype "typedef" base_type class_ref 4169346 // ProcessorISA
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8772738 // <dependency>
+	relation 8741122 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8772738 // <dependency>
+	  b parent class_ref 4169346 // ProcessorISA
+      end
+    end
+
+    class 7867138 "ExecutableFileFormat"
+      visibility package stereotype "typedef" base_type class_ref 7146498 // ExecutableFileFormat
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8772866 // <dependency>
+	relation 8741250 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8772866 // <dependency>
+	  b parent class_ref 7146498 // ExecutableFileFormat
+      end
+    end
+
+    class 7867266 "Compiler"
+      visibility package stereotype "typedef" base_type class_ref 4169218 // Compiler
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8772994 // <dependency>
+	relation 8741378 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8772994 // <dependency>
+	  b parent class_ref 4169218 // Compiler
+      end
     end
   end
 
@@ -8716,7 +8847,7 @@ ${inlines}
     
     activitydiagramsettings
      end
-    classdiagram 3772674 "RPath"
+    classdiagram 3772674 "RPath_old"
       classdiagramsettings member_max_width 0 end
       size B-Landscape
     end
@@ -8988,6 +9119,53 @@ ${inlines}
 	    cpp default "#include in source"
 	    classrelation_ref 8256770 // <dependency>
 	  b parent class_ref 4385922 // RPath
+      end
+    end
+
+    classdiagram 5924738 "RPath"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7867394 "RPath"
+      visibility package stereotype "typedef" base_type class_ref 4385922 // RPath
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8773122 // <dependency>
+	relation 8741506 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8773122 // <dependency>
+	  b parent class_ref 4385922 // RPath
+      end
+    end
+
+    class 7867522 "RPathEntry"
+      visibility package stereotype "typedef" base_type class_ref 4386050 // RPathEntry
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl "${comment}typedef ${type} ${name};
+"
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8773250 // <dependency>
+	relation 8741634 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8773250 // <dependency>
+	  b parent class_ref 4386050 // RPathEntry
       end
     end
   end

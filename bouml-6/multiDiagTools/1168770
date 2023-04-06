@@ -1,6 +1,6 @@
 format 224
 "ExecutableFile" // Mdt::ExecutableFile
-  revision 10
+  revision 12
   modified_by 2 "philippe"
   // class settings
   
@@ -2287,4 +2287,52 @@ ${inlines}
   package_ref 1168898 // Elf
 
   package_ref 1169026 // Pe
+
+  classview 3184258 "Elf_LayoutView_Console"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+  end
+
+  classview 3184386 "Elf_LayoutView_Widgets"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5924994 "Elf_LayoutView_Widgets"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+  end
 end

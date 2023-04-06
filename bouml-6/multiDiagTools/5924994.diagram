@@ -1,0 +1,51 @@
+format 224
+
+classcanvas 128002 class_ref 895618 // QGraphicsScene
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 42 207 2000
+end
+note 128130 "Should show layout as seen:
+- From section header table
+- Program header table
+- Data in the various sections
+
+OR: some checks, so all is coherent ??"
+  xyzwh 181 96 2000 469 151
+classcanvas 128258 class_ref 7148802 // SectionHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 515 335 2000
+end
+classcanvas 128386 class_ref 7148546 // ProgramHeader
+  classdiagramsettings member_max_width 0 end
+  xyz 522 616 2000
+end
+classcanvas 128514 class_ref 7370242 // ProgramHeaderTable
+  classdiagramsettings member_max_width 0 end
+  xyz 22 671 3005
+end
+classcanvas 128770 class_ref 7324034 // SectionHeaderTable
+  classdiagramsettings member_max_width 0 end
+  xyz 199 433 2006
+end
+classcanvas 129026 class_ref 895234 // QGraphicsItem
+  classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+  xyz 160 315 3005
+end
+note 129282 "Put view items to a namspace ?"
+  xyzwh 222 264 2000 225 43
+relationcanvas 128642 relation_ref 8102914 // <directional composition>
+  from ref 128514 z 3006 to ref 128386
+  no_role_a no_role_b
+  multiplicity_a_pos 506 719 3000 no_multiplicity_b
+end
+relationcanvas 128898 relation_ref 8056706 // <directional composition>
+  from ref 128770 z 2007 to ref 128258
+  no_role_a no_role_b
+  multiplicity_a_pos 499 456 3000 no_multiplicity_b
+end
+relationcanvas 129154 relation_ref 2525186 // <composition>
+  from ref 128002 z 3006 to ref 129026
+  no_role_a no_role_b
+  multiplicity_a_pos 176 331 3000 multiplicity_b_pos 132 264 3000
+end
+end
