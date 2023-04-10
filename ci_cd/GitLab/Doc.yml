@@ -31,7 +31,7 @@ pages:
     - build_DoxygenView
   script:
     - mkdir public
-    - mv doxygen-view/html public
+    - mv build/doxygen-view/html public
   artifacts:
     paths:
       - public
