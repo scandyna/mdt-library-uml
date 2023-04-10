@@ -1,6 +1,6 @@
 format 224
 "multiDiagTools"
-  revision 41
+  revision 42
   modified_by 2 "philippe"
   cpp_root_dir "cpp_gen/"
 
@@ -47,11 +47,11 @@ format 224
   
   ncouples 13
   key "html dir" value "/tmp/"
-  key "gxmi path" value "/tmp/uml_test/test.xmi"
+  key "gxmi path" value "/home/philippe/programmation/mdt-library-uml/bouml-6/xmi2/mdt-uml-2.0.xmi"
   key "gxmi no model" value "no"
   key "gxmi gen views" value "no"
   key "gxmi encoding" value "UTF-8"
-  key "gxmi umlversion" value "23"
+  key "gxmi umlversion" value "20"
   key "gxmi pk prefix" value "no"
   key "gxmi vis prefix" value "no"
   key "gxmi primitive type" value "no"
