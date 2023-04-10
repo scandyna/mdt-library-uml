@@ -1,0 +1,9 @@
+
+/*! \page uml_sandbox UML sandbox
+ *
+ * \section Qt_Graphics_View Qt Graphics View
+ *
+ * \startuml
+ * !include Qt/Overviews/Graphics_View/Graphics_View.puml
+ * \enduml
+ */

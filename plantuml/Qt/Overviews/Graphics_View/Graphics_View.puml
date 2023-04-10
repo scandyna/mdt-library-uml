@@ -1,0 +1,9 @@
+@startuml
+!define QtWidgets ../../Widgets
+!include QtWidgets/QAbstractGraphicsShapeItem.puml
+!include QtWidgets/QGraphicsItemGroup.puml
+
+hide members
+hide methods
+
+@enduml
