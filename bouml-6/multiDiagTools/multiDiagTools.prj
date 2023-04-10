@@ -1,6 +1,6 @@
-format 222
+format 224
 "multiDiagTools"
-  revision 40
+  revision 41
   modified_by 2 "philippe"
   cpp_root_dir "cpp_gen/"
 
@@ -45,8 +45,20 @@ format 222
 
   mark_for_import
   
-  ncouples 1
+  ncouples 13
   key "html dir" value "/tmp/"
+  key "gxmi path" value "/tmp/uml_test/test.xmi"
+  key "gxmi no model" value "no"
+  key "gxmi gen views" value "no"
+  key "gxmi encoding" value "UTF-8"
+  key "gxmi umlversion" value "23"
+  key "gxmi pk prefix" value "no"
+  key "gxmi vis prefix" value "no"
+  key "gxmi primitive type" value "no"
+  key "gxmi gen extensions" value "no"
+  key "gxmi gen eclipse" value "no"
+  key "gxmi comment exporter" value "no"
+  key "gxmi linefeed" value "no"
   package_ref 409858 // principes
 
   package_ref 766082 // apps
@@ -84,5 +96,4 @@ format 222
   package_ref 275458 // std
 
   package_ref 476418 // odb
-
 end

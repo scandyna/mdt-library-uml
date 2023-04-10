@@ -1,6 +1,6 @@
 format 224
 "ElfLayoutViewer" // apps::ElfLayoutViewer
-  revision 3
+  revision 5
   modified_by 2 "philippe"
   // class settings
   
@@ -32,7 +32,9 @@ format 224
   
   package_ref 1182082 // Ui
 
-  classview 3190914 "ElfLayoutViewer"
+  package_ref 1188610 // Graphics
+
+  classview 3190914 "ElfLayoutView"
     
     classdiagramsettings member_max_width 0 end
     
@@ -54,7 +56,150 @@ format 224
      end
     classdiagram 5931522 "ElfLayoutViewer"
       classdiagramsettings member_max_width 0 end
-      size A4
+      size Legal-Landscape
+    end
+
+    class 7880706 "SectionGraphicsItem"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8786562 // <dependency>
+	relation 8754946 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8786562 // <dependency>
+	  b parent class_ref 7148802 // SectionHeader
+      end
+
+      classrelation 8787074 // <generalisation>
+	relation 8755458 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 8787074 // <generalisation>
+	  b parent class_ref 895362 // QGraphicsItemGroup
+      end
+
+      classrelation 8793730 // <dependency>
+	relation 8762114 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8793730 // <dependency>
+	  b parent class_ref 7887746 // LayoutGraphicsItemData
+      end
+    end
+
+    class 7880834 "GraphicsItemsFactory"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8786690 // <dependency>
+	relation 8755074 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8786690 // <dependency>
+	  b parent class_ref 7148802 // SectionHeader
+      end
+
+      classrelation 8786818 // <dependency>
+	relation 8755202 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8786818 // <dependency>
+	  b parent class_ref 895618 // QGraphicsScene
+      end
+
+      operation 9619586 "addSection"
+	class_operation public explicit_return_type "void"
+	nparams 2
+	  param in name "section" type class_ref 7148802 // SectionHeader
+	  param inout name "scene" type class_ref 895618 // QGraphicsScene
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 9619714 "addSegment"
+	class_operation public explicit_return_type "void"
+	nparams 2
+	  param in name "ph" type class_ref 7148546 // ProgramHeader
+	  param inout name "scene" type class_ref 895618 // QGraphicsScene
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${comment}${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 7887618 "LayoutGraphicsScene"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8793602 // <generalisation>
+	relation 8761986 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 8793602 // <generalisation>
+	  b parent class_ref 895618 // QGraphicsScene
+      end
+    end
+
+    class 7887746 "LayoutGraphicsItemData"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
     end
   end
 

@@ -1,6 +1,6 @@
 format 224
 "Qt" // Qt
-  revision 308
+  revision 309
   modified_by 2 "philippe"
   // class settings
   
@@ -4394,6 +4394,257 @@ ${inlines}
     end
   end
 
+  classview 3204098 "Graphics_View"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 1875202 "GraphicsViewOverview"
+      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
+      size C-Landscape
+    end
+
+    classdiagram 859906 "QGraphicsScene"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 895618 "QGraphicsScene"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 1108482 // <generalisation>
+	relation 1097218 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 1108482 // <generalisation>
+	  b parent class_ref 138626 // QObject
+      end
+
+      operation 1636610 "QGraphicsScene"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "parent" type class_ref 138626 // QObject
+	    defaultvalue "0"
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      classrelation 2541570 // <composition>
+	relation 2525186 *---
+	  a role_name "" multiplicity "*" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 2541570 // <composition>
+	  b role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 2541698 // <composition>
+      end
+    end
+
+    classdiagram 859522 "QGraphicsItem"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 895234 "QGraphicsItem"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 1643266 "QGraphicsItem"
+	public explicit_return_type ""
+	nparams 1
+	  param in name "parent" type class_ref 895234 // QGraphicsItem
+	    defaultvalue "0"
+	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${)}${volatile}${throw};
+"
+	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
+{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 1643394 "type"
+	abstract const cpp_virtual public explicit_return_type "int"
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 1643522 "boundingRect"
+	abstract const cpp_virtual public return_type class_ref 902914 // QRectF
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 1643650 "shape"
+	abstract const cpp_virtual public return_type class_ref 903042 // QPainterPath
+	nparams 0
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 1643778 "paint"
+	abstract cpp_virtual public explicit_return_type "void"
+	nparams 3
+	  param in name "painter" type class_ref 903170 // QPainter
+	  param in name "option" type class_ref 903298 // QStyleOptionGraphicsItem
+	  param in name "widget" type class_ref 316162 // QWidget
+	    defaultvalue "0"
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 1643906 "mousePressEvent"
+	abstract cpp_virtual protected explicit_return_type "void"
+	nparams 1
+	  param in name "event" type class_ref 903426 // QGraphicsSceneMouseEvent
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      operation 1644034 "mouseReleaseEvent"
+	abstract cpp_virtual protected explicit_return_type "void"
+	nparams 1
+	  param in name "event" type class_ref 903426 // QGraphicsSceneMouseEvent
+	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+
+      classrelation 2541698 // <composition>
+	relation_ref 2525186 // <composition>
+      end
+    end
+
+    classdiagram 860546 "QAbstractGraphicsShapeItem"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 896386 "QAbstractGraphicsShapeItem"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 1109122 // <generalisation>
+	relation 1097858 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 1109122 // <generalisation>
+	  b parent class_ref 895234 // QGraphicsItem
+      end
+    end
+
+    classdiagram 2278530 "QGraphicsRectItem"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 2567426 "QGraphicsRectItem"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 2947330 // <generalisation>
+	relation 2930050 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 2947330 // <generalisation>
+	  b parent class_ref 896386 // QAbstractGraphicsShapeItem
+      end
+    end
+  end
+
   classview 2847106 "Core_IO"
     
     classdiagramsettings member_max_width 0 end
@@ -4761,6 +5012,76 @@ ${inlines}
 	
 	
 	
+      end
+    end
+  end
+
+  classview 3204226 "Core_Coordinates"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    classcompositediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    objectcompositediagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    classdiagram 5944834 "QPointF"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7881090 "QPointF"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classdiagram 5944706 "QLineF"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    class 7880962 "QLineF"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit}
+{
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 8786946 // <dependency>
+	relation 8755330 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 8786946 // <dependency>
+	  b parent class_ref 7881090 // QPointF
       end
     end
   end
@@ -7635,123 +7956,6 @@ ${inlines}
       end
     end
 
-    classdiagram 1875202 "GraphicsViewOverview"
-      classdiagramsettings hide_attributes yes hide_operations yes member_max_width 0 end
-      size C-Landscape
-    end
-
-    classdiagram 859522 "QGraphicsItem"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 895234 "QGraphicsItem"
-      abstract visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit} {
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      operation 1643266 "QGraphicsItem"
-	public explicit_return_type ""
-	nparams 1
-	  param in name "parent" type class_ref 895234 // QGraphicsItem
-	    defaultvalue "0"
-	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${)}${volatile}${throw};
-"
-	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      operation 1643394 "type"
-	abstract const cpp_virtual public explicit_return_type "int"
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
-      operation 1643522 "boundingRect"
-	abstract const cpp_virtual public return_type class_ref 902914 // QRectF
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
-      operation 1643650 "shape"
-	abstract const cpp_virtual public return_type class_ref 903042 // QPainterPath
-	nparams 0
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
-      operation 1643778 "paint"
-	abstract cpp_virtual public explicit_return_type "void"
-	nparams 3
-	  param in name "painter" type class_ref 903170 // QPainter
-	  param in name "option" type class_ref 903298 // QStyleOptionGraphicsItem
-	  param in name "widget" type class_ref 316162 // QWidget
-	    defaultvalue "0"
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}, const ${t2} & ${p2}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
-      operation 1643906 "mousePressEvent"
-	abstract cpp_virtual protected explicit_return_type "void"
-	nparams 1
-	  param in name "event" type class_ref 903426 // QGraphicsSceneMouseEvent
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
-      operation 1644034 "mouseReleaseEvent"
-	abstract cpp_virtual protected explicit_return_type "void"
-	nparams 1
-	  param in name "event" type class_ref 903426 // QGraphicsSceneMouseEvent
-	cpp_decl "  ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${abstract};
-"
-	
-	
-	
-	
-      end
-
-      classrelation 2541698 // <composition>
-	relation_ref 2525186 // <composition>
-      end
-    end
-
     classdiagram 859394 "QGraphicsObject"
       classdiagramsettings member_max_width 0 end
       size A4
@@ -7868,34 +8072,6 @@ ${inlines}
       end
     end
 
-    classdiagram 860546 "QAbstractGraphicsShapeItem"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 896386 "QAbstractGraphicsShapeItem"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 1109122 // <generalisation>
-	relation 1097858 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 1109122 // <generalisation>
-	  b parent class_ref 895234 // QGraphicsItem
-      end
-    end
-
     classdiagram 2278274 "QGraphicsPathItem"
       classdiagramsettings member_max_width 0 end
       size A4
@@ -7920,34 +8096,6 @@ ${inlines}
 	  a public
 	    cpp default "${type}"
 	    classrelation_ref 2947074 // <generalisation>
-	  b parent class_ref 896386 // QAbstractGraphicsShapeItem
-      end
-    end
-
-    classdiagram 2278530 "QGraphicsRectItem"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 2567426 "QGraphicsRectItem"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 2947330 // <generalisation>
-	relation 2930050 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 2947330 // <generalisation>
 	  b parent class_ref 896386 // QAbstractGraphicsShapeItem
       end
     end
@@ -8005,63 +8153,6 @@ ${inlines}
 	    cpp default "${type}"
 	    classrelation_ref 2947458 // <generalisation>
 	  b parent class_ref 896386 // QAbstractGraphicsShapeItem
-      end
-    end
-
-    classdiagram 859906 "QGraphicsScene"
-      classdiagramsettings member_max_width 0 end
-      size A4
-    end
-
-    class 895618 "QGraphicsScene"
-      visibility package 
-      cpp_decl "${comment}${template}class ${name}${inherit}
-{
-${members}};
-${inlines}
-"
-      java_decl ""
-      php_decl ""
-      python_2_2 python_decl ""
-      idl_decl ""
-      explicit_switch_type ""
-      mysql_decl ""
-      
-      classrelation 1108482 // <generalisation>
-	relation 1097218 ---|>
-	  a public
-	    cpp default "${type}"
-	    classrelation_ref 1108482 // <generalisation>
-	  b parent class_ref 138626 // QObject
-      end
-
-      operation 1636610 "QGraphicsScene"
-	public explicit_return_type ""
-	nparams 1
-	  param in name "parent" type class_ref 138626 // QObject
-	    defaultvalue "0"
-	cpp_decl "  ${comment}${inline}${name}${(}const ${t0} & ${p0}${)}${volatile}${throw};
-"
-	cpp_def "${comment}${inline}${class}::${name}${(}const ${t0} & ${p0}${)}${volatile}${throw} 
-{
-  ${body}}
-"
-	
-	
-	
-	
-      end
-
-      classrelation 2541570 // <composition>
-	relation 2525186 *---
-	  a role_name "" multiplicity "*" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
-"
-	    classrelation_ref 2541570 // <composition>
-	  b role_name "" multiplicity "1" private
-	    cpp default "    ${comment}${static}${mutable}${volatile}${const}${type} ${name}${value};
-"
-	    classrelation_ref 2541698 // <composition>
       end
     end
 

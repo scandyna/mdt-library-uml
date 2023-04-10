@@ -1,4 +1,4 @@
-format 211
+format 224
 
 classcanvas 128002 class_ref 894978 // QGraphicsTextItem
   classdiagramsettings member_max_width 0 end
@@ -95,8 +95,8 @@ end
 relationcanvas 128770 relation_ref 1096322 // <generalisation>
   geometry VHV unfixed
   decenter_end 532
-  from ref 128642 z 2019 to point 1628 122.8
-  line 130690 z 2019 to point 1455 122.8
+  from ref 128642 z 2019 to point 1628 122
+  line 130690 z 2019 to point 1455 122
   line 130818 z 2019 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -104,8 +104,8 @@ end
 relationcanvas 129026 relation_ref 1096578 // <generalisation>
   geometry VHV unfixed
   decenter_end 532
-  from ref 128898 z 2019 to point 479 122.8
-  line 133122 z 2019 to point 1455 122.8
+  from ref 128898 z 2019 to point 479 122
+  line 133122 z 2019 to point 1455 122
   line 133250 z 2019 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -127,8 +127,8 @@ relationcanvas 130050 relation_ref 1097602 // <generalisation>
 end
 relationcanvas 130306 relation_ref 2457474 // <generalisation>
   geometry VHV unfixed
-  from ref 129922 z 2025 to point 1168 324.2
-  line 132866 z 2025 to point 1323.5 324.2
+  from ref 129922 z 2025 to point 1168 324
+  line 132866 z 2025 to point 1323 324
   line 132994 z 2025 to ref 130178
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -154,11 +154,11 @@ end
 relationcanvas 132098 relation_ref 2525186 // <composition>
   decenter_begin 418
   decenter_end 558
-  from ref 129154 z 2013 to point 1741.1 626.6
-  line 136450 z 2013 to point 1741.1 65.9
+  from ref 129154 z 2013 to point 1741 626
+  line 136450 z 2013 to point 1741 65
   line 136578 z 2013 to ref 128386
   no_role_a no_role_b
-  multiplicity_a_pos 1517 72 3000 multiplicity_b_pos 1391 633 3000
+  multiplicity_a_pos 1517 71 3000 multiplicity_b_pos 1391 633 3000
 end
 relationcanvas 132482 relation_ref 2525314 // <generalisation>
   from ref 132354 z 2001 to ref 132226
@@ -168,32 +168,32 @@ end
 relationcanvas 132738 relation_ref 1097858 // <generalisation>
   geometry VHV unfixed
   decenter_end 532
-  from ref 132610 z 2019 to point 680 122.8
-  line 135682 z 2019 to point 1455 122.8
+  from ref 132610 z 2019 to point 680 122
+  line 135682 z 2019 to point 1455 122
   line 135810 z 2019 to ref 128386
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 134274 relation_ref 1097986 // <generalisation>
   geometry VHV unfixed
-  from ref 134146 z 2025 to point 113.5 242.8
-  line 135938 z 2025 to point 680.4 242.8
+  from ref 134146 z 2025 to point 113 242
+  line 135938 z 2025 to point 680 242
   line 136066 z 2025 to ref 132610
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 134530 relation_ref 2929794 // <generalisation>
   geometry VHV unfixed
-  from ref 134402 z 2019 to point 857.3 242.8
-  line 136962 z 2019 to point 680.4 242.8
+  from ref 134402 z 2019 to point 857 242
+  line 136962 z 2019 to point 680 242
   line 137090 z 2019 to ref 132610
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
 end
 relationcanvas 134786 relation_ref 2929922 // <generalisation>
   geometry VHV unfixed
-  from ref 134658 z 2019 to point 1046.6 242.8
-  line 137218 z 2019 to point 680.4 242.8
+  from ref 134658 z 2019 to point 1046 242
+  line 137218 z 2019 to point 680 242
   line 137346 z 2019 to ref 132610
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -201,8 +201,8 @@ end
 relationcanvas 135170 relation_ref 2930050 // <generalisation>
   geometry VHV unfixed
   decenter_begin 474
-  from ref 135042 z 2019 to point 503 242.8
-  line 136706 z 2019 to point 661 242.8
+  from ref 135042 z 2019 to point 503 242
+  line 136706 z 2019 to point 679 242
   line 136834 z 2019 to ref 132610
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
@@ -214,8 +214,8 @@ relationcanvas 135298 relation_ref 2930050 // <generalisation>
 end
 relationcanvas 135554 relation_ref 2930178 // <generalisation>
   geometry VHV unfixed
-  from ref 135426 z 2019 to point 315.9 242.8
-  line 136194 z 2019 to point 680.4 242.8
+  from ref 135426 z 2019 to point 314 242
+  line 136194 z 2019 to point 680 242
   line 136322 z 2019 to ref 132610
   no_role_a no_role_b
   no_multiplicity_a no_multiplicity_b
