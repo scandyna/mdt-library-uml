@@ -1,0 +1,4 @@
+
+include:
+  - local: 'ci_cd/GitLab/Doc.yml'
+

@@ -1,0 +1,37 @@
+
+include:
+  - local: 'ci_cd/GitLab/Common.yml'
+  - local: 'ci_cd/GitLab/Conan_Templates.yml'
+
+
+build_DoxygenView:
+  stage: build
+  image: registry.gitlab.com/scandyna/docker-images-ubuntu/ubuntu-18.04-gcc-8-doc:latest
+  before_script:
+    - !reference [.setup_conan, script]
+  script:
+    - mkdir build
+    - cd build
+    - conan install ..
+    - cmake -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Debug ..
+    - make DoxygenView
+  artifacts:
+    expire_in: 1 day
+    paths:
+      - build
+
+
+pages:
+  stage: deploy
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: on_success
+    - when: never
+  dependencies:
+    - build_DoxygenView
+  script:
+    - mkdir public
+    - mv doxygen-view/html public
+  artifacts:
+    paths:
+      - public
