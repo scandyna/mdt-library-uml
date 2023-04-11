@@ -6,4 +6,11 @@
  * \startuml
  * !include Qt/Overviews/Graphics_View/Graphics_View_Items.puml
  * \enduml
+ *
+ *
+ * \section Qt_Graphics_Scene_View_overview Qt Graphics Scene and View overview
+ *
+ * \startuml
+ * !include Qt/Overviews/Graphics_View/Graphics_Scene_View.puml
+ * \enduml
  */

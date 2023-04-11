@@ -9,6 +9,7 @@
 !include QtWidgets/QGraphicsPathItem.puml
 !include QtWidgets/QGraphicsPolygonItem.puml
 !include QtWidgets/QGraphicsObject.puml
+!include QtWidgets/QGraphicsTextItem.puml
 
 hide members
 hide methods
