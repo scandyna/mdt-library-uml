@@ -1,0 +1,9 @@
+
+/*! \page Qt_Graphics_View Qt Graphics View
+ *
+ * \section Qt_Graphics_View_overview Qt Graphics View items overview
+ *
+ * \startuml
+ * !include Qt/Overviews/Graphics_View/Graphics_View_Items.puml
+ * \enduml
+ */
