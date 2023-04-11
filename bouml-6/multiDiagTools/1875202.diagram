@@ -62,7 +62,7 @@ classcanvas 134146 class_ref 896258 // QGraphicsEllipseItem
 end
 classcanvas 134402 class_ref 2567170 // QGraphicsPathItem
   classdiagramsettings member_max_width 0 end
-  xyz 791.3 280.15 2000
+  xyz 790.3 280.15 2000
 end
 classcanvas 134658 class_ref 2567298 // QGraphicsPolygonItem
   classdiagramsettings member_max_width 0 end
@@ -184,7 +184,7 @@ relationcanvas 134274 relation_ref 1097986 // <generalisation>
 end
 relationcanvas 134530 relation_ref 2929794 // <generalisation>
   geometry VHV unfixed
-  from ref 134402 z 2019 to point 857 242
+  from ref 134402 z 2019 to point 856 242
   line 136962 z 2019 to point 680 242
   line 137090 z 2019 to ref 132610
   no_role_a no_role_b
