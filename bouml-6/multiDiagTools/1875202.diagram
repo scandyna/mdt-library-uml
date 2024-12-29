@@ -26,7 +26,7 @@ classcanvas 129154 class_ref 895618 // QGraphicsScene
 end
 classcanvas 129282 class_ref 895746 // QGraphicsView
   classdiagramsettings member_max_width 0 end
-  xyz 1112.6 608.35 2000
+  xyz 1072.6 629.35 2000
 end
 classcanvas 129410 class_ref 895874 // QAbstractScrollArea
   classdiagramsettings member_max_width 0 end
@@ -149,7 +149,7 @@ relationcanvas 131970 relation_ref 2525058 // <unidirectional association>
   decenter_end 418
   from ref 129282 z 2001 to ref 129154
   no_role_a no_role_b
-  multiplicity_a_pos 1245 633 3000 multiplicity_b_pos 1232 633 3000
+  multiplicity_a_pos 1245 631 3000 multiplicity_b_pos 1192 652 3000
 end
 relationcanvas 132098 relation_ref 2525186 // <composition>
   decenter_begin 418
