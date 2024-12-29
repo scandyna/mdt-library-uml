@@ -1,0 +1,12 @@
+
+/*! \page Qt_SerialPort Qt Serial Port
+ *
+ * Qt doc: https://doc.qt.io/qt-6/qtserialport-index.html
+ *
+ * \section Qt_SerialPort_overview Qt Serial Port overview
+ *
+ * \startuml
+ * !include Diagrams/Qt/Overviews/SerialPort/SerialPort.puml
+ * \enduml
+ *
+ */

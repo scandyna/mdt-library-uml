@@ -1,0 +1,9 @@
+@startuml
+!include Qt/SerialPort/QSerialPort.puml
+
+hide members
+hide methods
+
+skinparam groupInheritance 4
+
+@enduml
