@@ -1,0 +1,9 @@
+@startuml
+!include Qt/Core/QAbstractTableModel.puml
+
+hide members
+hide methods
+
+skinparam groupInheritance 4
+
+@enduml

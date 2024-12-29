@@ -1,0 +1,12 @@
+
+/*! \page Qt_Model_View Qt Model/View
+ *
+ * Qt doc: https://doc.qt.io/qt-6/model-view-programming.html
+ *
+ * \section Qt_ItemModel_overview Qt item model overview
+ *
+ * \startuml
+ * !include Diagrams/Qt/Overviews/Model_View/ItemModels.puml
+ * \enduml
+ *
+ */
