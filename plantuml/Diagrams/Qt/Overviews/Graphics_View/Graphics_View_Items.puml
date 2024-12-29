@@ -1,5 +1,5 @@
 @startuml
-!define QtWidgets ../../Widgets
+!define QtWidgets Qt/Widgets
 !include QtWidgets/QAbstractGraphicsShapeItem.puml
 !include QtWidgets/QGraphicsItemGroup.puml
 !include QtWidgets/QGraphicsLineItem.puml

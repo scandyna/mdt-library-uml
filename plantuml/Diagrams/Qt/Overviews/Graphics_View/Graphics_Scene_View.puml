@@ -1,5 +1,5 @@
 @startuml
-!define QtWidgets ../../Widgets
+!define QtWidgets Qt/Widgets
 !include QtWidgets/QGraphicsScene.puml
 !include QtWidgets/QGraphicsView.puml
 
